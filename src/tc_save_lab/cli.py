@@ -9,6 +9,7 @@ import json
 from .campaign import initialize_examples, read_level_meta
 from .codec import decode_circuit
 from .analysis import analyze_examples, analyze_file
+from .builder import build_known_candidates
 from .scaffold import extract_campaign_scaffolds
 from .storage import (
     DEFAULT_GAME_ROOT,
@@ -59,6 +60,12 @@ def build_parser() -> ArgumentParser:
         help="write metrics.json for every example level",
     )
     analyze_all.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+
+    build_known = sub.add_parser(
+        "build-known-candidates",
+        help="build reviewed deterministic optimized candidate recipes",
+    )
+    build_known.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
     dump = sub.add_parser("export-json", help="decode a supported circuit to JSON")
     dump.add_argument("source", type=_path)
@@ -117,6 +124,9 @@ def _run(args: Namespace) -> int:
         return 0
     if args.command == "analyze-examples":
         _print_json(analyze_examples(args.project_root))
+        return 0
+    if args.command == "build-known-candidates":
+        _print_json(build_known_candidates(args.project_root))
         return 0
     if args.command == "export-json":
         circuit = export_json(args.source, args.destination)
@@ -183,7 +193,8 @@ def _interactive(parser: ArgumentParser) -> int:
         print("2. 初始化/刷新所有主线关卡目录")
         print("3. 提取所有关卡固定脚手架")
         print("4. 分析所有示例基线")
-        print("5. 写回一个关卡候选")
+        print("5. 构建已审查的优化候选")
+        print("6. 写回一个关卡候选")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -197,6 +208,8 @@ def _interactive(parser: ArgumentParser) -> int:
         if choice == "4":
             return _run(parser.parse_args(["analyze-examples"]))
         if choice == "5":
+            return _run(parser.parse_args(["build-known-candidates"]))
+        if choice == "6":
             level = input("关卡内部名称: ").strip()
             if level:
                 return _run(parser.parse_args(["apply", level]))
