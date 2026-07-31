@@ -100,6 +100,16 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     # their original template metadata instead of this default.
     79: _pins(PinSpec("in", O, (3, 0))),
     81: _pins(PinSpec("out", I, (-3, 0))),
+    109: _pins(
+        PinSpec("in", I, (-1, 0), 2),
+        PinSpec("out0", O, (1, -1), 1),
+        PinSpec("out1", O, (1, 0), 1),
+    ),
+    111: _pins(
+        PinSpec("in0", I, (-1, -1), 1),
+        PinSpec("in1", I, (-1, 0), 1),
+        PinSpec("out", O, (1, 0), 2),
+    ),
 }
 
 
@@ -298,7 +308,23 @@ def analyze_connectivity(
         source = queue.popleft()
         visited += 1
         for destination in successors[source]:
-            weight = 0 if components[destination].kind in {40, 62, 68, 69, 70, 73, 74, 75, 77, 79, 81} else 1
+            weight = 0 if components[destination].kind in {
+                40,
+                62,
+                68,
+                69,
+                70,
+                73,
+                74,
+                75,
+                77,
+                79,
+                81,
+                109,
+                110,
+                111,
+                112,
+            } else 1
             depths[destination] = max(depths[destination], depths[source] + weight)
             indegree[destination] -= 1
             if indegree[destination] == 0:
