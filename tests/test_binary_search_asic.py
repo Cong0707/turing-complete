@@ -10,10 +10,12 @@ from tc_save_lab.binary_search_asic import (
     EXPECTED_GATE,
     EXPECTED_TERMINALS,
     GATE_DEFINITIONS,
+    INITIAL_REGISTER_STATE,
     INITIAL_STATE,
     build_binary_search_asic,
     enumerate_search_paths,
     evaluate_synthesized_next_state,
+    evaluate_timed_guesses,
     next_state,
     verify_binary_search_asic,
     write_binary_search_asic,
@@ -57,6 +59,21 @@ class BinarySearchAsicTests(unittest.TestCase):
                     (state, over),
                 )
 
+    def test_registered_output_timing_reaches_the_f0_terminal(self):
+        self.assertEqual(INITIAL_REGISTER_STATE, 0x7E)
+        f0_path = next(path for path in enumerate_search_paths() if path.terminal == 0xF0)
+        self.assertEqual(f0_path.feedback, (0, 0, 0, 0, 1, 1, 1))
+        self.assertEqual(
+            evaluate_timed_guesses((0, *f0_path.feedback)),
+            (0x7F, 0xBF, 0xDF, 0xEF, 0xF7, 0xF3, 0xF1, 0xF0),
+        )
+        for path in enumerate_search_paths():
+            self.assertEqual(
+                evaluate_timed_guesses((0, *path.feedback)),
+                path.guesses,
+                path.feedback,
+            )
+
     def test_candidate_is_an_honest_offline_asic_without_old_dependencies(self):
         candidate = build_binary_search_asic()
         result = verify_binary_search_asic(candidate)
@@ -80,7 +97,10 @@ class BinarySearchAsicTests(unittest.TestCase):
         self.assertEqual(actual[17], 1)
         self.assertEqual(len(candidate.components), 51)
         self.assertEqual(len(candidate.wires), 93)
-        self.assertEqual(result["connectivity"]["unit_logic_depth"], 8)
+        # The offline graph counts the byte maker as one component layer.
+        # The game's declared architecture delay remains the mapped 8-gate
+        # next-state path, asserted above through the leaderboard tuple.
+        self.assertEqual(result["connectivity"]["unit_logic_depth"], 9)
         self.assertEqual(result["connectivity"]["unconnected_pin_count"], 7)
         self.assertEqual(
             {
@@ -115,7 +135,7 @@ class BinarySearchAsicTests(unittest.TestCase):
         delays = [component for component in candidate.components if component.kind == 13]
         self.assertEqual(
             {component.position[1]: component.init_data for component in delays},
-            {-42: 1, -30: 1, -18: 1, -6: 1, 6: 1, 18: 1, 30: 1, 42: 0},
+            {-42: 0, -30: 1, -18: 1, -6: 1, 6: 1, 18: 1, 30: 1, 42: 0},
         )
         self.assertEqual(
             result["layout"],

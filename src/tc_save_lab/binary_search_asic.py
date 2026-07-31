@@ -595,6 +595,43 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
         raise RuntimeError(
             "Code Breaker ASIC must drive every feedback consumer from Splitter8.out0"
         )
+    output_components = [component for component in candidate.components if component.kind == 70]
+    if (
+        len(input_components) != 1
+        or len(output_components) != 1
+        or input_components[0].ui_order != -2
+        or output_components[0].ui_order != -2
+    ):
+        raise RuntimeError("Code Breaker ASIC must preserve its architecture I/O order")
+    delays = sorted(
+        (component for component in candidate.components if component.kind == 13),
+        key=lambda component: component.position[1],
+    )
+    expected_register_bits = tuple(
+        (INITIAL_REGISTER_STATE >> bit) & 1 for bit in range(WORD_BITS)
+    )
+    if tuple(component.init_data for component in delays) != expected_register_bits:
+        raise RuntimeError(
+            "Code Breaker ASIC has the wrong registered bootstrap state: "
+            f"expected={expected_register_bits!r}, "
+            f"got={tuple(component.init_data for component in delays)!r}"
+        )
+    state_makers = [component for component in candidate.components if component.kind == 16]
+    if len(state_makers) != 1:
+        raise RuntimeError("Code Breaker ASIC must use one byte state maker")
+    key = "architecture/codex-binary-search"
+    components_by_id = {component.permanent_id: component for component in candidate.components}
+    for bit, delay in enumerate(delays):
+        gate = components_by_id[
+            stable_permanent_id(key, f"gate-n{bit}")
+        ]
+        source = _output_pin(gate)
+        state_input = _pin(state_makers[0], f"in{bit}")
+        delay_input = _pin(delay, "in")
+        if frozenset((source, state_input)) not in wire_endpoints:
+            raise RuntimeError(f"Code Breaker ASIC does not expose F(Q, over) bit {bit}")
+        if frozenset((source, delay_input)) not in wire_endpoints:
+            raise RuntimeError(f"Code Breaker ASIC does not register F(Q, over) bit {bit}")
     if candidate.dependencies:
         raise RuntimeError("Code Breaker ASIC must not depend on an old architecture")
     if (candidate.gate, candidate.delay) != (EXPECTED_GATE, EXPECTED_DELAY):
