@@ -13,6 +13,7 @@ from .leaderboard import write_level_leaderboards
 from .analysis import analyze_examples, analyze_file
 from .architecture_candidates import build_architecture_candidates
 from .builder import build_known_candidates, build_known_variants
+from .direct_install import install_reviewed_direct, plan_direct_install
 from .scaffold import extract_campaign_scaffolds
 from .storage import (
     DEFAULT_GAME_ROOT,
@@ -138,6 +139,15 @@ def build_parser() -> ArgumentParser:
     apply.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
     apply.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
     apply.add_argument("--yes", action="store_true")
+
+    install_reviewed = sub.add_parser(
+        "install-reviewed",
+        help="直接写入已审查的 Codex 元件和专用架构，不创建备份",
+    )
+    install_reviewed.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+    install_reviewed.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+    install_reviewed.add_argument("--dry-run", action="store_true")
+    install_reviewed.add_argument("--yes", action="store_true")
     return parser
 
 
@@ -275,6 +285,21 @@ def _run(args: Namespace) -> int:
                 return 2
         _print_json(atomic_replace_circuit(candidate, destination))
         return 0
+    if args.command == "install-reviewed":
+        plan = plan_direct_install(args.project_root, args.save_root)
+        if args.dry_run:
+            _print_json(plan.to_dict())
+            return 0
+        if not args.yes:
+            answer = input(
+                "直接覆盖正式存档中的 6 个最终电路文件及 levels.txt 两条选择，"
+                "且不创建备份？[y/N] "
+            ).strip().casefold()
+            if answer not in {"y", "yes"}:
+                print("已取消。")
+                return 2
+        _print_json(install_reviewed_direct(plan))
+        return 0
     raise ValueError(f"不支持的命令：{args.command}")
 
 
@@ -291,6 +316,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("8. 刷新官网单关排行榜目标")
         print("9. 构建已审查的 Pareto 候选变体")
         print("10. 构建专用架构 ASIC 候选")
+        print("11. 直接安装已审查候选（不创建备份）")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -325,6 +351,8 @@ def _interactive(parser: ArgumentParser) -> int:
             return _run(
                 parser.parse_args(["build-architecture-candidates", *levels.split()])
             )
+        if choice == "11":
+            return _run(parser.parse_args(["install-reviewed"]))
         print("无效选择。")
 
 
