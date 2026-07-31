@@ -67,8 +67,8 @@ kind=81  Foundry 输出（输出方向）
 得到以下现代接口族的稳定局部坐标：
 
 ```text
-kind=79: PinSpec("in", input,  ( 3, 0), width=component.word_size)
-kind=81: PinSpec("out", output, (-3, 0), width=component.word_size)
+kind=79: PinSpec("in", output, ( 3, 0), width=component.word_size)
+kind=81: PinSpec("out", input,  (-3, 0), width=component.word_size)
 ```
 
 旋转沿 `src/tc_save_lab/pins.py::rotate_offset` 的四向变换：
@@ -87,6 +87,9 @@ rotation 3: kind79 ( 0,-3), kind81 ( 0, 3)
 元数据，不应单独替代几何端口规则。
 
 ### 历史接口形状边界
+
+这里的 `input` / `output` 是相对于**当前 Foundry 电路内部网络**的方向：kind79 将外部输入
+值驱动到内部，所以是 `output`；kind81 接收内部信号并交给外部，所以是 `input`。
 
 `kind=79/81` 不是一个跨版本固定形状。正式 foundry 中仍保留的旧目录存在一格端口：
 

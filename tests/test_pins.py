@@ -72,6 +72,8 @@ class PinLibraryTests(unittest.TestCase):
                 Component(kind, (0, 0), rotation, kind, word_size=64)
             )[0]
             self.assertEqual(pin.position, offset, (kind, rotation))
+            expected_direction = "output" if kind == 79 else "input"
+            self.assertEqual(pin.direction, expected_direction, (kind, rotation))
 
     def test_current_word_logic_uses_wide_body_pin_offsets(self):
         cases = {

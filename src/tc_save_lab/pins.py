@@ -96,8 +96,8 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     # port distance is three cells and is independent of word_size.  Legacy
     # OVERTRUE/LEG templates can use one-cell ports and must be analyzed with
     # their original template metadata instead of this default.
-    79: _pins(PinSpec("in", I, (3, 0))),
-    81: _pins(PinSpec("out", O, (-3, 0))),
+    79: _pins(PinSpec("in", O, (3, 0))),
+    81: _pins(PinSpec("out", I, (-3, 0))),
 }
 
 
