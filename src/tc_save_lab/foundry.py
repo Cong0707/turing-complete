@@ -16,6 +16,7 @@ import unicodedata
 import uuid
 
 from .codec import CUSTOM_DESIGN_BYTES, decode_v15, encode_v15
+from .custom_design import render_custom_design
 from .model import Circuit, Component, Point, Wire
 from .storage import DEFAULT_SAVE_ROOT
 
@@ -339,7 +340,7 @@ def create_custom_circuit(logical_key: str, source: Circuit, *, nonce: int = 0) 
         clock_speed=source.clock_speed,
         dependencies=ordered_custom_dependencies(components),
         description=source.description,
-        design=bytes(CUSTOM_DESIGN_BYTES),
+        design=render_custom_design(components),
         components=components,
         wires=source.wires,
     )

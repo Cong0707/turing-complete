@@ -6,6 +6,7 @@ import unittest
 
 from tc_save_lab.codex_library import CODEX_RECIPES, build_known_codex_library, verify_codex_recipe
 from tc_save_lab.codec import decode_v15
+from tc_save_lab.custom_design import render_custom_design
 
 
 class CodexLibraryTests(unittest.TestCase):
@@ -33,6 +34,8 @@ class CodexLibraryTests(unittest.TestCase):
                 circuit = decode_v15(Path(record["candidate"]).read_bytes())
                 self.assertNotEqual(circuit.custom_id, 0)
                 self.assertEqual(len(circuit.design), 512)
+                self.assertTrue(any(circuit.design))
+                self.assertEqual(circuit.design, render_custom_design(circuit.components))
                 self.assertEqual(circuit.dependencies, ())
 
 
