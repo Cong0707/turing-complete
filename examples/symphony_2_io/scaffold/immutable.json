@@ -1,0 +1,343 @@
+{
+  "level": "symphony_2_io",
+  "source": "campaign/symphony_2_io/circuit.data",
+  "source_format_version": 14,
+  "source_size": 518,
+  "source_sha256": "0fabd56b667a4fbf84e021d33211f468b1b8f21aeafeb6571a99b141745c5523",
+  "source_component_count": 8,
+  "source_wire_count": 0,
+  "immutable_component_count": 8,
+  "mutable_seed_component_count": 0,
+  "interface_input_count": 1,
+  "interface_output_count": 1,
+  "duplicate_source_permanent_ids": [],
+  "baseline": null,
+  "immutable_components": [
+    {
+      "kind": 118,
+      "position": [
+        -24,
+        -1
+      ],
+      "rotation": 0,
+      "permanent_id": 8272137354285170169,
+      "user_label": "Main Memory",
+      "custom_string": "",
+      "settings": [
+        0,
+        0,
+        0
+      ],
+      "buffer_size": 16777216,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 1,
+      "linked_components": [
+        [
+          2711086732312417723,
+          0,
+          "rz",
+          0,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r1",
+          1,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r2",
+          2,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r3",
+          3,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r4",
+          4,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r5",
+          5,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r6",
+          6,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r7",
+          7,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r8",
+          8,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r9",
+          9,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r10",
+          10,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r11",
+          11,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r12",
+          12,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r13",
+          13,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "sp",
+          14,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "flags",
+          15,
+          32
+        ]
+      ],
+      "selected_programs": [
+        [
+          "campaign/symphony_2_io",
+          "new_program.asm"
+        ]
+      ],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 118,
+      "position": [
+        20,
+        -1
+      ],
+      "rotation": 0,
+      "permanent_id": 2711086732312417723,
+      "user_label": "Register File",
+      "custom_string": "",
+      "settings": [
+        0,
+        0,
+        0
+      ],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -24,
+        -10
+      ],
+      "rotation": 0,
+      "permanent_id": 6951584130599049155,
+      "user_label": "Instruction",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        20,
+        -13
+      ],
+      "rotation": 0,
+      "permanent_id": 3712640338414515413,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        20,
+        -15
+      ],
+      "rotation": 0,
+      "permanent_id": 3259284663407978865,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 56,
+      "position": [
+        20,
+        -11
+      ],
+      "rotation": 0,
+      "permanent_id": 5214019468095016930,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 62,
+      "position": [
+        -11,
+        17
+      ],
+      "rotation": 0,
+      "permanent_id": 7462353562815688287,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": -2,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "input"
+    },
+    {
+      "kind": 70,
+      "position": [
+        8,
+        17
+      ],
+      "rotation": 0,
+      "permanent_id": 1221935449010810330,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": -2,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "output"
+    }
+  ]
+}

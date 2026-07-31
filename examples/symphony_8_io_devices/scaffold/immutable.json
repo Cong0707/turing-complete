@@ -1,0 +1,657 @@
+{
+  "level": "symphony_8_io_devices",
+  "source": "campaign/symphony_8_io_devices/circuit.data",
+  "source_format_version": 14,
+  "source_size": 810,
+  "source_sha256": "b773f27804d5b6183e75f0640b14de0a35f78bc1223aa14e97006d09827c630e",
+  "source_component_count": 20,
+  "source_wire_count": 1,
+  "immutable_component_count": 20,
+  "mutable_seed_component_count": 0,
+  "interface_input_count": 1,
+  "interface_output_count": 1,
+  "duplicate_source_permanent_ids": [],
+  "baseline": null,
+  "immutable_components": [
+    {
+      "kind": 118,
+      "position": [
+        -24,
+        -1
+      ],
+      "rotation": 0,
+      "permanent_id": 8272137354285170169,
+      "user_label": "Main Memory",
+      "custom_string": "",
+      "settings": [
+        0,
+        0,
+        0
+      ],
+      "buffer_size": 16777216,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 1,
+      "linked_components": [
+        [
+          2711086732312417723,
+          0,
+          "zr",
+          0,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r1",
+          1,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r2",
+          2,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r3",
+          3,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r4",
+          4,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r5",
+          5,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r6",
+          6,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r7",
+          7,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r8",
+          8,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r9",
+          9,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r10",
+          10,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r11",
+          11,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r12",
+          12,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "r13",
+          13,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "sp",
+          14,
+          32
+        ],
+        [
+          2711086732312417723,
+          0,
+          "flags",
+          15,
+          32
+        ]
+      ],
+      "selected_programs": [
+        [
+          "campaign/symphony_8_io_devices",
+          "new_program.asm"
+        ]
+      ],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 118,
+      "position": [
+        20,
+        -1
+      ],
+      "rotation": 0,
+      "permanent_id": 2711086732312417723,
+      "user_label": "Register File",
+      "custom_string": "",
+      "settings": [
+        0,
+        0,
+        0
+      ],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -24,
+        -25
+      ],
+      "rotation": 0,
+      "permanent_id": 6951584130599049155,
+      "user_label": "Instruction",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        20,
+        -13
+      ],
+      "rotation": 0,
+      "permanent_id": 3712640338414515413,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        20,
+        -15
+      ],
+      "rotation": 0,
+      "permanent_id": 3259284663407978865,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 56,
+      "position": [
+        20,
+        -11
+      ],
+      "rotation": 0,
+      "permanent_id": 5214019468095016930,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 62,
+      "position": [
+        -11,
+        17
+      ],
+      "rotation": 0,
+      "permanent_id": 7462353562815688287,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": -2,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "input"
+    },
+    {
+      "kind": 70,
+      "position": [
+        8,
+        17
+      ],
+      "rotation": 0,
+      "permanent_id": 1221935449010810330,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": -2,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "output"
+    },
+    {
+      "kind": 56,
+      "position": [
+        -24,
+        -11
+      ],
+      "rotation": 0,
+      "permanent_id": 1275762424043530788,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 56,
+      "position": [
+        -24,
+        -14
+      ],
+      "rotation": 0,
+      "permanent_id": 7564565012542235863,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 16,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 56,
+      "position": [
+        -24,
+        -17
+      ],
+      "rotation": 0,
+      "permanent_id": 8454307594780343463,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -24,
+        -19
+      ],
+      "rotation": 0,
+      "permanent_id": 8558196171553315589,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -24,
+        -21
+      ],
+      "rotation": 0,
+      "permanent_id": 4702793191923311093,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 16,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -24,
+        -23
+      ],
+      "rotation": 0,
+      "permanent_id": 4213549364827669028,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 118,
+      "position": [
+        -69,
+        -1
+      ],
+      "rotation": 0,
+      "permanent_id": 5281115256352676631,
+      "user_label": "Persistent Memory",
+      "custom_string": "",
+      "settings": [
+        0,
+        0,
+        0
+      ],
+      "buffer_size": 16777216,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 5,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 56,
+      "position": [
+        -69,
+        -11
+      ],
+      "rotation": 0,
+      "permanent_id": 8816586722554383334,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 54,
+      "position": [
+        -69,
+        -13
+      ],
+      "rotation": 0,
+      "permanent_id": 5459627757581247131,
+      "user_label": "",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 32,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 91,
+      "position": [
+        -24,
+        -52
+      ],
+      "rotation": 0,
+      "permanent_id": 1833644962190175170,
+      "user_label": "screen",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [
+        [
+          0,
+          0,
+          "",
+          0,
+          0
+        ]
+      ],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 92,
+      "position": [
+        -62,
+        -42
+      ],
+      "rotation": 0,
+      "permanent_id": 2247515609206683178,
+      "user_label": "time",
+      "custom_string": "",
+      "settings": [],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    },
+    {
+      "kind": 93,
+      "position": [
+        -61,
+        -34
+      ],
+      "rotation": 0,
+      "permanent_id": 3785573901222140398,
+      "user_label": "keyboard",
+      "custom_string": "",
+      "settings": [
+        0
+      ],
+      "buffer_size": 0,
+      "ui_order": 0,
+      "word_size": 8,
+      "immutable": true,
+      "cost_gate": -1,
+      "cost_delay": 0,
+      "little_endian": false,
+      "init_data": 0,
+      "linked_components": [],
+      "selected_programs": [],
+      "custom_id": 0,
+      "custom_word_sizes": [],
+      "role": "fixed"
+    }
+  ]
+}

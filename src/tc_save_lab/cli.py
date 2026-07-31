@@ -8,6 +8,7 @@ import json
 
 from .campaign import initialize_examples, read_level_meta
 from .codec import decode_circuit
+from .scaffold import extract_campaign_scaffolds
 from .storage import (
     DEFAULT_GAME_ROOT,
     DEFAULT_SAVE_ROOT,
@@ -38,6 +39,13 @@ def build_parser() -> ArgumentParser:
     init.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
     init.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
     init.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+
+    scaffolds = sub.add_parser(
+        "extract-scaffolds",
+        help="extract immutable interfaces for every campaign level",
+    )
+    scaffolds.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+    scaffolds.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
 
     dump = sub.add_parser("export-json", help="decode a supported circuit to JSON")
     dump.add_argument("source", type=_path)
@@ -82,6 +90,14 @@ def _run(args: Namespace) -> int:
             args.save_root,
         )
         _print_json({key: value for key, value in result.items() if key != "levels"})
+        return 0
+    if args.command == "extract-scaffolds":
+        _print_json(
+            extract_campaign_scaffolds(
+                args.project_root,
+                args.game_root / "campaign",
+            )
+        )
         return 0
     if args.command == "export-json":
         circuit = export_json(args.source, args.destination)
@@ -146,7 +162,8 @@ def _interactive(parser: ArgumentParser) -> int:
         print("\nTuring Complete Save Lab")
         print("1. 检查正式存档")
         print("2. 初始化/刷新所有主线关卡目录")
-        print("3. 写回一个关卡候选")
+        print("3. 提取所有关卡固定脚手架")
+        print("4. 写回一个关卡候选")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -156,6 +173,8 @@ def _interactive(parser: ArgumentParser) -> int:
         if choice == "2":
             return _run(parser.parse_args(["init-examples"]))
         if choice == "3":
+            return _run(parser.parse_args(["extract-scaffolds"]))
+        if choice == "4":
             level = input("关卡内部名称: ").strip()
             if level:
                 return _run(parser.parse_args(["apply", level]))
