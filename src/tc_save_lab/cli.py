@@ -8,6 +8,7 @@ import json
 
 from .campaign import initialize_examples, read_level_meta
 from .codec import decode_circuit
+from .cost import analyze_custom_costs, write_cost_report
 from .analysis import analyze_examples, analyze_file
 from .builder import build_known_candidates
 from .scaffold import extract_campaign_scaffolds
@@ -78,6 +79,13 @@ def build_parser() -> ArgumentParser:
     )
     build_known.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
+    costs = sub.add_parser(
+        "analyze-costs",
+        help="只读递归分析 foundry 自定义元件的门数与依赖",
+    )
+    costs.add_argument("--root", type=_path, default=DEFAULT_SAVE_ROOT / "schematics" / "foundry")
+    costs.add_argument("--output", type=_path)
+
     dump = sub.add_parser("export-json", help="把支持的电路格式解析为 JSON")
     dump.add_argument("source", type=_path)
     dump.add_argument("destination", type=_path)
@@ -138,6 +146,14 @@ def _run(args: Namespace) -> int:
         return 0
     if args.command == "build-known-candidates":
         _print_json(build_known_candidates(args.project_root))
+        return 0
+    if args.command == "analyze-costs":
+        if args.output:
+            report = write_cost_report(args.root, args.output)
+            report = {**report, "output": str(args.output)}
+        else:
+            report = analyze_custom_costs(args.root)
+        _print_json(report)
         return 0
     if args.command == "export-json":
         circuit = export_json(args.source, args.destination)
@@ -206,6 +222,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("4. 分析所有示例基线")
         print("5. 构建已审查的优化候选")
         print("6. 写回一个关卡候选")
+        print("7. 分析 foundry 自定义元件递归成本")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -224,6 +241,8 @@ def _interactive(parser: ArgumentParser) -> int:
             level = input("关卡内部名称: ").strip()
             if level:
                 return _run(parser.parse_args(["apply", level]))
+        if choice == "7":
+            return _run(parser.parse_args(["analyze-costs"]))
         print("无效选择。")
 
 
