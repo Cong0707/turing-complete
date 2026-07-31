@@ -58,27 +58,27 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     15: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("sum", O, (1, 0), 1), PinSpec("carry_out", O, (1, 1), 1)),
     16: _pins(*(tuple(PinSpec(f"in{i}", I, (-1, i - 3), 1) for i in range(8)) + (PinSpec("out", O, (1, 0), 8),))),
     17: _pins(PinSpec("in", I, (-1, 0), 8), *(PinSpec(f"out{i}", O, (1, i - 3), 1) for i in range(8))),
-    18: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    19: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    20: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    21: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    22: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    23: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
-    24: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0))),
+    18: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (2, 0))),
+    19: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
+    20: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
+    21: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
+    22: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
+    23: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
+    24: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     25: _pins(PinSpec("enable", I, (0, -1), 1), PinSpec("in", I, (-1, 0)), PinSpec("out", T, (1, 0))),
-    26: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0), 1)),
-    27: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0), 1)),
-    28: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("out", O, (1, 0), 1)),
-    29: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (1, 0))),
+    26: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
+    27: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
+    28: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
+    29: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (2, 0))),
     30: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (1, -1)), PinSpec("carry_out", O, (1, 0), 1)),
     31: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("low", O, (1, -1)), PinSpec("high", O, (1, 0))),
     32: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("quotient", O, (1, -1)), PinSpec("remainder", O, (1, 0))),
-    33: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 0), 8), PinSpec("out", O, (1, -1))),
-    34: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 0), 8), PinSpec("out", O, (1, -1))),
-    35: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 0), 8), PinSpec("out", O, (1, -1))),
-    36: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 0), 8), PinSpec("out", O, (1, -1))),
-    37: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 0), 8), PinSpec("out", O, (1, -1))),
-    42: _pins(PinSpec("select", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (1, 0))),
+    33: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    34: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    35: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    36: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    37: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    42: _pins(PinSpec("select", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     43: _pins(PinSpec("select", I, (-1, 0), 1), PinSpec("out0", O, (1, 0), 1), PinSpec("out1", O, (1, 1), 1)),
     44: _pins(PinSpec("select0", I, (-1, -1), 1), PinSpec("select1", I, (-1, 0), 1), *(PinSpec(f"out{i}", O, (1, i - 1), 1) for i in range(4))),
     40: _pins(*(PinSpec(f"value{i}", I, (-1, i - 4), 1) for i in range(8))),
@@ -94,13 +94,9 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
 }
 
 
-def _constant_io_distance(word_size: int) -> int:
-    return 1 if word_size in {1, 8} else 2 if word_size in {16, 32} else 3
-
-
 def pin_specs_for(component: Component) -> tuple[PinSpec, ...] | None:
     if component.kind == 46:
-        return _pins(PinSpec("out", O, (_constant_io_distance(component.word_size), 0)))
+        return _pins(PinSpec("out", O, (3, 0)))
     if component.kind == 61:
         # Current campaign word I/O components use a fixed three-cell body,
         # including the U1/U3 controls used by a few byte-level levels.  This

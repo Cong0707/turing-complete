@@ -56,6 +56,19 @@ class PinLibraryTests(unittest.TestCase):
         self.assertEqual(input_pin.position, (-14, 0))
         self.assertEqual(output_pin.position, (14, 0))
 
+    def test_current_word_logic_uses_wide_body_pin_offsets(self):
+        cases = {
+            23: {"in0": (-1, -1), "in1": (-1, 1), "out": (2, 0)},
+            29: {"in": (-1, 0), "out": (2, 0)},
+            34: {"in": (-1, -1), "shift": (-1, 1), "out": (2, 0)},
+            42: {"select": (-1, -1), "in0": (-1, 0), "in1": (-1, 1), "out": (2, 0)},
+            46: {"out": (3, 0)},
+        }
+        for kind, expected in cases.items():
+            component = Component(kind, (0, 0), 0, kind, word_size=8)
+            actual = {pin.name: pin.position for pin in positioned_pins(component)}
+            self.assertEqual(actual, expected, kind)
+
     def test_word_io_baselines_do_not_leave_fixed_ports_unconnected(self):
         levels = ("byte_nand", "byte_not", "byte_mux", "signed_negator", "saving_bytes")
         for level in levels:

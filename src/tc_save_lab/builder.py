@@ -153,7 +153,7 @@ def _byte_mux(project_root: Path, level: str) -> tuple[tuple[Component, ...], tu
         wire_from_vertices(((-14, -3), (-3, -3), (-1, -1))),
         wire_from_vertices(((-12, 0), (-1, 0))),
         wire_from_vertices(((-12, 3), (-3, 3), (-1, 1))),
-        wire_from_vertices(((1, 0), (12, 0))),
+        wire_from_vertices(((2, 0), (12, 0))),
     )
     return components, wires
 
@@ -165,8 +165,8 @@ def _byte_xor(project_root: Path, level: str) -> tuple[tuple[Component, ...], tu
     )
     wires = (
         wire_from_vertices(((-13, -4), (-4, -4), (-1, -1), (-1, 0))),
-        wire_from_vertices(((-13, 6), (-5, 6), (-1, 2), (-1, 1))),
-        wire_from_vertices(((1, 1), (15, 1))),
+        wire_from_vertices(((-13, 6), (-5, 6), (-1, 2))),
+        wire_from_vertices(((2, 1), (15, 1))),
     )
     return components, wires
 
@@ -206,7 +206,7 @@ def _signed_negator(project_root: Path, level: str) -> tuple[tuple[Component, ..
     )
     wires = (
         wire_from_vertices(((-12, 0), (-1, 0))),
-        wire_from_vertices(((1, 0), (12, 0))),
+        wire_from_vertices(((2, 0), (12, 0))),
     )
     return components, wires
 
