@@ -131,6 +131,26 @@ def _bit_inverter(project_root: Path, level: str) -> tuple[tuple[Component, ...]
     return components, wires
 
 
+def _bit_adder(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(4, (-4, 3), 0, stable_permanent_id(level, "and")),
+        Component(9, (-4, -3), 0, stable_permanent_id(level, "nor-inputs")),
+        Component(9, (4, -3), 0, stable_permanent_id(level, "nor-sum")),
+    )
+    wires = (
+        wire_from_vertices(((-13, -3), (-6, -3), (-5, -4))),
+        wire_from_vertices(((-13, -3), (-10, -3), (-5, 2))),
+        wire_from_vertices(((-13, 3), (-10, 3), (-5, -2))),
+        wire_from_vertices(((-13, 3), (-6, 3), (-5, 4))),
+        wire_from_vertices(((-2, -3), (2, -3), (3, -4))),
+        wire_from_vertices(((-2, 3), (3, -2))),
+        wire_from_vertices(((-2, 3), (8, 3))),
+        wire_from_vertices(((6, -3), (8, -3))),
+    )
+    return components, wires
+
+
 def _decoder_1(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -392,6 +412,18 @@ RECIPES: dict[str, Recipe] = {
         (("Input", 2),),
         "Output",
         lambda values: (values["Input"] & 1) ^ ((values["Input"] >> 1) & 1),
+    ),
+    "bit_adder": Recipe(
+        "bit_adder",
+        3,
+        2,
+        _bit_adder,
+        (("A", 1), ("B", 1)),
+        ("Sum", "Carry"),
+        lambda values: {
+            "Sum": values["A"] ^ values["B"],
+            "Carry": values["A"] & values["B"],
+        },
     ),
     "decoder_1": Recipe(
         "decoder_1",
