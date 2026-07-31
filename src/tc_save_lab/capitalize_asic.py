@@ -17,7 +17,7 @@ from .analysis import wire_points
 from .builder import stable_permanent_id, wire_from_vertices
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point
-from .pins import analyze_connectivity, positioned_pins
+from .pins import analyze_connectivity, positioned_pins, rotate_offset
 from .simulate import simulate_clocked_tick
 from .sprite_geometry import DEFAULT_COMPONENT_SPRITE_ROOT, sprite_alpha_cells
 
@@ -39,8 +39,8 @@ _SPRITE_BY_KIND = {
     13: "com_delay_line_bit.png",
     16: "com_maker_bit_8.png",
     17: "com_splitter_bit_8.png",
-    62: "com_level_input_switched.png",
-    70: "com_level_output_switched.png",
+    62: "com_cc_level_input.png",
+    70: "com_cc_level_output.png",
 }
 
 
@@ -79,8 +79,8 @@ def build_capitalize_asic() -> Circuit:
     level_output = _component(
         key, "level-output", 70, (45, 0), word_size=8, ui_order=-2, user_label="Capitalized"
     )
-    input_enable = _component(key, "input-enable", 2, (-55, -5))
-    output_enable = _component(key, "output-enable", 2, (40, -6))
+    input_enable = _component(key, "input-enable", 2, (-35, -8))
+    output_enable = _component(key, "output-enable", 2, (32, -8))
     splitter = _component(key, "splitter", 17, (-30, 0), word_size=8)
     letter_delay = _component(key, "letter-delay", 13, (-5, 10), init_data=0)
     maker = _component(key, "maker", 16, (20, 0))
@@ -95,12 +95,12 @@ def build_capitalize_asic() -> Circuit:
         maker,
     )
 
-    # Control pins are approached from outside the switched I/O sprites.  The
-    # long lanes are intentional: they keep every intermediate grid point out
-    # of component alpha and leave only legal pin endpoints on sprite cells.
+    # The current architecture I/O panels draw their control ports over the
+    # panel alpha.  Both control wires therefore enter from the reviewed
+    # exterior access corridor: Input from the right, Output from the left.
     wires = [
-        wire_from_vertices(((-54, -5), (-53, -5), (-53, -3), (-44, -3), (-44, -2))),
-        wire_from_vertices(((41, -6), (42, -6), (42, -3), (44, -3), (44, -2))),
+        wire_from_vertices(((-34, -8), (-32, -8), (-32, -2), (-40, -2), (-44, -2))),
+        wire_from_vertices(((33, -8), (40, -8), (40, -2), (44, -2))),
         wire_from_vertices(((-42, 0), (-31, 0))),
     ]
 
@@ -134,6 +134,7 @@ def _sprite_geometry(circuit: Circuit, sprite_root: Path) -> dict[str, object]:
 
     alpha_by_component: list[frozenset[Point]] = []
     pins_by_component: list[dict[Point, tuple[str, ...]]] = []
+    access_by_pin: dict[Point, frozenset[Point]] = {}
     unsupported: list[int] = []
     for index, component in enumerate(circuit.components):
         name = _SPRITE_BY_KIND.get(component.kind)
@@ -156,6 +157,19 @@ def _sprite_geometry(circuit: Circuit, sprite_root: Path) -> dict[str, object]:
         for pin in positioned_pins(component, index):
             names.setdefault(pin.position, []).append(pin.name)
         pins_by_component.append({point: tuple(values) for point, values in names.items()})
+        if component.kind in {62, 70}:
+            step = rotate_offset((1, 0) if component.kind == 62 else (-1, 0), component.rotation)
+            for point in names:
+                access: set[Point] = set()
+                cursor = point
+                for _ in range(16):
+                    access.add(cursor)
+                    if cursor not in alpha_by_component[-1]:
+                        break
+                    cursor = (cursor[0] + step[0], cursor[1] + step[1])
+                else:  # pragma: no cover - current I/O panels are under ten cells wide
+                    raise RuntimeError(f"unbounded Capitalize I/O access corridor: {component.kind}")
+                access_by_pin[point] = frozenset(access)
 
     owners: dict[Point, list[int]] = {}
     for index, cells in enumerate(alpha_by_component):
@@ -167,10 +181,17 @@ def _sprite_geometry(circuit: Circuit, sprite_root: Path) -> dict[str, object]:
     for wire_index, wire in enumerate(circuit.wires):
         points = wire_points(wire)
         endpoints = {points[0], points[-1]}
+        permitted = frozenset().union(
+            *(access_by_pin.get(point, frozenset({point})) for point in endpoints)
+        )
         for point in points:
             for component_index, cells in enumerate(alpha_by_component):
                 pin_names = pins_by_component[component_index].get(point, ())
-                if point in cells and not (point in endpoints and pin_names):
+                if (
+                    point in cells
+                    and not (point in endpoints and pin_names)
+                    and point not in permitted
+                ):
                     body_collisions.append((wire_index, component_index, point))
             if point not in endpoints:
                 for component_index, pins in enumerate(pins_by_component):

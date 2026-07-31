@@ -57,6 +57,8 @@ class CapitalizeAsicTests(unittest.TestCase):
         self.assertEqual(result["connectivity"]["unconnected_pins"][0]["name"], "out5")
         self.assertEqual(result["layout"]["wire_body_collision_count"], 0)
         self.assertEqual(result["layout"]["wire_interior_pin_contact_count"], 0)
+        self.assertIn("com_cc_level_input.png", result["layout"]["sprite_files"])
+        self.assertIn("com_cc_level_output.png", result["layout"]["sprite_files"])
 
         splitter = next(component for component in candidate.components if component.kind == 17)
         delay = next(component for component in candidate.components if component.kind == 13)
