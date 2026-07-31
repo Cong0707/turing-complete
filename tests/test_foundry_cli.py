@@ -36,6 +36,31 @@ class FoundryCliTests(unittest.TestCase):
         self.assertEqual(deploy.command, "deploy")
         self.assertTrue(deploy.dry_run)
 
+    def test_build_known_generates_only_project_candidates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            project = root / "project"
+            dependency_root = root / "dependencies"
+            dependency_root.mkdir()
+            output = io.StringIO()
+            with redirect_stdout(output):
+                self.assertEqual(
+                    main(
+                        [
+                            "build-known",
+                            "--project-root",
+                            str(project),
+                            "--dependency-root",
+                            str(dependency_root),
+                        ]
+                    ),
+                    0,
+                )
+            report = json.loads(output.getvalue())
+            self.assertEqual(report["component_count"], 2)
+            self.assertTrue((project / "examples" / "foundry" / "codex" / "custom-ids.json").is_file())
+            self.assertFalse((dependency_root / "codex").exists())
+
     def test_build_then_dry_run_never_writes_the_save(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
