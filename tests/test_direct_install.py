@@ -46,6 +46,11 @@ class DirectInstallTests(unittest.TestCase):
         self.assertEqual(after[1], b'"mod_4",true,"CODEX-MOD-4",\n')
         self.assertEqual(after[3], b'"maze",true,"CODEX-MAZE",\n')
 
+    def test_levels_rewrite_rejects_unquoted_duplicate_target(self):
+        duplicate = b"maze,true,OVERTURE,\n" + LEVELS
+        with self.assertRaisesRegex(ValueError, "maze=2"):
+            rewrite_architecture_selections(duplicate)
+
     def test_plan_is_read_only_and_install_writes_only_final_paths(self):
         with tempfile.TemporaryDirectory() as directory:
             project, save = self._workspace(Path(directory))
@@ -93,6 +98,20 @@ class DirectInstallTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, "destination changed"):
                     install_reviewed_direct(plan)
             self.assertEqual(destination.read_bytes(), b"user change")
+
+    def test_directory_created_after_plan_is_rejected_before_any_write(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            plan = plan_direct_install(project, save)
+            levels_before = (save / "levels.txt").read_bytes()
+            destination = plan.items[-1].destination
+            destination.mkdir(parents=True)
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                with self.assertRaisesRegex(RuntimeError, "destination changed"):
+                    install_reviewed_direct(plan)
+            for item in plan.items[:-1]:
+                self.assertFalse(item.destination.exists())
+            self.assertEqual((save / "levels.txt").read_bytes(), levels_before)
 
     def test_public_cli_exposes_direct_install(self):
         args = build_parser().parse_args(["install-reviewed", "--dry-run"])

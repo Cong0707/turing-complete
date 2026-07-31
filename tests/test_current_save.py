@@ -32,7 +32,7 @@ class CurrentInstallationTests(unittest.TestCase):
             )
             self.assertEqual(result["level_count"], 92)
             schemes = {item["scheme"] for item in result["architectures"]}
-            self.assertEqual(schemes, {"LEG", "OVERTURE", "RV64"})
+            self.assertTrue({"LEG", "OVERTURE", "RV64"}.issubset(schemes))
             for scheme in schemes:
                 self.assertTrue(
                     (

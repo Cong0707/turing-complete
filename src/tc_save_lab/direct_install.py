@@ -15,6 +15,7 @@ from .foundry import (
     FoundryDeployPlan,
     _assert_game_not_running,
     _current_plan_fingerprints,
+    _reject_reparse_tree,
     _validate_installed_plan,
     plan_codex_deployment,
 )
@@ -35,6 +36,7 @@ class DirectInstallItem:
     destination: Path
     sha256: str
     custom_id: int = 0
+    destination_before_kind: str = "absent"
     destination_before_sha256: str | None = None
 
     def to_dict(self) -> dict[str, object]:
@@ -45,6 +47,7 @@ class DirectInstallItem:
             "destination": str(self.destination),
             "sha256": self.sha256,
             "custom_id": self.custom_id,
+            "destination_before_kind": self.destination_before_kind,
             "destination_before_sha256": self.destination_before_sha256,
         }
 
@@ -92,7 +95,15 @@ def _parse_levels(payload: bytes) -> list[list[str]]:
 def rewrite_architecture_selections(payload: bytes) -> bytes:
     """Replace only the selected schematic field on the two reviewed level lines."""
 
-    _parse_levels(payload)
+    parsed = _parse_levels(payload)
+    csv_counts = {
+        level: sum(1 for row in parsed if row and row[0] == level)
+        for level in ARCHITECTURE_TARGETS
+    }
+    duplicates = [level for level, count in csv_counts.items() if count != 1]
+    if duplicates:
+        details = ", ".join(f"{level}={csv_counts[level]}" for level in duplicates)
+        raise ValueError(f"levels.txt must contain each target exactly once: {details}")
     text = payload.decode("utf-8", errors="strict")
     lines = text.splitlines(keepends=True)
     counts = {level: 0 for level in ARCHITECTURE_TARGETS}
@@ -123,11 +134,28 @@ def rewrite_architecture_selections(payload: bytes) -> bytes:
         details = ", ".join(f"{level}={counts[level]}" for level in missing)
         raise ValueError(f"levels.txt must contain each target exactly once: {details}")
     result = "".join(rewritten).encode("utf-8")
-    rows = {row[0]: row for row in _parse_levels(result) if row}
+    rows = _parse_levels(result)
     for level, (schematic, _) in ARCHITECTURE_TARGETS.items():
-        if rows[level][2] != schematic:
+        selected = [row for row in rows if row and row[0] == level]
+        if len(selected) != 1 or selected[0][2] != schematic:
             raise RuntimeError(f"failed to select {schematic} for {level}")
     return result
+
+
+def _destination_state(path: Path) -> tuple[str, str | None]:
+    current = path
+    while True:
+        if current.is_symlink():
+            raise ValueError(f"symlink is not allowed in direct install path: {current}")
+        if current.parent == current:
+            break
+        current = current.parent
+    _reject_reparse_tree(path)
+    if path.is_file():
+        return "file", sha256(path.read_bytes()).hexdigest()
+    if path.exists():
+        return "other", None
+    return "absent", None
 
 
 def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInstallItem, ...]:
@@ -135,9 +163,12 @@ def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInst
     architecture_root = (save_root / "schematics" / "architecture").resolve()
     if not architecture_root.is_dir():
         raise ValueError(f"architecture directory does not exist: {architecture_root}")
+    _reject_reparse_tree(architecture_root)
     for level, (schematic, relative_source) in ARCHITECTURE_TARGETS.items():
-        source = (project_root / relative_source).resolve()
-        destination = (architecture_root / schematic / "circuit.data").resolve()
+        source = project_root / relative_source
+        _reject_reparse_tree(source)
+        source = source.resolve()
+        destination = architecture_root / schematic / "circuit.data"
         if destination.parent.parent != architecture_root:
             raise ValueError(f"architecture target escaped save root: {destination}")
         if not source.is_file():
@@ -156,6 +187,9 @@ def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInst
             raise ValueError(f"architecture metadata digest mismatch: {source}")
         if metadata.get("deployment_target") != expected_target:
             raise ValueError(f"architecture metadata target mismatch: {source}")
+        destination_kind, destination_digest = _destination_state(destination)
+        if destination_kind == "other":
+            raise ValueError(f"architecture target is not a regular file: {destination}")
         items.append(
             DirectInstallItem(
                 kind="architecture",
@@ -163,11 +197,8 @@ def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInst
                 source=source,
                 destination=destination,
                 sha256=digest,
-                destination_before_sha256=(
-                    sha256(destination.read_bytes()).hexdigest()
-                    if destination.is_file()
-                    else None
-                ),
+                destination_before_kind=destination_kind,
+                destination_before_sha256=destination_digest,
             )
         )
     return tuple(items)
@@ -180,24 +211,29 @@ def plan_direct_install(
     project_root = project_root.resolve()
     save_root = save_root.resolve()
     foundry_plan = plan_codex_deployment(project_root, save_root)
-    foundry_items = tuple(
-        DirectInstallItem(
-            kind="foundry",
-            name=item.display_path,
-            source=item.source,
-            destination=item.destination,
-            sha256=item.sha256,
-            custom_id=item.custom_id,
-            destination_before_sha256=(
-                sha256(item.destination.read_bytes()).hexdigest()
-                if item.destination.is_file()
-                else None
-            ),
+    foundry_items_list: list[DirectInstallItem] = []
+    for item in foundry_plan.items:
+        destination_kind, destination_digest = _destination_state(item.destination)
+        if destination_kind == "other":
+            raise ValueError(f"Foundry target is not a regular file: {item.destination}")
+        foundry_items_list.append(
+            DirectInstallItem(
+                kind="foundry",
+                name=item.display_path,
+                source=item.source,
+                destination=item.destination,
+                sha256=item.sha256,
+                custom_id=item.custom_id,
+                destination_before_kind=destination_kind,
+                destination_before_sha256=destination_digest,
+            )
         )
-        for item in foundry_plan.items
-    )
+    foundry_items = tuple(foundry_items_list)
     architecture_items = _architecture_items(project_root, save_root)
     levels_path = save_root / "levels.txt"
+    _reject_reparse_tree(levels_path)
+    if not levels_path.is_file():
+        raise ValueError(f"levels.txt is not a regular file: {levels_path}")
     levels_payload = levels_path.read_bytes()
     levels_after = rewrite_architecture_selections(levels_payload)
     return DirectInstallPlan(
@@ -212,6 +248,9 @@ def plan_direct_install(
 
 
 def _validate_plan_unchanged(plan: DirectInstallPlan) -> dict[Path, bytes]:
+    _reject_reparse_tree(plan.levels_path)
+    if not plan.levels_path.is_file():
+        raise RuntimeError("levels.txt is no longer a regular file")
     if sha256(plan.levels_path.read_bytes()).hexdigest() != plan.levels_before_sha256:
         raise RuntimeError("levels.txt changed after planning")
     expected_fingerprints = (
@@ -222,18 +261,17 @@ def _validate_plan_unchanged(plan: DirectInstallPlan) -> dict[Path, bytes]:
         raise RuntimeError("Foundry source or destination changed after planning")
     payloads: dict[Path, bytes] = {}
     for item in plan.items:
-        current_destination_sha = (
-            sha256(item.destination.read_bytes()).hexdigest()
-            if item.destination.is_file()
-            else None
-        )
-        if current_destination_sha != item.destination_before_sha256:
+        current_kind, current_digest = _destination_state(item.destination)
+        expected = (item.destination_before_kind, item.destination_before_sha256)
+        if (current_kind, current_digest) != expected:
             raise RuntimeError(f"destination changed after planning: {item.destination}")
         payload = item.source.read_bytes()
         if sha256(payload).hexdigest() != item.sha256:
             raise RuntimeError(f"candidate changed after planning: {item.source}")
         decode_v15(payload)
         payloads[item.destination] = payload
+    if len(payloads) != len(plan.items):
+        raise RuntimeError("multiple candidates resolved to the same destination")
     return payloads
 
 
@@ -244,8 +282,17 @@ def install_reviewed_direct(plan: DirectInstallPlan) -> dict[str, object]:
     payloads = _validate_plan_unchanged(plan)
     _assert_game_not_running()
     for destination, payload in payloads.items():
+        item = next(item for item in plan.items if item.destination == destination)
+        current = _destination_state(destination)
+        expected = (item.destination_before_kind, item.destination_before_sha256)
+        if current != expected:
+            raise RuntimeError(f"destination changed before write: {destination}")
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(payload)
+    _assert_game_not_running()
+    _reject_reparse_tree(plan.levels_path)
+    if sha256(plan.levels_path.read_bytes()).hexdigest() != plan.levels_before_sha256:
+        raise RuntimeError("levels.txt changed before write")
     plan.levels_path.write_bytes(plan.levels_after)
     _validate_installed_plan(plan.foundry_plan)
     for item in plan.items:
