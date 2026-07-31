@@ -14,6 +14,9 @@ from .pins import I, O, T, positioned_pins
 SOURCE_KINDS = {60, 61, 63, 64, 65, 79}
 SINK_KINDS = {40, 68, 69, 73, 74, 75, 77, 81}
 CONSTANT_KINDS = {1, 2, 46}
+CLOCKED_MEMORY_KINDS = {13, 55}
+ARCHITECTURE_INPUT_KIND = 62
+ARCHITECTURE_OUTPUT_KIND = 70
 
 
 class SimulationError(ValueError):
@@ -41,6 +44,14 @@ class _UnionFind:
 class _CompiledCircuit:
     pin_networks: dict[tuple[int, str], int]
     source_widths: dict[str, int]
+
+
+@dataclass(frozen=True)
+class ClockedTickResult:
+    """Observable output events and memory state after one architecture tick."""
+
+    outputs: dict[str, int]
+    memory: dict[int, int]
 
 
 def _compile(circuit: Circuit) -> _CompiledCircuit:
@@ -156,6 +167,15 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
         return {"out": (_signed(values["in"], width) >> values["shift"]) & mask}
     if kind == 42:
         return {"out": values["in1"] if values["select"] else values["in0"]}
+    if kind == 97:
+        return {
+            "out": sum((values[f"in{index}"] & 0xFF) << (index * 8) for index in range(4))
+        }
+    if kind == 99:
+        return {
+            f"out{index}": (values["in"] >> (index * 8)) & 0xFF
+            for index in range(4)
+        }
     if kind == 43:
         selected = values["select"] & 1
         return {"out0": 1 - selected, "out1": selected}
@@ -248,6 +268,184 @@ def simulate_combinational(circuit: Circuit, inputs: dict[str, int]) -> dict[str
     """Evaluate one stable combinational state and return labeled level outputs."""
 
     return _simulate_compiled(circuit, _compile(circuit), inputs)
+
+
+def _component_key(component_index: int, permanent_id: int, user_label: str) -> str:
+    return user_label or str(permanent_id or -(component_index + 1))
+
+
+def _output_width(circuit: Circuit, component_index: int, name: str) -> int:
+    for pin in positioned_pins(circuit.components[component_index], component_index):
+        if pin.name == name:
+            return pin.width
+    raise SimulationError(f"component {component_index} has no output pin {name!r}")
+
+
+def initial_clocked_memory(circuit: Circuit) -> dict[int, int]:
+    """Return the documented v15 initial state for reviewed delay components."""
+
+    memory: dict[int, int] = {}
+    for component_index, component in enumerate(circuit.components):
+        if component.kind not in CLOCKED_MEMORY_KINDS:
+            continue
+        key = component.permanent_id or -(component_index + 1)
+        memory[key] = component.init_data & _mask(component.word_size)
+    return memory
+
+
+def _simulate_clocked_tick(
+    circuit: Circuit,
+    *,
+    compiled: _CompiledCircuit,
+    inputs: dict[str, int],
+    memory: dict[int, int] | None = None,
+) -> ClockedTickResult:
+    """Simulate one stable architecture tick with reviewed delay and I/O parts.
+
+    Delay Line outputs are read from the pre-tick memory snapshot and inputs
+    are captured only after all combinational components have settled.  The
+    architecture I/O control pins use the current runtime's exact ``== 1``
+    enable rule; disabled tristate outputs leave their network undriven.
+    """
+
+    current_memory = initial_clocked_memory(circuit)
+    if memory is not None:
+        current_memory.update(memory)
+    network_values: dict[int, int] = {}
+
+    def assign(component_index: int, pin_name: str, value: int) -> None:
+        network = compiled.pin_networks[(component_index, pin_name)]
+        previous = network_values.get(network)
+        if previous is not None and previous != value:
+            raise SimulationError(f"conflicting drivers on network {network}")
+        network_values[network] = value
+
+    pending: set[int] = set()
+    for component_index, component in enumerate(circuit.components):
+        if component.kind in CLOCKED_MEMORY_KINDS:
+            key = component.permanent_id or -(component_index + 1)
+            assign(component_index, "out", current_memory[key] & _mask(component.word_size))
+        elif component.kind in CONSTANT_KINDS:
+            value = component.init_data if component.kind == 46 else int(component.kind == 2)
+            assign(component_index, "out", value & _mask(component.word_size))
+        elif component.kind in SOURCE_KINDS:
+            key = _component_key(component_index, component.permanent_id, component.user_label)
+            try:
+                raw_value = inputs[key]
+            except KeyError as exc:
+                raise SimulationError(f"missing value for level input {key!r}") from exc
+            output_pins = [
+                pin
+                for pin in positioned_pins(component, component_index)
+                if pin.direction in {O, T}
+            ]
+            if len(output_pins) == 1:
+                assign(component_index, output_pins[0].name, raw_value & _mask(output_pins[0].width))
+            else:
+                for bit, pin in enumerate(output_pins):
+                    assign(component_index, pin.name, (raw_value >> bit) & 1)
+        elif component.kind not in SINK_KINDS | {ARCHITECTURE_OUTPUT_KIND}:
+            pending.add(component_index)
+
+    while pending:
+        progressed = False
+        for component_index in tuple(pending):
+            component = circuit.components[component_index]
+            pins = positioned_pins(component, component_index)
+            input_pins = [pin for pin in pins if pin.direction == I]
+            if not all(compiled.pin_networks[(component_index, pin.name)] in network_values for pin in input_pins):
+                continue
+            values = {
+                pin.name: network_values[compiled.pin_networks[(component_index, pin.name)]]
+                for pin in input_pins
+            }
+            if component.kind == ARCHITECTURE_INPUT_KIND:
+                if values["control"] == 1:
+                    key = _component_key(component_index, component.permanent_id, component.user_label)
+                    try:
+                        raw_value = inputs[key]
+                    except KeyError as exc:
+                        raise SimulationError(f"missing architecture input {key!r}") from exc
+                    assign(component_index, "value", raw_value & _mask(component.word_size))
+            elif component.kind == 25:
+                if values["enable"] == 1:
+                    assign(component_index, "out", values["in"] & _mask(component.word_size))
+            else:
+                for name, value in _evaluate(component.kind, component.word_size, values).items():
+                    assign(component_index, name, value & _mask(_output_width(circuit, component_index, name)))
+            pending.remove(component_index)
+            progressed = True
+        if not progressed:
+            unresolved = [circuit.components[index].permanent_id for index in sorted(pending)]
+            raise SimulationError(f"unresolved clocked components: {unresolved}")
+
+    outputs: dict[str, int] = {}
+    for component_index, component in enumerate(circuit.components):
+        if component.kind != ARCHITECTURE_OUTPUT_KIND:
+            continue
+        control_network = compiled.pin_networks[(component_index, "control")]
+        if control_network not in network_values:
+            raise SimulationError(f"architecture output {component.permanent_id} control is undriven")
+        if network_values[control_network] != 1:
+            continue
+        value_network = compiled.pin_networks[(component_index, "value")]
+        if value_network not in network_values:
+            raise SimulationError(f"architecture output {component.permanent_id} value is undriven")
+        key = _component_key(component_index, component.permanent_id, component.user_label)
+        outputs[key] = network_values[value_network] & _mask(component.word_size)
+
+    next_memory: dict[int, int] = {}
+    for component_index, component in enumerate(circuit.components):
+        if component.kind not in CLOCKED_MEMORY_KINDS:
+            continue
+        input_network = compiled.pin_networks[(component_index, "in")]
+        if input_network not in network_values:
+            raise SimulationError(f"delay input {component.permanent_id} is undriven")
+        key = component.permanent_id or -(component_index + 1)
+        next_memory[key] = network_values[input_network] & _mask(component.word_size)
+    return ClockedTickResult(outputs=outputs, memory=next_memory)
+
+
+def simulate_clocked_tick(
+    circuit: Circuit,
+    *,
+    inputs: dict[str, int],
+    memory: dict[int, int] | None = None,
+) -> ClockedTickResult:
+    """Simulate one architecture tick, compiling the circuit for this call."""
+
+    return _simulate_clocked_tick(
+        circuit,
+        compiled=_compile(circuit),
+        inputs=inputs,
+        memory=memory,
+    )
+
+
+def simulate_clocked_ticks(
+    circuit: Circuit,
+    *,
+    inputs: dict[str, int],
+    tick_count: int,
+    memory: dict[int, int] | None = None,
+) -> tuple[ClockedTickResult, ...]:
+    """Simulate several consecutive ticks while compiling connectivity once."""
+
+    if tick_count < 0:
+        raise ValueError("tick_count must not be negative")
+    compiled = _compile(circuit)
+    current_memory = memory
+    results: list[ClockedTickResult] = []
+    for _ in range(tick_count):
+        result = _simulate_clocked_tick(
+            circuit,
+            compiled=compiled,
+            inputs=inputs,
+            memory=current_memory,
+        )
+        results.append(result)
+        current_memory = result.memory
+    return tuple(results)
 
 
 def verify_truth_table(

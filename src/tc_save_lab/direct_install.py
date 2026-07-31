@@ -34,6 +34,7 @@ ARCHITECTURE_TARGETS: dict[str, tuple[str, Path]] = {
     "maze": ("CODEX-MAZE", Path("examples/maze/candidate/circuit.data")),
     "mod_4": ("CODEX-MOD-4", Path("examples/mod_4/candidate/circuit.data")),
     "nim": ("CODEX-NIM", Path("examples/nim/candidate/circuit.data")),
+    "rng": ("CODEX-RNG", Path("examples/rng/candidate/circuit.data")),
 }
 
 

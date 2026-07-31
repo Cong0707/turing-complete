@@ -10,6 +10,7 @@ from .circumference_asic import write_circumference_asic
 from .maze_asic import write_maze_asic
 from .mod4_asic import write_mod_4_asic
 from .nim_asic import write_nim_asic
+from .rng_asic import write_rng_asic
 
 
 ArchitectureWriter = Callable[[Path], dict[str, object]]
@@ -21,6 +22,7 @@ ARCHITECTURE_CANDIDATES: dict[str, ArchitectureWriter] = {
     "mod_4": write_mod_4_asic,
     "maze": write_maze_asic,
     "nim": write_nim_asic,
+    "rng": write_rng_asic,
 }
 
 

@@ -100,6 +100,18 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     # their original template metadata instead of this default.
     79: _pins(PinSpec("in", O, (3, 0))),
     81: _pins(PinSpec("out", I, (-3, 0))),
+    # The current v15 ``word_4`` pair splits or combines four low-to-high
+    # bytes.  Its widths are fixed by the component rather than by the
+    # serialized ``word_size`` field (which records 8 for the splitter and
+    # 32 for the maker in current saves).
+    97: _pins(
+        *(PinSpec(f"in{index}", I, (-1, index - 1), 8) for index in range(4)),
+        PinSpec("out", O, (1, 0), 32),
+    ),
+    99: _pins(
+        PinSpec("in", I, (-1, 0), 32),
+        *(PinSpec(f"out{index}", O, (1, index - 1), 8) for index in range(4)),
+    ),
     109: _pins(
         PinSpec("in", I, (-1, 0), 2),
         PinSpec("out0", O, (1, -1), 1),
@@ -124,6 +136,19 @@ def pin_specs_for(component: Component) -> tuple[PinSpec, ...] | None:
         return _pins(PinSpec("value", O, (3, 0)))
     if component.kind == 62:
         return _pins(PinSpec("control", I, (1, -2), 1), PinSpec("value", T, (3, 0)))
+    if component.kind == 55:
+        # The visual body of a word Delay Line grows at byte, half-word and
+        # word boundaries.  The U32 geometry is independently evidenced by
+        # current component metadata: input ``(-2, 0)``, output ``(+2, 0)``.
+        # The same current component family uses one and three cells for U8
+        # and U64 respectively.
+        if not 1 <= component.word_size <= 64:
+            return None
+        span = 1 if component.word_size <= 8 else 2 if component.word_size <= 32 else 3
+        return _pins(
+            PinSpec("in", I, (-span, 0)),
+            PinSpec("out", O, (span, 0)),
+        )
     if component.kind == 69:
         return _pins(PinSpec("value", I, (-3, 0)))
     if component.kind == 70:

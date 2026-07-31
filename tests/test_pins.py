@@ -113,6 +113,35 @@ class PinLibraryTests(unittest.TestCase):
             actual = {pin.name: pin.position for pin in positioned_pins(component)}
             self.assertEqual(actual, expected, kind)
 
+    def test_current_word_delay_and_four_byte_adapters_have_reviewed_pins(self):
+        delay = Component(55, (10, 20), 0, 1, word_size=32)
+        splitter = Component(99, (0, 0), 0, 2, word_size=8)
+        maker = Component(97, (0, 0), 0, 3, word_size=32)
+        self.assertEqual(
+            {pin.name: (pin.position, pin.width) for pin in positioned_pins(delay)},
+            {"in": ((8, 20), 32), "out": ((12, 20), 32)},
+        )
+        self.assertEqual(
+            {pin.name: (pin.position, pin.width) for pin in positioned_pins(splitter)},
+            {
+                "in": ((-1, 0), 32),
+                "out0": ((1, -1), 8),
+                "out1": ((1, 0), 8),
+                "out2": ((1, 1), 8),
+                "out3": ((1, 2), 8),
+            },
+        )
+        self.assertEqual(
+            {pin.name: (pin.position, pin.width) for pin in positioned_pins(maker)},
+            {
+                "in0": ((-1, -1), 8),
+                "in1": ((-1, 0), 8),
+                "in2": ((-1, 1), 8),
+                "in3": ((-1, 2), 8),
+                "out": ((1, 0), 32),
+            },
+        )
+
     def test_word_io_baselines_do_not_leave_fixed_ports_unconnected(self):
         levels = ("byte_nand", "byte_not", "byte_mux", "signed_negator", "saving_bytes")
         for level in levels:
