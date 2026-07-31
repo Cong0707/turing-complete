@@ -81,6 +81,7 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     42: _pins(PinSpec("select", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (1, 0))),
     43: _pins(PinSpec("select", I, (-1, 0), 1), PinSpec("out0", O, (1, 0), 1), PinSpec("out1", O, (1, 1), 1)),
     44: _pins(PinSpec("select0", I, (-1, -1), 1), PinSpec("select1", I, (-1, 0), 1), *(PinSpec(f"out{i}", O, (1, i - 1), 1) for i in range(4))),
+    40: _pins(*(PinSpec(f"value{i}", I, (-1, i - 4), 1) for i in range(8))),
     45: _pins(PinSpec("disable", I, (0, -4), 1), *(PinSpec(f"select{i}", I, (-1, i - 3), 1) for i in range(3)), *(PinSpec(f"out{i}", O, (1, i - 3), 1) for i in range(8))),
     60: _pins(PinSpec("value", O, (1, 0), 1)),
     63: _pins(PinSpec("value0", O, (0, -1), 1), PinSpec("value1", O, (0, 1), 1)),
@@ -260,7 +261,7 @@ def analyze_connectivity(
         source = queue.popleft()
         visited += 1
         for destination in successors[source]:
-            weight = 0 if components[destination].kind in {68, 69, 70, 73, 74, 75} else 1
+            weight = 0 if components[destination].kind in {40, 68, 69, 70, 73, 74, 75} else 1
             depths[destination] = max(depths[destination], depths[source] + weight)
             indegree[destination] -= 1
             if indegree[destination] == 0:

@@ -7,7 +7,7 @@ import unittest
 from tc_save_lab.builder import build_recipe
 from tc_save_lab.codec import decode_v15
 from tc_save_lab.model import Component
-from tc_save_lab.simulate import SimulationError, simulate_combinational
+from tc_save_lab.simulate import SimulationError, simulate_combinational, verify_truth_table
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +40,20 @@ class CombinationalSimulationTests(unittest.TestCase):
         broken = replace(circuit, components=circuit.components[:2] + (component,) + circuit.components[3:])
         with self.assertRaises(SimulationError):
             simulate_combinational(broken, {"Input": 0})
+
+    def test_multi_input_truth_table_returns_exact_vector_count(self):
+        build_recipe(PROJECT_ROOT, "byte_mux")
+        path = PROJECT_ROOT / "examples" / "byte_mux" / "candidate" / "circuit.data"
+        circuit = decode_v15(path.read_bytes())
+
+        tested = verify_truth_table(
+            circuit,
+            inputs={"Select": 1, "A": 2, "B": 2},
+            output_label="Output",
+            expected=lambda values: values["B"] if values["Select"] else values["A"],
+        )
+
+        self.assertEqual(tested, 32)
 
 
 if __name__ == "__main__":

@@ -11,7 +11,7 @@ from .analysis import analyze_examples
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point, Wire
 from .pins import analyze_connectivity
-from .simulate import verify_single_input_truth_table
+from .simulate import verify_truth_table
 
 
 DIRECTION_BY_STEP = {
@@ -32,7 +32,8 @@ class Recipe:
     declared_gate: int
     declared_delay: int
     build: object
-    input_width: int
+    inputs: tuple[tuple[str, int], ...]
+    output_label: str
     expected: object
 
 
@@ -143,46 +144,163 @@ def _decoder_1(project_root: Path, level: str) -> tuple[tuple[Component, ...], t
     return components, wires
 
 
+def _byte_mux(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(42, (0, 0), 0, stable_permanent_id(level, "mux"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-14, -3), (-3, -3), (-1, -1))),
+        wire_from_vertices(((-12, 0), (-1, 0))),
+        wire_from_vertices(((-12, 3), (-3, 3), (-1, 1))),
+        wire_from_vertices(((1, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _byte_xor(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(23, (0, 1), 0, stable_permanent_id(level, "xor"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-13, -4), (-4, -4), (-1, -1), (-1, 0))),
+        wire_from_vertices(((-13, 6), (-5, 6), (-1, 2), (-1, 1))),
+        wire_from_vertices(((1, 1), (15, 1))),
+    )
+    return components, wires
+
+
+def _decoder_2(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(44, (0, -1), 0, stable_permanent_id(level, "decoder")),
+    )
+    wires = (
+        wire_from_vertices(((-11, -1), (-3, -1), (-2, -2), (-1, -2))),
+        wire_from_vertices(((-11, 1), (-3, 1), (-1, -1))),
+        *(wire_from_vertices(((1, y), (12, y))) for y in range(-2, 2)),
+    )
+    return components, wires
+
+
+def _decoder_3(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(45, (0, -2), 0, stable_permanent_id(level, "decoder")),
+    )
+    wires = (
+        wire_from_vertices(((-11, -5), (-1, -5))),
+        wire_from_vertices(((-11, -4), (-1, -4))),
+        wire_from_vertices(((-11, -3), (-1, -3))),
+        wire_from_vertices(((-11, 1), (-7, 1), (0, -6))),
+        *(wire_from_vertices(((1, y), (11, y))) for y in range(-5, 3)),
+    )
+    return components, wires
+
+
+def _signed_negator(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(29, (0, 0), 0, stable_permanent_id(level, "negator"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-12, 0), (-1, 0))),
+        wire_from_vertices(((1, 0), (12, 0))),
+    )
+    return components, wires
+
+
 RECIPES: dict[str, Recipe] = {
     "or_gate_3": Recipe(
         "or_gate_3",
         2,
         2,
         lambda root, level: _triple_input_two_gate(root, level, 7),
-        3,
-        lambda value: int(value != 0),
+        (("Input", 3),),
+        "Output",
+        lambda values: int(values["Input"] != 0),
     ),
     "and_gate_3": Recipe(
         "and_gate_3",
         2,
         2,
         lambda root, level: _triple_input_two_gate(root, level, 4),
-        3,
-        lambda value: int(value == 0b111),
+        (("Input", 3),),
+        "Output",
+        lambda values: int(values["Input"] == 0b111),
     ),
     "xnor": Recipe(
         "xnor",
         3,
         2,
         _xnor,
-        2,
-        lambda value: int((value & 1) == ((value >> 1) & 1)),
+        (("Input", 2),),
+        "Output",
+        lambda values: int((values["Input"] & 1) == ((values["Input"] >> 1) & 1)),
     ),
     "bit_inverter": Recipe(
         "bit_inverter",
         3,
         2,
         _bit_inverter,
-        2,
-        lambda value: (value & 1) ^ ((value >> 1) & 1),
+        (("Input", 2),),
+        "Output",
+        lambda values: (values["Input"] & 1) ^ ((values["Input"] >> 1) & 1),
     ),
     "decoder_1": Recipe(
         "decoder_1",
         1,
         1,
         _decoder_1,
-        1,
-        lambda value: (1 - (value & 1)) | ((value & 1) << 1),
+        (("Input", 1),),
+        "Output",
+        lambda values: (1 - (values["Input"] & 1)) | ((values["Input"] & 1) << 1),
+    ),
+    "byte_mux": Recipe(
+        "byte_mux",
+        33,
+        2,
+        _byte_mux,
+        (("Select", 1), ("A", 8), ("B", 8)),
+        "Output",
+        lambda values: values["B"] if values["Select"] else values["A"],
+    ),
+    "byte_xor": Recipe(
+        "byte_xor",
+        24,
+        2,
+        _byte_xor,
+        (("A", 8), ("B", 8)),
+        "Result",
+        lambda values: values["A"] ^ values["B"],
+    ),
+    "decoder_2": Recipe(
+        "decoder_2",
+        4,
+        2,
+        _decoder_2,
+        (("Input", 2),),
+        "Output",
+        lambda values: 1 << values["Input"],
+    ),
+    "decoder_3": Recipe(
+        "decoder_3",
+        14,
+        3,
+        _decoder_3,
+        (("Input", 3), ("Disable", 1)),
+        "Output",
+        lambda values: 0 if values["Disable"] else 1 << values["Input"],
+    ),
+    "signed_negator": Recipe(
+        "signed_negator",
+        24,
+        5,
+        _signed_negator,
+        (("Input", 8),),
+        "Output",
+        lambda values: (-values["Input"]) & 0xFF,
     ),
 }
 
@@ -208,11 +326,10 @@ def build_recipe(project_root: Path, level: str) -> dict[str, object]:
         )
     if connectivity["cycle_component_count"]:
         raise ValueError(f"recipe {level} unexpectedly contains a logic cycle")
-    tested_vectors = verify_single_input_truth_table(
+    tested_vectors = verify_truth_table(
         candidate,
-        input_label="Input",
-        input_width=recipe.input_width,
-        output_label="Output",
+        inputs=dict(recipe.inputs),
+        output_label=recipe.output_label,
         expected=recipe.expected,
     )
     payload = encode_v15(candidate)

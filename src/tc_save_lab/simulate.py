@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import dataclass
+from itertools import product
 
 from .analysis import wire_points
 from .model import Circuit
@@ -11,7 +12,7 @@ from .pins import I, O, T, positioned_pins
 
 
 SOURCE_KINDS = {60, 61, 63, 64, 65}
-SINK_KINDS = {68, 69, 73, 74, 75}
+SINK_KINDS = {40, 68, 69, 73, 74, 75}
 CONSTANT_KINDS = {1, 2}
 
 
@@ -137,13 +138,25 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
         return {"out": total & mask, "carry_out": (total >> width) & 1}
     if kind == 42:
         return {"out": values["in1"] if values["select"] else values["in0"]}
+    if kind == 43:
+        selected = values["select"] & 1
+        return {"out0": 1 - selected, "out1": selected}
+    if kind == 44:
+        selected = (values["select0"] & 1) | ((values["select1"] & 1) << 1)
+        return {f"out{index}": int(index == selected) for index in range(4)}
+    if kind == 45:
+        if values["disable"] & 1:
+            return {f"out{index}": 0 for index in range(8)}
+        selected = sum((values[f"select{index}"] & 1) << index for index in range(3))
+        return {f"out{index}": int(index == selected) for index in range(8)}
     raise SimulationError(f"component kind {kind} has no reviewed combinational semantics")
 
 
-def simulate_combinational(circuit: Circuit, inputs: dict[str, int]) -> dict[str, int]:
-    """Evaluate one stable combinational state and return labeled level outputs."""
-
-    compiled = _compile(circuit)
+def _simulate_compiled(
+    circuit: Circuit,
+    compiled: _CompiledCircuit,
+    inputs: dict[str, int],
+) -> dict[str, int]:
     network_values: dict[int, int] = {}
 
     def assign(component_index: int, pin_name: str, value: int) -> None:
@@ -212,6 +225,49 @@ def simulate_combinational(circuit: Circuit, inputs: dict[str, int]) -> dict[str
     return outputs
 
 
+def simulate_combinational(circuit: Circuit, inputs: dict[str, int]) -> dict[str, int]:
+    """Evaluate one stable combinational state and return labeled level outputs."""
+
+    return _simulate_compiled(circuit, _compile(circuit), inputs)
+
+
+def verify_truth_table(
+    circuit: Circuit,
+    *,
+    inputs: dict[str, int],
+    output_label: str,
+    expected: object,
+) -> int:
+    """Exhaustively verify labeled inputs without rebuilding the network per vector.
+
+    ``inputs`` maps each level-input label to its bit width. ``expected`` receives
+    one ``dict[str, int]`` containing the current vector and returns the expected
+    packed value for ``output_label``.
+    """
+
+    if not callable(expected):
+        raise TypeError("expected must be callable")
+    if not inputs:
+        raise ValueError("at least one input is required")
+    if any(width <= 0 for width in inputs.values()):
+        raise ValueError("input widths must be positive")
+
+    labels = tuple(inputs)
+    compiled = _compile(circuit)
+    tested = 0
+    for raw_values in product(*(range(1 << inputs[label]) for label in labels)):
+        vector = dict(zip(labels, raw_values))
+        actual = _simulate_compiled(circuit, compiled, vector)[output_label]
+        wanted = expected(vector)
+        if actual != wanted:
+            rendered = ", ".join(f"{label}={vector[label]}" for label in labels)
+            raise SimulationError(
+                f"truth table mismatch at {rendered}: expected {wanted}, got {actual}"
+            )
+        tested += 1
+    return tested
+
+
 def verify_single_input_truth_table(
     circuit: Circuit,
     *,
@@ -222,13 +278,9 @@ def verify_single_input_truth_table(
 ) -> int:
     """Exhaustively verify a single packed input against a reviewed oracle."""
 
-    if not callable(expected):
-        raise TypeError("expected must be callable")
-    for value in range(1 << input_width):
-        actual = simulate_combinational(circuit, {input_label: value})[output_label]
-        wanted = expected(value)
-        if actual != wanted:
-            raise SimulationError(
-                f"truth table mismatch at {input_label}={value}: expected {wanted}, got {actual}"
-            )
-    return 1 << input_width
+    return verify_truth_table(
+        circuit,
+        inputs={input_label: input_width},
+        output_label=output_label,
+        expected=lambda values: expected(values[input_label]),
+    )
