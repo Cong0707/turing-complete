@@ -19,6 +19,8 @@ from tc_save_lab.binary_search_asic import (
     write_binary_search_asic,
 )
 from tc_save_lab.codec import decode_v15
+from tc_save_lab.analysis import wire_points
+from tc_save_lab.pins import positioned_pins
 
 
 class BinarySearchAsicTests(unittest.TestCase):
@@ -75,9 +77,41 @@ class BinarySearchAsicTests(unittest.TestCase):
             dict(expected_logic),
         )
         self.assertEqual(actual[13], 8)
-        self.assertEqual(len(candidate.components), 50)
-        self.assertEqual(len(candidate.wires), 92)
+        self.assertEqual(actual[17], 1)
+        self.assertEqual(len(candidate.components), 51)
+        self.assertEqual(len(candidate.wires), 93)
         self.assertEqual(result["connectivity"]["unit_logic_depth"], 8)
+        self.assertEqual(result["connectivity"]["unconnected_pin_count"], 7)
+        self.assertEqual(
+            {
+                pin["name"]
+                for pin in result["connectivity"]["unconnected_pins"]
+            },
+            {f"out{bit}" for bit in range(1, 8)},
+        )
+        level_input = next(component for component in candidate.components if component.kind == 62)
+        splitter = next(component for component in candidate.components if component.kind == 17)
+        level_output = next(component for component in candidate.components if component.kind == 70)
+        self.assertEqual(level_input.word_size, 8)
+        self.assertEqual(level_input.ui_order, -2)
+        self.assertEqual(splitter.word_size, 8)
+        self.assertEqual(level_output.word_size, 8)
+        self.assertEqual(level_output.ui_order, -2)
+        input_value = next(
+            pin.position for pin in positioned_pins(level_input) if pin.name == "value"
+        )
+        splitter_input = next(
+            pin.position for pin in positioned_pins(splitter) if pin.name == "in"
+        )
+        splitter_out0 = next(
+            pin.position for pin in positioned_pins(splitter) if pin.name == "out0"
+        )
+        endpoints = [
+            frozenset((points[0], points[-1]))
+            for points in (wire_points(wire) for wire in candidate.wires)
+        ]
+        self.assertIn(frozenset((input_value, splitter_input)), endpoints)
+        self.assertEqual(sum(splitter_out0 in pair for pair in endpoints), 5)
         delays = [component for component in candidate.components if component.kind == 13]
         self.assertEqual(
             {component.position[1]: component.init_data for component in delays},

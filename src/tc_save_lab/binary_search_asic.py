@@ -18,6 +18,9 @@ from .pins import I, O, T, analyze_connectivity, positioned_pins
 
 WORD_BITS = 8
 WORD_MAX = (1 << WORD_BITS) - 1
+# The state held by the delay elements is the previous guess.  The first
+# combinational evaluation turns this into the required first midpoint 0x7F.
+INITIAL_REGISTER_STATE = 0x7E
 INITIAL_STATE = 0x7F
 PRIMITIVE_GATE_COUNT = 37
 STATE_DELAY_GATE_COST = 5
@@ -134,6 +137,23 @@ def evaluate_synthesized_next_state(state: int, over: int) -> int:
             raise RuntimeError(f"unsupported mapped gate kind {gate.kind}")
         values[gate.output] = result
     return sum(values[f"n{bit}"] << bit for bit in range(WORD_BITS))
+
+
+def evaluate_timed_guesses(input_feedback: tuple[int, ...]) -> tuple[int, ...]:
+    """Evaluate the registered architecture at each feedback sample.
+
+    The level consumes the output before updating ``over``.  ``Q`` therefore
+    holds the preceding guess, while both the output and the Delay inputs must
+    receive ``F(Q, over)`` in the current tick.
+    """
+
+    register_state = INITIAL_REGISTER_STATE
+    guesses: list[int] = []
+    for over in input_feedback:
+        guess = evaluate_synthesized_next_state(register_state, over)
+        guesses.append(guess)
+        register_state = guess
+    return tuple(guesses)
 
 
 def enumerate_search_paths() -> tuple[SearchPath, ...]:
@@ -319,7 +339,7 @@ def _route_around_components(
 
 
 def _layout_safety(circuit: Circuit) -> dict[str, int]:
-    """Count contacts that the game can interpret as unintended connections."""
+    """Count contacts that can obstruct a component or pin at runtime."""
 
     footprints = _component_footprints(circuit.components)
     pins_by_component = [
@@ -371,20 +391,24 @@ def build_binary_search_asic() -> Circuit:
             **kwargs,
         )
 
-    level_input = component("level-input", 62, (-100, 0), word_size=1)
+    # Code Breaker exposes the feedback through an U8 architecture port.  Only
+    # its least-significant bit is meaningful, so split it explicitly instead
+    # of relying on an implicit U8-to-U1 conversion in the game runtime.
+    level_input = component("level-input", 62, (-100, 0), word_size=8, ui_order=-2)
     input_enable = component("input-enable", 2, (-105, -5))
+    splitter = component("feedback-splitter", 17, (-90, 0), word_size=8)
     delay_components = {
         bit: component(
             f"state-bit-{bit}",
             13,
             (-65, bit * 12 - 42),
-            init_data=int(bit < WORD_BITS - 1),
+            init_data=(INITIAL_REGISTER_STATE >> bit) & 1,
         )
         for bit in range(WORD_BITS)
     }
     state_maker = component("state-maker", 16, (150, 0))
     output_enable = component("output-enable", 2, (173, -5))
-    level_output = component("level-output", 70, (170, 0), word_size=8)
+    level_output = component("level-output", 70, (170, 0), word_size=8, ui_order=-2)
 
     depths = _gate_depths()
     gates_by_depth: dict[int, list[GateDefinition]] = {}
@@ -404,6 +428,7 @@ def build_binary_search_asic() -> Circuit:
     components = (
         level_input,
         input_enable,
+        splitter,
         *(delay_components[bit] for bit in range(WORD_BITS)),
         state_maker,
         output_enable,
@@ -411,7 +436,7 @@ def build_binary_search_asic() -> Circuit:
         *(gate_components[gate.output] for gate in GATE_DEFINITIONS),
     )
 
-    signal_sources = {"over": _pin(level_input, "value")}
+    signal_sources = {"over": _pin(splitter, "out0")}
     signal_sources.update(
         {f"s{bit}": _pin(delay_components[bit], "out") for bit in range(WORD_BITS)}
     )
@@ -430,6 +455,7 @@ def build_binary_search_asic() -> Circuit:
 
     wires = [
         route(_output_pin(input_enable), _pin(level_input, "control")),
+        route(_pin(level_input, "value"), _pin(splitter, "in")),
         route(_output_pin(output_enable), _pin(level_output, "control")),
         route(_pin(state_maker, "out"), _pin(level_output, "value")),
     ]
@@ -442,7 +468,7 @@ def build_binary_search_asic() -> Circuit:
             )
     for bit in range(WORD_BITS):
         wires.append(
-            route(signal_sources[f"s{bit}"], _pin(state_maker, f"in{bit}"))
+            route(signal_sources[f"n{bit}"], _pin(state_maker, f"in{bit}"))
         )
         wires.append(
             route(signal_sources[f"n{bit}"], _pin(delay_components[bit], "in"))
@@ -491,14 +517,34 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
                     f"expected={expected}, got={synthesized}"
                 )
 
+    for path in paths:
+        actual_guesses = evaluate_timed_guesses((0, *path.feedback))
+        if actual_guesses != path.guesses:
+            raise RuntimeError(
+                "registered output timing mismatch: "
+                f"feedback={path.feedback}, expected={path.guesses}, "
+                f"got={actual_guesses}"
+            )
+
     cycle_histogram = Counter(path.cycles for path in paths)
     if max(cycle_histogram) != EXPECTED_MAXIMUM_CYCLES:
         raise RuntimeError(f"cycle regression: {dict(cycle_histogram)!r}")
 
     connectivity = analyze_connectivity(candidate)
+    expected_unused_splitter_outputs = {
+        f"out{bit}" for bit in range(1, WORD_BITS)
+    }
+    unexpected_unconnected = [
+        pin
+        for pin in connectivity["unconnected_pins"]
+        if not (
+            pin["kind"] == 17
+            and pin["name"] in expected_unused_splitter_outputs
+            and pin["direction"] == O
+        )
+    ]
     for field in (
         "unsupported_component_kind_counts",
-        "unconnected_pin_count",
         "multi_driver_network_count",
         "width_mismatch_network_count",
         "cycle_component_count",
@@ -508,6 +554,11 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
                 f"Code Breaker ASIC failed connectivity check {field}: "
                 f"{connectivity[field]}"
             )
+    if unexpected_unconnected or connectivity["unconnected_pin_count"] != WORD_BITS - 1:
+        raise RuntimeError(
+            "Code Breaker ASIC has unexpected unconnected pins: "
+            f"{connectivity['unconnected_pins']}"
+        )
 
     kind_counts = Counter(component.kind for component in candidate.components)
     expected_logic_counts = Counter(gate.kind for gate in GATE_DEFINITIONS)
@@ -519,8 +570,31 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
             f"mapped primitive count changed: {actual_logic_counts!r} != "
             f"{expected_logic_counts!r}"
         )
-    if kind_counts[13] != WORD_BITS or kind_counts[78]:
+    if kind_counts[13] != WORD_BITS or kind_counts[17] != 1 or kind_counts[78]:
         raise RuntimeError(f"unexpected state/custom components: {kind_counts!r}")
+    input_components = [component for component in candidate.components if component.kind == 62]
+    if len(input_components) != 1 or input_components[0].word_size != WORD_BITS:
+        raise RuntimeError("Code Breaker ASIC must expose an U8 level input")
+    splitters = [component for component in candidate.components if component.kind == 17]
+    if len(splitters) != 1 or splitters[0].word_size != WORD_BITS:
+        raise RuntimeError("Code Breaker ASIC must use one U8 feedback splitter")
+    input_value = _pin(input_components[0], "value")
+    splitter_input = _pin(splitters[0], "in")
+    splitter_out0 = _pin(splitters[0], "out0")
+    wire_endpoints = [
+        frozenset((points[0], points[-1]))
+        for points in (wire_points(wire) for wire in candidate.wires)
+    ]
+    if frozenset((input_value, splitter_input)) not in wire_endpoints:
+        raise RuntimeError("Code Breaker ASIC does not wire Level Input U8 to Splitter8")
+    expected_over_fanout = sum(
+        "over" in gate.fanins for gate in GATE_DEFINITIONS
+    )
+    actual_over_fanout = sum(splitter_out0 in endpoints for endpoints in wire_endpoints)
+    if actual_over_fanout != expected_over_fanout:
+        raise RuntimeError(
+            "Code Breaker ASIC must drive every feedback consumer from Splitter8.out0"
+        )
     if candidate.dependencies:
         raise RuntimeError("Code Breaker ASIC must not depend on an old architecture")
     if (candidate.gate, candidate.delay) != (EXPECTED_GATE, EXPECTED_DELAY):

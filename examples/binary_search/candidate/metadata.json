@@ -5,10 +5,10 @@
   "strategy": "current-v15 balanced-midpoint finite-state ASIC",
   "validation_status": "offline-verified; game runtime and scoring pending",
   "deployment_target": "schematics/architecture/CODEX-BINARY-SEARCH/circuit.data",
-  "sha256": "3a4fe5bf7a610d63edba38a3a2c90a23b4c6db9ea6565b995e7d563ea3300fb1",
+  "sha256": "132e75f44db0a9460c5b885c986160ce34d35bcaaae5609a27157075169a445b",
   "format_version": 15,
-  "component_count": 50,
-  "wire_count": 92,
+  "component_count": 51,
+  "wire_count": 93,
   "gate": 77,
   "delay": 8,
   "minimum_cycles": 8,
@@ -40,19 +40,98 @@
     "7": 14,
     "13": 8,
     "16": 1,
+    "17": 1,
     "62": 1,
     "70": 1
   },
   "connectivity": {
-    "effective_component_count": 50,
-    "supported_component_count": 50,
+    "effective_component_count": 51,
+    "supported_component_count": 51,
     "unsupported_component_kind_counts": {},
-    "pin_count": 141,
-    "connected_pin_count": 141,
-    "unconnected_pin_count": 0,
-    "unconnected_pins": [],
-    "logical_network_count": 49,
-    "logical_edge_count": 84,
+    "pin_count": 150,
+    "connected_pin_count": 143,
+    "unconnected_pin_count": 7,
+    "unconnected_pins": [
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out1",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          -2
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out2",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          -1
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out3",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          0
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out4",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          1
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out5",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          2
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out6",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          3
+        ]
+      },
+      {
+        "permanent_id": 360248735599271405,
+        "kind": 17,
+        "name": "out7",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          -89,
+          4
+        ]
+      }
+    ],
+    "logical_network_count": 50,
+    "logical_edge_count": 85,
     "multi_driver_network_count": 0,
     "undriven_network_count": 0,
     "sinkless_network_count": 0,
