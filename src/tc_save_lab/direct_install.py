@@ -27,6 +27,10 @@ from .storage import DEFAULT_SAVE_ROOT
 # unattended direct-install plan.  Binary Search still needs game-side
 # acceptance after its timing fix; RNG may contain user-owned design data.
 ARCHITECTURE_TARGETS: dict[str, tuple[str, Path]] = {
+    "capitalize": (
+        "CODEX-CAPITALIZE",
+        Path("examples/capitalize/candidate/circuit.data"),
+    ),
     "circumference": (
         "CODEX-CIRCUMFERENCE",
         Path("examples/circumference/candidate/circuit.data"),
@@ -243,6 +247,33 @@ class DirectInstallPlan:
         }
 
 
+@dataclass(frozen=True)
+class ArchitectureDirectInstallPlan:
+    """只切换一个受审查架构关的直接写入计划。"""
+
+    project_root: Path
+    save_root: Path
+    level: str
+    item: DirectInstallItem
+    levels_path: Path
+    levels_before_sha256: str
+    levels_after: bytes
+
+    def to_dict(self) -> dict[str, object]:
+        return {
+            "project_root": str(self.project_root),
+            "save_root": str(self.save_root),
+            "level": self.level,
+            "direct_write": True,
+            "creates_backup": False,
+            "item": self.item.to_dict(),
+            "levels_path": str(self.levels_path),
+            "levels_before_sha256": self.levels_before_sha256,
+            "levels_after_sha256": sha256(self.levels_after).hexdigest(),
+            "selected_schematic": ARCHITECTURE_TARGETS[self.level][0],
+        }
+
+
 def _parse_levels(payload: bytes) -> list[list[str]]:
     text = payload.decode("utf-8", errors="strict")
     try:
@@ -255,13 +286,13 @@ def _parse_levels(payload: bytes) -> list[list[str]]:
     return rows
 
 
-def rewrite_architecture_selections(payload: bytes) -> bytes:
-    """Replace only the selected schematic field on reviewed architecture lines."""
+def _rewrite_architecture_selections(payload: bytes, levels: tuple[str, ...]) -> bytes:
+    """仅替换明确列出的架构选择，保留其余 levels.txt 字节。"""
 
     parsed = _parse_levels(payload)
     csv_counts = {
         level: sum(1 for row in parsed if row and row[0] == level)
-        for level in ARCHITECTURE_TARGETS
+        for level in levels
     }
     duplicates = [level for level, count in csv_counts.items() if count != 1]
     if duplicates:
@@ -269,7 +300,7 @@ def rewrite_architecture_selections(payload: bytes) -> bytes:
         raise ValueError(f"levels.txt must contain each target exactly once: {details}")
     text = payload.decode("utf-8", errors="strict")
     lines = text.splitlines(keepends=True)
-    counts = {level: 0 for level in ARCHITECTURE_TARGETS}
+    counts = {level: 0 for level in levels}
     rewritten: list[str] = []
     for line in lines:
         ending = ""
@@ -279,7 +310,8 @@ def rewrite_architecture_selections(payload: bytes) -> bytes:
         elif body.endswith("\n") or body.endswith("\r"):
             body, ending = body[:-1], body[-1]
         replaced = body
-        for level, (schematic, _) in ARCHITECTURE_TARGETS.items():
+        for level in levels:
+            schematic, _ = ARCHITECTURE_TARGETS[level]
             pattern = re.compile(
                 rf'^(?P<prefix>\s*"{re.escape(level)}"\s*,\s*(?:true|false)\s*,\s*)'
                 r'"[^"\r\n]*"(?P<suffix>\s*,.*)$',
@@ -298,11 +330,26 @@ def rewrite_architecture_selections(payload: bytes) -> bytes:
         raise ValueError(f"levels.txt must contain each target exactly once: {details}")
     result = "".join(rewritten).encode("utf-8")
     rows = _parse_levels(result)
-    for level, (schematic, _) in ARCHITECTURE_TARGETS.items():
+    for level in levels:
+        schematic, _ = ARCHITECTURE_TARGETS[level]
         selected = [row for row in rows if row and row[0] == level]
         if len(selected) != 1 or selected[0][2] != schematic:
             raise RuntimeError(f"failed to select {schematic} for {level}")
     return result
+
+
+def rewrite_architecture_selections(payload: bytes) -> bytes:
+    """替换全部受审查架构关的当前选择。"""
+
+    return _rewrite_architecture_selections(payload, tuple(ARCHITECTURE_TARGETS))
+
+
+def rewrite_architecture_selection(payload: bytes, level: str) -> bytes:
+    """替换一个受审查架构关的当前选择。"""
+
+    if level not in ARCHITECTURE_TARGETS:
+        raise ValueError(f"architecture level is not reviewed: {level}")
+    return _rewrite_architecture_selections(payload, (level,))
 
 
 def _selected_normal_schematics(payload: bytes) -> tuple[tuple[str, str], ...]:
@@ -417,13 +464,23 @@ def _normal_items(
     return tuple(items), selections
 
 
-def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInstallItem, ...]:
+def _architecture_items(
+    project_root: Path,
+    save_root: Path,
+    *,
+    levels: tuple[str, ...] = (),
+) -> tuple[DirectInstallItem, ...]:
     items: list[DirectInstallItem] = []
     architecture_root = (save_root / "schematics" / "architecture").resolve()
     if not architecture_root.is_dir():
         raise ValueError(f"architecture directory does not exist: {architecture_root}")
     _reject_reparse_tree(architecture_root)
-    for level, (schematic, relative_source) in ARCHITECTURE_TARGETS.items():
+    selected = tuple(dict.fromkeys(levels)) if levels else tuple(ARCHITECTURE_TARGETS)
+    unknown = sorted(set(selected) - ARCHITECTURE_TARGETS.keys())
+    if unknown:
+        raise ValueError(f"architecture level is not reviewed: {', '.join(unknown)}")
+    for level in selected:
+        schematic, relative_source = ARCHITECTURE_TARGETS[level]
         source = project_root / relative_source
         _reject_reparse_tree(source)
         source = source.resolve()
@@ -535,6 +592,37 @@ def plan_direct_install(
     )
 
 
+def plan_architecture_direct(
+    project_root: Path,
+    save_root: Path = DEFAULT_SAVE_ROOT,
+    *,
+    level: str,
+) -> ArchitectureDirectInstallPlan:
+    """为一个架构候选建立最小写入计划，绝不触及 Foundry 或其它关卡。"""
+
+    if level not in ARCHITECTURE_TARGETS:
+        raise ValueError(f"architecture level is not reviewed: {level}")
+    project_root = project_root.resolve()
+    save_root = save_root.resolve()
+    levels_path = save_root / "levels.txt"
+    _reject_reparse_tree(levels_path)
+    if not levels_path.is_file():
+        raise ValueError(f"levels.txt is not a regular file: {levels_path}")
+    levels_payload = levels_path.read_bytes()
+    items = _architecture_items(project_root, save_root, levels=(level,))
+    if len(items) != 1:  # pragma: no cover - guarded by the reviewed registry
+        raise RuntimeError(f"expected one architecture item for {level!r}")
+    return ArchitectureDirectInstallPlan(
+        project_root=project_root,
+        save_root=save_root,
+        level=level,
+        item=items[0],
+        levels_path=levels_path,
+        levels_before_sha256=sha256(levels_payload).hexdigest(),
+        levels_after=rewrite_architecture_selection(levels_payload, level),
+    )
+
+
 def _validate_plan_unchanged(plan: DirectInstallPlan) -> dict[Path, bytes]:
     _reject_reparse_tree(plan.levels_path)
     if not plan.levels_path.is_file():
@@ -609,4 +697,69 @@ def install_reviewed_direct(plan: DirectInstallPlan) -> dict[str, object]:
             for level, (schematic, _) in ARCHITECTURE_TARGETS.items()
         },
         "normal_selections": dict(plan.normal_selections),
+    }
+
+
+def _validate_architecture_plan_unchanged(
+    plan: ArchitectureDirectInstallPlan,
+) -> bytes:
+    """验证单架构计划仍对应同一候选、同一目标和同一 levels.txt。"""
+
+    _reject_reparse_tree(plan.levels_path)
+    if not plan.levels_path.is_file():
+        raise RuntimeError("levels.txt is no longer a regular file")
+    if sha256(plan.levels_path.read_bytes()).hexdigest() != plan.levels_before_sha256:
+        raise RuntimeError("levels.txt changed after planning")
+    item = plan.item
+    current_kind, current_digest = _destination_state(item.destination)
+    expected = (item.destination_before_kind, item.destination_before_sha256)
+    if (current_kind, current_digest) != expected:
+        raise RuntimeError(f"destination changed after planning: {item.destination}")
+    source_payload = item.source.read_bytes()
+    if sha256(source_payload).hexdigest() != item.source_sha256:
+        raise RuntimeError(f"candidate changed after planning: {item.source}")
+    source_circuit = decode_v15(source_payload)
+    if source_circuit.custom_id or source_circuit.dependencies:
+        raise RuntimeError(f"architecture candidate is no longer standalone: {item.source}")
+    if sha256(item.payload).hexdigest() != item.sha256:
+        raise RuntimeError(f"planned payload digest mismatch: {item.destination}")
+    decode_v15(item.payload)
+    return item.payload
+
+
+def install_architecture_direct(plan: ArchitectureDirectInstallPlan) -> dict[str, object]:
+    """直接切换一个架构候选，不改写 Foundry、普通关卡或其它架构选择。"""
+
+    _assert_game_not_running()
+    payload = _validate_architecture_plan_unchanged(plan)
+    _assert_game_not_running()
+    item = plan.item
+    current = _destination_state(item.destination)
+    expected = (item.destination_before_kind, item.destination_before_sha256)
+    if current != expected:
+        raise RuntimeError(f"destination changed before write: {item.destination}")
+    if current[1] != sha256(payload).hexdigest():
+        item.destination.parent.mkdir(parents=True, exist_ok=True)
+        item.destination.write_bytes(payload)
+    _assert_game_not_running()
+    _reject_reparse_tree(plan.levels_path)
+    if sha256(plan.levels_path.read_bytes()).hexdigest() != plan.levels_before_sha256:
+        raise RuntimeError("levels.txt changed before write")
+    plan.levels_path.write_bytes(plan.levels_after)
+    installed = item.destination.read_bytes()
+    if sha256(installed).hexdigest() != item.sha256:
+        raise RuntimeError(f"installed digest mismatch: {item.destination}")
+    circuit = decode_v15(installed)
+    if circuit.custom_id != item.custom_id:
+        raise RuntimeError(f"installed custom_id mismatch: {item.destination}")
+    if plan.levels_path.read_bytes() != plan.levels_after:
+        raise RuntimeError("levels.txt direct write verification failed")
+    return {
+        "installed": True,
+        "direct_write": True,
+        "created_backup": False,
+        "item": item.to_dict(),
+        "levels_path": str(plan.levels_path),
+        "level": plan.level,
+        "selected_schematic": ARCHITECTURE_TARGETS[plan.level][0],
     }

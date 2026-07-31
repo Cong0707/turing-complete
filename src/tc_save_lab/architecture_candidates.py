@@ -6,6 +6,7 @@ from collections.abc import Callable
 from pathlib import Path
 
 from .binary_search_asic import write_binary_search_asic
+from .capitalize_asic import write_capitalize_asic
 from .circumference_asic import write_circumference_asic
 from .maze_asic import write_maze_asic
 from .mod4_asic import write_mod_4_asic
@@ -18,6 +19,7 @@ ArchitectureWriter = Callable[[Path], dict[str, object]]
 
 ARCHITECTURE_CANDIDATES: dict[str, ArchitectureWriter] = {
     "binary_search": write_binary_search_asic,
+    "capitalize": write_capitalize_asic,
     "circumference": write_circumference_asic,
     "mod_4": write_mod_4_asic,
     "maze": write_maze_asic,

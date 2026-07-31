@@ -16,7 +16,9 @@ from .builder import build_known_candidates, build_known_variants
 from .direct_install import (
     ARCHITECTURE_TARGETS,
     NORMAL_TARGETS,
+    install_architecture_direct,
     install_reviewed_direct,
+    plan_architecture_direct,
     plan_direct_install,
 )
 from .scaffold import extract_campaign_scaffolds
@@ -155,6 +157,16 @@ def build_parser() -> ArgumentParser:
     apply_direct.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
     apply_direct.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
     apply_direct.add_argument("--yes", action="store_true")
+
+    install_architecture = sub.add_parser(
+        "install-architecture",
+        help="只直接覆盖一个已审查架构候选，不创建备份",
+    )
+    install_architecture.add_argument("level", choices=tuple(ARCHITECTURE_TARGETS))
+    install_architecture.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+    install_architecture.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+    install_architecture.add_argument("--dry-run", action="store_true")
+    install_architecture.add_argument("--yes", action="store_true")
 
     install_reviewed = sub.add_parser(
         "install-reviewed",
@@ -303,6 +315,25 @@ def _run(args: Namespace) -> int:
         writer = direct_replace_circuit if args.command == "apply-direct" else atomic_replace_circuit
         _print_json(writer(candidate, destination))
         return 0
+    if args.command == "install-architecture":
+        plan = plan_architecture_direct(
+            args.project_root,
+            args.save_root,
+            level=args.level,
+        )
+        if args.dry_run:
+            _print_json(plan.to_dict())
+            return 0
+        if not args.yes:
+            answer = input(
+                f"直接将架构关卡 {args.level} 切换到 {ARCHITECTURE_TARGETS[args.level][0]}，"
+                "且不创建备份？[y/N] "
+            ).strip().casefold()
+            if answer not in {"y", "yes"}:
+                print("已取消。")
+                return 2
+        _print_json(install_architecture_direct(plan))
+        return 0
     if args.command == "install-reviewed":
         plan = plan_direct_install(args.project_root, args.save_root)
         if args.dry_run:
@@ -337,6 +368,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("9. 构建已审查的 Pareto 候选变体")
         print("10. 构建专用架构 ASIC 候选")
         print("11. 直接安装已审查候选（不创建备份）")
+        print("12. 只安装一个架构候选（不创建备份）")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -373,6 +405,10 @@ def _interactive(parser: ArgumentParser) -> int:
             )
         if choice == "11":
             return _run(parser.parse_args(["install-reviewed"]))
+        if choice == "12":
+            level = input("架构关卡内部名称: ").strip()
+            if level:
+                return _run(parser.parse_args(["install-architecture", level]))
         print("无效选择。")
 
 

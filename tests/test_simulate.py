@@ -5,11 +5,13 @@ from pathlib import Path
 import unittest
 
 from tc_save_lab.builder import build_recipe
+from tc_save_lab.capitalize_asic import build_capitalize_asic
 from tc_save_lab.codec import decode_v15
 from tc_save_lab.model import Circuit, Component, Wire
 from tc_save_lab.rng_asic import build_rng_asic
 from tc_save_lab.simulate import (
     SimulationError,
+    simulate_clocked_tick,
     simulate_clocked_ticks,
     simulate_clocked_trace,
     simulate_combinational,
@@ -130,6 +132,16 @@ class CombinationalSimulationTests(unittest.TestCase):
             simulate_clocked_trace(circuit, inputs=inputs),
             simulate_clocked_ticks(circuit, inputs=inputs[0], tick_count=len(inputs)),
         )
+
+    def test_clocked_simulation_allows_an_unused_fanout_output(self):
+        # Capitalize intentionally does not consume Splitter8 output 5: the
+        # Maker receives its replacement bit from a delay line.  Game saves
+        # allow that unused source pin, and simulation must mirror it.
+        result = simulate_clocked_tick(
+            build_capitalize_asic(),
+            inputs={"Character": ord("a")},
+        )
+        self.assertEqual(result.outputs, {"Capitalized": ord("A")})
 
 
 if __name__ == "__main__":

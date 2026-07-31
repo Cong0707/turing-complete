@@ -82,12 +82,17 @@ def _compile(circuit: Circuit) -> _CompiledCircuit:
         if not pins:
             raise SimulationError(f"component kind {component.kind} has no reviewed pin schema")
         for pin in pins:
-            try:
-                pin_networks[(component_index, pin.name)] = network_by_position[pin.position]
-            except KeyError as exc:
-                raise SimulationError(
-                    f"component {component.permanent_id} pin {pin.name} is unconnected"
-                ) from exc
+            network = network_by_position.get(pin.position)
+            if network is None:
+                # A circuit may deliberately leave a fan-out output unused.
+                # The running game accepts that topology; only an unconnected
+                # receiver makes simulation impossible.
+                if pin.direction == I:
+                    raise SimulationError(
+                        f"component {component.permanent_id} pin {pin.name} is unconnected"
+                    )
+                continue
+            pin_networks[(component_index, pin.name)] = network
     source_widths: dict[str, int] = {}
     for component_index, component in enumerate(circuit.components):
         if component.kind not in SOURCE_KINDS:
@@ -202,7 +207,9 @@ def _simulate_compiled(
     network_values: dict[int, int] = {}
 
     def assign(component_index: int, pin_name: str, value: int) -> None:
-        network = compiled.pin_networks[(component_index, pin_name)]
+        network = compiled.pin_networks.get((component_index, pin_name))
+        if network is None:
+            return
         previous = network_values.get(network)
         if previous is not None and previous != value:
             raise SimulationError(f"conflicting drivers on network {network}")
@@ -318,7 +325,9 @@ def _simulate_clocked_tick(
     network_values: dict[int, int] = {}
 
     def assign(component_index: int, pin_name: str, value: int) -> None:
-        network = compiled.pin_networks[(component_index, pin_name)]
+        network = compiled.pin_networks.get((component_index, pin_name))
+        if network is None:
+            return
         previous = network_values.get(network)
         if previous is not None and previous != value:
             raise SimulationError(f"conflicting drivers on network {network}")

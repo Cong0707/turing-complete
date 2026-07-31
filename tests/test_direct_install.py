@@ -13,8 +13,11 @@ from tc_save_lab.codex_library import build_known_codex_library
 from tc_save_lab.direct_install import (
     ARCHITECTURE_TARGETS,
     NORMAL_TARGETS,
+    install_architecture_direct,
     install_reviewed_direct,
+    plan_architecture_direct,
     plan_direct_install,
+    rewrite_architecture_selection,
     rewrite_architecture_selections,
 )
 from tc_save_lab.storage import direct_replace_circuit
@@ -27,6 +30,7 @@ LEVELS = (
     '"maze",true,"OVERTURE",\n'
     '"circumference",true,"OVERTURE",\n'
     '"nim",true,"LEG",\n'
+    '"capitalize",true,"RV64",\n'
     '"binary_search",true,"OVERTURE",\n'
     '"rng",true,"RV64",\n'
     '"after",true,"Player Design",2&2&2|\n'
@@ -166,13 +170,52 @@ class DirectInstallTests(unittest.TestCase):
         self.assertEqual(after[3], b'"maze",true,"CODEX-MAZE",\n')
         self.assertEqual(after[4], b'"circumference",true,"CODEX-CIRCUMFERENCE",\n')
         self.assertEqual(after[5], b'"nim",true,"CODEX-NIM",\n')
-        self.assertEqual(after[6], b'"binary_search",true,"OVERTURE",\n')
-        self.assertEqual(after[7], b'"rng",true,"RV64",\n')
+        self.assertEqual(after[6], b'"capitalize",true,"CODEX-CAPITALIZE",\n')
+        self.assertEqual(after[7], b'"binary_search",true,"OVERTURE",\n')
+        self.assertEqual(after[8], b'"rng",true,"RV64",\n')
 
     def test_levels_rewrite_rejects_unquoted_duplicate_target(self):
         duplicate = b"maze,true,OVERTURE,\n" + LEVELS
         with self.assertRaisesRegex(ValueError, "maze=2"):
             rewrite_architecture_selections(duplicate)
+
+    def test_single_architecture_plan_writes_only_its_candidate_and_selection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            project = root / "project"
+            save = root / "save"
+            source = PROJECT_ROOT / ARCHITECTURE_TARGETS["capitalize"][1]
+            candidate = project / ARCHITECTURE_TARGETS["capitalize"][1]
+            candidate.parent.mkdir(parents=True)
+            candidate.write_bytes(source.read_bytes())
+            candidate.with_name("metadata.json").write_bytes(
+                source.with_name("metadata.json").read_bytes()
+            )
+            (save / "schematics" / "architecture").mkdir(parents=True)
+            levels_path = save / "levels.txt"
+            levels_path.write_bytes(LEVELS)
+
+            plan = plan_architecture_direct(project, save, level="capitalize")
+            self.assertEqual(plan.item.name, "capitalize")
+            self.assertEqual(
+                plan.item.destination,
+                save / "schematics" / "architecture" / "CODEX-CAPITALIZE" / "circuit.data",
+            )
+            self.assertEqual(
+                plan.levels_after,
+                rewrite_architecture_selection(LEVELS, "capitalize"),
+            )
+            self.assertIn(b'"capitalize",true,"CODEX-CAPITALIZE",', plan.levels_after)
+            self.assertIn(b'"maze",true,"OVERTURE",', plan.levels_after)
+
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                result = install_architecture_direct(plan)
+            self.assertTrue(result["installed"])
+            self.assertFalse(result["created_backup"])
+            self.assertEqual(plan.item.destination.read_bytes(), candidate.read_bytes())
+            self.assertEqual(levels_path.read_bytes(), plan.levels_after)
+            self.assertFalse((save / "schematics" / "foundry").exists())
+            self.assertFalse((save / "schematics" / "maze").exists())
 
     def test_plan_is_read_only_and_install_writes_only_final_paths(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -343,6 +386,14 @@ class DirectInstallTests(unittest.TestCase):
     def test_public_cli_exposes_direct_install(self):
         args = build_parser().parse_args(["install-reviewed", "--dry-run"])
         self.assertEqual(args.command, "install-reviewed")
+        self.assertTrue(args.dry_run)
+
+    def test_public_cli_exposes_single_architecture_install(self):
+        args = build_parser().parse_args(
+            ["install-architecture", "capitalize", "--dry-run"]
+        )
+        self.assertEqual(args.command, "install-architecture")
+        self.assertEqual(args.level, "capitalize")
         self.assertTrue(args.dry_run)
 
     def test_direct_replace_writes_only_the_final_circuit_file(self):
