@@ -48,6 +48,7 @@ EXPECTED_NORMAL_TARGETS = (
     "byte_constant",
     "byte_equal",
     "byte_lsr",
+    "byte_mod",
     "byte_mux",
     "byte_nand",
     "byte_not",
@@ -81,6 +82,11 @@ EXPECTED_AUDITED_HEADERS = {
         "3af017e30a23b7c3ddfee89eb2a5aa23db3f8bbf73388333edbf41bb849b2ffd",
         8,
         1,
+    ),
+    "byte_mod": (
+        "cd577482dffbbff44a3a59e99b20e3f81244dc77104275ff2cd1684e49efe0ea",
+        428,
+        34,
     ),
     "byte_not": (
         "f461a23696812a47bf8e9751511ee7ca5483060dc1548227a02d5c552d2171d7",

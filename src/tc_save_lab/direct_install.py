@@ -102,6 +102,12 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         70,
         3,
     ),
+    "byte_mod": ReviewedNormalTarget(
+        Path("examples/byte_mod/candidate/circuit.data"),
+        "cd577482dffbbff44a3a59e99b20e3f81244dc77104275ff2cd1684e49efe0ea",
+        428,
+        34,
+    ),
     "byte_mux": ReviewedNormalTarget(
         Path("examples/byte_mux/candidate/circuit.data"),
         "4cedcb5e016e6a206f3200fec44f9ae9f432c04a67640df2fa8e5ba845c2c020",
