@@ -56,6 +56,23 @@ class PinLibraryTests(unittest.TestCase):
         self.assertEqual(input_pin.position, (-14, 0))
         self.assertEqual(output_pin.position, (14, 0))
 
+    def test_foundry_io_uses_three_cell_port_distance_and_rotation(self):
+        expected = {
+            (79, 0): (3, 0),
+            (79, 1): (0, 3),
+            (79, 2): (-3, 0),
+            (79, 3): (0, -3),
+            (81, 0): (-3, 0),
+            (81, 1): (0, -3),
+            (81, 2): (3, 0),
+            (81, 3): (0, 3),
+        }
+        for (kind, rotation), offset in expected.items():
+            pin = positioned_pins(
+                Component(kind, (0, 0), rotation, kind, word_size=64)
+            )[0]
+            self.assertEqual(pin.position, offset, (kind, rotation))
+
     def test_current_word_logic_uses_wide_body_pin_offsets(self):
         cases = {
             3: {"in": (-1, 0), "out": (2, 0)},
