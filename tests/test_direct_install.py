@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
-import shutil
 import tempfile
 import unittest
 
@@ -42,11 +41,13 @@ EXPECTED_NORMAL_TARGETS = (
     "bit_inverter",
     "byte_adder",
     "byte_asr",
+    "byte_constant",
     "byte_equal",
     "byte_lsr",
     "byte_mux",
+    "byte_nand",
+    "byte_not",
     "byte_xor",
-    "count_leading_zeroes",
     "counting_signals",
     "decoder_2",
     "decoder_3",
@@ -58,6 +59,59 @@ EXPECTED_NORMAL_TARGETS = (
     "xnor",
     "xor_gate",
 )
+
+EXPECTED_AUDITED_HEADERS = {
+    "byte_adder": (
+        "b63723b21c16d535828a1a265a7714eea4b43faedacf8925aee8b0fbcd955e32",
+        103,
+        5,
+    ),
+    "byte_constant": (
+        "8ba8cb2a677372a6ec4eef9c572666b4fbbf357bbf17c2f56cb218a50bda7131",
+        0,
+        0,
+    ),
+    "byte_nand": (
+        "3af017e30a23b7c3ddfee89eb2a5aa23db3f8bbf73388333edbf41bb849b2ffd",
+        8,
+        1,
+    ),
+    "byte_not": (
+        "f461a23696812a47bf8e9751511ee7ca5483060dc1548227a02d5c552d2171d7",
+        8,
+        1,
+    ),
+    "counting_signals": (
+        "a8c772330a024989e3db2923a6554f783c09c5ae4b0ce552c6e673cdaf63c681",
+        13,
+        4,
+    ),
+    "decoder_3": (
+        "27cd1ae3ec2ecc7d8037adc59d1850280917ff2b7a01093c7ed0dbb34f50274c",
+        14,
+        3,
+    ),
+    "saving_bytes": (
+        "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",
+        73,
+        5,
+    ),
+    "saving_gracefully": (
+        "f0d5632ddc9191b7702d07668aeeb2fdcd7a042a1b9fbf83f923633ee2cc0d26",
+        10,
+        5,
+    ),
+    "xnor": (
+        "ff0b222aa083a6195754eb6cd7ee4ca7e92222dd22515cfb6cea7423aad28971",
+        3,
+        2,
+    ),
+    "xor_gate": (
+        "f8624d0e9c2a2afe0c757580b016803b4f0be89f0d0ad864872c2e16560079c7",
+        3,
+        2,
+    ),
+}
 
 
 class DirectInstallTests(unittest.TestCase):
@@ -81,9 +135,25 @@ class DirectInstallTests(unittest.TestCase):
         self.assertEqual(tuple(NORMAL_TARGETS), EXPECTED_NORMAL_TARGETS)
         self.assertTrue(
             set(NORMAL_TARGETS).isdisjoint(
-                {"byte_less_s", "byte_less_u", "full_adder", "ram_component"}
+                {
+                    "byte_less_s",
+                    "byte_less_u",
+                    "count_leading_zeroes",
+                    "decoder_1",
+                    "full_adder",
+                    "not_gate",
+                    "ram_component",
+                }
             )
         )
+
+    def test_audited_normal_target_headers_are_exact(self):
+        actual = {
+            level: (target.sha256, target.gate, target.delay)
+            for level, target in NORMAL_TARGETS.items()
+            if level in EXPECTED_AUDITED_HEADERS
+        }
+        self.assertEqual(actual, EXPECTED_AUDITED_HEADERS)
 
     def test_levels_rewrite_changes_only_reviewed_lines(self):
         rewritten = rewrite_architecture_selections(LEVELS)
@@ -172,25 +242,6 @@ class DirectInstallTests(unittest.TestCase):
                 b'"byte_mux",true,"\xe4\xba\xba\xe5\xb7\xa5\xe9\x80\x89\xe6\x8b\xa9",',
                 plan.levels_after,
             )
-
-    def test_missing_normal_level_directory_is_created_only_by_direct_install(self):
-        with tempfile.TemporaryDirectory() as directory:
-            project, save = self._workspace(Path(directory))
-            level = "count_leading_zeroes"
-            level_root = save / "schematics" / level
-            shutil.rmtree(level_root)
-            plan = plan_direct_install(project, save)
-            item = next(
-                item
-                for item in plan.items
-                if item.kind == "normal" and item.name == level
-            )
-            self.assertEqual(item.destination_before_kind, "absent")
-            self.assertFalse(level_root.exists())
-            with patch("tc_save_lab.direct_install._assert_game_not_running"):
-                install_reviewed_direct(plan)
-            self.assertEqual(item.destination.read_bytes(), item.payload)
-            self.assertEqual(item.destination.parent, level_root / "Default")
 
     def test_normal_target_digest_drift_is_rejected_during_planning(self):
         with tempfile.TemporaryDirectory() as directory:

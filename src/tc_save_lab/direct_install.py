@@ -80,6 +80,12 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         76,
         3,
     ),
+    "byte_constant": ReviewedNormalTarget(
+        Path("examples/byte_constant/candidate/circuit.data"),
+        "8ba8cb2a677372a6ec4eef9c572666b4fbbf357bbf17c2f56cb218a50bda7131",
+        0,
+        0,
+    ),
     "byte_equal": ReviewedNormalTarget(
         Path("examples/byte_equal/candidate/circuit.data"),
         "cc942e842d6e3f48aa36727d3f322c4aa0e9eeb4d7a335e42287d0c35016fec6",
@@ -98,17 +104,23 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         33,
         2,
     ),
+    "byte_nand": ReviewedNormalTarget(
+        Path("examples/byte_nand/candidate/circuit.data"),
+        "3af017e30a23b7c3ddfee89eb2a5aa23db3f8bbf73388333edbf41bb849b2ffd",
+        8,
+        1,
+    ),
+    "byte_not": ReviewedNormalTarget(
+        Path("examples/byte_not/candidate/circuit.data"),
+        "f461a23696812a47bf8e9751511ee7ca5483060dc1548227a02d5c552d2171d7",
+        8,
+        1,
+    ),
     "byte_xor": ReviewedNormalTarget(
         Path("examples/byte_xor/candidate/circuit.data"),
         "3e75395b539d1f980d4f900d42a96d4af78a9a447770904bd1b3765127f36b41",
         24,
         2,
-    ),
-    "count_leading_zeroes": ReviewedNormalTarget(
-        Path("examples/count_leading_zeroes/candidate/circuit.data"),
-        "6e300a33ac85cd95307ff2142450c3a7f4982962e255b206e3ec7ae8286f112e",
-        22,
-        4,
     ),
     "counting_signals": ReviewedNormalTarget(
         Path("examples/counting_signals/candidate/circuit.data"),
