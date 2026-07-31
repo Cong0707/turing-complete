@@ -3,17 +3,30 @@
   "level": "ram_component",
   "title": "Little Box",
   "title_zh": "小型存储器",
-  "strategy": "Decoder 2 + 8 个 AND + 4 个 Register Word；不使用本关未解锁的 com_ram",
+  "strategy": "四个 U8 字寄存器 + Decoder2 + 八个 AND 位门（读写分别门控）",
+  "validation_status": "已完成离线网络、时序、v15 往返和安装版 PNG alpha 几何审计；待游戏内验收。",
+  "metric_status": "368 gate / 5 delay 是公开样本中的低能耗 Pareto 点，仍以游戏重新计分为准。",
   "format_version": 15,
-  "sha256": "4c0ef4d3e226d32e869833320999c36fdd6c9bedf3ccd82754d4c9899bec2c78",
-  "score_cache": {
-    "gate": 0,
-    "delay": 0,
-    "energy": 0
-  },
-  "metric_status": "未实测；由游戏实际载入和运行后重算",
+  "sha256": "244c9c4110e61710b78d7a30d6454f6aa24360ea9131b60f5902a30cc2137e8e",
+  "gate": 368,
+  "delay": 5,
+  "energy": 1840,
+  "leaderboard_tuple": [
+    368,
+    5,
+    1840
+  ],
   "component_count": 18,
-  "wire_count": 42,
+  "component_kind_counts": {
+    "4": 8,
+    "39": 4,
+    "44": 1,
+    "60": 2,
+    "61": 1,
+    "63": 1,
+    "69": 1
+  },
+  "wire_count": 34,
   "state_transition_vector_count": 1048576,
   "script_prefix": [
     {
@@ -54,6 +67,13 @@
     "unit_logic_depth": 2,
     "cycle_component_count": 0
   },
+  "board": {
+    "limit": 16,
+    "min_x": -16,
+    "max_x": 16,
+    "min_y": -14,
+    "max_y": 15
+  },
   "geometry": {
     "sprite_files": [
       "com_and_bit.png",
@@ -64,19 +84,9 @@
       "com_level_output_word.png",
       "com_register_word.png"
     ],
-    "component_overlap_cell_count": 0,
-    "wire_body_contact_count": 86,
-    "wire_body_contact_rule": "仅允许导线自身端点沿指定水平方向进出端口精灵",
-    "wire_interior_pin_contact_count": 0,
-    "board_bounds": [
-      -16,
-      16
-    ]
-  },
-  "component_inventory": {
-    "register_word": 4,
-    "decoder_2": 1,
-    "and_bit": 8,
-    "com_ram": 0
+    "alpha_cell_count": 383,
+    "port_lead_collision_count": 34,
+    "unexpected_wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0
   }
 }
