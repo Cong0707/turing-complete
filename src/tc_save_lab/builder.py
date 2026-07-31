@@ -83,6 +83,18 @@ def _load_scaffold_components(project_root: Path, level: str) -> tuple[Component
     return Circuit.from_dict({"components": records}).components
 
 
+def _load_baseline_immutable_components(
+    project_root: Path,
+    level: str,
+) -> tuple[Component, ...]:
+    path = project_root / "examples" / level / "baseline" / "circuit.data"
+    circuit = decode_v15(path.read_bytes())
+    components = tuple(component for component in circuit.components if component.immutable)
+    if not components:
+        raise ValueError(f"baseline for {level} contains no immutable interface components")
+    return components
+
+
 def _not_gate(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -92,6 +104,25 @@ def _not_gate(project_root: Path, level: str) -> tuple[tuple[Component, ...], tu
         wire_from_vertices(((-12, 0), (-2, 0))),
         wire_from_vertices(((-2, -2), (-2, 0))),
         wire_from_vertices(((1, -1), (2, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _xor_gate(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_baseline_immutable_components(project_root, level)
+    components = scaffold + (
+        Component(4, (-2, -4), 0, stable_permanent_id(level, "and")),
+        Component(9, (-2, 1), 0, stable_permanent_id(level, "nor-inputs")),
+        Component(9, (3, -1), 0, stable_permanent_id(level, "nor-output")),
+    )
+    wires = (
+        wire_from_vertices(((-8, -3), (-6, -5), (-3, -5))),
+        wire_from_vertices(((-8, -3), (-5, 0), (-3, 0))),
+        wire_from_vertices(((-8, -1), (-6, -3), (-3, -3))),
+        wire_from_vertices(((-8, -1), (-5, 2), (-3, 2))),
+        wire_from_vertices(((0, -4), (2, -2))),
+        wire_from_vertices(((0, 1), (1, 1), (2, 0))),
+        wire_from_vertices(((5, -1), (11, -1), (12, 0))),
     )
     return components, wires
 
@@ -550,6 +581,15 @@ RECIPES: dict[str, Recipe] = {
         (("Input", 1),),
         "Output",
         lambda values: 1 ^ values["Input"],
+    ),
+    "xor_gate": Recipe(
+        "xor_gate",
+        3,
+        2,
+        _xor_gate,
+        (("Input", 2),),
+        "Output",
+        lambda values: (values["Input"] & 1) ^ ((values["Input"] >> 1) & 1),
     ),
     "or_gate_3": Recipe(
         "or_gate_3",
