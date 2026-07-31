@@ -19,6 +19,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from functools import lru_cache
+from hashlib import sha256
+import json
 from pathlib import Path
 import struct
 from typing import Iterable, Sequence
@@ -29,6 +31,7 @@ from .builder import stable_permanent_id, wire_from_vertices
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point
 from .pins import analyze_connectivity, positioned_pins, rotate_offset
+from .simulate import SimulationError, simulate_clocked_trace
 
 
 ARCHITECTURE_INPUT_KIND = 62
@@ -47,15 +50,19 @@ SPRITE_NAME_BY_COMPONENT_KIND: dict[int, str] = {
     2: "com_constant.png",
     3: "com_not_bit.png",
     4: "com_and_bit.png",
+    5: "com_and_3_bit.png",
     6: "com_nand_bit.png",
     7: "com_or_bit.png",
+    8: "com_or_3_bit.png",
     9: "com_nor_bit.png",
     10: "com_xor_bit.png",
     13: "com_delay_line_bit.png",
     15: "com_full_adder.png",
     16: "com_maker_bit_8.png",
     17: "com_splitter_bit_8.png",
+    25: "com_switch_word.png",
     30: "com_add.png",
+    46: "com_constant.png",
     55: "com_delay_line_word.png",
     62: "com_cc_level_input.png",
     70: "com_cc_level_output.png",
@@ -557,6 +564,821 @@ def verify_tower_event_model() -> dict[str, object]:
         "candidate_status": "protocol-only; no deployable v15 circuit emitted",
         "cases": summaries,
     }
+
+
+TOWER_COUNTER_BITS = 7
+TOWER_DELAY_BITS = 13
+TOWER_MAXIMUM_CYCLES = 125
+
+
+@dataclass(frozen=True)
+class TowerFsmState:
+    """The compact persistent state used by the deployable Tower design.
+
+    ``orientation`` temporarily holds ``highest_disk & 1`` while the first
+    four Architecture Input reads are in flight.  At action counter three it
+    is replaced in-place by the signed physical-ring direction.  This reuse is
+    what keeps the implementation at thirteen Delay Bit components.
+    """
+
+    counter: int = 0
+    source: int = 0
+    peg: int = 0
+    orientation: int = 0
+    ctz_parity: int = 0
+
+    def __post_init__(self) -> None:
+        if not 0 <= self.counter < (1 << TOWER_COUNTER_BITS):
+            raise ValueError("Tower action counter must fit in seven bits")
+        if self.source not in {0, 1, 2}:
+            raise ValueError("Tower source must be a physical peg")
+        if self.peg not in {0, 1, 2}:
+            raise ValueError("Tower virtual-ring peg must be a physical peg")
+        if self.orientation not in {0, 1}:
+            raise ValueError("Tower orientation must be one bit")
+        if self.ctz_parity not in {0, 1}:
+            raise ValueError("Tower CTZ parity must be one bit")
+
+
+@dataclass(frozen=True)
+class TowerFsmTick:
+    """One reference-model tick, including the architecture callback event."""
+
+    before: TowerFsmState
+    after: TowerFsmState
+    input_value: int | None
+    output_value: int | None
+
+
+def _step_peg(peg: int, plus: int) -> int:
+    """Move one step around the three physical pegs without using modulo parts."""
+
+    if peg not in {0, 1, 2} or plus not in {0, 1}:
+        raise ValueError("Tower peg step requires a legal peg and direction bit")
+    return (peg + (1 if plus else -1)) % 3
+
+
+def _direction_plus(source: int, next_peg: int) -> int:
+    """Return whether ``next_peg`` is source plus one modulo three."""
+
+    if source not in {0, 1, 2} or next_peg not in {0, 1, 2} or source == next_peg:
+        raise ValueError("Tower direction needs two distinct legal pegs")
+    return int(next_peg == (source + 1) % 3)
+
+
+def advance_tower_fsm(state: TowerFsmState, input_value: int | None) -> TowerFsmTick:
+    """Advance the compressed state machine for exactly one game tick.
+
+    This is intentionally independent from ``formula_moves``.  It proves the
+    finite-state formulation before the same equations are lowered to gates.
+    ``input_value`` is required only while the architecture input control is
+    asserted, i.e. counters zero through three.
+    """
+
+    counter = state.counter
+    reads_input = counter < 4
+    if reads_input:
+        if input_value is None or not 0 <= input_value <= 0xFF:
+            raise ValueError("Tower FSM needs one U8 value during its first four ticks")
+    elif input_value is not None:
+        raise ValueError("Tower FSM must not consume an input after tick three")
+
+    output: int | None
+    if counter == 0:
+        output = None
+    elif counter & 3 == 1:
+        if counter == 1:
+            output = input_value
+        else:
+            to_plus = state.orientation ^ state.ctz_parity
+            output = _step_peg(state.peg, 1 - to_plus)
+    elif counter & 3 == 2:
+        output = 5
+    elif counter & 3 == 3:
+        if counter == 3:
+            # At counter three peg holds destination; live input is spare.
+            output = input_value if state.orientation else state.peg
+        else:
+            output = _step_peg(state.peg, state.orientation ^ state.ctz_parity)
+    else:
+        output = 5
+
+    next_source = input_value if counter == 1 else state.source
+    if counter == 0:
+        next_orientation = input_value & 1
+    elif counter == 3:
+        first_virtual_peg = state.peg if state.orientation else input_value
+        next_orientation = _direction_plus(state.source, first_virtual_peg)
+    else:
+        next_orientation = state.orientation
+
+    if counter == 2:
+        next_peg = input_value
+    elif counter == 3:
+        # Odd disk count: V[1] is spare.  Even disk count: V[1] is destination.
+        next_peg = state.peg if state.orientation else input_value
+    elif counter and counter & 3 == 0:
+        next_peg = _step_peg(state.peg, state.orientation)
+    else:
+        next_peg = state.peg
+
+    if counter & 3 == 0:
+        next_parity = ctz((counter >> 2) + 1) & 1
+    else:
+        next_parity = state.ctz_parity
+
+    after = TowerFsmState(
+        counter=(counter + 1) & ((1 << TOWER_COUNTER_BITS) - 1),
+        source=next_source,
+        peg=next_peg,
+        orientation=next_orientation,
+        ctz_parity=next_parity,
+    )
+    return TowerFsmTick(
+        before=state,
+        after=after,
+        input_value=input_value if reads_input else None,
+        output_value=output,
+    )
+
+
+def verify_tower_fsm_model() -> dict[str, object]:
+    """Exhaustively compare the compressed FSM against all Tower scripts."""
+
+    summaries: list[dict[str, int]] = []
+    for case in all_tower_cases():
+        expected = commands_from_moves(formula_moves(case))
+        state = TowerFsmState()
+        emitted: list[int] = []
+        for tick in range(len(expected) + 1):
+            value = case.input_stream[tick] if tick < 4 else None
+            transition = advance_tower_fsm(state, value)
+            if transition.output_value is not None:
+                emitted.append(transition.output_value)
+            state = transition.after
+        if tuple(emitted) != expected:
+            raise TowerVerificationError(
+                f"compressed Tower FSM diverges from formula for {case!r}"
+            )
+        result = simulate_tower_script(case, emitted)
+        if not result.won or result.first_win_event != len(expected):
+            raise TowerVerificationError(f"compressed Tower FSM does not win for {case!r}")
+        summaries.append(
+            {
+                "highest_disk": case.highest_disk,
+                "source": case.source,
+                "destination": case.destination,
+                "cycles": len(expected) + 1,
+            }
+        )
+    return {
+        "case_count": len(summaries),
+        "delay_bits": TOWER_DELAY_BITS,
+        "maximum_cycles": max(item["cycles"] for item in summaries),
+        "cases": summaries,
+    }
+
+
+@dataclass(frozen=True)
+class _TowerGate:
+    signal: str
+    kind: int
+    fanins: tuple[str, ...]
+
+
+class _TowerBooleanNet:
+    """Small structurally-hashed U1 network used by the physical Tower ASIC."""
+
+    def __init__(self) -> None:
+        self.gates: list[_TowerGate] = []
+        self._cache: dict[tuple[int, tuple[str, ...]], str] = {}
+        self._depth: dict[str, int] = {}
+
+    def gate(self, kind: int, *fanins: str) -> str:
+        if kind not in {3, 4, 7, 10}:
+            raise ValueError(f"unreviewed Tower primitive kind {kind}")
+        if kind == 3:
+            if len(fanins) != 1:
+                raise ValueError("NOT gate needs exactly one fanin")
+            normalized = fanins
+        else:
+            if len(fanins) != 2:
+                raise ValueError("binary Tower gate needs exactly two fanins")
+            normalized = tuple(sorted(fanins))
+        key = (kind, normalized)
+        cached = self._cache.get(key)
+        if cached is not None:
+            return cached
+        signal = f"g{len(self.gates):03d}"
+        self.gates.append(_TowerGate(signal, kind, normalized))
+        self._cache[key] = signal
+        self._depth[signal] = max((self._depth.get(value, 0) for value in normalized), default=0) + 1
+        return signal
+
+    def not_(self, value: str) -> str:
+        return self.gate(3, value)
+
+    def and_(self, left: str, right: str) -> str:
+        return self.gate(4, left, right)
+
+    def or_(self, left: str, right: str) -> str:
+        return self.gate(7, left, right)
+
+    def xor_(self, left: str, right: str) -> str:
+        return self.gate(10, left, right)
+
+    def and_many(self, values: Sequence[str]) -> str:
+        if not values:
+            raise ValueError("Tower AND reduction cannot be empty")
+        result = values[0]
+        for value in values[1:]:
+            result = self.and_(result, value)
+        return result
+
+    def or_many(self, values: Sequence[str]) -> str:
+        if not values:
+            raise ValueError("Tower OR reduction cannot be empty")
+        result = values[0]
+        for value in values[1:]:
+            result = self.or_(result, value)
+        return result
+
+    def mux(self, select: str, when_zero: str, when_one: str) -> str:
+        """Return ``when_zero`` for zero select and ``when_one`` for one."""
+
+        if when_zero == when_one:
+            return when_zero
+        return self.or_(
+            self.and_(self.not_(select), when_zero),
+            self.and_(select, when_one),
+        )
+
+    def depth(self, signal: str) -> int:
+        return self._depth.get(signal, 0)
+
+    def prune(self, roots: Iterable[str]) -> None:
+        """Discard structurally-created nodes that no final connection uses."""
+
+        by_signal = {gate.signal: gate for gate in self.gates}
+        live: set[str] = set()
+        pending = list(roots)
+        while pending:
+            signal = pending.pop()
+            if signal in live:
+                continue
+            gate = by_signal.get(signal)
+            if gate is None:
+                continue
+            live.add(signal)
+            pending.extend(gate.fanins)
+        self.gates = [gate for gate in self.gates if gate.signal in live]
+
+
+@dataclass(frozen=True)
+class _TowerSwitch:
+    role: str
+    enable: str
+    value: str
+    destination: str
+    word_size: int = 1
+
+
+def _tower_pin(component: Component, name: str) -> Point:
+    matches = [pin.position for pin in positioned_pins(component) if pin.name == name]
+    if len(matches) != 1:
+        raise TowerVerificationError(
+            f"Tower component {component.permanent_id} has no unique pin {name!r}"
+        )
+    return matches[0]
+
+
+def _tower_escape_point(component: Component, pin: Point, *, distance: int = 8) -> Point:
+    """Choose a direction that is accepted by the current sprite alpha audit."""
+
+    step = (
+        _sign(pin[0] - component.position[0]),
+        _sign(pin[1] - component.position[1]),
+    )
+    if step == (0, 0):
+        raise TowerVerificationError("Tower route endpoint cannot be at component centre")
+    return (pin[0] + step[0] * distance, pin[1] + step[1] * distance)
+
+
+def _tower_safe_wire(
+    source_component: Component,
+    source_pin: str,
+    sink_component: Component,
+    sink_pin: str,
+    *,
+    lane_y: int,
+    left_bus_x: int,
+    right_bus_x: int,
+):
+    """Route through private outer bus lanes, never through a component row.
+
+    Every part is allocated a distinct 20-cell horizontal band.  The first and
+    final eight cells follow the actual pin's outward alpha escape ray; the
+    rest of the path stays in shared outer aisles.  Wires may cross each other,
+    but no wire can cross another component or a non-endpoint pin.
+    """
+
+    source = _tower_pin(source_component, source_pin)
+    sink = _tower_pin(sink_component, sink_pin)
+    source_exit = _tower_escape_point(source_component, source)
+    sink_entry = _tower_escape_point(sink_component, sink)
+    return wire_from_vertices(
+        (
+            source,
+            source_exit,
+            (right_bus_x, source_exit[1]),
+            (right_bus_x, lane_y),
+            (left_bus_x, lane_y),
+            (left_bus_x, sink_entry[1]),
+            sink_entry,
+            sink,
+        )
+    )
+
+
+def _tower_step_logic(net: _TowerBooleanNet, peg: tuple[str, str], plus: str) -> tuple[str, str]:
+    """Lower a physical ``+/- 1 mod 3`` peg step to reviewed bit gates."""
+
+    peg0, peg1 = peg
+    not_peg0 = net.not_(peg0)
+    not_peg1 = net.not_(peg1)
+    is_zero = net.and_(not_peg0, not_peg1)
+    plus0 = is_zero
+    plus1 = net.and_(not_peg1, peg0)
+    minus0 = net.and_(peg1, not_peg0)
+    minus1 = is_zero
+    return (
+        net.mux(plus, minus0, plus0),
+        net.mux(plus, minus1, plus1),
+    )
+
+
+def _tower_direction_logic(
+    net: _TowerBooleanNet,
+    source: tuple[str, str],
+    next_peg: tuple[str, str],
+) -> str:
+    """Lower ``next_peg == source + 1 (mod 3)`` to a compact equality test."""
+
+    source0, source1 = source
+    not_source0 = net.not_(source0)
+    not_source1 = net.not_(source1)
+    source_plus = (
+        net.and_(not_source0, not_source1),
+        net.and_(not_source1, source0),
+    )
+    matches = (
+        net.not_(net.xor_(source_plus[0], next_peg[0])),
+        net.not_(net.xor_(source_plus[1], next_peg[1])),
+    )
+    return net.and_(matches[0], matches[1])
+
+
+def build_tower_fsm_asic() -> Circuit:
+    """Build the current-version, single-I/O 125-cycle Tower ASIC.
+
+    The candidate is intentionally a direct finite-state machine, not an old
+    architecture or a recursive program.  It has one U8 Architecture Input,
+    one U8 Architecture Output, exactly four input callbacks, and only
+    reviewed Delay Bit, Switch Word, splitter/maker, and basic U1 gates.
+    """
+
+    key = "architecture/codex-tower-fsm-v1"
+    net = _TowerBooleanNet()
+    counter = tuple(f"c{bit}" for bit in range(TOWER_COUNTER_BITS))
+    source = ("source0", "source1")
+    peg = ("peg0", "peg1")
+    orientation = "orientation"
+    parity = "ctz-parity"
+    input_bits = tuple(f"input{bit}" for bit in range(8))
+
+    not_counter = tuple(net.not_(value) for value in counter)
+    high_zero = net.and_many(not_counter[2:])
+    equal_zero = net.and_many((not_counter[0], not_counter[1], high_zero))
+    equal_one = net.and_many((counter[0], not_counter[1], high_zero))
+    equal_two = net.and_many((not_counter[0], counter[1], high_zero))
+    equal_three = net.and_many((counter[0], counter[1], high_zero))
+    output_enable = net.not_(equal_zero)
+    fallback_enable = net.not_(high_zero)
+    phase_from = net.and_(counter[0], not_counter[1])
+    phase_to = net.and_(counter[0], counter[1])
+    phase_move = net.or_(phase_from, phase_to)
+    phase_drop = net.and_(not_counter[0], not_counter[1])
+    state_update = net.and_(phase_drop, output_enable)
+
+    counter_next: list[str] = [not_counter[0]]
+    carry = counter[0]
+    for bit in range(1, TOWER_COUNTER_BITS):
+        counter_next.append(net.xor_(counter[bit], carry))
+        if bit + 1 < TOWER_COUNTER_BITS:
+            carry = net.and_(counter[bit], carry)
+
+    peg_v1 = (
+        net.mux(orientation, input_bits[0], peg[0]),
+        net.mux(orientation, input_bits[1], peg[1]),
+    )
+    first_to = (
+        net.mux(orientation, peg[0], input_bits[0]),
+        net.mux(orientation, peg[1], input_bits[1]),
+    )
+    orientation_next = _tower_direction_logic(net, source, peg_v1)
+    peg_after_drop = _tower_step_logic(net, peg, orientation)
+    q_next = net.and_(
+        counter[2],
+        net.or_(not_counter[3], net.and_(counter[4], not_counter[5])),
+    )
+    to_plus = net.xor_(orientation, parity)
+    from_plus = net.not_(to_plus)
+    generic_from = _tower_step_logic(net, peg, from_plus)
+    generic_to = _tower_step_logic(net, peg, to_plus)
+    command_from = (
+        net.mux(equal_one, generic_from[0], input_bits[0]),
+        net.mux(equal_one, generic_from[1], input_bits[1]),
+    )
+    command_to = (
+        net.mux(equal_three, generic_to[0], first_to[0]),
+        net.mux(equal_three, generic_to[1], first_to[1]),
+    )
+    selected_peg = (
+        net.mux(phase_to, command_from[0], command_to[0]),
+        net.mux(phase_to, command_from[1], command_to[1]),
+    )
+    command0 = net.mux(phase_move, "one", selected_peg[0])
+    command1 = net.or_(
+        net.and_(phase_from, command_from[1]),
+        net.and_(phase_to, command_to[1]),
+    )
+    command2 = net.not_(phase_move)
+    unused_input = net.or_many(input_bits[2:])
+    forced_zero = net.and_(unused_input, "zero")
+
+    switches = [
+        _TowerSwitch("input-fallback", fallback_enable, "word-zero", "input-splitter", 8),
+        *(
+            _TowerSwitch(
+                f"source-{bit}-input",
+                equal_one,
+                input_bits[bit],
+                f"source-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        *(
+            _TowerSwitch(
+                f"source-{bit}-feedback",
+                net.not_(equal_one),
+                source[bit],
+                f"source-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        *(
+            _TowerSwitch(
+                f"peg-{bit}-destination",
+                equal_two,
+                input_bits[bit],
+                f"peg-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        *(
+            _TowerSwitch(
+                f"peg-{bit}-virtual-one",
+                equal_three,
+                peg_v1[bit],
+                f"peg-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        *(
+            _TowerSwitch(
+                f"peg-{bit}-advance",
+                state_update,
+                peg_after_drop[bit],
+                f"peg-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        *(
+            _TowerSwitch(
+                f"peg-{bit}-feedback",
+                net.not_(net.or_many((equal_two, equal_three, state_update))),
+                peg[bit],
+                f"peg-{bit}-delay",
+            )
+            for bit in range(2)
+        ),
+        _TowerSwitch("orientation-height", equal_zero, input_bits[0], "orientation-delay"),
+        _TowerSwitch("orientation-ring", equal_three, orientation_next, "orientation-delay"),
+        _TowerSwitch(
+            "orientation-feedback",
+            net.not_(net.or_(equal_zero, equal_three)),
+            orientation,
+            "orientation-delay",
+        ),
+        _TowerSwitch("parity-update", state_update, q_next, "parity-delay"),
+        _TowerSwitch(
+            "parity-feedback",
+            net.not_(state_update),
+            parity,
+            "parity-delay",
+        ),
+    ]
+
+    net.prune(
+        (
+            high_zero,
+            fallback_enable,
+            output_enable,
+            *counter_next,
+            orientation_next,
+            q_next,
+            *peg_after_drop,
+            command0,
+            command1,
+            command2,
+            forced_zero,
+            *(switch.enable for switch in switches),
+            *(switch.value for switch in switches),
+        )
+    )
+
+    specifications: list[tuple[str, int, dict[str, object]]] = [
+        ("level-input", ARCHITECTURE_INPUT_KIND, {"word_size": 8, "ui_order": -2, "user_label": "tower-input"}),
+        ("word-zero", 46, {"word_size": 8, "init_data": 0}),
+        ("input-splitter", 17, {"word_size": 8}),
+        ("zero", 1, {}),
+        ("one", 2, {}),
+        *(
+            (f"counter-{bit}-delay", 13, {"init_data": 0})
+            for bit in range(TOWER_COUNTER_BITS)
+        ),
+        *( (f"source-{bit}-delay", 13, {"init_data": 0}) for bit in range(2) ),
+        *( (f"peg-{bit}-delay", 13, {"init_data": 0}) for bit in range(2) ),
+        ("orientation-delay", 13, {"init_data": 0}),
+        ("parity-delay", 13, {"init_data": 0}),
+        ("command-maker", 16, {"word_size": 8}),
+        ("level-output", ARCHITECTURE_OUTPUT_KIND, {"word_size": 8, "ui_order": -2, "user_label": "tower-output"}),
+        *((switch.role, 25, {"word_size": switch.word_size}) for switch in switches),
+        *((f"gate-{gate.signal}", gate.kind, {}) for gate in net.gates),
+    ]
+    seen_roles: set[str] = set()
+    components_by_role: dict[str, Component] = {}
+    for index, (role, kind, kwargs) in enumerate(specifications):
+        if role in seen_roles:
+            raise TowerVerificationError(f"duplicate Tower component role {role!r}")
+        seen_roles.add(role)
+        components_by_role[role] = Component(
+            kind=kind,
+            position=(0, index * 20),
+            rotation=0,
+            permanent_id=stable_permanent_id(key, role),
+            **kwargs,
+        )
+    components = tuple(components_by_role[role] for role, _, _ in specifications)
+
+    signal_sources: dict[str, tuple[str, str]] = {
+        "zero": ("zero", "out"),
+        "one": ("one", "out"),
+        "word-zero": ("word-zero", "out"),
+        **{f"input{bit}": ("input-splitter", f"out{bit}") for bit in range(8)},
+        **{f"c{bit}": (f"counter-{bit}-delay", "out") for bit in range(TOWER_COUNTER_BITS)},
+        "source0": ("source-0-delay", "out"),
+        "source1": ("source-1-delay", "out"),
+        "peg0": ("peg-0-delay", "out"),
+        "peg1": ("peg-1-delay", "out"),
+        "orientation": ("orientation-delay", "out"),
+        "ctz-parity": ("parity-delay", "out"),
+        "input-fallback": ("input-fallback", "out"),
+        "command-maker": ("command-maker", "out"),
+        **{gate.signal: (f"gate-{gate.signal}", "out") for gate in net.gates},
+    }
+
+    left_bus_x = -80
+    right_bus_x = 80
+    wires = []
+
+    def connect(source_signal: str, sink_role: str, sink_pin: str) -> None:
+        try:
+            source_role, source_pin = signal_sources[source_signal]
+        except KeyError as exc:
+            raise TowerVerificationError(f"unknown Tower signal {source_signal!r}") from exc
+        lane_y = -30 - len(wires) * 4
+        wires.append(
+            _tower_safe_wire(
+                components_by_role[source_role],
+                source_pin,
+                components_by_role[sink_role],
+                sink_pin,
+                lane_y=lane_y,
+                left_bus_x=left_bus_x,
+                right_bus_x=right_bus_x,
+            )
+        )
+
+    connect(high_zero, "level-input", "control")
+    connect("word-zero", "input-fallback", "in")
+    connect(fallback_enable, "input-fallback", "enable")
+    connect("input-fallback", "input-splitter", "in")
+    # Architecture Input and the disabled-input zero switch are mutually
+    # exclusive tri-state drivers on the splitter's U8 input network.
+    lane_y = -30 - len(wires) * 4
+    wires.append(
+        _tower_safe_wire(
+            components_by_role["level-input"],
+            "value",
+            components_by_role["input-splitter"],
+            "in",
+            lane_y=lane_y,
+            left_bus_x=left_bus_x,
+            right_bus_x=right_bus_x,
+        )
+    )
+
+    for gate in net.gates:
+        for input_pin, fanin in zip(("in",) if gate.kind == 3 else ("in0", "in1"), gate.fanins):
+            connect(fanin, f"gate-{gate.signal}", input_pin)
+    for bit, value in enumerate(counter_next):
+        connect(value, f"counter-{bit}-delay", "in")
+    for switch in switches:
+        connect(switch.enable, switch.role, "enable")
+        connect(switch.value, switch.role, "in")
+        lane_y = -30 - len(wires) * 4
+        wires.append(
+            _tower_safe_wire(
+                components_by_role[switch.role],
+                "out",
+                components_by_role[switch.destination],
+                "in",
+                lane_y=lane_y,
+                left_bus_x=left_bus_x,
+                right_bus_x=right_bus_x,
+            )
+        )
+    for bit, value in enumerate((command0, command1, command2, forced_zero, forced_zero, forced_zero, forced_zero, forced_zero)):
+        connect(value, "command-maker", f"in{bit}")
+    connect("command-maker", "level-output", "value")
+    connect(output_enable, "level-output", "control")
+
+    critical_signals = (
+        command0,
+        command1,
+        command2,
+        output_enable,
+        *counter_next,
+        orientation_next,
+        q_next,
+        *peg_after_drop,
+    )
+    return Circuit(
+        gate=len(net.gates),
+        delay=max(net.depth(signal) for signal in critical_signals),
+        description=(
+            "Codex Tower of Hanoi ASIC v1: 13-bit compressed FSM, four sequential "
+            "architecture reads, one command output per tick, and no legacy dependencies."
+        ),
+        components=components,
+        wires=tuple(wires),
+    )
+
+
+def verify_tower_fsm_asic(
+    circuit: Circuit | None = None,
+    *,
+    sprite_root: Path | None = None,
+) -> dict[str, object]:
+    """Prove the emitted v15 circuit against all 18 current Tower cases."""
+
+    candidate = build_tower_fsm_asic() if circuit is None else circuit
+    payload = encode_v15(candidate)
+    if decode_v15(payload) != candidate:
+        raise TowerVerificationError("Tower FSM ASIC failed v15 round-trip")
+    if len(candidate.components) > 255:
+        raise TowerVerificationError("Tower FSM ASIC exceeds the level component limit")
+    if sum(component.kind == ARCHITECTURE_INPUT_KIND for component in candidate.components) != 1:
+        raise TowerVerificationError("Tower FSM ASIC must have exactly one Architecture Input")
+    if sum(component.kind == ARCHITECTURE_OUTPUT_KIND for component in candidate.components) != 1:
+        raise TowerVerificationError("Tower FSM ASIC must have exactly one Architecture Output")
+    if sum(component.kind == 13 for component in candidate.components) != TOWER_DELAY_BITS:
+        raise TowerVerificationError("Tower FSM ASIC must retain exactly thirteen Delay Bits")
+
+    connectivity = analyze_connectivity(candidate)
+    for field in (
+        "unsupported_component_kind_counts",
+        "unconnected_pin_count",
+        "multi_driver_network_count",
+        "undriven_network_count",
+        "sinkless_network_count",
+        "width_mismatch_network_count",
+        "cycle_component_count",
+    ):
+        if connectivity[field]:
+            raise TowerVerificationError(
+                f"Tower FSM ASIC failed connectivity check {field}: {connectivity[field]!r}"
+            )
+
+    summaries: list[dict[str, int]] = []
+    for case in all_tower_cases():
+        expected = commands_from_moves(formula_moves(case))
+        inputs = tuple(
+            {"tower-input": case.input_stream[tick] if tick < 4 else 0}
+            for tick in range(len(expected) + 1)
+        )
+        try:
+            trace = simulate_clocked_trace(candidate, inputs=inputs)
+        except SimulationError as exc:
+            raise TowerVerificationError(
+                f"Tower FSM simulation failed for {case!r}"
+            ) from exc
+        emitted: list[int] = []
+        for tick, result in enumerate(trace):
+            if tick == 0:
+                if result.outputs:
+                    raise TowerVerificationError("Tower FSM emitted during first input read")
+            else:
+                if result.outputs != {"tower-output": expected[tick - 1]}:
+                    raise TowerVerificationError(
+                        f"Tower FSM output mismatch for {case!r} at tick {tick}: "
+                        f"expected {expected[tick - 1]}, got {result.outputs}"
+                    )
+                emitted.append(expected[tick - 1])
+        level_result = simulate_tower_script(case, emitted)
+        if not level_result.won or level_result.first_win_event != len(expected):
+            raise TowerVerificationError(f"Tower FSM ASIC loses Tower case {case!r}")
+        summaries.append(
+            {
+                "highest_disk": case.highest_disk,
+                "source": case.source,
+                "destination": case.destination,
+                "cycles": len(expected) + 1,
+            }
+        )
+
+    active_sprite_root = sprite_root or DEFAULT_COMPONENT_SPRITE_ROOT
+    geometry = audit_sprite_geometry(candidate, active_sprite_root)
+    if not geometry.is_safe:
+        raise TowerVerificationError(
+            "Tower FSM ASIC failed sprite geometry audit: "
+            f"unsupported={geometry.unsupported_component_kinds}, "
+            f"overlap={len(geometry.component_overlap_cells)}, "
+            f"wire_collisions={len(geometry.wire_collisions)}"
+        )
+    return {
+        "case_count": len(summaries),
+        "maximum_cycles": max(item["cycles"] for item in summaries),
+        "component_count": len(candidate.components),
+        "wire_count": len(candidate.wires),
+        "gate": candidate.gate,
+        "delay": candidate.delay,
+        "sha256": sha256(payload).hexdigest(),
+        "geometry": {
+            "sprite_count": len(geometry.sprite_files),
+            "alpha_cells": geometry.alpha_cell_count,
+        },
+        "cases": summaries,
+    }
+
+
+def write_tower_fsm_asic(project_root: Path) -> dict[str, object]:
+    """Write the fully verified Tower FSM baseline into the project only.
+
+    This deliberately has no formal-save side effect.  The candidate needs one
+    game-side acceptance run before a direct-install target may be registered.
+    """
+
+    candidate = build_tower_fsm_asic()
+    verification = verify_tower_fsm_asic(candidate)
+    payload = encode_v15(candidate)
+    destination = project_root / "examples" / "tower" / "candidate" / "circuit.data"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(payload)
+    (destination.parent / ".gitkeep").unlink(missing_ok=True)
+    metadata = {
+        "schema": 1,
+        "level": "tower",
+        "title": "汉诺塔",
+        "strategy": "current-v15 compressed finite-state ASIC",
+        "deployment_target": "schematics/architecture/CODEX-TOWER/circuit.data",
+        "sha256": sha256(payload).hexdigest(),
+        "format_version": 15,
+        "component_count": len(candidate.components),
+        "wire_count": len(candidate.wires),
+        "metric_status": (
+            "125 周期与全部离线行为已验证；gate/delay 是候选声明值，"
+            "尚未通过游戏端计分或排行榜验收。"
+        ),
+        "public_reference": {"gate": 125, "delay": 7, "cycles": 125},
+        **verification,
+    }
+    (destination.parent / "metadata.json").write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return metadata
 
 
 def build_tower_io_protocol_probe() -> Circuit:

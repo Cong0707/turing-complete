@@ -7,7 +7,14 @@ import unittest
 from tc_save_lab.builder import build_recipe
 from tc_save_lab.codec import decode_v15
 from tc_save_lab.model import Circuit, Component, Wire
-from tc_save_lab.simulate import SimulationError, simulate_combinational, verify_truth_table
+from tc_save_lab.rng_asic import build_rng_asic
+from tc_save_lab.simulate import (
+    SimulationError,
+    simulate_clocked_ticks,
+    simulate_clocked_trace,
+    simulate_combinational,
+    verify_truth_table,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -111,6 +118,18 @@ class CombinationalSimulationTests(unittest.TestCase):
                 {"Output": expected},
                 value,
             )
+
+    def test_clocked_trace_reuses_one_compiled_network_for_changing_inputs(self):
+        circuit = build_rng_asic()
+        inputs = (
+            {"Seed": 0x12345678},
+            {"Seed": 0x00000000},
+            {"Seed": 0xFFFFFFFF},
+        )
+        self.assertEqual(
+            simulate_clocked_trace(circuit, inputs=inputs),
+            simulate_clocked_ticks(circuit, inputs=inputs[0], tick_count=len(inputs)),
+        )
 
 
 if __name__ == "__main__":

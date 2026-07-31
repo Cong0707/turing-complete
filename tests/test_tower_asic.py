@@ -10,6 +10,7 @@ from tc_save_lab.tower_asic import (
     TowerCase,
     all_tower_cases,
     audit_sprite_geometry,
+    build_tower_fsm_asic,
     build_tower_io_protocol_probe,
     build_tower_protocol_candidate,
     ctz,
@@ -17,6 +18,8 @@ from tc_save_lab.tower_asic import (
     formula_moves,
     recursive_moves,
     verify_tower_event_model,
+    verify_tower_fsm_asic,
+    verify_tower_fsm_model,
     verify_tower_io_protocol_probe,
 )
 
@@ -62,6 +65,30 @@ class TowerAsicTests(unittest.TestCase):
                 ctz((action_counter >> 2) + 1) & 1,
                 action_counter,
             )
+
+    def test_compressed_fsm_matches_all_eighteen_event_traces(self):
+        result = verify_tower_fsm_model()
+        self.assertEqual(result["case_count"], 18)
+        self.assertEqual(result["delay_bits"], 13)
+        self.assertEqual(result["maximum_cycles"], 125)
+
+    def test_emitted_fsm_has_one_io_pair_and_thirteen_delay_bits(self):
+        candidate = build_tower_fsm_asic()
+        self.assertLessEqual(len(candidate.components), 255)
+        self.assertEqual(sum(component.kind == 62 for component in candidate.components), 1)
+        self.assertEqual(sum(component.kind == 70 for component in candidate.components), 1)
+        self.assertEqual(sum(component.kind == 13 for component in candidate.components), 13)
+
+    @unittest.skipUnless(
+        DEFAULT_COMPONENT_SPRITE_ROOT.is_dir(),
+        "current Turing Complete component sprites are not installed on this machine",
+    )
+    def test_emitted_fsm_replays_all_cases_and_passes_live_sprite_audit(self):
+        result = verify_tower_fsm_asic(sprite_root=DEFAULT_COMPONENT_SPRITE_ROOT)
+        self.assertEqual(result["case_count"], 18)
+        self.assertEqual(result["maximum_cycles"], 125)
+        self.assertEqual(result["component_count"], 158)
+        self.assertEqual(result["wire_count"], 291)
 
     def test_non_deployable_probe_is_valid_current_v15_topology(self):
         result = verify_tower_io_protocol_probe()

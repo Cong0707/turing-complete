@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from dataclasses import dataclass
 from itertools import product
+from typing import Iterable
 
 from .analysis import wire_points
 from .model import Circuit
@@ -444,6 +445,29 @@ def simulate_clocked_ticks(
             circuit,
             compiled=compiled,
             inputs=inputs,
+            memory=current_memory,
+        )
+        results.append(result)
+        current_memory = result.memory
+    return tuple(results)
+
+
+def simulate_clocked_trace(
+    circuit: Circuit,
+    *,
+    inputs: Iterable[dict[str, int]],
+    memory: dict[int, int] | None = None,
+) -> tuple[ClockedTickResult, ...]:
+    """Simulate a clocked circuit with a distinct input mapping on each tick."""
+
+    compiled = _compile(circuit)
+    current_memory = memory
+    results: list[ClockedTickResult] = []
+    for input_values in inputs:
+        result = _simulate_clocked_tick(
+            circuit,
+            compiled=compiled,
+            inputs=input_values,
             memory=current_memory,
         )
         results.append(result)
