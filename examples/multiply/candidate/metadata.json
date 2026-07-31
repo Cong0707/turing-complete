@@ -1,0 +1,43 @@
+{
+  "level": "multiply",
+  "title_zh": "乘法器",
+  "format_version": 15,
+  "strategy": "current native U8 MUL; only its lower U8 output is wired to Result",
+  "metrics": {
+    "gate": 230,
+    "delay": 11,
+    "energy": 2530
+  },
+  "component_count": 4,
+  "wire_count": 3,
+  "sha256": "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
+  "truth_table_vectors": 65536,
+  "connectivity": {
+    "pin_count": 6,
+    "connected_pin_count": 6,
+    "unconnected_inputs": [],
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "endpoint_non_pin_count": 0
+  },
+  "geometry": {
+    "sprite_files": [
+      "com_level_input_word.png",
+      "com_level_output_word.png",
+      "com_mul.png"
+    ],
+    "alpha_cell_count": 113,
+    "component_overlap_cells": [],
+    "wire_component_collisions": [],
+    "wire_interior_pin_contacts": [],
+    "endpoint_non_pin_count": 0
+  },
+  "evidence": {
+    "component_kind": 31,
+    "runtime_module": "TC_Mul (in0, in1, out); assign out = in0 * in1;",
+    "runtime_sprite": "com_mul.png",
+    "source": "Turing Complete 2.1.x installed executable at 0xA4CAC8 and live v15 schematic endpoints"
+  }
+}

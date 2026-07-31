@@ -56,6 +56,7 @@ EXPECTED_NORMAL_TARGETS = (
     "decoder_2",
     "decoder_3",
     "one_hot_encoding",
+    "multiply",
     "or_gate_3",
     "saving_bytes",
     "saving_gracefully",
@@ -89,6 +90,11 @@ EXPECTED_AUDITED_HEADERS = {
         "a8c772330a024989e3db2923a6554f783c09c5ae4b0ce552c6e673cdaf63c681",
         13,
         4,
+    ),
+    "multiply": (
+        "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
+        230,
+        11,
     ),
     "decoder_3": (
         "27cd1ae3ec2ecc7d8037adc59d1850280917ff2b7a01093c7ed0dbb34f50274c",

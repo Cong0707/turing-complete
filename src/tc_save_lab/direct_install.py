@@ -150,6 +150,12 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         70,
         3,
     ),
+    "multiply": ReviewedNormalTarget(
+        Path("examples/multiply/candidate/circuit.data"),
+        "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
+        230,
+        11,
+    ),
     "or_gate_3": ReviewedNormalTarget(
         Path("examples/or_gate_3/candidate/circuit.data"),
         "7ec9d41610fe2c2ddefbdc459c1c30326734b5112e20569011b13c483168a3bd",
