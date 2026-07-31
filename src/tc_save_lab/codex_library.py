@@ -7,6 +7,8 @@ from pathlib import Path
 
 from .builder import stable_permanent_id, wire_from_vertices
 from .foundry import build_codex_candidate, foundry_input, foundry_output
+from .logic_layout import layout_logic_network
+from .logic_network import LogicBuilder
 from .model import Circuit, Component
 from .pins import analyze_connectivity
 from .simulate import verify_truth_table
@@ -112,7 +114,36 @@ def _full_adder() -> CodexRecipe:
     )
 
 
-CODEX_RECIPES: tuple[CodexRecipe, ...] = (_half_adder(), _full_adder())
+def _parity_gate(*, inverted: bool) -> CodexRecipe:
+    name = "xnor" if inverted else "xor"
+    display = "同或门" if inverted else "异或门"
+    key = f"foundry/codex/{name}/area"
+    builder = LogicBuilder()
+    left = builder.input("A")
+    right = builder.input("B")
+    parity = builder.xor(left, right)
+    builder.output("Out", ~parity if inverted else parity)
+    circuit = layout_logic_network(key, builder.build())
+    return CodexRecipe(
+        key,
+        f"{display}/低门数",
+        circuit,
+        {"A": 1, "B": 1},
+        ("Out",),
+        lambda values: {
+            "Out": int(not (values["A"] ^ values["B"]))
+            if inverted
+            else values["A"] ^ values["B"]
+        },
+    )
+
+
+CODEX_RECIPES: tuple[CodexRecipe, ...] = (
+    _half_adder(),
+    _full_adder(),
+    _parity_gate(inverted=False),
+    _parity_gate(inverted=True),
+)
 
 
 def verify_codex_recipe(recipe: CodexRecipe) -> dict[str, object]:

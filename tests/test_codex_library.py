@@ -13,6 +13,8 @@ class CodexLibraryTests(unittest.TestCase):
         reports = {recipe.logical_key: verify_codex_recipe(recipe) for recipe in CODEX_RECIPES}
         self.assertEqual(reports["foundry/codex/half_adder/area"]["vectors"], 4)
         self.assertEqual(reports["foundry/codex/full_adder/area"]["vectors"], 8)
+        self.assertEqual(reports["foundry/codex/xor/area"]["vectors"], 4)
+        self.assertEqual(reports["foundry/codex/xnor/area"]["vectors"], 4)
         self.assertEqual(
             reports["foundry/codex/half_adder/area"]["connectivity"]["unit_logic_depth"],
             2,
@@ -26,7 +28,7 @@ class CodexLibraryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             result = build_known_codex_library(root)
-            self.assertEqual(result["component_count"], 2)
+            self.assertEqual(result["component_count"], 4)
             for record in result["components"]:
                 circuit = decode_v15(Path(record["candidate"]).read_bytes())
                 self.assertNotEqual(circuit.custom_id, 0)

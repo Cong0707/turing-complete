@@ -57,7 +57,7 @@ class FoundryCliTests(unittest.TestCase):
                     0,
                 )
             report = json.loads(output.getvalue())
-            self.assertEqual(report["component_count"], 2)
+            self.assertEqual(report["component_count"], 4)
             self.assertTrue((project / "examples" / "foundry" / "codex" / "custom-ids.json").is_file())
             self.assertFalse((dependency_root / "codex").exists())
 
