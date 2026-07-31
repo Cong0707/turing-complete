@@ -9,6 +9,7 @@ import json
 from .campaign import initialize_examples, read_level_meta
 from .codec import decode_circuit
 from .cost import analyze_custom_costs, write_cost_report
+from .leaderboard import write_level_leaderboards
 from .analysis import analyze_examples, analyze_file
 from .builder import build_known_candidates
 from .scaffold import extract_campaign_scaffolds
@@ -86,6 +87,25 @@ def build_parser() -> ArgumentParser:
     costs.add_argument("--root", type=_path, default=DEFAULT_SAVE_ROOT / "schematics" / "foundry")
     costs.add_argument("--output", type=_path)
 
+    leaderboard = sub.add_parser(
+        "scrape-leaderboards",
+        help="读取官网单关公开榜页并计算 Pareto 前沿",
+    )
+    leaderboard.add_argument("levels", nargs="*")
+    leaderboard.add_argument("--all", action="store_true", help="采集目标清单中的全部可计分关卡")
+    leaderboard.add_argument(
+        "--targets",
+        type=_path,
+        default=PROJECT_ROOT / "examples" / "leaderboard-targets.json",
+    )
+    leaderboard.add_argument(
+        "--output",
+        type=_path,
+        default=PROJECT_ROOT / "examples" / "leaderboard-live.json",
+    )
+    leaderboard.add_argument("--pause", type=float, default=1.2, help="请求间隔秒数")
+    leaderboard.add_argument("--timeout", type=float, default=60.0, help="单次请求超时秒数")
+
     dump = sub.add_parser("export-json", help="把支持的电路格式解析为 JSON")
     dump.add_argument("source", type=_path)
     dump.add_argument("destination", type=_path)
@@ -155,6 +175,28 @@ def _run(args: Namespace) -> int:
             report = analyze_custom_costs(args.root)
         _print_json(report)
         return 0
+    if args.command == "scrape-leaderboards":
+        levels = tuple(dict.fromkeys(args.levels))
+        if args.all:
+            targets = json.loads(args.targets.read_text("utf-8"))
+            levels = tuple(item["id"] for item in targets["levels"])
+        if not levels:
+            raise ValueError("请指定至少一个关卡，或使用 --all")
+        report = write_level_leaderboards(
+            levels,
+            args.output,
+            pause_seconds=args.pause,
+            timeout=args.timeout,
+        )
+        _print_json(
+            {
+                "output": str(args.output),
+                "requested": len(levels),
+                "completed": len(report["levels"]),
+                "errors": report["errors"],
+            }
+        )
+        return 0
     if args.command == "export-json":
         circuit = export_json(args.source, args.destination)
         _print_json({"destination": str(args.destination), "components": len(circuit.components), "wires": len(circuit.wires)})
@@ -223,6 +265,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("5. 构建已审查的优化候选")
         print("6. 写回一个关卡候选")
         print("7. 分析 foundry 自定义元件递归成本")
+        print("8. 刷新官网单关排行榜目标")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -243,6 +286,12 @@ def _interactive(parser: ArgumentParser) -> int:
                 return _run(parser.parse_args(["apply", level]))
         if choice == "7":
             return _run(parser.parse_args(["analyze-costs"]))
+        if choice == "8":
+            levels = input("关卡内部名称（空格分隔，输入 all 采集全部）: ").strip()
+            if levels.casefold() == "all":
+                return _run(parser.parse_args(["scrape-leaderboards", "--all"]))
+            if levels:
+                return _run(parser.parse_args(["scrape-leaderboards", *levels.split()]))
         print("无效选择。")
 
 
