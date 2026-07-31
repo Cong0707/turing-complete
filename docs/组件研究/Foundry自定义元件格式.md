@@ -62,9 +62,9 @@ kind=79  Foundry 输入（输入方向）
 kind=81  Foundry 输出（输出方向）
 ```
 
-从 125 个 kind79 和 124 个 kind81 实例的实际导线端点统计，并与
+对 RISCV、diode、Overture 等现代 v15 Foundry 电路的实际导线端点统计，并与
 `.research/tc_circuit/tc_circuit/component_info.json` 的 `Input64` / `Output64` 定义交叉核对，
-得到以下稳定局部坐标：
+得到以下现代接口族的稳定局部坐标：
 
 ```text
 kind=79: PinSpec("in", input,  ( 3, 0), width=component.word_size)
@@ -80,11 +80,28 @@ rotation 2: kind79 (-3, 0), kind81 ( 3, 0)
 rotation 3: kind79 ( 0,-3), kind81 ( 0, 3)
 ```
 
-这里的 `word_size` 决定端口总线宽度，而不改变端口距离。证据覆盖单比特、8、16、32 和
-64 位接口，也覆盖四种旋转；例如 `RISCV/ALU/BALU` 的 rot1 输入、`RISCV/MMIO` 的 rot2
-输入和 `RISCV/ALU/RIALU` 的 rot1 输出都与上表一致。组件的 `settings` 常见为输入
-`(2,)`、输出 `(0,)`，但 Overture 旧样本也出现空元组；它是 UI/端口元数据，不应替代
-几何端口规则。
+这里的 `word_size` 决定端口总线宽度，而不改变现代接口的三格端口距离。证据覆盖单比特、
+8、16、32 和 64 位接口，也覆盖四种旋转；例如 `RISCV/ALU/BALU` 的 rot1 输入、
+`RISCV/MMIO` 的 rot2 输入和 `RISCV/ALU/RIALU` 的 rot1 输出都与上表一致。组件的
+`settings` 常见为输入 `(2,)`、输出 `(0,)`，但 Overture 旧样本也出现空元组；它是 UI/端口
+元数据，不应单独替代几何端口规则。
+
+### 历史接口形状边界
+
+`kind=79/81` 不是一个跨版本固定形状。正式 foundry 中仍保留的旧目录存在一格端口：
+
+```text
+OVERTRUE/ALU、OVERTRUE/COND、OVERTRUE/RegisterPlus：
+  kind79 输入常见本地 (+1,0)，kind81 输出常见本地 (-1,0)
+LEG/SWT：
+  settings=(2,) 的 kind79 采用一格；另一个 settings=(3,) 输入采用三格
+```
+
+这说明端口距离属于自定义电路的接口/本体设计，而不是可以由 `kind`、`word_size` 或
+`settings` 单独推断的全局常量。当前 `pins.py` 的 kind79/81 映射针对 **新建 Codex 元件的
+现代三格模板**；分析旧 `OVERTRUE`/`LEG` 电路时，应从同一模板复制端口记录，或在调用分析器
+时显式提供接口形状，不能把默认三格结论反推到旧文件。父电路引用 kind78 时，子电路的接口
+形状也必须保持一致，否则导线虽能通过二进制编解码，游戏加载时仍可能出现端口错位。
 
 ### Custom 实例、ID 与依赖
 
@@ -114,7 +131,8 @@ component.custom_word_sizes = 可选的内部永久 ID/字宽映射
 
 建议 builder 将 Foundry 电路分成三层：
 
-1. **接口层**：用 kind79/81 创建端口，位置和 rotation 由布局器决定，`word_size` 显式传入。
+1. **接口层**：用 kind79/81 创建端口，位置和 rotation 由布局器决定，`word_size` 显式传入；
+   Codex 新元件默认使用三格模板，旧元件迁移必须携带其一格/三格接口元数据。
 2. **逻辑层**：用普通元件和 kind78 Custom 实例构建网络；kind78 的 `custom_id` 必须引用
    已生成或已导入的子电路。
 3. **容器层**：设置非零确定性 `custom_id`、`dependencies`、`gate`、`delay`、

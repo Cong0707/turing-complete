@@ -91,9 +91,11 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     73: _pins(PinSpec("value0", I, (-1, -1), 1), PinSpec("value1", I, (-1, 0), 1)),
     74: _pins(PinSpec("value0", I, (-1, -1), 1), PinSpec("value1", I, (-1, 0), 1), PinSpec("value2", I, (-1, 1), 1)),
     75: _pins(PinSpec("value0", I, (-1, -2), 1), PinSpec("value1", I, (-1, -1), 1), PinSpec("value2", I, (-1, 0), 1), PinSpec("value3", I, (-1, 1), 1)),
-    # Foundry interface ports.  These are the v15 counterparts of the
-    # Input64/Output64 schemas in tc_circuit's component_info.json; the port
-    # distance is three cells and is independent of word_size.
+    # Modern Codex Foundry interface ports.  These are the v15 counterparts of
+    # the Input64/Output64 schemas in tc_circuit's component_info.json; the
+    # port distance is three cells and is independent of word_size.  Legacy
+    # OVERTRUE/LEG templates can use one-cell ports and must be analyzed with
+    # their original template metadata instead of this default.
     79: _pins(PinSpec("in", I, (3, 0))),
     81: _pins(PinSpec("out", O, (-3, 0))),
 }
