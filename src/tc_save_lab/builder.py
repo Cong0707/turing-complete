@@ -117,6 +117,32 @@ def _xnor(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[
     return components, wires
 
 
+def _bit_inverter(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(10, (0, 0), 0, stable_permanent_id(level, "xor")),
+    )
+    wires = (
+        wire_from_vertices(((-13, -1), (-1, -1))),
+        wire_from_vertices(((-13, 1), (-1, 1))),
+        wire_from_vertices(((2, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _decoder_1(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(3, (0, 0), 0, stable_permanent_id(level, "not")),
+    )
+    wires = (
+        wire_from_vertices(((-12, 0), (-1, 0))),
+        wire_from_vertices(((-12, 0), (-12, 1), (12, 1), (12, 0))),
+        wire_from_vertices(((1, 0), (11, 0), (12, -1))),
+    )
+    return components, wires
+
+
 RECIPES: dict[str, Recipe] = {
     "or_gate_3": Recipe(
         "or_gate_3",
@@ -141,6 +167,22 @@ RECIPES: dict[str, Recipe] = {
         _xnor,
         2,
         lambda value: int((value & 1) == ((value >> 1) & 1)),
+    ),
+    "bit_inverter": Recipe(
+        "bit_inverter",
+        3,
+        2,
+        _bit_inverter,
+        2,
+        lambda value: (value & 1) ^ ((value >> 1) & 1),
+    ),
+    "decoder_1": Recipe(
+        "decoder_1",
+        1,
+        1,
+        _decoder_1,
+        1,
+        lambda value: (1 - (value & 1)) | ((value & 1) << 1),
     ),
 }
 

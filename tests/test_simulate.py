@@ -19,6 +19,8 @@ class CombinationalSimulationTests(unittest.TestCase):
             "or_gate_3": [0, 1, 1, 1, 1, 1, 1, 1],
             "and_gate_3": [0, 0, 0, 0, 0, 0, 0, 1],
             "xnor": [1, 0, 0, 1],
+            "bit_inverter": [0, 1, 1, 0],
+            "decoder_1": [1, 2],
         }
         for level, expected in expectations.items():
             build_recipe(PROJECT_ROOT, level)
