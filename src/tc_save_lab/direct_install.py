@@ -162,6 +162,12 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         2,
         2,
     ),
+    "ram_component": ReviewedNormalTarget(
+        Path("examples/ram_component/candidate/circuit.data"),
+        "244c9c4110e61710b78d7a30d6454f6aa24360ea9131b60f5902a30cc2137e8e",
+        368,
+        5,
+    ),
     "saving_bytes": ReviewedNormalTarget(
         Path("examples/saving_bytes/candidate/circuit.data"),
         "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",

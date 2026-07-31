@@ -58,6 +58,7 @@ EXPECTED_NORMAL_TARGETS = (
     "one_hot_encoding",
     "multiply",
     "or_gate_3",
+    "ram_component",
     "saving_bytes",
     "saving_gracefully",
     "signed_negator",
@@ -95,6 +96,11 @@ EXPECTED_AUDITED_HEADERS = {
         "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
         230,
         11,
+    ),
+    "ram_component": (
+        "244c9c4110e61710b78d7a30d6454f6aa24360ea9131b60f5902a30cc2137e8e",
+        368,
+        5,
     ),
     "decoder_3": (
         "27cd1ae3ec2ecc7d8037adc59d1850280917ff2b7a01093c7ed0dbb34f50274c",
@@ -152,7 +158,6 @@ class DirectInstallTests(unittest.TestCase):
                     "decoder_1",
                     "full_adder",
                     "not_gate",
-                    "ram_component",
                 }
             )
         )
