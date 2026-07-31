@@ -1,0 +1,1437 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-31T22:46:00+08:00",
+  "source": {
+    "leaderboard_url": "https://turingcomplete.game/leaderboard",
+    "website_base": "https://turingcomplete.game",
+    "observed_game_version_context": "2.1.281",
+    "sample_method": "联合总榜前12名公开 profile 中展示的成绩与组件 Pareto 点；没有遍历50个体积很大的单关榜单。",
+    "guarantee": "这些数值是公开顶尖玩家样本中的最佳或近最佳目标，不声明为已证明的全局世界纪录。",
+    "profiles": [
+      {
+        "rank": 1,
+        "id": 362,
+        "name": "FermiEnergy（复旦大学-集成电路与微纳电子创新学院）",
+        "url": "https://turingcomplete.game/profile/362"
+      },
+      {
+        "rank": 2,
+        "id": 834,
+        "name": "danie59823",
+        "url": "https://turingcomplete.game/profile/834"
+      },
+      {
+        "rank": 3,
+        "id": 92,
+        "name": "TianMo",
+        "url": "https://turingcomplete.game/profile/92"
+      },
+      {
+        "rank": 4,
+        "id": 3972,
+        "name": "Lob the Turnip",
+        "url": "https://turingcomplete.game/profile/3972"
+      },
+      {
+        "rank": 5,
+        "id": 2525,
+        "name": "Sperliox",
+        "url": "https://turingcomplete.game/profile/2525"
+      },
+      {
+        "rank": 6,
+        "id": 3963,
+        "name": "Celforyon",
+        "url": "https://turingcomplete.game/profile/3963"
+      },
+      {
+        "rank": 7,
+        "id": 390,
+        "name": "Gelthor",
+        "url": "https://turingcomplete.game/profile/390"
+      },
+      {
+        "rank": 8,
+        "id": 6238,
+        "name": "Eseris",
+        "url": "https://turingcomplete.game/profile/6238"
+      },
+      {
+        "rank": 9,
+        "id": 141,
+        "name": "Zr-睿",
+        "url": "https://turingcomplete.game/profile/141"
+      },
+      {
+        "rank": 10,
+        "id": 423,
+        "name": "realomg(Score of a complete computer, ot...",
+        "url": "https://turingcomplete.game/profile/423"
+      },
+      {
+        "rank": 11,
+        "id": 3794,
+        "name": "Bllum",
+        "url": "https://turingcomplete.game/profile/3794"
+      },
+      {
+        "rank": 12,
+        "id": 871,
+        "name": "Swan",
+        "url": "https://turingcomplete.game/profile/871"
+      }
+    ]
+  },
+  "metrics": {
+    "component_tuple": [
+      "gate",
+      "delay",
+      "energy"
+    ],
+    "programming_tuple": [
+      "gate",
+      "delay",
+      "cycle",
+      "energy"
+    ],
+    "component_energy_formula": "energy = gate * delay",
+    "programming_energy_formula": "energy = gate * delay * cycle",
+    "overall_formula": "sum(log2(level_energy))，以官网总榜页面说明为准；零能耗关卡需由服务端特殊处理。",
+    "pareto_rule": "所有对应指标均取更小；一个点只有在不存在另一个点各轴不大且至少一轴更小时才保留。",
+    "representative_rule": {
+      "energy_best": "先最小 energy，再最小 delay、gate。",
+      "delay_best": "先最小 delay，再最小 energy、gate。",
+      "gate_best": "先最小 gate，再最小 energy、delay。"
+    }
+  },
+  "level_count": 50,
+  "levels": [
+    {
+      "order": 3,
+      "id": "not_gate",
+      "title": "NOT Gate",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/not_gate",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        },
+        "delay_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        },
+        "gate_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        }
+      }
+    },
+    {
+      "order": 9,
+      "id": "xor_gate",
+      "title": "XOR Gate",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/xor_gate",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "delay_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "gate_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        }
+      }
+    },
+    {
+      "order": 10,
+      "id": "or_gate_3",
+      "title": "Bigger OR Gate",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/or_gate_3",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        },
+        "delay_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        },
+        "gate_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        }
+      }
+    },
+    {
+      "order": 11,
+      "id": "and_gate_3",
+      "title": "Bigger AND Gate",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/and_gate_3",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        },
+        "delay_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        },
+        "gate_best": {
+          "gate": 2,
+          "delay": 2,
+          "energy": 4
+        }
+      }
+    },
+    {
+      "order": 12,
+      "id": "xnor",
+      "title": "XNOR Gate",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/xnor",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "delay_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "gate_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        }
+      }
+    },
+    {
+      "order": 19,
+      "id": "bit_adder",
+      "title": "Half Adder",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/bit_adder",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "delay_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "gate_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        }
+      }
+    },
+    {
+      "order": 22,
+      "id": "full_adder",
+      "title": "Full Adder",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/full_adder",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 7,
+          "delay": 4,
+          "energy": 28
+        },
+        "delay_best": {
+          "gate": 14,
+          "delay": 3,
+          "energy": 42
+        },
+        "gate_best": {
+          "gate": 7,
+          "delay": 4,
+          "energy": 28
+        }
+      }
+    },
+    {
+      "order": 25,
+      "id": "byte_nand",
+      "title": "Byte NAND",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_nand",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        },
+        "delay_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        },
+        "gate_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        }
+      }
+    },
+    {
+      "order": 26,
+      "id": "byte_not",
+      "title": "Byte NOT",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_not",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        },
+        "delay_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        },
+        "gate_best": {
+          "gate": 8,
+          "delay": 1,
+          "energy": 8
+        }
+      }
+    },
+    {
+      "order": 27,
+      "id": "byte_adder",
+      "title": "Adding Bytes",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_adder",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 15,
+      "representatives": {
+        "energy_best": {
+          "gate": 103,
+          "delay": 5,
+          "energy": 515
+        },
+        "delay_best": {
+          "gate": 154,
+          "delay": 4,
+          "energy": 616
+        },
+        "gate_best": {
+          "gate": 56,
+          "delay": 18,
+          "energy": 1008
+        }
+      }
+    },
+    {
+      "order": 28,
+      "id": "bit_inverter",
+      "title": "Bit inverter",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/bit_inverter",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "delay_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        },
+        "gate_best": {
+          "gate": 3,
+          "delay": 2,
+          "energy": 6
+        }
+      }
+    },
+    {
+      "order": 30,
+      "id": "byte_mux",
+      "title": "Multiplexer",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_mux",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 33,
+          "delay": 2,
+          "energy": 66
+        },
+        "delay_best": {
+          "gate": 33,
+          "delay": 2,
+          "energy": 66
+        },
+        "gate_best": {
+          "gate": 25,
+          "delay": 3,
+          "energy": 75
+        }
+      }
+    },
+    {
+      "order": 31,
+      "id": "signed_negator",
+      "title": "Signed Negator",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/signed_negator",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 6,
+      "representatives": {
+        "energy_best": {
+          "gate": 24,
+          "delay": 5,
+          "energy": 120
+        },
+        "delay_best": {
+          "gate": 43,
+          "delay": 3,
+          "energy": 129
+        },
+        "gate_best": {
+          "gate": 21,
+          "delay": 8,
+          "energy": 168
+        }
+      }
+    },
+    {
+      "order": 33,
+      "id": "saving_gracefully",
+      "title": "Saving Gracefully",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/saving_gracefully",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 10,
+          "delay": 5,
+          "energy": 50
+        },
+        "delay_best": {
+          "gate": 10,
+          "delay": 5,
+          "energy": 50
+        },
+        "gate_best": {
+          "gate": 9,
+          "delay": 6,
+          "energy": 54
+        }
+      }
+    },
+    {
+      "order": 34,
+      "id": "saving_bytes",
+      "title": "Saving Bytes",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/saving_bytes",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 73,
+          "delay": 5,
+          "energy": 365
+        },
+        "delay_best": {
+          "gate": 73,
+          "delay": 5,
+          "energy": 365
+        },
+        "gate_best": {
+          "gate": 65,
+          "delay": 6,
+          "energy": 390
+        }
+      }
+    },
+    {
+      "order": 35,
+      "id": "decoder_1",
+      "title": "1 Bit Decoder",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/decoder_1",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        },
+        "delay_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        },
+        "gate_best": {
+          "gate": 1,
+          "delay": 1,
+          "energy": 1
+        }
+      }
+    },
+    {
+      "order": 36,
+      "id": "decoder_2",
+      "title": "2 Bit Decoder",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/decoder_2",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 4,
+          "delay": 2,
+          "energy": 8
+        },
+        "delay_best": {
+          "gate": 4,
+          "delay": 2,
+          "energy": 8
+        },
+        "gate_best": {
+          "gate": 4,
+          "delay": 2,
+          "energy": 8
+        }
+      }
+    },
+    {
+      "order": 37,
+      "id": "decoder_3",
+      "title": "3 Bit Decoder",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/decoder_3",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 14,
+          "delay": 3,
+          "energy": 42
+        },
+        "delay_best": {
+          "gate": 14,
+          "delay": 3,
+          "energy": 42
+        },
+        "gate_best": {
+          "gate": 14,
+          "delay": 3,
+          "energy": 42
+        }
+      }
+    },
+    {
+      "order": 38,
+      "id": "ram_component",
+      "title": "Little Box",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/ram_component",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 368,
+          "delay": 5,
+          "energy": 1840
+        },
+        "delay_best": {
+          "gate": 368,
+          "delay": 5,
+          "energy": 1840
+        },
+        "gate_best": {
+          "gate": 336,
+          "delay": 6,
+          "energy": 2016
+        }
+      }
+    },
+    {
+      "order": 39,
+      "id": "counter",
+      "title": "Counter",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/counter",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 4,
+      "representatives": {
+        "energy_best": {
+          "gate": 102,
+          "delay": 8,
+          "energy": 816
+        },
+        "delay_best": {
+          "gate": 102,
+          "delay": 8,
+          "energy": 816
+        },
+        "gate_best": {
+          "gate": 85,
+          "delay": 13,
+          "energy": 1105
+        }
+      }
+    },
+    {
+      "order": 40,
+      "id": "overture_alu_1",
+      "title": "Arithmetic Logic Unit (ALU) 1",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/overture_alu_1",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 3,
+      "representatives": {
+        "energy_best": {
+          "gate": 77,
+          "delay": 3,
+          "energy": 231
+        },
+        "delay_best": {
+          "gate": 77,
+          "delay": 3,
+          "energy": 231
+        },
+        "gate_best": {
+          "gate": 64,
+          "delay": 5,
+          "energy": 320
+        }
+      }
+    },
+    {
+      "order": 42,
+      "id": "overture_alu_2",
+      "title": "Arithmetic Logic Unit (ALU) 2",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/overture_alu_2",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 5,
+      "representatives": {
+        "energy_best": {
+          "gate": 150,
+          "delay": 8,
+          "energy": 1200
+        },
+        "delay_best": {
+          "gate": 266,
+          "delay": 6,
+          "energy": 1596
+        },
+        "gate_best": {
+          "gate": 127,
+          "delay": 11,
+          "energy": 1397
+        }
+      }
+    },
+    {
+      "order": 45,
+      "id": "overture_conditions",
+      "title": "Conditions",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/overture_conditions",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 5,
+      "representatives": {
+        "energy_best": {
+          "gate": 19,
+          "delay": 4,
+          "energy": 76
+        },
+        "delay_best": {
+          "gate": 28,
+          "delay": 3,
+          "energy": 84
+        },
+        "gate_best": {
+          "gate": 13,
+          "delay": 7,
+          "energy": 91
+        }
+      }
+    },
+    {
+      "order": 50,
+      "id": "binary_programming",
+      "title": "Punchcard Programming",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/binary_programming",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 13323,
+          "delay": 3,
+          "energy": 39969
+        },
+        "delay_best": {
+          "gate": 13323,
+          "delay": 3,
+          "energy": 39969
+        },
+        "gate_best": {
+          "gate": 13308,
+          "delay": 5,
+          "energy": 66540
+        }
+      }
+    },
+    {
+      "order": 51,
+      "id": "assembly_programming",
+      "title": "Assembly Programming",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/assembly_programming",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 13323,
+          "delay": 3,
+          "energy": 39969
+        },
+        "delay_best": {
+          "gate": 13323,
+          "delay": 3,
+          "energy": 39969
+        },
+        "gate_best": {
+          "gate": 13308,
+          "delay": 5,
+          "energy": 66540
+        }
+      }
+    },
+    {
+      "order": 52,
+      "id": "circumference",
+      "title": "Circumference",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/circumference",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 33,
+          "delay": 4,
+          "cycle": 1,
+          "energy": 132
+        },
+        "delay_best": {
+          "gate": 33,
+          "delay": 4,
+          "cycle": 1,
+          "energy": 132
+        },
+        "gate_best": {
+          "gate": 33,
+          "delay": 4,
+          "cycle": 1,
+          "energy": 132
+        }
+      }
+    },
+    {
+      "order": 54,
+      "id": "binary_search",
+      "title": "Code Breaker",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/binary_search",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 92,
+          "delay": 6,
+          "cycle": 9,
+          "energy": 4968
+        },
+        "delay_best": {
+          "gate": 92,
+          "delay": 6,
+          "cycle": 9,
+          "energy": 4968
+        },
+        "gate_best": {
+          "gate": 92,
+          "delay": 6,
+          "cycle": 9,
+          "energy": 4968
+        }
+      }
+    },
+    {
+      "order": 55,
+      "id": "mod_4",
+      "title": "Mod 4",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/mod_4",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 0,
+          "delay": 0,
+          "cycle": 1,
+          "energy": 0
+        },
+        "delay_best": {
+          "gate": 0,
+          "delay": 0,
+          "cycle": 1,
+          "energy": 0
+        },
+        "gate_best": {
+          "gate": 0,
+          "delay": 0,
+          "cycle": 1,
+          "energy": 0
+        }
+      }
+    },
+    {
+      "order": 56,
+      "id": "maze",
+      "title": "The Maze",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/maze",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 6,
+          "delay": 5,
+          "cycle": 373,
+          "energy": 11190
+        },
+        "delay_best": {
+          "gate": 6,
+          "delay": 5,
+          "cycle": 373,
+          "energy": 11190
+        },
+        "gate_best": {
+          "gate": 6,
+          "delay": 5,
+          "cycle": 373,
+          "energy": 11190
+        }
+      }
+    },
+    {
+      "order": 58,
+      "id": "byte_constant",
+      "title": "Byte Constant",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_constant",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 0,
+          "delay": 0,
+          "energy": 0
+        },
+        "delay_best": {
+          "gate": 0,
+          "delay": 0,
+          "energy": 0
+        },
+        "gate_best": {
+          "gate": 0,
+          "delay": 0,
+          "energy": 0
+        }
+      }
+    },
+    {
+      "order": 59,
+      "id": "byte_xor",
+      "title": "Byte XOR",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_xor",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 24,
+          "delay": 2,
+          "energy": 48
+        },
+        "delay_best": {
+          "gate": 24,
+          "delay": 2,
+          "energy": 48
+        },
+        "gate_best": {
+          "gate": 24,
+          "delay": 2,
+          "energy": 48
+        }
+      }
+    },
+    {
+      "order": 60,
+      "id": "byte_equal",
+      "title": "Equality",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_equal",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 38,
+          "delay": 4,
+          "energy": 152
+        },
+        "delay_best": {
+          "gate": 38,
+          "delay": 4,
+          "energy": 152
+        },
+        "gate_best": {
+          "gate": 31,
+          "delay": 5,
+          "energy": 155
+        }
+      }
+    },
+    {
+      "order": 61,
+      "id": "byte_less_u",
+      "title": "Unsigned Less",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_less_u",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 12,
+      "representatives": {
+        "energy_best": {
+          "gate": 41,
+          "delay": 6,
+          "energy": 246
+        },
+        "delay_best": {
+          "gate": 90,
+          "delay": 4,
+          "energy": 360
+        },
+        "gate_best": {
+          "gate": 30,
+          "delay": 23,
+          "energy": 690
+        }
+      }
+    },
+    {
+      "order": 62,
+      "id": "byte_less_s",
+      "title": "Signed Less",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_less_s",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 12,
+      "representatives": {
+        "energy_best": {
+          "gate": 41,
+          "delay": 6,
+          "energy": 246
+        },
+        "delay_best": {
+          "gate": 90,
+          "delay": 4,
+          "energy": 360
+        },
+        "gate_best": {
+          "gate": 30,
+          "delay": 23,
+          "energy": 690
+        }
+      }
+    },
+    {
+      "order": 63,
+      "id": "count_leading_zeroes",
+      "title": "Count leading zeroes",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/count_leading_zeroes",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 3,
+      "representatives": {
+        "energy_best": {
+          "gate": 22,
+          "delay": 4,
+          "energy": 88
+        },
+        "delay_best": {
+          "gate": 32,
+          "delay": 3,
+          "energy": 96
+        },
+        "gate_best": {
+          "gate": 18,
+          "delay": 5,
+          "energy": 90
+        }
+      }
+    },
+    {
+      "order": 64,
+      "id": "byte_lsr",
+      "title": "LSR",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_lsr",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        },
+        "delay_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        },
+        "gate_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        }
+      }
+    },
+    {
+      "order": 65,
+      "id": "byte_asr",
+      "title": "ASR",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_asr",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 76,
+          "delay": 3,
+          "energy": 228
+        },
+        "delay_best": {
+          "gate": 76,
+          "delay": 3,
+          "energy": 228
+        },
+        "gate_best": {
+          "gate": 76,
+          "delay": 3,
+          "energy": 228
+        }
+      }
+    },
+    {
+      "order": 66,
+      "id": "one_hot_encoding",
+      "title": "One hot encoding",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/one_hot_encoding",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        },
+        "delay_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        },
+        "gate_best": {
+          "gate": 70,
+          "delay": 3,
+          "energy": 210
+        }
+      }
+    },
+    {
+      "order": 69,
+      "id": "symphony_cmp",
+      "title": "Comparison Flags",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/symphony_cmp",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 2,
+      "representatives": {
+        "energy_best": {
+          "gate": 209,
+          "delay": 8,
+          "energy": 1672
+        },
+        "delay_best": {
+          "gate": 271,
+          "delay": 7,
+          "energy": 1897
+        },
+        "gate_best": {
+          "gate": 209,
+          "delay": 8,
+          "energy": 1672
+        }
+      }
+    },
+    {
+      "order": 70,
+      "id": "symphony_alu",
+      "title": "Symphony ALU",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/symphony_alu",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 4,
+      "representatives": {
+        "energy_best": {
+          "gate": 1684,
+          "delay": 10,
+          "energy": 16840
+        },
+        "delay_best": {
+          "gate": 5335,
+          "delay": 9,
+          "energy": 48015
+        },
+        "gate_best": {
+          "gate": 1408,
+          "delay": 14,
+          "energy": 19712
+        }
+      }
+    },
+    {
+      "order": 73,
+      "id": "multiply",
+      "title": "Multiply",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/multiply",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 9,
+      "representatives": {
+        "energy_best": {
+          "gate": 253,
+          "delay": 10,
+          "energy": 2530
+        },
+        "delay_best": {
+          "gate": 253,
+          "delay": 10,
+          "energy": 2530
+        },
+        "gate_best": {
+          "gate": 185,
+          "delay": 19,
+          "energy": 3515
+        }
+      }
+    },
+    {
+      "order": 74,
+      "id": "byte_divide",
+      "title": "Divide",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_divide",
+      "sample_profile_count": 11,
+      "sample_pareto_point_count": 3,
+      "representatives": {
+        "energy_best": {
+          "gate": 370,
+          "delay": 32,
+          "energy": 11840
+        },
+        "delay_best": {
+          "gate": 370,
+          "delay": 32,
+          "energy": 11840
+        },
+        "gate_best": {
+          "gate": 358,
+          "delay": 34,
+          "energy": 12172
+        }
+      }
+    },
+    {
+      "order": 75,
+      "id": "byte_mod",
+      "title": "Modulo",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/byte_mod",
+      "sample_profile_count": 11,
+      "sample_pareto_point_count": 4,
+      "representatives": {
+        "energy_best": {
+          "gate": 428,
+          "delay": 34,
+          "energy": 14552
+        },
+        "delay_best": {
+          "gate": 428,
+          "delay": 34,
+          "energy": 14552
+        },
+        "gate_best": {
+          "gate": 409,
+          "delay": 37,
+          "energy": 15133
+        }
+      }
+    },
+    {
+      "order": 78,
+      "id": "symphony_condition_test",
+      "title": "Condition Match",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/symphony_condition_test",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 3,
+      "representatives": {
+        "energy_best": {
+          "gate": 13,
+          "delay": 3,
+          "energy": 39
+        },
+        "delay_best": {
+          "gate": 13,
+          "delay": 3,
+          "energy": 39
+        },
+        "gate_best": {
+          "gate": 8,
+          "delay": 5,
+          "energy": 40
+        }
+      }
+    },
+    {
+      "order": 86,
+      "id": "score",
+      "title": "Objective beauty",
+      "kind": "component",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/score",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 4,
+      "representatives": {
+        "energy_best": {
+          "gate": 25,
+          "delay": 5,
+          "energy": 125
+        },
+        "delay_best": {
+          "gate": 33,
+          "delay": 4,
+          "energy": 132
+        },
+        "gate_best": {
+          "gate": 22,
+          "delay": 8,
+          "energy": 176
+        }
+      }
+    },
+    {
+      "order": 88,
+      "id": "nim",
+      "title": "Nim",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/nim",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 2,
+          "delay": 2,
+          "cycle": 3,
+          "energy": 12
+        },
+        "delay_best": {
+          "gate": 2,
+          "delay": 2,
+          "cycle": 3,
+          "energy": 12
+        },
+        "gate_best": {
+          "gate": 2,
+          "delay": 2,
+          "cycle": 3,
+          "energy": 12
+        }
+      }
+    },
+    {
+      "order": 89,
+      "id": "rng",
+      "title": "Random Number Generator",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/rng",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 5,
+      "representatives": {
+        "energy_best": {
+          "gate": 431,
+          "delay": 9,
+          "cycle": 66,
+          "energy": 256014
+        },
+        "delay_best": {
+          "gate": 431,
+          "delay": 9,
+          "cycle": 66,
+          "energy": 256014
+        },
+        "gate_best": {
+          "gate": 381,
+          "delay": 11,
+          "cycle": 66,
+          "energy": 276606
+        }
+      }
+    },
+    {
+      "order": 90,
+      "id": "capitalize",
+      "title": "Capitalize",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/capitalize",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 5,
+          "delay": 4,
+          "cycle": 112,
+          "energy": 2240
+        },
+        "delay_best": {
+          "gate": 5,
+          "delay": 4,
+          "cycle": 112,
+          "energy": 2240
+        },
+        "gate_best": {
+          "gate": 5,
+          "delay": 4,
+          "cycle": 112,
+          "energy": 2240
+        }
+      }
+    },
+    {
+      "order": 91,
+      "id": "sort",
+      "title": "Delicious order",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/sort",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 3,
+      "representatives": {
+        "energy_best": {
+          "gate": 1654,
+          "delay": 11,
+          "cycle": 32,
+          "energy": 582208
+        },
+        "delay_best": {
+          "gate": 1654,
+          "delay": 11,
+          "cycle": 32,
+          "energy": 582208
+        },
+        "gate_best": {
+          "gate": 890,
+          "delay": 13,
+          "cycle": 257,
+          "energy": 2973490
+        }
+      }
+    },
+    {
+      "order": 92,
+      "id": "tower",
+      "title": "Tower of Hanoi",
+      "kind": "programming",
+      "leaderboard_url": "https://turingcomplete.game/leaderboard/tower",
+      "sample_profile_count": 12,
+      "sample_pareto_point_count": 1,
+      "representatives": {
+        "energy_best": {
+          "gate": 125,
+          "delay": 7,
+          "cycle": 125,
+          "energy": 109375
+        },
+        "delay_best": {
+          "gate": 125,
+          "delay": 7,
+          "cycle": 125,
+          "energy": 109375
+        },
+        "gate_best": {
+          "gate": 125,
+          "delay": 7,
+          "cycle": 125,
+          "energy": 109375
+        }
+      }
+    }
+  ]
+}
