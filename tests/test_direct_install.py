@@ -22,6 +22,9 @@ LEVELS = (
     '"mod_4",true,"OVERTURE",\n'
     '"middle",false,"Default",\n'
     '"maze",true,"OVERTURE",\n'
+    '"circumference",true,"OVERTURE",\n'
+    '"nim",true,"LEG",\n'
+    '"binary_search",true,"OVERTURE",\n'
     '"after",true,"Player Design",2&2&2|\n'
 ).encode()
 
@@ -37,15 +40,18 @@ class DirectInstallTests(unittest.TestCase):
         build_architecture_candidates(project)
         return project, save
 
-    def test_levels_rewrite_changes_only_two_lines(self):
+    def test_levels_rewrite_changes_only_reviewed_lines(self):
         rewritten = rewrite_architecture_selections(LEVELS)
         before = LEVELS.splitlines(keepends=True)
         after = rewritten.splitlines(keepends=True)
         self.assertEqual(before[0], after[0])
         self.assertEqual(before[2], after[2])
-        self.assertEqual(before[4], after[4])
+        self.assertEqual(before[7], after[7])
         self.assertEqual(after[1], b'"mod_4",true,"CODEX-MOD-4",\n')
         self.assertEqual(after[3], b'"maze",true,"CODEX-MAZE",\n')
+        self.assertEqual(after[4], b'"circumference",true,"CODEX-CIRCUMFERENCE",\n')
+        self.assertEqual(after[5], b'"nim",true,"CODEX-NIM",\n')
+        self.assertEqual(after[6], b'"binary_search",true,"CODEX-BINARY-SEARCH",\n')
 
     def test_levels_rewrite_rejects_unquoted_duplicate_target(self):
         duplicate = b"maze,true,OVERTURE,\n" + LEVELS
@@ -56,7 +62,7 @@ class DirectInstallTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             project, save = self._workspace(Path(directory))
             plan = plan_direct_install(project, save)
-            self.assertEqual(len(plan.items), 6)
+            self.assertEqual(len(plan.items), 9)
             self.assertFalse((save / "schematics" / "foundry" / "codex").exists())
             with patch("tc_save_lab.direct_install._assert_game_not_running"):
                 result = install_reviewed_direct(plan)

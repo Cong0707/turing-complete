@@ -13,7 +13,11 @@ from .leaderboard import write_level_leaderboards
 from .analysis import analyze_examples, analyze_file
 from .architecture_candidates import build_architecture_candidates
 from .builder import build_known_candidates, build_known_variants
-from .direct_install import install_reviewed_direct, plan_direct_install
+from .direct_install import (
+    ARCHITECTURE_TARGETS,
+    install_reviewed_direct,
+    plan_direct_install,
+)
 from .scaffold import extract_campaign_scaffolds
 from .storage import (
     DEFAULT_GAME_ROOT,
@@ -292,7 +296,8 @@ def _run(args: Namespace) -> int:
             return 0
         if not args.yes:
             answer = input(
-                "直接覆盖正式存档中的 6 个最终电路文件及 levels.txt 两条选择，"
+                f"直接覆盖正式存档中的 {len(plan.items)} 个最终电路文件及 levels.txt "
+                f"{len(ARCHITECTURE_TARGETS)} 条选择，"
                 "且不创建备份？[y/N] "
             ).strip().casefold()
             if answer not in {"y", "yes"}:
