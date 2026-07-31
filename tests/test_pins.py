@@ -113,6 +113,23 @@ class PinLibraryTests(unittest.TestCase):
             actual = {pin.name: pin.position for pin in positioned_pins(component)}
             self.assertEqual(actual, expected, kind)
 
+    def test_shift_amount_width_scales_with_the_data_word(self):
+        byte = {pin.name: pin.width for pin in positioned_pins(Component(33, (0, 0), 0, 1, word_size=8))}
+        word = {pin.name: pin.width for pin in positioned_pins(Component(33, (0, 0), 0, 2, word_size=32))}
+        self.assertEqual(byte["shift"], 3)
+        self.assertEqual(word["shift"], 5)
+
+    def test_scalar_constant_can_drive_a_wider_word_input(self):
+        circuit = Circuit(
+            components=(
+                Component(2, (-4, -1), 0, 1),
+                Component(33, (0, 0), 0, 2, word_size=8),
+            ),
+            wires=(Wire(0, "", (-3, -1), ((0, 2),)),),
+        )
+        metrics = analyze_connectivity(circuit)
+        self.assertEqual(metrics["width_mismatch_network_count"], 0)
+
     def test_current_word_delay_and_four_byte_adapters_have_reviewed_pins(self):
         delay = Component(55, (10, 20), 0, 1, word_size=32)
         splitter = Component(99, (0, 0), 0, 2, word_size=8)

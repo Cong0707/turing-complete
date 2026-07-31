@@ -178,3 +178,34 @@ def atomic_replace_circuit(source: Path, destination: Path) -> dict[str, object]
     finally:
         temporary.unlink(missing_ok=True)
     return inspect_circuit(destination)
+
+
+def direct_replace_circuit(source: Path, destination: Path) -> dict[str, object]:
+    """Overwrite one v15 circuit in place without a backup or temporary file.
+
+    This mode is intentionally opt-in for users who already maintain their own
+    save backup.  The entire source payload is decoded and re-encoded before
+    the destination is touched, then the final destination is decoded again
+    after the in-place write.
+    """
+
+    if game_is_running():
+        raise RuntimeError("Turing Complete.exe is running; refusing to write the save")
+    if not source.is_file():
+        raise FileNotFoundError(f"candidate is not a regular file: {source}")
+    payload = source.read_bytes()
+    candidate = decode_v15(payload)
+    if encode_v15(candidate) != payload:
+        raise ValueError(f"candidate is not canonical v15: {source}")
+    if destination.exists() and not destination.is_file():
+        raise ValueError(f"destination is not a regular file: {destination}")
+    if game_is_running():
+        raise RuntimeError("Turing Complete.exe is running; refusing to write the save")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(payload)
+    written = decode_v15(destination.read_bytes())
+    if written != candidate:
+        raise RuntimeError("destination verification failed after direct overwrite")
+    record = inspect_circuit(destination)
+    record.update({"direct_write": True, "created_backup": False})
+    return record

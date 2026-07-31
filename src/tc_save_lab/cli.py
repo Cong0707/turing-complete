@@ -23,6 +23,7 @@ from .storage import (
     DEFAULT_GAME_ROOT,
     DEFAULT_SAVE_ROOT,
     atomic_replace_circuit,
+    direct_replace_circuit,
     export_json,
     import_json,
     inventory,
@@ -144,6 +145,16 @@ def build_parser() -> ArgumentParser:
     apply.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
     apply.add_argument("--yes", action="store_true")
 
+    apply_direct = sub.add_parser(
+        "apply-direct",
+        help="直接覆盖一个当前选中的关卡存档，不创建备份或临时文件",
+    )
+    apply_direct.add_argument("level")
+    apply_direct.add_argument("--candidate", type=_path)
+    apply_direct.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
+    apply_direct.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+    apply_direct.add_argument("--yes", action="store_true")
+
     install_reviewed = sub.add_parser(
         "install-reviewed",
         help="直接写入已审查的 Codex 元件和专用架构，不创建备份",
@@ -257,7 +268,7 @@ def _run(args: Namespace) -> int:
             }
         )
         return 0
-    if args.command == "apply":
+    if args.command in {"apply", "apply-direct"}:
         progress = read_progress(args.save_root / "levels.txt")
         selected = progress.get(args.level)
         meta = read_level_meta(args.game_root / "campaign" / args.level / "meta.txt")
@@ -283,11 +294,13 @@ def _run(args: Namespace) -> int:
             destination = selected_circuit_path(args.save_root, progress, args.level)
             candidate = args.candidate or PROJECT_ROOT / "examples" / args.level / "candidate" / "circuit.data"
         if not args.yes:
-            answer = input(f"将 {candidate} 写入 {destination}？[y/N] ").strip().casefold()
+            mode = "直接覆盖且不创建备份" if args.command == "apply-direct" else "原子写回"
+            answer = input(f"将 {candidate} {mode}到 {destination}？[y/N] ").strip().casefold()
             if answer not in {"y", "yes"}:
                 print("已取消。")
                 return 2
-        _print_json(atomic_replace_circuit(candidate, destination))
+        writer = direct_replace_circuit if args.command == "apply-direct" else atomic_replace_circuit
+        _print_json(writer(candidate, destination))
         return 0
     if args.command == "install-reviewed":
         plan = plan_direct_install(args.project_root, args.save_root)
@@ -316,7 +329,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("3. 提取所有关卡固定脚手架")
         print("4. 分析所有示例基线")
         print("5. 构建已审查的优化候选")
-        print("6. 写回一个关卡候选")
+        print("6. 直接覆盖一个关卡候选（不创建备份）")
         print("7. 分析 foundry 自定义元件递归成本")
         print("8. 刷新官网单关排行榜目标")
         print("9. 构建已审查的 Pareto 候选变体")
@@ -339,7 +352,7 @@ def _interactive(parser: ArgumentParser) -> int:
         if choice == "6":
             level = input("关卡内部名称: ").strip()
             if level:
-                return _run(parser.parse_args(["apply", level]))
+                return _run(parser.parse_args(["apply-direct", level]))
         if choice == "7":
             return _run(parser.parse_args(["analyze-costs"]))
         if choice == "8":

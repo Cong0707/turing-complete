@@ -15,6 +15,7 @@ from tc_save_lab.direct_install import (
     plan_direct_install,
     rewrite_architecture_selections,
 )
+from tc_save_lab.storage import direct_replace_circuit
 
 
 LEVELS = (
@@ -28,6 +29,7 @@ LEVELS = (
     '"rng",true,"RV64",\n'
     '"after",true,"Player Design",2&2&2|\n'
 ).encode()
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class DirectInstallTests(unittest.TestCase):
@@ -146,6 +148,28 @@ class DirectInstallTests(unittest.TestCase):
         args = build_parser().parse_args(["install-reviewed", "--dry-run"])
         self.assertEqual(args.command, "install-reviewed")
         self.assertTrue(args.dry_run)
+
+    def test_direct_replace_writes_only_the_final_circuit_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = PROJECT_ROOT / "examples" / "and_gate_3" / "candidate" / "circuit.data"
+            destination = root / "save" / "schematics" / "and_gate_3" / "Default" / "circuit.data"
+            with patch("tc_save_lab.storage.game_is_running", return_value=False):
+                result = direct_replace_circuit(source, destination)
+            self.assertTrue(result["direct_write"])
+            self.assertFalse(result["created_backup"])
+            self.assertEqual(destination.read_bytes(), source.read_bytes())
+            forbidden = [
+                path
+                for path in root.rglob("*")
+                if path.name.endswith((".bak", ".old", ".new", ".tmp"))
+            ]
+            self.assertEqual(forbidden, [])
+
+    def test_public_cli_exposes_single_level_direct_replace(self):
+        args = build_parser().parse_args(["apply-direct", "and_gate_3", "--yes"])
+        self.assertEqual(args.command, "apply-direct")
+        self.assertTrue(args.yes)
 
 
 if __name__ == "__main__":

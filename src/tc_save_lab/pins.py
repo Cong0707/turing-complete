@@ -149,6 +149,16 @@ def pin_specs_for(component: Component) -> tuple[PinSpec, ...] | None:
             PinSpec("in", I, (-span, 0)),
             PinSpec("out", O, (span, 0)),
         )
+    if component.kind in {33, 34, 35, 36, 37}:
+        # Current shift components consume only the bits needed to encode a
+        # valid shift count.  The U8 campaign circuits therefore expose U3,
+        # not a generic U8, shift input.
+        shift_width = max(1, (component.word_size - 1).bit_length())
+        return _pins(
+            PinSpec("in", I, (-1, -1)),
+            PinSpec("shift", I, (-1, 1), shift_width),
+            PinSpec("out", O, (2, 0)),
+        )
     if component.kind == 69:
         return _pins(PinSpec("value", I, (-3, 0)))
     if component.kind == 70:
@@ -310,7 +320,14 @@ def analyze_connectivity(
             undriven_networks += 1
         if not receivers:
             sinkless_networks += 1
-        if len({pin.width for pin in network}) > 1:
+        scalar_constant_widening = (
+            drivers
+            and all(
+                pin.component_kind in {1, 2} and pin.width == 1 for pin in drivers
+            )
+            and all(receiver.width >= 1 for receiver in receivers)
+        )
+        if len({pin.width for pin in network}) > 1 and not scalar_constant_widening:
             width_mismatch_networks += 1
         for driver in drivers:
             for receiver in receivers:
