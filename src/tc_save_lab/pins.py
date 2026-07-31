@@ -140,6 +140,22 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
         PinSpec("in1", I, (-1, 0), 1),
         PinSpec("out", O, (1, 0), 2),
     ),
+    # The current v15 RAM is the compact five-port component unlocked by
+    # Little Box.  These coordinates are evidenced by a live save's
+    # MEMORYREGFILE circuit: its endpoints land at (-15, -15) through
+    # (-15, -12), and at (+16, -15), relative to the RAM center.
+    #
+    # The RAM implementation accepts an eight-bit address bus even when its
+    # backing buffer has fewer entries.  A narrower source is zero-extended
+    # by the running game; candidates using that legal conversion are audited
+    # explicitly by their level-specific verifier.
+    118: _pins(
+        PinSpec("load", I, (-15, -15), 1),
+        PinSpec("save", I, (-15, -14), 1),
+        PinSpec("address", I, (-15, -13), 8),
+        PinSpec("in", I, (-15, -12)),
+        PinSpec("out", T, (16, -15)),
+    ),
 }
 
 

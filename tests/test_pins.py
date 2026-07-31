@@ -45,10 +45,10 @@ class PinLibraryTests(unittest.TestCase):
 
     def test_unknown_component_kind_is_reported_without_guessed_pins(self):
         metrics = analyze_connectivity(
-            Circuit(components=(Component(118, (0, 0), 0, 1),))
+            Circuit(components=(Component(124, (0, 0), 0, 1),))
         )
         self.assertEqual(metrics["supported_component_count"], 0)
-        self.assertEqual(metrics["unsupported_component_kind_counts"], {118: 1})
+        self.assertEqual(metrics["unsupported_component_kind_counts"], {124: 1})
 
     def test_campaign_word_io_uses_three_cell_port_distance(self):
         input_pin = positioned_pins(Component(61, (-17, 0), 0, 1, word_size=8))[0]

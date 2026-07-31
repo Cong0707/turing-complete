@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "level": "ram_component",
+  "title": "Little Box",
+  "title_zh": "小型存储器",
+  "strategy": "一个原生四字节 RAM 加 U2 地址合成器",
+  "metric_status": "目标 368 gate / 5 delay，须由游戏载入后重新计分确认",
+  "format_version": 15,
+  "sha256": "fb7a0022fb5fcd1c75511d589ccc4374542c27fcbe92ef649eaa79b16525fca9",
+  "gate": 368,
+  "delay": 5,
+  "energy": 1840,
+  "leaderboard_tuple": [
+    368,
+    5,
+    1840
+  ],
+  "component_count": 7,
+  "wire_count": 7,
+  "state_transition_vector_count": 1048576,
+  "script_prefix": [
+    {
+      "address": 0,
+      "value": 17,
+      "output": 17
+    },
+    {
+      "address": 1,
+      "value": 34,
+      "output": 34
+    },
+    {
+      "address": 2,
+      "value": 51,
+      "output": 51
+    },
+    {
+      "address": 3,
+      "value": 68,
+      "output": 68
+    }
+  ],
+  "connectivity": {
+    "effective_component_count": 7,
+    "supported_component_count": 7,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 14,
+    "connected_pin_count": 14,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 7,
+    "logical_edge_count": 2,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 1,
+    "unit_logic_depth": 0,
+    "cycle_component_count": 0
+  },
+  "geometry": {
+    "sprite_files": [
+      "com_level_input_1_pin.png",
+      "com_level_input_2_pin.png",
+      "com_level_input_word.png",
+      "com_level_output_word.png",
+      "com_maker_bit_2.png",
+      "com_ram.png"
+    ],
+    "alpha_cell_count": 692,
+    "unexpected_wire_collision_count": 0,
+    "source_port_lead_contact_count": 2,
+    "wire_interior_pin_contact_count": 0
+  }
+}

@@ -41,11 +41,15 @@ SPRITE_NAME_BY_COMPONENT_KIND: dict[int, str] = {
     40: "com_level_output_8_pin.png",
     45: "com_decoder_3.png",
     60: "com_level_input_1_pin.png",
+    61: "com_level_input_word.png",
     63: "com_level_input_2_pin.png",
     64: "com_level_input_3_pin.png",
     65: "com_level_input_4_pin.png",
     68: "com_level_output_1_pin.png",
+    69: "com_level_output_word.png",
     77: "com_level_output_counter.png",
+    111: "com_maker_bit_2.png",
+    118: "com_ram.png",
 }
 
 
