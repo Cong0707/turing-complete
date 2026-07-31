@@ -1,4 +1,4 @@
-"""Command-line and interactive entry points."""
+"""命令行与交互式操作入口。"""
 
 from __future__ import annotations
 
@@ -34,51 +34,51 @@ def build_parser() -> ArgumentParser:
     parser = ArgumentParser(prog="tc-save", description=__doc__)
     sub = parser.add_subparsers(dest="command")
 
-    inspect = sub.add_parser("inspect", help="inspect all current circuit.data files")
+    inspect = sub.add_parser("inspect", help="检查当前存档中的所有 circuit.data")
     inspect.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
 
-    init = sub.add_parser("init-examples", help="create one versioned directory per campaign level")
+    init = sub.add_parser("init-examples", help="为每个主线关卡创建版本化工作目录")
     init.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
     init.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
     init.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
 
     scaffolds = sub.add_parser(
         "extract-scaffolds",
-        help="extract immutable interfaces for every campaign level",
+        help="提取每个主线关卡的不可变端口脚手架",
     )
     scaffolds.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
     scaffolds.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
 
     analyze = sub.add_parser(
         "analyze",
-        help="calculate offline geometry and structural metrics for one circuit",
+        help="计算单个电路的离线几何与结构指标",
     )
     analyze.add_argument("source", type=_path)
 
     analyze_all = sub.add_parser(
         "analyze-examples",
-        help="write metrics.json for every example level",
+        help="为所有示例关卡生成 metrics.json",
     )
     analyze_all.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
     build_known = sub.add_parser(
         "build-known-candidates",
-        help="build reviewed deterministic optimized candidate recipes",
+        help="生成已经审查的确定性优化候选",
     )
     build_known.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
-    dump = sub.add_parser("export-json", help="decode a supported circuit to JSON")
+    dump = sub.add_parser("export-json", help="把支持的电路格式解析为 JSON")
     dump.add_argument("source", type=_path)
     dump.add_argument("destination", type=_path)
 
-    build = sub.add_parser("build", help="encode editable JSON to a verified v15 circuit")
+    build = sub.add_parser("build", help="把可编辑 JSON 编码为经过校验的 v15 电路")
     build.add_argument("source", type=_path)
     build.add_argument("destination", type=_path)
 
-    validate = sub.add_parser("validate", help="strictly decode a supported circuit")
+    validate = sub.add_parser("validate", help="严格解析并校验一个受支持的电路")
     validate.add_argument("source", type=_path)
 
-    apply = sub.add_parser("apply", help="atomically write one candidate into the selected save slot")
+    apply = sub.add_parser("apply", help="把一个候选原子写入当前选中的存档槽位")
     apply.add_argument("level")
     apply.add_argument("--candidate", type=_path)
     apply.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
@@ -177,13 +177,13 @@ def _run(args: Namespace) -> int:
             destination = selected_circuit_path(args.save_root, progress, args.level)
             candidate = args.candidate or PROJECT_ROOT / "examples" / args.level / "candidate" / "circuit.data"
         if not args.yes:
-            answer = input(f"Write {candidate} to {destination}? [y/N] ").strip().casefold()
+            answer = input(f"将 {candidate} 写入 {destination}？[y/N] ").strip().casefold()
             if answer not in {"y", "yes"}:
-                print("Cancelled.")
+                print("已取消。")
                 return 2
         _print_json(atomic_replace_circuit(candidate, destination))
         return 0
-    raise ValueError(f"unsupported command: {args.command}")
+    raise ValueError(f"不支持的命令：{args.command}")
 
 
 def _interactive(parser: ArgumentParser) -> int:
