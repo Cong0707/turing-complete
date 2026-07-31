@@ -12,7 +12,9 @@ C:\Users\cong\AppData\Roaming\Turing Complete\schematics\foundry
 ```
 
 检查对象包括 `diode`、`LEG`、`OVERTRUE`、`Overture` 和 `RISCV` 下的当前
-`circuit.data`；同目录的 `circuit_backup_*.data` 仅作为用户备份，不参与结论。
+`circuit.data`；同目录的 `circuit_backup_*.data` 仅作为用户备份，不参与结论。其中
+`OVERTRUE`、`LEG` 和完整 `Overture` 已确认被当前版本破坏，只用于解释历史二进制字段，
+不得作为现代电路实现、依赖关系或性能数据的来源。
 
 ### v15 头部字段
 
@@ -102,9 +104,10 @@ LEG/SWT：
 
 这说明端口距离属于自定义电路的接口/本体设计，而不是可以由 `kind`、`word_size` 或
 `settings` 单独推断的全局常量。当前 `pins.py` 的 kind79/81 映射针对 **新建 Codex 元件的
-现代三格模板**；分析旧 `OVERTRUE`/`LEG` 电路时，应从同一模板复制端口记录，或在调用分析器
-时显式提供接口形状，不能把默认三格结论反推到旧文件。父电路引用 kind78 时，子电路的接口
-形状也必须保持一致，否则导线虽能通过二进制编解码，游戏加载时仍可能出现端口错位。
+现代三格模板**；分析旧 `OVERTRUE`/`LEG` 文件时，只能在只读检查中显式提供其历史接口形状，
+不能把这些接口复制到新元件，也不能把默认三格结论反推到旧文件。父电路引用 kind78 时，
+子电路的接口形状必须与当前已验证接口一致，否则导线虽能通过二进制编解码，游戏加载时仍
+可能出现端口错位。
 
 ### Custom 实例、ID 与依赖
 
@@ -135,7 +138,7 @@ component.custom_word_sizes = 可选的内部永久 ID/字宽映射
 建议 builder 将 Foundry 电路分成三层：
 
 1. **接口层**：用 kind79/81 创建端口，位置和 rotation 由布局器决定，`word_size` 显式传入；
-   Codex 新元件默认使用三格模板，旧元件迁移必须携带其一格/三格接口元数据。
+   Codex 新元件使用当前验证过的现代三格模板。旧架构接口只读，不提供直接迁移路径。
 2. **逻辑层**：用普通元件和 kind78 Custom 实例构建网络；kind78 的 `custom_id` 必须引用
    已生成或已导入的子电路。
 3. **容器层**：设置非零确定性 `custom_id`、`dependencies`、`gate`、`delay`、
