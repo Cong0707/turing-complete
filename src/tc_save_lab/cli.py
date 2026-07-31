@@ -26,12 +26,23 @@ from .storage import (
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
+class ChineseArgumentParser(ArgumentParser):
+    """ArgumentParser with Chinese headings for the public CLI."""
+
+    def __init__(self, *args: object, **kwargs: object) -> None:
+        kwargs["add_help"] = False
+        super().__init__(*args, **kwargs)
+        self.add_argument("-h", "--help", action="help", help="显示帮助并退出")
+        self._positionals.title = "子命令"
+        self._optionals.title = "选项"
+
+
 def _path(value: str) -> Path:
     return Path(value).expanduser().resolve()
 
 
 def build_parser() -> ArgumentParser:
-    parser = ArgumentParser(prog="tc-save", description=__doc__)
+    parser = ChineseArgumentParser(prog="tc-save", description=__doc__)
     sub = parser.add_subparsers(dest="command")
 
     inspect = sub.add_parser("inspect", help="检查当前存档中的所有 circuit.data")

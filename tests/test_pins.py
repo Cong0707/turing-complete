@@ -1,9 +1,14 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
 
+from tc_save_lab.codec import decode_v15
 from tc_save_lab.model import Circuit, Component, Wire
 from tc_save_lab.pins import analyze_connectivity, positioned_pins
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class PinLibraryTests(unittest.TestCase):
@@ -44,3 +49,21 @@ class PinLibraryTests(unittest.TestCase):
         )
         self.assertEqual(metrics["supported_component_count"], 0)
         self.assertEqual(metrics["unsupported_component_kind_counts"], {118: 1})
+
+    def test_campaign_word_io_uses_three_cell_port_distance(self):
+        input_pin = positioned_pins(Component(61, (-17, 0), 0, 1, word_size=8))[0]
+        output_pin = positioned_pins(Component(69, (17, 0), 0, 2, word_size=8))[0]
+        self.assertEqual(input_pin.position, (-14, 0))
+        self.assertEqual(output_pin.position, (14, 0))
+
+    def test_word_io_baselines_do_not_leave_fixed_ports_unconnected(self):
+        levels = ("byte_nand", "byte_not", "byte_mux", "signed_negator", "saving_bytes")
+        for level in levels:
+            path = PROJECT_ROOT / "examples" / level / "baseline" / "circuit.data"
+            circuit = decode_v15(path.read_bytes())
+            metrics = analyze_connectivity(circuit)
+            fixed_unconnected = [
+                pin for pin in metrics["unconnected_pins"]
+                if pin["kind"] in {61, 69}
+            ]
+            self.assertEqual(fixed_unconnected, [], level)

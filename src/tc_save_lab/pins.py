@@ -93,19 +93,23 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
 }
 
 
-def _io_distance(word_size: int) -> int:
+def _constant_io_distance(word_size: int) -> int:
     return 1 if word_size in {1, 8} else 2 if word_size in {16, 32} else 3
 
 
 def pin_specs_for(component: Component) -> tuple[PinSpec, ...] | None:
     if component.kind == 46:
-        return _pins(PinSpec("out", O, (_io_distance(component.word_size), 0)))
+        return _pins(PinSpec("out", O, (_constant_io_distance(component.word_size), 0)))
     if component.kind == 61:
-        return _pins(PinSpec("value", O, (_io_distance(component.word_size), 0)))
+        # Current campaign word I/O components use a fixed three-cell body,
+        # including the U1/U3 controls used by a few byte-level levels.  This
+        # is verified against v15 baseline wire endpoints; it is not derived
+        # from the payload word_size field.
+        return _pins(PinSpec("value", O, (3, 0)))
     if component.kind == 62:
         return _pins(PinSpec("control", I, (0, 1), 1), PinSpec("value", T, (1, 0)))
     if component.kind == 69:
-        return _pins(PinSpec("value", I, (-_io_distance(component.word_size), 0)))
+        return _pins(PinSpec("value", I, (-3, 0)))
     if component.kind == 70:
         return _pins(PinSpec("control", I, (0, 1), 1), PinSpec("value", I, (-1, 0)))
     return PIN_SCHEMAS.get(component.kind)
