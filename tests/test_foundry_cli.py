@@ -31,6 +31,7 @@ class FoundryCliTests(unittest.TestCase):
     def test_parser_exposes_build_and_explicit_deploy(self):
         parser = build_parser()
         self.assertEqual(parser.parse_args(["build", "key", "名称", "source.json"]).command, "build")
+        self.assertEqual(parser.parse_args(["build-known"]).command, "build-known")
         deploy = parser.parse_args(["deploy", "--dry-run"])
         self.assertEqual(deploy.command, "deploy")
         self.assertTrue(deploy.dry_run)

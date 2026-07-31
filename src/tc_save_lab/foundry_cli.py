@@ -11,6 +11,7 @@ from .foundry import (
     deploy_codex_foundry,
     plan_codex_deployment,
 )
+from .codex_library import build_known_codex_library
 from .storage import DEFAULT_SAVE_ROOT
 
 
@@ -48,6 +49,15 @@ def build_parser() -> ArgumentParser:
         action="append",
         help="只读依赖根；可重复指定，默认扫描当前正式 Foundry",
     )
+
+    known = sub.add_parser("build-known", help="生成项目内已审查的 Codex 基础元件库")
+    known.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+    known.add_argument(
+        "--dependency-root",
+        type=_path,
+        action="append",
+        help="只读依赖根；可重复指定",
+    )
     build.add_argument(
         "--allow-interface-change",
         action="store_true",
@@ -81,6 +91,16 @@ def _run(args: Namespace) -> int:
         )
         _print_json(result)
         return 0
+    if args.command == "build-known":
+        dependency_roots = tuple(args.dependency_root or ())
+        if not dependency_roots:
+            dependency_roots = (DEFAULT_SAVE_ROOT / "schematics" / "foundry",)
+        result = build_known_codex_library(
+            args.project_root,
+            dependency_roots=dependency_roots,
+        )
+        _print_json(result)
+        return 0
     if args.command == "deploy":
         plan = plan_codex_deployment(args.project_root, args.save_root)
         _print_json(plan.to_dict())
@@ -102,8 +122,9 @@ def _interactive(parser: ArgumentParser) -> int:
     while True:
         print("\nTuring Complete Codex Foundry")
         print("1. 构建自定义元件候选")
-        print("2. 只读检查部署计划")
-        print("3. 显式部署全部 Codex 元件")
+        print("2. 生成已审查的 Codex 基础元件库")
+        print("3. 只读检查部署计划")
+        print("4. 显式部署全部 Codex 元件")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -115,8 +136,10 @@ def _interactive(parser: ArgumentParser) -> int:
             if logical_key and display_path and source:
                 return _run(parser.parse_args(["build", logical_key, display_path, source]))
         if choice == "2":
-            return _run(parser.parse_args(["deploy", "--dry-run"]))
+            return _run(parser.parse_args(["build-known"]))
         if choice == "3":
+            return _run(parser.parse_args(["deploy", "--dry-run"]))
+        if choice == "4":
             return _run(parser.parse_args(["deploy"]))
         print("无效选择。")
 
