@@ -11,6 +11,7 @@ from .codec import decode_circuit
 from .cost import analyze_custom_costs, write_cost_report
 from .leaderboard import write_level_leaderboards
 from .analysis import analyze_examples, analyze_file
+from .architecture_candidates import build_architecture_candidates
 from .builder import build_known_candidates, build_known_variants
 from .scaffold import extract_campaign_scaffolds
 from .storage import (
@@ -86,6 +87,13 @@ def build_parser() -> ArgumentParser:
     )
     build_variants.add_argument("levels", nargs="*")
     build_variants.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+
+    build_architectures = sub.add_parser(
+        "build-architecture-candidates",
+        help="生成已审查的专用架构 ASIC 候选",
+    )
+    build_architectures.add_argument("levels", nargs="*")
+    build_architectures.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
     costs = sub.add_parser(
         "analyze-costs",
@@ -177,6 +185,10 @@ def _run(args: Namespace) -> int:
     if args.command == "build-variants":
         levels = tuple(dict.fromkeys(args.levels))
         _print_json(build_known_variants(args.project_root, levels=levels))
+        return 0
+    if args.command == "build-architecture-candidates":
+        levels = tuple(dict.fromkeys(args.levels))
+        _print_json(build_architecture_candidates(args.project_root, levels=levels))
         return 0
     if args.command == "analyze-costs":
         if args.output:
@@ -278,6 +290,7 @@ def _interactive(parser: ArgumentParser) -> int:
         print("7. 分析 foundry 自定义元件递归成本")
         print("8. 刷新官网单关排行榜目标")
         print("9. 构建已审查的 Pareto 候选变体")
+        print("10. 构建专用架构 ASIC 候选")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -307,6 +320,11 @@ def _interactive(parser: ArgumentParser) -> int:
         if choice == "9":
             levels = input("关卡内部名称（空格分隔，留空构建全部）: ").strip()
             return _run(parser.parse_args(["build-variants", *levels.split()]))
+        if choice == "10":
+            levels = input("架构关卡内部名称（空格分隔，留空构建全部）: ").strip()
+            return _run(
+                parser.parse_args(["build-architecture-candidates", *levels.split()])
+            )
         print("无效选择。")
 
 
