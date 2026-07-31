@@ -1,6 +1,6 @@
 # Codex 基础元件库
 
-## 2026-07-31 / 提交：功能：生成首批Codex基础元件
+## 2026-08-01 / 提交：功能：生成首批Codex基础元件
 
 `src/tc_save_lab/codex_library.py` 保存经过人工审查的现代 Foundry 元件配方。运行：
 
