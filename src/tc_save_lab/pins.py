@@ -55,6 +55,7 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     10: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
     11: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
     12: _pins(PinSpec("enable", I, (0, -1), 1), PinSpec("in", I, (-1, 0), 1), PinSpec("out", T, (2, 0), 1)),
+    13: _pins(PinSpec("in", I, (-3, 0), 1), PinSpec("out", O, (3, 0), 1)),
     15: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("sum", O, (1, 0), 1), PinSpec("carry_out", O, (1, 1), 1)),
     16: _pins(*(tuple(PinSpec(f"in{i}", I, (-1, i - 3), 1) for i in range(8)) + (PinSpec("out", O, (1, 0), 8),))),
     17: _pins(PinSpec("in", I, (-1, 0), 8), *(PinSpec(f"out{i}", O, (1, i - 3), 1) for i in range(8))),
@@ -91,6 +92,7 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     73: _pins(PinSpec("value0", I, (-1, -1), 1), PinSpec("value1", I, (-1, 0), 1)),
     74: _pins(PinSpec("value0", I, (-1, -1), 1), PinSpec("value1", I, (-1, 0), 1), PinSpec("value2", I, (-1, 1), 1)),
     75: _pins(PinSpec("value0", I, (-1, -2), 1), PinSpec("value1", I, (-1, -1), 1), PinSpec("value2", I, (-1, 0), 1), PinSpec("value3", I, (-1, 1), 1)),
+    77: _pins(PinSpec("value0", I, (-1, -1), 1), PinSpec("value1", I, (-1, 0), 1), PinSpec("value2", I, (-1, 1), 1)),
     # Modern Codex Foundry interface ports.  These are the v15 counterparts of
     # the Input64/Output64 schemas in tc_circuit's component_info.json; the
     # port distance is three cells and is independent of word_size.  Legacy
@@ -111,11 +113,11 @@ def pin_specs_for(component: Component) -> tuple[PinSpec, ...] | None:
         # from the payload word_size field.
         return _pins(PinSpec("value", O, (3, 0)))
     if component.kind == 62:
-        return _pins(PinSpec("control", I, (0, 1), 1), PinSpec("value", T, (1, 0)))
+        return _pins(PinSpec("control", I, (1, -2), 1), PinSpec("value", T, (3, 0)))
     if component.kind == 69:
         return _pins(PinSpec("value", I, (-3, 0)))
     if component.kind == 70:
-        return _pins(PinSpec("control", I, (0, 1), 1), PinSpec("value", I, (-1, 0)))
+        return _pins(PinSpec("control", I, (-1, -2), 1), PinSpec("value", I, (-3, 0)))
     return PIN_SCHEMAS.get(component.kind)
 
 
@@ -259,6 +261,7 @@ def analyze_connectivity(
             connected_pins.append(pin)
 
     edges: set[tuple[int, int]] = set()
+    sequential_kinds = {13, 14, 38, 39, 50, 55, 118, 119}
     multi_driver_networks = 0
     undriven_networks = 0
     sinkless_networks = 0
@@ -276,7 +279,10 @@ def analyze_connectivity(
             width_mismatch_networks += 1
         for driver in drivers:
             for receiver in receivers:
-                if driver.component_index != receiver.component_index:
+                if (
+                    driver.component_index != receiver.component_index
+                    and receiver.component_kind not in sequential_kinds
+                ):
                     edges.add((driver.component_index, receiver.component_index))
 
     successors: dict[int, set[int]] = defaultdict(set)
@@ -292,7 +298,7 @@ def analyze_connectivity(
         source = queue.popleft()
         visited += 1
         for destination in successors[source]:
-            weight = 0 if components[destination].kind in {40, 68, 69, 70, 73, 74, 75, 79, 81} else 1
+            weight = 0 if components[destination].kind in {40, 68, 69, 70, 73, 74, 75, 77, 79, 81} else 1
             depths[destination] = max(depths[destination], depths[source] + weight)
             indegree[destination] -= 1
             if indegree[destination] == 0:

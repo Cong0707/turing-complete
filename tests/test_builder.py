@@ -5,7 +5,13 @@ import shutil
 import tempfile
 import unittest
 
-from tc_save_lab.builder import RECIPES, build_recipe, wire_from_vertices
+from tc_save_lab.builder import (
+    RECIPES,
+    VARIANT_RECIPES,
+    build_recipe,
+    build_variant_recipe,
+    wire_from_vertices,
+)
 from tc_save_lab.codec import decode_v15
 from tc_save_lab.pins import analyze_connectivity
 
@@ -32,6 +38,33 @@ class BuilderTests(unittest.TestCase):
                 second_payload = (target / "candidate" / "circuit.data").read_bytes()
                 self.assertEqual(first, second)
                 self.assertEqual(first_payload, second_payload)
+                candidate = decode_v15(first_payload)
+                self.assertEqual(candidate.gate, recipe.declared_gate)
+                self.assertEqual(candidate.delay, recipe.declared_delay)
+                connectivity = analyze_connectivity(candidate)
+                self.assertEqual(connectivity["unconnected_pin_count"], 0)
+                self.assertEqual(connectivity["cycle_component_count"], 0)
+
+    def test_reviewed_variants_are_deterministic_and_fully_connected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            copied_levels: set[str] = set()
+            for (level, variant), recipe in VARIANT_RECIPES.items():
+                source = PROJECT_ROOT / "examples" / level
+                target = root / "examples" / level
+                if level not in copied_levels:
+                    shutil.copytree(source / "baseline", target / "baseline")
+                    shutil.copytree(source / "scaffold", target / "scaffold")
+                    copied_levels.add(level)
+                first = build_variant_recipe(root, level, variant)
+                path = target / "variants" / variant / "circuit.data"
+                first_payload = path.read_bytes()
+                metadata_path = path.parent / "metadata.json"
+                first_metadata = metadata_path.read_bytes()
+                second = build_variant_recipe(root, level, variant)
+                self.assertEqual(first, second)
+                self.assertEqual(first_payload, path.read_bytes())
+                self.assertEqual(first_metadata, metadata_path.read_bytes())
                 candidate = decode_v15(first_payload)
                 self.assertEqual(candidate.gate, recipe.declared_gate)
                 self.assertEqual(candidate.delay, recipe.declared_delay)

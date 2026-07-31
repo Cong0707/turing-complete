@@ -12,7 +12,7 @@ from .pins import I, O, T, positioned_pins
 
 
 SOURCE_KINDS = {60, 61, 63, 64, 65, 79}
-SINK_KINDS = {40, 68, 69, 73, 74, 75, 81}
+SINK_KINDS = {40, 68, 69, 73, 74, 75, 77, 81}
 CONSTANT_KINDS = {1, 2, 46}
 
 

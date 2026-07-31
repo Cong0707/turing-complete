@@ -151,6 +151,57 @@ def _bit_adder(project_root: Path, level: str) -> tuple[tuple[Component, ...], t
     return components, wires
 
 
+def _counting_signals(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(4, (-10, -9), 0, stable_permanent_id(level, "ab-and")),
+        Component(9, (-10, -5), 0, stable_permanent_id(level, "ab-nor")),
+        Component(9, (-4, -7), 0, stable_permanent_id(level, "ab-sum")),
+        Component(4, (-10, 5), 0, stable_permanent_id(level, "cd-and")),
+        Component(9, (-10, 9), 0, stable_permanent_id(level, "cd-nor")),
+        Component(9, (-4, 7), 0, stable_permanent_id(level, "cd-sum")),
+        Component(4, (1, -2), 0, stable_permanent_id(level, "pq-and")),
+        Component(9, (1, 2), 0, stable_permanent_id(level, "pq-nor")),
+        Component(9, (7, 0), 0, stable_permanent_id(level, "bit-0")),
+        Component(4, (1, 7), 0, stable_permanent_id(level, "gh-and")),
+        Component(9, (1, 11), 0, stable_permanent_id(level, "gh-nor")),
+        Component(9, (7, 9), 0, stable_permanent_id(level, "gh-sum")),
+        Component(7, (11, 5), 0, stable_permanent_id(level, "bit-1")),
+    )
+    wires = (
+        wire_from_vertices(((-14, -2), (-13, -3), (-13, -8), (-11, -10))),
+        wire_from_vertices(((-14, -2), (-13, -3), (-13, -4), (-11, -6))),
+        wire_from_vertices(((-14, -1), (-12, -3), (-12, -7), (-11, -8))),
+        wire_from_vertices(((-14, -1), (-11, -4))),
+        wire_from_vertices(((-14, 0), (-13, 1), (-13, 2), (-11, 4))),
+        wire_from_vertices(((-14, 0), (-12, 2), (-12, 7), (-11, 8))),
+        wire_from_vertices(((-14, 1), (-13, 2), (-13, 4), (-11, 6))),
+        wire_from_vertices(((-14, 1), (-12, 3), (-12, 9), (-11, 10))),
+        wire_from_vertices(((-8, -9), (-6, -9), (-5, -8))),
+        wire_from_vertices(((-8, -5), (-6, -5), (-5, -6))),
+        wire_from_vertices(((-8, 5), (-6, 5), (-5, 6))),
+        wire_from_vertices(((-8, 9), (-6, 9), (-5, 8))),
+        wire_from_vertices(((-2, -7), (-1, -6), (-1, -4), (0, -3))),
+        wire_from_vertices(((-2, -7), (-3, -6), (-3, -1), (-1, 1), (0, 1))),
+        wire_from_vertices(((-2, 7), (-1, 6), (-1, 0), (0, -1))),
+        wire_from_vertices(((-2, 7), (0, 5), (0, 3))),
+        wire_from_vertices(((3, -2), (5, -2), (6, -1))),
+        wire_from_vertices(((3, 2), (5, 2), (6, 1))),
+        wire_from_vertices(((3, -2), (4, -1), (4, 0), (8, 4), (10, 4))),
+        wire_from_vertices(((-8, -9), (-7, -8), (-7, -1), (0, 6))),
+        wire_from_vertices(((-8, -9), (-6, -7), (-6, 4), (0, 10))),
+        wire_from_vertices(((-8, 5), (-5, 8), (0, 8))),
+        wire_from_vertices(((-8, 5), (-7, 6), (-7, 7), (-2, 12), (0, 12))),
+        wire_from_vertices(((3, 7), (5, 7), (6, 8))),
+        wire_from_vertices(((3, 11), (5, 11), (6, 10))),
+        wire_from_vertices(((9, 9), (10, 8), (10, 6))),
+        wire_from_vertices(((9, 0), (11, 0), (12, -1), (14, -1))),
+        wire_from_vertices(((13, 5), (14, 4), (14, 0))),
+        wire_from_vertices(((3, 7), (4, 7), (10, 1), (14, 1))),
+    )
+    return components, wires
+
+
 def _decoder_1(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -311,6 +362,107 @@ def _signed_negator(project_root: Path, level: str) -> tuple[tuple[Component, ..
     return components, wires
 
 
+def _signed_negator_low_gate(
+    project_root: Path,
+    level: str,
+) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    identity = f"{level}:low-gate"
+    components = [
+        *scaffold,
+        Component(17, (-9, 0), 0, stable_permanent_id(identity, "splitter")),
+        Component(16, (9, 0), 0, stable_permanent_id(identity, "merger")),
+    ]
+    stage_y: dict[int, int] = {}
+    for bit in range(1, 8):
+        base_y = (bit - 4) * 8
+        stage_y[bit] = base_y
+        components.extend(
+            (
+                Component(7, (0, base_y), 0, stable_permanent_id(identity, f"carry-{bit}")),
+                Component(6, (0, base_y + 4), 0, stable_permanent_id(identity, f"nand-{bit}")),
+                Component(4, (5, base_y + 2), 0, stable_permanent_id(identity, f"xor-{bit}")),
+            )
+        )
+
+    wires = [
+        wire_from_vertices(((-12, 0), (-10, 0))),
+        wire_from_vertices(((-8, -3), (8, -3))),
+        wire_from_vertices(((10, 0), (12, 0))),
+    ]
+    for bit in range(1, 8):
+        base_y = stage_y[bit]
+        bit_source = (-8, bit - 3)
+        and_bit = (-1, base_y - 1)
+        nor_bit = (-1, base_y + 3)
+        bit_lane_and = -12 - bit
+        bit_lane_nor = -24 - bit
+        wires.extend(
+            (
+                wire_from_vertices(
+                    (
+                        bit_source,
+                        (bit_lane_and, bit_source[1]),
+                        (bit_lane_and, and_bit[1]),
+                        and_bit,
+                    )
+                ),
+                wire_from_vertices(
+                    (
+                        bit_source,
+                        (bit_lane_nor, bit_source[1]),
+                        (bit_lane_nor, nor_bit[1]),
+                        nor_bit,
+                    )
+                ),
+            )
+        )
+
+        carry_source = (-8, -3) if bit == 1 else (2, stage_y[bit - 1])
+        and_carry = (-1, base_y + 1)
+        nor_carry = (-1, base_y + 5)
+        carry_lane_and = -38 - bit * 2
+        carry_lane_nor = carry_lane_and - 1
+        wires.extend(
+            (
+                wire_from_vertices(
+                    (
+                        carry_source,
+                        (carry_lane_and, carry_source[1]),
+                        (carry_lane_and, and_carry[1]),
+                        and_carry,
+                    )
+                ),
+                wire_from_vertices(
+                    (
+                        carry_source,
+                        (carry_lane_nor, carry_source[1]),
+                        (carry_lane_nor, nor_carry[1]),
+                        nor_carry,
+                    )
+                ),
+                wire_from_vertices(((2, base_y), (3, base_y), (4, base_y + 1))),
+                wire_from_vertices(
+                    ((2, base_y + 4), (3, base_y + 4), (4, base_y + 3))
+                ),
+            )
+        )
+
+        merger_input = (8, bit - 3)
+        output_lane = 8 + bit
+        wires.append(
+            wire_from_vertices(
+                (
+                    (7, base_y + 2),
+                    (output_lane, base_y + 2),
+                    (output_lane, merger_input[1]),
+                    merger_input,
+                )
+            )
+        )
+    return tuple(components), tuple(wires)
+
+
 def _byte_less_s(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -424,6 +576,15 @@ RECIPES: dict[str, Recipe] = {
             "Sum": values["A"] ^ values["B"],
             "Carry": values["A"] & values["B"],
         },
+    ),
+    "counting_signals": Recipe(
+        "counting_signals",
+        13,
+        4,
+        _counting_signals,
+        (("Input", 4),),
+        "Output",
+        lambda values: values["Input"].bit_count(),
     ),
     "decoder_1": Recipe(
         "decoder_1",
@@ -579,8 +740,25 @@ RECIPES: dict[str, Recipe] = {
 }
 
 
-def build_recipe(project_root: Path, level: str) -> dict[str, object]:
-    recipe = RECIPES[level]
+VARIANT_RECIPES: dict[tuple[str, str], Recipe] = {
+    ("signed_negator", "low-gate"): Recipe(
+        "signed_negator",
+        21,
+        8,
+        _signed_negator_low_gate,
+        (("Input", 8),),
+        "Output",
+        lambda values: (-values["Input"]) & 0xFF,
+    ),
+}
+
+
+def _build_recipe_to(
+    project_root: Path,
+    recipe: Recipe,
+    destination: Path,
+) -> dict[str, object]:
+    level = recipe.level
     baseline_path = project_root / "examples" / level / "baseline" / "circuit.data"
     baseline = decode_v15(baseline_path.read_bytes()) if baseline_path.exists() else Circuit()
     components, wires = recipe.build(project_root, level)
@@ -609,13 +787,13 @@ def build_recipe(project_root: Path, level: str) -> dict[str, object]:
     payload = encode_v15(candidate)
     if decode_v15(payload) != candidate:
         raise RuntimeError(f"recipe {level} failed v15 verification")
-    destination = project_root / "examples" / level / "candidate" / "circuit.data"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_bytes(payload)
     (destination.parent / ".gitkeep").unlink(missing_ok=True)
+    relative_path = destination.relative_to(project_root / "examples").as_posix()
     return {
         "level": level,
-        "path": f"{level}/candidate/circuit.data",
+        "path": relative_path,
         "sha256": sha256(payload).hexdigest(),
         "declared_gate": candidate.gate,
         "declared_delay": candidate.delay,
@@ -628,7 +806,47 @@ def build_recipe(project_root: Path, level: str) -> dict[str, object]:
     }
 
 
+def build_recipe(project_root: Path, level: str) -> dict[str, object]:
+    destination = project_root / "examples" / level / "candidate" / "circuit.data"
+    return _build_recipe_to(project_root, RECIPES[level], destination)
+
+
+def build_variant_recipe(project_root: Path, level: str, variant: str) -> dict[str, object]:
+    destination = (
+        project_root
+        / "examples"
+        / level
+        / "variants"
+        / variant
+        / "circuit.data"
+    )
+    record = _build_recipe_to(project_root, VARIANT_RECIPES[(level, variant)], destination)
+    metadata = {"schema": 1, "variant": variant, **record}
+    (destination.parent / "metadata.json").write_text(
+        json.dumps(metadata, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return record
+
+
 def build_known_candidates(project_root: Path) -> dict[str, object]:
     records = [build_recipe(project_root, level) for level in RECIPES]
     analyze_examples(project_root)
     return {"candidate_count": len(records), "candidates": records}
+
+
+def build_known_variants(
+    project_root: Path,
+    *,
+    levels: tuple[str, ...] = (),
+) -> dict[str, object]:
+    selected = [
+        (level, variant)
+        for level, variant in VARIANT_RECIPES
+        if not levels or level in levels
+    ]
+    missing = sorted(set(levels) - {level for level, _ in selected})
+    if missing:
+        raise ValueError(f"关卡没有已审查的 Pareto 变体：{', '.join(missing)}")
+    records = [build_variant_recipe(project_root, level, variant) for level, variant in selected]
+    return {"variant_count": len(records), "variants": records}
