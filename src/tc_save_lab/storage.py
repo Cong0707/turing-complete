@@ -10,7 +10,7 @@ import json
 import os
 import subprocess
 
-from .codec import decode_v15, encode_v15
+from .codec import decode_circuit, decode_v15, encode_v15
 from .model import Circuit
 
 
@@ -130,10 +130,13 @@ def inventory(save_root: Path) -> list[dict[str, object]]:
 
 
 def export_json(source: Path, destination: Path) -> Circuit:
-    circuit = decode_v15(source.read_bytes())
+    payload = source.read_bytes()
+    circuit = decode_circuit(payload)
+    data = circuit.to_dict()
+    data["format_version"] = payload[0]
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(
-        json.dumps(circuit.to_dict(), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     return circuit

@@ -41,6 +41,9 @@ class Wire:
     comment: str
     start: Point
     segments: tuple[tuple[int, int], ...]
+    # v7 could encode a deliberately disconnected wire using a second point.
+    # Current v15 circuits cannot emit this representation.
+    teleport_end: Point | None = None
 
 
 @dataclass(frozen=True)
@@ -99,4 +102,6 @@ def _wire_from_dict(value: dict[str, Any]) -> Wire:
     data = dict(value)
     data["start"] = tuple(data["start"])
     data["segments"] = tuple(tuple(item) for item in data["segments"])
+    if data.get("teleport_end") is not None:
+        data["teleport_end"] = tuple(data["teleport_end"])
     return Wire(**data)

@@ -5,9 +5,11 @@ from __future__ import annotations
 from .binary import FormatError, Reader, Writer
 from .model import Circuit, Component, Wire
 from .snappy import compress_raw, decompress_raw
+from .legacy_codec import decode_v7, decode_v13, decode_v14
 
 
 FORMAT_VERSION = 15
+SUPPORTED_READ_VERSIONS = (7, 13, 14, 15)
 CUSTOM_COMPONENT_KIND = 78
 CUSTOM_DESIGN_BYTES = 512
 
@@ -155,6 +157,8 @@ def _write_component(writer: Writer, component: Component) -> None:
 
 
 def _write_wire(writer: Writer, wire: Wire) -> None:
+    if wire.teleport_end is not None:
+        raise FormatError("v15 cannot encode a v7 teleport wire")
     writer.u8(wire.color)
     writer.string(wire.comment)
     writer.point(wire.start)
@@ -197,3 +201,25 @@ def encode_v15(circuit: Circuit) -> bytes:
     if decode_v15(payload) != circuit:
         raise FormatError("internal v15 round-trip verification failed")
     return payload
+
+
+def decode_circuit(payload: bytes) -> Circuit:
+    """Decode every campaign/save format supported by this project.
+
+    Only v15 has a writer.  Legacy versions are intentionally read-only.
+    """
+
+    version = payload[0] if payload else None
+    decoders = {
+        7: decode_v7,
+        13: decode_v13,
+        14: decode_v14,
+        15: decode_v15,
+    }
+    decoder = decoders.get(version)
+    if decoder is None:
+        raise FormatError(
+            f"unsupported circuit version {version}; "
+            f"readable versions are {SUPPORTED_READ_VERSIONS}"
+        )
+    return decoder(payload)

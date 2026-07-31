@@ -7,7 +7,7 @@ from pathlib import Path
 import json
 
 from .campaign import initialize_examples, read_level_meta
-from .codec import decode_v15
+from .codec import decode_circuit
 from .storage import (
     DEFAULT_GAME_ROOT,
     DEFAULT_SAVE_ROOT,
@@ -39,7 +39,7 @@ def build_parser() -> ArgumentParser:
     init.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
     init.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
 
-    dump = sub.add_parser("export-json", help="decode one v15 circuit to editable JSON")
+    dump = sub.add_parser("export-json", help="decode a supported circuit to JSON")
     dump.add_argument("source", type=_path)
     dump.add_argument("destination", type=_path)
 
@@ -47,7 +47,7 @@ def build_parser() -> ArgumentParser:
     build.add_argument("source", type=_path)
     build.add_argument("destination", type=_path)
 
-    validate = sub.add_parser("validate", help="strictly decode a v15 circuit")
+    validate = sub.add_parser("validate", help="strictly decode a supported circuit")
     validate.add_argument("source", type=_path)
 
     apply = sub.add_parser("apply", help="atomically write one candidate into the selected save slot")
@@ -92,10 +92,12 @@ def _run(args: Namespace) -> int:
         _print_json({"destination": str(args.destination), "components": len(circuit.components), "wires": len(circuit.wires)})
         return 0
     if args.command == "validate":
-        circuit = decode_v15(args.source.read_bytes())
+        payload = args.source.read_bytes()
+        circuit = decode_circuit(payload)
         _print_json(
             {
                 "valid": True,
+                "format_version": payload[0],
                 "gate": circuit.gate,
                 "delay": circuit.delay,
                 "energy": circuit.energy,
