@@ -58,8 +58,8 @@ player_data == b""
 电路的实例；Foundry 对外端口为：
 
 ```text
-kind=79  Foundry 输入（输入方向）
-kind=81  Foundry 输出（输出方向）
+kind=79  Foundry 外部输入端（在内部网络中是驱动源）
+kind=81  Foundry 外部输出端（在内部网络中是接收端）
 ```
 
 对 RISCV、diode、Overture 等现代 v15 Foundry 电路的实际导线端点统计，并与
