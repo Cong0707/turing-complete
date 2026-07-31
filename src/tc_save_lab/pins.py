@@ -298,7 +298,7 @@ def analyze_connectivity(
         source = queue.popleft()
         visited += 1
         for destination in successors[source]:
-            weight = 0 if components[destination].kind in {40, 68, 69, 70, 73, 74, 75, 77, 79, 81} else 1
+            weight = 0 if components[destination].kind in {40, 62, 68, 69, 70, 73, 74, 75, 77, 79, 81} else 1
             depths[destination] = max(depths[destination], depths[source] + weight)
             indegree[destination] -= 1
             if indegree[destination] == 0:
