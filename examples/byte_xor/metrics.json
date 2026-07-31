@@ -35,8 +35,9 @@
         "total_length": 217,
         "maximum_length": 19,
         "bend_count": 39,
-        "network_count": 14,
-        "shared_point_count": 24,
+        "network_count": 27,
+        "path_intersection_point_count": 24,
+        "endpoint_junction_count": 0,
         "overlap_point_count": 57,
         "expanded_point_count": 187,
         "bounding_box": {
@@ -48,6 +49,57 @@
           "height": 31
         },
         "teleport_wire_count": 0
+      },
+      "connectivity": {
+        "effective_component_count": 14,
+        "supported_component_count": 14,
+        "unsupported_component_kind_counts": {},
+        "pin_count": 54,
+        "connected_pin_count": 51,
+        "unconnected_pin_count": 3,
+        "unconnected_pins": [
+          {
+            "permanent_id": 2922558065734302150,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -15,
+              -4
+            ]
+          },
+          {
+            "permanent_id": 5575551727583820946,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -15,
+              6
+            ]
+          },
+          {
+            "permanent_id": 3390280532761175078,
+            "kind": 69,
+            "name": "value",
+            "direction": "input",
+            "width": 8,
+            "position": [
+              17,
+              1
+            ]
+          }
+        ],
+        "logical_network_count": 27,
+        "logical_edge_count": 24,
+        "multi_driver_network_count": 0,
+        "undriven_network_count": 2,
+        "sinkless_network_count": 1,
+        "width_mismatch_network_count": 0,
+        "unit_logic_depth": 2,
+        "cycle_component_count": 0
       }
     }
   },

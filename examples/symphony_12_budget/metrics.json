@@ -41,7 +41,8 @@
         "maximum_length": 1,
         "bend_count": 0,
         "network_count": 1,
-        "shared_point_count": 0,
+        "path_intersection_point_count": 0,
+        "endpoint_junction_count": 0,
         "overlap_point_count": 0,
         "expanded_point_count": 2,
         "bounding_box": {
@@ -53,6 +54,75 @@
           "height": 2
         },
         "teleport_wire_count": 0
+      },
+      "connectivity": {
+        "effective_component_count": 20,
+        "supported_component_count": 2,
+        "unsupported_component_kind_counts": {
+          "54": 7,
+          "56": 5,
+          "91": 1,
+          "92": 1,
+          "93": 1,
+          "118": 3
+        },
+        "pin_count": 4,
+        "connected_pin_count": 0,
+        "unconnected_pin_count": 4,
+        "unconnected_pins": [
+          {
+            "permanent_id": 7462353562815688287,
+            "kind": 62,
+            "name": "control",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              -11,
+              18
+            ]
+          },
+          {
+            "permanent_id": 7462353562815688287,
+            "kind": 62,
+            "name": "value",
+            "direction": "output_tristate",
+            "width": 32,
+            "position": [
+              -10,
+              17
+            ]
+          },
+          {
+            "permanent_id": 1221935449010810330,
+            "kind": 70,
+            "name": "control",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              8,
+              18
+            ]
+          },
+          {
+            "permanent_id": 1221935449010810330,
+            "kind": 70,
+            "name": "value",
+            "direction": "input",
+            "width": 32,
+            "position": [
+              7,
+              17
+            ]
+          }
+        ],
+        "logical_network_count": 0,
+        "logical_edge_count": 0,
+        "multi_driver_network_count": 0,
+        "undriven_network_count": 0,
+        "sinkless_network_count": 0,
+        "width_mismatch_network_count": 0,
+        "unit_logic_depth": 0,
+        "cycle_component_count": 0
       }
     }
   },

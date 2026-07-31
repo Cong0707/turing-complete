@@ -27,13 +27,25 @@ class AnalysisTests(unittest.TestCase):
         circuit = Circuit(
             wires=(
                 Wire(0, "", (0, 0), ((0, 3),)),
-                Wire(0, "", (1, 0), ((2, 2),)),
+                Wire(0, "", (3, 0), ((2, 2),)),
                 Wire(0, "", (8, 8), ((0, 1),)),
             )
         )
         metrics = analyze_circuit(circuit)
         self.assertEqual(metrics["wire"]["network_count"], 2)
-        self.assertGreater(metrics["wire"]["shared_point_count"], 0)
+        self.assertGreater(metrics["wire"]["endpoint_junction_count"], 0)
+
+    def test_crossing_wire_interiors_do_not_form_a_network(self):
+        circuit = Circuit(
+            wires=(
+                Wire(0, "", (0, 0), ((0, 4),)),
+                Wire(0, "", (2, -2), ((2, 4),)),
+            )
+        )
+        metrics = analyze_circuit(circuit)
+        self.assertEqual(metrics["wire"]["network_count"], 2)
+        self.assertEqual(metrics["wire"]["path_intersection_point_count"], 1)
+        self.assertEqual(metrics["wire"]["endpoint_junction_count"], 0)
 
     def test_teleport_is_reported_separately(self):
         circuit = Circuit(wires=(Wire(0, "", (0, 0), (), (5, 7)),))

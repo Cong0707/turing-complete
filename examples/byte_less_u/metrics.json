@@ -35,7 +35,8 @@
         "maximum_length": 17,
         "bend_count": 3,
         "network_count": 4,
-        "shared_point_count": 0,
+        "path_intersection_point_count": 0,
+        "endpoint_junction_count": 0,
         "overlap_point_count": 0,
         "expanded_point_count": 43,
         "bounding_box": {
@@ -47,6 +48,79 @@
           "height": 7
         },
         "teleport_wire_count": 0
+      },
+      "connectivity": {
+        "effective_component_count": 5,
+        "supported_component_count": 5,
+        "unsupported_component_kind_counts": {},
+        "pin_count": 10,
+        "connected_pin_count": 5,
+        "unconnected_pin_count": 5,
+        "unconnected_pins": [
+          {
+            "permanent_id": 1274609655208581946,
+            "kind": 30,
+            "name": "carry_in",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              4,
+              0
+            ]
+          },
+          {
+            "permanent_id": 1274609655208581946,
+            "kind": 30,
+            "name": "out",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              6,
+              0
+            ]
+          },
+          {
+            "permanent_id": 6248326274166386624,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -13,
+              -5
+            ]
+          },
+          {
+            "permanent_id": 1712803283622402171,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -13,
+              5
+            ]
+          },
+          {
+            "permanent_id": 8990267451373943394,
+            "kind": 68,
+            "name": "value",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              15,
+              0
+            ]
+          }
+        ],
+        "logical_network_count": 4,
+        "logical_edge_count": 1,
+        "multi_driver_network_count": 0,
+        "undriven_network_count": 2,
+        "sinkless_network_count": 1,
+        "width_mismatch_network_count": 0,
+        "unit_logic_depth": 1,
+        "cycle_component_count": 0
       }
     }
   },

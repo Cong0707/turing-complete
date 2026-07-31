@@ -9,6 +9,7 @@ from .codec import (
 )
 from .legacy_codec import decode_v7, decode_v13, decode_v14
 from .analysis import analyze_circuit, analyze_examples, analyze_file, wire_points
+from .pins import analyze_connectivity, positioned_pins, rotate_offset
 from .model import Circuit, Component, Wire
 
 __all__ = [
@@ -27,4 +28,7 @@ __all__ = [
     "analyze_examples",
     "analyze_file",
     "wire_points",
+    "analyze_connectivity",
+    "positioned_pins",
+    "rotate_offset",
 ]

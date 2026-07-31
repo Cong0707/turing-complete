@@ -38,8 +38,9 @@
         "total_length": 69,
         "maximum_length": 11,
         "bend_count": 10,
-        "network_count": 13,
-        "shared_point_count": 7,
+        "network_count": 17,
+        "path_intersection_point_count": 7,
+        "endpoint_junction_count": 3,
         "overlap_point_count": 9,
         "expanded_point_count": 82,
         "bounding_box": {
@@ -51,6 +52,82 @@
           "height": 8
         },
         "teleport_wire_count": 0
+      },
+      "connectivity": {
+        "effective_component_count": 11,
+        "supported_component_count": 9,
+        "unsupported_component_kind_counts": {
+          "110": 1,
+          "112": 1
+        },
+        "pin_count": 27,
+        "connected_pin_count": 22,
+        "unconnected_pin_count": 5,
+        "unconnected_pins": [
+          {
+            "permanent_id": 1735246999962929726,
+            "kind": 12,
+            "name": "enable",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              6,
+              -3
+            ]
+          },
+          {
+            "permanent_id": 1735246999962929726,
+            "kind": 12,
+            "name": "out",
+            "direction": "output_tristate",
+            "width": 1,
+            "position": [
+              7,
+              -2
+            ]
+          },
+          {
+            "permanent_id": 7296812906569478204,
+            "kind": 12,
+            "name": "out",
+            "direction": "output_tristate",
+            "width": 1,
+            "position": [
+              7,
+              0
+            ]
+          },
+          {
+            "permanent_id": 404115770581408864,
+            "kind": 12,
+            "name": "out",
+            "direction": "output_tristate",
+            "width": 1,
+            "position": [
+              7,
+              2
+            ]
+          },
+          {
+            "permanent_id": 8543147940271472633,
+            "kind": 12,
+            "name": "out",
+            "direction": "output_tristate",
+            "width": 1,
+            "position": [
+              7,
+              4
+            ]
+          }
+        ],
+        "logical_network_count": 12,
+        "logical_edge_count": 10,
+        "multi_driver_network_count": 0,
+        "undriven_network_count": 4,
+        "sinkless_network_count": 0,
+        "width_mismatch_network_count": 0,
+        "unit_logic_depth": 2,
+        "cycle_component_count": 0
       }
     }
   },

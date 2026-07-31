@@ -91,13 +91,19 @@ def _bbox(points: list[Point]) -> dict[str, int] | None:
 def _wire_metrics(wires: tuple[Wire, ...]) -> dict[str, object]:
     expanded = [wire_points(wire) for wire in wires]
     point_owners: dict[Point, list[int]] = {}
+    endpoint_owners: dict[Point, list[int]] = {}
     for index, points in enumerate(expanded):
         for point in set(points):
             point_owners.setdefault(point, []).append(index)
+        endpoint_owners.setdefault(points[0], []).append(index)
+        endpoint_owners.setdefault(points[-1], []).append(index)
 
     union_find = _UnionFind(len(wires))
     shared_points = [point for point, owners in point_owners.items() if len(owners) > 1]
-    for owners in point_owners.values():
+    endpoint_junctions = [
+        point for point, owners in endpoint_owners.items() if len(owners) > 1
+    ]
+    for owners in endpoint_owners.values():
         for index in owners[1:]:
             union_find.union(owners[0], index)
 
@@ -126,7 +132,8 @@ def _wire_metrics(wires: tuple[Wire, ...]) -> dict[str, object]:
         ),
         "bend_count": bend_count,
         "network_count": len(network_roots),
-        "shared_point_count": len(shared_points),
+        "path_intersection_point_count": len(shared_points),
+        "endpoint_junction_count": len(endpoint_junctions),
         "overlap_point_count": overlap_points,
         "expanded_point_count": len(set(all_points)),
         "bounding_box": _bbox(all_points),
@@ -134,7 +141,14 @@ def _wire_metrics(wires: tuple[Wire, ...]) -> dict[str, object]:
     }
 
 
-def analyze_circuit(circuit: Circuit, *, format_version: int = 15) -> dict[str, object]:
+def analyze_circuit(
+    circuit: Circuit,
+    *,
+    format_version: int = 15,
+    extra_components: tuple[Component, ...] = (),
+) -> dict[str, object]:
+    from .pins import analyze_connectivity
+
     component_ids = [component.permanent_id for component in circuit.components]
     component_points = [component.position for component in circuit.components]
     wire = _wire_metrics(circuit.wires)
@@ -154,18 +168,27 @@ def analyze_circuit(circuit: Circuit, *, format_version: int = 15) -> dict[str, 
         "duplicate_permanent_ids": _duplicates(component_ids),
         "component_bounding_box": _bbox(component_points),
         "wire": wire,
+        "connectivity": analyze_connectivity(
+            circuit, extra_components=extra_components
+        ),
     }
     return result
 
 
-def analyze_file(path: Path) -> dict[str, object]:
+def analyze_file(
+    path: Path,
+    *,
+    extra_components: tuple[Component, ...] = (),
+) -> dict[str, object]:
     payload = path.read_bytes()
     return {
         "path": str(path),
         "size": len(payload),
         "sha256": sha256(payload).hexdigest(),
         "metrics": analyze_circuit(
-            decode_circuit(payload), format_version=payload[0]
+            decode_circuit(payload),
+            format_version=payload[0],
+            extra_components=extra_components,
         ),
     }
 
@@ -187,7 +210,23 @@ def analyze_examples(project_root: Path) -> dict[str, object]:
         else:
             source = examples / level / "baseline" / "circuit.data"
             source_relative = f"{level}/baseline/circuit.data"
-        baseline_analysis = analyze_file(source) if source.is_file() else None
+        scaffold_path = examples / level / "scaffold" / "immutable.json"
+        extra_components: tuple[Component, ...] = ()
+        if scaffold_path.is_file():
+            scaffold = json.loads(scaffold_path.read_text("utf-8"))
+            component_records = []
+            for component in scaffold["immutable_components"]:
+                component = dict(component)
+                component.pop("role", None)
+                component_records.append(component)
+            extra_components = Circuit.from_dict(
+                {"components": component_records}
+            ).components
+        baseline_analysis = (
+            analyze_file(source, extra_components=extra_components)
+            if source.is_file()
+            else None
+        )
         if baseline_analysis is not None:
             baseline_analysis["path"] = source_relative
         result: dict[str, object] = {
@@ -204,7 +243,9 @@ def analyze_examples(project_root: Path) -> dict[str, object]:
             else examples / level / "candidate" / "circuit.data"
         )
         if candidate.is_file():
-            candidate_analysis = analyze_file(candidate)
+            candidate_analysis = analyze_file(
+                candidate, extra_components=extra_components
+            )
             candidate_analysis["path"] = str(candidate.relative_to(examples)).replace(
                 "\\", "/"
             )

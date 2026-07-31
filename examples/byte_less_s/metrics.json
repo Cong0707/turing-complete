@@ -37,7 +37,8 @@
         "maximum_length": 21,
         "bend_count": 4,
         "network_count": 30,
-        "shared_point_count": 1,
+        "path_intersection_point_count": 1,
+        "endpoint_junction_count": 1,
         "overlap_point_count": 1,
         "expanded_point_count": 127,
         "bounding_box": {
@@ -49,6 +50,68 @@
           "height": 17
         },
         "teleport_wire_count": 0
+      },
+      "connectivity": {
+        "effective_component_count": 16,
+        "supported_component_count": 16,
+        "unsupported_component_kind_counts": {},
+        "pin_count": 60,
+        "connected_pin_count": 56,
+        "unconnected_pin_count": 4,
+        "unconnected_pins": [
+          {
+            "permanent_id": 4491562853140718594,
+            "kind": 30,
+            "name": "carry_in",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              6,
+              -3
+            ]
+          },
+          {
+            "permanent_id": 3198436405215548003,
+            "kind": 68,
+            "name": "value",
+            "direction": "input",
+            "width": 1,
+            "position": [
+              14,
+              -1
+            ]
+          },
+          {
+            "permanent_id": 1091675620603771008,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -14,
+              -6
+            ]
+          },
+          {
+            "permanent_id": 5093146607399674398,
+            "kind": 61,
+            "name": "value",
+            "direction": "output",
+            "width": 8,
+            "position": [
+              -14,
+              4
+            ]
+          }
+        ],
+        "logical_network_count": 30,
+        "logical_edge_count": 20,
+        "multi_driver_network_count": 0,
+        "undriven_network_count": 2,
+        "sinkless_network_count": 2,
+        "width_mismatch_network_count": 0,
+        "unit_logic_depth": 3,
+        "cycle_component_count": 0
       }
     }
   },
