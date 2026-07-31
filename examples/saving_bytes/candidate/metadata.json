@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "level": "saving_bytes",
+  "title": "Saving Bytes",
+  "title_zh": "字寄存器",
+  "strategy": "使用原生 U8 字寄存器，并用 On 元件持续打开三态输出。",
+  "validation_status": "已完成离线穷举、状态转换、v15 往返、连通性和物理几何审计；待游戏内验收。",
+  "deployment_target": "schematics/saving_bytes/Default/circuit.data",
+  "sha256": "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",
+  "format_version": 15,
+  "component_count": 5,
+  "wire_count": 4,
+  "gate": 73,
+  "delay": 5,
+  "energy": 365,
+  "leaderboard_tuple": [
+    73,
+    5,
+    365
+  ],
+  "v15_round_trip_verified": true,
+  "component_kind_counts": {
+    "2": 1,
+    "39": 1,
+    "60": 1,
+    "61": 1,
+    "69": 1
+  },
+  "connectivity": {
+    "effective_component_count": 5,
+    "supported_component_count": 5,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 8,
+    "connected_pin_count": 8,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 4,
+    "logical_edge_count": 1,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 0,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_endpoint_non_pin_count": 0,
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_body_overlap_count": 0
+  },
+  "semantic": {
+    "exhaustive_state_transition_count": 131072
+  }
+}

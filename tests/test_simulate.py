@@ -6,7 +6,7 @@ import unittest
 
 from tc_save_lab.builder import build_recipe
 from tc_save_lab.codec import decode_v15
-from tc_save_lab.model import Component
+from tc_save_lab.model import Circuit, Component, Wire
 from tc_save_lab.simulate import SimulationError, simulate_combinational, verify_truth_table
 
 
@@ -91,6 +91,26 @@ class CombinationalSimulationTests(unittest.TestCase):
         path = PROJECT_ROOT / "examples" / "byte_constant" / "candidate" / "circuit.data"
         circuit = decode_v15(path.read_bytes())
         self.assertEqual(simulate_combinational(circuit, {}), {"Output": 164})
+
+    def test_current_clz_component_matches_every_unsigned_byte(self):
+        circuit = Circuit(
+            components=(
+                Component(61, (-8, 0), 0, 1, user_label="Input", word_size=8),
+                Component(49, (0, 0), 0, 2, word_size=8),
+                Component(69, (6, 0), 0, 3, user_label="Output", word_size=8),
+            ),
+            wires=(
+                Wire(0, "", (-5, 0), ((0, 4),)),
+                Wire(0, "", (2, 0), ((0, 1),)),
+            ),
+        )
+        for value in range(256):
+            expected = 8 if value == 0 else 8 - value.bit_length()
+            self.assertEqual(
+                simulate_combinational(circuit, {"Input": value}),
+                {"Output": expected},
+                value,
+            )
 
 
 if __name__ == "__main__":

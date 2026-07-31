@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "level": "byte_adder",
+  "title": "Adding Bytes",
+  "title_zh": "字节加法器",
+  "strategy": "使用原生 U8 加法器，保留独立的进位输入与进位输出。",
+  "validation_status": "已完成离线穷举、状态转换、v15 往返、连通性和物理几何审计；待游戏内验收。",
+  "deployment_target": "schematics/byte_adder/Default/circuit.data",
+  "sha256": "b63723b21c16d535828a1a265a7714eea4b43faedacf8925aee8b0fbcd955e32",
+  "format_version": 15,
+  "component_count": 6,
+  "wire_count": 5,
+  "gate": 103,
+  "delay": 5,
+  "energy": 515,
+  "leaderboard_tuple": [
+    103,
+    5,
+    515
+  ],
+  "v15_round_trip_verified": true,
+  "component_kind_counts": {
+    "30": 1,
+    "61": 3,
+    "69": 2
+  },
+  "connectivity": {
+    "effective_component_count": 6,
+    "supported_component_count": 6,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 10,
+    "connected_pin_count": 10,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 5,
+    "logical_edge_count": 5,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 1,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_endpoint_non_pin_count": 0,
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_body_overlap_count": 0
+  },
+  "semantic": {
+    "exhaustive_truth_table_vector_count": 131072
+  }
+}

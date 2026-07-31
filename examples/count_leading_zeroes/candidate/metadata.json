@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "level": "count_leading_zeroes",
+  "title": "Count leading zeroes",
+  "title_zh": "前导零计数器",
+  "strategy": "使用原生 U8 前导零计数器。",
+  "validation_status": "已完成离线穷举、状态转换、v15 往返、连通性和物理几何审计；待游戏内验收。",
+  "deployment_target": "schematics/count_leading_zeroes/Default/circuit.data",
+  "sha256": "6e300a33ac85cd95307ff2142450c3a7f4982962e255b206e3ec7ae8286f112e",
+  "format_version": 15,
+  "component_count": 3,
+  "wire_count": 2,
+  "gate": 22,
+  "delay": 4,
+  "energy": 88,
+  "leaderboard_tuple": [
+    22,
+    4,
+    88
+  ],
+  "v15_round_trip_verified": true,
+  "component_kind_counts": {
+    "49": 1,
+    "61": 1,
+    "69": 1
+  },
+  "connectivity": {
+    "effective_component_count": 3,
+    "supported_component_count": 3,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 4,
+    "connected_pin_count": 4,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 2,
+    "logical_edge_count": 2,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 1,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_endpoint_non_pin_count": 0,
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_body_overlap_count": 0
+  },
+  "semantic": {
+    "exhaustive_truth_table_vector_count": 256
+  }
+}

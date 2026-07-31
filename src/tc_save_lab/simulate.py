@@ -187,6 +187,9 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
             return {f"out{index}": 0 for index in range(8)}
         selected = sum((values[f"select{index}"] & 1) << index for index in range(3))
         return {f"out{index}": int(index == selected) for index in range(8)}
+    if kind == 49:
+        value = values["in"] & mask
+        return {"out": width if value == 0 else width - value.bit_length()}
     raise SimulationError(f"component kind {kind} has no reviewed combinational semantics")
 
 

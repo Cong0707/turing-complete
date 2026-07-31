@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "level": "saving_gracefully",
+  "title": "Saving Gracefully",
+  "title_zh": "位寄存器",
+  "strategy": "使用原生单位置位寄存器，输出保持上一拍状态。",
+  "validation_status": "已完成离线穷举、状态转换、v15 往返、连通性和物理几何审计；待游戏内验收。",
+  "deployment_target": "schematics/saving_gracefully/Default/circuit.data",
+  "sha256": "f0d5632ddc9191b7702d07668aeeb2fdcd7a042a1b9fbf83f923633ee2cc0d26",
+  "format_version": 15,
+  "component_count": 4,
+  "wire_count": 3,
+  "gate": 10,
+  "delay": 5,
+  "energy": 50,
+  "leaderboard_tuple": [
+    10,
+    5,
+    50
+  ],
+  "v15_round_trip_verified": true,
+  "component_kind_counts": {
+    "14": 1,
+    "60": 2,
+    "68": 1
+  },
+  "connectivity": {
+    "effective_component_count": 4,
+    "supported_component_count": 4,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 6,
+    "connected_pin_count": 6,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 3,
+    "logical_edge_count": 1,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 0,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_endpoint_non_pin_count": 0,
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_body_overlap_count": 0
+  },
+  "semantic": {
+    "script_tick_count": 13,
+    "exhaustive_state_transition_count": 8
+  }
+}

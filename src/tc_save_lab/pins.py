@@ -56,6 +56,13 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     11: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
     12: _pins(PinSpec("enable", I, (0, -1), 1), PinSpec("in", I, (-1, 0), 1), PinSpec("out", T, (2, 0), 1)),
     13: _pins(PinSpec("in", I, (-3, 0), 1), PinSpec("out", O, (3, 0), 1)),
+    # Current Register Bit: save is intentionally offset above the data input.
+    # The geometry is evidenced by campaign/saving_bytes/Default/circuit.data.
+    14: _pins(
+        PinSpec("save", I, (-3, -3), 1),
+        PinSpec("in", I, (-3, 0), 1),
+        PinSpec("out", O, (3, 0), 1),
+    ),
     15: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("sum", O, (1, 0), 1), PinSpec("carry_out", O, (1, 1), 1)),
     16: _pins(*(tuple(PinSpec(f"in{i}", I, (-1, i - 3), 1) for i in range(8)) + (PinSpec("out", O, (1, 0), 8),))),
     17: _pins(PinSpec("in", I, (-1, 0), 8), *(PinSpec(f"out{i}", O, (1, i - 3), 1) for i in range(8))),
@@ -79,11 +86,22 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     35: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     36: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     37: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
+    # Current Register Word exposes an output-enable control ("load"), a
+    # save control, and a tri-state word output.  It is used directly by the
+    # Saving Bytes candidate and matches the current Tick Tock baseline.
+    39: _pins(
+        PinSpec("load", I, (-1, -1), 1),
+        PinSpec("save", I, (-1, 0), 1),
+        PinSpec("in", I, (-1, 1)),
+        PinSpec("out", T, (1, 0)),
+    ),
     42: _pins(PinSpec("select", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     43: _pins(PinSpec("select", I, (-1, 0), 1), PinSpec("out0", O, (1, 0), 1), PinSpec("out1", O, (1, 1), 1)),
     44: _pins(PinSpec("select0", I, (-1, -1), 1), PinSpec("select1", I, (-1, 0), 1), *(PinSpec(f"out{i}", O, (1, i - 1), 1) for i in range(4))),
     40: _pins(*(PinSpec(f"value{i}", I, (-1, i - 4), 1) for i in range(8))),
     45: _pins(PinSpec("disable", I, (0, -4), 1), *(PinSpec(f"select{i}", I, (-1, i - 3), 1) for i in range(3)), *(PinSpec(f"out{i}", O, (1, i - 3), 1) for i in range(8))),
+    # Count Leading Zeroes consumes and produces one current-width word.
+    49: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (2, 0))),
     60: _pins(PinSpec("value", O, (1, 0), 1)),
     63: _pins(PinSpec("value0", O, (0, -1), 1), PinSpec("value1", O, (0, 1), 1)),
     64: _pins(PinSpec("value0", O, (1, -2), 1), PinSpec("value1", O, (1, -1), 1), PinSpec("value2", O, (1, 0), 1)),
