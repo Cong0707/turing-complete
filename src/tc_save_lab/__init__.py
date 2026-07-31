@@ -12,6 +12,7 @@ from .analysis import analyze_circuit, analyze_examples, analyze_file, wire_poin
 from .pins import analyze_connectivity, positioned_pins, rotate_offset
 from .builder import build_known_candidates, build_recipe, wire_from_vertices
 from .model import Circuit, Component, Wire
+from .simulate import SimulationError, simulate_combinational, verify_single_input_truth_table
 
 __all__ = [
     "Circuit",
@@ -35,4 +36,7 @@ __all__ = [
     "build_known_candidates",
     "build_recipe",
     "wire_from_vertices",
+    "SimulationError",
+    "simulate_combinational",
+    "verify_single_input_truth_table",
 ]

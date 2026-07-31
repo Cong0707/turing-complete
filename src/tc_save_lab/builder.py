@@ -11,6 +11,7 @@ from .analysis import analyze_examples
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point, Wire
 from .pins import analyze_connectivity
+from .simulate import verify_single_input_truth_table
 
 
 DIRECTION_BY_STEP = {
@@ -31,6 +32,8 @@ class Recipe:
     declared_gate: int
     declared_delay: int
     build: object
+    input_width: int
+    expected: object
 
 
 def stable_permanent_id(level: str, name: str) -> int:
@@ -115,9 +118,30 @@ def _xnor(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[
 
 
 RECIPES: dict[str, Recipe] = {
-    "or_gate_3": Recipe("or_gate_3", 2, 2, lambda root, level: _triple_input_two_gate(root, level, 7)),
-    "and_gate_3": Recipe("and_gate_3", 2, 2, lambda root, level: _triple_input_two_gate(root, level, 4)),
-    "xnor": Recipe("xnor", 3, 2, _xnor),
+    "or_gate_3": Recipe(
+        "or_gate_3",
+        2,
+        2,
+        lambda root, level: _triple_input_two_gate(root, level, 7),
+        3,
+        lambda value: int(value != 0),
+    ),
+    "and_gate_3": Recipe(
+        "and_gate_3",
+        2,
+        2,
+        lambda root, level: _triple_input_two_gate(root, level, 4),
+        3,
+        lambda value: int(value == 0b111),
+    ),
+    "xnor": Recipe(
+        "xnor",
+        3,
+        2,
+        _xnor,
+        2,
+        lambda value: int((value & 1) == ((value >> 1) & 1)),
+    ),
 }
 
 
@@ -142,6 +166,13 @@ def build_recipe(project_root: Path, level: str) -> dict[str, object]:
         )
     if connectivity["cycle_component_count"]:
         raise ValueError(f"recipe {level} unexpectedly contains a logic cycle")
+    tested_vectors = verify_single_input_truth_table(
+        candidate,
+        input_label="Input",
+        input_width=recipe.input_width,
+        output_label="Output",
+        expected=recipe.expected,
+    )
     payload = encode_v15(candidate)
     if decode_v15(payload) != candidate:
         raise RuntimeError(f"recipe {level} failed v15 verification")
@@ -160,6 +191,7 @@ def build_recipe(project_root: Path, level: str) -> dict[str, object]:
         "wire_count": len(candidate.wires),
         "unit_logic_depth": connectivity["unit_logic_depth"],
         "connected_pin_count": connectivity["connected_pin_count"],
+        "exhaustive_test_vectors": tested_vectors,
     }
 
 
