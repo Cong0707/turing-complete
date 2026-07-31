@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field, replace
 from hashlib import sha256
 from pathlib import Path
 import csv
@@ -34,10 +34,12 @@ class DirectInstallItem:
     name: str
     source: Path
     destination: Path
+    source_sha256: str
     sha256: str
     custom_id: int = 0
     destination_before_kind: str = "absent"
     destination_before_sha256: str | None = None
+    payload: bytes = field(default=b"", repr=False)
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -45,10 +47,12 @@ class DirectInstallItem:
             "name": self.name,
             "source": str(self.source),
             "destination": str(self.destination),
+            "source_sha256": self.source_sha256,
             "sha256": self.sha256,
             "custom_id": self.custom_id,
             "destination_before_kind": self.destination_before_kind,
             "destination_before_sha256": self.destination_before_sha256,
+            "will_write": self.destination_before_sha256 != self.sha256,
         }
 
 
@@ -181,24 +185,44 @@ def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInst
             raise ValueError(f"architecture candidate is not canonical v15: {source}")
         metadata_path = source.parent / "metadata.json"
         metadata = json.loads(metadata_path.read_text("utf-8"))
-        digest = sha256(payload).hexdigest()
+        source_digest = sha256(payload).hexdigest()
         expected_target = f"schematics/architecture/{schematic}/circuit.data"
-        if metadata.get("sha256") != digest:
+        if metadata.get("sha256") != source_digest:
             raise ValueError(f"architecture metadata digest mismatch: {source}")
         if metadata.get("deployment_target") != expected_target:
             raise ValueError(f"architecture metadata target mismatch: {source}")
         destination_kind, destination_digest = _destination_state(destination)
         if destination_kind == "other":
             raise ValueError(f"architecture target is not a regular file: {destination}")
+        install_payload = payload
+        install_custom_id = circuit.custom_id
+        if destination_kind == "file":
+            destination_payload = destination.read_bytes()
+            installed = decode_v15(destination_payload)
+            if installed.custom_id:
+                if len(installed.design) != 512:
+                    raise ValueError(f"architecture target has invalid design data: {destination}")
+                merged = replace(
+                    circuit,
+                    custom_id=installed.custom_id,
+                    design=installed.design,
+                )
+                install_payload = (
+                    destination_payload if installed == merged else encode_v15(merged)
+                )
+                install_custom_id = installed.custom_id
         items.append(
             DirectInstallItem(
                 kind="architecture",
                 name=level,
                 source=source,
                 destination=destination,
-                sha256=digest,
+                source_sha256=source_digest,
+                sha256=sha256(install_payload).hexdigest(),
+                custom_id=install_custom_id,
                 destination_before_kind=destination_kind,
                 destination_before_sha256=destination_digest,
+                payload=install_payload,
             )
         )
     return tuple(items)
@@ -213,6 +237,7 @@ def plan_direct_install(
     foundry_plan = plan_codex_deployment(project_root, save_root)
     foundry_items_list: list[DirectInstallItem] = []
     for item in foundry_plan.items:
+        payload = item.source.read_bytes()
         destination_kind, destination_digest = _destination_state(item.destination)
         if destination_kind == "other":
             raise ValueError(f"Foundry target is not a regular file: {item.destination}")
@@ -222,10 +247,12 @@ def plan_direct_install(
                 name=item.display_path,
                 source=item.source,
                 destination=item.destination,
+                source_sha256=item.sha256,
                 sha256=item.sha256,
                 custom_id=item.custom_id,
                 destination_before_kind=destination_kind,
                 destination_before_sha256=destination_digest,
+                payload=payload,
             )
         )
     foundry_items = tuple(foundry_items_list)
@@ -265,11 +292,14 @@ def _validate_plan_unchanged(plan: DirectInstallPlan) -> dict[Path, bytes]:
         expected = (item.destination_before_kind, item.destination_before_sha256)
         if (current_kind, current_digest) != expected:
             raise RuntimeError(f"destination changed after planning: {item.destination}")
-        payload = item.source.read_bytes()
-        if sha256(payload).hexdigest() != item.sha256:
+        source_payload = item.source.read_bytes()
+        if sha256(source_payload).hexdigest() != item.source_sha256:
             raise RuntimeError(f"candidate changed after planning: {item.source}")
-        decode_v15(payload)
-        payloads[item.destination] = payload
+        decode_v15(source_payload)
+        if sha256(item.payload).hexdigest() != item.sha256:
+            raise RuntimeError(f"planned payload digest mismatch: {item.destination}")
+        decode_v15(item.payload)
+        payloads[item.destination] = item.payload
     if len(payloads) != len(plan.items):
         raise RuntimeError("multiple candidates resolved to the same destination")
     return payloads
@@ -287,6 +317,8 @@ def install_reviewed_direct(plan: DirectInstallPlan) -> dict[str, object]:
         expected = (item.destination_before_kind, item.destination_before_sha256)
         if current != expected:
             raise RuntimeError(f"destination changed before write: {destination}")
+        if current[1] == sha256(payload).hexdigest():
+            continue
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(payload)
     _assert_game_not_running()

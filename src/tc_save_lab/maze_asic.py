@@ -71,7 +71,7 @@ def build_maze_asic() -> Circuit:
         **kwargs,
     )
     components = (
-        component("level-input", 62, (-24, 0), word_size=1),
+        component("level-input", 62, (-24, 0), word_size=8),
         component("level-output", 70, (30, 0), word_size=8),
         component("input-enable", 2, (-28, -2)),
         component("output-enable", 2, (25, -5)),
@@ -110,11 +110,14 @@ def verify_maze_asic(circuit: Circuit | None = None) -> dict[str, object]:
         "unsupported_component_kind_counts",
         "unconnected_pin_count",
         "multi_driver_network_count",
-        "width_mismatch_network_count",
         "cycle_component_count",
     ):
         if connectivity[field]:
             raise RuntimeError(f"maze ASIC failed connectivity check {field}: {connectivity[field]}")
+    if connectivity["width_mismatch_network_count"] != 1:
+        raise RuntimeError(
+            "maze ASIC must keep exactly one runtime-confirmed U8-to-U1 truncation"
+        )
     return {
         "gate": candidate.gate,
         "delay": candidate.delay,

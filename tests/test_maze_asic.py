@@ -31,6 +31,8 @@ class MazeAsicTests(unittest.TestCase):
         self.assertEqual(result["cycles"], list(EXPECTED_CYCLES))
         self.assertEqual(result["leaderboard_tuple"], [6, 5, 373])
         self.assertEqual(result["energy"], 11190)
+        self.assertEqual(result["connectivity"]["width_mismatch_network_count"], 1)
+        self.assertEqual(build_maze_asic().components[0].word_size, 8)
 
     def test_generated_candidate_is_deterministic_v15(self):
         with tempfile.TemporaryDirectory() as directory:

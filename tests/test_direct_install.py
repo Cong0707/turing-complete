@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 import tempfile
@@ -7,7 +8,7 @@ import unittest
 
 from tc_save_lab.architecture_candidates import build_architecture_candidates
 from tc_save_lab.cli import build_parser
-from tc_save_lab.codec import decode_v15
+from tc_save_lab.codec import decode_v15, encode_v15
 from tc_save_lab.codex_library import build_known_codex_library
 from tc_save_lab.direct_install import (
     install_reviewed_direct,
@@ -112,6 +113,26 @@ class DirectInstallTests(unittest.TestCase):
             for item in plan.items[:-1]:
                 self.assertFalse(item.destination.exists())
             self.assertEqual((save / "levels.txt").read_bytes(), levels_before)
+
+    def test_existing_architecture_identity_is_preserved_without_rewrite(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            first = plan_direct_install(project, save)
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                install_reviewed_direct(first)
+            destination = next(
+                item.destination for item in first.items if item.name == "maze"
+            )
+            circuit = decode_v15(destination.read_bytes())
+            identified = replace(circuit, custom_id=123456789, design=bytes(512))
+            destination.write_bytes(encode_v15(identified))
+            before = destination.read_bytes()
+            second = plan_direct_install(project, save)
+            maze = next(item for item in second.items if item.name == "maze")
+            self.assertFalse(maze.to_dict()["will_write"])
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                install_reviewed_direct(second)
+            self.assertEqual(destination.read_bytes(), before)
 
     def test_public_cli_exposes_direct_install(self):
         args = build_parser().parse_args(["install-reviewed", "--dry-run"])
