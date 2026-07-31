@@ -8,6 +8,7 @@ from .codec import (
     encode_v15,
 )
 from .legacy_codec import decode_v7, decode_v13, decode_v14
+from .analysis import analyze_circuit, analyze_examples, analyze_file, wire_points
 from .model import Circuit, Component, Wire
 
 __all__ = [
@@ -22,4 +23,8 @@ __all__ = [
     "decode_v14",
     "decode_v15",
     "encode_v15",
+    "analyze_circuit",
+    "analyze_examples",
+    "analyze_file",
+    "wire_points",
 ]

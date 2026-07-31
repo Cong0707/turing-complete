@@ -8,6 +8,7 @@ import json
 
 from .campaign import initialize_examples, read_level_meta
 from .codec import decode_circuit
+from .analysis import analyze_examples, analyze_file
 from .scaffold import extract_campaign_scaffolds
 from .storage import (
     DEFAULT_GAME_ROOT,
@@ -46,6 +47,18 @@ def build_parser() -> ArgumentParser:
     )
     scaffolds.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
     scaffolds.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
+
+    analyze = sub.add_parser(
+        "analyze",
+        help="calculate offline geometry and structural metrics for one circuit",
+    )
+    analyze.add_argument("source", type=_path)
+
+    analyze_all = sub.add_parser(
+        "analyze-examples",
+        help="write metrics.json for every example level",
+    )
+    analyze_all.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
 
     dump = sub.add_parser("export-json", help="decode a supported circuit to JSON")
     dump.add_argument("source", type=_path)
@@ -98,6 +111,12 @@ def _run(args: Namespace) -> int:
                 args.game_root / "campaign",
             )
         )
+        return 0
+    if args.command == "analyze":
+        _print_json(analyze_file(args.source))
+        return 0
+    if args.command == "analyze-examples":
+        _print_json(analyze_examples(args.project_root))
         return 0
     if args.command == "export-json":
         circuit = export_json(args.source, args.destination)
@@ -163,7 +182,8 @@ def _interactive(parser: ArgumentParser) -> int:
         print("1. 检查正式存档")
         print("2. 初始化/刷新所有主线关卡目录")
         print("3. 提取所有关卡固定脚手架")
-        print("4. 写回一个关卡候选")
+        print("4. 分析所有示例基线")
+        print("5. 写回一个关卡候选")
         print("0. 退出")
         choice = input("> ").strip()
         if choice == "0":
@@ -175,6 +195,8 @@ def _interactive(parser: ArgumentParser) -> int:
         if choice == "3":
             return _run(parser.parse_args(["extract-scaffolds"]))
         if choice == "4":
+            return _run(parser.parse_args(["analyze-examples"]))
+        if choice == "5":
             level = input("关卡内部名称: ").strip()
             if level:
                 return _run(parser.parse_args(["apply", level]))
