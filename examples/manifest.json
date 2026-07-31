@@ -1,0 +1,3301 @@
+{
+  "campaign_main": {
+    "path": "campaign/main/circuit.data",
+    "size": 4488,
+    "sha256": "11adb43491b817c813345a0b8d994eb6722ce897392f664d9f09f9eaa6117d30",
+    "format_version": 15
+  },
+  "level_count": 92,
+  "baseline_exported": 65,
+  "baseline_missing": 20,
+  "architectures": [
+    {
+      "scheme": "OVERTURE",
+      "source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      }
+    },
+    {
+      "scheme": "LEG",
+      "source": "schematics/architecture/LEG/circuit.data",
+      "baseline": {
+        "path": "_architectures/LEG/baseline/circuit.data",
+        "size": 10994,
+        "sha256": "d6f108924e95b63163728f4d550a047a7cb67f1fe469a9fdd7fadaf6e3d42ca3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 417171,
+        "delay": 13,
+        "energy": 5423223,
+        "component_count": 149,
+        "wire_count": 1448
+      }
+    },
+    {
+      "scheme": "RV64",
+      "source": "schematics/architecture/RV64/circuit.data",
+      "baseline": {
+        "path": "_architectures/RV64/baseline/circuit.data",
+        "size": 4431,
+        "sha256": "f34c08b47ce541151efe79b1217dd37b2eab1afc90ad6037781402fce047a888",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 235437,
+        "delay": 2773,
+        "energy": 652866801,
+        "component_count": 70,
+        "wire_count": 271
+      }
+    }
+  ],
+  "levels": [
+    {
+      "order": 1,
+      "level": "introduction",
+      "title": "Humble Beginnings",
+      "kind": "misc",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/introduction/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 79,
+        "sha256": "8b3ef3b4ac4ec3690d2943f630ec935aab97d1e7ef1f6c6d1bbbdf1b2734d91a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 0,
+        "wire_count": 1
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/introduction/circuit.data",
+        "size": 121,
+        "sha256": "e66bff39c6b59514d7f9bee1c6252284a0ccc1c15192686839972a95774d3b4e",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 2,
+      "level": "nand_gate",
+      "title": "NAND Gate",
+      "kind": "misc",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/nand_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 164,
+        "sha256": "76e0e74a5a78c65f421c7592e330de1764c4442400e666d4ac7d8fb2eb9ae243",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 1,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/nand_gate/circuit.data",
+        "size": 166,
+        "sha256": "44b606720a057f11d2db1dc8ff60197697c7fd9695a42ca7efd5b713477b7490",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 3,
+      "level": "not_gate",
+      "title": "NOT Gate",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "1&1&1|",
+      "current_save_source": "schematics/not_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 188,
+        "sha256": "e8825910f7e35e6e6e8a52bc581be722f2f50b3ba845557de077c1dcf6a1495d",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 1,
+        "delay": 1,
+        "energy": 1,
+        "component_count": 3,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/not_gate/circuit.data",
+        "size": 126,
+        "sha256": "6db99eb1659f47cf726873a9077cb0549fc0f625bed93075960e2cb45f31acc9",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/not_gate/hint_solution.data",
+        "size": 129,
+        "sha256": "84d5cccabf7c5b2333ede16e7abae0d0678a65fd4f1f66f816a87aa7f56b6e49",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 4,
+      "level": "and_gate",
+      "title": "AND Gate",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/and_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 212,
+        "sha256": "d139de31582199c25e9f8655adac23695428f2e960dd96ac74fcaf92bcb60f26",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 2,
+        "delay": 2,
+        "energy": 4,
+        "component_count": 4,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/and_gate/circuit.data",
+        "size": 126,
+        "sha256": "8230811e2b3313320272e8836150ab6ceae45ad27955542c78086fba174e0ec5",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/and_gate/hint_solution.data",
+        "size": 143,
+        "sha256": "bdee4f2f8feea22e6174b339f7555b42eff768bbfe166aead4e7b74d5194d855",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 5,
+      "level": "nor_gate",
+      "title": "NOR Gate",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/nor_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 275,
+        "sha256": "161301ffd9fe558cdc761afe3b3dcbb396182f1aeb813e473bada2081ef867c0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 4,
+        "delay": 3,
+        "energy": 12,
+        "component_count": 6,
+        "wire_count": 6
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/nor_gate/circuit.data",
+        "size": 126,
+        "sha256": "2a9a1b3410abf1d6d93c95f37153e769f10881fb82d84e60d4a12baf2a40257c",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/nor_gate/hint_solution.data",
+        "size": 202,
+        "sha256": "2277909f9dd22e70581dd9fa303983ecc17b374cfbf133c6ae9b4fb38a4225d3",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 6,
+      "level": "or_gate",
+      "title": "OR Gate",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/or_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 245,
+        "sha256": "9291edf0f4e3fece77a7588e54bde7e4504b4f9f0056bcaf6669c486d9ee8bf7",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 3,
+        "delay": 2,
+        "energy": 6,
+        "component_count": 5,
+        "wire_count": 5
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/or_gate/circuit.data",
+        "size": 126,
+        "sha256": "d1d65337e4bd922ffc1bc8e70636b2e0b51064d251ecc2b0e033780258a0025b",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/or_gate/hint_solution.data",
+        "size": 173,
+        "sha256": "653160ce5eefa56636b337f5473f7e0fcf8d688ca82cd153cbf1847f8d09b9fc",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 7,
+      "level": "always_on",
+      "title": "Always On",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/always_on/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 214,
+        "sha256": "d9cf119a11a4006ff941f8c03efeb2284b31ff257dbe217bc532baa38a796964",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 2,
+        "delay": 2,
+        "energy": 4,
+        "component_count": 4,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/always_on/circuit.data",
+        "size": 126,
+        "sha256": "455455bacb0955eccad48c5e9371b0cad5b8bf079219444c576cb163ca056961",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/always_on/hint_solution.data",
+        "size": 89,
+        "sha256": "642b4c8587f3dea6609cd2baf932759086b2315f4f48fe38824b5192c467dade",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 8,
+      "level": "second_tick",
+      "title": "Second Tick",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/second_tick/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 207,
+        "sha256": "baf6ec49f13699bcbe1d36d57f5818e0ecacf97bcfb7d70386648ca06a1b578e",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 2,
+        "delay": 2,
+        "energy": 4,
+        "component_count": 4,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/second_tick/circuit.data",
+        "size": 126,
+        "sha256": "15f102ef06e0e2593499bdef610f8d89893b06d1051be1defa6b66e70ad9756f",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/second_tick/hint_solution.data",
+        "size": 140,
+        "sha256": "5f7dd55e6d4771e1e79efb6b7f9fb1713b3b41c0bad361121514841889292afa",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 9,
+      "level": "xor_gate",
+      "title": "XOR Gate",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "3&2&1|",
+      "current_save_source": "schematics/xor_gate/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 277,
+        "sha256": "b3d29129652bb5fc1aa2214369e5c89c7b059743e716e36b66b23ff388e7dedb",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 3,
+        "delay": 2,
+        "energy": 6,
+        "component_count": 5,
+        "wire_count": 7
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/xor_gate/circuit.data",
+        "size": 126,
+        "sha256": "5f519fb449e6548e105ab9bed1dab10469ea0846f04e745e7a4da684500f4909",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/xor_gate/hint_solution.data",
+        "size": 245,
+        "sha256": "270349d74ef23fc525051dd8a21ea32decb7efc47dae23ac482dfae865ec23d3",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 10,
+      "level": "or_gate_3",
+      "title": "Bigger OR Gate",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "3&2&1|",
+      "current_save_source": "schematics/or_gate_3/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 269,
+        "sha256": "07d379097b472159cf9853b686149386716f1fd42cbe2f3de515dfba16741815",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 3,
+        "delay": 2,
+        "energy": 6,
+        "component_count": 5,
+        "wire_count": 7
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/or_gate_3/circuit.data",
+        "size": 126,
+        "sha256": "3ecc039ad09de3a97651d255a282a102ff117e0f0f40cac1aac0c15579040eb7",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/or_gate_3/hint_solution.data",
+        "size": 228,
+        "sha256": "dc096768e0bc0a460ee408c058dff3c2bda4b1423e6e43817e608ce6d582f44b",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 11,
+      "level": "and_gate_3",
+      "title": "Bigger AND Gate",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "3&2&1|",
+      "current_save_source": "schematics/and_gate_3/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 279,
+        "sha256": "315dbcc67795d5199bc98883de7d97252a918f6ff39bc0e1b5944a131dbe1175",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 3,
+        "delay": 2,
+        "energy": 6,
+        "component_count": 5,
+        "wire_count": 7
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/and_gate_3/circuit.data",
+        "size": 126,
+        "sha256": "53d258f49eacf4a971043ec5385b1922fdc91f442b3f77f2f86c3d4ee32dabfe",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/and_gate_3/hint_solution.data",
+        "size": 229,
+        "sha256": "da4da458b3dfd29387676a2234ba1a898291a4dc96e3053f8f4b4ec330cd4f7e",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 12,
+      "level": "xnor",
+      "title": "XNOR Gate",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "5&4&1|",
+      "current_save_source": "schematics/xnor/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 205,
+        "sha256": "1c5e65bca3cce38f0f9385d041e50f3a921fcd9cdf5198238b2c5a7ff6a571e3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 4,
+        "delay": 3,
+        "energy": 12,
+        "component_count": 4,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/xnor/circuit.data",
+        "size": 123,
+        "sha256": "e00a22c183c90e2e72fce59cc361b82bcdad28607726d465d18af2b7e485f5f7",
+        "format_version": 15
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/xnor/hint_solution.data",
+        "size": 139,
+        "sha256": "dcd30cd09bf68a13755840f9a7861dd55d3760cbcb34d2af03f3f40b59313c73",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 13,
+      "level": "logic_gate_racer",
+      "title": "Logic Exam",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/logic_gate_racer/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 127,
+        "sha256": "ef7c02046aaf109ccb91a55ead73ad7e3a5eaff4b3d6e207cfba38436dcb4822",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 2,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/logic_gate_racer/circuit.data",
+        "size": 129,
+        "sha256": "789eac8f8d740560766998d25ecdaabb6d124d4be26fed12bd9983eded897b95",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 14,
+      "level": "binary_racer",
+      "title": "Binary Racer",
+      "kind": "misc",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/binary_racer/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 68,
+        "sha256": "8bf46b692177fd5bf32d264e06bcdfec4edce9f07b262bf34be9afdf55be8cd0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 0,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/binary_racer/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 15,
+      "level": "any_doubles",
+      "title": "Double Detection",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/any_doubles/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 491,
+        "sha256": "ea471a8ae81c1d777d2dac2643d4cdb093231526a3efe9baf1e850aa33dc8147",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 13,
+        "delay": 4,
+        "energy": 52,
+        "component_count": 11,
+        "wire_count": 21
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/any_doubles/circuit.data",
+        "size": 124,
+        "sha256": "512aa94c5d375b23623665535a45b312bd160e5809430fc4f09526d1224eb113",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/any_doubles/hint_solution.data",
+        "size": 610,
+        "sha256": "fc8167c1ac663c617be36c7db57ef8c73f56dbb756e887ec684a432d51ac4016",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 16,
+      "level": "odd_number_of_signals",
+      "title": "Odd Number of Signals",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/odd_number_of_signals/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 274,
+        "sha256": "cf2ef80afc3035021b99c01fe08f69757e22fa5140388562c11e4cf2100f3512",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 13,
+        "delay": 6,
+        "energy": 78,
+        "component_count": 5,
+        "wire_count": 7
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/odd_number_of_signals/circuit.data",
+        "size": 126,
+        "sha256": "05da7a1567f51a62a17818d45fd02e26a58b9ec8b772e3af2fca8236d05befd3",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/odd_number_of_signals/hint_solution.data",
+        "size": 187,
+        "sha256": "14694a849c315af9347dccd887d29e6412c9905d92fc13164062d2d5c09e52f0",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 17,
+      "level": "dependency",
+      "title": "Circular Dependency",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/dependency/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 177,
+        "sha256": "9c4b1a372b646118dfb2911b422de12f01614cb650756671c0ae39838db0e5e8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 4,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 3,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/dependency/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 18,
+      "level": "counting_signals",
+      "title": "Counting Signals",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/counting_signals/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 774,
+        "sha256": "4a49e9b002d6c7010c1d89363741bc478107b39154933975314b726790e559e9",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 34,
+        "delay": 8,
+        "energy": 272,
+        "component_count": 18,
+        "wire_count": 37
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/counting_signals/circuit.data",
+        "size": 129,
+        "sha256": "4e7a8faee2e51d3f32a56f22bfe1b7453c9eabe8e94ca5461f8f90dec61cebea",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/counting_signals/hint_solution.data",
+        "size": 940,
+        "sha256": "e90aeda4208b0d9070a22faacdd33530952bbaa77670a5129e74cd47fc572549",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 19,
+      "level": "bit_adder",
+      "title": "Half Adder",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "5&3&1|",
+      "current_save_source": "schematics/bit_adder/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 309,
+        "sha256": "1b92c8dda75487432dfa527c45a7cae2fd83cfa6610e1c5f9101807b301b4d0a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 4,
+        "delay": 2,
+        "energy": 8,
+        "component_count": 6,
+        "wire_count": 10
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/bit_adder/circuit.data",
+        "size": 172,
+        "sha256": "7a33cba2e2437ff7c976c4694fd80ec20c3701f1a06238dfb92bd05a82836eb9",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/bit_adder/hint_solution.data",
+        "size": 296,
+        "sha256": "f71a2ecf14bc1a8351537c9295ef1527ad689fc0a5432e0215450b8fef88c319",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 20,
+      "level": "double_buffer",
+      "title": "Delayed Lines",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/double_buffer/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 201,
+        "sha256": "c8e9872c13e76d78dfceee4ccce1c5d8623f31ae6c4b2895922a9a9d9d7b40e4",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 10,
+        "delay": 4,
+        "energy": 40,
+        "component_count": 4,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/double_buffer/circuit.data",
+        "size": 114,
+        "sha256": "fa1c989dfe257f0c92b8f554f5091bf945d627ec2fa3e8ca3a0acc381070f8b3",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/double_buffer/hint_solution.data",
+        "size": 143,
+        "sha256": "70606391079b6da7a25913b0e8ecb14983aa2d2ae2629a836fd5b36fc584ea17",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 21,
+      "level": "double_number",
+      "title": "Double the Number",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/double_number/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 245,
+        "sha256": "3df268d058e6a2587b54ac4af7307a3b132a8d73f808be9de03efbbdf028794f",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 4,
+        "wire_count": 10
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/double_number/circuit.data",
+        "size": 126,
+        "sha256": "1abd1d91edf95063d120f170b73812d5f355c95a7ceac6043d5f258f3c10157c",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/double_number/hint_solution.data",
+        "size": 160,
+        "sha256": "19d14e8ed9815c28b19d81c2f0f8852fd3479e53c76ab0f2bb4f054ad8dcd34c",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 22,
+      "level": "full_adder",
+      "title": "Full Adder",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "17&8&1|",
+      "current_save_source": "schematics/full_adder/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 535,
+        "sha256": "b8d0a02338852e29cce979543b28de25a07f6afa8d2ebee9f8ad9f0a367ac78e",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 16,
+        "delay": 8,
+        "energy": 128,
+        "component_count": 11,
+        "wire_count": 20
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/full_adder/circuit.data",
+        "size": 222,
+        "sha256": "a3853a8422b442d2a6b6874fb8a21edb48aa028a9cd5f79e647a671283774639",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/full_adder/hint_solution.data",
+        "size": 590,
+        "sha256": "9fffde6ee4e9f98a8fb28cddc87f09b8f252370e90d17ff429a766f87c224b0b",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 23,
+      "level": "odd_ticks",
+      "title": "Odd Ticks",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/odd_ticks/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 209,
+        "sha256": "e2a81ab7f8da4901dfb114184dbf87db2b47c036805f5c537a3971128902086a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 6,
+        "delay": 5,
+        "energy": 30,
+        "component_count": 4,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/odd_ticks/circuit.data",
+        "size": 130,
+        "sha256": "6b2cd50a6af457ac1fed34eeba8efc38536e3a0f3ada40b1c772330f59038857",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/odd_ticks/hint_solution.data",
+        "size": 155,
+        "sha256": "d5cbb0f056ea643adf4e9e51584717fd02f9540c1aeeeeff8b1c9513a84c26c0",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 24,
+      "level": "bit_switch",
+      "title": "Bit Switch",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/bit_switch/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 337,
+        "sha256": "c8cb464454bf0e17191af926e0564146988dff8183ac157545fe3c2040583a0d",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 6,
+        "delay": 2,
+        "energy": 12,
+        "component_count": 6,
+        "wire_count": 11
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/bit_switch/circuit.data",
+        "size": 126,
+        "sha256": "88667b390e0328a01aed9fa78e3892e9f60cc1f0003f100b2d605d04b1889178",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/bit_switch/hint_solution.data",
+        "size": 341,
+        "sha256": "9e8754e1436593be8fa6677a71692214b0a702a99723babf72dad30264f4f18d",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 25,
+      "level": "byte_nand",
+      "title": "Byte NAND",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "8&1&1|",
+      "current_save_source": "schematics/byte_nand/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 618,
+        "sha256": "b4496af982d1b0130f4d9d0f95af23a06f3ceef8ed15df21f3e315ad50804f42",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 8,
+        "delay": 1,
+        "energy": 8,
+        "component_count": 14,
+        "wire_count": 27
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_nand/circuit.data",
+        "size": 159,
+        "sha256": "2833d92b5bb4704fd91b547479548cf1ce88bb3f127613185c3baa86e426a0da",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_nand/hint_solution.data",
+        "size": 691,
+        "sha256": "46128cb88af5125bd59bd6271746d0e04272f49f3b8a2182df7c18527116ff29",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 26,
+      "level": "byte_not",
+      "title": "Byte NOT",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "8&1&1|",
+      "current_save_source": "schematics/byte_not/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 451,
+        "sha256": "7aaa854172a6cb64deee5e0e271d7b44dcbf3237e9d05289c89eee4c6d242ce9",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 8,
+        "delay": 1,
+        "energy": 8,
+        "component_count": 12,
+        "wire_count": 18
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_not/circuit.data",
+        "size": 130,
+        "sha256": "6740cd93dfc330cd4055eabcd8beb00e1868f34cdf4375035f9dbfb8fa2ac991",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_not/hint_solution.data",
+        "size": 352,
+        "sha256": "3f9e54a17685eb77583bb8db673baa8417515051b56eb928d8e11770c8b043a6",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 27,
+      "level": "byte_adder",
+      "title": "Adding Bytes",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_adder/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1740,
+        "sha256": "f8219a2c1dff42f8811bd105e4581b02d4164a765b550b0a8234f94418bd0570",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 112,
+        "delay": 96,
+        "energy": 10752,
+        "component_count": 11,
+        "wire_count": 36
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_adder/circuit.data",
+        "size": 205,
+        "sha256": "ad16f9e26532eea04812d905410c1fbebcaa2506cd0492d2bad2ae6a4197eff7",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_adder/hint_solution.data",
+        "size": 1015,
+        "sha256": "37724cf0dc3e5142d3445a6db63d6962afcb790ec9b125e739e9bacf374aaaa7",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 28,
+      "level": "bit_inverter",
+      "title": "Bit inverter",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "6&5&1|",
+      "current_save_source": "schematics/bit_inverter/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 246,
+        "sha256": "978d390371299708139f1486f4406016e28985d570309c18183f95d11125a69f",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 5,
+        "delay": 4,
+        "energy": 20,
+        "component_count": 5,
+        "wire_count": 5
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/bit_inverter/circuit.data",
+        "size": 126,
+        "sha256": "5f519fb449e6548e105ab9bed1dab10469ea0846f04e745e7a4da684500f4909",
+        "format_version": 13
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/bit_inverter/hint_solution.data",
+        "size": 245,
+        "sha256": "270349d74ef23fc525051dd8a21ea32decb7efc47dae23ac482dfae865ec23d3",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 29,
+      "level": "negative_numbers",
+      "title": "Negative Numbers",
+      "kind": "misc",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/negative_numbers/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 68,
+        "sha256": "8bf46b692177fd5bf32d264e06bcdfec4edce9f07b262bf34be9afdf55be8cd0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 0,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/negative_numbers/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 30,
+      "level": "byte_mux",
+      "title": "Multiplexer",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "34&3&1|",
+      "current_save_source": "schematics/byte_mux/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1022,
+        "sha256": "ce104358ef9449fe4effcbf0ae7381ddf3411dc1bd2da6f67a8eab5bb3193fce",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 34,
+        "delay": 3,
+        "energy": 102,
+        "component_count": 25,
+        "wire_count": 53
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_mux/circuit.data",
+        "size": 174,
+        "sha256": "44f9a5d0454eee730c9178d61cc08686e0024644cea7452d1b89922f6db6b7ef",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_mux/hint_solution.data",
+        "size": 216,
+        "sha256": "ae0b23169e398d7294ede48389990899bd715496999932581fe08145d7e1f490",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 31,
+      "level": "signed_negator",
+      "title": "Signed Negator",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "108&51&1|",
+      "current_save_source": "schematics/signed_negator/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 285,
+        "sha256": "370a537d7beb864de899ff42e82df248ce91c0b8d996689593365bb917d47083",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 108,
+        "delay": 51,
+        "energy": 5508,
+        "component_count": 6,
+        "wire_count": 5
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/signed_negator/circuit.data",
+        "size": 128,
+        "sha256": "fc02296765d83212813285803a0d601a02769960c1cd5a537cd2da214c8ba6bc",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/signed_negator/hint_solution.data",
+        "size": 163,
+        "sha256": "0ddce0a538dab80b6517d48c0becd52e3e3de70e5abd872a1c87a8dbcbb3fdec",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 32,
+      "level": "the_bus",
+      "title": "The bus",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/the_bus/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 493,
+        "sha256": "4aeee93e27fc044e5e44f00c6841978e473792dc3973f26c1986136cc7cad406",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 66,
+        "delay": 3,
+        "energy": 198,
+        "component_count": 12,
+        "wire_count": 15
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/the_bus/circuit.data",
+        "size": 232,
+        "sha256": "65a6b9b46957789553678e84b23b0582956d0c263600246946686bd92de9ca1c",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/the_bus/hint_solution.data",
+        "size": 340,
+        "sha256": "27f51afb5f8b14bf5fa25a6e1a883c3ddb85abecb2752a95fe71f6268ada5da5",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 33,
+      "level": "saving_gracefully",
+      "title": "Saving Gracefully",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "15&5&1|",
+      "current_save_source": "schematics/saving_gracefully/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 388,
+        "sha256": "73aa0fcd3a79c7d21ef256ac3f54806e4fefc7ae143584a685dce97c86098c1b",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 15,
+        "delay": 5,
+        "energy": 75,
+        "component_count": 8,
+        "wire_count": 11
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/saving_gracefully/circuit.data",
+        "size": 168,
+        "sha256": "44d09397a02e2f0980771353119c14b44ed65fc96cbddee21a2a043534ecece2",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/saving_gracefully/hint_solution.data",
+        "size": 363,
+        "sha256": "1b03d2b159ec5fed1f8d171b09f15ac9b18604f91e8a7bb7203d1b6ea4f00395",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 34,
+      "level": "saving_bytes",
+      "title": "Saving Bytes",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "120&5&1|",
+      "current_save_source": "schematics/saving_bytes/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 615,
+        "sha256": "e13352633d23f13aa2ed6cac9f614b9f04a3812bc6bd8ccf0be5c32fe605c2bc",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 120,
+        "delay": 5,
+        "energy": 600,
+        "component_count": 13,
+        "wire_count": 26
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/saving_bytes/circuit.data",
+        "size": 168,
+        "sha256": "d5679a59378d303a90a7ee97c3ff4c9d769b789afc96acba2b63a186364394d9",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/saving_bytes/hint_solution.data",
+        "size": 751,
+        "sha256": "ab8662c19442f7de1a9b5f3ee86f04bc45668606bb953fbaa68b63dc407c1734",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 35,
+      "level": "decoder_1",
+      "title": "1 Bit Decoder",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "1&1&1|",
+      "current_save_source": "schematics/decoder_1/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 192,
+        "sha256": "dff02a0fbd62318abef063bf5601df95760513fa2a15c314b3d5b90dccca035e",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 1,
+        "delay": 1,
+        "energy": 1,
+        "component_count": 3,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/decoder_1/circuit.data",
+        "size": 140,
+        "sha256": "fc355e2d34870930336ce747a246660f54d2d5ae221816dbd1942c94f44c7f53",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/decoder_1/hint_solution.data",
+        "size": 123,
+        "sha256": "a6d566cefe96aa98bb0842319b2f4b551874d83100f506c6ef173427fd4a343c",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 36,
+      "level": "decoder_2",
+      "title": "2 Bit Decoder",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "11&2&1|",
+      "current_save_source": "schematics/decoder_2/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 495,
+        "sha256": "9cca801856e7ee31a6b7bb8b438361014f5c4a4ac24492c177103e5cfebcf326",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 11,
+        "delay": 2,
+        "energy": 22,
+        "component_count": 11,
+        "wire_count": 22
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/decoder_2/circuit.data",
+        "size": 130,
+        "sha256": "680fa5c0cd49ae7d1bb379781a2cc75ce86367e93e2e5142013a4c3c6c330425",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/decoder_2/hint_solution.data",
+        "size": 377,
+        "sha256": "164d34426473ccd0a53ae86c7f1088851ac48b4cea5d8f859f45396267c8a965",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 37,
+      "level": "decoder_3",
+      "title": "3 Bit Decoder",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "79&12&1|",
+      "current_save_source": "schematics/decoder_3/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1680,
+        "sha256": "63202ca8c4a2cbd4b21b0b546510174c9bed3234cfd03245a4c372d077230562",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 79,
+        "delay": 12,
+        "energy": 948,
+        "component_count": 53,
+        "wire_count": 85
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/decoder_3/circuit.data",
+        "size": 166,
+        "sha256": "b45c91493cd830ed755f1578d80e96a935a3439e04e51f5913cbba5e7514e198",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/decoder_3/hint_solution.data",
+        "size": 1247,
+        "sha256": "430dfdfef0d31bc96e6e750a3016562ecdaf35b08c6dd10cb587dfe2e83442f7",
+        "format_version": 15
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 38,
+      "level": "ram_component",
+      "title": "Little Box",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "636&7&1|",
+      "current_save_source": "schematics/ram_component/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1112,
+        "sha256": "19aa7846967feff4e2639691ad296ab37a4701a4716db219c11f624aff022ec7",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 636,
+        "delay": 7,
+        "energy": 4452,
+        "component_count": 25,
+        "wire_count": 42
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/ram_component/circuit.data",
+        "size": 236,
+        "sha256": "a483a3867fd651a9274afcdc2ee5fef271b6463f35145e58fba7ed33a7f5c3e4",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/ram_component/hint_solution.data",
+        "size": 963,
+        "sha256": "746b8e38dfdb63ebab0850bb0f6cf7a00f8f4124bb40bbf5447c2bf695364cbe",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 39,
+      "level": "counter",
+      "title": "Counter",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "254&58&1|",
+      "current_save_source": "schematics/counter/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 386,
+        "sha256": "711aada72ee07c138f445e416bbb313a35d32b43113c296fa58521552a8b218a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 254,
+        "delay": 58,
+        "energy": 14732,
+        "component_count": 8,
+        "wire_count": 11
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/counter/circuit.data",
+        "size": 156,
+        "sha256": "21267d39753e60b759a0683eeb8c4381c99ad11d71ab72a5872d9403234995fe",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/counter/hint_solution.data",
+        "size": 389,
+        "sha256": "ce1e6c9ab795c11603f05bc92b0f878c32f2de7de1576aa0e31d86db05ad54aa",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 40,
+      "level": "overture_alu_1",
+      "title": "Arithmetic Logic Unit (ALU) 1",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "215&13&1|",
+      "current_save_source": "schematics/overture_alu_1/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 764,
+        "sha256": "8b434ffdbc911c2a084a2b0bd54fefc7ebaea2f25e04a6f44e65263d14219ed2",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 215,
+        "delay": 13,
+        "energy": 2795,
+        "component_count": 18,
+        "wire_count": 25
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_alu_1/circuit.data",
+        "size": 194,
+        "sha256": "d51ff3e6f76189d5eeef7371f41fae2657f40dd8c1c2e864676a6ce2715df591",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_alu_1/hint_solution.data",
+        "size": 815,
+        "sha256": "052457b3b2f48d9bde1c9f89b1d48eaabc3999e9ca3bfbbff8b1ad8308f27e2f",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 41,
+      "level": "overture_1_registers",
+      "title": "Registers",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/overture_1_registers/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 2554,
+        "sha256": "72c92ec00ca500682f4dbd27db0e047b2bca054345b6bb3225d4a83f75617db3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 105356,
+        "delay": 13,
+        "energy": 1369628,
+        "component_count": 46,
+        "wire_count": 149
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_1_registers/circuit.data",
+        "size": 313,
+        "sha256": "db9d1bcb66ee60d7eb90a51325404c60f3e7aa6372a4e9d550141d11fe33f6ff",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_1_registers/hint_solution.data",
+        "size": 1121,
+        "sha256": "4315b565ca95c3f910a0df4d55d49a32ba3636eef7e46c0e39fcd001eee33067",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 42,
+      "level": "overture_alu_2",
+      "title": "Arithmetic Logic Unit (ALU) 2",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "555&102&1|",
+      "current_save_source": "schematics/overture_alu_2/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 992,
+        "sha256": "f883a094899570d3308c560d4bbfa1f0f4d1717fb5b88a739c2abb6b87bd413d",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 555,
+        "delay": 102,
+        "energy": 56610,
+        "component_count": 23,
+        "wire_count": 36
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_alu_2/circuit.data",
+        "size": 194,
+        "sha256": "59a6b9555346b4176bab1e42438d9bb2989a975670cac9809988955243972b03",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_alu_2/hint_solution.data",
+        "size": 1080,
+        "sha256": "ab62b3db0d9c5e2d8dab1d63f245fc8988f58d2e70dd47ae2d6752c4f05a9481",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 43,
+      "level": "foundry",
+      "title": "The Foundry",
+      "kind": "foundry",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTRUE/ALU",
+      "score_history": "",
+      "current_save_source": "schematics/foundry/OVERTRUE/ALU/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1216,
+        "sha256": "bb8e391c438fee396e099bb19d691eaa75b861f105dcdf1d7f9db8ab4b5fa7f3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 603,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 26,
+        "wire_count": 61
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/foundry/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 44,
+      "level": "overture_decoder",
+      "title": "Instruction Decoder",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/overture_decoder/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 624,
+        "sha256": "41a16c0419615a72545dd69b6c3d2577755d78305edf32fa340f381f498be700",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 8,
+        "delay": 2,
+        "energy": 16,
+        "component_count": 14,
+        "wire_count": 27
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_decoder/circuit.data",
+        "size": 228,
+        "sha256": "10f134f79c67af9c1c145ce62e9c0c8a2f3308147dc2db60f18286d42fd2d1c8",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_decoder/hint_solution.data",
+        "size": 371,
+        "sha256": "1924f7be16e4958ad076c4357858fd3cd9e543ed2f3c5de23a07a6a7de49d368",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 45,
+      "level": "overture_conditions",
+      "title": "Conditions",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/overture_conditions/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 772,
+        "sha256": "f9b44d5374ce8d534a9fa63ac01a1ccd8a49d342839599ebb9efbd8c50d9318a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 100,
+        "delay": 15,
+        "energy": 1500,
+        "component_count": 17,
+        "wire_count": 33
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_conditions/circuit.data",
+        "size": 172,
+        "sha256": "2193f8ae499b66f84fb1f8a5b162a40796fb6afbd4ec5632c464a1d527b921cd",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_conditions/hint_solution.data",
+        "size": 1060,
+        "sha256": "30b4f8107c0cacf9dcf4b109389735b7a91cf7427a3ede523bf0f4671b89609d",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 46,
+      "level": "overture_2_alu",
+      "title": "ALU",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/overture_2_alu/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 2322,
+        "sha256": "452bbe6a39e65c84824030071cb62865535393c7bbe2fbee725729401c990419",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 2594,
+        "delay": 104,
+        "energy": 269776,
+        "component_count": 44,
+        "wire_count": 152
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_2_alu/circuit.data",
+        "size": 313,
+        "sha256": "db9d1bcb66ee60d7eb90a51325404c60f3e7aa6372a4e9d550141d11fe33f6ff",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_2_alu/hint_solution.data",
+        "size": 1450,
+        "sha256": "3661177e0a2f1bb5479cf7cbec374804229a539b2e1ebd57223f76c4a4b1103e",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 47,
+      "level": "overture_3_immediates",
+      "title": "Immediate Values",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/overture_3_immediates/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 2554,
+        "sha256": "72c92ec00ca500682f4dbd27db0e047b2bca054345b6bb3225d4a83f75617db3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 105356,
+        "delay": 13,
+        "energy": 1369628,
+        "component_count": 46,
+        "wire_count": 149
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_3_immediates/circuit.data",
+        "size": 313,
+        "sha256": "db9d1bcb66ee60d7eb90a51325404c60f3e7aa6372a4e9d550141d11fe33f6ff",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_3_immediates/hint_solution.data",
+        "size": 1525,
+        "sha256": "ce4b103af59f07e70ba7c5a6a813682c352b24bf691e48891c0d12cbe7d8c62b",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 48,
+      "level": "overture_4_program",
+      "title": "Program",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/overture_4_program/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 5190,
+        "sha256": "2e5f66dad8faeb72936a5a7ae006648e022fc02d18fbb0c4cb85ba1eb4decafe",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 1448,
+        "delay": 206,
+        "energy": 298288,
+        "component_count": 38,
+        "wire_count": 149
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_4_program/circuit.data",
+        "size": 365,
+        "sha256": "cc1f8b0ce10ed7d4442dff94230994d66ecc91f99ceade60008a33d2c17242bc",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_4_program/hint_solution.data",
+        "size": 1674,
+        "sha256": "adbc0e923fa0ae7b40fad60103ba210f60666caedfe8d7900990263ad6cd936a",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 49,
+      "level": "overture_5_conditionals",
+      "title": "Turing Complete",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/overture_5_conditionals/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 2613,
+        "sha256": "92a54be32298b614a3d45206d6f6645fcb62543d504bace83f574be3a3e617d0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 118410,
+        "delay": 13,
+        "energy": 1539330,
+        "component_count": 48,
+        "wire_count": 150
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/overture_5_conditionals/circuit.data",
+        "size": 365,
+        "sha256": "cc1f8b0ce10ed7d4442dff94230994d66ecc91f99ceade60008a33d2c17242bc",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/overture_5_conditionals/hint_solution.data",
+        "size": 1872,
+        "sha256": "1b4eb716a946bd9938794dd2181312bdaca3e7fe398bd70eda8ae5cdaf3e2384",
+        "format_version": 15
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 50,
+      "level": "binary_programming",
+      "title": "Punchcard Programming",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/binary_programming/OVERTURE/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 5190,
+        "sha256": "2e5f66dad8faeb72936a5a7ae006648e022fc02d18fbb0c4cb85ba1eb4decafe",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 1448,
+        "delay": 206,
+        "energy": 298288,
+        "component_count": 38,
+        "wire_count": 149
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/binary_programming/circuit.data",
+        "size": 379,
+        "sha256": "c9400f8d27c288c75ca6069b6bc8753c87e0e83c3b313fd2ce60d952644d0d2e",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 51,
+      "level": "assembly_programming",
+      "title": "Assembly Programming",
+      "kind": "sequential",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/assembly_programming/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 528,
+        "sha256": "d9a60fc8a654d2f599bca7339342de637b55014b1a2dee4b819258ba2a57dc40",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 14030,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 11,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/assembly_programming/circuit.data",
+        "size": 520,
+        "sha256": "4df83b671210f017148467870222381cb23d7bf83f70d9f48d51a096138bfcff",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 52,
+      "level": "circumference",
+      "title": "Circumference",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": null,
+      "architecture": "OVERTURE",
+      "architecture_baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      },
+      "campaign_circuit": {
+        "path": "campaign/circumference/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 53,
+      "level": "conditional_jumps",
+      "title": "Conditional Jumps",
+      "kind": "architecture",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": null,
+      "architecture": "OVERTURE",
+      "architecture_baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      },
+      "campaign_circuit": {
+        "path": "campaign/conditional_jumps/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 54,
+      "level": "binary_search",
+      "title": "Code Breaker",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": null,
+      "architecture": "OVERTURE",
+      "architecture_baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      },
+      "campaign_circuit": {
+        "path": "campaign/binary_search/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 55,
+      "level": "mod_4",
+      "title": "Mod 4",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": null,
+      "architecture": "OVERTURE",
+      "architecture_baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      },
+      "campaign_circuit": {
+        "path": "campaign/mod_4/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 56,
+      "level": "maze",
+      "title": "The Maze",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "OVERTURE",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/OVERTURE/circuit.data",
+      "baseline": null,
+      "architecture": "OVERTURE",
+      "architecture_baseline": {
+        "path": "_architectures/OVERTURE/baseline/circuit.data",
+        "size": 2343,
+        "sha256": "57aaefa539e23c25a90f5245ecf425590c2eff6253f5f505263d708ae2851ff8",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 104636,
+        "delay": 13,
+        "energy": 1360268,
+        "component_count": 39,
+        "wire_count": 149
+      },
+      "campaign_circuit": {
+        "path": "campaign/maze/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 57,
+      "level": "hex_racer",
+      "title": "Hex Racer",
+      "kind": "misc",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/hex_racer/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 68,
+        "sha256": "8bf46b692177fd5bf32d264e06bcdfec4edce9f07b262bf34be9afdf55be8cd0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 0,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/hex_racer/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 58,
+      "level": "byte_constant",
+      "title": "Byte Constant",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_constant/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 245,
+        "sha256": "440c3287463ff57e9c7c83870be4104245d58300f30b384ab1f1d427ca669485",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 2,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_constant/circuit.data",
+        "size": 108,
+        "sha256": "34e72b19d857c0ad1360a49f09c3417c05114c658b112c392660f956dc881800",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_constant/hint_solution.data",
+        "size": 179,
+        "sha256": "2a5b12a6f9caabaa7f1f863b46d9e4fa9eb620a27b8bac22ed9df70978b3d01a",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 59,
+      "level": "byte_xor",
+      "title": "Byte XOR",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_xor/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1127,
+        "sha256": "58531d9757e5a6454a4d37bbeb2577e41d06faee8cb6dd66ec18f5976559083f",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 24,
+        "delay": 4,
+        "energy": 96,
+        "component_count": 11,
+        "wire_count": 27
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_xor/circuit.data",
+        "size": 156,
+        "sha256": "e2baa600dff414009d076dded7bde51a3650471c4617b8c9e474eabfaee89985",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_xor/hint_solution.data",
+        "size": 776,
+        "sha256": "6a5b0099c1a5357b6dba13b2bec906efff34d02784212b257b525e8d462b66d8",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 60,
+      "level": "byte_equal",
+      "title": "Equality",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_equal/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 939,
+        "sha256": "fb5abb8318042399cdf2ee56fdd4f14e599dd8a85ec8ee1bf1feca5420d382f9",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 50,
+        "delay": 14,
+        "energy": 700,
+        "component_count": 10,
+        "wire_count": 21
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_equal/circuit.data",
+        "size": 158,
+        "sha256": "5b45b8197359426388b8e8ba943a14270d525ef996d554f591226125a783e9dc",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_equal/hint_solution.data",
+        "size": 469,
+        "sha256": "b8d381202a7d32bcc99b146c6ac39ed61e46583ef67bfd2a8beed26268ebaaa1",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 61,
+      "level": "byte_less_u",
+      "title": "Unsigned Less",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_less_u/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 243,
+        "sha256": "f954bf08b3bae270a9bbff7dbc6d2ba363b87f222946499b28916fa467a66f47",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 120,
+        "delay": 98,
+        "energy": 11760,
+        "component_count": 2,
+        "wire_count": 4
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_less_u/circuit.data",
+        "size": 158,
+        "sha256": "f69c362e19ee5cbf0599d1ad259122613ec44b5d6cd75c766592992ae554ff05",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_less_u/hint_solution.data",
+        "size": 315,
+        "sha256": "1405143fba45b2cdad0439cbee0e458e0b5e9e442b31122eaa117fc273fe50e4",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 62,
+      "level": "byte_less_s",
+      "title": "Signed Less",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_less_s/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 1225,
+        "sha256": "8de667884350aecde19ab96497353301e333551d6e9a3e32396d966abed74091",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 120,
+        "delay": 98,
+        "energy": 11760,
+        "component_count": 13,
+        "wire_count": 31
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_less_s/circuit.data",
+        "size": 155,
+        "sha256": "709de152d1b58d58575c8b1deeb79bfdcc7fff21ddd16c5bf8546f0676276a9a",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_less_s/hint_solution.data",
+        "size": 433,
+        "sha256": "72b17906de2414e27ea5d20dc93455cf34b56dc57a07953142e2d86193f13e52",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 63,
+      "level": "count_leading_zeroes",
+      "title": "Count leading zeroes",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/count_leading_zeroes/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/count_leading_zeroes/circuit.data",
+        "size": 134,
+        "sha256": "bc7bd7725b787839fea8a52798a2c3e6188b5fe0799e2a8c2d240dc1231c4eaa",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/count_leading_zeroes/hint_solution.data",
+        "size": 1325,
+        "sha256": "300a076690db3912c4b7e4b1c524623bbfc1adf106278d198dc3c96f3e759b2c",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 64,
+      "level": "byte_lsr",
+      "title": "LSR",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_lsr/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 608,
+        "sha256": "dfb748ebac5ab102260f1f82ad0fff5abf87e484bf27c31fb091444dbe51003c",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 102,
+        "delay": 9,
+        "energy": 918,
+        "component_count": 13,
+        "wire_count": 31
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_lsr/circuit.data",
+        "size": 165,
+        "sha256": "cf4f1fa32d3426fdaca74e817b65d9ef1ba765529136cfcbb6f5d280d3e4fc37",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_lsr/hint_solution.data",
+        "size": 687,
+        "sha256": "9fd917e8b2f0c594b3e0a59f3b20c1f4b6595546bec8071bed2fd92a6141a2f3",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 65,
+      "level": "byte_asr",
+      "title": "ASR",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_asr/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_asr/circuit.data",
+        "size": 165,
+        "sha256": "06091d4b9fc7a002956ac7b3b0866891de75ccd537ba8505066e66637f6c0c3b",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/byte_asr/hint_solution.data",
+        "size": 719,
+        "sha256": "1ee4a1226ff944de5fa4dda5c34b4d903ea694393a85a9e4d76581d844ab937c",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 66,
+      "level": "one_hot_encoding",
+      "title": "One hot encoding",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/one_hot_encoding/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/one_hot_encoding/circuit.data",
+        "size": 138,
+        "sha256": "9a616139cb21e5edcc9b08938a806c0a69d1af55c5bc95e227b240d3a0180467",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/one_hot_encoding/hint_solution.data",
+        "size": 213,
+        "sha256": "8d3a8639f9c437c3d59cf25b1a3be8d9087093fa7e969125c373732fc65e566a",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 67,
+      "level": "symphony_counter_1",
+      "title": "Symphony Counter",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_counter_1/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_counter_1/circuit.data",
+        "size": 222,
+        "sha256": "f13ab27d8cad45e5cd295804e733afc6250505fc83389eee93097dd0d480dc0d",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_counter_1/hint_solution.data",
+        "size": 429,
+        "sha256": "a795011513aac2ec7e28a043f05885f2bad8ca81902515aec8a21aed78cc2566",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 68,
+      "level": "symphony_decoder",
+      "title": "Instruction Decoder",
+      "kind": "combinational",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_decoder/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_decoder/circuit.data",
+        "size": 318,
+        "sha256": "049e238bdf90a591bd1d9dcfccd0cd43f5fd1b0ffbf2d03c4d01dea89a24ab2d",
+        "format_version": 15
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_decoder/hint_solution.data",
+        "size": 511,
+        "sha256": "6560acd01c94d3d41a247d4cb97df6584068123c9ccf15e616df1cfe1d852acc",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 69,
+      "level": "symphony_cmp",
+      "title": "Comparison Flags",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_cmp/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_cmp/circuit.data",
+        "size": 172,
+        "sha256": "1f8e60f5281a04d3cf95ceb1ff3e168f7453ddad1e9dea19ed8ac64720ba40be",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_cmp/hint_solution.data",
+        "size": 400,
+        "sha256": "215d2fe683b929ac72ec0d7f0144e491367fc0cd48c9377233542e6d0271cb8a",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 70,
+      "level": "symphony_alu",
+      "title": "Symphony ALU",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_alu/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 992,
+        "sha256": "7a826a33a80db2664da6ee03ab29d67c8e476f418de9be2a18a0f51cbcc0941a",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 555,
+        "delay": 102,
+        "energy": 56610,
+        "component_count": 23,
+        "wire_count": 36
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_alu/circuit.data",
+        "size": 200,
+        "sha256": "fd8816690647a221dac58626cec0cf3df95cfdea3ccadaf710d7b3e1980ea038",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_alu/hint_solution.data",
+        "size": 1533,
+        "sha256": "f94a88aef3a3eafbf128a26fc0e8efab51954a38a2068200c1138ad720449e41",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 71,
+      "level": "symphony_1_nand",
+      "title": "Wire Spaghetti",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_1_nand/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_1_nand/circuit.data",
+        "size": 453,
+        "sha256": "33aae255fed5a8205362b25eb78a6095e29b48dd45efd8fd649e32653d9db995",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_1_nand/hint_solution.data",
+        "size": 1021,
+        "sha256": "55a6b825e58f1b4c0d3d8532a002ebd4be1debf6dca01046a0e7cf48a83679dc",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 72,
+      "level": "symphony_2_io",
+      "title": "IO",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_2_io/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_2_io/circuit.data",
+        "size": 518,
+        "sha256": "0fabd56b667a4fbf84e021d33211f468b1b8f21aeafeb6571a99b141745c5523",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_2_io/hint_solution.data",
+        "size": 1309,
+        "sha256": "5c6eb8a1b2dcd4f52f73ca71151cf75437b22859fefad1027c6683d98cae0cc2",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 73,
+      "level": "multiply",
+      "title": "Multiply",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/multiply/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 68,
+        "sha256": "8bf46b692177fd5bf32d264e06bcdfec4edce9f07b262bf34be9afdf55be8cd0",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 0,
+        "wire_count": 0
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/multiply/circuit.data",
+        "size": 157,
+        "sha256": "bb29e9b97d80f1e35168009aaa45c2e0c4a303cb22531f24a44d17eeea8d7edd",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/multiply/hint_solution.data",
+        "size": 1172,
+        "sha256": "72e59f808782028ad1dea1d6f24964e68ae04d291c986f07390bdba7cde5cb96",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 74,
+      "level": "byte_divide",
+      "title": "Divide",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_divide/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_divide/circuit.data",
+        "size": 157,
+        "sha256": "08965275b1a9fccf5af557e2c41c02f7237b2244dd7235c56e5710de5042a336",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 75,
+      "level": "byte_mod",
+      "title": "Modulo",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/byte_mod/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/byte_mod/circuit.data",
+        "size": 157,
+        "sha256": "0b36a3f7bdd57364a5dd6a89ab2df8de37d5cb5f2fcbc354e7cb49320565216f",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 76,
+      "level": "symphony_3_alu",
+      "title": "Integrating ALU",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_3_alu/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_3_alu/circuit.data",
+        "size": 519,
+        "sha256": "d5daba12ffeea2f2df8cbd0ed76242fa5a2ac47e28330a33ec95bee7da2a4c2d",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_3_alu/hint_solution.data",
+        "size": 1360,
+        "sha256": "2b9550f4e442e8ee2036a8199d1826c84c70695e6bc99e353ce9d1df99d83226",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 77,
+      "level": "symphony_4_immediates",
+      "title": "Immediates",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_4_immediates/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_4_immediates/circuit.data",
+        "size": 526,
+        "sha256": "73f81b52beb676a982b77c4f7bdea48882acb89a30e20d24af0c89af91ba259d",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_4_immediates/hint_solution.data",
+        "size": 1469,
+        "sha256": "9f65e18b79d917ae7b24d12bd41f8d9a1fb14e5d542f3d6cc26119e1b0e792f8",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 78,
+      "level": "symphony_condition_test",
+      "title": "Condition Match",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_condition_test/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_condition_test/circuit.data",
+        "size": 186,
+        "sha256": "acf8331cc66f2d53d22a70a74664e7bb7aae0845de645e3286ab0997197971d0",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_condition_test/hint_solution.data",
+        "size": 450,
+        "sha256": "a8d10b1b32ca86ffacf7b569e101506ec3204871812205dc0cf27710cca06f7c",
+        "format_version": 13
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 79,
+      "level": "symphony_5_jumps",
+      "title": "Jumps",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_5_jumps/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_5_jumps/circuit.data",
+        "size": 522,
+        "sha256": "f160995c850f049d0fbd009c27a28c7ad892807620244aff36137769a974b4b3",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_5_jumps/hint_solution.data",
+        "size": 1659,
+        "sha256": "50c36e5b2af4ba6fe2cd36bf9b99aafce2b777956f5a0bca357304e00260f3f0",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 80,
+      "level": "symphony_6_ram",
+      "title": "RAM",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_6_ram/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_6_ram/circuit.data",
+        "size": 629,
+        "sha256": "52fd65151e7a99828b631c378e2062169b98673245e9df0375c4e1b7faa258af",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_6_ram/hint_solution.data",
+        "size": 2220,
+        "sha256": "f7ea76d4d5774de6d8b79d6d99cfc5bb1b825b991d8d30bf2169aa6edb4cf80a",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 81,
+      "level": "symphony_7_ssd",
+      "title": "Persistent Memory",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_7_ssd/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_7_ssd/circuit.data",
+        "size": 702,
+        "sha256": "38b80092cfe7edcd22e696647d92b9ef5366a3c0c0d24983e11e6553c663104a",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_7_ssd/hint_solution.data",
+        "size": 2378,
+        "sha256": "525dacb77beb3c42895b125df7468b48e5483addd3b163f7830d980a5503aa74",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 82,
+      "level": "symphony_8_io_devices",
+      "title": "IO Devices",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_8_io_devices/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_8_io_devices/circuit.data",
+        "size": 810,
+        "sha256": "b773f27804d5b6183e75f0640b14de0a35f78bc1223aa14e97006d09827c630e",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/symphony_8_io_devices/hint_solution.data",
+        "size": 2968,
+        "sha256": "7a58e123946727900ace68d18f0f512a8c818e1ea5aa134c128fce9ee2087938",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 83,
+      "level": "symphony_9_aliases",
+      "title": "Instruction Aliases",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_9_aliases/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_9_aliases/circuit.data",
+        "size": 808,
+        "sha256": "cff79d1bce8fc60fe0b592fa07e9b81e01b5b8b6efd9f0f9cd255713e9cfd885",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 84,
+      "level": "symphony_10_stack",
+      "title": "Stack",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_10_stack/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_10_stack/circuit.data",
+        "size": 813,
+        "sha256": "bbd6728fe46e7ba3ac04af57327575c014d9d7a189798d2bd8e82dbd615330aa",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 85,
+      "level": "symphony_11_functions",
+      "title": "Functions",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_11_functions/Default/circuit.data",
+      "baseline": null,
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_11_functions/circuit.data",
+        "size": 807,
+        "sha256": "9315aeb85c40f36b5b20b9ba3d95a0e91569889928d86f926311fbf4ff65fa29",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 86,
+      "level": "score",
+      "title": "Objective beauty",
+      "kind": "combinational",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/score/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 190,
+        "sha256": "a3f34ad76c281472566bfe5341c55bb2427624ae38abe895b91ac11d3ea5f35c",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 0,
+        "delay": 0,
+        "energy": 0,
+        "component_count": 3,
+        "wire_count": 3
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/score/circuit.data",
+        "size": 130,
+        "sha256": "aff3e19df6ee52f352c30ba4265b7d03c3a2d9ac0bbc3a5835ae8253490265df",
+        "format_version": 14
+      },
+      "campaign_hint_solution": {
+        "path": "campaign/score/hint_solution.data",
+        "size": 918,
+        "sha256": "b1efa906085952701cd5c5fc7f0560970f94c490dcd18fd134d410ea772e5c15",
+        "format_version": 14
+      },
+      "candidate_status": "pending"
+    },
+    {
+      "order": 87,
+      "level": "symphony_12_budget",
+      "title": "Fast Symphony",
+      "kind": "sequential",
+      "no_score": true,
+      "scoreable": false,
+      "complete": true,
+      "selected_schematic": "Default",
+      "score_history": "",
+      "current_save_source": "schematics/symphony_12_budget/Default/circuit.data",
+      "baseline": {
+        "path": "baseline/circuit.data",
+        "size": 834,
+        "sha256": "83d943cd2ed5025d4dedddf6d16d2fd921ecf19d21ad0a11a7d129d2bebc1fd5",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 1828730207,
+        "delay": 11,
+        "energy": 20116032277,
+        "component_count": 20,
+        "wire_count": 1
+      },
+      "architecture": null,
+      "architecture_baseline": null,
+      "campaign_circuit": {
+        "path": "campaign/symphony_12_budget/circuit.data",
+        "size": 829,
+        "sha256": "0c12a78b936818dd86acf246e7b47963bfe4bd4101c55eb0e4f72bac52de5e36",
+        "format_version": 14
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 88,
+      "level": "nim",
+      "title": "Nim",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "LEG",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/LEG/circuit.data",
+      "baseline": null,
+      "architecture": "LEG",
+      "architecture_baseline": {
+        "path": "_architectures/LEG/baseline/circuit.data",
+        "size": 10994,
+        "sha256": "d6f108924e95b63163728f4d550a047a7cb67f1fe469a9fdd7fadaf6e3d42ca3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 417171,
+        "delay": 13,
+        "energy": 5423223,
+        "component_count": 149,
+        "wire_count": 1448
+      },
+      "campaign_circuit": {
+        "path": "campaign/nim/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 89,
+      "level": "rng",
+      "title": "Random Number Generator",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "RV64",
+      "score_history": "235437&2773&1440|",
+      "current_save_source": "schematics/architecture/RV64/circuit.data",
+      "baseline": null,
+      "architecture": "RV64",
+      "architecture_baseline": {
+        "path": "_architectures/RV64/baseline/circuit.data",
+        "size": 4431,
+        "sha256": "f34c08b47ce541151efe79b1217dd37b2eab1afc90ad6037781402fce047a888",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 235437,
+        "delay": 2773,
+        "energy": 652866801,
+        "component_count": 70,
+        "wire_count": 271
+      },
+      "campaign_circuit": {
+        "path": "campaign/rng/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 90,
+      "level": "capitalize",
+      "title": "Capitalize",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "RV64",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/RV64/circuit.data",
+      "baseline": null,
+      "architecture": "RV64",
+      "architecture_baseline": {
+        "path": "_architectures/RV64/baseline/circuit.data",
+        "size": 4431,
+        "sha256": "f34c08b47ce541151efe79b1217dd37b2eab1afc90ad6037781402fce047a888",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 235437,
+        "delay": 2773,
+        "energy": 652866801,
+        "component_count": 70,
+        "wire_count": 271
+      },
+      "campaign_circuit": {
+        "path": "campaign/capitalize/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 91,
+      "level": "sort",
+      "title": "Delicious order",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "LEG",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/LEG/circuit.data",
+      "baseline": null,
+      "architecture": "LEG",
+      "architecture_baseline": {
+        "path": "_architectures/LEG/baseline/circuit.data",
+        "size": 10994,
+        "sha256": "d6f108924e95b63163728f4d550a047a7cb67f1fe469a9fdd7fadaf6e3d42ca3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 417171,
+        "delay": 13,
+        "energy": 5423223,
+        "component_count": 149,
+        "wire_count": 1448
+      },
+      "campaign_circuit": {
+        "path": "campaign/sort/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    },
+    {
+      "order": 92,
+      "level": "tower",
+      "title": "Tower of Hanoi",
+      "kind": "architecture",
+      "no_score": false,
+      "scoreable": true,
+      "complete": true,
+      "selected_schematic": "LEG",
+      "score_history": "",
+      "current_save_source": "schematics/architecture/LEG/circuit.data",
+      "baseline": null,
+      "architecture": "LEG",
+      "architecture_baseline": {
+        "path": "_architectures/LEG/baseline/circuit.data",
+        "size": 10994,
+        "sha256": "d6f108924e95b63163728f4d550a047a7cb67f1fe469a9fdd7fadaf6e3d42ca3",
+        "format_version": 15,
+        "valid_v15": true,
+        "gate": 417171,
+        "delay": 13,
+        "energy": 5423223,
+        "component_count": 149,
+        "wire_count": 1448
+      },
+      "campaign_circuit": {
+        "path": "campaign/tower/circuit.data",
+        "size": 23,
+        "sha256": "e9f0b1930c68165e0cd2e64860aead1566aed86eb63ba0a0ddac8cbd97e15208",
+        "format_version": 7
+      },
+      "campaign_hint_solution": null,
+      "candidate_status": "pending"
+    }
+  ]
+}

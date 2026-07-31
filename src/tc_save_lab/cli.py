@@ -1,0 +1,168 @@
+"""Command-line and interactive entry points."""
+
+from __future__ import annotations
+
+from argparse import ArgumentParser, Namespace
+from pathlib import Path
+import json
+
+from .campaign import initialize_examples, read_level_meta
+from .codec import decode_v15
+from .storage import (
+    DEFAULT_GAME_ROOT,
+    DEFAULT_SAVE_ROOT,
+    atomic_replace_circuit,
+    export_json,
+    import_json,
+    inventory,
+    read_progress,
+    selected_circuit_path,
+)
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+
+def _path(value: str) -> Path:
+    return Path(value).expanduser().resolve()
+
+
+def build_parser() -> ArgumentParser:
+    parser = ArgumentParser(prog="tc-save", description=__doc__)
+    sub = parser.add_subparsers(dest="command")
+
+    inspect = sub.add_parser("inspect", help="inspect all current circuit.data files")
+    inspect.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+
+    init = sub.add_parser("init-examples", help="create one versioned directory per campaign level")
+    init.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
+    init.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
+    init.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+
+    dump = sub.add_parser("export-json", help="decode one v15 circuit to editable JSON")
+    dump.add_argument("source", type=_path)
+    dump.add_argument("destination", type=_path)
+
+    build = sub.add_parser("build", help="encode editable JSON to a verified v15 circuit")
+    build.add_argument("source", type=_path)
+    build.add_argument("destination", type=_path)
+
+    validate = sub.add_parser("validate", help="strictly decode a v15 circuit")
+    validate.add_argument("source", type=_path)
+
+    apply = sub.add_parser("apply", help="atomically write one candidate into the selected save slot")
+    apply.add_argument("level")
+    apply.add_argument("--candidate", type=_path)
+    apply.add_argument("--game-root", type=_path, default=DEFAULT_GAME_ROOT)
+    apply.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
+    apply.add_argument("--yes", action="store_true")
+    return parser
+
+
+def _print_json(value: object) -> None:
+    print(json.dumps(value, ensure_ascii=False, indent=2))
+
+
+def _run(args: Namespace) -> int:
+    if args.command == "inspect":
+        records = inventory(args.save_root)
+        _print_json(
+            {
+                "save_root": str(args.save_root),
+                "circuit_count": len(records),
+                "invalid_count": sum(not bool(item.get("valid_v15")) for item in records),
+                "circuits": records,
+            }
+        )
+        return 0
+    if args.command == "init-examples":
+        result = initialize_examples(
+            args.project_root,
+            args.game_root / "campaign",
+            args.save_root,
+        )
+        _print_json({key: value for key, value in result.items() if key != "levels"})
+        return 0
+    if args.command == "export-json":
+        circuit = export_json(args.source, args.destination)
+        _print_json({"destination": str(args.destination), "components": len(circuit.components), "wires": len(circuit.wires)})
+        return 0
+    if args.command == "build":
+        circuit = import_json(args.source, args.destination)
+        _print_json({"destination": str(args.destination), "components": len(circuit.components), "wires": len(circuit.wires)})
+        return 0
+    if args.command == "validate":
+        circuit = decode_v15(args.source.read_bytes())
+        _print_json(
+            {
+                "valid": True,
+                "gate": circuit.gate,
+                "delay": circuit.delay,
+                "energy": circuit.energy,
+                "components": len(circuit.components),
+                "wires": len(circuit.wires),
+            }
+        )
+        return 0
+    if args.command == "apply":
+        progress = read_progress(args.save_root / "levels.txt")
+        selected = progress.get(args.level)
+        meta = read_level_meta(args.game_root / "campaign" / args.level / "meta.txt")
+        if meta.get("kind") == "architecture":
+            if selected is None or not selected.selected_schematic:
+                raise ValueError(f"level {args.level!r} has no selected architecture")
+            destination = (
+                args.save_root
+                / "schematics"
+                / "architecture"
+                / selected.selected_schematic
+                / "circuit.data"
+            )
+            candidate = args.candidate or (
+                PROJECT_ROOT
+                / "examples"
+                / "_architectures"
+                / selected.selected_schematic
+                / "candidate"
+                / "circuit.data"
+            )
+        else:
+            destination = selected_circuit_path(args.save_root, progress, args.level)
+            candidate = args.candidate or PROJECT_ROOT / "examples" / args.level / "candidate" / "circuit.data"
+        if not args.yes:
+            answer = input(f"Write {candidate} to {destination}? [y/N] ").strip().casefold()
+            if answer not in {"y", "yes"}:
+                print("Cancelled.")
+                return 2
+        _print_json(atomic_replace_circuit(candidate, destination))
+        return 0
+    raise ValueError(f"unsupported command: {args.command}")
+
+
+def _interactive(parser: ArgumentParser) -> int:
+    while True:
+        print("\nTuring Complete Save Lab")
+        print("1. 检查正式存档")
+        print("2. 初始化/刷新所有主线关卡目录")
+        print("3. 写回一个关卡候选")
+        print("0. 退出")
+        choice = input("> ").strip()
+        if choice == "0":
+            return 0
+        if choice == "1":
+            return _run(parser.parse_args(["inspect"]))
+        if choice == "2":
+            return _run(parser.parse_args(["init-examples"]))
+        if choice == "3":
+            level = input("关卡内部名称: ").strip()
+            if level:
+                return _run(parser.parse_args(["apply", level]))
+        print("无效选择。")
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.command is None:
+        return _interactive(parser)
+    return _run(args)
