@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from pathlib import Path
 
+from .circumference_asic import write_circumference_asic
 from .maze_asic import write_maze_asic
 from .mod4_asic import write_mod_4_asic
 from .nim_asic import write_nim_asic
@@ -14,6 +15,7 @@ ArchitectureWriter = Callable[[Path], dict[str, object]]
 
 
 ARCHITECTURE_CANDIDATES: dict[str, ArchitectureWriter] = {
+    "circumference": write_circumference_asic,
     "mod_4": write_mod_4_asic,
     "maze": write_maze_asic,
     "nim": write_nim_asic,
