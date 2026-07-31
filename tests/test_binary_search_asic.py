@@ -81,7 +81,15 @@ class BinarySearchAsicTests(unittest.TestCase):
         delays = [component for component in candidate.components if component.kind == 13]
         self.assertEqual(
             {component.position[1]: component.init_data for component in delays},
-            {-35: 1, -25: 1, -15: 1, -5: 1, 5: 1, 15: 1, 25: 1, 35: 0},
+            {-42: 1, -30: 1, -18: 1, -6: 1, 6: 1, 18: 1, 30: 1, 42: 0},
+        )
+        self.assertEqual(
+            result["layout"],
+            {
+                "wire_component_contact_count": 0,
+                "wire_interior_pin_contact_count": 0,
+                "component_footprint_overlap_count": 0,
+            },
         )
 
     def test_generated_candidate_is_deterministic_v15(self):

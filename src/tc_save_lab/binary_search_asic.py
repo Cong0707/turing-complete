@@ -5,9 +5,11 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass
 from hashlib import sha256
+from heapq import heappop, heappush
 import json
 from pathlib import Path
 
+from .analysis import wire_points
 from .builder import stable_permanent_id, wire_from_vertices
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point
@@ -207,14 +209,147 @@ def _output_pin(component: Component) -> Point:
     return matches[0]
 
 
-def _route(source: Point, sink: Point) -> tuple[Point, ...]:
+def _component_footprints(
+    components: tuple[Component, ...],
+) -> tuple[frozenset[Point], ...]:
+    """Return conservative occupied grid cells for current-version parts.
+
+    A component's serialized position is its centre, not its full visual body.
+    The smallest safe representation available offline is therefore the box
+    spanning that centre and every known pin.  A wire may meet this box only at
+    one of its own endpoint pins.
+    """
+
+    footprints: list[frozenset[Point]] = []
+    for index, component in enumerate(components):
+        points = [component.position]
+        points.extend(pin.position for pin in positioned_pins(component, index))
+        min_x = min(point[0] for point in points)
+        max_x = max(point[0] for point in points)
+        min_y = min(point[1] for point in points)
+        max_y = max(point[1] for point in points)
+        footprints.append(
+            frozenset(
+                (x, y)
+                for x in range(min_x, max_x + 1)
+                for y in range(min_y, max_y + 1)
+            )
+        )
+    return tuple(footprints)
+
+
+def _compress_route(points: list[Point]) -> tuple[Point, ...]:
+    if len(points) < 2:
+        raise RuntimeError("route has fewer than two points")
+    vertices = [points[0]]
+    previous_step: Point | None = None
+    for start, end in zip(points, points[1:]):
+        step = (end[0] - start[0], end[1] - start[1])
+        if previous_step is not None and step != previous_step:
+            vertices.append(start)
+        previous_step = step
+    vertices.append(points[-1])
+    return tuple(vertices)
+
+
+def _route_around_components(
+    source: Point,
+    sink: Point,
+    blocked: frozenset[Point],
+) -> tuple[Point, ...]:
+    """Find a short orthogonal route without touching any occupied part cell."""
+
     if source == sink:
         raise RuntimeError(f"cannot route a zero-length connection at {source}")
-    dx = sink[0] - source[0]
-    dy = sink[1] - source[1]
-    if dx == 0 or dy == 0 or abs(dx) == abs(dy):
-        return source, sink
-    return source, (sink[0], source[1]), sink
+
+    available = blocked - {source, sink}
+    all_points = (*available, source, sink)
+    # Leave a broad outer aisle so a previously reserved bus cannot seal the
+    # search area into a false dead end.  The resulting routes remain compact
+    # because the bend penalty dominates once a path can get around the aisle.
+    margin = 96
+    min_x = min(point[0] for point in all_points) - margin
+    max_x = max(point[0] for point in all_points) + margin
+    min_y = min(point[1] for point in all_points) - margin
+    max_y = max(point[1] for point in all_points) + margin
+    directions: tuple[Point, ...] = ((1, 0), (0, -1), (0, 1), (-1, 0))
+    start = (source, -1)
+    queue: list[tuple[int, int, int, int, int]] = []
+    heappush(queue, (abs(sink[0] - source[0]) + abs(sink[1] - source[1]), 0, source[0], source[1], -1))
+    costs = {start: 0}
+    previous: dict[tuple[Point, int], tuple[Point, int] | None] = {start: None}
+    target: tuple[Point, int] | None = None
+
+    while queue:
+        _, cost, x, y, direction_index = heappop(queue)
+        state = ((x, y), direction_index)
+        if cost != costs.get(state):
+            continue
+        if (x, y) == sink:
+            target = state
+            break
+        for next_direction, (dx, dy) in enumerate(directions):
+            point = (x + dx, y + dy)
+            if not (min_x <= point[0] <= max_x and min_y <= point[1] <= max_y):
+                continue
+            if point in available:
+                continue
+            # Prefer routes with a modest number of bends while keeping them short.
+            next_cost = cost + 1 + (8 if direction_index >= 0 and direction_index != next_direction else 0)
+            next_state = (point, next_direction)
+            if next_cost >= costs.get(next_state, 1 << 60):
+                continue
+            costs[next_state] = next_cost
+            previous[next_state] = state
+            heuristic = abs(sink[0] - point[0]) + abs(sink[1] - point[1])
+            heappush(
+                queue,
+                (next_cost + heuristic, next_cost, point[0], point[1], next_direction),
+            )
+
+    if target is None:
+        raise RuntimeError(f"no component-safe route from {source} to {sink}")
+    path: list[Point] = []
+    state: tuple[Point, int] | None = target
+    while state is not None:
+        path.append(state[0])
+        state = previous[state]
+    path.reverse()
+    return _compress_route(path)
+
+
+def _layout_safety(circuit: Circuit) -> dict[str, int]:
+    """Count contacts that the game can interpret as unintended connections."""
+
+    footprints = _component_footprints(circuit.components)
+    pins_by_component = [
+        {pin.position for pin in positioned_pins(component, index)}
+        for index, component in enumerate(circuit.components)
+    ]
+    wire_component_contacts = 0
+    wire_interior_pin_contacts = 0
+    for wire in circuit.wires:
+        points = wire_points(wire)
+        endpoints = {points[0], points[-1]}
+        for footprint, pins in zip(footprints, pins_by_component):
+            wire_component_contacts += sum(
+                point in footprint
+                and not (point in endpoints and point in pins)
+                for point in points
+            )
+        for point in points[1:-1]:
+            wire_interior_pin_contacts += sum(point in pins for pins in pins_by_component)
+
+    footprint_owners: Counter[Point] = Counter(
+        point for footprint in footprints for point in footprint
+    )
+    return {
+        "wire_component_contact_count": wire_component_contacts,
+        "wire_interior_pin_contact_count": wire_interior_pin_contacts,
+        "component_footprint_overlap_count": sum(
+            count - 1 for count in footprint_owners.values() if count > 1
+        ),
+    }
 
 
 def build_binary_search_asic() -> Circuit:
@@ -236,20 +371,20 @@ def build_binary_search_asic() -> Circuit:
             **kwargs,
         )
 
-    level_input = component("level-input", 62, (-40, -60), word_size=1)
-    input_enable = component("input-enable", 2, (-41, -62))
+    level_input = component("level-input", 62, (-100, 0), word_size=1)
+    input_enable = component("input-enable", 2, (-105, -5))
     delay_components = {
         bit: component(
             f"state-bit-{bit}",
             13,
-            (-20, bit * 10 - 35),
+            (-65, bit * 12 - 42),
             init_data=int(bit < WORD_BITS - 1),
         )
         for bit in range(WORD_BITS)
     }
-    state_maker = component("state-maker", 16, (105, 0))
-    output_enable = component("output-enable", 2, (108, -2))
-    level_output = component("level-output", 70, (111, 0), word_size=8)
+    state_maker = component("state-maker", 16, (150, 0))
+    output_enable = component("output-enable", 2, (173, -5))
+    level_output = component("level-output", 70, (170, 0), word_size=8)
 
     depths = _gate_depths()
     gates_by_depth: dict[int, list[GateDefinition]] = {}
@@ -258,12 +393,12 @@ def build_binary_search_asic() -> Circuit:
 
     gate_components: dict[str, Component] = {}
     for depth, gates in sorted(gates_by_depth.items()):
-        y_origin = -((len(gates) - 1) * 6) // 2
+        y_origin = -((len(gates) - 1) * 12) // 2
         for index, gate in enumerate(gates):
             gate_components[gate.output] = component(
                 f"gate-{gate.output}",
                 gate.kind,
-                (depth * 12, y_origin + index * 6),
+                ((depth - 1) * 18, y_origin + index * 12),
             )
 
     components = (
@@ -284,30 +419,33 @@ def build_binary_search_asic() -> Circuit:
         {name: _output_pin(gate) for name, gate in gate_components.items()}
     )
 
+    component_blocked = frozenset(
+        point
+        for footprint in _component_footprints(components)
+        for point in footprint
+    )
+
+    def route(source: Point, sink: Point):
+        return wire_from_vertices(_route_around_components(source, sink, component_blocked))
+
     wires = [
-        wire_from_vertices(_route(_output_pin(input_enable), _pin(level_input, "control"))),
-        wire_from_vertices(_route(_output_pin(output_enable), _pin(level_output, "control"))),
-        wire_from_vertices(_route(_pin(state_maker, "out"), _pin(level_output, "value"))),
+        route(_output_pin(input_enable), _pin(level_input, "control")),
+        route(_output_pin(output_enable), _pin(level_output, "control")),
+        route(_pin(state_maker, "out"), _pin(level_output, "value")),
     ]
     for gate in GATE_DEFINITIONS:
         destination = gate_components[gate.output]
         input_names = ("in",) if gate.kind == 3 else ("in0", "in1")
         for fanin, input_name in zip(gate.fanins, input_names):
             wires.append(
-                wire_from_vertices(
-                    _route(signal_sources[fanin], _pin(destination, input_name))
-                )
+                route(signal_sources[fanin], _pin(destination, input_name))
             )
     for bit in range(WORD_BITS):
         wires.append(
-            wire_from_vertices(
-                _route(signal_sources[f"s{bit}"], _pin(state_maker, f"in{bit}"))
-            )
+            route(signal_sources[f"s{bit}"], _pin(state_maker, f"in{bit}"))
         )
         wires.append(
-            wire_from_vertices(
-                _route(signal_sources[f"n{bit}"], _pin(delay_components[bit], "in"))
-            )
+            route(signal_sources[f"n{bit}"], _pin(delay_components[bit], "in"))
         )
 
     return Circuit(
@@ -390,6 +528,10 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
             f"candidate metric declaration changed: {candidate.gate}/{candidate.delay}"
         )
 
+    layout = _layout_safety(candidate)
+    if any(layout.values()):
+        raise RuntimeError(f"Code Breaker ASIC has unsafe wire geometry: {layout}")
+
     return {
         "gate": candidate.gate,
         "delay": candidate.delay,
@@ -404,6 +546,7 @@ def verify_binary_search_asic(circuit: Circuit | None = None) -> dict[str, objec
         "public_leaderboard_reference": list(PUBLIC_LEADERBOARD),
         "component_kind_counts": dict(sorted(kind_counts.items())),
         "connectivity": connectivity,
+        "layout": layout,
     }
 
 
