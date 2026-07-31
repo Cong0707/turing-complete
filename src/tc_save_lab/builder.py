@@ -83,6 +83,19 @@ def _load_scaffold_components(project_root: Path, level: str) -> tuple[Component
     return Circuit.from_dict({"components": records}).components
 
 
+def _not_gate(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(6, (-1, -1), 0, stable_permanent_id(level, "nand")),
+    )
+    wires = (
+        wire_from_vertices(((-12, 0), (-2, 0))),
+        wire_from_vertices(((-2, -2), (-2, 0))),
+        wire_from_vertices(((1, -1), (2, 0), (12, 0))),
+    )
+    return components, wires
+
+
 def _triple_input_two_gate(project_root: Path, level: str, kind: int) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -529,6 +542,15 @@ def _one_hot_encoding(project_root: Path, level: str) -> tuple[tuple[Component, 
 
 
 RECIPES: dict[str, Recipe] = {
+    "not_gate": Recipe(
+        "not_gate",
+        1,
+        1,
+        _not_gate,
+        (("Input", 1),),
+        "Output",
+        lambda values: 1 ^ values["Input"],
+    ),
     "or_gate_3": Recipe(
         "or_gate_3",
         2,
