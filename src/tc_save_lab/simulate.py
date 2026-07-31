@@ -152,6 +152,8 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
         return {"out": (values["in"] << values["shift"]) & mask}
     if kind == 34:
         return {"out": (values["in"] & mask) >> values["shift"]}
+    if kind == 37:
+        return {"out": (_signed(values["in"], width) >> values["shift"]) & mask}
     if kind == 42:
         return {"out": values["in1"] if values["select"] else values["in0"]}
     if kind == 43:
@@ -264,8 +266,6 @@ def verify_truth_table(
 
     if not callable(expected):
         raise TypeError("expected must be callable")
-    if not inputs:
-        raise ValueError("at least one input is required")
     if any(width <= 0 for width in inputs.values()):
         raise ValueError("input widths must be positive")
 

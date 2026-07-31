@@ -171,6 +171,86 @@ def _byte_xor(project_root: Path, level: str) -> tuple[tuple[Component, ...], tu
     return components, wires
 
 
+def _byte_not(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(18, (0, 0), 0, stable_permanent_id(level, "not"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-12, 0), (-1, 0))),
+        wire_from_vertices(((2, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _byte_nand(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(21, (0, 0), 0, stable_permanent_id(level, "nand"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-12, -3), (-3, -3), (-1, -1))),
+        wire_from_vertices(((-12, 3), (-3, 3), (-1, 1))),
+        wire_from_vertices(((2, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _byte_equal(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(26, (0, 0), 0, stable_permanent_id(level, "equal"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-13, -5), (-5, -5), (-1, -1))),
+        wire_from_vertices(((-13, 5), (-5, 5), (-1, 1))),
+        wire_from_vertices(((2, 0), (15, 0))),
+    )
+    return components, wires
+
+
+def _byte_less_u(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(27, (0, 0), 0, stable_permanent_id(level, "less-u"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-11, -5), (-5, -5), (-1, -1))),
+        wire_from_vertices(((-11, 5), (-5, 5), (-1, 1))),
+        wire_from_vertices(((2, 0), (15, 0))),
+    )
+    return components, wires
+
+
+def _byte_asr(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(37, (0, 0), 0, stable_permanent_id(level, "asr"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-17, -10), (-1, -10), (-1, -1))),
+        wire_from_vertices(((-17, 9), (-1, 9), (-1, 1))),
+        wire_from_vertices(((2, 0), (17, 0))),
+    )
+    return components, wires
+
+
+def _byte_constant(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(
+            46,
+            (0, 0),
+            0,
+            stable_permanent_id(level, "constant-164"),
+            word_size=8,
+            init_data=164,
+        ),
+    )
+    wires = (wire_from_vertices(((3, 0), (22, 0))),)
+    return components, wires
+
+
 def _decoder_2(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
     scaffold = _load_scaffold_components(project_root, level)
     components = scaffold + (
@@ -339,6 +419,64 @@ RECIPES: dict[str, Recipe] = {
         (("A", 8), ("B", 8)),
         "Result",
         lambda values: values["A"] ^ values["B"],
+    ),
+    "byte_not": Recipe(
+        "byte_not",
+        8,
+        1,
+        _byte_not,
+        (("Input", 8),),
+        "Output",
+        lambda values: (~values["Input"]) & 0xFF,
+    ),
+    "byte_nand": Recipe(
+        "byte_nand",
+        8,
+        1,
+        _byte_nand,
+        (("A", 8), ("B", 8)),
+        "Output",
+        lambda values: (~(values["A"] & values["B"])) & 0xFF,
+    ),
+    "byte_equal": Recipe(
+        "byte_equal",
+        38,
+        4,
+        _byte_equal,
+        (("A", 8), ("B", 8)),
+        "Result",
+        lambda values: int(values["A"] == values["B"]),
+    ),
+    "byte_less_u": Recipe(
+        "byte_less_u",
+        90,
+        4,
+        _byte_less_u,
+        (("A", 8), ("B", 8)),
+        "Result",
+        lambda values: int(values["A"] < values["B"]),
+    ),
+    "byte_asr": Recipe(
+        "byte_asr",
+        76,
+        3,
+        _byte_asr,
+        (("Input", 8), ("Shift", 3)),
+        "Result",
+        lambda values: (
+            ((values["Input"] - 256) if values["Input"] & 0x80 else values["Input"])
+            >> values["Shift"]
+        )
+        & 0xFF,
+    ),
+    "byte_constant": Recipe(
+        "byte_constant",
+        0,
+        0,
+        _byte_constant,
+        (),
+        "Output",
+        lambda values: 164,
     ),
     "decoder_2": Recipe(
         "decoder_2",

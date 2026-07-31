@@ -84,6 +84,14 @@ class CombinationalSimulationTests(unittest.TestCase):
                 expected=lambda values: 0,
             )
 
+    def test_zero_input_truth_table_runs_one_vector(self):
+        result = build_recipe(PROJECT_ROOT, "byte_constant")
+        self.assertEqual(result["exhaustive_test_vectors"], 1)
+
+        path = PROJECT_ROOT / "examples" / "byte_constant" / "candidate" / "circuit.data"
+        circuit = decode_v15(path.read_bytes())
+        self.assertEqual(simulate_combinational(circuit, {}), {"Output": 164})
+
 
 if __name__ == "__main__":
     unittest.main()
