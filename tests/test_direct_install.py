@@ -11,6 +11,8 @@ from tc_save_lab.cli import build_parser
 from tc_save_lab.codec import decode_v15, encode_v15
 from tc_save_lab.codex_library import build_known_codex_library
 from tc_save_lab.direct_install import (
+    ARCHITECTURE_TARGETS,
+    NORMAL_TARGETS,
     install_reviewed_direct,
     plan_direct_install,
     rewrite_architecture_selections,
@@ -28,8 +30,25 @@ LEVELS = (
     '"binary_search",true,"OVERTURE",\n'
     '"rng",true,"RV64",\n'
     '"after",true,"Player Design",2&2&2|\n'
+).encode() + "".join(
+    f'"{level}",true,"Default",\n' for level in NORMAL_TARGETS
 ).encode()
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+EXPECTED_NORMAL_TARGETS = (
+    "and_gate_3",
+    "bit_adder",
+    "bit_inverter",
+    "byte_asr",
+    "byte_equal",
+    "byte_lsr",
+    "byte_mux",
+    "byte_xor",
+    "decoder_2",
+    "one_hot_encoding",
+    "or_gate_3",
+    "signed_negator",
+)
 
 
 class DirectInstallTests(unittest.TestCase):
@@ -38,10 +57,24 @@ class DirectInstallTests(unittest.TestCase):
         save = root / "save"
         (save / "schematics" / "foundry").mkdir(parents=True)
         (save / "schematics" / "architecture").mkdir(parents=True)
+        for level, target in NORMAL_TARGETS.items():
+            source = PROJECT_ROOT / target.source
+            destination = project / target.source
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(source.read_bytes())
+            (save / "schematics" / level).mkdir(parents=True)
         (save / "levels.txt").write_bytes(LEVELS)
         build_known_codex_library(project)
         build_architecture_candidates(project)
         return project, save
+
+    def test_normal_registry_contains_only_deployed_reviewed_candidates(self):
+        self.assertEqual(tuple(NORMAL_TARGETS), EXPECTED_NORMAL_TARGETS)
+        self.assertTrue(
+            set(NORMAL_TARGETS).isdisjoint(
+                {"counting_signals", "decoder_3", "xnor", "xor_gate"}
+            )
+        )
 
     def test_levels_rewrite_changes_only_reviewed_lines(self):
         rewritten = rewrite_architecture_selections(LEVELS)
@@ -54,8 +87,8 @@ class DirectInstallTests(unittest.TestCase):
         self.assertEqual(after[3], b'"maze",true,"CODEX-MAZE",\n')
         self.assertEqual(after[4], b'"circumference",true,"CODEX-CIRCUMFERENCE",\n')
         self.assertEqual(after[5], b'"nim",true,"CODEX-NIM",\n')
-        self.assertEqual(after[6], b'"binary_search",true,"CODEX-BINARY-SEARCH",\n')
-        self.assertEqual(after[7], b'"rng",true,"CODEX-RNG",\n')
+        self.assertEqual(after[6], b'"binary_search",true,"OVERTURE",\n')
+        self.assertEqual(after[7], b'"rng",true,"RV64",\n')
 
     def test_levels_rewrite_rejects_unquoted_duplicate_target(self):
         duplicate = b"maze,true,OVERTURE,\n" + LEVELS
@@ -66,7 +99,23 @@ class DirectInstallTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             project, save = self._workspace(Path(directory))
             plan = plan_direct_install(project, save)
-            self.assertEqual(len(plan.items), 10)
+            self.assertEqual(
+                len(plan.items),
+                len(plan.foundry_plan.items)
+                + len(NORMAL_TARGETS)
+                + len(ARCHITECTURE_TARGETS),
+            )
+            normal_items = [item for item in plan.items if item.kind == "normal"]
+            self.assertEqual(tuple(item.name for item in normal_items), EXPECTED_NORMAL_TARGETS)
+            self.assertEqual(
+                dict(plan.normal_selections),
+                {level: "Default" for level in EXPECTED_NORMAL_TARGETS},
+            )
+            for item in normal_items:
+                self.assertEqual(
+                    item.destination,
+                    save / "schematics" / item.name / "Default" / "circuit.data",
+                )
             self.assertFalse((save / "schematics" / "foundry" / "codex").exists())
             with patch("tc_save_lab.direct_install._assert_game_not_running"):
                 result = install_reviewed_direct(plan)
@@ -87,6 +136,74 @@ class DirectInstallTests(unittest.TestCase):
             with patch("tc_save_lab.direct_install._assert_game_not_running"):
                 second = install_reviewed_direct(second_plan)
             self.assertTrue(second["installed"])
+
+    def test_normal_target_uses_currently_selected_schematic_without_rewriting_it(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            levels_path = save / "levels.txt"
+            levels_path.write_text(
+                levels_path.read_text("utf-8").replace(
+                    '"byte_mux",true,"Default",',
+                    '"byte_mux",true,"人工选择",',
+                ),
+                encoding="utf-8",
+            )
+            plan = plan_direct_install(project, save)
+            mux = next(
+                item
+                for item in plan.items
+                if item.kind == "normal" and item.name == "byte_mux"
+            )
+            self.assertEqual(
+                mux.destination,
+                save / "schematics" / "byte_mux" / "人工选择" / "circuit.data",
+            )
+            self.assertEqual(dict(plan.normal_selections)["byte_mux"], "人工选择")
+            self.assertIn(
+                b'"byte_mux",true,"\xe4\xba\xba\xe5\xb7\xa5\xe9\x80\x89\xe6\x8b\xa9",',
+                plan.levels_after,
+            )
+
+    def test_normal_target_digest_drift_is_rejected_during_planning(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            source = project / NORMAL_TARGETS["and_gate_3"].source
+            source.write_bytes(source.read_bytes() + b"x")
+            with self.assertRaisesRegex(ValueError, "摘要与审查注册不一致"):
+                plan_direct_install(project, save)
+
+    def test_normal_target_rejects_a_selected_schematic_path(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            levels_path = save / "levels.txt"
+            levels_path.write_text(
+                levels_path.read_text("utf-8").replace(
+                    '"byte_mux",true,"Default",',
+                    '"byte_mux",true,"../其他目录",',
+                ),
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "不是单一存档槽名"):
+                plan_direct_install(project, save)
+
+    def test_normal_selection_change_after_plan_is_rejected_before_writing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            plan = plan_direct_install(project, save)
+            levels_path = save / "levels.txt"
+            levels_path.write_text(
+                levels_path.read_text("utf-8").replace(
+                    '"byte_mux",true,"Default",',
+                    '"byte_mux",true,"另一个槽位",',
+                ),
+                encoding="utf-8",
+            )
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                with self.assertRaisesRegex(RuntimeError, "levels.txt changed"):
+                    install_reviewed_direct(plan)
+            self.assertFalse(
+                (save / "schematics" / "byte_mux" / "Default" / "circuit.data").exists()
+            )
 
     def test_source_change_after_plan_is_rejected_before_writing(self):
         with tempfile.TemporaryDirectory() as directory:

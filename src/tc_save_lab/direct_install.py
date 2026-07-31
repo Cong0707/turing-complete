@@ -22,11 +22,11 @@ from .foundry import (
 from .storage import DEFAULT_SAVE_ROOT
 
 
+# Only architectures whose candidate has been checked against the current
+# runtime and whose installed payload is already stable are eligible for the
+# unattended direct-install plan.  Binary Search still needs game-side
+# acceptance after its timing fix; RNG may contain user-owned design data.
 ARCHITECTURE_TARGETS: dict[str, tuple[str, Path]] = {
-    "binary_search": (
-        "CODEX-BINARY-SEARCH",
-        Path("examples/binary_search/candidate/circuit.data"),
-    ),
     "circumference": (
         "CODEX-CIRCUMFERENCE",
         Path("examples/circumference/candidate/circuit.data"),
@@ -34,7 +34,94 @@ ARCHITECTURE_TARGETS: dict[str, tuple[str, Path]] = {
     "maze": ("CODEX-MAZE", Path("examples/maze/candidate/circuit.data")),
     "mod_4": ("CODEX-MOD-4", Path("examples/mod_4/candidate/circuit.data")),
     "nim": ("CODEX-NIM", Path("examples/nim/candidate/circuit.data")),
-    "rng": ("CODEX-RNG", Path("examples/rng/candidate/circuit.data")),
+}
+
+
+@dataclass(frozen=True)
+class ReviewedNormalTarget:
+    """获准直接部署的一份普通关卡精确候选。"""
+
+    source: Path
+    sha256: str
+    gate: int
+    delay: int
+
+
+# 仅登记已完成完整语义验证和当前版本精灵几何复验的普通候选。摘要是审查
+# 边界的一部分：重新生成的候选必须先接受新的审查，才允许直接部署。
+NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
+    "and_gate_3": ReviewedNormalTarget(
+        Path("examples/and_gate_3/candidate/circuit.data"),
+        "2d79030732da73afb5e10cd632bb2607d91311cc4dfcd492bacb515737f62795",
+        2,
+        2,
+    ),
+    "bit_adder": ReviewedNormalTarget(
+        Path("examples/bit_adder/candidate/circuit.data"),
+        "446a2e5864c613f98e3d2eed7f40ff37a1a3f67e3677735d96d21dd4447a3a3b",
+        3,
+        2,
+    ),
+    "bit_inverter": ReviewedNormalTarget(
+        Path("examples/bit_inverter/candidate/circuit.data"),
+        "38d58faeff314b96b12caf1fc6dcc9a70277a3f4d9e4b2f5a4436b18fcf6a6ce",
+        3,
+        2,
+    ),
+    "byte_asr": ReviewedNormalTarget(
+        Path("examples/byte_asr/candidate/circuit.data"),
+        "c6218070e655602447806f533467c4ff1f2231a956895fbbd104b14dd7ddec8e",
+        76,
+        3,
+    ),
+    "byte_equal": ReviewedNormalTarget(
+        Path("examples/byte_equal/candidate/circuit.data"),
+        "cc942e842d6e3f48aa36727d3f322c4aa0e9eeb4d7a335e42287d0c35016fec6",
+        38,
+        4,
+    ),
+    "byte_lsr": ReviewedNormalTarget(
+        Path("examples/byte_lsr/candidate/circuit.data"),
+        "3bf53bcc9b30c5b8f75a9257fa87e5f5ab0fc0000af189974a1864ccbd4234ca",
+        70,
+        3,
+    ),
+    "byte_mux": ReviewedNormalTarget(
+        Path("examples/byte_mux/candidate/circuit.data"),
+        "4cedcb5e016e6a206f3200fec44f9ae9f432c04a67640df2fa8e5ba845c2c020",
+        33,
+        2,
+    ),
+    "byte_xor": ReviewedNormalTarget(
+        Path("examples/byte_xor/candidate/circuit.data"),
+        "3e75395b539d1f980d4f900d42a96d4af78a9a447770904bd1b3765127f36b41",
+        24,
+        2,
+    ),
+    "decoder_2": ReviewedNormalTarget(
+        Path("examples/decoder_2/candidate/circuit.data"),
+        "f68d242fdc05b4c82d1d8d394be42f397c5efb3e5b1dd08dcca9d51c9e46be20",
+        4,
+        2,
+    ),
+    "one_hot_encoding": ReviewedNormalTarget(
+        Path("examples/one_hot_encoding/candidate/circuit.data"),
+        "76c1e6c77c6dbe86692a7122332564c9e338f55fead6dfc5af3986a510e29e14",
+        70,
+        3,
+    ),
+    "or_gate_3": ReviewedNormalTarget(
+        Path("examples/or_gate_3/candidate/circuit.data"),
+        "7ec9d41610fe2c2ddefbdc459c1c30326734b5112e20569011b13c483168a3bd",
+        2,
+        2,
+    ),
+    "signed_negator": ReviewedNormalTarget(
+        Path("examples/signed_negator/candidate/circuit.data"),
+        "fb9c0d2bf13417ed73e59bbae92498182cb142cc79101894a7fd90f6f3062417",
+        24,
+        5,
+    ),
 }
 
 
@@ -75,6 +162,7 @@ class DirectInstallPlan:
     levels_path: Path
     levels_before_sha256: str
     levels_after: bytes
+    normal_selections: tuple[tuple[str, str], ...]
 
     def to_dict(self) -> dict[str, object]:
         return {
@@ -91,6 +179,7 @@ class DirectInstallPlan:
                 level: schematic
                 for level, (schematic, _) in ARCHITECTURE_TARGETS.items()
             },
+            "normal_selections": dict(self.normal_selections),
         }
 
 
@@ -107,7 +196,7 @@ def _parse_levels(payload: bytes) -> list[list[str]]:
 
 
 def rewrite_architecture_selections(payload: bytes) -> bytes:
-    """Replace only the selected schematic field on the two reviewed level lines."""
+    """Replace only the selected schematic field on reviewed architecture lines."""
 
     parsed = _parse_levels(payload)
     csv_counts = {
@@ -156,6 +245,33 @@ def rewrite_architecture_selections(payload: bytes) -> bytes:
     return result
 
 
+def _selected_normal_schematics(payload: bytes) -> tuple[tuple[str, str], ...]:
+    """读取每个已审查普通关卡唯一的当前所选电路图。"""
+
+    parsed = _parse_levels(payload)
+    selections: list[tuple[str, str]] = []
+    for level in NORMAL_TARGETS:
+        rows = [row for row in parsed if row and row[0] == level]
+        if len(rows) != 1:
+            raise ValueError(
+                f"levels.txt must contain ordinary target {level!r} exactly once, "
+                f"got {len(rows)}"
+            )
+        selected = rows[0][2] or "Default"
+        candidate_path = Path(selected)
+        if (
+            candidate_path.name != selected
+            or selected in {".", ".."}
+            or any(character in selected for character in ("/", "\\", ":"))
+            or any(ord(character) < 32 for character in selected)
+        ):
+            raise ValueError(
+                f"普通关卡 {level!r} 的当前选择不是单一存档槽名: {selected!r}"
+            )
+        selections.append((level, selected))
+    return tuple(selections)
+
+
 def _destination_state(path: Path) -> tuple[str, str | None]:
     current = path
     while True:
@@ -170,6 +286,70 @@ def _destination_state(path: Path) -> tuple[str, str | None]:
     if path.exists():
         return "other", None
     return "absent", None
+
+
+def _normal_items(
+    project_root: Path,
+    save_root: Path,
+    levels_payload: bytes,
+) -> tuple[tuple[DirectInstallItem, ...], tuple[tuple[str, str], ...]]:
+    """将已登记普通候选计划到各关卡当前选中的槽位。"""
+
+    selections = _selected_normal_schematics(levels_payload)
+    items: list[DirectInstallItem] = []
+    for level, selected_schematic in selections:
+        target = NORMAL_TARGETS[level]
+        source = project_root / target.source
+        _reject_reparse_tree(source)
+        source = source.resolve()
+        try:
+            source.relative_to(project_root)
+        except ValueError as exc:
+            raise ValueError(f"普通候选路径越过项目根目录: {source}") from exc
+        if not source.is_file():
+            raise ValueError(f"已审查普通候选缺失: {source}")
+        payload = source.read_bytes()
+        source_digest = sha256(payload).hexdigest()
+        if source_digest != target.sha256:
+            raise ValueError(
+                f"普通候选摘要与审查注册不一致，拒绝部署: {source}"
+            )
+        circuit = decode_v15(payload)
+        if circuit.dependencies:
+            raise ValueError(f"普通候选不能依赖 Foundry 元件: {source}")
+        if (circuit.gate, circuit.delay) != (target.gate, target.delay):
+            raise ValueError(
+                f"普通候选成绩与审查注册不一致: {source} "
+                f"({circuit.gate}/{circuit.delay})"
+            )
+        if encode_v15(circuit) != payload:
+            raise ValueError(f"普通候选不是规范 v15 编码: {source}")
+
+        level_root = save_root / "schematics" / level
+        _reject_reparse_tree(level_root)
+        if not level_root.is_dir():
+            raise ValueError(f"普通关卡存档目录不存在: {level_root}")
+        destination = level_root / selected_schematic / "circuit.data"
+        if destination.parent.parent != level_root:
+            raise ValueError(f"普通关卡目标越过关卡目录: {destination}")
+        destination_kind, destination_digest = _destination_state(destination)
+        if destination_kind == "other":
+            raise ValueError(f"普通关卡目标不是普通文件: {destination}")
+        items.append(
+            DirectInstallItem(
+                kind="normal",
+                name=level,
+                source=source,
+                destination=destination,
+                source_sha256=source_digest,
+                sha256=source_digest,
+                custom_id=circuit.custom_id,
+                destination_before_kind=destination_kind,
+                destination_before_sha256=destination_digest,
+                payload=payload,
+            )
+        )
+    return tuple(items), selections
 
 
 def _architecture_items(project_root: Path, save_root: Path) -> tuple[DirectInstallItem, ...]:
@@ -244,6 +424,11 @@ def plan_direct_install(
 ) -> DirectInstallPlan:
     project_root = project_root.resolve()
     save_root = save_root.resolve()
+    levels_path = save_root / "levels.txt"
+    _reject_reparse_tree(levels_path)
+    if not levels_path.is_file():
+        raise ValueError(f"levels.txt is not a regular file: {levels_path}")
+    levels_payload = levels_path.read_bytes()
     foundry_plan = plan_codex_deployment(project_root, save_root)
     foundry_items_list: list[DirectInstallItem] = []
     for item in foundry_plan.items:
@@ -266,21 +451,22 @@ def plan_direct_install(
             )
         )
     foundry_items = tuple(foundry_items_list)
+    normal_items, normal_selections = _normal_items(
+        project_root,
+        save_root,
+        levels_payload,
+    )
     architecture_items = _architecture_items(project_root, save_root)
-    levels_path = save_root / "levels.txt"
-    _reject_reparse_tree(levels_path)
-    if not levels_path.is_file():
-        raise ValueError(f"levels.txt is not a regular file: {levels_path}")
-    levels_payload = levels_path.read_bytes()
     levels_after = rewrite_architecture_selections(levels_payload)
     return DirectInstallPlan(
         project_root=project_root,
         save_root=save_root,
         foundry_plan=foundry_plan,
-        items=foundry_items + architecture_items,
+        items=foundry_items + normal_items + architecture_items,
         levels_path=levels_path,
         levels_before_sha256=sha256(levels_payload).hexdigest(),
         levels_after=levels_after,
+        normal_selections=normal_selections,
     )
 
 
@@ -357,4 +543,5 @@ def install_reviewed_direct(plan: DirectInstallPlan) -> dict[str, object]:
             level: schematic
             for level, (schematic, _) in ARCHITECTURE_TARGETS.items()
         },
+        "normal_selections": dict(plan.normal_selections),
     }

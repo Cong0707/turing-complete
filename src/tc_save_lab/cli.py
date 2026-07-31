@@ -15,6 +15,7 @@ from .architecture_candidates import build_architecture_candidates
 from .builder import build_known_candidates, build_known_variants
 from .direct_install import (
     ARCHITECTURE_TARGETS,
+    NORMAL_TARGETS,
     install_reviewed_direct,
     plan_direct_install,
 )
@@ -157,7 +158,7 @@ def build_parser() -> ArgumentParser:
 
     install_reviewed = sub.add_parser(
         "install-reviewed",
-        help="直接写入已审查的 Codex 元件和专用架构，不创建备份",
+        help="直接写入已审查的 Codex 元件、普通候选和专用架构，不创建备份",
     )
     install_reviewed.add_argument("--project-root", type=_path, default=PROJECT_ROOT)
     install_reviewed.add_argument("--save-root", type=_path, default=DEFAULT_SAVE_ROOT)
@@ -309,8 +310,9 @@ def _run(args: Namespace) -> int:
             return 0
         if not args.yes:
             answer = input(
-                f"直接覆盖正式存档中的 {len(plan.items)} 个最终电路文件及 levels.txt "
-                f"{len(ARCHITECTURE_TARGETS)} 条选择，"
+                f"直接覆盖正式存档中的 {len(plan.items)} 个最终电路文件，"
+                f"包括 {len(NORMAL_TARGETS)} 个普通关卡的当前所选槽位，"
+                f"并改写 levels.txt 的 {len(ARCHITECTURE_TARGETS)} 条架构选择，"
                 "且不创建备份？[y/N] "
             ).strip().casefold()
             if answer not in {"y", "yes"}:
