@@ -68,6 +68,12 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         3,
         2,
     ),
+    "byte_adder": ReviewedNormalTarget(
+        Path("examples/byte_adder/candidate/circuit.data"),
+        "b63723b21c16d535828a1a265a7714eea4b43faedacf8925aee8b0fbcd955e32",
+        103,
+        5,
+    ),
     "byte_asr": ReviewedNormalTarget(
         Path("examples/byte_asr/candidate/circuit.data"),
         "c6218070e655602447806f533467c4ff1f2231a956895fbbd104b14dd7ddec8e",
@@ -98,11 +104,29 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         24,
         2,
     ),
+    "count_leading_zeroes": ReviewedNormalTarget(
+        Path("examples/count_leading_zeroes/candidate/circuit.data"),
+        "6e300a33ac85cd95307ff2142450c3a7f4982962e255b206e3ec7ae8286f112e",
+        22,
+        4,
+    ),
+    "counting_signals": ReviewedNormalTarget(
+        Path("examples/counting_signals/candidate/circuit.data"),
+        "a8c772330a024989e3db2923a6554f783c09c5ae4b0ce552c6e673cdaf63c681",
+        13,
+        4,
+    ),
     "decoder_2": ReviewedNormalTarget(
         Path("examples/decoder_2/candidate/circuit.data"),
         "f68d242fdc05b4c82d1d8d394be42f397c5efb3e5b1dd08dcca9d51c9e46be20",
         4,
         2,
+    ),
+    "decoder_3": ReviewedNormalTarget(
+        Path("examples/decoder_3/candidate/circuit.data"),
+        "27cd1ae3ec2ecc7d8037adc59d1850280917ff2b7a01093c7ed0dbb34f50274c",
+        14,
+        3,
     ),
     "one_hot_encoding": ReviewedNormalTarget(
         Path("examples/one_hot_encoding/candidate/circuit.data"),
@@ -116,11 +140,35 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         2,
         2,
     ),
+    "saving_bytes": ReviewedNormalTarget(
+        Path("examples/saving_bytes/candidate/circuit.data"),
+        "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",
+        73,
+        5,
+    ),
+    "saving_gracefully": ReviewedNormalTarget(
+        Path("examples/saving_gracefully/candidate/circuit.data"),
+        "f0d5632ddc9191b7702d07668aeeb2fdcd7a042a1b9fbf83f923633ee2cc0d26",
+        10,
+        5,
+    ),
     "signed_negator": ReviewedNormalTarget(
         Path("examples/signed_negator/candidate/circuit.data"),
         "fb9c0d2bf13417ed73e59bbae92498182cb142cc79101894a7fd90f6f3062417",
         24,
         5,
+    ),
+    "xnor": ReviewedNormalTarget(
+        Path("examples/xnor/candidate/circuit.data"),
+        "ff0b222aa083a6195754eb6cd7ee4ca7e92222dd22515cfb6cea7423aad28971",
+        3,
+        2,
+    ),
+    "xor_gate": ReviewedNormalTarget(
+        Path("examples/xor_gate/candidate/circuit.data"),
+        "f8624d0e9c2a2afe0c757580b016803b4f0be89f0d0ad864872c2e16560079c7",
+        3,
+        2,
     ),
 }
 
@@ -325,10 +373,15 @@ def _normal_items(
         if encode_v15(circuit) != payload:
             raise ValueError(f"普通候选不是规范 v15 编码: {source}")
 
-        level_root = save_root / "schematics" / level
+        schematics_root = save_root / "schematics"
+        if not schematics_root.is_dir():
+            raise ValueError(f"schematics directory does not exist: {schematics_root}")
+        level_root = schematics_root / level
+        if level_root.parent != schematics_root:
+            raise ValueError(f"普通关卡目录越过 schematics 根目录: {level_root}")
         _reject_reparse_tree(level_root)
-        if not level_root.is_dir():
-            raise ValueError(f"普通关卡存档目录不存在: {level_root}")
+        if level_root.exists() and not level_root.is_dir():
+            raise ValueError(f"普通关卡存档目录不是目录: {level_root}")
         destination = level_root / selected_schematic / "circuit.data"
         if destination.parent.parent != level_root:
             raise ValueError(f"普通关卡目标越过关卡目录: {destination}")

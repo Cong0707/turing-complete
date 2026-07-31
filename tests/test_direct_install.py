@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
+import shutil
 import tempfile
 import unittest
 
@@ -39,15 +40,23 @@ EXPECTED_NORMAL_TARGETS = (
     "and_gate_3",
     "bit_adder",
     "bit_inverter",
+    "byte_adder",
     "byte_asr",
     "byte_equal",
     "byte_lsr",
     "byte_mux",
     "byte_xor",
+    "count_leading_zeroes",
+    "counting_signals",
     "decoder_2",
+    "decoder_3",
     "one_hot_encoding",
     "or_gate_3",
+    "saving_bytes",
+    "saving_gracefully",
     "signed_negator",
+    "xnor",
+    "xor_gate",
 )
 
 
@@ -72,7 +81,7 @@ class DirectInstallTests(unittest.TestCase):
         self.assertEqual(tuple(NORMAL_TARGETS), EXPECTED_NORMAL_TARGETS)
         self.assertTrue(
             set(NORMAL_TARGETS).isdisjoint(
-                {"counting_signals", "decoder_3", "xnor", "xor_gate"}
+                {"byte_less_s", "byte_less_u", "full_adder", "ram_component"}
             )
         )
 
@@ -163,6 +172,25 @@ class DirectInstallTests(unittest.TestCase):
                 b'"byte_mux",true,"\xe4\xba\xba\xe5\xb7\xa5\xe9\x80\x89\xe6\x8b\xa9",',
                 plan.levels_after,
             )
+
+    def test_missing_normal_level_directory_is_created_only_by_direct_install(self):
+        with tempfile.TemporaryDirectory() as directory:
+            project, save = self._workspace(Path(directory))
+            level = "count_leading_zeroes"
+            level_root = save / "schematics" / level
+            shutil.rmtree(level_root)
+            plan = plan_direct_install(project, save)
+            item = next(
+                item
+                for item in plan.items
+                if item.kind == "normal" and item.name == level
+            )
+            self.assertEqual(item.destination_before_kind, "absent")
+            self.assertFalse(level_root.exists())
+            with patch("tc_save_lab.direct_install._assert_game_not_running"):
+                install_reviewed_direct(plan)
+            self.assertEqual(item.destination.read_bytes(), item.payload)
+            self.assertEqual(item.destination.parent, level_root / "Default")
 
     def test_normal_target_digest_drift_is_rejected_during_planning(self):
         with tempfile.TemporaryDirectory() as directory:
