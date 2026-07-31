@@ -906,3 +906,57 @@ def lower_to_nand(network: LogicNetwork) -> NandNetwork:
 
     outputs = tuple((output.name, lower(output.signal)) for output in network.outputs)
     return NandNetwork(tuple(builder.nodes), outputs)
+
+
+def verify_equivalent(
+    reference: LogicNetwork | NandNetwork,
+    candidate: LogicNetwork | NandNetwork,
+    *,
+    max_inputs: int = 16,
+) -> int:
+    """Exhaustively compare two named multi-output Boolean networks.
+
+    Input and output order may differ, but their names must match exactly.  The
+    returned count is the number of tested input vectors.
+    """
+
+    reference_inputs = set(reference.input_names)
+    candidate_inputs = set(candidate.input_names)
+    if reference_inputs != candidate_inputs:
+        raise LogicNetworkError(
+            "equivalence input schema mismatch: "
+            f"reference={sorted(reference_inputs)}, candidate={sorted(candidate_inputs)}"
+        )
+    reference_outputs = (
+        {output.name for output in reference.outputs}
+        if isinstance(reference, LogicNetwork)
+        else {name for name, _ in reference.outputs}
+    )
+    candidate_outputs = (
+        {output.name for output in candidate.outputs}
+        if isinstance(candidate, LogicNetwork)
+        else {name for name, _ in candidate.outputs}
+    )
+    if reference_outputs != candidate_outputs:
+        raise LogicNetworkError(
+            "equivalence output schema mismatch: "
+            f"reference={sorted(reference_outputs)}, candidate={sorted(candidate_outputs)}"
+        )
+    if len(reference_inputs) > max_inputs:
+        raise LogicNetworkError(
+            f"equivalence expansion limited to {max_inputs} inputs, got {len(reference_inputs)}"
+        )
+
+    names = tuple(sorted(reference_inputs))
+    tested = 0
+    for bits in product((0, 1), repeat=len(names)):
+        inputs = dict(zip(names, bits))
+        expected = reference.evaluate(inputs)
+        actual = candidate.evaluate(inputs)
+        if actual != expected:
+            rendered = ", ".join(f"{name}={inputs[name]}" for name in names)
+            raise LogicNetworkError(
+                f"network mismatch at {rendered}: expected {expected}, got {actual}"
+            )
+        tested += 1
+    return tested

@@ -16,6 +16,7 @@ from tc_save_lab.logic_network import (
     merge_networks,
     pareto_front,
     rewrite_network,
+    verify_equivalent,
 )
 
 
@@ -237,6 +238,25 @@ class NandLoweringTests(unittest.TestCase):
         builder.output("one", builder.true)
         with self.assertRaisesRegex(LogicNetworkError, "needs an input"):
             lower_to_nand(builder.build())
+
+    def test_named_equivalence_accepts_reordered_inputs_and_rejects_bad_output(self):
+        first = LogicBuilder()
+        a = first.input("a")
+        b = first.input("b")
+        first.output("y", first.xor(a, b))
+
+        second = LogicBuilder()
+        b = second.input("b")
+        a = second.input("a")
+        second.output("y", second.xor(a, b))
+        self.assertEqual(verify_equivalent(first.build(), lower_to_nand(second.build())), 4)
+
+        wrong = LogicBuilder()
+        a = wrong.input("a")
+        b = wrong.input("b")
+        wrong.output("y", wrong.and_(a, b))
+        with self.assertRaisesRegex(LogicNetworkError, "network mismatch"):
+            verify_equivalent(first.build(), wrong.build())
 
 
 if __name__ == "__main__":
