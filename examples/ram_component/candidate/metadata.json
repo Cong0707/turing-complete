@@ -1,22 +1,19 @@
 {
-  "schema": 1,
+  "schema": 2,
   "level": "ram_component",
   "title": "Little Box",
   "title_zh": "小型存储器",
-  "strategy": "一个原生四字节 RAM 加 U2 地址合成器",
-  "metric_status": "目标 368 gate / 5 delay，须由游戏载入后重新计分确认",
+  "strategy": "Decoder 2 + 8 个 AND + 4 个 Register Word；不使用本关未解锁的 com_ram",
   "format_version": 15,
-  "sha256": "fb7a0022fb5fcd1c75511d589ccc4374542c27fcbe92ef649eaa79b16525fca9",
-  "gate": 368,
-  "delay": 5,
-  "energy": 1840,
-  "leaderboard_tuple": [
-    368,
-    5,
-    1840
-  ],
-  "component_count": 7,
-  "wire_count": 7,
+  "sha256": "4c0ef4d3e226d32e869833320999c36fdd6c9bedf3ccd82754d4c9899bec2c78",
+  "score_cache": {
+    "gate": 0,
+    "delay": 0,
+    "energy": 0
+  },
+  "metric_status": "未实测；由游戏实际载入和运行后重算",
+  "component_count": 18,
+  "wire_count": 42,
   "state_transition_vector_count": 1048576,
   "script_prefix": [
     {
@@ -41,34 +38,45 @@
     }
   ],
   "connectivity": {
-    "effective_component_count": 7,
-    "supported_component_count": 7,
+    "effective_component_count": 18,
+    "supported_component_count": 18,
     "unsupported_component_kind_counts": {},
-    "pin_count": 14,
-    "connected_pin_count": 14,
+    "pin_count": 52,
+    "connected_pin_count": 52,
     "unconnected_pin_count": 0,
     "unconnected_pins": [],
-    "logical_network_count": 7,
-    "logical_edge_count": 2,
+    "logical_network_count": 18,
+    "logical_edge_count": 21,
     "multi_driver_network_count": 0,
     "undriven_network_count": 0,
     "sinkless_network_count": 0,
-    "width_mismatch_network_count": 1,
-    "unit_logic_depth": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 2,
     "cycle_component_count": 0
   },
   "geometry": {
     "sprite_files": [
+      "com_and_bit.png",
+      "com_decoder_2.png",
       "com_level_input_1_pin.png",
       "com_level_input_2_pin.png",
       "com_level_input_word.png",
       "com_level_output_word.png",
-      "com_maker_bit_2.png",
-      "com_ram.png"
+      "com_register_word.png"
     ],
-    "alpha_cell_count": 692,
-    "unexpected_wire_collision_count": 0,
-    "source_port_lead_contact_count": 2,
-    "wire_interior_pin_contact_count": 0
+    "component_overlap_cell_count": 0,
+    "wire_body_contact_count": 86,
+    "wire_body_contact_rule": "仅允许导线自身端点沿指定水平方向进出端口精灵",
+    "wire_interior_pin_contact_count": 0,
+    "board_bounds": [
+      -16,
+      16
+    ]
+  },
+  "component_inventory": {
+    "register_word": 4,
+    "decoder_2": 1,
+    "and_bit": 8,
+    "com_ram": 0
   }
 }
