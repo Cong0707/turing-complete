@@ -37,7 +37,7 @@ examples/foundry/codex/<中文元件名>/candidate/circuit.data
 受约束的 Foundry 容器：
 
 ```powershell
-tc-save build-foundry not_gate 非门 .research/not_gate.json
+tc-foundry build not_gate 非门 .research/not_gate.json
 ```
 
 引用正式 Foundry 中已有元件时，默认只读扫描当前存档以验证依赖和 ID 冲突；也可以通过
@@ -49,13 +49,13 @@ tc-save build-foundry not_gate 非门 .research/not_gate.json
 部署不是构建过程的隐式副作用。以下命令只生成只读计划：
 
 ```powershell
-tc-save deploy-foundry-codex --dry-run
+tc-foundry deploy --dry-run
 ```
 
 正式部署必须再次显式执行，并确认目标：
 
 ```powershell
-tc-save deploy-foundry-codex
+tc-foundry deploy
 ```
 
 部署器要求既有的 `schematics/foundry` 目录，拒绝路径逃逸、reparse point、大小写或 Unicode

@@ -17,6 +17,7 @@
 - 使用确定性永久 ID 生成候选电路。
 - 对已审查的组合元件执行离线真值表穷举，支持多个独立输入并复用已编译网络。
 - 对 foundry 自定义元件执行只读递归门数与依赖完整性分析，不猜测延迟。
+- 使用稳定注册 ID 构建现代三格接口的 Codex 自定义元件，并校验有序依赖与依赖环。
 - 游戏运行时拒绝写回；正式写回使用同目录原子替换并再次反解析核对。
 
 ## 环境准备
@@ -49,12 +50,21 @@ python -m venv .venv
 .\.venv\Scripts\tc-save.exe analyze-costs
 ```
 
+`tc-foundry` 提供独立的中文交互界面。候选只生成到项目镜像；`deploy --dry-run` 只读检查，
+不加 `--dry-run` 并确认后才会部署：
+
+```powershell
+.\.venv\Scripts\tc-foundry.exe
+.\.venv\Scripts\tc-foundry.exe build not_gate 非门 .research\not_gate.json
+.\.venv\Scripts\tc-foundry.exe deploy --dry-run
+```
+
 ## 存档安全边界
 
 默认正式存档目录为 `%APPDATA%\Turing Complete`。分析、生成和测试只操作本项目中的
 `examples/`，不会启动游戏，也不会自动覆盖正式存档。
 
-只有显式执行 `apply` 并确认后才会写回一个候选。写回前工具会检查
+只有显式执行 `apply`，或执行 `tc-foundry deploy` 并确认后，才会写回候选。写回前工具会检查
 `Turing Complete.exe` 未运行，候选必须是可严格解析的 v15 文件。替换过程不保留持久
 备份副本，符合当前项目约定。
 
@@ -69,6 +79,7 @@ examples/<关卡>/baseline/  从当前存档提取的只读研究基线
 examples/<关卡>/scaffold/  游戏固定端口与不可变元件
 examples/<关卡>/candidate/ 待验收的重制候选
 examples/<关卡>/history/   该关卡每次方案修改的中文记录
+examples/foundry/codex/    Codex 自定义元件候选与稳定 ID 注册表
 src/tc_save_lab/           Python 工具源码
 tests/                     离线自动化测试
 ```
