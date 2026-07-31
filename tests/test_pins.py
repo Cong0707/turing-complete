@@ -20,7 +20,7 @@ class PinLibraryTests(unittest.TestCase):
             permanent_id=1,
         )
         pins = {pin.name: pin.position for pin in positioned_pins(component)}
-        self.assertEqual(pins, {"in": (10, 19), "out": (10, 21)})
+        self.assertEqual(pins, {"in": (10, 19), "out": (10, 22)})
 
     def test_tied_nand_inputs_have_one_source_network_and_depth_one(self):
         circuit = Circuit(
@@ -58,6 +58,7 @@ class PinLibraryTests(unittest.TestCase):
 
     def test_current_word_logic_uses_wide_body_pin_offsets(self):
         cases = {
+            3: {"in": (-1, 0), "out": (2, 0)},
             23: {"in0": (-1, -1), "in1": (-1, 1), "out": (2, 0)},
             29: {"in": (-1, 0), "out": (2, 0)},
             34: {"in": (-1, -1), "shift": (-1, 1), "out": (2, 0)},

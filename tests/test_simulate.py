@@ -42,18 +42,47 @@ class CombinationalSimulationTests(unittest.TestCase):
             simulate_combinational(broken, {"Input": 0})
 
     def test_multi_input_truth_table_returns_exact_vector_count(self):
-        build_recipe(PROJECT_ROOT, "byte_mux")
-        path = PROJECT_ROOT / "examples" / "byte_mux" / "candidate" / "circuit.data"
+        build_recipe(PROJECT_ROOT, "decoder_3")
+        path = PROJECT_ROOT / "examples" / "decoder_3" / "candidate" / "circuit.data"
         circuit = decode_v15(path.read_bytes())
 
         tested = verify_truth_table(
             circuit,
-            inputs={"Select": 1, "A": 2, "B": 2},
+            inputs={"Input": 3, "Disable": 1},
             output_label="Output",
-            expected=lambda values: values["B"] if values["Select"] else values["A"],
+            expected=lambda values: 0 if values["Disable"] else 1 << values["Input"],
         )
 
-        self.assertEqual(tested, 32)
+        self.assertEqual(tested, 16)
+
+    def test_multi_output_truth_table_checks_every_named_output(self):
+        build_recipe(PROJECT_ROOT, "full_adder")
+        path = PROJECT_ROOT / "examples" / "full_adder" / "candidate" / "circuit.data"
+        circuit = decode_v15(path.read_bytes())
+
+        tested = verify_truth_table(
+            circuit,
+            inputs={"Input 0": 1, "Input 1": 1, "Input 2": 1},
+            output_label=("Sum", "Carry"),
+            expected=lambda values: {
+                "Sum": sum(values.values()) & 1,
+                "Carry": (sum(values.values()) >> 1) & 1,
+            },
+        )
+
+        self.assertEqual(tested, 8)
+
+    def test_truth_table_rejects_incomplete_input_width(self):
+        build_recipe(PROJECT_ROOT, "byte_mux")
+        path = PROJECT_ROOT / "examples" / "byte_mux" / "candidate" / "circuit.data"
+        circuit = decode_v15(path.read_bytes())
+        with self.assertRaisesRegex(SimulationError, "input schema mismatch"):
+            verify_truth_table(
+                circuit,
+                inputs={"Select": 1, "A": 2, "B": 8},
+                output_label="Output",
+                expected=lambda values: 0,
+            )
 
 
 if __name__ == "__main__":

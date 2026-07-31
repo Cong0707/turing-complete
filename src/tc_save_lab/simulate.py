@@ -13,7 +13,7 @@ from .pins import I, O, T, positioned_pins
 
 SOURCE_KINDS = {60, 61, 63, 64, 65}
 SINK_KINDS = {40, 68, 69, 73, 74, 75}
-CONSTANT_KINDS = {1, 2}
+CONSTANT_KINDS = {1, 2, 46}
 
 
 class SimulationError(ValueError):
@@ -40,6 +40,7 @@ class _UnionFind:
 @dataclass(frozen=True)
 class _CompiledCircuit:
     pin_networks: dict[tuple[int, str], int]
+    source_widths: dict[str, int]
 
 
 def _compile(circuit: Circuit) -> _CompiledCircuit:
@@ -75,7 +76,18 @@ def _compile(circuit: Circuit) -> _CompiledCircuit:
                 raise SimulationError(
                     f"component {component.permanent_id} pin {pin.name} is unconnected"
                 ) from exc
-    return _CompiledCircuit(pin_networks=pin_networks)
+    source_widths: dict[str, int] = {}
+    for component_index, component in enumerate(circuit.components):
+        if component.kind not in SOURCE_KINDS:
+            continue
+        key = component.user_label or str(component.permanent_id)
+        output_pins = [
+            pin
+            for pin in positioned_pins(component, component_index)
+            if pin.direction in {O, T}
+        ]
+        source_widths[key] = sum(pin.width for pin in output_pins)
+    return _CompiledCircuit(pin_networks=pin_networks, source_widths=source_widths)
 
 
 def _mask(width: int) -> int:
@@ -136,6 +148,10 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
     if kind == 30:
         total = values["carry_in"] + values["in0"] + values["in1"]
         return {"out": total & mask, "carry_out": (total >> width) & 1}
+    if kind == 33:
+        return {"out": (values["in"] << values["shift"]) & mask}
+    if kind == 34:
+        return {"out": (values["in"] & mask) >> values["shift"]}
     if kind == 42:
         return {"out": values["in1"] if values["select"] else values["in0"]}
     if kind == 43:
@@ -181,7 +197,8 @@ def _simulate_compiled(
                 for bit, pin in enumerate(output_pins):
                     assign(component_index, pin.name, (raw_value >> bit) & 1)
         elif component.kind in CONSTANT_KINDS:
-            assign(component_index, "out", int(component.kind == 2))
+            value = component.init_data if component.kind == 46 else int(component.kind == 2)
+            assign(component_index, "out", value & _mask(component.word_size))
         elif component.kind not in SINK_KINDS:
             pending.add(component_index)
 
@@ -235,7 +252,7 @@ def verify_truth_table(
     circuit: Circuit,
     *,
     inputs: dict[str, int],
-    output_label: str,
+    output_label: str | tuple[str, ...],
     expected: object,
 ) -> int:
     """Exhaustively verify labeled inputs without rebuilding the network per vector.
@@ -254,10 +271,18 @@ def verify_truth_table(
 
     labels = tuple(inputs)
     compiled = _compile(circuit)
+    if inputs != compiled.source_widths:
+        raise SimulationError(
+            f"input schema mismatch: expected {compiled.source_widths}, got {inputs}"
+        )
     tested = 0
     for raw_values in product(*(range(1 << inputs[label]) for label in labels)):
         vector = dict(zip(labels, raw_values))
-        actual = _simulate_compiled(circuit, compiled, vector)[output_label]
+        actual_outputs = _simulate_compiled(circuit, compiled, vector)
+        if isinstance(output_label, str):
+            actual: object = actual_outputs[output_label]
+        else:
+            actual = {label: actual_outputs[label] for label in output_label}
         wanted = expected(vector)
         if actual != wanted:
             rendered = ", ".join(f"{label}={vector[label]}" for label in labels)

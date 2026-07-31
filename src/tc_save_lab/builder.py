@@ -139,7 +139,7 @@ def _decoder_1(project_root: Path, level: str) -> tuple[tuple[Component, ...], t
     wires = (
         wire_from_vertices(((-12, 0), (-1, 0))),
         wire_from_vertices(((-12, 0), (-12, 1), (12, 1), (12, 0))),
-        wire_from_vertices(((1, 0), (11, 0), (12, -1))),
+        wire_from_vertices(((2, 0), (11, 0), (12, -1))),
     )
     return components, wires
 
@@ -207,6 +207,71 @@ def _signed_negator(project_root: Path, level: str) -> tuple[tuple[Component, ..
     wires = (
         wire_from_vertices(((-12, 0), (-1, 0))),
         wire_from_vertices(((2, 0), (12, 0))),
+    )
+    return components, wires
+
+
+def _byte_less_s(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(46, (-9, -4), 0, stable_permanent_id(level, "constant-a"), word_size=8, init_data=0x80),
+        Component(23, (-3, -5), 0, stable_permanent_id(level, "xor-a"), word_size=8),
+        Component(46, (-9, 6), 0, stable_permanent_id(level, "constant-b"), word_size=8, init_data=0x80),
+        Component(23, (-3, 5), 0, stable_permanent_id(level, "xor-b"), word_size=8),
+        Component(27, (5, 0), 0, stable_permanent_id(level, "unsigned-less"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-12, -6), (-4, -6))),
+        wire_from_vertices(((-6, -4), (-4, -4))),
+        wire_from_vertices(((-12, 4), (-4, 4))),
+        wire_from_vertices(((-6, 6), (-4, 6))),
+        wire_from_vertices(((-1, -5), (3, -1), (4, -1))),
+        wire_from_vertices(((-1, 5), (3, 1), (4, 1))),
+        wire_from_vertices(((7, 0), (13, 0), (14, -1))),
+    )
+    return components, wires
+
+
+def _byte_lsr(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(34, (0, 0), 0, stable_permanent_id(level, "lsr"), word_size=8),
+    )
+    wires = (
+        wire_from_vertices(((-17, -10), (-1, -10), (-1, -1))),
+        wire_from_vertices(((-17, 9), (-1, 9), (-1, 1))),
+        wire_from_vertices(((2, 0), (17, 0))),
+    )
+    return components, wires
+
+
+def _full_adder(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(15, (0, -1), 0, stable_permanent_id(level, "full-adder")),
+    )
+    wires = (
+        wire_from_vertices(((-16, -4), (-3, -4), (-1, -2))),
+        wire_from_vertices(((-16, 0), (-2, 0), (-1, -1))),
+        wire_from_vertices(((-16, 4), (-5, 4), (-1, 0))),
+        wire_from_vertices(((1, -1), (12, -1), (14, -3))),
+        wire_from_vertices(((1, 0), (12, 0), (14, 2))),
+    )
+    return components, wires
+
+
+def _one_hot_encoding(project_root: Path, level: str) -> tuple[tuple[Component, ...], tuple[Wire, ...]]:
+    scaffold = _load_scaffold_components(project_root, level)
+    components = scaffold + (
+        Component(2, (-10, -2), 0, stable_permanent_id(level, "one")),
+        Component(33, (-7, -1), 0, stable_permanent_id(level, "shift"), word_size=8),
+        Component(17, (-1, -1), 0, stable_permanent_id(level, "splitter")),
+    )
+    wires = (
+        wire_from_vertices(((-9, -2), (-8, -2))),
+        wire_from_vertices(((-14, -1), (-14, 0), (-8, 0))),
+        wire_from_vertices(((-5, -1), (-2, -1))),
+        *(wire_from_vertices(((0, y), (16, y))) for y in range(-4, 4)),
     )
     return components, wires
 
@@ -302,13 +367,52 @@ RECIPES: dict[str, Recipe] = {
         "Output",
         lambda values: (-values["Input"]) & 0xFF,
     ),
+    "byte_less_s": Recipe(
+        "byte_less_s",
+        90,
+        4,
+        _byte_less_s,
+        (("A", 8), ("B", 8)),
+        "Result",
+        lambda values: int((values["A"] ^ 0x80) < (values["B"] ^ 0x80)),
+    ),
+    "byte_lsr": Recipe(
+        "byte_lsr",
+        70,
+        3,
+        _byte_lsr,
+        (("Input", 8), ("Shift", 3)),
+        "Result",
+        lambda values: values["Input"] >> values["Shift"],
+    ),
+    "full_adder": Recipe(
+        "full_adder",
+        14,
+        3,
+        _full_adder,
+        (("Input 0", 1), ("Input 1", 1), ("Input 2", 1)),
+        ("Sum", "Carry"),
+        lambda values: {
+            "Sum": sum(values.values()) & 1,
+            "Carry": (sum(values.values()) >> 1) & 1,
+        },
+    ),
+    "one_hot_encoding": Recipe(
+        "one_hot_encoding",
+        70,
+        3,
+        _one_hot_encoding,
+        (("Input", 3),),
+        "Output",
+        lambda values: 1 << values["Input"],
+    ),
 }
 
 
 def build_recipe(project_root: Path, level: str) -> dict[str, object]:
     recipe = RECIPES[level]
     baseline_path = project_root / "examples" / level / "baseline" / "circuit.data"
-    baseline = decode_v15(baseline_path.read_bytes())
+    baseline = decode_v15(baseline_path.read_bytes()) if baseline_path.exists() else Circuit()
     components, wires = recipe.build(project_root, level)
     candidate = replace(
         baseline,
