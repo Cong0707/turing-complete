@@ -75,6 +75,30 @@ class PinLibraryTests(unittest.TestCase):
             expected_direction = "output" if kind == 79 else "input"
             self.assertEqual(pin.direction, expected_direction, (kind, rotation))
 
+    def test_connectivity_detects_legacy_one_cell_foundry_ports(self):
+        circuit = Circuit(
+            components=(
+                Component(79, (-4, 0), 0, 1, word_size=8),
+                Component(81, (4, 0), 0, 2, word_size=8),
+            ),
+            wires=(Wire(0, "", (-3, 0), ((0, 6),)),),
+        )
+        metrics = analyze_connectivity(circuit)
+        self.assertEqual(metrics["connected_pin_count"], 2)
+        self.assertEqual(metrics["unconnected_pin_count"], 0)
+
+    def test_connectivity_keeps_modern_three_cell_foundry_ports(self):
+        circuit = Circuit(
+            components=(
+                Component(79, (-4, 0), 0, 1, word_size=8),
+                Component(81, (4, 0), 0, 2, word_size=8),
+            ),
+            wires=(Wire(0, "", (-1, 0), ((0, 2),)),),
+        )
+        metrics = analyze_connectivity(circuit)
+        self.assertEqual(metrics["connected_pin_count"], 2)
+        self.assertEqual(metrics["unconnected_pin_count"], 0)
+
     def test_current_word_logic_uses_wide_body_pin_offsets(self):
         cases = {
             3: {"in": (-1, 0), "out": (2, 0)},

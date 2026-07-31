@@ -133,10 +133,20 @@ def rotate_offset(offset: Point, rotation: int) -> Point:
         raise ValueError(f"invalid component rotation {rotation}") from exc
 
 
-def positioned_pins(component: Component, component_index: int = 0) -> tuple[PositionedPin, ...]:
+def positioned_pins(
+    component: Component,
+    component_index: int = 0,
+    *,
+    foundry_port_span: int = 3,
+) -> tuple[PositionedPin, ...]:
     specs = pin_specs_for(component)
     if specs is None:
         return ()
+    if component.kind in {79, 81}:
+        if foundry_port_span not in {1, 3}:
+            raise ValueError("Foundry port span must be 1 or 3")
+        direction = 1 if component.kind == 79 else -1
+        specs = _pins(PinSpec(specs[0].name, specs[0].direction, (direction * foundry_port_span, 0)))
     result: list[PositionedPin] = []
     for spec in specs:
         dx, dy = rotate_offset(spec.offset, component.rotation)
@@ -190,11 +200,6 @@ def analyze_connectivity(
     extra_components: tuple[Component, ...] = (),
 ) -> dict[str, object]:
     components = _effective_components(circuit, extra_components)
-    pins = tuple(
-        pin
-        for index, component in enumerate(components)
-        for pin in positioned_pins(component, index)
-    )
     unsupported = Counter(
         component.kind for component in components if pin_specs_for(component) is None
     )
@@ -207,6 +212,29 @@ def analyze_connectivity(
         endpoints_by_wire.append(endpoints)
         owners[endpoints[0]].append(index)
         owners[endpoints[1]].append(index)
+
+    endpoint_positions = set(owners)
+
+    def pins_for(component: Component, index: int) -> tuple[PositionedPin, ...]:
+        if component.kind not in {79, 81}:
+            return positioned_pins(component, index)
+        candidates = {
+            span: positioned_pins(component, index, foundry_port_span=span)
+            for span in (1, 3)
+        }
+        connected_spans = [
+            span
+            for span, candidate_pins in candidates.items()
+            if candidate_pins[0].position in endpoint_positions
+        ]
+        span = connected_spans[0] if len(connected_spans) == 1 else 3
+        return candidates[span]
+
+    pins = tuple(
+        pin
+        for index, component in enumerate(components)
+        for pin in pins_for(component, index)
+    )
 
     union_find = _UnionFind(len(circuit.wires))
     for wire_indices in owners.values():
