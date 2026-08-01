@@ -2,35 +2,37 @@
   "schema": 1,
   "level": "rng",
   "title": "Random Number Generator",
-  "strategy": "current-v15 fixed-xorshift32 feedback ASIC",
+  "strategy": "encoded-state depth-two XOR network with dual-mode OR leaves",
   "deployment_target": "schematics/architecture/CODEX-RNG/circuit.data",
-  "sha256": "78911f7d688b303219b61fcffea0b7fbc00c4a9e3adb8d093aba893ce2a2765e",
+  "sha256": "844f4a950499cd8823bcee48dffafc4474e3a176225716c65f5d87403026d0c1",
   "format_version": 15,
-  "component_count": 78,
-  "wire_count": 172,
-  "metric_status": "gate is derived from verified component costs; delay and final score still require game-side recomputation",
-  "gate": 413,
-  "delay": 11,
+  "component_count": 155,
+  "wire_count": 294,
+  "metric_status": "gate/delay/cycles are derived from current component costs and a fully simulated topology; the game must still recompute leaderboard metrics",
+  "gate": 396,
+  "delay": 9,
   "cycles": 66,
   "leaderboard_tuple": [
-    413,
-    11,
+    396,
+    9,
     66
   ],
-  "declared_energy": 299838,
+  "declared_energy": 235224,
   "public_reference": [
-    381,
-    11,
+    431,
+    9,
     66,
-    276606
+    256014
   ],
-  "fixed_test_seeds": [
-    "00000001",
-    "00000002",
-    "12345678",
-    "ffffffff"
+  "predicted_rank1_improvement": 20790,
+  "matrix_identities": [
+    "C*T=A",
+    "T*C=B",
+    "T*T^-1=I"
   ],
-  "random_test_seed_count": 64,
+  "xor_count": 61,
+  "mode_pair_or_count": 47,
+  "verified_seed_count": 69,
   "first_seed_prefix": [
     "00021001",
     "21211091",
@@ -39,27 +41,26 @@
   "component_kind_counts": {
     "2": 1,
     "3": 1,
+    "7": 47,
     "10": 61,
-    "13": 1,
+    "13": 33,
     "16": 4,
     "17": 4,
-    "25": 1,
-    "55": 1,
     "62": 1,
     "70": 1,
     "97": 1,
     "99": 1
   },
   "connectivity": {
-    "effective_component_count": 78,
-    "supported_component_count": 78,
+    "effective_component_count": 155,
+    "supported_component_count": 155,
     "unsupported_component_kind_counts": {},
-    "pin_count": 279,
-    "connected_pin_count": 279,
+    "pin_count": 479,
+    "connected_pin_count": 479,
     "unconnected_pin_count": 0,
     "unconnected_pins": [],
-    "logical_network_count": 107,
-    "logical_edge_count": 169,
+    "logical_network_count": 185,
+    "logical_edge_count": 261,
     "multi_driver_network_count": 0,
     "undriven_network_count": 0,
     "sinkless_network_count": 0,
@@ -71,5 +72,12 @@
     "wire_component_contact_count": 0,
     "wire_interior_pin_contact_count": 0,
     "component_footprint_overlap_count": 0
+  },
+  "live_sprite_layout": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cell_count": 0,
+    "internal_wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "architecture_io_access_cell_count": 7
   }
 }
