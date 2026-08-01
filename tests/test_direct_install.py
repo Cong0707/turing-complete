@@ -40,7 +40,6 @@ LEVELS = (
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED_NORMAL_TARGETS = (
-    "and_gate_3",
     "bit_adder",
     "bit_inverter",
     "byte_adder",
@@ -58,7 +57,6 @@ EXPECTED_NORMAL_TARGETS = (
     "decoder_3",
     "one_hot_encoding",
     "multiply",
-    "or_gate_3",
     "saving_bytes",
     "saving_gracefully",
     "signed_negator",
@@ -300,7 +298,7 @@ class DirectInstallTests(unittest.TestCase):
     def test_normal_target_digest_drift_is_rejected_during_planning(self):
         with tempfile.TemporaryDirectory() as directory:
             project, save = self._workspace(Path(directory))
-            source = project / NORMAL_TARGETS["and_gate_3"].source
+            source = project / NORMAL_TARGETS["bit_adder"].source
             source.write_bytes(source.read_bytes() + b"x")
             with self.assertRaisesRegex(ValueError, "摘要与审查注册不一致"):
                 plan_direct_install(project, save)
@@ -410,8 +408,8 @@ class DirectInstallTests(unittest.TestCase):
     def test_direct_replace_writes_only_the_final_circuit_file(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            source = PROJECT_ROOT / "examples" / "and_gate_3" / "candidate" / "circuit.data"
-            destination = root / "save" / "schematics" / "and_gate_3" / "Default" / "circuit.data"
+            source = PROJECT_ROOT / "examples" / "bit_adder" / "candidate" / "circuit.data"
+            destination = root / "save" / "schematics" / "bit_adder" / "Default" / "circuit.data"
             with patch("tc_save_lab.storage.game_is_running", return_value=False):
                 result = direct_replace_circuit(source, destination)
             self.assertTrue(result["direct_write"])
@@ -448,7 +446,7 @@ class DirectInstallTests(unittest.TestCase):
             )
 
     def test_public_cli_exposes_single_level_direct_replace(self):
-        args = build_parser().parse_args(["apply-direct", "and_gate_3", "--yes"])
+        args = build_parser().parse_args(["apply-direct", "bit_adder", "--yes"])
         self.assertEqual(args.command, "apply-direct")
         self.assertTrue(args.yes)
 

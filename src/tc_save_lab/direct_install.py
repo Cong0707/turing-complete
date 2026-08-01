@@ -54,12 +54,6 @@ class ReviewedNormalTarget:
 # 仅登记已完成完整语义验证和当前版本精灵几何复验的普通候选。摘要是审查
 # 边界的一部分：重新生成的候选必须先接受新的审查，才允许直接部署。
 NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
-    "and_gate_3": ReviewedNormalTarget(
-        Path("examples/and_gate_3/candidate/circuit.data"),
-        "2d79030732da73afb5e10cd632bb2607d91311cc4dfcd492bacb515737f62795",
-        2,
-        2,
-    ),
     "bit_adder": ReviewedNormalTarget(
         Path("examples/bit_adder/candidate/circuit.data"),
         "446a2e5864c613f98e3d2eed7f40ff37a1a3f67e3677735d96d21dd4447a3a3b",
@@ -161,12 +155,6 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
         230,
         11,
-    ),
-    "or_gate_3": ReviewedNormalTarget(
-        Path("examples/or_gate_3/candidate/circuit.data"),
-        "7ec9d41610fe2c2ddefbdc459c1c30326734b5112e20569011b13c483168a3bd",
-        2,
-        2,
     ),
     "saving_bytes": ReviewedNormalTarget(
         Path("examples/saving_bytes/candidate/circuit.data"),
