@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "level": "byte_divide",
+  "title_zh": "除法器",
+  "strategy": "current-v15 native U8 com_div baseline",
+  "deployment_status": "仅研究候选；未加入正式存档直写名单",
+  "component_evidence": {
+    "kind": 32,
+    "runtime_module": "TC_Div (in0, in1, out); assign out = in0 / in1;",
+    "sprite": "com_div.png",
+    "game_version": "2.1.281",
+    "live_rv64_endpoint_evidence": "schematics/architecture/RV64/circuit.data"
+  },
+  "sha256": "a2733f8f833ca31e47b635de96bcaefb76fdf796e1ba55cf42d2a1b609c8c3af",
+  "format_version": 15,
+  "component_count": 4,
+  "wire_count": 3,
+  "gate": 370,
+  "delay": 32,
+  "energy": 11840,
+  "leaderboard_tuple": [
+    370,
+    32,
+    11840
+  ],
+  "public_reference": [
+    370,
+    32,
+    11840
+  ],
+  "component_kind_counts": {
+    "61": 2,
+    "69": 1,
+    "32": 1
+  },
+  "full_u8_truth_vectors": 65536,
+  "script_vectors": 65536,
+  "test_domain": {
+    "script_ticks": 65536,
+    "unique_input_pairs": 32768,
+    "duplicate_script_cases": 32768,
+    "affine_parity_mask": 46713
+  },
+  "connectivity": {
+    "effective_component_count": 4,
+    "supported_component_count": 4,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 6,
+    "connected_pin_count": 6,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 3,
+    "logical_edge_count": 3,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 1,
+    "cycle_component_count": 0,
+    "divider_pins": {
+      "in0": [
+        -1,
+        -9
+      ],
+      "in1": [
+        -1,
+        -7
+      ],
+      "out": [
+        2,
+        -8
+      ]
+    }
+  },
+  "layout": {
+    "sprite_files": [
+      "com_div.png",
+      "com_level_input_word.png",
+      "com_level_output_word.png"
+    ],
+    "alpha_cell_count": 113,
+    "component_overlap_cells": [],
+    "wire_collisions": [],
+    "wire_interior_pin_contacts": [],
+    "unsupported_component_kinds": []
+  }
+}

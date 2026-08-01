@@ -80,7 +80,11 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     29: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (2, 0))),
     30: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (1, -1)), PinSpec("carry_out", O, (1, 0), 1)),
     31: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("low", O, (1, -1)), PinSpec("high", O, (1, 0))),
-    32: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("quotient", O, (1, -1)), PinSpec("remainder", O, (1, 0))),
+    # Current ``com_div`` is a quotient-only primitive.  The old table entry
+    # incorrectly described a four-port div/mod block; the installed runtime
+    # exposes ``TC_Div(in0, in1, out)`` and live RV64 v15 endpoints confirm
+    # the same (-1,-1), (-1,+1), (+2,0) geometry as ``com_mul``.
+    32: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     33: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     34: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     35: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
