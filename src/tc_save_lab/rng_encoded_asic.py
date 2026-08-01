@@ -1,10 +1,11 @@
-"""Build the encoded-state 396/9/66 RNG architecture candidate.
+"""Build the encoded-state 358/10/66 RNG architecture candidate.
 
-The circuit uses one physical depth-two XOR network in two modes.  During the
-seed-load tick each of 47 OR gates sees ``seed[i]`` and a zero-valued state bit;
-afterwards the disabled architecture input contributes zero and the same OR
-gates expose the encoded state bits.  This lets the steady-state B/C network
-also compute the initialization transform T without a separate XOR network.
+The circuit uses one physical depth-two XOR network in two modes.  A zero-init
+ready register and one inverter enable the architecture input only during the
+seed-load tick; afterwards the disabled input contributes zero and the same OR
+gates expose the encoded state bits.  Nineteen feedback-only second-layer XORs
+use the one-bit configuration of Word XOR, reducing gate cost without changing
+the measured ten-delay critical path.
 """
 
 from __future__ import annotations
@@ -33,8 +34,8 @@ WORD_BITS = 32
 WORD_MASK = (1 << WORD_BITS) - 1
 IDENTITY = tuple(1 << bit for bit in range(WORD_BITS))
 
-EXPECTED_GATE = 396
-EXPECTED_DELAY = 9
+EXPECTED_GATE = 358
+EXPECTED_DELAY = 10
 EXPECTED_CYCLES = 66
 PUBLIC_REFERENCE = (431, 9, 66, 256_014)
 
@@ -283,6 +284,24 @@ GATE_BY_OUTPUT = {gate.output: gate for gate in GATES}
 FIRST_LAYER = frozenset(gate.output for gate in GATES if gate.depth == 1)
 DIRECT = frozenset(IDENTITY)
 
+# These second-layer nodes feed B (the next encoded state) but not C (the
+# visible output).  Word XOR configured to U1 costs two fewer gates than Bit
+# XOR while adding one delay.  Restricting the substitution to this exact set
+# keeps every visible-output path unchanged and the feedback paths at delay 10.
+WORD_XOR_ROWS = frozenset(
+    int(row, 16)
+    for row in """
+00002021 00004042 00008808 00011010 01088008 02110010 04200021
+08008840 08400042 10011080 10800084 20002101 21000108 40004202
+40420002 42000210 80000404 80840004 84000420
+""".split()
+)
+if len(WORD_XOR_ROWS) != 19 or any(
+    row not in B or row in C or GATE_BY_OUTPUT[row].depth != 2
+    for row in WORD_XOR_ROWS
+):
+    raise AssertionError("U1 Word XOR feedback-only certificate changed")
+
 
 def _choose_first_leaf_seeds(
     steady_pair: int, seed_form: int
@@ -400,6 +419,7 @@ _FOOTPRINT_BOXES = {
     3: (-1, -1, 2, 1),
     7: (-1, -2, 2, 2),
     10: (-1, -2, 2, 2),
+    23: (-1, -2, 2, 2),
     13: (-3, -2, 3, 2),
     16: (-1, -4, 1, 5),
     17: (-1, -4, 1, 5),
@@ -660,7 +680,7 @@ def build_rng_encoded_asic() -> Circuit:
     xor_components = {
         gate.output: component(
             f"xor-depth-{gate.depth}-{gate.output:08x}",
-            10,
+            23 if gate.output in WORD_XOR_ROWS else 10,
             (
                 -100,
                 index * 14 - 182,
@@ -830,8 +850,8 @@ def build_rng_encoded_asic() -> Circuit:
         gate=EXPECTED_GATE,
         delay=EXPECTED_DELAY,
         description=(
-            "Codex RNG ASIC: encoded bit state with one 61-XOR B/C network and "
-            "47 dual-mode OR leaves; one load tick followed by 65 outputs"
+            "Codex RNG ASIC: encoded depth-two XOR network with 19 feedback-only "
+            "U1 Word XOR substitutions and a zero-init ready register"
         ),
         components=components,
         wires=tuple(wires),
@@ -942,12 +962,36 @@ def _verify_rng_encoded_asic(circuit: Circuit) -> dict[str, object]:
     if (circuit.gate, circuit.delay) != (EXPECTED_GATE, EXPECTED_DELAY):
         raise RuntimeError("RNG encoded candidate metric declaration changed")
     kind_counts = Counter(component.kind for component in circuit.components)
-    expected_counts = {7: 47, 10: 61, 13: 33}
+    expected_counts = {1: 0, 2: 1, 3: 1, 7: 47, 10: 42, 13: 33, 23: 19}
     for kind, count in expected_counts.items():
         if kind_counts[kind] != count:
             raise RuntimeError(
                 f"RNG encoded candidate kind {kind} count changed: {kind_counts[kind]}"
             )
+
+    delay_initial_values = Counter(
+        component.init_data for component in circuit.components if component.kind == 13
+    )
+    if delay_initial_values != {0: 33}:
+        raise RuntimeError(
+            "RNG encoded candidate requires all 33 delay bits to start at zero, "
+            f"got {dict(delay_initial_values)}"
+        )
+
+    word_xor_ids = {
+        component.permanent_id
+        for component in circuit.components
+        if component.kind == 23
+    }
+    expected_word_xor_ids = {
+        stable_permanent_id(
+            "architecture/codex-rng-encoded",
+            f"xor-depth-2-{row:08x}",
+        )
+        for row in WORD_XOR_ROWS
+    }
+    if word_xor_ids != expected_word_xor_ids:
+        raise RuntimeError("RNG U1 Word XOR stable-ID certificate changed")
 
     connectivity = analyze_connectivity(circuit)
     for field in (
@@ -1002,6 +1046,8 @@ def _verify_rng_encoded_asic(circuit: Circuit) -> dict[str, object]:
         - circuit.gate * circuit.delay * EXPECTED_CYCLES,
         "matrix_identities": ["C*T=A", "T*C=B", "T*T^-1=I"],
         "xor_count": len(GATES),
+        "bit_xor_count": kind_counts[10],
+        "word_xor_count": kind_counts[23],
         "mode_pair_or_count": len(MODE_PAIRS),
         "verified_seed_count": len(seeds),
         "first_seed_prefix": [f"{value:08x}" for value in first_stream[:3]],
@@ -1046,7 +1092,10 @@ def write_rng_encoded_asic(project_root: Path) -> dict[str, object]:
         "schema": 1,
         "level": "rng",
         "title": "Random Number Generator",
-        "strategy": "encoded-state depth-two XOR network with dual-mode OR leaves",
+        "strategy": (
+            "encoded-state depth-two XOR network with dual-mode OR leaves and "
+            "19 feedback-only U1 Word XOR substitutions"
+        ),
         "deployment_target": "schematics/architecture/CODEX-RNG/circuit.data",
         "sha256": sha256(payload).hexdigest(),
         "format_version": 15,
