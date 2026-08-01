@@ -430,6 +430,29 @@ class DirectInstallTests(unittest.TestCase):
             ]
             self.assertEqual(forbidden, [])
 
+    def test_direct_replace_normalizes_a_valid_noncanonical_v15_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = PROJECT_ROOT / "examples" / "ram_component" / "baseline" / "circuit.data"
+            destination = root / "save" / "schematics" / "ram_component" / "Default" / "circuit.data"
+            original = source.read_bytes()
+            original_circuit = decode_v15(original)
+            self.assertNotEqual(original, encode_v15(original_circuit))
+            with patch("tc_save_lab.storage.game_is_running", return_value=False):
+                result = direct_replace_circuit(source, destination)
+            self.assertTrue(result["direct_write"])
+            self.assertEqual(destination.read_bytes(), encode_v15(original_circuit))
+            self.assertEqual(decode_v15(destination.read_bytes()), original_circuit)
+            self.assertEqual(source.read_bytes(), original)
+            self.assertEqual(
+                [
+                    path
+                    for path in root.rglob("*")
+                    if path.name.endswith((".bak", ".old", ".new", ".tmp"))
+                ],
+                [],
+            )
+
     def test_public_cli_exposes_single_level_direct_replace(self):
         args = build_parser().parse_args(["apply-direct", "and_gate_3", "--yes"])
         self.assertEqual(args.command, "apply-direct")

@@ -195,8 +195,10 @@ def direct_replace_circuit(source: Path, destination: Path) -> dict[str, object]
         raise FileNotFoundError(f"candidate is not a regular file: {source}")
     payload = source.read_bytes()
     candidate = decode_v15(payload)
-    if encode_v15(candidate) != payload:
-        raise ValueError(f"candidate is not canonical v15: {source}")
+    # A save exported by a game build may use a different valid Snappy token
+    # sequence.  Normalize it in memory, then still perform exactly one direct
+    # write to the destination: no backup and no temporary file are created.
+    payload = encode_v15(candidate)
     if destination.exists() and not destination.is_file():
         raise ValueError(f"destination is not a regular file: {destination}")
     if game_is_running():
