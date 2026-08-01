@@ -50,6 +50,16 @@ python -m venv .venv
 .\.venv\Scripts\tc-save.exe analyze-costs
 ```
 
+预览或直接写入已经通过语义、v15、连通性和当前精灵几何审查的候选：
+
+```powershell
+.\.venv\Scripts\tc-save.exe install-reviewed --dry-run
+.\.venv\Scripts\tc-save.exe install-reviewed --yes
+```
+
+`--dry-run` 只生成写入计划。去掉它后会直接覆盖当前所选槽位，不创建备份或临时副本；
+未进入精确摘要白名单的研究候选不会被批量写入。
+
 `tc-foundry` 提供独立的中文交互界面。候选只生成到项目镜像；`deploy --dry-run` 只读检查，
 不加 `--dry-run` 并确认后才会部署：
 
@@ -64,9 +74,10 @@ python -m venv .venv
 默认正式存档目录为 `%APPDATA%\Turing Complete`。分析、生成和测试只操作本项目中的
 `examples/`，不会启动游戏，也不会自动覆盖正式存档。
 
-只有显式执行 `apply`，或执行 `tc-foundry deploy` 并确认后，才会写回候选。写回前工具会检查
-`Turing Complete.exe` 未运行，候选必须是可严格解析的 v15 文件。替换过程不保留持久
-备份副本，符合当前项目约定。
+只有显式执行 `apply`、`apply-direct`、`install-reviewed`，或执行 `tc-foundry deploy` 并确认后，
+才会写回候选。写回前工具会检查 `Turing Complete.exe` 未运行，候选必须是可严格解析的
+v15 文件。`apply-direct` 与 `install-reviewed` 直接覆盖最终文件，不保留备份副本，符合当前
+项目约定。
 
 候选文件中的 `gate` 和 `delay` 是研究阶段的声明值，不等于游戏已经验证的排行榜成绩。
 最终成绩、元件可用性和关卡通过状态必须由用户在游戏中验收。

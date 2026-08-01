@@ -20,6 +20,11 @@ from tc_save_lab.direct_install import (
     rewrite_architecture_selection,
     rewrite_architecture_selections,
 )
+from tc_save_lab.pins import analyze_connectivity
+from tc_save_lab.sprite_geometry import (
+    DEFAULT_COMPONENT_SPRITE_ROOT,
+    audit_sprite_geometry,
+)
 from tc_save_lab.storage import direct_replace_circuit
 
 
@@ -41,23 +46,14 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 EXPECTED_NORMAL_TARGETS = (
     "bit_adder",
-    "bit_inverter",
-    "byte_adder",
-    "byte_asr",
     "byte_constant",
+    "byte_divide",
     "byte_equal",
-    "byte_lsr",
-    "byte_mod",
-    "byte_mux",
     "byte_nand",
     "byte_not",
-    "byte_xor",
     "counting_signals",
-    "decoder_2",
     "decoder_3",
     "one_hot_encoding",
-    "multiply",
-    "saving_bytes",
     "saving_gracefully",
     "signed_negator",
     "xnor",
@@ -65,25 +61,20 @@ EXPECTED_NORMAL_TARGETS = (
 )
 
 EXPECTED_AUDITED_HEADERS = {
-    "byte_adder": (
-        "b63723b21c16d535828a1a265a7714eea4b43faedacf8925aee8b0fbcd955e32",
-        103,
-        5,
-    ),
     "byte_constant": (
         "8ba8cb2a677372a6ec4eef9c572666b4fbbf357bbf17c2f56cb218a50bda7131",
         0,
         0,
     ),
+    "byte_divide": (
+        "a2733f8f833ca31e47b635de96bcaefb76fdf796e1ba55cf42d2a1b609c8c3af",
+        370,
+        32,
+    ),
     "byte_nand": (
         "3af017e30a23b7c3ddfee89eb2a5aa23db3f8bbf73388333edbf41bb849b2ffd",
         8,
         1,
-    ),
-    "byte_mod": (
-        "cd577482dffbbff44a3a59e99b20e3f81244dc77104275ff2cd1684e49efe0ea",
-        428,
-        34,
     ),
     "byte_not": (
         "f461a23696812a47bf8e9751511ee7ca5483060dc1548227a02d5c552d2171d7",
@@ -95,20 +86,10 @@ EXPECTED_AUDITED_HEADERS = {
         13,
         4,
     ),
-    "multiply": (
-        "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
-        230,
-        11,
-    ),
     "decoder_3": (
         "27cd1ae3ec2ecc7d8037adc59d1850280917ff2b7a01093c7ed0dbb34f50274c",
         14,
         3,
-    ),
-    "saving_bytes": (
-        "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",
-        73,
-        5,
     ),
     "saving_gracefully": (
         "f0d5632ddc9191b7702d07668aeeb2fdcd7a042a1b9fbf83f923633ee2cc0d26",
@@ -167,6 +148,26 @@ class DirectInstallTests(unittest.TestCase):
             if level in EXPECTED_AUDITED_HEADERS
         }
         self.assertEqual(actual, EXPECTED_AUDITED_HEADERS)
+
+    @unittest.skipUnless(
+        DEFAULT_COMPONENT_SPRITE_ROOT.is_dir(),
+        "当前机器未安装 Turing Complete 组件精灵，跳过注册表几何审计",
+    )
+    def test_normal_registry_candidates_pass_current_sprite_audit(self):
+        """直接覆盖名单不得包含穿元件、压引脚或未知精灵的候选。"""
+
+        for level, target in NORMAL_TARGETS.items():
+            with self.subTest(level=level):
+                circuit = decode_v15((PROJECT_ROOT / target.source).read_bytes())
+                audit = audit_sprite_geometry(circuit, DEFAULT_COMPONENT_SPRITE_ROOT)
+                self.assertEqual(audit.unsupported_component_kinds, ())
+                self.assertEqual(audit.component_overlap_cells, ())
+                self.assertEqual(audit.wire_collisions, ())
+                self.assertEqual(audit.wire_interior_pin_contacts, ())
+                connectivity = analyze_connectivity(circuit)
+                self.assertEqual(connectivity["unconnected_pin_count"], 0)
+                self.assertEqual(connectivity["multi_driver_network_count"], 0)
+                self.assertEqual(connectivity["cycle_component_count"], 0)
 
     def test_levels_rewrite_changes_only_reviewed_lines(self):
         rewritten = rewrite_architecture_selections(LEVELS)
@@ -274,8 +275,8 @@ class DirectInstallTests(unittest.TestCase):
             levels_path = save / "levels.txt"
             levels_path.write_text(
                 levels_path.read_text("utf-8").replace(
-                    '"byte_mux",true,"Default",',
-                    '"byte_mux",true,"人工选择",',
+                    '"byte_equal",true,"Default",',
+                    '"byte_equal",true,"人工选择",',
                 ),
                 encoding="utf-8",
             )
@@ -283,15 +284,15 @@ class DirectInstallTests(unittest.TestCase):
             mux = next(
                 item
                 for item in plan.items
-                if item.kind == "normal" and item.name == "byte_mux"
+                if item.kind == "normal" and item.name == "byte_equal"
             )
             self.assertEqual(
                 mux.destination,
-                save / "schematics" / "byte_mux" / "人工选择" / "circuit.data",
+                save / "schematics" / "byte_equal" / "人工选择" / "circuit.data",
             )
-            self.assertEqual(dict(plan.normal_selections)["byte_mux"], "人工选择")
+            self.assertEqual(dict(plan.normal_selections)["byte_equal"], "人工选择")
             self.assertIn(
-                b'"byte_mux",true,"\xe4\xba\xba\xe5\xb7\xa5\xe9\x80\x89\xe6\x8b\xa9",',
+                b'"byte_equal",true,"\xe4\xba\xba\xe5\xb7\xa5\xe9\x80\x89\xe6\x8b\xa9",',
                 plan.levels_after,
             )
 
@@ -309,8 +310,8 @@ class DirectInstallTests(unittest.TestCase):
             levels_path = save / "levels.txt"
             levels_path.write_text(
                 levels_path.read_text("utf-8").replace(
-                    '"byte_mux",true,"Default",',
-                    '"byte_mux",true,"../其他目录",',
+                    '"byte_equal",true,"Default",',
+                    '"byte_equal",true,"../其他目录",',
                 ),
                 encoding="utf-8",
             )
@@ -324,8 +325,8 @@ class DirectInstallTests(unittest.TestCase):
             levels_path = save / "levels.txt"
             levels_path.write_text(
                 levels_path.read_text("utf-8").replace(
-                    '"byte_mux",true,"Default",',
-                    '"byte_mux",true,"另一个槽位",',
+                    '"byte_equal",true,"Default",',
+                    '"byte_equal",true,"另一个槽位",',
                 ),
                 encoding="utf-8",
             )
@@ -333,7 +334,7 @@ class DirectInstallTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError, "levels.txt changed"):
                     install_reviewed_direct(plan)
             self.assertFalse(
-                (save / "schematics" / "byte_mux" / "Default" / "circuit.data").exists()
+                (save / "schematics" / "byte_equal" / "Default" / "circuit.data").exists()
             )
 
     def test_source_change_after_plan_is_rejected_before_writing(self):

@@ -60,53 +60,23 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         3,
         2,
     ),
-    "bit_inverter": ReviewedNormalTarget(
-        Path("examples/bit_inverter/candidate/circuit.data"),
-        "38d58faeff314b96b12caf1fc6dcc9a70277a3f4d9e4b2f5a4436b18fcf6a6ce",
-        3,
-        2,
-    ),
-    "byte_adder": ReviewedNormalTarget(
-        Path("examples/byte_adder/candidate/circuit.data"),
-        "b63723b21c16d535828a1a265a7714eea4b43faedacf8925aee8b0fbcd955e32",
-        103,
-        5,
-    ),
-    "byte_asr": ReviewedNormalTarget(
-        Path("examples/byte_asr/candidate/circuit.data"),
-        "c6218070e655602447806f533467c4ff1f2231a956895fbbd104b14dd7ddec8e",
-        76,
-        3,
-    ),
     "byte_constant": ReviewedNormalTarget(
         Path("examples/byte_constant/candidate/circuit.data"),
         "8ba8cb2a677372a6ec4eef9c572666b4fbbf357bbf17c2f56cb218a50bda7131",
         0,
         0,
     ),
+    "byte_divide": ReviewedNormalTarget(
+        Path("examples/byte_divide/candidate/circuit.data"),
+        "a2733f8f833ca31e47b635de96bcaefb76fdf796e1ba55cf42d2a1b609c8c3af",
+        370,
+        32,
+    ),
     "byte_equal": ReviewedNormalTarget(
         Path("examples/byte_equal/candidate/circuit.data"),
         "cc942e842d6e3f48aa36727d3f322c4aa0e9eeb4d7a335e42287d0c35016fec6",
         38,
         4,
-    ),
-    "byte_lsr": ReviewedNormalTarget(
-        Path("examples/byte_lsr/candidate/circuit.data"),
-        "3bf53bcc9b30c5b8f75a9257fa87e5f5ab0fc0000af189974a1864ccbd4234ca",
-        70,
-        3,
-    ),
-    "byte_mod": ReviewedNormalTarget(
-        Path("examples/byte_mod/candidate/circuit.data"),
-        "cd577482dffbbff44a3a59e99b20e3f81244dc77104275ff2cd1684e49efe0ea",
-        428,
-        34,
-    ),
-    "byte_mux": ReviewedNormalTarget(
-        Path("examples/byte_mux/candidate/circuit.data"),
-        "4cedcb5e016e6a206f3200fec44f9ae9f432c04a67640df2fa8e5ba845c2c020",
-        33,
-        2,
     ),
     "byte_nand": ReviewedNormalTarget(
         Path("examples/byte_nand/candidate/circuit.data"),
@@ -120,23 +90,11 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         8,
         1,
     ),
-    "byte_xor": ReviewedNormalTarget(
-        Path("examples/byte_xor/candidate/circuit.data"),
-        "3e75395b539d1f980d4f900d42a96d4af78a9a447770904bd1b3765127f36b41",
-        24,
-        2,
-    ),
     "counting_signals": ReviewedNormalTarget(
         Path("examples/counting_signals/candidate/circuit.data"),
         "a8c772330a024989e3db2923a6554f783c09c5ae4b0ce552c6e673cdaf63c681",
         13,
         4,
-    ),
-    "decoder_2": ReviewedNormalTarget(
-        Path("examples/decoder_2/candidate/circuit.data"),
-        "f68d242fdc05b4c82d1d8d394be42f397c5efb3e5b1dd08dcca9d51c9e46be20",
-        4,
-        2,
     ),
     "decoder_3": ReviewedNormalTarget(
         Path("examples/decoder_3/candidate/circuit.data"),
@@ -149,18 +107,6 @@ NORMAL_TARGETS: dict[str, ReviewedNormalTarget] = {
         "76c1e6c77c6dbe86692a7122332564c9e338f55fead6dfc5af3986a510e29e14",
         70,
         3,
-    ),
-    "multiply": ReviewedNormalTarget(
-        Path("examples/multiply/candidate/circuit.data"),
-        "4a9f67458f6e0f6b1405b2db9d9a9012a645aeb813a6597f97c4f1bf9d2b43d8",
-        230,
-        11,
-    ),
-    "saving_bytes": ReviewedNormalTarget(
-        Path("examples/saving_bytes/candidate/circuit.data"),
-        "5306cffa71ed8cc6aa2113cd7daaee1892d1565b952c7d79c59d26cfa46c714b",
-        73,
-        5,
     ),
     "saving_gracefully": ReviewedNormalTarget(
         Path("examples/saving_gracefully/candidate/circuit.data"),
