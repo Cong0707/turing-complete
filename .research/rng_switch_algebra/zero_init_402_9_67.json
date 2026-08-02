@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "status": "offline-verified-runtime-aligned-candidate",
+  "deployment_allowed_for_game_validation": true,
+  "artifact": "zero_init_402_9_67.data",
+  "sha256": "21f638b968ef9f2c3a2601fd46de1624e81e0a4e1198c39f5c6eff1ba566aa93",
+  "generator_sha256": "4168102c7f45a92b5604daa5d4643e24aec8417e3552bd8c34f22a1d751aa034",
+  "leaderboard_tuple_prediction": [
+    402,
+    9,
+    67
+  ],
+  "energy_prediction": 242406,
+  "reference_energy_431_9_66": 256014,
+  "energy_margin": 13608,
+  "uses_ram": false,
+  "all_delay_bits_zero_initialized": true,
+  "delay_bit_count": 34,
+  "decisive_runtime_initialization_evidence": "examples/rng/research/archive/rng_single_output_protocol/2026-08-02-单输出协议与零初态初始化.md",
+  "phase_certificate": {
+    "state_order": [
+      "load_pulse",
+      "output_active"
+    ],
+    "state_before_tick0_and_after_each_tick": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "io_control_before_ticks_0_1_2": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "tick0": "idle; input disabled; output disabled; state remains zero",
+    "tick1": "input enabled; output disabled; state captures T(seed)",
+    "tick2_plus": "input disabled; output enabled; state advances by B"
+  },
+  "verification": {
+    "gate": 402,
+    "delay": 9,
+    "cycles": 67,
+    "leaderboard_tuple": [
+      402,
+      9,
+      67
+    ],
+    "declared_energy": 242406,
+    "public_reference": [
+      431,
+      9,
+      66,
+      256014
+    ],
+    "predicted_rank1_improvement": 13608,
+    "matrix_identities": [
+      "C*T=A",
+      "T*C=B",
+      "T*T^-1=I"
+    ],
+    "xor_count": 61,
+    "bit_xor_count": 42,
+    "word_xor_count": 19,
+    "xor_cost_model": {
+      "bit_xor": [
+        3,
+        2
+      ],
+      "u1_word_xor": [
+        3,
+        2
+      ]
+    },
+    "xor_gate_cost": 183,
+    "mode_pair_or_count": 47,
+    "verified_seed_count": 256,
+    "first_seed_prefix": [
+      "00021001",
+      "21211091",
+      "12828955"
+    ],
+    "component_kind_counts": {
+      "3": 1,
+      "7": 48,
+      "10": 42,
+      "13": 34,
+      "16": 4,
+      "17": 4,
+      "23": 19,
+      "62": 1,
+      "70": 1,
+      "97": 1,
+      "99": 1
+    },
+    "connectivity": {
+      "effective_component_count": 156,
+      "supported_component_count": 156,
+      "unsupported_component_kind_counts": {},
+      "pin_count": 483,
+      "connected_pin_count": 483,
+      "unconnected_pin_count": 0,
+      "unconnected_pins": [],
+      "logical_network_count": 186,
+      "logical_edge_count": 263,
+      "multi_driver_network_count": 0,
+      "undriven_network_count": 0,
+      "sinkless_network_count": 0,
+      "width_mismatch_network_count": 0,
+      "unit_logic_depth": 7,
+      "cycle_component_count": 0
+    },
+    "layout": {
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "component_footprint_overlap_count": 0
+    },
+    "live_sprite_layout": {
+      "unsupported_component_kinds": [],
+      "component_overlap_cell_count": 0,
+      "internal_wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "architecture_io_access_cell_count": 7
+    }
+  },
+  "evidence_boundary": "logic, zero-initialized phase sequence, v15 round trip, connectivity, sprite geometry, and 256-seed output streams are offline verified; the game and server must recompute the final tuple"
+}
