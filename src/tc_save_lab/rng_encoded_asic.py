@@ -1,11 +1,12 @@
-"""Build the encoded-state 358/10/66 RNG architecture candidate.
+"""Build the encoded-state 396/10/66 RNG architecture candidate.
 
 The circuit uses one physical depth-two XOR network in two modes.  A zero-init
 ready register and one inverter enable the architecture input only during the
 seed-load tick; afterwards the disabled input contributes zero and the same OR
 gates expose the encoded state bits.  Nineteen feedback-only second-layer XORs
-use the one-bit configuration of Word XOR, reducing gate cost without changing
-the measured ten-delay critical path.
+retain the one-bit Word XOR representation used by the validated circuit.  The
+current game charges every one-bit XOR as 3 gates / 2 delay, regardless of
+whether it is represented by Bit XOR or a U1 Word XOR.
 """
 
 from __future__ import annotations
@@ -34,7 +35,7 @@ WORD_BITS = 32
 WORD_MASK = (1 << WORD_BITS) - 1
 IDENTITY = tuple(1 << bit for bit in range(WORD_BITS))
 
-EXPECTED_GATE = 358
+EXPECTED_GATE = 396
 EXPECTED_DELAY = 10
 EXPECTED_CYCLES = 66
 PUBLIC_REFERENCE = (431, 9, 66, 256_014)
@@ -285,9 +286,9 @@ FIRST_LAYER = frozenset(gate.output for gate in GATES if gate.depth == 1)
 DIRECT = frozenset(IDENTITY)
 
 # These second-layer nodes feed B (the next encoded state) but not C (the
-# visible output).  Word XOR configured to U1 costs two fewer gates than Bit
-# XOR while adding one delay.  Restricting the substitution to this exact set
-# keeps every visible-output path unchanged and the feedback paths at delay 10.
+# visible output).  They remain U1 Word XORs so this generator reproduces the
+# validated topology, but that representation has no cost or delay advantage:
+# both Bit XOR and U1 Word XOR are 3 gates / 2 delay in the current game.
 WORD_XOR_ROWS = frozenset(
     int(row, 16)
     for row in """
@@ -851,7 +852,7 @@ def build_rng_encoded_asic() -> Circuit:
         delay=EXPECTED_DELAY,
         description=(
             "Codex RNG ASIC: encoded depth-two XOR network with 19 feedback-only "
-            "U1 Word XOR substitutions and a zero-init ready register"
+            "U1 Word XOR representations and a zero-init ready register"
         ),
         components=components,
         wires=tuple(wires),
@@ -1048,6 +1049,11 @@ def _verify_rng_encoded_asic(circuit: Circuit) -> dict[str, object]:
         "xor_count": len(GATES),
         "bit_xor_count": kind_counts[10],
         "word_xor_count": kind_counts[23],
+        "xor_cost_model": {
+            "bit_xor": [3, 2],
+            "u1_word_xor": [3, 2],
+        },
+        "xor_gate_cost": 3 * len(GATES),
         "mode_pair_or_count": len(MODE_PAIRS),
         "verified_seed_count": len(seeds),
         "first_seed_prefix": [f"{value:08x}" for value in first_stream[:3]],
@@ -1094,7 +1100,7 @@ def write_rng_encoded_asic(project_root: Path) -> dict[str, object]:
         "title": "Random Number Generator",
         "strategy": (
             "encoded-state depth-two XOR network with dual-mode OR leaves and "
-            "19 feedback-only U1 Word XOR substitutions"
+            "19 feedback-only U1 Word XOR representations"
         ),
         "deployment_target": "schematics/architecture/CODEX-RNG/circuit.data",
         "sha256": sha256(payload).hexdigest(),

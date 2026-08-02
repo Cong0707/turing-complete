@@ -92,10 +92,15 @@ class RngEncodedAsicTests(unittest.TestCase):
         )
         self.assertEqual(self.metadata["cycles"], EXPECTED_CYCLES)
         self.assertEqual(self.metadata["verified_seed_count"], 69)
-        self.assertEqual(self.metadata["leaderboard_tuple"], [358, 10, 66])
-        self.assertEqual(self.metadata["declared_energy"], 236280)
+        self.assertEqual(self.metadata["leaderboard_tuple"], [396, 10, 66])
+        self.assertEqual(self.metadata["declared_energy"], 261360)
         self.assertEqual(self.metadata["bit_xor_count"], 42)
         self.assertEqual(self.metadata["word_xor_count"], 19)
+        self.assertEqual(
+            self.metadata["xor_cost_model"],
+            {"bit_xor": [3, 2], "u1_word_xor": [3, 2]},
+        )
+        self.assertEqual(self.metadata["xor_gate_cost"], 183)
         self.assertEqual(self.metadata["layout"]["wire_component_contact_count"], 0)
         self.assertEqual(
             self.metadata["live_sprite_layout"]["internal_wire_collision_count"], 0
@@ -107,7 +112,7 @@ class RngEncodedAsicTests(unittest.TestCase):
             (self.candidate_path.parent / "metadata.json").read_text(encoding="utf-8")
         )
         self.assertEqual(disk_metadata["sha256"], self.metadata["sha256"])
-        self.assertEqual(disk_metadata["leaderboard_tuple"], [358, 10, 66])
+        self.assertEqual(disk_metadata["leaderboard_tuple"], [396, 10, 66])
         self.assertEqual(disk_metadata["live_sprite_layout"], self.metadata["live_sprite_layout"])
 
 
