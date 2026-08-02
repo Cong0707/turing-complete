@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "status": "unsat-by-support-bound",
+  "scope": "common U32 Word Switch plus Bit Switch replacements and a shared depth-two two-input-XOR B/C DAG, exactly as search_word_bus_phase.py",
+  "required_load_labels": {
+    "output": "A",
+    "feedback": "T*A"
+  },
+  "proof": [
+    "Every raw occurrence has load-label support at most one.",
+    "A Bit Switch is selectable only when its base load label is zero and replaces it with one seed unit.",
+    "Every depth-one XOR label has support at most two.",
+    "Every depth-two/final XOR label has support at most four.",
+    "A final Bit Switch either leaves that label unchanged or replaces a zero label with one unit.",
+    "Therefore every first-tick output label has support at most four.",
+    "The required A matrix has 15 rows of support greater than four, so C-load=A is impossible."
+  ],
+  "A_weight_histogram": {
+    "3": 5,
+    "4": 12,
+    "5": 3,
+    "6": 10,
+    "7": 2
+  },
+  "obstructing_A_rows": [
+    {
+      "output": 12,
+      "row": "42023001",
+      "weight": 6
+    },
+    {
+      "output": 13,
+      "row": "84046002",
+      "weight": 6
+    },
+    {
+      "output": 14,
+      "row": "0808c004",
+      "weight": 5
+    },
+    {
+      "output": 15,
+      "row": "10118008",
+      "weight": 5
+    },
+    {
+      "output": 16,
+      "row": "20230010",
+      "weight": 5
+    },
+    {
+      "output": 17,
+      "row": "40462021",
+      "weight": 7
+    },
+    {
+      "output": 18,
+      "row": "808c4042",
+      "weight": 7
+    },
+    {
+      "output": 19,
+      "row": "01188084",
+      "weight": 6
+    },
+    {
+      "output": 20,
+      "row": "02310108",
+      "weight": 6
+    },
+    {
+      "output": 21,
+      "row": "04620210",
+      "weight": 6
+    },
+    {
+      "output": 22,
+      "row": "08c40420",
+      "weight": 6
+    },
+    {
+      "output": 23,
+      "row": "11880840",
+      "weight": 6
+    },
+    {
+      "output": 24,
+      "row": "23101080",
+      "weight": 6
+    },
+    {
+      "output": 25,
+      "row": "46202100",
+      "weight": 6
+    },
+    {
+      "output": 26,
+      "row": "8c404200",
+      "weight": 6
+    }
+  ],
+  "costs": {
+    "61": {
+      "fixed_and_xor_gate": 413,
+      "maximum_bit_switches": 12,
+      "maximum_gate": 437,
+      "delay": 9,
+      "cycles": 65,
+      "maximum_energy": 255645
+    },
+    "60": {
+      "fixed_and_xor_gate": 410,
+      "maximum_bit_switches": 13,
+      "maximum_gate": 436,
+      "delay": 9,
+      "cycles": 65,
+      "maximum_energy": 255060
+    },
+    "59": {
+      "fixed_and_xor_gate": 407,
+      "maximum_bit_switches": 15,
+      "maximum_gate": 437,
+      "delay": 9,
+      "cycles": 65,
+      "maximum_energy": 255645
+    }
+  },
+  "globality": "The contradiction does not depend on T, B, C, the chosen pair cover, the XOR count, or the number of available Bit Switches.",
+  "escape_conditions": [
+    "allow a load source carrying a multi-bit linear seed form",
+    "allow a deeper first-tick XOR network (which increases delay)",
+    "change the switch-composition semantics beyond search_word_bus_phase.py"
+  ],
+  "corpus_audit": {
+    "source": ".research\\rng_or_frontier\\fast-bfs-r7-x63.jsonl",
+    "total_records": 194922,
+    "selected_by_xor": {
+      "59": 842,
+      "60": 4329,
+      "61": 19604
+    },
+    "structural_failure_by_xor": {},
+    "identity_checks": 24775,
+    "identity_failures": 0
+  }
+}
