@@ -1,0 +1,73 @@
+{
+  "scope": "T=I, 32 Delay Bits, XOR2-only combinational network",
+  "model": {
+    "q_initial": 0,
+    "feedback": "A*q xor (A+I)*s",
+    "output": "A*q xor A*s",
+    "cycles": 65
+  },
+  "verified_seed_count": 69,
+  "constructions": [
+    {
+      "name": "naive-two-A",
+      "xor": 186,
+      "gate": 718,
+      "q_xor_depth": 5,
+      "seed_xor_depth": 5,
+      "delay": 14,
+      "cycles": 65,
+      "energy": 653380
+    },
+    {
+      "name": "gate-optimized-p=A-input",
+      "xor": 125,
+      "gate": 535,
+      "q_xor_depth": 5,
+      "seed_xor_depth": 5,
+      "delay": 14,
+      "cycles": 65,
+      "energy": 486850
+    },
+    {
+      "name": "q-depth-three-seed-depth-six",
+      "xor": 512,
+      "gate": 1696,
+      "q_xor_depth": 3,
+      "seed_xor_depth": 6,
+      "delay": 12,
+      "cycles": 65,
+      "energy": 1322880
+    },
+    {
+      "name": "delay-optimized-balanced-feedback",
+      "xor": 213,
+      "gate": 799,
+      "q_xor_depth": 4,
+      "seed_xor_depth": 4,
+      "delay": 12,
+      "cycles": 65,
+      "energy": 623220
+    }
+  ],
+  "strict_lower_bound": {
+    "maximum_A_row_weight": 7,
+    "witness_output_bit": 17,
+    "witness_A_row": "40462021",
+    "witness_q_inputs": 7,
+    "witness_seed_inputs": 7,
+    "delay_11_q_xor_levels": 3,
+    "delay_11_seed_xor_levels": 5,
+    "kraft_load": "35/32",
+    "minimum_delay": 12,
+    "distinct_nonunit_targets": 64,
+    "minimum_xor": 64,
+    "minimum_gate": 352,
+    "cycles": 65,
+    "minimum_energy": 274560,
+    "leader_energy": 256014,
+    "gap_above_leader": 18546,
+    "current_energy": 261360,
+    "gap_above_current": 13200
+  },
+  "conclusion": "T=I cannot beat either 261360 current energy or 256014 leader energy"
+}

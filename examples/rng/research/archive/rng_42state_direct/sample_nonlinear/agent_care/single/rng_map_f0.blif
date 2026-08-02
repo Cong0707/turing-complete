@@ -1,0 +1,98 @@
+# Benchmark "single/rng_min_f0" written by ABC on Sun Aug 02 02:24:19 2026
+.model single/rng_min_f0
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 \
+ q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 \
+ q26 q27 q28 q29 q30 q31
+.outputs f0
+.gate NOT     A=s13 Y=new_n66
+.gate NOR     A=s31 B=new_n66 Y=new_n67
+.gate NOT     A=s29 Y=new_n68
+.gate NAND    A=new_n68 B=s24 Y=new_n69
+.gate NAND    A=new_n69 B=s12 Y=new_n70
+.gate AND     A=new_n67 B=new_n70 Y=new_n71
+.gate AND     A=new_n71 B=s7 Y=new_n72
+.gate NOR     A=s14 B=s7 Y=new_n73
+.gate NOT     A=s22 Y=new_n74
+.gate NOR     A=s30 B=new_n74 Y=new_n75
+.gate NAND    A=new_n73 B=new_n75 Y=new_n76
+.gate NOR     A=new_n76 B=s31 Y=new_n77
+.gate NOT     A=s31 Y=new_n78
+.gate NOR     A=new_n78 B=s6 Y=new_n79
+.gate NAND    A=new_n79 B=new_n68 Y=new_n80
+.gate OR      A=s28 B=s12 Y=new_n81
+.gate NOR     A=new_n80 B=new_n81 Y=new_n82
+.gate NOR     A=new_n77 B=new_n82 Y=new_n83
+.gate NOT     A=s9 Y=new_n84
+.gate NOR     A=new_n83 B=new_n84 Y=new_n85
+.gate NOR     A=new_n72 B=new_n85 Y=new_n86
+.gate AND     A=q17 B=q1 Y=new_n87
+.gate NOR     A=q17 B=q1 Y=new_n88
+.gate NOR     A=new_n87 B=new_n88 Y=new_n89
+.gate XNOR    A=q30 B=q22 Y=new_n90
+.gate NOR     A=new_n89 B=new_n90 Y=new_n91
+.gate NOR     A=s26 B=s16 Y=new_n92
+.gate NAND    A=new_n92 B=s29 Y=new_n93
+.gate NAND    A=s15 B=s14 Y=new_n94
+.gate NOR     A=new_n93 B=new_n94 Y=new_n95
+.gate NOR     A=new_n91 B=new_n95 Y=new_n96
+.gate NAND    A=new_n89 B=new_n90 Y=new_n97
+.gate NAND    A=new_n96 B=new_n97 Y=new_n98
+.gate AND     A=s21 B=s10 Y=new_n99
+.gate NAND    A=new_n99 B=new_n68 Y=new_n100
+.gate NAND    A=s31 B=s13 Y=new_n101
+.gate AND     A=new_n100 B=new_n101 Y=new_n102
+.gate OR      A=new_n102 B=s24 Y=new_n103
+.gate NOR     A=new_n103 B=s7 Y=new_n104
+.gate NOR     A=new_n98 B=new_n104 Y=new_n105
+.gate NAND    A=new_n86 B=new_n105 Y=new_n106
+.gate OR      A=s15 B=s0 Y=new_n107
+.gate OR      A=new_n107 B=s17 Y=new_n108
+.gate OR      A=q22 B=q18 Y=new_n109
+.gate OR      A=new_n109 B=q19 Y=new_n110
+.gate NOR     A=new_n108 B=new_n110 Y=new_n111
+.gate OR      A=q29 B=q24 Y=new_n112
+.gate OR      A=q26 B=q23 Y=new_n113
+.gate OR      A=new_n112 B=new_n113 Y=new_n114
+.gate OR      A=q27 B=q25 Y=new_n115
+.gate OR      A=new_n115 B=q30 Y=new_n116
+.gate NOR     A=new_n114 B=new_n116 Y=new_n117
+.gate NAND    A=new_n111 B=new_n117 Y=new_n118
+.gate NOR     A=new_n118 B=s10 Y=new_n119
+.gate NAND    A=new_n66 B=s4 Y=new_n120
+.gate NOR     A=new_n120 B=s30 Y=new_n121
+.gate NOR     A=new_n119 B=new_n121 Y=new_n122
+.gate NOR     A=new_n122 B=s12 Y=new_n123
+.gate NOR     A=new_n106 B=new_n123 Y=new_n124
+.gate NOT     A=s30 Y=new_n125
+.gate NAND    A=new_n125 B=s7 Y=new_n126
+.gate NOR     A=new_n126 B=new_n78 Y=new_n127
+.gate NAND    A=new_n127 B=s16 Y=new_n128
+.gate NOT     A=s14 Y=new_n129
+.gate NOR     A=s31 B=new_n129 Y=new_n130
+.gate NOT     A=s1 Y=new_n131
+.gate NOR     A=s27 B=new_n131 Y=new_n132
+.gate NAND    A=new_n130 B=new_n132 Y=new_n133
+.gate NAND    A=new_n128 B=new_n133 Y=new_n134
+.gate NAND    A=new_n134 B=s12 Y=new_n135
+.gate AND     A=s25 B=new_n84 Y=new_n136
+.gate AND     A=s27 B=s20 Y=new_n137
+.gate NAND    A=new_n136 B=new_n137 Y=new_n138
+.gate NOR     A=new_n138 B=new_n78 Y=new_n139
+.gate NAND    A=new_n74 B=s3 Y=new_n140
+.gate OR      A=new_n140 B=s23 Y=new_n141
+.gate NAND    A=s26 B=new_n129 Y=new_n142
+.gate NOR     A=new_n141 B=new_n142 Y=new_n143
+.gate NOR     A=new_n139 B=new_n143 Y=new_n144
+.gate NAND    A=new_n135 B=new_n144 Y=new_n145
+.gate NOR     A=new_n125 B=s4 Y=new_n146
+.gate AND     A=new_n146 B=s11 Y=new_n147
+.gate OR      A=s15 B=s5 Y=new_n148
+.gate OR      A=new_n148 B=s3 Y=new_n149
+.gate NOR     A=new_n149 B=new_n110 Y=new_n150
+.gate AND     A=new_n150 B=new_n117 Y=new_n151
+.gate NOR     A=new_n147 B=new_n151 Y=new_n152
+.gate NOR     A=new_n152 B=s13 Y=new_n153
+.gate NOR     A=new_n145 B=new_n153 Y=new_n154
+.gate NAND    A=new_n124 B=new_n154 Y=f0
+.end

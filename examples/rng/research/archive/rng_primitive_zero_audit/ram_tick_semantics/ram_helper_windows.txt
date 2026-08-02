@@ -1,0 +1,180 @@
+## get_ram_pipeline_depth @ 0x14021a94f
+
+### xref 0x1402da98a in 0x1402cb244 preorder__modelZsimulationZpreorder_u8738
+block=[0x1402da967,0x1402da9ab) source=
+
+   0x1402da8dd  mov     [rbp+2D90h+var_16A0], rax
+   0x1402da8e4  mov     rax, [rbp+2D90h+var_258]
+   0x1402da8eb  movzx   eax, byte ptr [rax]
+   0x1402da8ee  movzx   eax, al
+   0x1402da8f1  test    eax, eax
+   0x1402da8f3  jnz     loc_1402DC5B8
+   0x1402da8f9  jmp     short loc_1402DA8FC
+   0x1402da8fb  nop
+   0x1402da8fc  mov     [rbp+2D90h+var_D90], 4CEh
+   0x1402da907  movzx   eax, byte ptr [rbp+2D90h+var_25D0]
+   0x1402da90e  cmp     al, 36h ; '6'
+   0x1402da910  jnz     loc_1402DAABF
+   0x1402da916  mov     [rbp+2D90h+var_D90], 4CFh
+   0x1402da921  mov     rax, [rbp+2D90h+var_24A8]
+   0x1402da928  test    rax, rax
+   0x1402da92b  js      short loc_1402DA944
+   0x1402da92d  mov     rdx, [rbp+2D90h+var_24A8]
+   0x1402da934  mov     rax, [rbp+2D90h+var_260]
+   0x1402da93b  mov     rax, [rax+60h]
+   0x1402da93f  cmp     rdx, rax
+   0x1402da942  jl      short loc_1402DA967
+   0x1402da944  mov     rax, [rbp+2D90h+var_260]
+   0x1402da94b  mov     rax, [rax+60h]
+   0x1402da94f  lea     rdx, [rax-1]
+   0x1402da953  mov     rax, [rbp+2D90h+var_24A8]
+   0x1402da95a  mov     rcx, rax
+   0x1402da95d  call    raiseIndexError2
+   0x1402da962  jmp     loc_1402DC5C5
+   0x1402da967  mov     rax, [rbp+2D90h+var_260]
+   0x1402da96e  mov     rdx, [rax+68h]
+   0x1402da972  mov     rax, [rbp+2D90h+var_24A8]
+   0x1402da979  imul    rax, 230h
+   0x1402da980  add     rax, rdx
+   0x1402da983  add     rax, 8
+   0x1402da987  mov     rcx, rax
+>> 0x1402da98a  call    get_ram_pipeline_depth__modelZmodel95types_u1723
+   0x1402da98f  mov     [rbp+2D90h+var_AF0], rax
+   0x1402da996  mov     rax, [rbp+2D90h+var_258]
+   0x1402da99d  movzx   eax, byte ptr [rax]
+   0x1402da9a0  movzx   eax, al
+   0x1402da9a3  test    eax, eax
+   0x1402da9a5  jnz     loc_1402DC5BB
+   0x1402da9ab  mov     [rbp+2D90h+var_D90], 4D0h
+   0x1402da9b6  cmp     [rbp+2D90h+var_AF0], 0
+   0x1402da9be  jle     loc_1402DAAC2
+   0x1402da9c4  mov     [rbp+2D90h+var_D90], 4D1h
+   0x1402da9cf  mov     ecx, 1
+   0x1402da9d4  call    bytes__modelZsave95mongerZcommon_u195
+   0x1402da9d9  mov     [rbp+2D90h+var_16A8], rax
+   0x1402da9e0  mov     rax, [rbp+2D90h+var_258]
+   0x1402da9e7  movzx   eax, byte ptr [rax]
+   0x1402da9ea  movzx   eax, al
+   0x1402da9ed  test    eax, eax
+   0x1402da9ef  jnz     loc_1402DC5BE
+   0x1402da9f5  mov     rax, [rbp+2D90h+var_24F0]
+   0x1402da9fc  mov     rcx, rax
+   0x1402da9ff  call    to_bytes__modelZsave95mongerZcommon_u148
+   0x1402daa04  mov     [rbp+2D90h+var_16B0], rax
+   0x1402daa0b  mov     rax, [rbp+2D90h+var_258]
+   0x1402daa12  movzx   eax, byte ptr [rax]
+   0x1402daa15  movzx   eax, al
+   0x1402daa18  test    eax, eax
+   0x1402daa1a  jnz     loc_1402DAAB3
+   0x1402daa20  mov     rdx, [rbp+2D90h+var_16B0]
+   0x1402daa27  mov     rax, [rbp+2D90h+var_16A8]
+   0x1402daa2e  mov     rcx, rax
+   0x1402daa31  call    plus___modelZsave95mongerZcommon_u233
+   0x1402daa36  mov     [rbp+2D90h+var_16B8], rax
+   0x1402daa3d  mov     rax, [rbp+2D90h+var_258]
+   0x1402daa44  movzx   eax, byte ptr [rax]
+   0x1402daa47  movzx   eax, al
+   0x1402daa4a  test    eax, eax
+   0x1402daa4c  jnz     short loc_1402DAAB9
+   0x1402daa4e  mov     edx, 0
+   0x1402daa53  mov     rax, [rbp+2D90h+var_AF0]
+   0x1402daa5a  add     rax, 1
+   0x1402daa5e  jno     short loc_1402DAA65
+   0x1402daa60  mov     edx, 1
+   0x1402daa65  mov     rcx, rax
+   0x1402daa68  lea     rax, [rbp+2D90h+var_16C0]
+   0x1402daa6f  mov     [rax], rcx
+
+### xref 0x14044f1bb in 0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264
+block=[0x14044f100,0x14044f1dc) source=
+
+   0x14044f0f8  test    eax, eax
+   0x14044f0fa  jnz     loc_140452681
+   0x14044f100  mov     rax, [rbp+6700h+var_1210]
+   0x14044f107  lea     rdx, [rax+6]
+   0x14044f10b  lea     rax, [rbp+6700h+var_66F0]
+   0x14044f10f  mov     rcx, rax
+   0x14044f112  call    rawNewString
+   0x14044f117  mov     rax, [rbp+6700h+var_66F0]
+   0x14044f11b  mov     rdx, [rbp+6700h+var_66E8]
+   0x14044f11f  mov     [rbp+6700h+var_1280], rax
+   0x14044f126  mov     [rbp+6700h+var_1278], rdx
+   0x14044f12d  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1045
+   0x14044f134  mov     rdx, cs:off_140A27B58
+   0x14044f13b  mov     [rbp+6700h+var_66F0], rax
+   0x14044f13f  mov     [rbp+6700h+var_66E8], rdx
+   0x14044f143  lea     rdx, [rbp+6700h+var_66F0]
+   0x14044f147  lea     rax, [rbp+6700h+var_1280]
+   0x14044f14e  mov     rcx, rax
+   0x14044f151  call    appendString_29
+   0x14044f156  mov     rax, [rbp+6700h+var_1210]
+   0x14044f15d  mov     rdx, [rbp+6700h+var_1208]
+   0x14044f164  mov     [rbp+6700h+var_66F0], rax
+   0x14044f168  mov     [rbp+6700h+var_66E8], rdx
+   0x14044f16c  lea     rdx, [rbp+6700h+var_66F0]
+   0x14044f170  lea     rax, [rbp+6700h+var_1280]
+   0x14044f177  mov     rcx, rax
+   0x14044f17a  call    appendString_29
+   0x14044f17f  mov     rax, [rbp+6700h+var_1280]
+   0x14044f186  mov     rdx, [rbp+6700h+var_1278]
+   0x14044f18d  mov     [rbp+6700h+var_1200], rax
+   0x14044f194  mov     [rbp+6700h+var_11F8], rdx
+   0x14044f19b  mov     [rbp+6700h+var_370], 29Ch
+   0x14044f1a6  mov     [rbp+6700h+var_298], 0
+   0x14044f1b1  lea     rax, [rbp+6700h+var_6670]
+   0x14044f1b8  mov     rcx, rax
+>> 0x14044f1bb  call    get_ram_pipeline_depth__modelZmodel95types_u1723
+   0x14044f1c0  mov     [rbp+6700h+var_298], rax
+   0x14044f1c7  mov     rax, [rbp+6700h+var_68]
+   0x14044f1ce  movzx   eax, byte ptr [rax]
+   0x14044f1d1  movzx   eax, al
+   0x14044f1d4  test    eax, eax
+   0x14044f1d6  jnz     loc_140452684
+   0x14044f1dc  mov     rax, [rbp+6700h+var_78]
+   0x14044f1e3  mov     rdx, [rbp+6700h+var_298]
+   0x14044f1ea  mov     [rax+238h], rdx
+   0x14044f1f1  mov     [rbp+6700h+var_370], 29Dh
+   0x14044f1fc  mov     rax, [rbp+6700h+var_78]
+   0x14044f203  mov     rax, [rax+238h]
+   0x14044f20a  test    rax, rax
+   0x14044f20d  jg      loc_14044FF83
+   0x14044f213  mov     [rbp+6700h+var_370], 29Fh
+   0x14044f21e  mov     rax, [rbp+6700h+var_70]
+   0x14044f225  movzx   eax, byte ptr [rax+18h]
+   0x14044f229  test    al, al
+   0x14044f22b  jnz     loc_14044F9F2
+   0x14044f231  mov     [rbp+6700h+var_14E0], 0
+   0x14044f23c  mov     [rbp+6700h+var_14D8], 0
+   0x14044f247  mov     [rbp+6700h+var_14F0], 0
+   0x14044f252  mov     [rbp+6700h+var_14E8], 0
+   0x14044f25d  mov     [rbp+6700h+var_1500], 0
+   0x14044f268  mov     [rbp+6700h+var_14F8], 0
+   0x14044f273  mov     [rbp+6700h+var_1510], 0
+   0x14044f27e  mov     [rbp+6700h+var_1508], 0
+   0x14044f289  mov     [rbp+6700h+var_370], 2A0h
+   0x14044f294  lea     rax, [rbp+6700h+var_1520]
+   0x14044f29b  mov     edx, 10h
+   0x14044f2a0  mov     rcx, rax
+   0x14044f2a3  call    nimZeroMem_66
+   0x14044f2a8  lea     rax, add_line__modelZsimulationZcode95gen_u2131
+   0x14044f2af  mov     [rbp+6700h+var_1520], rax
+   0x14044f2b6  mov     rax, [rbp+6700h+var_70]
+   0x14044f2bd  mov     [rbp+6700h+var_1518], rax
+   0x14044f2c4  mov     [rbp+6700h+var_1530], 0
+   0x14044f2cf  mov     [rbp+6700h+var_1528], 0
+   0x14044f2da  mov     rdx, [rbp+6700h+var_1200]
+   0x14044f2e1  mov     rax, [rbp+6700h+var_11F0]
+   0x14044f2e8  add     rax, rdx
+   0x14044f2eb  lea     rdx, [rax+7]
+   0x14044f2ef  lea     rax, [rbp+6700h+var_66F0]
+   0x14044f2f3  mov     rcx, rax
+   0x14044f2f6  call    rawNewString
+
+## load_memory_word @ 0x140434586
+
+## store_bit @ 0x14043dd1a
+
+## store_word @ 0x14043e4c0
+
+## load_and_output @ 0x14043cf90
+

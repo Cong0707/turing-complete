@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "candidate_path": ".research\\rng_natural_ram_u1\\candidate\\circuit.data",
+  "sha256": "d50ed4f56367270bcbef35e1309949820f6118c912fdf2cde00230fd52a66a27",
+  "format_version": 15,
+  "declared_header": [
+    123,
+    7
+  ],
+  "native_score": [
+    123,
+    7,
+    66
+  ],
+  "native_energy": 56826,
+  "old_rng_frontier": [
+    [
+      396,
+      10,
+      66
+    ]
+  ],
+  "old_best_energy": 261360,
+  "improvement": 204534,
+  "header_matches_native": true,
+  "component_count": 122,
+  "wire_count": 278,
+  "component_kind_counts": {
+    "2": 1,
+    "3": 1,
+    "7": 32,
+    "13": 1,
+    "16": 8,
+    "17": 8,
+    "23": 61,
+    "46": 1,
+    "54": 1,
+    "56": 1,
+    "62": 1,
+    "70": 1,
+    "97": 2,
+    "99": 2,
+    "118": 1
+  },
+  "gate_ledger": {
+    "or_bit": 32,
+    "xor_bit": 0,
+    "xor_word_u1": 61,
+    "ready_delay": 5,
+    "not_bit": 1,
+    "ram": 8,
+    "load_port": 8,
+    "store_port": 8
+  },
+  "xor_frontier": [
+    3,
+    2,
+    1
+  ],
+  "derived_word_xor_base": [
+    24,
+    2
+  ],
+  "ram": {
+    "settings": [
+      2,
+      512,
+      0
+    ],
+    "buffer_size": 8,
+    "scored_delay": 0,
+    "load_word_size": 32,
+    "store_word_size": 32
+  },
+  "all_components_mutable": true,
+  "all_component_costs_auto": true,
+  "v15_byte_identical_round_trip": true,
+  "critical_path": [
+    {
+      "component_index": 2,
+      "kind": 2,
+      "position": [
+        -360,
+        -30
+      ],
+      "component_delay": 0,
+      "arrival": 0
+    },
+    {
+      "component_index": 120,
+      "kind": 54,
+      "position": [
+        320,
+        548
+      ],
+      "component_delay": 0,
+      "arrival": 0,
+      "incoming_edges": [
+        {
+          "wire_index": 181,
+          "source_pin": "out",
+          "sink_pin": "enable"
+        }
+      ]
+    },
+    {
+      "component_index": 108,
+      "kind": 99,
+      "position": [
+        -300,
+        560
+      ],
+      "component_delay": 0,
+      "arrival": 0,
+      "incoming_edges": [
+        {
+          "wire_index": 185,
+          "source_pin": "out",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 109,
+      "kind": 17,
+      "position": [
+        -245,
+        392
+      ],
+      "component_delay": 0,
+      "arrival": 0,
+      "incoming_edges": [
+        {
+          "wire_index": 187,
+          "source_pin": "out0",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 10,
+      "kind": 23,
+      "position": [
+        -160,
+        0
+      ],
+      "component_delay": 2,
+      "arrival": 2,
+      "incoming_edges": [
+        {
+          "wire_index": 191,
+          "source_pin": "out0",
+          "sink_pin": "in0"
+        }
+      ]
+    },
+    {
+      "component_index": 29,
+      "kind": 23,
+      "position": [
+        -80,
+        136
+      ],
+      "component_delay": 2,
+      "arrival": 4,
+      "incoming_edges": [
+        {
+          "wire_index": 10,
+          "source_pin": "out",
+          "sink_pin": "in1"
+        }
+      ]
+    },
+    {
+      "component_index": 56,
+      "kind": 23,
+      "position": [
+        0,
+        96
+      ],
+      "component_delay": 2,
+      "arrival": 6,
+      "incoming_edges": [
+        {
+          "wire_index": 51,
+          "source_pin": "out",
+          "sink_pin": "in1"
+        }
+      ]
+    },
+    {
+      "component_index": 83,
+      "kind": 7,
+      "position": [
+        80,
+        96
+      ],
+      "component_delay": 1,
+      "arrival": 7,
+      "incoming_edges": [
+        {
+          "wire_index": 116,
+          "source_pin": "out",
+          "sink_pin": "in0"
+        }
+      ]
+    },
+    {
+      "component_index": 114,
+      "kind": 16,
+      "position": [
+        220,
+        504
+      ],
+      "component_delay": 0,
+      "arrival": 7,
+      "incoming_edges": [
+        {
+          "wire_index": 254,
+          "source_pin": "out",
+          "sink_pin": "in4"
+        }
+      ]
+    },
+    {
+      "component_index": 117,
+      "kind": 97,
+      "position": [
+        250,
+        560
+      ],
+      "component_delay": 0,
+      "arrival": 7,
+      "incoming_edges": [
+        {
+          "wire_index": 275,
+          "source_pin": "out",
+          "sink_pin": "in1"
+        }
+      ]
+    },
+    {
+      "component_index": 121,
+      "kind": 56,
+      "position": [
+        320,
+        550
+      ],
+      "component_delay": 0,
+      "arrival": 7,
+      "incoming_edges": [
+        {
+          "wire_index": 186,
+          "source_pin": "out",
+          "sink_pin": "data"
+        }
+      ]
+    }
+  ]
+}

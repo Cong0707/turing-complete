@@ -1,0 +1,631 @@
+{
+  "schema": 1,
+  "scope": "strict one Architecture Input/Output; one U32 Word Switch; disjoint-support depth-two XOR2/XOR3 feedback network",
+  "status": "over-budget",
+  "fixed_gate": 230,
+  "network_budget": 200,
+  "network_gate": 330,
+  "total_gate": 560,
+  "predicted_delay": 9,
+  "predicted_cycles": 66,
+  "target_row_weight_histogram": {
+    "3": 5,
+    "4": 12,
+    "5": 3,
+    "6": 10,
+    "7": 2
+  },
+  "intermediate_count": 29,
+  "intermediates": [
+    {
+      "mask_hex": "00002001",
+      "support": [
+        0,
+        13
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00004002",
+      "support": [
+        1,
+        14
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00008004",
+      "support": [
+        2,
+        15
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00010008",
+      "support": [
+        3,
+        16
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00020010",
+      "support": [
+        4,
+        17
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00040020",
+      "support": [
+        5,
+        18
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00080040",
+      "support": [
+        6,
+        19
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00088004",
+      "support": [
+        2,
+        15,
+        19
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "00100080",
+      "support": [
+        7,
+        20
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00200100",
+      "support": [
+        8,
+        21
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00220010",
+      "support": [
+        4,
+        17,
+        21
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "00400200",
+      "support": [
+        9,
+        22
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00440020",
+      "support": [
+        5,
+        18,
+        22
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "00800400",
+      "support": [
+        10,
+        23
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "00880040",
+      "support": [
+        6,
+        19,
+        23
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "01000800",
+      "support": [
+        11,
+        24
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "01100080",
+      "support": [
+        7,
+        20,
+        24
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "02001000",
+      "support": [
+        12,
+        25
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "02100000",
+      "support": [
+        20,
+        25
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "04002000",
+      "support": [
+        13,
+        26
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "04400200",
+      "support": [
+        9,
+        22,
+        26
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "08004000",
+      "support": [
+        14,
+        27
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "08800400",
+      "support": [
+        10,
+        23,
+        27
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "10008000",
+      "support": [
+        15,
+        28
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "11000800",
+      "support": [
+        11,
+        24,
+        28
+      ],
+      "kind": "xor3",
+      "gate": 12
+    },
+    {
+      "mask_hex": "20010000",
+      "support": [
+        16,
+        29
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "40020000",
+      "support": [
+        17,
+        30
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "42000000",
+      "support": [
+        25,
+        30
+      ],
+      "kind": "xor2",
+      "gate": 3
+    },
+    {
+      "mask_hex": "80040000",
+      "support": [
+        18,
+        31
+      ],
+      "kind": "xor2",
+      "gate": 3
+    }
+  ],
+  "targets": [
+    {
+      "index": 0,
+      "target_hex": "00042021",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00002001",
+        "00040020"
+      ]
+    },
+    {
+      "index": 1,
+      "target_hex": "00084042",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00004002",
+        "00080040"
+      ]
+    },
+    {
+      "index": 2,
+      "target_hex": "00108084",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00008004",
+        "00100080"
+      ]
+    },
+    {
+      "index": 3,
+      "target_hex": "00210108",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00010008",
+        "00200100"
+      ]
+    },
+    {
+      "index": 4,
+      "target_hex": "00420210",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00020010",
+        "00400200"
+      ]
+    },
+    {
+      "index": 5,
+      "target_hex": "00840420",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00040020",
+        "00800400"
+      ]
+    },
+    {
+      "index": 6,
+      "target_hex": "01080840",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00080040",
+        "01000800"
+      ]
+    },
+    {
+      "index": 7,
+      "target_hex": "02101080",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00100080",
+        "02001000"
+      ]
+    },
+    {
+      "index": 8,
+      "target_hex": "04202100",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00200100",
+        "04002000"
+      ]
+    },
+    {
+      "index": 9,
+      "target_hex": "08404200",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00400200",
+        "08004000"
+      ]
+    },
+    {
+      "index": 10,
+      "target_hex": "10808400",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00800400",
+        "10008000"
+      ]
+    },
+    {
+      "index": 11,
+      "target_hex": "21010800",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "01000800",
+        "20010000"
+      ]
+    },
+    {
+      "index": 12,
+      "target_hex": "42023001",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00002001",
+        "02001000",
+        "40020000"
+      ]
+    },
+    {
+      "index": 13,
+      "target_hex": "84046002",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00004002",
+        "04002000",
+        "80040000"
+      ]
+    },
+    {
+      "index": 14,
+      "target_hex": "0808c004",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00088004",
+        "08004000"
+      ]
+    },
+    {
+      "index": 15,
+      "target_hex": "10118008",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00010008",
+        "10008000",
+        "00100000"
+      ]
+    },
+    {
+      "index": 16,
+      "target_hex": "20230010",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00220010",
+        "20010000"
+      ]
+    },
+    {
+      "index": 17,
+      "target_hex": "40462021",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00002001",
+        "00440020",
+        "40020000"
+      ]
+    },
+    {
+      "index": 18,
+      "target_hex": "808c4042",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00004002",
+        "00880040",
+        "80040000"
+      ]
+    },
+    {
+      "index": 19,
+      "target_hex": "01188084",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00088004",
+        "01100080"
+      ]
+    },
+    {
+      "index": 20,
+      "target_hex": "02310108",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00010008",
+        "00200100",
+        "02100000"
+      ]
+    },
+    {
+      "index": 21,
+      "target_hex": "04620210",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00220010",
+        "04400200"
+      ]
+    },
+    {
+      "index": 22,
+      "target_hex": "08c40420",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00440020",
+        "08800400"
+      ]
+    },
+    {
+      "index": 23,
+      "target_hex": "11880840",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "00880040",
+        "11000800"
+      ]
+    },
+    {
+      "index": 24,
+      "target_hex": "23101080",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "01100080",
+        "02001000",
+        "20000000"
+      ]
+    },
+    {
+      "index": 25,
+      "target_hex": "46202100",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "00200100",
+        "04002000",
+        "42000000"
+      ]
+    },
+    {
+      "index": 26,
+      "target_hex": "8c404200",
+      "final_kind": "xor3",
+      "final_gate": 12,
+      "blocks_hex": [
+        "04400200",
+        "08004000",
+        "80000000"
+      ]
+    },
+    {
+      "index": 27,
+      "target_hex": "08800400",
+      "final_kind": "direct",
+      "final_gate": 0,
+      "blocks_hex": [
+        "08800400"
+      ]
+    },
+    {
+      "index": 28,
+      "target_hex": "11000800",
+      "final_kind": "direct",
+      "final_gate": 0,
+      "blocks_hex": [
+        "11000800"
+      ]
+    },
+    {
+      "index": 29,
+      "target_hex": "22001000",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "02001000",
+        "20000000"
+      ]
+    },
+    {
+      "index": 30,
+      "target_hex": "44002000",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "04002000",
+        "40000000"
+      ]
+    },
+    {
+      "index": 31,
+      "target_hex": "88004000",
+      "final_kind": "xor2",
+      "final_gate": 3,
+      "blocks_hex": [
+        "08004000",
+        "80000000"
+      ]
+    }
+  ],
+  "model_counts": {
+    "candidate_intermediates": 463,
+    "candidate_decompositions": 1486,
+    "variables": 1949,
+    "hard_clauses": 3184,
+    "soft_clauses": 1944
+  },
+  "limitations": [
+    "Only disjoint-support decompositions are enumerated.",
+    "Only XOR2 and the reviewed 12-gate/2-delay XOR3 macro are allowed.",
+    "An over-budget result is not a global impossibility proof."
+  ]
+}

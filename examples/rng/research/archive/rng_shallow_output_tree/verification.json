@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "global_status": "OPEN",
+  "neighborhood_status": "UNSAT through C-row Hamming radius 5",
+  "center_heavy_T_rows": [
+    11,
+    14
+  ],
+  "forced_removed_labels": [
+    16,
+    "12_or_29"
+  ],
+  "coverage": {
+    "radius4": {
+      "eligible_removed_sets": 841,
+      "component_tree_shapes": 125,
+      "label_permutations": 24,
+      "shape_label_assignments": 2523000,
+      "endpoint_offset_branches": 5292094
+    },
+    "radius5": {
+      "eligible_removed_sets": 7714,
+      "component_tree_shapes": 1296,
+      "label_permutations": 120,
+      "shape_label_assignments": 1199681280,
+      "endpoint_offset_branches": 2603986081
+    }
+  },
+  "independent_radius4_implementations_agree": true,
+  "t_only_control": {
+    "status": "SAT",
+    "C_row_distance": 4,
+    "maximum_T_weight": 4,
+    "bad_B_rows": [
+      [
+        9,
+        4,
+        6
+      ],
+      [
+        11,
+        4,
+        8
+      ],
+      [
+        14,
+        4,
+        6
+      ],
+      [
+        23,
+        4,
+        5
+      ],
+      [
+        31,
+        4,
+        6
+      ]
+    ],
+    "verified_seed_count": 69,
+    "verified_outputs_per_seed": 65
+  },
+  "global_colored_tree_search": {
+    "status": "OPEN",
+    "iterations": 2,
+    "learned_boundary_cuts": 5,
+    "best_bad_count": 5,
+    "elapsed_seconds": 300.05317329999525,
+    "peak_working_set_mb": 100.3203125
+  },
+  "peak_working_set_mb": 4.94141,
+  "sha256": {
+    "search_radius.cpp": "558237F3BEA693AE4DCDBE46055400082ABB54F15104CAB76AF2B931B36DBC74",
+    "search_radius4.py": "8AE14F0E8A9F078E6AF761A0062114803BCD987676EB113C0067643477A1836A",
+    "solve_colored_tree.py": "4633220AFEA0257D397BEE12B36390D2C00D36F6E9790EAD6FC467F17A0EC9F4",
+    "radius4-exact.json": "2BDD0A2FD80D19B2DF690723C3132BFCA0202C2DBAA4B232FE65330E6283A5E5",
+    "radius4-cpp-current.json": "468F9AB3186010A958E80C970DCEF3EDAAF688ECAE253636AF3F39E4F59CF4A8",
+    "radius5-exact.json": "101636959BDD5EBD2401DC4AB583126B0E7472C67A2C2029E9786E0EDDA9D20E",
+    "radius4-tonly-sat.json": "6E209BFBFEED50DECAD9C54079EC944B852AB0A971E295CD360DD7B4F5C68CB5",
+    "global-hinted-300s.json": "6FF6A63F669D82526C6BCAA60026A5D090B47106FEB67A37BAF97F7C17D5D364"
+  }
+}

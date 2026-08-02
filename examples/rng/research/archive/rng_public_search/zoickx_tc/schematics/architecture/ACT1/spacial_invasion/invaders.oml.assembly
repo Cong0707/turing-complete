@@ -1,0 +1,44 @@
+#include "robot.lml"
+const left  0
+const step  1
+const right 2
+const chill 3
+const actn  4
+const pew   5
+#########################
+
+## quick actions
+const now mov | fa | out
+
+# cache(chill)->e
+chill
+mov | fa | te
+const chill_now mov | fe | out
+# cache(pew)->f
+pew 
+mov | fa | tf
+const pew_now   mov | ff | out
+
+pew_now
+step
+	now
+	now
+	now
+	now
+	now
+
+label loop
+
+	label ratsearch
+		chill_now
+		# load observation
+		mov | in | td
+	ratsearch j_z # until rat found
+
+	# murder rats
+	pew_now
+	pew_now
+	pew_now
+	pew_now
+
+loop j

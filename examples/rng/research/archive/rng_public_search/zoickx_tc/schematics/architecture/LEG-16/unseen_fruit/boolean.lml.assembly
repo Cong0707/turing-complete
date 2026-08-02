@@ -1,0 +1,62 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+#include "robot.lml"
+const left  0
+const step  1
+const right 2
+const chill 3
+const actn  4
+const pew   5
+const do    sav
+#########################
+
+do _ left io
+do _ step io
+do _ left io
+do _ step io
+do _ step io
+do _ step io
+do _ step io
+do _ left io
+do _ step io
+do _ right io
+do _ step io
+do _ chill io
+do _ chill io
+do _ chill io
+do _ chill io
+
+mov _ io ptr
+
+label loop
+
+	sav _ true ram
+
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+	do _ chill io
+
+	mov _ io ptr
+
+j|bnot ram ram loop
+
+do _ right io
+do _ actn io
+
+

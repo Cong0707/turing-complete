@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "cost_unit_gate": 3,
+  "library": {
+    "XOR2_units": 1,
+    "Switch_XOR3_units": 4,
+    "final_1_2_3_group_units": [
+      0,
+      1,
+      4
+    ]
+  },
+  "results": [
+    {
+      "name": "beam6_proxy497",
+      "active_hidden": 6,
+      "state_bits": 38,
+      "fixed_gate": 228,
+      "distinct_nontrivial_targets": 53,
+      "weight_distribution": {
+        "2": 20,
+        "3": 6,
+        "4": 20,
+        "5": 4,
+        "6": 2,
+        "7": 1
+      },
+      "maximum_weight": 7,
+      "old_proxy_total_gate": 497,
+      "cheap_proxy": {
+        "weight_model": {
+          "logic_units_estimate": 112.609507597,
+          "logic_gate_estimate": 338,
+          "total_gate_estimate": 566
+        },
+        "pair_model": {
+          "logic_units_estimate": 111.330471589,
+          "logic_gate_estimate": 334,
+          "total_gate_estimate": 562
+        },
+        "pair_features": {
+          "forced_hits": 19,
+          "pair_incidence": 249,
+          "pair_unique": 177,
+          "pair_repeat": 72,
+          "pair_ge2": 51,
+          "pair_ge3": 17
+        }
+      },
+      "greedy_cover": {
+        "status": "heuristic_upper_bound",
+        "logic_units": 120,
+        "logic_gate": 360,
+        "total_gate": 588,
+        "selected_pair_groups": 46,
+        "selected_triple_groups": 1,
+        "coordinate_moves": 6
+      },
+      "cover": {
+        "status": "heuristic_upper_bound",
+        "logic_units": 101,
+        "logic_gate": 303,
+        "total_gate": 531,
+        "selected_final_units": 57,
+        "selected_pair_groups": 32,
+        "selected_triple_groups": 3,
+        "selected_group_units": 44,
+        "restarts": 256,
+        "coordinate_moves": 10475,
+        "pair_moves": 195
+      },
+      "seconds": 3.6513411000050837
+    }
+  ]
+}

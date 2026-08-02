@@ -1,0 +1,479 @@
+range	0x14077dea0-0x14077e910
+000000014077dea4  48 8d 05 3d 52 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077deab  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077deb2  e9 6d 28 00 00                    jmp     loc_140780724
+000000014077deb7  90                                nop
+000000014077deb8  48 c7 85 e0 32 00 00 f4 04 00 00  mov     [rbp+4760h+var_1480], 4F4h
+000000014077dec3  c6 85 f5 45 00 00 00              mov     [rbp+4760h+var_16B], 0
+000000014077deca  0f b6 85 00 39 00 00              movzx   eax, [rbp+4760h+var_E60]
+000000014077ded1  3c 76                             cmp     al, 76h ; 'v'
+000000014077ded3  0f 94 c0                          setz    al
+000000014077ded6  88 85 f5 45 00 00                 mov     [rbp+4760h+var_16B], al
+000000014077dedc  0f b6 85 f5 45 00 00              movzx   eax, [rbp+4760h+var_16B]
+000000014077dee3  83 f0 01                          xor     eax, 1
+000000014077dee6  84 c0                             test    al, al
+000000014077dee8  0f 85 8f 00 00 00                 jnz     loc_14077DF7D
+000000014077deee  48 c7 85 e0 32 00 00 f5 04 00 00  mov     [rbp+4760h+var_1480], 4F5h
+000000014077def9  c6 85 f4 45 00 00 00              mov     [rbp+4760h+var_16C], 0
+000000014077df00  48 8b 05 89 bb 45 00              mov     rax, cs:_refptr_is_campaign__modelZmodel95types_u726
+000000014077df07  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077df0a  0f b6 c0                          movzx   eax, al
+000000014077df0d  85 c0                             test    eax, eax
+000000014077df0f  0f 95 c0                          setnz   al
+000000014077df12  83 f0 01                          xor     eax, 1
+000000014077df15  0f b6 c0                          movzx   eax, al
+000000014077df18  88 85 f4 45 00 00                 mov     [rbp+4760h+var_16C], al
+000000014077df1e  80 a5 f4 45 00 00 01              and     [rbp+4760h+var_16C], 1
+000000014077df25  80 bd f4 45 00 00 00              cmp     [rbp+4760h+var_16C], 0
+000000014077df2c  75 3f                             jnz     short loc_14077DF6D
+000000014077df2e  48 8b 05 0b 48 43 00              mov     rax, cs:TM__k3RXUR56r9bIQKD2e3VIalQ_436
+000000014077df35  48 8b 15 0c 48 43 00              mov     rdx, cs:off_140BB2748
+000000014077df3c  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077df40  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077df44  48 8d 45 50                       lea     rax, [rbp+4760h+var_4710]
+000000014077df48  48 89 c1                          mov     rcx, rax
+000000014077df4b  e8 f7 4a bb ff                    call    is_prerequisites_met__modelZcampaigns_u16556
+000000014077df50  88 85 f4 45 00 00                 mov     [rbp+4760h+var_16C], al
+000000014077df56  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077df5d  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077df60  0f b6 c0                          movzx   eax, al
+000000014077df63  85 c0                             test    eax, eax
+000000014077df65  0f 85 fa 25 00 00                 jnz     loc_140780565
+000000014077df6b  eb 01                             jmp     short loc_14077DF6E
+000000014077df6d  90                                nop
+000000014077df6e  0f b6 85 f4 45 00 00              movzx   eax, [rbp+4760h+var_16C]
+000000014077df75  88 85 f5 45 00 00                 mov     [rbp+4760h+var_16B], al
+000000014077df7b  eb 01                             jmp     short loc_14077DF7E
+000000014077df7d  90                                nop
+000000014077df7e  0f b6 85 f5 45 00 00              movzx   eax, [rbp+4760h+var_16B]
+000000014077df85  83 f0 01                          xor     eax, 1
+000000014077df88  84 c0                             test    al, al
+000000014077df8a  0f 85 d3 0b 00 00                 jnz     loc_14077EB63
+000000014077df90  48 c7 85 50 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B10], 0
+000000014077df9b  48 c7 85 58 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B08], 0
+000000014077dfa6  48 c7 85 40 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B20], 0
+000000014077dfb1  48 c7 85 48 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B18], 0
+000000014077dfbc  48 c7 85 e0 32 00 00 f6 04 00 00  mov     [rbp+4760h+var_1480], 4F6h
+000000014077dfc7  48 8d 85 00 39 00 00              lea     rax, [rbp+4760h+var_E60]
+000000014077dfce  48 89 c2                          mov     rdx, rax
+000000014077dfd1  b9 00 00 00 00                    mov     ecx, 0
+000000014077dfd6  e8 9a dd e5 ff                    call    get_setting__presenterZutilitiesZhelper95functions_u2758
+000000014077dfdb  48 89 85 b8 3b 00 00              mov     [rbp+4760h+var_BA8], rax
+000000014077dfe2  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077dfe9  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077dfec  0f b6 c0                          movzx   eax, al
+000000014077dfef  85 c0                             test    eax, eax
+000000014077dff1  0f 85 c5 0a 00 00                 jnz     loc_14077EABC
+000000014077dff7  48 c7 85 20 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B40], 0
+000000014077e002  48 c7 85 28 0c 00 00 00 00 00 00  mov     [rbp+4760h+var_3B38], 0
+000000014077e00d  48 8d 85 c0 01 00 00              lea     rax, [rbp+4760h+var_45A0]
+000000014077e014  ba 30 00 00 00                    mov     edx, 30h ; '0'
+000000014077e019  48 89 c1                          mov     rcx, rax
+000000014077e01c  e8 af 10 fd ff                    call    nimZeroMem_161
+000000014077e021  48 c7 85 b0 3b 00 00 00 00 00 00  mov     [rbp+4760h+var_BB0], 0
+000000014077e02c  48 c7 85 e0 32 00 00 28 00 00 00  mov     [rbp+4760h+var_1480], 28h ; '('
+000000014077e037  48 8d 05 fa 50 43 00              lea     rax, aCUsersAdminCho_945; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e03e  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e045  48 c7 85 e0 32 00 00 f8 04 00 00  mov     [rbp+4760h+var_1480], 4F8h
+000000014077e050  48 8d 05 91 50 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077e057  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e05e  48 8d 85 c0 01 00 00              lea     rax, [rbp+4760h+var_45A0]
+000000014077e065  41 b8 30 00 00 00                 mov     r8d, 30h ; '0'
+000000014077e06b  48 8d 15 2e 4e 43 00              lea     rdx, TM__k3RXUR56r9bIQKD2e3VIalQ_437
+000000014077e072  48 89 c1                          mov     rcx, rax
+000000014077e075  e8 9a 12 fd ff                    call    nimCopyMem_101
+000000014077e07a  48 c7 85 e0 32 00 00 2b 00 00 00  mov     [rbp+4760h+var_1480], 2Bh ; '+'
+000000014077e085  48 8d 05 ac 50 43 00              lea     rax, aCUsersAdminCho_945; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e08c  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e093  48 c7 85 e8 45 00 00 00 00 00 00  mov     [rbp+4760h+var_178], 0
+000000014077e09e  48 c7 85 e0 32 00 00 2c 00 00 00  mov     [rbp+4760h+var_1480], 2Ch ; ','
+000000014077e0a9  48 8d 85 00 0c 00 00              lea     rax, [rbp+4760h+var_3B60]
+000000014077e0b0  ba 18 00 00 00                    mov     edx, 18h
+000000014077e0b5  48 89 c1                          mov     rcx, rax
+000000014077e0b8  e8 13 10 fd ff                    call    nimZeroMem_161
+000000014077e0bd  48 8d 85 e0 0b 00 00              lea     rax, [rbp+4760h+var_3B80]
+000000014077e0c4  ba 18 00 00 00                    mov     edx, 18h
+000000014077e0c9  48 89 c1                          mov     rcx, rax
+000000014077e0cc  e8 ff 0f fd ff                    call    nimZeroMem_161
+000000014077e0d1  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014077e0d8  ba 30 02 00 00                    mov     edx, 230h
+000000014077e0dd  48 89 c1                          mov     rcx, rax
+000000014077e0e0  e8 eb 0f fd ff                    call    nimZeroMem_161
+000000014077e0e5  48 c7 85 d0 0b 00 00 00 00 00 00  mov     [rbp+4760h+var_3B90], 0
+000000014077e0f0  48 c7 85 d8 0b 00 00 00 00 00 00  mov     [rbp+4760h+var_3B88], 0
+000000014077e0fb  48 c7 85 e0 32 00 00 2d 00 00 00  mov     [rbp+4760h+var_1480], 2Dh ; '-'
+000000014077e106  48 8d 85 00 0c 00 00              lea     rax, [rbp+4760h+var_3B60]
+000000014077e10d  ba 18 00 00 00                    mov     edx, 18h
+000000014077e112  48 89 c1                          mov     rcx, rax
+000000014077e115  e8 b6 0f fd ff                    call    nimZeroMem_161
+000000014077e11a  4c 8d 45 60                       lea     r8, [rbp+4760h+var_4700]
+000000014077e11e  48 8b 95 e8 45 00 00              mov     rdx, [rbp+4760h+var_178]
+000000014077e125  48 89 d0                          mov     rax, rdx
+000000014077e128  48 01 c0                          add     rax, rax
+000000014077e12b  48 01 d0                          add     rax, rdx
+000000014077e12e  48 c1 e0 03                       shl     rax, 3
+000000014077e132  48 8d 80 50 47 00 00              lea     rax, [rax+4750h]
+000000014077e139  48 01 e8                          add     rax, rbp
+000000014077e13c  48 8d 88 70 ba ff ff              lea     rcx, [rax-4590h]
+000000014077e143  48 8b 01                          mov     rax, [rcx]
+000000014077e146  48 8b 51 08                       mov     rdx, [rcx+8]
+000000014077e14a  48 89 85 80 00 00 00              mov     [rbp+4760h+var_46E0], rax
+000000014077e151  48 89 95 88 00 00 00              mov     [rbp+4760h+var_46D8], rdx
+000000014077e158  48 8b 41 10                       mov     rax, [rcx+10h]
+000000014077e15c  48 89 85 90 00 00 00              mov     [rbp+4760h+var_46D0], rax
+000000014077e163  48 8d 85 80 00 00 00              lea     rax, [rbp+4760h+var_46E0]
+000000014077e16a  48 89 c2                          mov     rdx, rax
+000000014077e16d  4c 89 c1                          mov     rcx, r8
+000000014077e170  e8 25 9f fd ff                    call    eqdup___presenterZboard95uiZbottom95panelZcomponent95description_u9155
+000000014077e175  48 8b 45 60                       mov     rax, [rbp+4760h+var_4700]
+000000014077e179  48 8b 55 68                       mov     rdx, [rbp+4760h+var_46F8]
+000000014077e17d  48 89 85 e0 0b 00 00              mov     [rbp+4760h+var_3B80], rax
+000000014077e184  48 89 95 e8 0b 00 00              mov     [rbp+4760h+var_3B78], rdx
+000000014077e18b  48 8b 45 70                       mov     rax, [rbp+4760h+var_46F0]
+000000014077e18f  48 89 85 f0 0b 00 00              mov     [rbp+4760h+var_3B70], rax
+000000014077e196  48 8b 85 e0 0b 00 00              mov     rax, [rbp+4760h+var_3B80]
+000000014077e19d  48 8b 95 e8 0b 00 00              mov     rdx, [rbp+4760h+var_3B78]
+000000014077e1a4  48 89 85 00 0c 00 00              mov     [rbp+4760h+var_3B60], rax
+000000014077e1ab  48 89 95 08 0c 00 00              mov     [rbp+4760h+var_3B58], rdx
+000000014077e1b2  48 8b 85 f0 0b 00 00              mov     rax, [rbp+4760h+var_3B70]
+000000014077e1b9  48 89 85 10 0c 00 00              mov     [rbp+4760h+var_3B50], rax
+000000014077e1c0  48 c7 85 e0 32 00 00 f8 04 00 00  mov     [rbp+4760h+var_1480], 4F8h
+000000014077e1cb  48 8d 05 16 4f 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077e1d2  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e1d9  48 8b 85 00 0c 00 00              mov     rax, [rbp+4760h+var_3B60]
+000000014077e1e0  48 89 85 b0 3b 00 00              mov     [rbp+4760h+var_BB0], rax
+000000014077e1e7  48 c7 85 e0 32 00 00 a3 06 00 00  mov     [rbp+4760h+var_1480], 6A3h
+000000014077e1f2  48 8d 05 87 4d 43 00              lea     rax, aCUsersAdminCho_941; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e1f9  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e200  48 8b 85 08 0c 00 00              mov     rax, [rbp+4760h+var_3B58]
+000000014077e207  48 8b 95 10 0c 00 00              mov     rdx, [rbp+4760h+var_3B50]
+000000014077e20e  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e212  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e216  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e21a  48 8d 85 20 0c 00 00              lea     rax, [rbp+4760h+var_3B40]
+000000014077e221  48 89 c1                          mov     rcx, rax
+000000014077e224  e8 fc a2 8a ff                    call    eqsink___system_u2667
+000000014077e229  48 c7 85 e0 32 00 00 22 00 00 00  mov     [rbp+4760h+var_1480], 22h ; '"'
+000000014077e234  48 8d 05 75 50 43 00              lea     rax, aDTuringcomplet_471; "D:\\TuringComplete_Phu\\model\\save_mon"...
+000000014077e23b  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e242  48 8d 95 00 39 00 00              lea     rdx, [rbp+4760h+var_E60]
+000000014077e249  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014077e250  48 89 c1                          mov     rcx, rax
+000000014077e253  e8 c5 2d a0 ff                    call    eqcopy___modelZsave95mongerZversionsZv0_u148
+000000014077e258  48 c7 85 e0 32 00 00 fa 04 00 00  mov     [rbp+4760h+var_1480], 4FAh
+000000014077e263  48 8d 05 7e 4e 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077e26a  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e271  48 8b 85 c8 02 00 00              mov     rax, [rbp+4760h+var_4498]
+000000014077e278  48 85 c0                          test    rax, rax
+000000014077e27b  7f 1d                             jg      short loc_14077E29A
+000000014077e27d  48 8b 85 c8 02 00 00              mov     rax, [rbp+4760h+var_4498]
+000000014077e284  48 83 e8 01                       sub     rax, 1
+000000014077e288  48 89 c2                          mov     rdx, rax
+000000014077e28b  b9 00 00 00 00                    mov     ecx, 0
+000000014077e290  e8 4a 70 8a ff                    call    raiseIndexError2
+000000014077e295  e9 67 02 00 00                    jmp     loc_14077E501
+000000014077e29a  48 8b 85 d0 02 00 00              mov     rax, [rbp+4760h+var_4490]
+000000014077e2a1  48 8b 95 b0 3b 00 00              mov     rdx, [rbp+4760h+var_BB0]
+000000014077e2a8  48 89 50 08                       mov     [rax+8], rdx
+000000014077e2ac  48 c7 85 e0 32 00 00 fb 04 00 00  mov     [rbp+4760h+var_1480], 4FBh
+000000014077e2b7  48 c7 85 e0 32 00 00 fc 04 00 00  mov     [rbp+4760h+var_1480], 4FCh
+000000014077e2c2  48 c7 85 c0 0b 00 00 00 00 00 00  mov     [rbp+4760h+var_3BA0], 0
+000000014077e2cd  48 c7 85 c8 0b 00 00 00 00 00 00  mov     [rbp+4760h+var_3B98], 0
+000000014077e2d8  48 8d 85 b0 0b 00 00              lea     rax, [rbp+4760h+var_3BB0]
+000000014077e2df  48 8d 95 20 02 00 00              lea     rdx, [rbp+4760h+var_4540]
+000000014077e2e6  48 89 c1                          mov     rcx, rax
+000000014077e2e9  e8 9a db e5 ff                    call    get_component_cost__presenterZutilitiesZhelper95functions_u5874
+000000014077e2ee  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e2f5  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e2f8  0f b6 c0                          movzx   eax, al
+000000014077e2fb  85 c0                             test    eax, eax
+000000014077e2fd  0f 85 fa 01 00 00                 jnz     loc_14077E4FD
+000000014077e303  48 8d 8d d0 0b 00 00              lea     rcx, [rbp+4760h+var_3B90]
+000000014077e30a  48 8b 85 b0 0b 00 00              mov     rax, [rbp+4760h+var_3BB0]
+000000014077e311  48 8b 95 b8 0b 00 00              mov     rdx, [rbp+4760h+var_3BA8]
+000000014077e318  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e31c  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e320  48 8d 45 50                       lea     rax, [rbp+4760h+var_4710]
+000000014077e324  48 89 c2                          mov     rdx, rax
+000000014077e327  e8 57 48 ef ff                    call    get_gate_delay_string__presenterZutilities_u28441
+000000014077e32c  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e333  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e336  0f b6 c0                          movzx   eax, al
+000000014077e339  85 c0                             test    eax, eax
+000000014077e33b  0f 85 bf 01 00 00                 jnz     loc_14077E500
+000000014077e341  48 8b 95 d0 0b 00 00              mov     rdx, [rbp+4760h+var_3B90]
+000000014077e348  48 8b 85 20 0c 00 00              mov     rax, [rbp+4760h+var_3B40]
+000000014077e34f  48 01 d0                          add     rax, rdx
+000000014077e352  48 8d 50 01                       lea     rdx, [rax+1]
+000000014077e356  48 8d 45 50                       lea     rax, [rbp+4760h+var_4710]
+000000014077e35a  48 89 c1                          mov     rcx, rax
+000000014077e35d  e8 58 6e 8a ff                    call    rawNewString
+000000014077e362  48 8b 45 50                       mov     rax, [rbp+4760h+var_4710]
+000000014077e366  48 8b 55 58                       mov     rdx, [rbp+4760h+var_4708]
+000000014077e36a  48 89 85 c0 0b 00 00              mov     [rbp+4760h+var_3BA0], rax
+000000014077e371  48 89 95 c8 0b 00 00              mov     [rbp+4760h+var_3B98], rdx
+000000014077e378  48 8b 85 d0 0b 00 00              mov     rax, [rbp+4760h+var_3B90]
+000000014077e37f  48 8b 95 d8 0b 00 00              mov     rdx, [rbp+4760h+var_3B88]
+000000014077e386  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e38a  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e38e  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e392  48 8d 85 c0 0b 00 00              lea     rax, [rbp+4760h+var_3BA0]
+000000014077e399  48 89 c1                          mov     rcx, rax
+000000014077e39c  e8 e3 0f fd ff                    call    appendString_86
+000000014077e3a1  48 8b 05 d8 43 43 00              mov     rax, cs:TM__k3RXUR56r9bIQKD2e3VIalQ_441
+000000014077e3a8  48 8b 15 d9 43 43 00              mov     rdx, cs:off_140BB2788
+000000014077e3af  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e3b3  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e3b7  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e3bb  48 8d 85 c0 0b 00 00              lea     rax, [rbp+4760h+var_3BA0]
+000000014077e3c2  48 89 c1                          mov     rcx, rax
+000000014077e3c5  e8 ba 0f fd ff                    call    appendString_86
+000000014077e3ca  48 8b 85 20 0c 00 00              mov     rax, [rbp+4760h+var_3B40]
+000000014077e3d1  48 8b 95 28 0c 00 00              mov     rdx, [rbp+4760h+var_3B38]
+000000014077e3d8  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e3dc  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e3e0  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e3e4  48 8d 85 c0 0b 00 00              lea     rax, [rbp+4760h+var_3BA0]
+000000014077e3eb  48 89 c1                          mov     rcx, rax
+000000014077e3ee  e8 91 0f fd ff                    call    appendString_86
+000000014077e3f3  48 c7 85 e0 32 00 00 fb 04 00 00  mov     [rbp+4760h+var_1480], 4FBh
+000000014077e3fe  48 8b 85 c0 0b 00 00              mov     rax, [rbp+4760h+var_3BA0]
+000000014077e405  48 8b 95 c8 0b 00 00              mov     rdx, [rbp+4760h+var_3B98]
+000000014077e40c  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e410  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e414  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e418  48 8d 85 50 0c 00 00              lea     rax, [rbp+4760h+var_3B10]
+000000014077e41f  48 89 c1                          mov     rcx, rax
+000000014077e422  e8 8c 09 8b ff                    call    add__stdZenumutils_u70
+000000014077e427  48 c7 85 e0 32 00 00 2e 00 00 00  mov     [rbp+4760h+var_1480], 2Eh ; '.'
+000000014077e432  48 8d 05 ff 4c 43 00              lea     rax, aCUsersAdminCho_945; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e439  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e440  48 83 bd e8 45 00 00 00           cmp     [rbp+4760h+var_178], 0
+000000014077e448  0f 8e 99 00 00 00                 jle     loc_14077E4E7
+000000014077e44e  48 c7 85 e0 32 00 00 8a 01 00 00  mov     [rbp+4760h+var_1480], 18Ah
+000000014077e459  48 8d 05 20 4b 43 00              lea     rax, aCUsersAdminCho_941; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e460  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e467  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e46e  48 85 c0                          test    rax, rax
+000000014077e471  74 2e                             jz      short loc_14077E4A1
+000000014077e473  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e47a  48 8b 00                          mov     rax, [rax]
+000000014077e47d  48 89 c2                          mov     rdx, rax
+000000014077e480  48 b8 00 00 00 00 00 00 00 40     mov     rax, 4000000000000000h
+000000014077e48a  48 21 d0                          and     rax, rdx
+000000014077e48d  48 85 c0                          test    rax, rax
+000000014077e490  75 0f                             jnz     short loc_14077E4A1
+000000014077e492  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e499  48 89 c1                          mov     rcx, rax
+000000014077e49c  e8 66 38 8a ff                    call    deallocShared
+000000014077e4a1  48 c7 85 e0 32 00 00 22 00 00 00  mov     [rbp+4760h+var_1480], 22h ; '"'
+000000014077e4ac  48 8d 05 fd 4d 43 00              lea     rax, aDTuringcomplet_471; "D:\\TuringComplete_Phu\\model\\save_mon"...
+000000014077e4b3  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e4ba  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014077e4c1  48 89 c1                          mov     rcx, rax
+000000014077e4c4  e8 e1 eb 9f ff                    call    eqdestroy___modelZsave95mongerZversionsZv0_u145
+000000014077e4c9  48 c7 85 e0 32 00 00 2e 00 00 00  mov     [rbp+4760h+var_1480], 2Eh ; '.'
+000000014077e4d4  48 8d 05 5d 4c 43 00              lea     rax, aCUsersAdminCho_945; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e4db  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e4e2  e9 ac 00 00 00                    jmp     loc_14077E593
+000000014077e4e7  90                                nop
+000000014077e4e8  48 c7 85 e0 32 00 00 0d 00 00 00  mov     [rbp+4760h+var_1480], 0Dh
+000000014077e4f3  48 83 85 e8 45 00 00 01           add     [rbp+4760h+var_178], 1
+000000014077e4fb  eb 04                             jmp     short loc_14077E501
+000000014077e4fd  90                                nop
+000000014077e4fe  eb 01                             jmp     short loc_14077E501
+000000014077e500  90                                nop
+000000014077e501  48 c7 85 e0 32 00 00 8a 01 00 00  mov     [rbp+4760h+var_1480], 18Ah
+000000014077e50c  48 8d 05 6d 4a 43 00              lea     rax, aCUsersAdminCho_941; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e513  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e51a  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e521  48 85 c0                          test    rax, rax
+000000014077e524  74 2e                             jz      short loc_14077E554
+000000014077e526  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e52d  48 8b 00                          mov     rax, [rax]
+000000014077e530  48 89 c2                          mov     rdx, rax
+000000014077e533  48 b8 00 00 00 00 00 00 00 40     mov     rax, 4000000000000000h
+000000014077e53d  48 21 d0                          and     rax, rdx
+000000014077e540  48 85 c0                          test    rax, rax
+000000014077e543  75 0f                             jnz     short loc_14077E554
+000000014077e545  48 8b 85 d8 0b 00 00              mov     rax, [rbp+4760h+var_3B88]
+000000014077e54c  48 89 c1                          mov     rcx, rax
+000000014077e54f  e8 b3 37 8a ff                    call    deallocShared
+000000014077e554  48 c7 85 e0 32 00 00 22 00 00 00  mov     [rbp+4760h+var_1480], 22h ; '"'
+000000014077e55f  48 8d 05 4a 4d 43 00              lea     rax, aDTuringcomplet_471; "D:\\TuringComplete_Phu\\model\\save_mon"...
+000000014077e566  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e56d  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014077e574  48 89 c1                          mov     rcx, rax
+000000014077e577  e8 2e eb 9f ff                    call    eqdestroy___modelZsave95mongerZversionsZv0_u145
+000000014077e57c  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e583  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e586  0f b6 c0                          movzx   eax, al
+000000014077e589  85 c0                             test    eax, eax
+000000014077e58b  75 05                             jnz     short loc_14077E592
+000000014077e58d  e9 17 fb ff ff                    jmp     loc_14077E0A9
+000000014077e592  90                                nop
+000000014077e593  48 c7 85 e0 32 00 00 f8 04 00 00  mov     [rbp+4760h+var_1480], 4F8h
+000000014077e59e  48 8d 05 43 4b 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077e5a5  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e5ac  48 8d 85 c0 01 00 00              lea     rax, [rbp+4760h+var_45A0]
+000000014077e5b3  48 89 c1                          mov     rcx, rax
+000000014077e5b6  e8 5f 9b fd ff                    call    eqdestroy___presenterZboard95uiZbottom95panelZcomponent95description_u9862
+000000014077e5bb  48 c7 85 e0 32 00 00 8a 01 00 00  mov     [rbp+4760h+var_1480], 18Ah
+000000014077e5c6  48 8d 05 b3 49 43 00              lea     rax, aCUsersAdminCho_941; "C:\\Users\\Admin\\.choosenim\\toolchain"...
+000000014077e5cd  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e5d4  48 8b 85 28 0c 00 00              mov     rax, [rbp+4760h+var_3B38]
+000000014077e5db  48 85 c0                          test    rax, rax
+000000014077e5de  74 2e                             jz      short loc_14077E60E
+000000014077e5e0  48 8b 85 28 0c 00 00              mov     rax, [rbp+4760h+var_3B38]
+000000014077e5e7  48 8b 00                          mov     rax, [rax]
+000000014077e5ea  48 89 c2                          mov     rdx, rax
+000000014077e5ed  48 b8 00 00 00 00 00 00 00 40     mov     rax, 4000000000000000h
+000000014077e5f7  48 21 d0                          and     rax, rdx
+000000014077e5fa  48 85 c0                          test    rax, rax
+000000014077e5fd  75 0f                             jnz     short loc_14077E60E
+000000014077e5ff  48 8b 85 28 0c 00 00              mov     rax, [rbp+4760h+var_3B38]
+000000014077e606  48 89 c1                          mov     rcx, rax
+000000014077e609  e8 f9 36 8a ff                    call    deallocShared
+000000014077e60e  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e615  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e618  0f b6 c0                          movzx   eax, al
+000000014077e61b  85 c0                             test    eax, eax
+000000014077e61d  0f 85 9c 04 00 00                 jnz     loc_14077EABF
+000000014077e623  48 c7 85 e0 32 00 00 fe 04 00 00  mov     [rbp+4760h+var_1480], 4FEh
+000000014077e62e  48 8d 05 b3 4a 43 00              lea     rax, aDTuringcomplet_468; "D:\\TuringComplete_Phu\\presenter\\boar"...
+000000014077e635  48 89 85 e8 32 00 00              mov     [rbp+4760h+var_1478], rax
+000000014077e63c  48 8b 85 b8 3b 00 00              mov     rax, [rbp+4760h+var_BA8]
+000000014077e643  48 89 85 a8 3b 00 00              mov     [rbp+4760h+var_BB8], rax
+000000014077e64a  48 c7 85 e0 32 00 00 02 05 00 00  mov     [rbp+4760h+var_1480], 502h
+000000014077e655  48 c7 85 e0 32 00 00 04 05 00 00  mov     [rbp+4760h+var_1480], 504h
+000000014077e660  48 8d 8d 40 0c 00 00              lea     rcx, [rbp+4760h+var_3B20]
+000000014077e667  48 8b 05 42 41 43 00              mov     rax, cs:TM__k3RXUR56r9bIQKD2e3VIalQ_444
+000000014077e66e  48 8b 15 43 41 43 00              mov     rdx, cs:off_140BB27B8
+000000014077e675  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e679  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e67d  48 8d 95 20 02 00 00              lea     rdx, [rbp+4760h+var_4540]
+000000014077e684  48 8d 45 50                       lea     rax, [rbp+4760h+var_4710]
+000000014077e688  48 c7 44 24 20 00 00 00 00        mov     [rsp+47E0h+var_47C0], 0
+000000014077e691  49 89 d1                          mov     r9, rdx
+000000014077e694  49 89 c0                          mov     r8, rax
+000000014077e697  48 b8 0a b0 f5 4d 1c 31 7d 2b     mov     rax, 2B7D311C4DF5B00Ah
+000000014077e6a1  48 89 c2                          mov     rdx, rax
+000000014077e6a4  e8 3e 49 9e ff                    call    translate__modelZisa95specZtranslations_u47
+000000014077e6a9  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e6b0  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e6b3  0f b6 c0                          movzx   eax, al
+000000014077e6b6  85 c0                             test    eax, eax
+000000014077e6b8  0f 85 04 04 00 00                 jnz     loc_14077EAC2
+000000014077e6be  48 c7 85 e0 32 00 00 77 00 00 00  mov     [rbp+4760h+var_1480], 77h ; 'w'
+000000014077e6c9  48 8b 85 50 0c 00 00              mov     rax, [rbp+4760h+var_3B10]
+000000014077e6d0  48 83 e8 01                       sub     rax, 1
+000000014077e6d4  48 89 85 a0 3b 00 00              mov     [rbp+4760h+var_BC0], rax
+000000014077e6db  48 8b 95 a0 3b 00 00              mov     rdx, [rbp+4760h+var_BC0]
+000000014077e6e2  48 8b 85 a8 3b 00 00              mov     rax, [rbp+4760h+var_BB8]
+000000014077e6e9  48 39 c2                          cmp     rdx, rax
+000000014077e6ec  48 0f 4e c2                       cmovle  rax, rdx
+000000014077e6f0  48 85 c0                          test    rax, rax
+000000014077e6f3  78 21                             js      short loc_14077E716
+000000014077e6f5  48 8b 95 a0 3b 00 00              mov     rdx, [rbp+4760h+var_BC0]
+000000014077e6fc  48 8b 85 a8 3b 00 00              mov     rax, [rbp+4760h+var_BB8]
+000000014077e703  48 39 c2                          cmp     rdx, rax
+000000014077e706  48 0f 4f d0                       cmovg   rdx, rax
+000000014077e70a  48 8b 85 50 0c 00 00              mov     rax, [rbp+4760h+var_3B10]
+000000014077e711  48 39 c2                          cmp     rdx, rax
+000000014077e714  7c 30                             jl      short loc_14077E746
+000000014077e716  48 8b 85 50 0c 00 00              mov     rax, [rbp+4760h+var_3B10]
+000000014077e71d  48 8d 48 ff                       lea     rcx, [rax-1]
+000000014077e721  48 8b 95 a0 3b 00 00              mov     rdx, [rbp+4760h+var_BC0]
+000000014077e728  48 8b 85 a8 3b 00 00              mov     rax, [rbp+4760h+var_BB8]
+000000014077e72f  48 39 c2                          cmp     rdx, rax
+000000014077e732  48 0f 4e c2                       cmovle  rax, rdx
+000000014077e736  48 89 ca                          mov     rdx, rcx
+000000014077e739  48 89 c1                          mov     rcx, rax
+000000014077e73c  e8 9e 6b 8a ff                    call    raiseIndexError2
+000000014077e741  e9 86 03 00 00                    jmp     loc_14077EACC
+000000014077e746  48 c7 85 e0 32 00 00 fe 04 00 00  mov     [rbp+4760h+var_1480], 4FEh
+000000014077e751  4c 8b 95 58 0c 00 00              mov     r10, [rbp+4760h+var_3B08]
+000000014077e758  48 8b 95 a0 3b 00 00              mov     rdx, [rbp+4760h+var_BC0]
+000000014077e75f  48 8b 85 a8 3b 00 00              mov     rax, [rbp+4760h+var_BB8]
+000000014077e766  48 39 c2                          cmp     rdx, rax
+000000014077e769  48 0f 4e c2                       cmovle  rax, rdx
+000000014077e76d  49 89 c1                          mov     r9, rax
+000000014077e770  f3 0f 10 85 cc 0c 00 00           movss   xmm0, dword ptr [rbp+4760h+var_3A98+4]
+000000014077e778  66 0f ef c9                       pxor    xmm1, xmm1
+000000014077e77c  f3 0f 5a c8                       cvtss2sd xmm1, xmm0
+000000014077e780  f3 0f 10 85 c8 0c 00 00           movss   xmm0, dword ptr [rbp+4760h+var_3A98]
+000000014077e788  f3 0f 5a c0                       cvtss2sd xmm0, xmm0
+000000014077e78c  4c 8b 85 50 0c 00 00              mov     r8, [rbp+4760h+var_3B10]
+000000014077e793  48 8b 85 58 0c 00 00              mov     rax, [rbp+4760h+var_3B08]
+000000014077e79a  48 85 c0                          test    rax, rax
+000000014077e79d  74 0d                             jz      short loc_14077E7AC
+000000014077e79f  48 8b 85 58 0c 00 00              mov     rax, [rbp+4760h+var_3B08]
+000000014077e7a6  48 8d 48 08                       lea     rcx, [rax+8]
+000000014077e7aa  eb 05                             jmp     short loc_14077E7B1
+000000014077e7ac  b9 00 00 00 00                    mov     ecx, 0
+000000014077e7b1  f2 0f 10 9d a8 47 00 00           movsd   xmm3, [rbp+4760h+arg_38]
+000000014077e7b9  f2 0f 10 15 d7 51 43 00           movsd   xmm2, cs:qword_140BB3998
+000000014077e7c1  f2 0f 59 d3                       mulsd   xmm2, xmm3
+000000014077e7c5  48 8b 85 40 0c 00 00              mov     rax, [rbp+4760h+var_3B20]
+000000014077e7cc  48 8b 95 48 0c 00 00              mov     rdx, [rbp+4760h+var_3B18]
+000000014077e7d3  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014077e7d7  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014077e7db  4c 89 c8                          mov     rax, r9
+000000014077e7de  48 c1 e0 04                       shl     rax, 4
+000000014077e7e2  4c 01 d0                          add     rax, r10
+000000014077e7e5  48 8b 50 10                       mov     rdx, [rax+10h]
+000000014077e7e9  48 8b 40 08                       mov     rax, [rax+8]
+000000014077e7ed  48 89 45 f0                       mov     [rbp+4760h+var_4770], rax
+000000014077e7f1  48 89 55 f8                       mov     [rbp+4760h+var_4768], rdx
+000000014077e7f5  4c 8b 8d c8 45 00 00              mov     r9, [rbp+4760h+var_198]
+000000014077e7fc  48 8b 85 78 47 00 00              mov     rax, [rbp+4760h+arg_8]
+000000014077e803  48 c7 44 24 60 00 00 00 00        mov     [rsp+47E0h+var_4780], 0
+000000014077e80c  48 8d 95 3f 0c 00 00              lea     rdx, [rbp+4760h+var_3B21]
+000000014077e813  48 89 54 24 58                    mov     [rsp+47E0h+var_4788], rdx
+000000014077e818  48 8d 55 f0                       lea     rdx, [rbp+4760h+var_4770]
+000000014077e81c  48 89 54 24 50                    mov     [rsp+47E0h+var_4790], rdx
+000000014077e821  f2 0f 11 4c 24 48                 movsd   [rsp+47E0h+var_4798], xmm1
+000000014077e827  f2 0f 11 44 24 40                 movsd   [rsp+47E0h+var_47A0], xmm0
+000000014077e82d  4c 89 44 24 38                    mov     [rsp+47E0h+var_47A8], r8
+000000014077e832  48 89 4c 24 30                    mov     [rsp+47E0h+var_47B0], rcx
+000000014077e837  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014077e83b  48 89 54 24 28                    mov     [rsp+47E0h+var_47B8], rdx
+000000014077e840  48 8b 95 a8 3b 00 00              mov     rdx, [rbp+4760h+var_BB8]
+000000014077e847  48 89 54 24 20                    mov     [rsp+47E0h+var_47C0], rdx
+000000014077e84c  66 0f 28 da                       movapd  xmm3, xmm2
+000000014077e850  4d 89 c8                          mov     r8, r9
+000000014077e853  48 89 c2                          mov     rdx, rax
+000000014077e856  48 8b 8d 70 47 00 00              mov     rcx, [rbp+4760h+arg_0]
+000000014077e85d  e8 6b 99 fd ff                    call    config_listbox__presenterZboard95uiZbottom95panelZcomponent95description_u9174
+000000014077e862  48 89 85 98 3b 00 00              mov     [rbp+4760h+var_BC8], rax
+000000014077e869  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e870  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e873  0f b6 c0                          movzx   eax, al
+000000014077e876  85 c0                             test    eax, eax
+000000014077e878  0f 85 47 02 00 00                 jnz     loc_14077EAC5
+000000014077e87e  48 c7 85 e0 32 00 00 0a 05 00 00  mov     [rbp+4760h+var_1480], 50Ah
+000000014077e889  48 83 bd 98 3b 00 00 00           cmp     [rbp+4760h+var_BC8], 0
+000000014077e891  0f 88 81 00 00 00                 js      loc_14077E918
+000000014077e897  48 c7 85 e0 32 00 00 0b 05 00 00  mov     [rbp+4760h+var_1480], 50Bh
+000000014077e8a2  48 8b 95 98 3b 00 00              mov     rdx, [rbp+4760h+var_BC8]
+000000014077e8a9  48 8b 85 c8 45 00 00              mov     rax, [rbp+4760h+var_198]
+000000014077e8b0  49 89 d1                          mov     r9, rdx
+000000014077e8b3  49 89 c0                          mov     r8, rax
+000000014077e8b6  ba 00 00 00 00                    mov     edx, 0
+000000014077e8bb  48 8b 8d 70 47 00 00              mov     rcx, [rbp+4760h+arg_0]
+000000014077e8c2  e8 18 cb e5 ff                    call    set_setting__presenterZutilitiesZhelper95functions_u2766
+000000014077e8c7  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e8ce  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e8d1  0f b6 c0                          movzx   eax, al
+000000014077e8d4  85 c0                             test    eax, eax
+000000014077e8d6  0f 85 ec 01 00 00                 jnz     loc_14077EAC8
+000000014077e8dc  48 c7 85 e0 32 00 00 0c 05 00 00  mov     [rbp+4760h+var_1480], 50Ch
+000000014077e8e7  48 8b 85 78 47 00 00              mov     rax, [rbp+4760h+arg_8]
+000000014077e8ee  48 05 50 12 00 00                 add     rax, 1250h
+000000014077e8f4  ba 30 00 00 00                    mov     edx, 30h ; '0'
+000000014077e8f9  48 89 c1                          mov     rcx, rax
+000000014077e8fc  e8 ec 86 e3 ff                    call    upgrade__presenterZcontext_u2701
+000000014077e901  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014077e908  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014077e90b  0f b6 c0                          movzx   eax, al
+000000014077e90e  85 c0                             test    eax, eax

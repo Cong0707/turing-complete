@@ -1,0 +1,193 @@
+{
+  "bad_feedback_rows": [
+    {
+      "index": 3,
+      "minimum_steady_coset_hex": "10400300100",
+      "minimum_steady_coset_weight": 5,
+      "parity4_options": [
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "10400300000",
+          "selector": 8
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "10400200100",
+          "selector": 20
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "10400100100",
+          "selector": 21
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "10000300100",
+          "selector": 34
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "00400300100",
+          "selector": 40
+        }
+      ],
+      "row_hex": "10400300100",
+      "support": [
+        8,
+        20,
+        21,
+        34,
+        40
+      ]
+    },
+    {
+      "index": 7,
+      "minimum_steady_coset_hex": "04103001000",
+      "minimum_steady_coset_weight": 5,
+      "parity4_options": [
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "04103000000",
+          "selector": 12
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "04102001000",
+          "selector": 24
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "04101001000",
+          "selector": 25
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "04003001000",
+          "selector": 32
+        },
+        {
+          "existing_target_matches": [
+            {
+              "branch": "H",
+              "index": 24
+            },
+            {
+              "branch": "H",
+              "index": 29
+            }
+          ],
+          "parity4_hex": "00103001000",
+          "selector": 38
+        }
+      ],
+      "row_hex": "04103001000",
+      "support": [
+        12,
+        24,
+        25,
+        32,
+        38
+      ]
+    },
+    {
+      "index": 14,
+      "minimum_steady_coset_hex": "00400488004",
+      "minimum_steady_coset_weight": 5,
+      "parity4_options": [
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "00400488000",
+          "selector": 2
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "00400480004",
+          "selector": 15
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "00400408004",
+          "selector": 19
+        },
+        {
+          "existing_target_matches": [
+            {
+              "branch": "H",
+              "index": 19
+            }
+          ],
+          "parity4_hex": "00400088004",
+          "selector": 22
+        },
+        {
+          "existing_target_matches": [],
+          "parity4_hex": "00000488004",
+          "selector": 34
+        }
+      ],
+      "row_hex": "00400488004",
+      "support": [
+        2,
+        15,
+        19,
+        22,
+        34
+      ]
+    }
+  ],
+  "conclusion": "Switch+XNOR can realize each weight-five parity at leaf delay five, but the recorded matrix is already above gate 430 before pair intermediates and the Switch repairs are counted; a different state/output encoding is required.",
+  "reachable_subspace": {
+    "annihilator_basis_hex": [
+      "00000008400",
+      "00042100000",
+      "00021000000"
+    ],
+    "annihilator_dimension": 3,
+    "load_plus_steady_rank": 42,
+    "steady_rank": 39
+  },
+  "schema": 1,
+  "scope": "recorded 42-state frontier with exact steady reachable-space equivalence",
+  "scoped_cost_exclusion": {
+    "assumption": "all steady target functions remain linear XOR/XNOR nodes; no sample-only nonlinear resynthesis",
+    "delay_bits": 210,
+    "distinct_nontrivial_final_nodes": 69,
+    "excluded": true,
+    "fixed_gate_cost": 248,
+    "linear_final_gate_lower_bound": 207,
+    "load_or": 32,
+    "pair_intermediates_and_switch_overhead_counted": 0,
+    "ready_control": 6,
+    "target_gate_max": 430,
+    "total_gate_lower_bound": 455
+  },
+  "target_equivalence_classes": {
+    "minimum_weight_distribution": {
+      "1": 3,
+      "2": 23,
+      "3": 18,
+      "4": 25,
+      "5": 3
+    },
+    "nontrivial_linear": 69,
+    "total": 72
+  },
+  "verified_sequences": {
+    "outputs_per_seed": 65,
+    "seeds": 256
+  },
+  "xor5_switch_template": {
+    "all_z_possible": false,
+    "components": {
+      "bit_switch": 2,
+      "parity4_final_xnor": 1,
+      "parity4_final_xor": 1,
+      "parity4_pair_xor": 2,
+      "selector_not": 1
+    },
+    "function": "xor5 = mux(selector, not(parity4), parity4)",
+    "gate_cost_without_sharing": 17,
+    "maximum_delay_from_raw_leaf": 5,
+    "mutual_exclusion": "selector and NOT(selector)"
+  }
+}

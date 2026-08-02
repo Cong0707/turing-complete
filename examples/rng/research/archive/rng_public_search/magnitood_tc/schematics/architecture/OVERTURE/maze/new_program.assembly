@@ -1,0 +1,64 @@
+# solving the maze using 
+# hugging the wall approach
+const DOOR 3
+const WALL 1
+const LEFT 0
+const FORWARD 1
+const RIGHT 2
+const ENJOY 3
+const ACTION 4
+const SHOOT 5
+const NOTHING 0
+
+# if it hits wall, turn right
+# if left is empty, move left
+label loop
+
+# check left
+LEFT
+reg0_to_out
+in_to_reg3
+turn_left
+jz
+# if left is blocked, turn back right
+RIGHT
+reg0_to_out
+
+# check for wall
+in_to_reg1
+WALL
+reg0_to_reg2
+sub
+turn_right
+jz
+# check for door
+in_to_reg1
+DOOR
+reg0_to_reg2
+sub
+unlock_door
+jz
+
+
+label forward
+# move forward
+FORWARD
+reg0_to_out
+loop
+jmp
+
+label turn_right
+RIGHT
+reg0_to_out
+loop
+jmp
+
+label unlock_door
+ACTION
+reg0_to_out
+loop
+jmp
+
+label turn_left
+forward
+jmp

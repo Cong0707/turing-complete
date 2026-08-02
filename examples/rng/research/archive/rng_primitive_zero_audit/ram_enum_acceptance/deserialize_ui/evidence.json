@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-02T05:18:34+08:00",
+  "binary": {
+    "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+    "sha256": "C93F5E8E826050C3F92E2B3891D26FCDFC933658614185CB9B2EB6A34C5B8D1C"
+  },
+  "candidate": {
+    "component_kind": 118,
+    "settings_index": 0,
+    "settings_value": 2
+  },
+  "verdict": {
+    "v15_deserialize_accepts": true,
+    "board_load_preserves": true,
+    "panel_open_without_click_preserves": true,
+    "subsequent_save_preserves": true,
+    "runtime_tick_semantics_proven_here": false,
+    "score_effect_proven_here": false,
+    "deployment_recommendation": "Deploy for immediate in-game validation. Do not click a RAM mode option after loading."
+  },
+  "load_chain": [
+    {
+      "function": "load_schematic__modelZboardZschematics_u1650",
+      "address": "0x14027e073",
+      "evidence": "load_schematic.c:49 calls parse_state; load_schematic.c:55 calls load_schematic_raw"
+    },
+    {
+      "function": "parse_state__modelZsave95mongerZsave95monger_u73",
+      "address": "0x1401c05e5",
+      "evidence": "parse_state.c case 0xF calls parse_v15"
+    },
+    {
+      "function": "parse__modelZsave95mongerZversionsZv15_u321",
+      "address": "0x1401beb42",
+      "evidence": "parse_v15.c:344 calls get_components_v15"
+    },
+    {
+      "function": "get_components__modelZsave95mongerZversionsZv15_u282",
+      "address": "0x1401be0a7",
+      "evidence": "get_components_v15.c:79 calls get_component_v15 for every serialized component"
+    },
+    {
+      "function": "get_component__modelZsave95mongerZversionsZv15_u3",
+      "address": "0x1401bc87f",
+      "evidence": "get_component_v15.c:131-151 accepts component kinds through 124; lines 241-267 read the serialized setting count and append each raw u64; lines 519-560 append defaults only while the setting sequence is too short"
+    },
+    {
+      "function": "load_schematic_raw__modelZboardZschematics_u34",
+      "address": "0x14027c2c6",
+      "evidence": "load_schematic_raw.c:633-680 clamps word_size only and passes component settings v30[21:22] as board_add_component argument a16"
+    },
+    {
+      "function": "board_add_component__modelZboardZboard_u21118",
+      "address": "0x140243dca",
+      "evidence": "board_add_component.c:294-360 copies the settings sequence, appends missing defaults, and truncates to the default length without checking existing values; lines 564-570 stores the resulting sequence in component fields [21:22]"
+    }
+  ],
+  "save_chain": [
+    {
+      "function": "add_component__modelZsave95mongerZsave95monger_u85",
+      "address": "0x1401c0ff3",
+      "evidence": "add_component_save_monger.c:114-136 writes the sequence length and every setting as a raw u64"
+    }
+  ],
+  "ui_chain": {
+    "panel_function": {
+      "function": "build_component_description_panel__presenterZboard95uiZbottom95panelZcomponent95description_u231",
+      "address_range": "0x140759b39-0x140780802"
+    },
+    "ram_mode": [
+      {
+        "address": "0x14077ded1",
+        "fact": "The branch compares component kind with 0x76 (118)."
+      },
+      {
+        "address": "0x14077dfd6",
+        "fact": "The branch reads settings[0]."
+      },
+      {
+        "address_range": "0x14077e093-0x14077e58d",
+        "fact": "The option-building loop starts at 0, continues while index <= 0, increments once, and therefore builds only indices 0 and 1."
+      },
+      {
+        "address_range": "0x14077e6c9-0x14077e76d",
+        "fact": "The preview index is min(option_count - 1, settings[0]); an unknown value 2 is display-clamped to the final legal entry only."
+      },
+      {
+        "function": "config_listbox__presenterZboard95uiZbottom95panelZcomponent95description_u9174",
+        "address": "0x1407581cd",
+        "fact": "config_listbox_ram_mode.c:134 initializes the return value to -1; lines 462-467 replace it only when igSelectable_Bool reports a click."
+      },
+      {
+        "address_range": "0x14077e889-0x14077e8c2",
+        "fact": "The panel skips set_setting when the listbox result is negative; only a real selection writes settings[0]."
+      }
+    ],
+    "ram_depth": [
+      {
+        "address_range": "0x14076c396-0x14076c3df",
+        "fact": "The depth UI is entered only when settings[0] is exactly 1; value 2 skips the control."
+      },
+      {
+        "address_range": "0x14076c694-0x14076c6f9",
+        "fact": "The depth listbox writes settings[1] only when its return value is nonnegative."
+      }
+    ]
+  },
+  "special_case_audit": {
+    "get_component_v15": "Special handling found for kinds 82, 83, and 91, not 118.",
+    "board_add_component": "Special handling found for prototype/custom-related kinds including 78, 82, 83, 91, and 101, not 118."
+  },
+  "operational_risk": [
+    "Opening or drawing the ordinary RAM property panel does not mutate settings[0]=2.",
+    "Clicking either visible RAM mode option returns 0 or 1 and overwrites the out-of-range value.",
+    "This certificate is static analysis of acceptance and persistence only; actual tick behavior and leaderboard score require in-game validation by the owning task."
+  ],
+  "scope": {
+    "game_started": false,
+    "formal_save_read_or_written": false,
+    "shared_src_modified": false,
+    "outputs_limited_to_research_directory": true
+  }
+}

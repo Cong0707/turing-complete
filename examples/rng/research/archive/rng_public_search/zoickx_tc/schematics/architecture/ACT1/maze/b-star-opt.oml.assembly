@@ -1,0 +1,38 @@
+# import robot.oml
+const left  0
+const step  1
+const right 2
+const chill 3
+const actn  4
+const pew   5
+#########################
+
+# quick actions
+const now     mov | fa | out
+const observe mov | in | td
+
+step # cache ->c
+mov | fa | tc
+const step_now  mov | fc | out
+
+right # cache ->e
+mov | fa | te
+const right_now mov | fe | out
+
+actn # cache ->f
+mov | fa | tf
+const actn_now  mov | ff | out
+
+label go
+
+  step_now
+
+  left now
+  left now
+
+  label search
+  right_now
+  observe
+  go j_z
+  actn_now
+  search j

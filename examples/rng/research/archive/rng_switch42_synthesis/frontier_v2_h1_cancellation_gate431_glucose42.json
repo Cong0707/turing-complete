@@ -1,0 +1,56 @@
+{
+  "active_original_hidden_rows": [
+    0
+  ],
+  "backend": "D:\\Develop\\Other\\turing-complete\\.research\\rng_depth2_pysat\\search.py",
+  "effective_logic_budget": 228,
+  "encoding": {
+    "clauses": 1151010,
+    "cost_scale": 3,
+    "dnf_terms": 82220,
+    "fixed_cost_units": 25,
+    "primary_forms": 5805,
+    "variable_bound_units": 51,
+    "variables": 385595
+  },
+  "fixed_gate": 203,
+  "limit": 228,
+  "matrix_fingerprint_sha256": "ccd655b03479439acb1478bc8972ca3b17616f477b133d8ef29c84991804eaec",
+  "model": "natural-state xorshift32 exact depth<=2 XOR2/XOR3",
+  "proved_cost_lower_bound": 231,
+  "raw_logic_budget": 228,
+  "schema": 1,
+  "scope": "lifted-state cancellation-aware depth-two XOR2/Switch-XOR3 cover",
+  "solver": {
+    "name": "glucose42",
+    "peak_working_set_mb": 263.109375,
+    "solve_seconds": 33.36580980000144,
+    "stats": {
+      "conflicts": 7701,
+      "decisions": 30889,
+      "propagations": 177881618,
+      "restarts": 10
+    },
+    "total_seconds": 69.11055270000361
+  },
+  "source_lines": [
+    6
+  ],
+  "source_log": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_pareto.log",
+  "state_bits": 33,
+  "status": "UNSAT",
+  "target_count": 34,
+  "target_gate_max": 431,
+  "target_weight_distribution": {
+    "2": 2,
+    "3": 5,
+    "4": 13,
+    "5": 4,
+    "6": 7,
+    "7": 3
+  },
+  "verified_sequences": {
+    "outputs_per_seed": 65,
+    "seeds": 256
+  }
+}

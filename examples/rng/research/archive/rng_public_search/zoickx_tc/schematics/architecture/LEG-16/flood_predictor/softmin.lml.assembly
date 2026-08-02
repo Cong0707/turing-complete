@@ -1,0 +1,49 @@
+#include "leg.lml"
+const mov i1|add
+const li i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const ucall i1|i2|call
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+
+const lhi a
+const rhi b
+const res c
+
+label lpass
+	mov _ io ram
+	
+	j|ule ram lhi no_lhi
+		mov _ ram lhi
+	label no_lhi
+	mov _ lhi stack
+	
+	i2|add ptr 1 ptr
+i2|j|ult ptr 16 lpass
+
+label rpass
+	i2|sub ptr 1 ptr
+	
+	j|ule ram rhi no_rhi
+		mov _ ram rhi
+	label no_rhi
+	
+	mov _ stack lhi
+	j|ule lhi rhi wl
+		mov _ rhi stack
+		uj _ _ fi
+	label wl
+		mov _ lhi stack
+	label fi
+	
+	sub stack ram stack
+	add stack res res
+	
+i1|j|ult 0 ptr rpass
+
+mov _ res io

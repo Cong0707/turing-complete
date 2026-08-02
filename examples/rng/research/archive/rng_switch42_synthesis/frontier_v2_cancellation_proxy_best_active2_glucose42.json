@@ -1,0 +1,57 @@
+{
+  "active_original_hidden_rows": [
+    0,
+    1
+  ],
+  "backend": "D:\\Develop\\Other\\turing-complete\\.research\\rng_depth2_pysat\\search.py",
+  "effective_logic_budget": 222,
+  "encoding": {
+    "clauses": 1343558,
+    "cost_scale": 3,
+    "dnf_terms": 94240,
+    "fixed_cost_units": 20,
+    "primary_forms": 6432,
+    "variable_bound_units": 54,
+    "variables": 449992
+  },
+  "fixed_gate": 208,
+  "limit": 222,
+  "matrix_fingerprint_sha256": "8b1f7fc0f84f6ad21d1d658d9e9cfc3c146d9a47c2deb9a399d847d0c2de7cae",
+  "model": "natural-state xorshift32 exact depth<=2 XOR2/XOR3",
+  "proved_cost_lower_bound": 225,
+  "raw_logic_budget": 222,
+  "schema": 1,
+  "scope": "lifted-state cancellation-aware depth-two XOR2/Switch-XOR3 cover",
+  "solver": {
+    "name": "glucose42",
+    "peak_working_set_mb": 291.1171875,
+    "solve_seconds": 59.1037304999918,
+    "stats": {
+      "conflicts": 13571,
+      "decisions": 42086,
+      "propagations": 321312894,
+      "restarts": 29
+    },
+    "total_seconds": 111.51769110000168
+  },
+  "source_lines": [
+    1
+  ],
+  "source_log": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_cancellation_proxy_best_active2.log",
+  "state_bits": 34,
+  "status": "UNSAT",
+  "target_count": 41,
+  "target_gate_max": 430,
+  "target_weight_distribution": {
+    "2": 8,
+    "3": 4,
+    "4": 16,
+    "5": 5,
+    "6": 7,
+    "7": 1
+  },
+  "verified_sequences": {
+    "outputs_per_seed": 65,
+    "seeds": 256
+  }
+}

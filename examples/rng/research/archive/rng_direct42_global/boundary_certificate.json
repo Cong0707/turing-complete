@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "status": "verified-no-candidate",
+  "center": {
+    "verified_sequences": {
+      "seeds": 256,
+      "outputs_per_seed": 65
+    },
+    "support": {
+      "excess_over_4": 3,
+      "maximum": 5,
+      "total_weight": 226,
+      "distinct_nontrivial_target_lower_bound": 69
+    },
+    "bad_H_rows": [
+      {
+        "index": 3,
+        "weight": 5,
+        "row_hex": "10400300100"
+      },
+      {
+        "index": 7,
+        "weight": 5,
+        "row_hex": "04103001000"
+      },
+      {
+        "index": 14,
+        "weight": 5,
+        "row_hex": "00400488004"
+      }
+    ]
+  },
+  "exact_boundary": {
+    "bitwise_hamming_distance_at_most": 9,
+    "result": "UNSAT",
+    "variables": "all 320 X bits and 420 D bits",
+    "constraints": "wt(X_i)<=3, 1<=wt(D_j)<=4, wt(H_i)<=4, O*H=A*O"
+  },
+  "radius_10_partitions": {
+    "0": "unsat",
+    "1": "unsat",
+    "2": "unsat",
+    "3": "unsat",
+    "4": "unsat",
+    "5": "unknown",
+    "6": "unknown",
+    "7": "unsat",
+    "8": "unsat",
+    "9": "unsat",
+    "10": "unsat"
+  },
+  "radius_10_conclusion": "unknown: only X-flips 5 and 6 remain globally undecided",
+  "sha256": {
+    "center_excess3_verified.json": "4493c98e8eb029f6f106e2f65f22ed5dd2af005cef597def77fcce0a347233ec",
+    "qffd_radius7_110s.json": "f1d9450fd610335d6e607632713979938213989b5640a392443929e750e8e6b3",
+    "r8_x0.json": "49b56068b83dae5800f5bb7b81d416489d11341d73705c146fe14388dc535673",
+    "r8_x1.json": "5b76113db365e0bf497cd5734dbd4b5962e28c8f89fc18b6a40a360349cc7b42",
+    "r8_x2.json": "624e744abe923868457ac26ea582c88fab27d221db9c52b4afffdc45714e3b77",
+    "r8_x3.json": "be651ad9d34ed2c0531800f90d59e854d435ddd027e093706437c7ece514e05c",
+    "r8_x4.json": "4b2a60a07b4188ae3c2bfa5d2ef1d3dcdfc1d4017b3a3a9502cdcf4506a6440a",
+    "r8_x5.json": "bd0e631be5620b617c227a1239d3ecadf7ae0913396f4399a672ed61f0245a6b",
+    "r8_x6.json": "f4e8a3929d8af915030057e83e8ab3266777fecdbd86a6567186ce4ff4b79d6e",
+    "r8_x7.json": "4cbb0ac2420d08ceb433f8b5cf4928bf67576c376a0ef2a10fba56993e045d88",
+    "r8_x8.json": "9f38b78e89bd0ae4e2e4a504ba7361b0e38d1b828e0d17ec8b12bb3412f91052",
+    "r9_x0.json": "109021ec1d5c27aa83a27a2c8ea107460d396a01b19f71266b290be3292d191a",
+    "r9_x1.json": "8c5de4e2389a638f759008cb21466a62e138098760dc1c708146aaeb6e9c5605",
+    "r9_x2.json": "241c18d817bc42ef73cc0f1e34ba264b7f249bf862f7c1a7b9dcb722ca5d85cc",
+    "r9_x3.json": "b128e01f4dd5ca8d6756416bc0285b7ffdbd7377592f45f49a1d5b4ef483fbfb",
+    "r9_x4.json": "4b92da3aa6372c709bd5cf9b1a64547dad5f19703a6927fff021cc08500bf17e",
+    "r9_x6.json": "c51f37fd7fd06b09ff39f59c65d803e81519df77da56c1585dbc6c83e89aa702",
+    "r9_x7.json": "e00cd12228130a3bc0c6685607b8109a0901e16af36aca24679e02467178f825",
+    "r9_x8.json": "c411daea865c84049aba9b60bafd07002ec0c6bcd6f3979b708598073a42ac26",
+    "r9_x9.json": "567720656807db97a101bb7f7e9784f7f860d244033f11f7d890f772e84dd8a1",
+    "r9_x5_closure_row24_yes.json": "d390462fa24ce6d284390b639bae0ec3352915cf96372eee683484dc9c1b8e5e",
+    "r9_x5_closure_row24_no.json": "a3328abea1b5e9f957e3e1f2e5dd729886d99d2101fc10605ee09d7a0139e181",
+    "r9_x5_require_outside_closure.json": "7578ac1970f1c29caa6c1797826197f4eedf716a1edc4fa21b7e61db4e379b95",
+    "r10_x0.json": "03c3c6da5273a73504da42ca821dd6dc74ec54c6a1a6d03fee20c78012b3699e",
+    "r10_x1.json": "854bb2c9ec5aa1f243d8436285d4a3cbdf7dcfc9c866d59c560efe506f9cbe42",
+    "r10_x2.json": "f68f6a719c3e1f8d1226b7b7355b3f5cdbbcafb306b9a67a920a4feae31be884",
+    "r10_x3.json": "55d78059a005eceb1ab5cad87fff760215f59cf0461b4d9a429ac4ac38f3e4a7",
+    "r10_x4.json": "5df395f8610e83271c74ca28d2528bcb9b7a5cfc9493680d74bfd4d602f0cccf",
+    "r10_x5.json": "e9f3542ace2cba3d12dbe499d14f4fabbf3672bebdbe0a812389f44ccd90c945",
+    "r10_x6.json": "fa045f9156c931186647d17a7375270b73a3c617983235423831e52619d1ff95",
+    "r10_x7.json": "f65e8f7ea9bf156358cb73e77b14c49b080075d5a7d48da73e0cab0bd243643b",
+    "r10_x8.json": "12e01fbd7345b4ce0c6fef537d66903f58d52768c0e840fb11517512aba85b4e",
+    "r10_x9.json": "b4dfef6fe5f14c1b1419f8d2d51697e1cbe6334ddef19d03554cdb8e6e9d851e",
+    "r10_x10.json": "51cedb01890928ea921f3d1d89cacfdeeca3ee92997bbeef1c2c15375cfb694a",
+    "split_radius_qffd.py": "4bc45b422447f3f5fae41b0bc576fee384b7f0363219ad133b373c764d1770d0",
+    "verify_boundary.py": "b6172d31488206acbd83a7e2e360c5772a1ab91a0a0ee1a8181fca040255e604"
+  }
+}

@@ -1,0 +1,33 @@
+#include "leg.lml"
+const mov i1|add
+const li i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const ucall i1|i2|call
+const _ 0
+const ptr f
+#########################
+
+label read
+  i1|add 0 io ram
+  i1|add 1 ptr ptr
+  i1|add 0 io ram
+  i1|add 1 ptr ptr
+  i1|add 0 io ram
+  i1|add 1 ptr ptr
+  i1|add 0 io ram
+  i1|add 1 ptr ptr
+i2|j|neq ptr 32 read
+
+li _ 0 ptr
+
+label write
+  i1|add 0 ram io
+  i1|add 1 ptr ptr
+  i1|add 0 ram io
+  i1|add 1 ptr ptr
+  i1|add 0 ram io
+  i1|add 1 ptr ptr
+  i1|add 0 ram io
+  i1|add 1 ptr ptr
+i2|j|neq ptr 32 write

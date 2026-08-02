@@ -1,0 +1,229 @@
+literal_ea	name	text	ref	function	disasm
+0x140a11140	TM__8dO79bDlK9csFzRs49cEE7wlw_221	'load(<U'	0x1402c963a	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_221
+0x140a11140	TM__8dO79bDlK9csFzRs49cEE7wlw_221	'load(<U'	0x1402c9641	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A11148
+0x140a11180	TM__8dO79bDlK9csFzRs49cEE7wlw_223	'>, #SIMULATION_STATE + '	0x1402c968c	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_223
+0x140a11180	TM__8dO79bDlK9csFzRs49cEE7wlw_223	'>, #SIMULATION_STATE + '	0x1402c9693	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A11188
+0x140a111d0	TM__8dO79bDlK9csFzRs49cEE7wlw_229	'load(<U'	0x1402c9c9b	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_229
+0x140a111d0	TM__8dO79bDlK9csFzRs49cEE7wlw_229	'load(<U'	0x1402c9ca2	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A111D8
+0x140a111e0	TM__8dO79bDlK9csFzRs49cEE7wlw_230	'>, #SIMULATION_STATE + '	0x1402c9ced	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_230
+0x140a111e0	TM__8dO79bDlK9csFzRs49cEE7wlw_230	'>, #SIMULATION_STATE + '	0x1402c9cf4	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A111E8
+0x140a11210	TM__8dO79bDlK9csFzRs49cEE7wlw_234	'load(<U'	0x1402ca37d	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_234
+0x140a11210	TM__8dO79bDlK9csFzRs49cEE7wlw_234	'load(<U'	0x1402ca384	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A11218
+0x140a11220	TM__8dO79bDlK9csFzRs49cEE7wlw_235	'>, #SIMULATION_STATE + '	0x1402ca3cf	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_235
+0x140a11220	TM__8dO79bDlK9csFzRs49cEE7wlw_235	'>, #SIMULATION_STATE + '	0x1402ca3d6	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A11228
+0x140a11250	TM__8dO79bDlK9csFzRs49cEE7wlw_240	'load(<U'	0x1402cab51	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_240
+0x140a11250	TM__8dO79bDlK9csFzRs49cEE7wlw_240	'load(<U'	0x1402cab58	0x1402c8e43 get_linked_index__modelZsimulationZpreorder_u28319	mov     rdx, cs:off_140A11258
+0x140a112e0	TM__8dO79bDlK9csFzRs49cEE7wlw_251	'load(<U'	0x1402dd3f9	0x1402cb244 preorder__modelZsimulationZpreorder_u8738	mov     rax, cs:TM__8dO79bDlK9csFzRs49cEE7wlw_251
+0x140a112e0	TM__8dO79bDlK9csFzRs49cEE7wlw_251	'load(<U'	0x1402dd400	0x1402cb244 preorder__modelZsimulationZpreorder_u8738	mov     rdx, cs:off_140A112E8
+0x140a22400	TM__THWBxVSaWN2Zh7OMooFH0w_34	'\n\nconst #SIMULATION_STATE               = Ptr '	0x14048c833	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_34
+0x140a22400	TM__THWBxVSaWN2Zh7OMooFH0w_34	'\n\nconst #SIMULATION_STATE               = Ptr '	0x14048c83a	0x14048b0bd generate_source	mov     rdx, cs:off_140A22408
+0x140a22710	TM__THWBxVSaWN2Zh7OMooFH0w_50	']\n\ndef get_command(idx: CommandIndex) U64 {\n    return load(<U64>, .commands + (Int idx) * 8)\n}\n\ndef get_setting(idx: StateIndex) U64 {\n    return load(<U64>, .settings + (Int idx) * 8)\n}\n\ndef set_setting(idx: StateIndex, value: U64) {\n    store(.settings + (Int idx) * 8, value)\n}\n\n'	0x14048ca1f	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_50
+0x140a22710	TM__THWBxVSaWN2Zh7OMooFH0w_50	']\n\ndef get_command(idx: CommandIndex) U64 {\n    return load(<U64>, .commands + (Int idx) * 8)\n}\n\ndef get_setting(idx: StateIndex) U64 {\n    return load(<U64>, .settings + (Int idx) * 8)\n}\n\ndef set_setting(idx: StateIndex, value: U64) {\n    store(.settings + (Int idx) * 8, value)\n}\n\n'	0x14048ca26	0x14048b0bd generate_source	mov     rdx, cs:off_140A22718
+0x140a22950	TM__THWBxVSaWN2Zh7OMooFH0w_62	'const #DATA_'	0x14048db70	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_62
+0x140a22950	TM__THWBxVSaWN2Zh7OMooFH0w_62	'const #DATA_'	0x14048db77	0x14048b0bd generate_source	mov     rdx, cs:off_140A22958
+0x140a22d90	TM__THWBxVSaWN2Zh7OMooFH0w_92	'\ndef set_text(text: String, offset: Int) {\n    let length = text.len()\n    store(.ui_buffer + offset, length)\n    var i = 0\n    while i < length {\n        store(.ui_buffer + offset + 8 + i, U8 text[i])\n        i += 1\n    }\n}\n\ntype ComponentType Enum['	0x14048f0a0	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_92
+0x140a22d90	TM__THWBxVSaWN2Zh7OMooFH0w_92	'\ndef set_text(text: String, offset: Int) {\n    let length = text.len()\n    store(.ui_buffer + offset, length)\n    var i = 0\n    while i < length {\n        store(.ui_buffer + offset + 8 + i, U8 text[i])\n        i += 1\n    }\n}\n\ntype ComponentType Enum['	0x14048f0a7	0x14048b0bd generate_source	mov     rdx, cs:off_140A22D98
+0x140a233a0	TM__THWBxVSaWN2Zh7OMooFH0w_122	'" { store(.ui_buffer + '	0x14048fcda	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_122
+0x140a233a0	TM__THWBxVSaWN2Zh7OMooFH0w_122	'" { store(.ui_buffer + '	0x14048fce1	0x14048b0bd generate_source	mov     rdx, cs:off_140A233A8
+0x140a234b0	TM__THWBxVSaWN2Zh7OMooFH0w_131	'" { store(.ui_buffer + '	0x14049047a	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_131
+0x140a234b0	TM__THWBxVSaWN2Zh7OMooFH0w_131	'" { store(.ui_buffer + '	0x140490481	0x14048b0bd generate_source	mov     rdx, cs:off_140A234B8
+0x140a235f0	TM__THWBxVSaWN2Zh7OMooFH0w_144	']" { store(.ui_buffer + '	0x140490fbd	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_144
+0x140a235f0	TM__THWBxVSaWN2Zh7OMooFH0w_144	']" { store(.ui_buffer + '	0x140490fc4	0x14048b0bd generate_source	mov     rdx, cs:off_140A235F8
+0x140a23640	TM__THWBxVSaWN2Zh7OMooFH0w_149	'" { store(.ui_buffer + '	0x140491493	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_149
+0x140a23640	TM__THWBxVSaWN2Zh7OMooFH0w_149	'" { store(.ui_buffer + '	0x14049149a	0x14048b0bd generate_source	mov     rdx, cs:off_140A23648
+0x140a23750	TM__THWBxVSaWN2Zh7OMooFH0w_161	'" { store(.ui_buffer + '	0x140491f19	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_161
+0x140a23750	TM__THWBxVSaWN2Zh7OMooFH0w_161	'" { store(.ui_buffer + '	0x140491f20	0x14048b0bd generate_source	mov     rdx, cs:off_140A23758
+0x140a23810	TM__THWBxVSaWN2Zh7OMooFH0w_168	'" { store(.ui_buffer + '	0x140492603	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_168
+0x140a23810	TM__THWBxVSaWN2Zh7OMooFH0w_168	'" { store(.ui_buffer + '	0x14049260a	0x14048b0bd generate_source	mov     rdx, cs:off_140A23818
+0x140a238d0	TM__THWBxVSaWN2Zh7OMooFH0w_176	'" { store(.ui_buffer + '	0x140492da5	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_176
+0x140a238d0	TM__THWBxVSaWN2Zh7OMooFH0w_176	'" { store(.ui_buffer + '	0x140492dac	0x14048b0bd generate_source	mov     rdx, cs:off_140A238D8
+0x140a239b0	TM__THWBxVSaWN2Zh7OMooFH0w_186	'" { store(.ui_buffer + '	0x1404936cd	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_186
+0x140a239b0	TM__THWBxVSaWN2Zh7OMooFH0w_186	'" { store(.ui_buffer + '	0x1404936d4	0x14048b0bd generate_source	mov     rdx, cs:off_140A239B8
+0x140a23a70	TM__THWBxVSaWN2Zh7OMooFH0w_194	'" { store(.ui_buffer + '	0x140493e70	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_194
+0x140a23a70	TM__THWBxVSaWN2Zh7OMooFH0w_194	'" { store(.ui_buffer + '	0x140493e77	0x14048b0bd generate_source	mov     rdx, cs:off_140A23A78
+0x140a23b50	TM__THWBxVSaWN2Zh7OMooFH0w_203	'" { store(.ui_buffer + '	0x1404946d5	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_203
+0x140a23b50	TM__THWBxVSaWN2Zh7OMooFH0w_203	'" { store(.ui_buffer + '	0x1404946dc	0x14048b0bd generate_source	mov     rdx, cs:off_140A23B58
+0x140a23c10	TM__THWBxVSaWN2Zh7OMooFH0w_210	'" { store(.ui_buffer + '	0x140494dbf	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_210
+0x140a23c10	TM__THWBxVSaWN2Zh7OMooFH0w_210	'" { store(.ui_buffer + '	0x140494dc6	0x14048b0bd generate_source	mov     rdx, cs:off_140A23C18
+0x140a23cd0	TM__THWBxVSaWN2Zh7OMooFH0w_217	'" { store(.ui_buffer + '	0x1404954a6	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_217
+0x140a23cd0	TM__THWBxVSaWN2Zh7OMooFH0w_217	'" { store(.ui_buffer + '	0x1404954ad	0x14048b0bd generate_source	mov     rdx, cs:off_140A23CD8
+0x140a23da0	TM__THWBxVSaWN2Zh7OMooFH0w_226	'" { store(.ui_buffer + '	0x140495d0e	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_226
+0x140a23da0	TM__THWBxVSaWN2Zh7OMooFH0w_226	'" { store(.ui_buffer + '	0x140495d15	0x14048b0bd generate_source	mov     rdx, cs:off_140A23DA8
+0x140a24110	TM__THWBxVSaWN2Zh7OMooFH0w_259	' {\n            store(.ui_buffer + '	0x140433983	0x1404337a5 add_ui_set_instruction__modelZsimulationZcode95gen_u6900	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_259
+0x140a24110	TM__THWBxVSaWN2Zh7OMooFH0w_259	' {\n            store(.ui_buffer + '	0x14043398a	0x1404337a5 add_ui_set_instruction__modelZsimulationZcode95gen_u6900	mov     rdx, cs:off_140A24118
+0x140a24150	TM__THWBxVSaWN2Zh7OMooFH0w_261	', code)\n            store(.ui_buffer + '	0x1404339db	0x1404337a5 add_ui_set_instruction__modelZsimulationZcode95gen_u6900	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_261
+0x140a24150	TM__THWBxVSaWN2Zh7OMooFH0w_261	', code)\n            store(.ui_buffer + '	0x1404339e2	0x1404337a5 add_ui_set_instruction__modelZsimulationZcode95gen_u6900	mov     rdx, cs:off_140A24158
+0x140a24390	TM__THWBxVSaWN2Zh7OMooFH0w_285	'def add_keyboard_value(key_down: Bool, key: U8) {\n    let value = U16 key_down | (U16 key) << 8\n    var index = load(<U16>, #SIMULATION_KEYBOARD_CHARACTER + 4098)\n    store(#SIMULATION_KEYBOARD_CHARACTER + index, value)\n    store(#SIMULATION_KEYBOARD_CHARACTER + 4098, (index + 8) % 4096)\n\n}\n'	0x140498798	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_285
+0x140a24390	TM__THWBxVSaWN2Zh7OMooFH0w_285	'def add_keyboard_value(key_down: Bool, key: U8) {\n    let value = U16 key_down | (U16 key) << 8\n    var index = load(<U16>, #SIMULATION_KEYBOARD_CHARACTER + 4098)\n    store(#SIMULATION_KEYBOARD_CHARACTER + index, value)\n    store(#SIMULATION_KEYBOARD_CHARACTER + 4098, (index + 8) % 4096)\n\n}\n'	0x14049879f	0x14048b0bd generate_source	mov     rdx, cs:off_140A24398
+0x140a245a0	TM__THWBxVSaWN2Zh7OMooFH0w_304	'Int (U64 load(<U'	0x1404993e4	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_304
+0x140a245a0	TM__THWBxVSaWN2Zh7OMooFH0w_304	'Int (U64 load(<U'	0x1404993eb	0x14048b0bd generate_source	mov     rdx, cs:off_140A245A8
+0x140a245e0	TM__THWBxVSaWN2Zh7OMooFH0w_306	'>, #SIMULATION_STATE + '	0x140499436	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_306
+0x140a245e0	TM__THWBxVSaWN2Zh7OMooFH0w_306	'>, #SIMULATION_STATE + '	0x14049943d	0x14048b0bd generate_source	mov     rdx, cs:off_140A245E8
+0x140a24750	TM__THWBxVSaWN2Zh7OMooFH0w_328	'load(<U'	0x1404349f5	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_328
+0x140a24750	TM__THWBxVSaWN2Zh7OMooFH0w_328	'load(<U'	0x1404349fc	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rdx, cs:off_140A24758
+0x140a24760	TM__THWBxVSaWN2Zh7OMooFH0w_329	'>, #SIMULATION_STATE + '	0x140434a47	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_329
+0x140a24760	TM__THWBxVSaWN2Zh7OMooFH0w_329	'>, #SIMULATION_STATE + '	0x140434a4e	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rdx, cs:off_140A24768
+0x140a24850	TM__THWBxVSaWN2Zh7OMooFH0w_342	'(load(<U8>, #SIMULATION_STATE + '	0x1404351c9	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_342
+0x140a24850	TM__THWBxVSaWN2Zh7OMooFH0w_342	'(load(<U8>, #SIMULATION_STATE + '	0x1404351d0	0x140433ba5 input__modelZsimulationZcode95gen_u4122	mov     rdx, cs:off_140A24858
+0x140a249e0	TM__THWBxVSaWN2Zh7OMooFH0w_359	'load(<U'	0x14043588f	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_359
+0x140a249e0	TM__THWBxVSaWN2Zh7OMooFH0w_359	'load(<U'	0x140435896	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rdx, cs:off_140A249E8
+0x140a249f0	TM__THWBxVSaWN2Zh7OMooFH0w_360	'>, #SIMULATION_STATE + '	0x1404358d3	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_360
+0x140a249f0	TM__THWBxVSaWN2Zh7OMooFH0w_360	'>, #SIMULATION_STATE + '	0x1404358da	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rdx, cs:off_140A249F8
+0x140a24a20	TM__THWBxVSaWN2Zh7OMooFH0w_364	'load(<U'	0x140435c5e	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_364
+0x140a24a20	TM__THWBxVSaWN2Zh7OMooFH0w_364	'load(<U'	0x140435c65	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rdx, cs:off_140A24A28
+0x140a24a30	TM__THWBxVSaWN2Zh7OMooFH0w_365	'>, #SIMULATION_STATE + '	0x140435caa	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_365
+0x140a24a30	TM__THWBxVSaWN2Zh7OMooFH0w_365	'>, #SIMULATION_STATE + '	0x140435cb1	0x140435586 load_memory_word__modelZsimulationZcode95gen_u2133	mov     rdx, cs:off_140A24A38
+0x140a24ce0	TM__THWBxVSaWN2Zh7OMooFH0w_393	'" { return load(<Int>, #SIMULATION_STATE + Int ('	0x14049b158	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_393
+0x140a24ce0	TM__THWBxVSaWN2Zh7OMooFH0w_393	'" { return load(<Int>, #SIMULATION_STATE + Int ('	0x14049b15f	0x14048b0bd generate_source	mov     rdx, cs:off_140A24CE8
+0x140a24e50	TM__THWBxVSaWN2Zh7OMooFH0w_405	' { return Int (U64 load(<U'	0x14049ba9b	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_405
+0x140a24e50	TM__THWBxVSaWN2Zh7OMooFH0w_405	' { return Int (U64 load(<U'	0x14049baa2	0x14048b0bd generate_source	mov     rdx, cs:off_140A24E58
+0x140a24e60	TM__THWBxVSaWN2Zh7OMooFH0w_406	'>, #SIMULATION_STATE + '	0x14049baed	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_406
+0x140a24e60	TM__THWBxVSaWN2Zh7OMooFH0w_406	'>, #SIMULATION_STATE + '	0x14049baf4	0x14048b0bd generate_source	mov     rdx, cs:off_140A24E68
+0x140a24f90	TM__THWBxVSaWN2Zh7OMooFH0w_417	"' { return load(type_of(size), #DATA_"	0x14049c1f3	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_417
+0x140a24f90	TM__THWBxVSaWN2Zh7OMooFH0w_417	"' { return load(type_of(size), #DATA_"	0x14049c1fa	0x14048b0bd generate_source	mov     rdx, cs:off_140A24F98
+0x140a24fe0	TM__THWBxVSaWN2Zh7OMooFH0w_421	"' { return load(type_of(size), #DATA_"	0x14049c4c6	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_421
+0x140a24fe0	TM__THWBxVSaWN2Zh7OMooFH0w_421	"' { return load(type_of(size), #DATA_"	0x14049c4cd	0x14048b0bd generate_source	mov     rdx, cs:off_140A24FE8
+0x140a25140	TM__THWBxVSaWN2Zh7OMooFH0w_432	"' { store(#DATA_"	0x14049cbaa	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_432
+0x140a25140	TM__THWBxVSaWN2Zh7OMooFH0w_432	"' { store(#DATA_"	0x14049cbb1	0x14048b0bd generate_source	mov     rdx, cs:off_140A25148
+0x140a251a0	TM__THWBxVSaWN2Zh7OMooFH0w_436	"' { store(#DATA_"	0x14049ce8e	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_436
+0x140a251a0	TM__THWBxVSaWN2Zh7OMooFH0w_436	"' { store(#DATA_"	0x14049ce95	0x14048b0bd generate_source	mov     rdx, cs:off_140A251A8
+0x140a253e0	TM__THWBxVSaWN2Zh7OMooFH0w_446	'\ndef max(a: TestResult, b: TestResult) TestResult {\n    return TestResult max(U64 a, U64 b)\n}\n\ndef set_error(input: String) {\n\n    let len = input.len()\n\n    store(.error_buffer, U16 len)\n\n    var i = 0\n    while i < len {\n        store(.error_buffer + i + 2, U8 input[i])\n        i += 1\n    }\n}\n\n'	0x14049d2b1	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_446
+0x140a253e0	TM__THWBxVSaWN2Zh7OMooFH0w_446	'\ndef max(a: TestResult, b: TestResult) TestResult {\n    return TestResult max(U64 a, U64 b)\n}\n\ndef set_error(input: String) {\n\n    let len = input.len()\n\n    store(.error_buffer, U16 len)\n\n    var i = 0\n    while i < len {\n        store(.error_buffer + i + 2, U8 input[i])\n        i += 1\n    }\n}\n\n'	0x14049d2b8	0x14048b0bd generate_source	mov     rdx, cs:off_140A253E8
+0x140a25660	TM__THWBxVSaWN2Zh7OMooFH0w_450	'    memory_clear(#SIMULATION_KEYBOARD_CHARACTER, 8192)\n'	0x14049d3bb	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_450
+0x140a25660	TM__THWBxVSaWN2Zh7OMooFH0w_450	'    memory_clear(#SIMULATION_KEYBOARD_CHARACTER, 8192)\n'	0x14049d3c2	0x14048b0bd generate_source	mov     rdx, cs:off_140A25668
+0x140a256d0	TM__THWBxVSaWN2Zh7OMooFH0w_452	'    memory_clear(#SIMULATION_KEYBOARD_COORDINATE, 8192)\n'	0x14049d40b	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_452
+0x140a256d0	TM__THWBxVSaWN2Zh7OMooFH0w_452	'    memory_clear(#SIMULATION_KEYBOARD_COORDINATE, 8192)\n'	0x14049d412	0x14048b0bd generate_source	mov     rdx, cs:off_140A256D8
+0x140a25710	TM__THWBxVSaWN2Zh7OMooFH0w_454	'    memory_clear(#SIMULATION_STATE, '	0x14049d50a	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_454
+0x140a25710	TM__THWBxVSaWN2Zh7OMooFH0w_454	'    memory_clear(#SIMULATION_STATE, '	0x14049d511	0x14048b0bd generate_source	mov     rdx, cs:off_140A25718
+0x140a25760	TM__THWBxVSaWN2Zh7OMooFH0w_459	'    store(Ptr '	0x14049d84f	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_459
+0x140a25760	TM__THWBxVSaWN2Zh7OMooFH0w_459	'    store(Ptr '	0x14049d856	0x14048b0bd generate_source	mov     rdx, cs:off_140A25768
+0x140a257c0	TM__THWBxVSaWN2Zh7OMooFH0w_464	'    memory_clear(#DATA_'	0x14049db8b	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_464
+0x140a257c0	TM__THWBxVSaWN2Zh7OMooFH0w_464	'    memory_clear(#DATA_'	0x14049db92	0x14048b0bd generate_source	mov     rdx, cs:off_140A257C8
+0x140a258a0	TM__THWBxVSaWN2Zh7OMooFH0w_473	' - 2048, #DATA_'	0x14049e01c	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_473
+0x140a258a0	TM__THWBxVSaWN2Zh7OMooFH0w_473	' - 2048, #DATA_'	0x14049e023	0x14048b0bd generate_source	mov     rdx, cs:off_140A258A8
+0x140a25df0	TM__THWBxVSaWN2Zh7OMooFH0w_537	'store(#SIMULATION_STATE + '	0x140437b3f	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_537
+0x140a25df0	TM__THWBxVSaWN2Zh7OMooFH0w_537	'store(#SIMULATION_STATE + '	0x140437b46	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A25DF8
+0x140a25e20	TM__THWBxVSaWN2Zh7OMooFH0w_541	'store(#SIMULATION_STATE + '	0x140437da0	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_541
+0x140a25e20	TM__THWBxVSaWN2Zh7OMooFH0w_541	'store(#SIMULATION_STATE + '	0x140437da7	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A25E28
+0x140a25e50	TM__THWBxVSaWN2Zh7OMooFH0w_545	'store(#SIMULATION_STATE + '	0x140437faf	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_545
+0x140a25e50	TM__THWBxVSaWN2Zh7OMooFH0w_545	'store(#SIMULATION_STATE + '	0x140437fb6	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A25E58
+0x140a26950	TM__THWBxVSaWN2Zh7OMooFH0w_678	'    store(#SIMULATION_STATE + '	0x14043bc37	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_678
+0x140a26950	TM__THWBxVSaWN2Zh7OMooFH0w_678	'    store(#SIMULATION_STATE + '	0x14043bc3e	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26958
+0x140a26990	TM__THWBxVSaWN2Zh7OMooFH0w_682	'    store(#SIMULATION_STATE + '	0x14043beee	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_682
+0x140a26990	TM__THWBxVSaWN2Zh7OMooFH0w_682	'    store(#SIMULATION_STATE + '	0x14043bef5	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26998
+0x140a26a80	TM__THWBxVSaWN2Zh7OMooFH0w_697	'    store(#SIMULATION_STATE + '	0x14043c775	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_697
+0x140a26a80	TM__THWBxVSaWN2Zh7OMooFH0w_697	'    store(#SIMULATION_STATE + '	0x14043c77c	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26A88
+0x140a26ab0	TM__THWBxVSaWN2Zh7OMooFH0w_701	'    store(#SIMULATION_STATE + '	0x14043c984	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_701
+0x140a26ab0	TM__THWBxVSaWN2Zh7OMooFH0w_701	'    store(#SIMULATION_STATE + '	0x14043c98b	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26AB8
+0x140a26b30	TM__THWBxVSaWN2Zh7OMooFH0w_712	'store(#SIMULATION_STATE + '	0x14043d5c4	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_712
+0x140a26b30	TM__THWBxVSaWN2Zh7OMooFH0w_712	'store(#SIMULATION_STATE + '	0x14043d5cb	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26B38
+0x140a26b70	TM__THWBxVSaWN2Zh7OMooFH0w_717	'store(#SIMULATION_STATE + '	0x14043d8e5	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_717
+0x140a26b70	TM__THWBxVSaWN2Zh7OMooFH0w_717	'store(#SIMULATION_STATE + '	0x14043d8ec	0x140437079 store_output__modelZsimulationZcode95gen_u2221	mov     rdx, cs:off_140A26B78
+0x140a27480	TM__THWBxVSaWN2Zh7OMooFH0w_918	'load(<U'	0x14043e270	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_918
+0x140a27480	TM__THWBxVSaWN2Zh7OMooFH0w_918	'load(<U'	0x14043e277	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A27488
+0x140a27490	TM__THWBxVSaWN2Zh7OMooFH0w_919	'>, #SIMULATION_STATE + '	0x14043e2c2	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_919
+0x140a27490	TM__THWBxVSaWN2Zh7OMooFH0w_919	'>, #SIMULATION_STATE + '	0x14043e2c9	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A27498
+0x140a274f0	TM__THWBxVSaWN2Zh7OMooFH0w_924	' = load(<U'	0x14043e6b9	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_924
+0x140a274f0	TM__THWBxVSaWN2Zh7OMooFH0w_924	' = load(<U'	0x14043e6c0	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A274F8
+0x140a27500	TM__THWBxVSaWN2Zh7OMooFH0w_925	'>, #SIMULATION_STATE + '	0x14043e705	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_925
+0x140a27500	TM__THWBxVSaWN2Zh7OMooFH0w_925	'>, #SIMULATION_STATE + '	0x14043e70c	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A27508
+0x140a27520	TM__THWBxVSaWN2Zh7OMooFH0w_928	'store(#SIMULATION_STATE + '	0x14043e8dc	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_928
+0x140a27520	TM__THWBxVSaWN2Zh7OMooFH0w_928	'store(#SIMULATION_STATE + '	0x14043e8e3	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A27528
+0x140a27560	TM__THWBxVSaWN2Zh7OMooFH0w_931	') // Output cache'	0x14043e96a	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_931
+0x140a27560	TM__THWBxVSaWN2Zh7OMooFH0w_931	') // Output cache'	0x14043e971	0x14043df90 load_and_output__modelZsimulationZcode95gen_u3940	mov     rdx, cs:off_140A27568
+0x140a27610	TM__THWBxVSaWN2Zh7OMooFH0w_939	'store(#SIMULATION_STATE + '	0x14043f2b4	0x14043ed1a store_bit__modelZsimulationZcode95gen_u2179	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_939
+0x140a27610	TM__THWBxVSaWN2Zh7OMooFH0w_939	'store(#SIMULATION_STATE + '	0x14043f2bb	0x14043ed1a store_bit__modelZsimulationZcode95gen_u2179	mov     rdx, cs:off_140A27618
+0x140a276e0	TM__THWBxVSaWN2Zh7OMooFH0w_950	'store(#SIMULATION_STATE + '	0x14043fa0a	0x14043f4c0 store_word__modelZsimulationZcode95gen_u2201	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_950
+0x140a276e0	TM__THWBxVSaWN2Zh7OMooFH0w_950	'store(#SIMULATION_STATE + '	0x14043fa11	0x14043f4c0 store_word__modelZsimulationZcode95gen_u2201	mov     rdx, cs:off_140A276E8
+0x140a277a0	TM__THWBxVSaWN2Zh7OMooFH0w_975	'    store(#SIMULATION_STATE + '	0x14044bca9	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_975
+0x140a277a0	TM__THWBxVSaWN2Zh7OMooFH0w_975	'    store(#SIMULATION_STATE + '	0x14044bcb0	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A277A8
+0x140a27830	TM__THWBxVSaWN2Zh7OMooFH0w_986	'load(<U'	0x14044c365	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_986
+0x140a27830	TM__THWBxVSaWN2Zh7OMooFH0w_986	'load(<U'	0x14044c36c	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27838
+0x140a27840	TM__THWBxVSaWN2Zh7OMooFH0w_987	'>, #SIMULATION_STATE + '	0x14044c3b7	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_987
+0x140a27840	TM__THWBxVSaWN2Zh7OMooFH0w_987	'>, #SIMULATION_STATE + '	0x14044c3be	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27848
+0x140a27a90	TM__THWBxVSaWN2Zh7OMooFH0w_1034	'load(<U'	0x14044eac5	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1034
+0x140a27a90	TM__THWBxVSaWN2Zh7OMooFH0w_1034	'load(<U'	0x14044eacc	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27A98
+0x140a27ac0	TM__THWBxVSaWN2Zh7OMooFH0w_1036	'>, #DATA_'	0x14044eb17	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1036
+0x140a27ac0	TM__THWBxVSaWN2Zh7OMooFH0w_1036	'>, #DATA_'	0x14044eb1e	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27AC8
+0x140a27af0	TM__THWBxVSaWN2Zh7OMooFH0w_1039	'load(<U'	0x14044ee34	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1039
+0x140a27af0	TM__THWBxVSaWN2Zh7OMooFH0w_1039	'load(<U'	0x14044ee3b	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27AF8
+0x140a27b00	TM__THWBxVSaWN2Zh7OMooFH0w_1040	'>, #DATA_'	0x14044ee86	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1040
+0x140a27b00	TM__THWBxVSaWN2Zh7OMooFH0w_1040	'>, #DATA_'	0x14044ee8d	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27B08
+0x140a27b80	TM__THWBxVSaWN2Zh7OMooFH0w_1051	'store(#SIMULATION_STATE + '	0x14044f76a	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1051
+0x140a27b80	TM__THWBxVSaWN2Zh7OMooFH0w_1051	'store(#SIMULATION_STATE + '	0x14044f771	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27B88
+0x140a27ba0	TM__THWBxVSaWN2Zh7OMooFH0w_1053	') // Output cache'	0x14044f80e	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1053
+0x140a27ba0	TM__THWBxVSaWN2Zh7OMooFH0w_1053	') // Output cache'	0x14044f815	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27BA8
+0x140a27bb0	TM__THWBxVSaWN2Zh7OMooFH0w_1055	'load(<U'	0x14044fb6b	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1055
+0x140a27bb0	TM__THWBxVSaWN2Zh7OMooFH0w_1055	'load(<U'	0x14044fb72	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27BB8
+0x140a27bc0	TM__THWBxVSaWN2Zh7OMooFH0w_1056	'>, #SIMULATION_STATE + '	0x14044fbbd	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1056
+0x140a27bc0	TM__THWBxVSaWN2Zh7OMooFH0w_1056	'>, #SIMULATION_STATE + '	0x14044fbc4	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27BC8
+0x140a27c00	TM__THWBxVSaWN2Zh7OMooFH0w_1061	'tick_p2_'	0x140450050	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1061
+0x140a27c00	TM__THWBxVSaWN2Zh7OMooFH0w_1061	'tick_p2_'	0x140450057	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27C08
+0x140a27c60	TM__THWBxVSaWN2Zh7OMooFH0w_1067	'store('	0x140450735	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1067
+0x140a27c60	TM__THWBxVSaWN2Zh7OMooFH0w_1067	'store('	0x14045073c	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27C68
+0x140a27ca0	TM__THWBxVSaWN2Zh7OMooFH0w_1069	'#SIMULATION_STATE + '	0x140440041	0x14043fd7b address__modelZsimulationZcode95gen_u5019	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1069
+0x140a27ca0	TM__THWBxVSaWN2Zh7OMooFH0w_1069	'#SIMULATION_STATE + '	0x140440048	0x14043fd7b address__modelZsimulationZcode95gen_u5019	mov     rdx, cs:off_140A27CA8
+0x140a27d60	TM__THWBxVSaWN2Zh7OMooFH0w_1085	'store('	0x140450ad2	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1085
+0x140a27d60	TM__THWBxVSaWN2Zh7OMooFH0w_1085	'store('	0x140450ad9	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27D68
+0x140a27e10	TM__THWBxVSaWN2Zh7OMooFH0w_1097	' = load(<U1>, '	0x140450fbb	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1097
+0x140a27e10	TM__THWBxVSaWN2Zh7OMooFH0w_1097	' = load(<U1>, '	0x140450fc2	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27E18
+0x140a27e40	TM__THWBxVSaWN2Zh7OMooFH0w_1102	' = load(<U'	0x1404512ba	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1102
+0x140a27e40	TM__THWBxVSaWN2Zh7OMooFH0w_1102	' = load(<U'	0x1404512c1	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27E48
+0x140a27e80	TM__THWBxVSaWN2Zh7OMooFH0w_1109	'store(#SIMULATION_STATE + '	0x140451664	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1109
+0x140a27e80	TM__THWBxVSaWN2Zh7OMooFH0w_1109	'store(#SIMULATION_STATE + '	0x14045166b	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27E88
+0x140a27eb0	TM__THWBxVSaWN2Zh7OMooFH0w_1113	'store(#SIMULATION_STATE + '	0x1404518d8	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1113
+0x140a27eb0	TM__THWBxVSaWN2Zh7OMooFH0w_1113	'store(#SIMULATION_STATE + '	0x1404518df	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27EB8
+0x140a27ee0	TM__THWBxVSaWN2Zh7OMooFH0w_1117	'load(<U'	0x1404520eb	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1117
+0x140a27ee0	TM__THWBxVSaWN2Zh7OMooFH0w_1117	'load(<U'	0x1404520f2	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27EE8
+0x140a27ef0	TM__THWBxVSaWN2Zh7OMooFH0w_1118	'>, #SIMULATION_STATE + '	0x14045213d	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1118
+0x140a27ef0	TM__THWBxVSaWN2Zh7OMooFH0w_1118	'>, #SIMULATION_STATE + '	0x140452144	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27EF8
+0x140a27f50	TM__THWBxVSaWN2Zh7OMooFH0w_1121	'load(<U8>, #SIMULATION_STATE + '	0x1404522aa	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1121
+0x140a27f50	TM__THWBxVSaWN2Zh7OMooFH0w_1121	'load(<U8>, #SIMULATION_STATE + '	0x1404522b1	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A27F58
+0x140a28180	TM__THWBxVSaWN2Zh7OMooFH0w_1173	'#DATA_'	0x140455627	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1173
+0x140a28180	TM__THWBxVSaWN2Zh7OMooFH0w_1173	'#DATA_'	0x14045562e	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A28188
+0x140a281b0	TM__THWBxVSaWN2Zh7OMooFH0w_1176	'#DATA_'	0x1404557c9	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1176
+0x140a281b0	TM__THWBxVSaWN2Zh7OMooFH0w_1176	'#DATA_'	0x1404557d0	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A281B8
+0x140a281d0	TM__THWBxVSaWN2Zh7OMooFH0w_1178	'#DATA_'	0x140455ad1	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1178
+0x140a281d0	TM__THWBxVSaWN2Zh7OMooFH0w_1178	'#DATA_'	0x140455ad8	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A281D8
+0x140a28230	TM__THWBxVSaWN2Zh7OMooFH0w_1183	'#DATA_'	0x140455cee	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1183
+0x140a28230	TM__THWBxVSaWN2Zh7OMooFH0w_1183	'#DATA_'	0x140455cf5	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A28238
+0x140a282b0	TM__THWBxVSaWN2Zh7OMooFH0w_1191	'    store('	0x14045631e	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1191
+0x140a282b0	TM__THWBxVSaWN2Zh7OMooFH0w_1191	'    store('	0x140456325	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A282B8
+0x140a282e0	TM__THWBxVSaWN2Zh7OMooFH0w_1196	'    store('	0x14045657d	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1196
+0x140a282e0	TM__THWBxVSaWN2Zh7OMooFH0w_1196	'    store('	0x140456584	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A282E8
+0x140a2a750	TM__THWBxVSaWN2Zh7OMooFH0w_1996	'store(#SIMULATION_STATE + '	0x14047af90	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1996
+0x140a2a750	TM__THWBxVSaWN2Zh7OMooFH0w_1996	'store(#SIMULATION_STATE + '	0x14047af97	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2A758
+0x140a2a790	TM__THWBxVSaWN2Zh7OMooFH0w_2003	' = load(<U'	0x14047b511	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2003
+0x140a2a790	TM__THWBxVSaWN2Zh7OMooFH0w_2003	' = load(<U'	0x14047b518	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2A798
+0x140a2a7a0	TM__THWBxVSaWN2Zh7OMooFH0w_2004	'>, #SIMULATION_STATE + '	0x14047b563	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2004
+0x140a2a7a0	TM__THWBxVSaWN2Zh7OMooFH0w_2004	'>, #SIMULATION_STATE + '	0x14047b56a	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2A7A8
+0x140a2b4b0	TM__THWBxVSaWN2Zh7OMooFH0w_2261	' = load(<U16>, '	0x140485be1	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2261
+0x140a2b4b0	TM__THWBxVSaWN2Zh7OMooFH0w_2261	' = load(<U16>, '	0x140485be8	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B4B8
+0x140a2b500	TM__THWBxVSaWN2Zh7OMooFH0w_2266	' = load(<U16>, '	0x140485dcd	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2266
+0x140a2b500	TM__THWBxVSaWN2Zh7OMooFH0w_2266	' = load(<U16>, '	0x140485dd4	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B508
+0x140a2b650	TM__THWBxVSaWN2Zh7OMooFH0w_2285	'let value = load(<U16>, '	0x1404864ff	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2285
+0x140a2b650	TM__THWBxVSaWN2Zh7OMooFH0w_2285	'let value = load(<U16>, '	0x140486506	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B658
+0x140a2b760	TM__THWBxVSaWN2Zh7OMooFH0w_2303	'if value > 0 { store('	0x140486b95	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2303
+0x140a2b760	TM__THWBxVSaWN2Zh7OMooFH0w_2303	'if value > 0 { store('	0x140486b9c	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B768
+0x140a2b7d0	TM__THWBxVSaWN2Zh7OMooFH0w_2309	'store(#SIMULATION_STATE + '	0x140486e37	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2309
+0x140a2b7d0	TM__THWBxVSaWN2Zh7OMooFH0w_2309	'store(#SIMULATION_STATE + '	0x140486e3e	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B7D8
+0x140a2b850	TM__THWBxVSaWN2Zh7OMooFH0w_2313	') << 16) | U32 value) // Output cache'	0x140486edb	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2313
+0x140a2b850	TM__THWBxVSaWN2Zh7OMooFH0w_2313	') << 16) | U32 value) // Output cache'	0x140486ee2	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B858
+0x140a2b8c0	TM__THWBxVSaWN2Zh7OMooFH0w_2322	' != load(<U16>, '	0x1404871dd	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2322
+0x140a2b8c0	TM__THWBxVSaWN2Zh7OMooFH0w_2322	' != load(<U16>, '	0x1404871e4	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B8C8
+0x140a2b910	TM__THWBxVSaWN2Zh7OMooFH0w_2327	'store(#SIMULATION_STATE + '	0x1404874ad	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2327
+0x140a2b910	TM__THWBxVSaWN2Zh7OMooFH0w_2327	'store(#SIMULATION_STATE + '	0x1404874b4	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B918
+0x140a2b9b0	TM__THWBxVSaWN2Zh7OMooFH0w_2337	'load(<U32>, #SIMULATION_STATE + '	0x140487e70	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2337
+0x140a2b9b0	TM__THWBxVSaWN2Zh7OMooFH0w_2337	'load(<U32>, #SIMULATION_STATE + '	0x140487e77	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2B9B8
+0x140a2ba30	TM__THWBxVSaWN2Zh7OMooFH0w_2343	'load(<U1>, #SIMULATION_STATE + '	0x140488108	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2343
+0x140a2ba30	TM__THWBxVSaWN2Zh7OMooFH0w_2343	'load(<U1>, #SIMULATION_STATE + '	0x14048810f	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2BA38
+0x140a2ba90	TM__THWBxVSaWN2Zh7OMooFH0w_2348	'load(<U16>, #SIMULATION_STATE + '	0x1404883a0	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2348
+0x140a2ba90	TM__THWBxVSaWN2Zh7OMooFH0w_2348	'load(<U16>, #SIMULATION_STATE + '	0x1404883a7	0x140441388 add_circuit_code__modelZsimulationZcode95gen_u4264	mov     rdx, cs:off_140A2BA98
+0x140a2c8d0	TM__THWBxVSaWN2Zh7OMooFH0w_2453	' = load(<U16>, #SETTINGS_'	0x1404a1539	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2453
+0x140a2c8d0	TM__THWBxVSaWN2Zh7OMooFH0w_2453	' = load(<U16>, #SETTINGS_'	0x1404a1540	0x14048b0bd generate_source	mov     rdx, cs:off_140A2C8D8
+0x140a2ca20	TM__THWBxVSaWN2Zh7OMooFH0w_2475	'    if Int load(<U16>, '	0x1404a1d1e	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2475
+0x140a2ca20	TM__THWBxVSaWN2Zh7OMooFH0w_2475	'    if Int load(<U16>, '	0x1404a1d25	0x14048b0bd generate_source	mov     rdx, cs:off_140A2CA28
+0x140a2cc20	TM__THWBxVSaWN2Zh7OMooFH0w_2506	'\n            store(Ptr .output_history_pins + index_'	0x1404a2dd4	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2506
+0x140a2cc20	TM__THWBxVSaWN2Zh7OMooFH0w_2506	'\n            store(Ptr .output_history_pins + index_'	0x1404a2ddb	0x14048b0bd generate_source	mov     rdx, cs:off_140A2CC28
+0x140a2cc90	TM__THWBxVSaWN2Zh7OMooFH0w_2511	'\n            store(Ptr .output_history_pins + index_'	0x1404a2f87	0x14048b0bd generate_source	mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_2511
+0x140a2cc90	TM__THWBxVSaWN2Zh7OMooFH0w_2511	'\n            store(Ptr .output_history_pins + index_'	0x1404a2f8e	0x14048b0bd generate_source	mov     rdx, cs:off_140A2CC98

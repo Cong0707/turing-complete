@@ -1,0 +1,456 @@
+.model rng_joint_full
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 q26 q27 q28 q29 q30 q31
+.outputs fb0 fb1 fb2 fb3 fb4 fb5 fb6 fb7 fb8 fb9 fb10 fb11 fb12 fb13 fb14 fb15 fb16 fb17 fb18 fb19 fb20 fb21 fb22 fb23 fb24 fb25 fb26 fb27 fb28 fb29 fb30 fb31 out0 out1 out2 out3 out4 out5 out6 out7 out8 out9 out10 out11 out12 out13 out14 out15 out16 out17 out18 out19 out20 out21 out22 out23 out24 out25 out26 out27 out28 out29 out30 out31
+.names s17 q0 m_s17_q0
+1- 1
+-1 1
+.names m_s17_q0 q5 x_00000021
+10 1
+01 1
+.names s18 q1 m_s18_q1
+1- 1
+-1 1
+.names m_s18_q1 q6 x_00000042
+10 1
+01 1
+.names s19 q2 m_s19_q2
+1- 1
+-1 1
+.names m_s19_q2 q7 x_00000084
+10 1
+01 1
+.names s20 q3 m_s20_q3
+1- 1
+-1 1
+.names m_s20_q3 q8 x_00000108
+10 1
+01 1
+.names s21 q4 m_s21_q4
+1- 1
+-1 1
+.names m_s21_q4 q9 x_00000210
+10 1
+01 1
+.names s22 q10 m_s22_q10
+1- 1
+-1 1
+.names q5 m_s22_q10 x_00000420
+10 1
+01 1
+.names s23 q6 m_s23_q6
+1- 1
+-1 1
+.names m_s23_q6 q11 x_00000840
+10 1
+01 1
+.names s24 q12 m_s24_q12
+1- 1
+-1 1
+.names q7 m_s24_q12 x_00001080
+10 1
+01 1
+.names s25 q13 m_s25_q13
+1- 1
+-1 1
+.names q8 m_s25_q13 x_00002100
+10 1
+01 1
+.names s26 q14 m_s26_q14
+1- 1
+-1 1
+.names q9 m_s26_q14 x_00004200
+10 1
+01 1
+.names s15 q15 m_s15_q15
+1- 1
+-1 1
+.names q3 m_s15_q15 x_00008008
+10 1
+01 1
+.names s16 q16 m_s16_q16
+1- 1
+-1 1
+.names q4 m_s16_q16 x_00010010
+10 1
+01 1
+.names s17 q17 m_s17_q17
+1- 1
+-1 1
+.names s0 q22 m_s0_q22
+1- 1
+-1 1
+.names m_s17_q17 m_s0_q22 x_00420000
+10 1
+01 1
+.names s18 q18 m_s18_q18
+1- 1
+-1 1
+.names s1 q23 m_s1_q23
+1- 1
+-1 1
+.names m_s18_q18 m_s1_q23 x_00840000
+10 1
+01 1
+.names s19 q19 m_s19_q19
+1- 1
+-1 1
+.names s2 q24 m_s2_q24
+1- 1
+-1 1
+.names m_s19_q19 m_s2_q24 x_01080000
+10 1
+01 1
+.names s20 q20 m_s20_q20
+1- 1
+-1 1
+.names s3 q25 m_s3_q25
+1- 1
+-1 1
+.names m_s20_q20 m_s3_q25 x_02100000
+10 1
+01 1
+.names s21 q21 m_s21_q21
+1- 1
+-1 1
+.names s4 q26 m_s4_q26
+1- 1
+-1 1
+.names m_s21_q21 m_s4_q26 x_04200000
+10 1
+01 1
+.names s27 q15 m_s27_q15
+1- 1
+-1 1
+.names s10 q27 m_s10_q27
+1- 1
+-1 1
+.names m_s27_q15 m_s10_q27 x_08008000
+10 1
+01 1
+.names s22 q22 m_s22_q22
+1- 1
+-1 1
+.names s5 q27 m_s5_q27
+1- 1
+-1 1
+.names m_s22_q22 m_s5_q27 x_08400000
+10 1
+01 1
+.names s28 q16 m_s28_q16
+1- 1
+-1 1
+.names s11 q28 m_s11_q28
+1- 1
+-1 1
+.names m_s28_q16 m_s11_q28 x_10010000
+10 1
+01 1
+.names s23 q23 m_s23_q23
+1- 1
+-1 1
+.names s6 q28 m_s6_q28
+1- 1
+-1 1
+.names m_s23_q23 m_s6_q28 x_10800000
+10 1
+01 1
+.names s29 q0 m_s29_q0
+1- 1
+-1 1
+.names s12 q29 m_s12_q29
+1- 1
+-1 1
+.names m_s29_q0 m_s12_q29 x_20000001
+10 1
+01 1
+.names s24 q24 m_s24_q24
+1- 1
+-1 1
+.names s7 q29 m_s7_q29
+1- 1
+-1 1
+.names m_s24_q24 m_s7_q29 x_21000000
+10 1
+01 1
+.names s30 q1 m_s30_q1
+1- 1
+-1 1
+.names s13 q30 m_s13_q30
+1- 1
+-1 1
+.names m_s30_q1 m_s13_q30 x_40000002
+10 1
+01 1
+.names s25 q25 m_s25_q25
+1- 1
+-1 1
+.names s8 q30 m_s8_q30
+1- 1
+-1 1
+.names m_s25_q25 m_s8_q30 x_42000000
+10 1
+01 1
+.names s31 q2 m_s31_q2
+1- 1
+-1 1
+.names s14 q31 m_s14_q31
+1- 1
+-1 1
+.names m_s31_q2 m_s14_q31 x_80000004
+10 1
+01 1
+.names s26 q26 m_s26_q26
+1- 1
+-1 1
+.names s9 q31 m_s9_q31
+1- 1
+-1 1
+.names m_s26_q26 m_s9_q31 x_84000000
+10 1
+01 1
+.names s30 q13 m_s30_q13
+1- 1
+-1 1
+.names m_s30_q13 x_00000021 x_00002021
+10 1
+01 1
+.names s31 q14 m_s31_q14
+1- 1
+-1 1
+.names m_s31_q14 x_00000042 x_00004042
+10 1
+01 1
+.names s28 q11 m_s28_q11
+1- 1
+-1 1
+.names m_s28_q11 x_00008008 x_00008808
+10 1
+01 1
+.names s29 q12 m_s29_q12
+1- 1
+-1 1
+.names m_s29_q12 x_00010010 x_00011010
+10 1
+01 1
+.names x_00000021 x_00420000 x_00420021
+10 1
+01 1
+.names x_00000042 x_00840000 x_00840042
+10 1
+01 1
+.names x_00000084 x_01080000 x_01080084
+10 1
+01 1
+.names x_00008008 x_01080000 x_01088008
+10 1
+01 1
+.names x_00000108 x_02100000 x_02100108
+10 1
+01 1
+.names x_00010010 x_02100000 x_02110010
+10 1
+01 1
+.names x_00000021 x_04200000 x_04200021
+10 1
+01 1
+.names x_00000210 x_04200000 x_04200210
+10 1
+01 1
+.names q10 x_08008000 x_08008400
+10 1
+01 1
+.names x_00000840 x_08008000 x_08008840
+10 1
+01 1
+.names x_00000042 x_08400000 x_08400042
+10 1
+01 1
+.names x_00000420 x_08400000 x_08400420
+10 1
+01 1
+.names q11 x_10010000 x_10010800
+10 1
+01 1
+.names x_00001080 x_10010000 x_10011080
+10 1
+01 1
+.names x_00000084 x_10800000 x_10800084
+10 1
+01 1
+.names x_00000840 x_10800000 x_10800840
+10 1
+01 1
+.names q12 x_20000001 x_20001001
+10 1
+01 1
+.names x_20000001 x_00002100 x_20002101
+10 1
+01 1
+.names x_00000108 x_21000000 x_21000108
+10 1
+01 1
+.names x_00001080 x_21000000 x_21001080
+10 1
+01 1
+.names q13 x_40000002 x_40002002
+10 1
+01 1
+.names x_40000002 x_00004200 x_40004202
+10 1
+01 1
+.names x_40000002 x_00420000 x_40420002
+10 1
+01 1
+.names x_00000210 x_42000000 x_42000210
+10 1
+01 1
+.names x_00002100 x_42000000 x_42002100
+10 1
+01 1
+.names s27 q10 m_s27_q10
+1- 1
+-1 1
+.names m_s27_q10 x_80000004 x_80000404
+10 1
+01 1
+.names q14 x_80000004 x_80004004
+10 1
+01 1
+.names x_80000004 x_00840000 x_80840004
+10 1
+01 1
+.names x_00000420 x_84000000 x_84000420
+10 1
+01 1
+.names x_00004200 x_84000000 x_84004200
+10 1
+01 1
+.names x_40420002 fb0
+1 1
+.names x_80840004 fb1
+1 1
+.names x_01088008 fb2
+1 1
+.names x_02110010 fb3
+1 1
+.names x_04200021 fb4
+1 1
+.names x_08400042 fb5
+1 1
+.names x_10800084 fb6
+1 1
+.names x_21000108 fb7
+1 1
+.names x_42000210 fb8
+1 1
+.names x_84000420 fb9
+1 1
+.names x_08008840 fb10
+1 1
+.names x_10011080 fb11
+1 1
+.names x_20002101 fb12
+1 1
+.names x_40004202 fb13
+1 1
+.names x_80000404 fb14
+1 1
+.names x_00008808 fb15
+1 1
+.names x_00011010 fb16
+1 1
+.names x_00002021 fb17
+1 1
+.names x_00004042 fb18
+1 1
+.names x_00000084 fb19
+1 1
+.names x_00000108 fb20
+1 1
+.names x_00000210 fb21
+1 1
+.names x_00000420 fb22
+1 1
+.names x_00000840 fb23
+1 1
+.names x_00001080 fb24
+1 1
+.names x_00002100 fb25
+1 1
+.names x_00004200 fb26
+1 1
+.names m_s27_q10 fb27
+1 1
+.names m_s28_q11 fb28
+1 1
+.names m_s29_q12 fb29
+1 1
+.names m_s30_q13 fb30
+1 1
+.names m_s31_q14 fb31
+1 1
+.names x_00420021 out0
+1 1
+.names x_00840042 out1
+1 1
+.names x_01080084 out2
+1 1
+.names x_02100108 out3
+1 1
+.names x_04200210 out4
+1 1
+.names x_08400420 out5
+1 1
+.names x_10800840 out6
+1 1
+.names x_21001080 out7
+1 1
+.names x_42002100 out8
+1 1
+.names x_84004200 out9
+1 1
+.names x_08008400 out10
+1 1
+.names x_10010800 out11
+1 1
+.names x_20001001 out12
+1 1
+.names x_40002002 out13
+1 1
+.names x_80004004 out14
+1 1
+.names x_00008008 out15
+1 1
+.names x_00010010 out16
+1 1
+.names x_00000021 out17
+1 1
+.names x_00000042 out18
+1 1
+.names x_00000084 out19
+1 1
+.names x_00000108 out20
+1 1
+.names x_00000210 out21
+1 1
+.names x_00000420 out22
+1 1
+.names x_00000840 out23
+1 1
+.names x_00001080 out24
+1 1
+.names x_00002100 out25
+1 1
+.names x_00004200 out26
+1 1
+.names q10 out27
+1 1
+.names q11 out28
+1 1
+.names q12 out29
+1 1
+.names q13 out30
+1 1
+.names q14 out31
+1 1
+.end

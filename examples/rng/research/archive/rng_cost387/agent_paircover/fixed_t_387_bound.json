@@ -1,0 +1,63 @@
+{
+  "scope": "fixed two-shear T; all useful depth-2 XOR2 B/C networks; dual-mode OR leaves",
+  "cover_frontier": {
+    "15": {
+      "visited_partial_sets": 42024,
+      "terminal_cover_sets": 1,
+      "exact_extra_sets_over_heavy_candidate_universe": 1,
+      "heavy_decomposition_combinations": 1,
+      "heavy_combinations_missing_any_pair_target": 0,
+      "distinct_B_topologies": 1
+    },
+    "16": {
+      "visited_partial_sets": 95052,
+      "terminal_cover_sets": 7,
+      "exact_extra_sets_over_heavy_candidate_universe": 92,
+      "heavy_decomposition_combinations": 112,
+      "heavy_combinations_missing_any_pair_target": 0,
+      "distinct_B_topologies": 11
+    },
+    "17": {
+      "visited_partial_sets": 215023,
+      "terminal_cover_sets": 51,
+      "exact_extra_sets_over_heavy_candidate_universe": 4198,
+      "heavy_decomposition_combinations": 6262,
+      "heavy_combinations_missing_any_pair_target": 0,
+      "distinct_B_topologies": 84
+    }
+  },
+  "bounds": {
+    "xor_minimum": 61,
+    "or_rank_minimum": 32,
+    "xor_61": {
+      "required_or_for_gate_387": 38,
+      "exact_or_minimum": 47,
+      "best_gate": 396
+    },
+    "xor_62": {
+      "required_or_for_gate_387": 35,
+      "extra16_B_topologies": 11,
+      "label_feasible_extra16_B_topologies": 11,
+      "minimum_proved_or_lower_bound": 45,
+      "extra15_plus_unit_cases": 5,
+      "extra15_plus_unit_label_feasible": 0
+    },
+    "xor_63": {
+      "required_or_for_gate_387": 32,
+      "extra15_plus_two_units_cases": 10,
+      "extra15_plus_two_units_label_feasible": 0,
+      "extra16_plus_unit_topologies": 215,
+      "extra16_plus_unit_label_feasible": 160,
+      "extra16_plus_unit_or32": 0,
+      "extra17_B_topologies": 84,
+      "extra17_label_feasible_B_topologies": 79,
+      "extra17_or32": 0
+    },
+    "xor_64_or_more": {
+      "best_possible_gate_using_or_rank_minimum": 390
+    }
+  },
+  "gate_387_reachable": false,
+  "best_verified_tuple": "396/9/66",
+  "proof_summary": "XOR<61 is excluded by the exhaustive 15-extra-pair cover bound. At 61 XOR the exact OR minimum is 47. At 62 XOR every feasible B topology has a component-union lower bound above 35, while the unit-final trade is label-infeasible. At 63 XOR exhaustive partial-function compatibility finds no 32-OR topology in either unit-final accounting case. At 64 XOR, the rank minimum of 32 OR already gives gate 390."
+}

@@ -1,0 +1,36 @@
+2 # turn right
+reg0_to_out
+1 # move forward
+reg0_to_out
+reg0_to_out
+0 # turn left
+reg0_to_out
+1 # move forward
+reg0_to_out
+reg0_to_out
+reg0_to_out
+reg0_to_out
+reg0_to_out
+
+# setup rat detector
+33
+reg0_to_reg2
+label loop
+in_to_reg1
+sub
+shoot
+jz
+chill
+jmp
+
+label chill
+3
+reg0_to_out
+loop
+jmp
+
+label shoot
+5
+reg0_to_out
+loop
+jmp

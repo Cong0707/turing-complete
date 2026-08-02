@@ -1,0 +1,14 @@
+const mov i1|add
+const _ 0
+
+label loop
+
+mov _ io a
+i1|j|eq 0 a pop
+
+mov _ a stack
+i1|i2|j|eq 0 0 loop
+
+label pop
+mov _ stack io
+i1|i2|j|eq 0 0 loop

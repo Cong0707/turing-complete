@@ -1,0 +1,115 @@
+## TM__THWBxVSaWN2Zh7OMooFH0w_507 @ 0x140a25ae0
+length=4611686018427387990 ptr=0x6c207261760a0a7d
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_508 @ 0x140a25b40
+length=86 ptr=0x140a25ae0
+'}\n\nvar level_input = Input {}\nvar level_output = Output {}\n\ndef mode_refresh() {\n\n    '
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2425 @ 0x140a2bf20
+length=4611686018427389569 ptr=0x206665640a0a7d0a
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2426 @ 0x140a2c5b0
+length=1665 ptr=0x140a2bf20
+"\n}\n\ndef mode_run(target_tick: Int) {\n\n    if get_setting(sim_test_result) == U64 win { return }\n    if (get_setting(sim_test_result) == U64 fail && .tick + 1 >= #TICK_PAST_FAIL) { return }\n    if get_setting(sim_short_circuit_component_id_1) != 0 { return }\n\n    var halt_run = false\n\n    var original_start_time = Time 0\n    var orig_start_tick = U64 .tick\n    var last_time = original_start_time\n\n    var burst_ticks = 1\n\n    var nanos_per_tick = U64 0\n\n    var i = 0\n    var last_target_speed = U64 0\n    var speed = U64 1\n\n    while get_command(ctl_command_id) == .last_command_id && !halt_run && target_tick > .tick {\n        i += 1\n\n        let target_speed = max(1, get_command(ctl_tick_speed_ms))\n\n        if target_speed != last_target_speed {\n\n            original_start_time = get_time()\n            orig_start_tick = U64 .tick\n            last_time = original_start_time\n\n            speed = min(U64 get_command(ctl_tick_speed_ms), 10000000000000) // Cap at 10 ghz to avoid overflow\n            last_target_speed = target_speed\n\n        }\n\n        let ticks_at_start = .tick\n        let burst_target = .tick + burst_ticks\n\n        var burst_target_tick = min(target_tick, burst_target)\n\n        def halt() {\n\n            .burst_target_tick = .tick\n            .halt_run = true\n\n        }\n\n        def handle_test_result(result: TestResult) {\n\n            if result != pass {\n\n                var res = result\n\n                halt() // Halt regardless of wether we are above '#TICK_PAST_FAIL'\n\n                set_setting(sim_test_result, max(get_setting(sim_test_result), U64 res))\n\n            }\n\n        }\n\n        while .tick < burst_target_tick {\n\n"
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2427 @ 0x140a2c5c0
+length=4611686018427387966 ptr=0x2020202020202020
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2428 @ 0x140a2c610
+length=62 ptr=0x140a2c5c0
+'            .level_input = get_input(.tick + 1)\n            \n\n'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2430 @ 0x140a2c620
+length=4611686018427388046 ptr=0x6e697275545c3a44
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2431 @ 0x140a2c6c0
+length=142 ptr=0x140a2c620
+'D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim(2239, 9) `info.fast_pass_uses_left == 0` Not all bus values are resolved in the run phase '
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2433 @ 0x140a2c6e0
+length=4611686018427388061 ptr=0x73726573555c3a43
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2434 @ 0x140a2c790
+length=157 ptr=0x140a2c6e0
+'C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\pure\\collections\\tables.nim(771, 13) `len(t) == L` the length of the table changed while iterating over it'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2437 @ 0x140a2c7b0
+length=4611686018427387914 ptr=0x64695f6369676f6c
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2438 @ 0x140a2c7d0
+length=10 ptr=0x140a2c7b0
+'logic_idx_'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2439 @ 0x140a2c7e0
+length=4 ptr=0x140a27390
+'var '
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2440 @ 0x140a2c7f0
+length=7 ptr=0x140a27a50
+' = Int '
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2442 @ 0x140a2c800
+length=4611686018427387913 ptr=0x6666667830202620
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2443 @ 0x140a2c820
+length=9 ptr=0x140a2c800
+' & 0xffff'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2445 @ 0x140a2c830
+length=4611686018427387910 ptr=0x5f746e756f63
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2446 @ 0x140a2c840
+length=6 ptr=0x140a2c830
+'count_'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2447 @ 0x140a2c850
+length=4611686018427387910 ptr=0x5f7472617473
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2448 @ 0x140a2c860
+length=6 ptr=0x140a2c850
+'start_'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2449 @ 0x140a2c870
+length=4611686018427387911 ptr=0x5f6873696e6966
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2450 @ 0x140a2c880
+length=7 ptr=0x140a2c870
+'finish_'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2483 @ 0x140a2ca90
+length=4611686018427387917 ptr=0x2020202020202020
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2484 @ 0x140a2cab0
+length=13 ptr=0x140a2ca90
+'        break'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2486 @ 0x140a2cac0
+length=5 ptr=0x140a26880
+'    }'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2488 @ 0x140a2cad0
+length=4 ptr=0x140a25950
+'    '
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2489 @ 0x140a2cae0
+length=4611686018427387909 ptr=0x32203d2b20
+'<invalid>'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2490 @ 0x140a2caf0
+length=5 ptr=0x140a2cae0
+' += 2'
+
+## TM__THWBxVSaWN2Zh7OMooFH0w_2492 @ 0x140a2cb00
+length=1 ptr=0x140a261c0
+'}'

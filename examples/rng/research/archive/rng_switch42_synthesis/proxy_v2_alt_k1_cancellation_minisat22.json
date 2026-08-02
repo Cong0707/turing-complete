@@ -1,0 +1,56 @@
+{
+  "active_original_hidden_rows": [
+    0
+  ],
+  "backend": "D:\\Develop\\Other\\turing-complete\\.research\\rng_depth2_pysat\\search.py",
+  "effective_logic_budget": 225,
+  "encoding": {
+    "clauses": 1060491,
+    "cost_scale": 3,
+    "dnf_terms": 69775,
+    "fixed_cost_units": 26,
+    "primary_forms": 5683,
+    "variable_bound_units": 49,
+    "variables": 355333
+  },
+  "fixed_gate": 203,
+  "limit": 225,
+  "matrix_fingerprint_sha256": "42dcbc091b08a586a31db2487e6407eb99e43d530f755a7cb67ea175ec2e4e07",
+  "model": "natural-state xorshift32 exact depth<=2 XOR2/XOR3",
+  "proved_cost_lower_bound": 228,
+  "raw_logic_budget": 227,
+  "schema": 1,
+  "scope": "lifted-state cancellation-aware depth-two XOR2/Switch-XOR3 cover",
+  "solver": {
+    "name": "minisat22",
+    "peak_working_set_mb": 216.6484375,
+    "solve_seconds": 43.29715430000215,
+    "stats": {
+      "conflicts": 8112,
+      "decisions": 380547,
+      "propagations": 540763960,
+      "restarts": 32
+    },
+    "total_seconds": 79.80221120000351
+  },
+  "source_lines": [
+    9
+  ],
+  "source_log": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\proxy_v2_alt_fixed_k1_20k_r8_seed20260802083.log",
+  "state_bits": 33,
+  "status": "UNSAT",
+  "target_count": 35,
+  "target_gate_max": 430,
+  "target_weight_distribution": {
+    "2": 2,
+    "3": 6,
+    "4": 14,
+    "5": 3,
+    "6": 7,
+    "7": 3
+  },
+  "verified_sequences": {
+    "outputs_per_seed": 65,
+    "seeds": 256
+  }
+}

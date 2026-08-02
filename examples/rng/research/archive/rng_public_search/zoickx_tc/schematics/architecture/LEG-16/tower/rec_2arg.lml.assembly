@@ -1,0 +1,51 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const ucall i1|i2|call
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+
+const toggle 5
+const disk a
+const src b
+const dst c
+
+mov _ io disk
+mov _ io src
+mov _ io dst
+
+label move
+	i2|j|neq disk 0 else
+		mov _ src io
+		sav _ toggle io
+		mov _ dst io
+		sav _ toggle io
+		mov _ stack iar
+	label else
+		i2|sub disk 1 disk
+		
+		mov _ dst stack
+		i1|sub 3 dst dst
+		sub dst src dst
+		ucall _ _ move
+		mov _ stack dst
+		
+		mov _ src io
+		sav _ toggle io
+		mov _ dst io
+		sav _ toggle io
+		
+		mov _ src stack
+		i1|sub 3 src src
+		sub src dst src
+		ucall _ _ move
+		mov _ stack src
+		
+		i2|add disk 1 disk
+mov _ stack iar

@@ -1,0 +1,635 @@
+{
+  "scope": "fixed two-shear T; all useful depth-2 XOR2 B/C networks with exactly 61 XOR",
+  "source": ".research\\rng_joint_sat\\agent_joint\\fixed-two-shear.json",
+  "fixed_certificate": ".research\\rng_joint_sat\\agent_joint\\fixed-BC-exact.json",
+  "cover_enumeration": {
+    "required_pair_count": 12,
+    "extra_pair_budget": 15,
+    "visited_selected_extra_sets": 46561,
+    "budget_prunes": 42272,
+    "solutions_at_or_below_budget": 1,
+    "minimum_extra_pair_count": 15,
+    "minimum_pair_set_count": 1,
+    "selected_pair_count": 27,
+    "selected_pairs": [
+      "00000021",
+      "00000042",
+      "00000084",
+      "00000108",
+      "00000210",
+      "00000420",
+      "00000840",
+      "00001080",
+      "00002100",
+      "00004200",
+      "00008008",
+      "00010010",
+      "00420000",
+      "00840000",
+      "01080000",
+      "02100000",
+      "04200000",
+      "08008000",
+      "08400000",
+      "10010000",
+      "10800000",
+      "20000001",
+      "21000000",
+      "40000002",
+      "42000000",
+      "80000004",
+      "84000000"
+    ],
+    "unique_decomposition_count": 34,
+    "canonicalization_complete_for_all_61_xor_networks": true,
+    "required_pairs_used_by_heavy_finals": {
+      "00000021": 3,
+      "00000042": 3,
+      "00000084": 2,
+      "00000108": 2,
+      "00000210": 2,
+      "00000420": 2,
+      "00000840": 2,
+      "00001080": 2,
+      "00002100": 2,
+      "00004200": 2,
+      "00008008": 2,
+      "00010010": 2
+    },
+    "required_pairs_unused_by_heavy_finals": [],
+    "noncanonical_pair_mediators_inside_unique_pair_set": {
+      "00000021": [],
+      "00000042": [],
+      "00000084": [],
+      "00000108": [],
+      "00000210": [],
+      "00000420": [],
+      "00000840": [],
+      "00001080": [],
+      "00002100": [],
+      "00004200": [],
+      "00008008": [],
+      "00010010": []
+    }
+  },
+  "tick_zero_optimization": {
+    "fixed_direct_mapping_count": 5,
+    "fixed_direct_mappings": [
+      "s27:q10",
+      "s28:q11",
+      "s29:q12",
+      "s30:q13",
+      "s31:q14"
+    ],
+    "pair_components": 13,
+    "component_sizes": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      2,
+      2
+    ],
+    "unique_root_label_per_component": true,
+    "cross_component_possible_mapping_overlaps": 0,
+    "raw_mapping_count_before_fixed_reuse": 52,
+    "fixed_mapping_reuse_count": 5,
+    "exact_minimum_or": 47,
+    "optimal_mode_pair_set_count": 134217728,
+    "target_or_le_38": false,
+    "mode_pairs": [
+      "s0:q17",
+      "s1:q18",
+      "s2:q19",
+      "s3:q20",
+      "s4:q21",
+      "s5:q22",
+      "s6:q23",
+      "s7:q24",
+      "s8:q25",
+      "s9:q26",
+      "s10:q15",
+      "s11:q16",
+      "s12:q0",
+      "s13:q1",
+      "s14:q2",
+      "s15:q3",
+      "s16:q4",
+      "s17:q0",
+      "s17:q22",
+      "s18:q1",
+      "s18:q23",
+      "s19:q2",
+      "s19:q24",
+      "s20:q3",
+      "s20:q25",
+      "s21:q4",
+      "s21:q26",
+      "s22:q5",
+      "s22:q27",
+      "s23:q6",
+      "s23:q28",
+      "s24:q7",
+      "s24:q29",
+      "s25:q8",
+      "s25:q30",
+      "s26:q9",
+      "s26:q31",
+      "s27:q10",
+      "s27:q27",
+      "s28:q11",
+      "s28:q28",
+      "s29:q12",
+      "s29:q29",
+      "s30:q13",
+      "s30:q30",
+      "s31:q14",
+      "s31:q31"
+    ],
+    "components": [
+      {
+        "index": 0,
+        "nodes": [
+          "00000021",
+          "04200000"
+        ],
+        "root_label": "00020000",
+        "pair_labels": {
+          "00000021": "00020000",
+          "04200000": "00200010"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 4,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [
+          "s30:q13"
+        ],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000021",
+            "left_seed": 17,
+            "right_seed": null
+          },
+          {
+            "pair": "04200000",
+            "left_seed": 4,
+            "right_seed": 21
+          }
+        ],
+        "chosen_mappings": [
+          "s4:q21",
+          "s17:q0",
+          "s21:q26",
+          "s30:q13"
+        ]
+      },
+      {
+        "index": 1,
+        "nodes": [
+          "00000042",
+          "08400000"
+        ],
+        "root_label": "00040000",
+        "pair_labels": {
+          "00000042": "00040000",
+          "08400000": "00400020"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 4,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [
+          "s31:q14"
+        ],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000042",
+            "left_seed": 18,
+            "right_seed": null
+          },
+          {
+            "pair": "08400000",
+            "left_seed": 5,
+            "right_seed": 22
+          }
+        ],
+        "chosen_mappings": [
+          "s5:q22",
+          "s18:q1",
+          "s22:q27",
+          "s31:q14"
+        ]
+      },
+      {
+        "index": 2,
+        "nodes": [
+          "00000084",
+          "10800000"
+        ],
+        "root_label": "00080000",
+        "pair_labels": {
+          "00000084": "00080000",
+          "10800000": "00800040"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000084",
+            "left_seed": 19,
+            "right_seed": null
+          },
+          {
+            "pair": "10800000",
+            "left_seed": 6,
+            "right_seed": 23
+          }
+        ],
+        "chosen_mappings": [
+          "s6:q23",
+          "s19:q2",
+          "s23:q28"
+        ]
+      },
+      {
+        "index": 3,
+        "nodes": [
+          "00000108",
+          "21000000"
+        ],
+        "root_label": "00100000",
+        "pair_labels": {
+          "00000108": "00100000",
+          "21000000": "01000080"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000108",
+            "left_seed": 20,
+            "right_seed": null
+          },
+          {
+            "pair": "21000000",
+            "left_seed": 7,
+            "right_seed": 24
+          }
+        ],
+        "chosen_mappings": [
+          "s7:q24",
+          "s20:q3",
+          "s24:q29"
+        ]
+      },
+      {
+        "index": 4,
+        "nodes": [
+          "00000210",
+          "42000000"
+        ],
+        "root_label": "00200000",
+        "pair_labels": {
+          "00000210": "00200000",
+          "42000000": "02000100"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000210",
+            "left_seed": 21,
+            "right_seed": null
+          },
+          {
+            "pair": "42000000",
+            "left_seed": 8,
+            "right_seed": 25
+          }
+        ],
+        "chosen_mappings": [
+          "s8:q25",
+          "s21:q4",
+          "s25:q30"
+        ]
+      },
+      {
+        "index": 5,
+        "nodes": [
+          "00000420",
+          "84000000"
+        ],
+        "root_label": "00400000",
+        "pair_labels": {
+          "00000420": "00400000",
+          "84000000": "04000200"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000420",
+            "left_seed": 22,
+            "right_seed": null
+          },
+          {
+            "pair": "84000000",
+            "left_seed": 9,
+            "right_seed": 26
+          }
+        ],
+        "chosen_mappings": [
+          "s9:q26",
+          "s22:q5",
+          "s26:q31"
+        ]
+      },
+      {
+        "index": 6,
+        "nodes": [
+          "00000840",
+          "08008000"
+        ],
+        "root_label": "00800000",
+        "pair_labels": {
+          "00000840": "00800000",
+          "08008000": "08000400"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00000840",
+            "left_seed": 23,
+            "right_seed": null
+          },
+          {
+            "pair": "08008000",
+            "left_seed": 10,
+            "right_seed": 27
+          }
+        ],
+        "chosen_mappings": [
+          "s10:q15",
+          "s23:q6",
+          "s27:q27"
+        ]
+      },
+      {
+        "index": 7,
+        "nodes": [
+          "00001080",
+          "10010000"
+        ],
+        "root_label": "01000000",
+        "pair_labels": {
+          "00001080": "01000000",
+          "10010000": "10000800"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00001080",
+            "left_seed": 24,
+            "right_seed": null
+          },
+          {
+            "pair": "10010000",
+            "left_seed": 11,
+            "right_seed": 28
+          }
+        ],
+        "chosen_mappings": [
+          "s11:q16",
+          "s24:q7",
+          "s28:q28"
+        ]
+      },
+      {
+        "index": 8,
+        "nodes": [
+          "00002100",
+          "20000001"
+        ],
+        "root_label": "02000000",
+        "pair_labels": {
+          "00002100": "02000000",
+          "20000001": "20001000"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 3,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00002100",
+            "left_seed": 25,
+            "right_seed": null
+          },
+          {
+            "pair": "20000001",
+            "left_seed": 12,
+            "right_seed": 29
+          }
+        ],
+        "chosen_mappings": [
+          "s12:q0",
+          "s25:q8",
+          "s29:q29"
+        ]
+      },
+      {
+        "index": 9,
+        "nodes": [
+          "00004200",
+          "00420000",
+          "40000002"
+        ],
+        "root_label": "04000000",
+        "pair_labels": {
+          "00004200": "04000000",
+          "00420000": "00020001",
+          "40000002": "40002000"
+        },
+        "orientation_options": 8,
+        "minimum_orientation_options": 8,
+        "local_mapping_count": 5,
+        "minimum_new_mappings_after_fixed": 5,
+        "possible_fixed_reuse": [],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00004200",
+            "left_seed": 26,
+            "right_seed": null
+          },
+          {
+            "pair": "00420000",
+            "left_seed": 0,
+            "right_seed": 17
+          },
+          {
+            "pair": "40000002",
+            "left_seed": 13,
+            "right_seed": 30
+          }
+        ],
+        "chosen_mappings": [
+          "s0:q17",
+          "s13:q1",
+          "s17:q22",
+          "s26:q9",
+          "s30:q30"
+        ]
+      },
+      {
+        "index": 10,
+        "nodes": [
+          "00008008",
+          "01080000"
+        ],
+        "root_label": "00008000",
+        "pair_labels": {
+          "00008008": "00008000",
+          "01080000": "00080004"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 4,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [
+          "s28:q11"
+        ],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00008008",
+            "left_seed": 15,
+            "right_seed": null
+          },
+          {
+            "pair": "01080000",
+            "left_seed": 2,
+            "right_seed": 19
+          }
+        ],
+        "chosen_mappings": [
+          "s2:q19",
+          "s15:q3",
+          "s19:q24",
+          "s28:q11"
+        ]
+      },
+      {
+        "index": 11,
+        "nodes": [
+          "00010010",
+          "02100000"
+        ],
+        "root_label": "00010000",
+        "pair_labels": {
+          "00010010": "00010000",
+          "02100000": "00100008"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 4,
+        "minimum_new_mappings_after_fixed": 3,
+        "possible_fixed_reuse": [
+          "s29:q12"
+        ],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00010010",
+            "left_seed": 16,
+            "right_seed": null
+          },
+          {
+            "pair": "02100000",
+            "left_seed": 3,
+            "right_seed": 20
+          }
+        ],
+        "chosen_mappings": [
+          "s3:q20",
+          "s16:q4",
+          "s20:q25",
+          "s29:q12"
+        ]
+      },
+      {
+        "index": 12,
+        "nodes": [
+          "00840000",
+          "80000004"
+        ],
+        "root_label": "00040002",
+        "pair_labels": {
+          "00840000": "00040002",
+          "80000004": "80004000"
+        },
+        "orientation_options": 4,
+        "minimum_orientation_options": 4,
+        "local_mapping_count": 5,
+        "minimum_new_mappings_after_fixed": 4,
+        "possible_fixed_reuse": [
+          "s27:q10"
+        ],
+        "chosen_leaf_seeds": [
+          {
+            "pair": "00840000",
+            "left_seed": 1,
+            "right_seed": 18
+          },
+          {
+            "pair": "80000004",
+            "left_seed": 14,
+            "right_seed": 31
+          }
+        ],
+        "chosen_mappings": [
+          "s1:q18",
+          "s14:q2",
+          "s18:q23",
+          "s27:q10",
+          "s31:q31"
+        ]
+      }
+    ]
+  },
+  "metrics": {
+    "xor": 61,
+    "or": 47,
+    "gate": 396,
+    "delay": 9,
+    "cycles": 66,
+    "energy": 235224
+  },
+  "proof_summary": "Exhaustive cover DFS finds one 15-extra-pair set and one decomposition per final. Canonicalizing any depth-two pair output preserves XOR count and extra-pair count; the unique heavy-row cover uses every pair target, so no non-canonical 61-XOR topology remains. The induced B-label equations have one weight<=2 root label per component. Possible mapping atoms are disjoint across components, so independent local minima give a global lower bound and construction of 47 OR gates."
+}

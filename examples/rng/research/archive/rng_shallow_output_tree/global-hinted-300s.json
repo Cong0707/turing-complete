@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "status": "unknown",
+  "reason_unknown": "timeout",
+  "scope": "exact colored tree, T/B<=4, tick-zero capacity; lazy B cuts",
+  "transition_rank": 32,
+  "low_weight_state_count": 41449,
+  "used_state_count": 29361,
+  "edge_option_counts": [
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338,
+    285,
+    285,
+    285,
+    285,
+    285,
+    35,
+    35,
+    285,
+    285,
+    285,
+    285,
+    285,
+    285,
+    285,
+    285,
+    1338,
+    1338,
+    1338,
+    1338,
+    1338
+  ],
+  "edge_variable_count": 26521,
+  "node_variable_count": 29361,
+  "variable_count": 55882,
+  "iterations": 2,
+  "learned_boundary_cuts": 5,
+  "best_bad_count": 5,
+  "best_summary": {
+    "iteration": 1,
+    "bad_count": 5,
+    "endpoint_count": 33,
+    "bad": [
+      {
+        "state": "00021101",
+        "T_weight": 4,
+        "B_weight": 6,
+        "B_boundary": [
+          "00021101",
+          "00040121",
+          "00440020",
+          "04200000",
+          "40022001",
+          "42002100"
+        ]
+      },
+      {
+        "state": "00040121",
+        "T_weight": 4,
+        "B_weight": 6,
+        "B_boundary": [
+          "00040121",
+          "00880040",
+          "04200000",
+          "08040020",
+          "08800400",
+          "80044002"
+        ]
+      },
+      {
+        "state": "00210108",
+        "T_weight": 4,
+        "B_weight": 5,
+        "B_boundary": [
+          "00002100",
+          "00210108",
+          "00420210",
+          "10220010",
+          "30010000"
+        ]
+      },
+      {
+        "state": "40022001",
+        "T_weight": 4,
+        "B_weight": 6,
+        "B_boundary": [
+          "00002100",
+          "00040121",
+          "00440020",
+          "40000000",
+          "40022001",
+          "80044002"
+        ]
+      },
+      {
+        "state": "800c0040",
+        "T_weight": 4,
+        "B_weight": 8,
+        "B_boundary": [
+          "00088004",
+          "00880040",
+          "01100080",
+          "08004000",
+          "10080040",
+          "11000800",
+          "80000000",
+          "80044002"
+        ]
+      }
+    ]
+  },
+  "timeout_seconds": 300.0,
+  "memory_limit_mb": 680,
+  "peak_working_set_mb": 100.3203125,
+  "elapsed_seconds": 300.05317329999525,
+  "hint": ".research\\rng_shallow_output_tree\\radius4-tonly-sat.json"
+}

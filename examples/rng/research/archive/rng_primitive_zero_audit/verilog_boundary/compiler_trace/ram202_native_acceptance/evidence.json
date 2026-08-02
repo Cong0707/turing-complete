@@ -1,0 +1,1001 @@
+{
+  "candidate_source": {
+    "kind_118_literals": 5,
+    "kind_54_literals": 0,
+    "kind_56_literals": 0,
+    "path": "src\\tc_save_lab\\rng_ram_asic.py",
+    "sha256": "a573ebb8334757fb0d208e0acc6d16f8ddc1328e7598ef44d430fec92346d937",
+    "uses_fabricated_aggregate_ram_pins": true
+  },
+  "compiler_association": {
+    "backing_ram_kind": 118,
+    "direction": "kind 54/56 searches spatially for kind 118",
+    "port_kinds": [
+      54,
+      56
+    ]
+  },
+  "game_binary": {
+    "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+    "sha256": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c"
+  },
+  "native_prototype_port_counts": {
+    "118": {
+      "112": 0,
+      "128": 0,
+      "96": 0
+    },
+    "54": {
+      "112": 0,
+      "128": 2,
+      "96": 3
+    },
+    "56": {
+      "112": 0,
+      "128": 1,
+      "96": 5
+    }
+  },
+  "samples": [
+    {
+      "component_counts": {
+        "118": 1,
+        "54": 2,
+        "56": 1
+      },
+      "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\foundry\\RISCV\\MEMORYREGFILE\\circuit.data",
+      "ram_components": [
+        {
+          "buffer_size": 256,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            27,
+            16
+          ],
+          "rotation": 0,
+          "settings": [
+            0,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              12,
+              4
+            ],
+            "enable": [
+              12,
+              3
+            ],
+            "out": [
+              43,
+              3
+            ]
+          },
+          "position": [
+            27,
+            4
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              12,
+              2
+            ],
+            "enable": [
+              12,
+              1
+            ],
+            "out": [
+              43,
+              1
+            ]
+          },
+          "position": [
+            27,
+            2
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 2,
+            "out": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              12,
+              6
+            ],
+            "data": [
+              12,
+              7
+            ],
+            "enable": [
+              12,
+              5
+            ]
+          },
+          "position": [
+            27,
+            6
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "data": 1,
+            "enable": 1
+          },
+          "word_size": 64
+        }
+      ],
+      "sha256": "aeca711c1f07082a1d74b016c2c902e7c7cab3341b4460c7bcb5552488fd2b0c"
+    },
+    {
+      "component_counts": {
+        "118": 4,
+        "54": 5,
+        "56": 3
+      },
+      "path": "examples\\_architectures\\RV64\\baseline\\circuit.data",
+      "ram_components": [
+        {
+          "buffer_size": 16384,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -183,
+            -181
+          ],
+          "rotation": 0,
+          "settings": [
+            1,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 16384,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -1,
+            -89
+          ],
+          "rotation": 0,
+          "settings": [
+            1,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -198,
+              -190
+            ],
+            "enable": [
+              -198,
+              -191
+            ],
+            "out": [
+              -167,
+              -191
+            ]
+          },
+          "position": [
+            -183,
+            -190
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -16,
+              -99
+            ],
+            "data": [
+              -16,
+              -98
+            ],
+            "enable": [
+              -16,
+              -100
+            ]
+          },
+          "position": [
+            -1,
+            -99
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "data": 1,
+            "enable": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -16,
+              -101
+            ],
+            "enable": [
+              -16,
+              -102
+            ],
+            "out": [
+              15,
+              -102
+            ]
+          },
+          "position": [
+            -1,
+            -101
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -109,
+              -231
+            ],
+            "data": [
+              -109,
+              -230
+            ],
+            "enable": [
+              -109,
+              -232
+            ]
+          },
+          "position": [
+            -94,
+            -231
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "data": 1,
+            "enable": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -109,
+              -235
+            ],
+            "enable": [
+              -109,
+              -236
+            ],
+            "out": [
+              -78,
+              -236
+            ]
+          },
+          "position": [
+            -94,
+            -235
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 2,
+            "out": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -109,
+              -233
+            ],
+            "enable": [
+              -109,
+              -234
+            ],
+            "out": [
+              -78,
+              -234
+            ]
+          },
+          "position": [
+            -94,
+            -233
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -94,
+            -221
+          ],
+          "rotation": 0,
+          "settings": [
+            0,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 4096,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -1,
+            -155
+          ],
+          "rotation": 0,
+          "settings": [
+            1,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -16,
+              -165
+            ],
+            "data": [
+              -16,
+              -164
+            ],
+            "enable": [
+              -16,
+              -166
+            ]
+          },
+          "position": [
+            -1,
+            -165
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "data": 1,
+            "enable": 1
+          },
+          "word_size": 64
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -16,
+              -167
+            ],
+            "enable": [
+              -16,
+              -168
+            ],
+            "out": [
+              15,
+              -168
+            ]
+          },
+          "position": [
+            -1,
+            -167
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 64
+        }
+      ],
+      "sha256": "f34c08b47ce541151efe79b1217dd37b2eab1afc90ad6037781402fce047a888"
+    },
+    {
+      "component_counts": {
+        "118": 3,
+        "54": 7,
+        "56": 5
+      },
+      "path": "examples\\symphony_12_budget\\baseline\\circuit.data",
+      "ram_components": [
+        {
+          "buffer_size": 16777216,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -24,
+            -1
+          ],
+          "rotation": 0,
+          "settings": [
+            0,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            20,
+            -1
+          ],
+          "rotation": 0,
+          "settings": [
+            0,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -39,
+              -25
+            ],
+            "enable": [
+              -39,
+              -26
+            ],
+            "out": [
+              -8,
+              -26
+            ]
+          },
+          "position": [
+            -24,
+            -25
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              5,
+              -13
+            ],
+            "enable": [
+              5,
+              -14
+            ],
+            "out": [
+              36,
+              -14
+            ]
+          },
+          "position": [
+            20,
+            -13
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              5,
+              -15
+            ],
+            "enable": [
+              5,
+              -16
+            ],
+            "out": [
+              36,
+              -16
+            ]
+          },
+          "position": [
+            20,
+            -15
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              5,
+              -11
+            ],
+            "data": [
+              5,
+              -10
+            ],
+            "enable": [
+              5,
+              -12
+            ]
+          },
+          "position": [
+            20,
+            -11
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "data": 0,
+            "enable": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -39,
+              -11
+            ],
+            "data": [
+              -39,
+              -10
+            ],
+            "enable": [
+              -39,
+              -12
+            ]
+          },
+          "position": [
+            -24,
+            -11
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "data": 0,
+            "enable": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -39,
+              -14
+            ],
+            "data": [
+              -39,
+              -13
+            ],
+            "enable": [
+              -39,
+              -15
+            ]
+          },
+          "position": [
+            -24,
+            -14
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "data": 0,
+            "enable": 0
+          },
+          "word_size": 16
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -39,
+              -17
+            ],
+            "data": [
+              -39,
+              -16
+            ],
+            "enable": [
+              -39,
+              -18
+            ]
+          },
+          "position": [
+            -24,
+            -17
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "data": 0,
+            "enable": 0
+          },
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -39,
+              -19
+            ],
+            "enable": [
+              -39,
+              -20
+            ],
+            "out": [
+              -8,
+              -20
+            ]
+          },
+          "position": [
+            -24,
+            -19
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -39,
+              -21
+            ],
+            "enable": [
+              -39,
+              -22
+            ],
+            "out": [
+              -8,
+              -22
+            ]
+          },
+          "position": [
+            -24,
+            -21
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 16
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -39,
+              -23
+            ],
+            "enable": [
+              -39,
+              -24
+            ],
+            "out": [
+              -8,
+              -24
+            ]
+          },
+          "position": [
+            -24,
+            -23
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 8
+        },
+        {
+          "buffer_size": 16777216,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            -69,
+            -1
+          ],
+          "rotation": 0,
+          "settings": [
+            0,
+            0,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              -84,
+              -11
+            ],
+            "data": [
+              -84,
+              -10
+            ],
+            "enable": [
+              -84,
+              -12
+            ]
+          },
+          "position": [
+            -69,
+            -11
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "data": 0,
+            "enable": 0
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              -84,
+              -13
+            ],
+            "enable": [
+              -84,
+              -14
+            ],
+            "out": [
+              -53,
+              -14
+            ]
+          },
+          "position": [
+            -69,
+            -13
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 0,
+            "enable": 0,
+            "out": 0
+          },
+          "word_size": 32
+        }
+      ],
+      "sha256": "83d943cd2ed5025d4dedddf6d16d2fd921ecf19d21ad0a11a7d129d2bebc1fd5"
+    },
+    {
+      "component_counts": {
+        "118": 1,
+        "54": 1,
+        "56": 1
+      },
+      "path": ".research\\rng_primitive_zero_audit\\ram2_candidate\\circuit.data",
+      "ram_components": [
+        {
+          "buffer_size": 4,
+          "kind": 118,
+          "native_pins": {},
+          "position": [
+            320,
+            560
+          ],
+          "rotation": 0,
+          "settings": [
+            2,
+            512,
+            0
+          ],
+          "wire_endpoint_hits": {},
+          "word_size": 8
+        },
+        {
+          "buffer_size": 0,
+          "kind": 54,
+          "native_pins": {
+            "address": [
+              305,
+              548
+            ],
+            "enable": [
+              305,
+              547
+            ],
+            "out": [
+              336,
+              547
+            ]
+          },
+          "position": [
+            320,
+            548
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "enable": 1,
+            "out": 1
+          },
+          "word_size": 32
+        },
+        {
+          "buffer_size": 0,
+          "kind": 56,
+          "native_pins": {
+            "address": [
+              305,
+              550
+            ],
+            "data": [
+              305,
+              551
+            ],
+            "enable": [
+              305,
+              549
+            ]
+          },
+          "position": [
+            320,
+            550
+          ],
+          "rotation": 0,
+          "settings": [],
+          "wire_endpoint_hits": {
+            "address": 1,
+            "data": 1,
+            "enable": 1
+          },
+          "word_size": 32
+        }
+      ],
+      "sha256": "78f9cbc9ad2e69830238ce964c418fc81bbced3253e2a0147d949c7a89af6c88"
+    }
+  ],
+  "schema": 1,
+  "v15_and_board_load": {
+    "board_add_calls_per_loop_iteration": 1,
+    "kind_118_auto_expansion_branch": false,
+    "runtime_pin_groups_are_native_prototype_groups_96_112_128": true,
+    "serialized_component_loop_found": true
+  },
+  "verdict": {
+    "kind_118_has_aggregate_wire_ports": false,
+    "kind_54_load_component_required": true,
+    "kind_56_store_component_required": true,
+    "ram202_candidate_native_compile_ready": false
+  }
+}

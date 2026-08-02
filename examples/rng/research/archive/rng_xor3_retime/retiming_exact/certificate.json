@@ -1,0 +1,827 @@
+{
+  "certificate_cycles": [
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a17",
+            "b17",
+            "y17"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b17",
+              "a17"
+            ],
+            [
+              "y17",
+              "b17"
+            ]
+          ],
+          "source": 17,
+          "target": 17
+        }
+      ],
+      "combinational_delay": 7,
+      "minimum_substitutions_for_period_5": 1,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 5,
+      "period_6_budget": 6,
+      "register_count": 1,
+      "state_cycle": [
+        17
+      ],
+      "substitution_group": [
+        [
+          "b17",
+          "a17"
+        ],
+        [
+          "y17",
+          "b17"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a18",
+            "b18",
+            "y18"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b18",
+              "a18"
+            ],
+            [
+              "y18",
+              "b18"
+            ]
+          ],
+          "source": 18,
+          "target": 18
+        }
+      ],
+      "combinational_delay": 7,
+      "minimum_substitutions_for_period_5": 1,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 5,
+      "period_6_budget": 6,
+      "register_count": 1,
+      "state_cycle": [
+        18
+      ],
+      "substitution_group": [
+        [
+          "b18",
+          "a18"
+        ],
+        [
+          "y18",
+          "b18"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a0",
+            "b17",
+            "y12"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b17",
+              "a0"
+            ],
+            [
+              "y12",
+              "b17"
+            ]
+          ],
+          "source": 0,
+          "target": 12
+        },
+        {
+          "chain": [
+            "a12",
+            "y7"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y7",
+              "a12"
+            ]
+          ],
+          "source": 12,
+          "target": 7
+        },
+        {
+          "chain": [
+            "a7",
+            "b24",
+            "y19"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b24",
+              "a7"
+            ],
+            [
+              "y19",
+              "b24"
+            ]
+          ],
+          "source": 7,
+          "target": 19
+        },
+        {
+          "chain": [
+            "a6",
+            "b23",
+            "y18"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b23",
+              "a6"
+            ],
+            [
+              "y18",
+              "b23"
+            ]
+          ],
+          "source": 19,
+          "target": 18
+        },
+        {
+          "chain": [
+            "a5",
+            "y0"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y0",
+              "a5"
+            ]
+          ],
+          "source": 18,
+          "target": 0
+        }
+      ],
+      "combinational_delay": 31,
+      "minimum_substitutions_for_period_5": 3,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 25,
+      "period_6_budget": 30,
+      "register_count": 5,
+      "state_cycle": [
+        0,
+        12,
+        7,
+        19,
+        18
+      ],
+      "substitution_group": [
+        [
+          "b17",
+          "a0"
+        ],
+        [
+          "b23",
+          "a6"
+        ],
+        [
+          "b24",
+          "a7"
+        ],
+        [
+          "y0",
+          "a5"
+        ],
+        [
+          "y12",
+          "b17"
+        ],
+        [
+          "y18",
+          "b23"
+        ],
+        [
+          "y19",
+          "b24"
+        ],
+        [
+          "y7",
+          "a12"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a1",
+            "b18",
+            "y13"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b18",
+              "a1"
+            ],
+            [
+              "y13",
+              "b18"
+            ]
+          ],
+          "source": 1,
+          "target": 13
+        },
+        {
+          "chain": [
+            "a13",
+            "b30",
+            "y25"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b30",
+              "a13"
+            ],
+            [
+              "y25",
+              "b30"
+            ]
+          ],
+          "source": 13,
+          "target": 25
+        },
+        {
+          "chain": [
+            "a12",
+            "b29",
+            "y24"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b29",
+              "a12"
+            ],
+            [
+              "y24",
+              "b29"
+            ]
+          ],
+          "source": 25,
+          "target": 24
+        },
+        {
+          "chain": [
+            "a11",
+            "y6"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y6",
+              "a11"
+            ]
+          ],
+          "source": 24,
+          "target": 6
+        },
+        {
+          "chain": [
+            "a6",
+            "y1"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y1",
+              "a6"
+            ]
+          ],
+          "source": 6,
+          "target": 1
+        }
+      ],
+      "combinational_delay": 31,
+      "minimum_substitutions_for_period_5": 3,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 25,
+      "period_6_budget": 30,
+      "register_count": 5,
+      "state_cycle": [
+        1,
+        13,
+        25,
+        24,
+        6
+      ],
+      "substitution_group": [
+        [
+          "b18",
+          "a1"
+        ],
+        [
+          "b29",
+          "a12"
+        ],
+        [
+          "b30",
+          "a13"
+        ],
+        [
+          "y1",
+          "a6"
+        ],
+        [
+          "y13",
+          "b18"
+        ],
+        [
+          "y24",
+          "b29"
+        ],
+        [
+          "y25",
+          "b30"
+        ],
+        [
+          "y6",
+          "a11"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a2",
+            "b19",
+            "y14"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b19",
+              "a2"
+            ],
+            [
+              "y14",
+              "b19"
+            ]
+          ],
+          "source": 2,
+          "target": 14
+        },
+        {
+          "chain": [
+            "a14",
+            "b31",
+            "y26"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b31",
+              "a14"
+            ],
+            [
+              "y26",
+              "b31"
+            ]
+          ],
+          "source": 14,
+          "target": 26
+        },
+        {
+          "chain": [
+            "a13",
+            "y8"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y8",
+              "a13"
+            ]
+          ],
+          "source": 26,
+          "target": 8
+        },
+        {
+          "chain": [
+            "a8",
+            "b25",
+            "y20"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b25",
+              "a8"
+            ],
+            [
+              "y20",
+              "b25"
+            ]
+          ],
+          "source": 8,
+          "target": 20
+        },
+        {
+          "chain": [
+            "a7",
+            "y2"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y2",
+              "a7"
+            ]
+          ],
+          "source": 20,
+          "target": 2
+        }
+      ],
+      "combinational_delay": 31,
+      "minimum_substitutions_for_period_5": 3,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 25,
+      "period_6_budget": 30,
+      "register_count": 5,
+      "state_cycle": [
+        2,
+        14,
+        26,
+        8,
+        20
+      ],
+      "substitution_group": [
+        [
+          "b19",
+          "a2"
+        ],
+        [
+          "b25",
+          "a8"
+        ],
+        [
+          "b31",
+          "a14"
+        ],
+        [
+          "y14",
+          "b19"
+        ],
+        [
+          "y2",
+          "a7"
+        ],
+        [
+          "y20",
+          "b25"
+        ],
+        [
+          "y26",
+          "b31"
+        ],
+        [
+          "y8",
+          "a13"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a3",
+            "b20",
+            "y15"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b20",
+              "a3"
+            ],
+            [
+              "y15",
+              "b20"
+            ]
+          ],
+          "source": 3,
+          "target": 15
+        },
+        {
+          "chain": [
+            "a15",
+            "y10"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y10",
+              "a15"
+            ]
+          ],
+          "source": 15,
+          "target": 10
+        },
+        {
+          "chain": [
+            "a10",
+            "b27",
+            "y22"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b27",
+              "a10"
+            ],
+            [
+              "y22",
+              "b27"
+            ]
+          ],
+          "source": 10,
+          "target": 22
+        },
+        {
+          "chain": [
+            "a9",
+            "b26",
+            "y21"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b26",
+              "a9"
+            ],
+            [
+              "y21",
+              "b26"
+            ]
+          ],
+          "source": 22,
+          "target": 21
+        },
+        {
+          "chain": [
+            "a8",
+            "y3"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y3",
+              "a8"
+            ]
+          ],
+          "source": 21,
+          "target": 3
+        }
+      ],
+      "combinational_delay": 31,
+      "minimum_substitutions_for_period_5": 3,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 25,
+      "period_6_budget": 30,
+      "register_count": 5,
+      "state_cycle": [
+        3,
+        15,
+        10,
+        22,
+        21
+      ],
+      "substitution_group": [
+        [
+          "b20",
+          "a3"
+        ],
+        [
+          "b26",
+          "a9"
+        ],
+        [
+          "b27",
+          "a10"
+        ],
+        [
+          "y10",
+          "a15"
+        ],
+        [
+          "y15",
+          "b20"
+        ],
+        [
+          "y21",
+          "b26"
+        ],
+        [
+          "y22",
+          "b27"
+        ],
+        [
+          "y3",
+          "a8"
+        ]
+      ]
+    },
+    {
+      "arcs": [
+        {
+          "chain": [
+            "a5",
+            "b22",
+            "y17"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b22",
+              "a5"
+            ],
+            [
+              "y17",
+              "b22"
+            ]
+          ],
+          "source": 5,
+          "target": 17
+        },
+        {
+          "chain": [
+            "a4",
+            "b21",
+            "y16"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b21",
+              "a4"
+            ],
+            [
+              "y16",
+              "b21"
+            ]
+          ],
+          "source": 17,
+          "target": 16
+        },
+        {
+          "chain": [
+            "a16",
+            "y11"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y11",
+              "a16"
+            ]
+          ],
+          "source": 16,
+          "target": 11
+        },
+        {
+          "chain": [
+            "a11",
+            "b28",
+            "y23"
+          ],
+          "delay": 7,
+          "shortening_substitutions": [
+            [
+              "b28",
+              "a11"
+            ],
+            [
+              "y23",
+              "b28"
+            ]
+          ],
+          "source": 11,
+          "target": 23
+        },
+        {
+          "chain": [
+            "a10",
+            "y5"
+          ],
+          "delay": 5,
+          "shortening_substitutions": [
+            [
+              "y5",
+              "a10"
+            ]
+          ],
+          "source": 23,
+          "target": 5
+        }
+      ],
+      "combinational_delay": 31,
+      "minimum_substitutions_for_period_5": 3,
+      "minimum_substitutions_for_period_6": 1,
+      "period_5_budget": 25,
+      "period_6_budget": 30,
+      "register_count": 5,
+      "state_cycle": [
+        5,
+        17,
+        16,
+        11,
+        23
+      ],
+      "substitution_group": [
+        [
+          "b21",
+          "a4"
+        ],
+        [
+          "b22",
+          "a5"
+        ],
+        [
+          "b28",
+          "a11"
+        ],
+        [
+          "y11",
+          "a16"
+        ],
+        [
+          "y16",
+          "b21"
+        ],
+        [
+          "y17",
+          "b22"
+        ],
+        [
+          "y23",
+          "b28"
+        ],
+        [
+          "y5",
+          "a10"
+        ]
+      ]
+    }
+  ],
+  "five_xor3_period_5_possible": false,
+  "five_xor3_period_6_possible": false,
+  "function": {
+    "basis_vectors_verified": 32,
+    "expression": "x ^= x >> 13; x ^= x << 17; x ^= x >> 5 (U32)",
+    "matrix_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+    "name": "xorshift32"
+  },
+  "maximum_local_two_xor2_to_one_xor3_replacements": 2,
+  "model": {
+    "canonical_xor2_count": 61,
+    "cycle_invariant": "sum_C(w_r)=sum_C(w)",
+    "feedback_register_count": 32,
+    "retiming_equation": "w_r(u,v)=w(u,v)+r(v)-r(u)",
+    "steady_state_or_delay": 1,
+    "xor2_delay": 2,
+    "xor3_delay": 2
+  },
+  "pairwise_disjoint_substitution_groups": true,
+  "scope": "canonical 61-XOR DAG, local adjacent XOR2-chain replacement, and synchronous retiming only",
+  "single_consumer_deletable_xor2_chains": [
+    [
+      "a17",
+      "b17"
+    ],
+    [
+      "a18",
+      "b18"
+    ]
+  ],
+  "xor3_lower_bound_for_period_5": 17,
+  "xor3_lower_bound_for_period_6": 7
+}

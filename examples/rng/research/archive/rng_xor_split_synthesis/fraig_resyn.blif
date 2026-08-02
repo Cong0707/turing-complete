@@ -1,0 +1,413 @@
+# Benchmark "rng_mode_net" written by ABC on Sun Aug 02 00:46:50 2026
+.model rng_mode_net
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 \
+ q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 \
+ q26 q27 q28 q29 q30 q31
+.outputs f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 \
+ f19 f20 f21 f22 f23 f24 f25 f26 f27 f28 f29 f30 f31 v0 v1 v2 v3 v4 v5 v6 \
+ v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23 v24 v25 \
+ v26 v27 v28 v29 v30 v31
+.gate NOR     A=q22 B=s0 Y=new_n129
+.gate NOR     A=q17 B=s17 Y=new_n130
+.gate XOR     A=new_n129 B=new_n130 Y=new_n131
+.gate NOR     A=q30 B=s13 Y=new_n132
+.gate NOR     A=q1 B=s30 Y=new_n133
+.gate XNOR    A=new_n132 B=new_n133 Y=new_n134
+.gate XNOR    A=new_n131 B=new_n134 Y=f0
+.gate NOR     A=q23 B=s1 Y=new_n136
+.gate NOR     A=q18 B=s18 Y=new_n137
+.gate XOR     A=new_n136 B=new_n137 Y=new_n138
+.gate NOR     A=q31 B=s14 Y=new_n139
+.gate NOR     A=q2 B=s31 Y=new_n140
+.gate XNOR    A=new_n139 B=new_n140 Y=new_n141
+.gate XNOR    A=new_n138 B=new_n141 Y=f1
+.gate NOR     A=q24 B=s2 Y=new_n143
+.gate NOR     A=q19 B=s19 Y=new_n144
+.gate XOR     A=new_n143 B=new_n144 Y=new_n145
+.gate NOR     A=q15 B=s15 Y=new_n146
+.gate XNOR    A=new_n146 B=q3 Y=v15
+.gate XOR     A=new_n145 B=v15 Y=f2
+.gate NOR     A=q25 B=s3 Y=new_n149
+.gate NOR     A=q20 B=s20 Y=new_n150
+.gate XOR     A=new_n149 B=new_n150 Y=new_n151
+.gate NOR     A=q16 B=s16 Y=new_n152
+.gate XNOR    A=new_n152 B=q4 Y=v16
+.gate XOR     A=new_n151 B=v16 Y=f3
+.gate NOR     A=q26 B=s4 Y=new_n155
+.gate NOR     A=q21 B=s21 Y=new_n156
+.gate XOR     A=new_n155 B=new_n156 Y=new_n157
+.gate NOR     A=q0 B=s17 Y=new_n158
+.gate NOT     A=q5 Y=new_n159
+.gate XNOR    A=new_n158 B=new_n159 Y=new_n160
+.gate XNOR    A=new_n157 B=new_n160 Y=f4
+.gate NOR     A=q27 B=s5 Y=new_n162
+.gate NOR     A=q22 B=s22 Y=new_n163
+.gate XOR     A=new_n162 B=new_n163 Y=new_n164
+.gate NOR     A=q1 B=s18 Y=new_n165
+.gate AND     A=new_n165 B=q6 Y=new_n166
+.gate NOR     A=new_n165 B=q6 Y=new_n167
+.gate NOR     A=new_n166 B=new_n167 Y=new_n168
+.gate XNOR    A=new_n164 B=new_n168 Y=f5
+.gate NOR     A=q28 B=s6 Y=new_n170
+.gate NOR     A=q23 B=s23 Y=new_n171
+.gate XOR     A=new_n170 B=new_n171 Y=new_n172
+.gate NOR     A=q2 B=s19 Y=new_n173
+.gate AND     A=new_n173 B=q7 Y=new_n174
+.gate NOR     A=new_n173 B=q7 Y=new_n175
+.gate NOR     A=new_n174 B=new_n175 Y=new_n176
+.gate XNOR    A=new_n172 B=new_n176 Y=f6
+.gate NOR     A=q29 B=s7 Y=new_n178
+.gate NOR     A=q24 B=s24 Y=new_n179
+.gate XOR     A=new_n178 B=new_n179 Y=new_n180
+.gate NOR     A=q3 B=s20 Y=new_n181
+.gate AND     A=new_n181 B=q8 Y=new_n182
+.gate NOR     A=new_n181 B=q8 Y=new_n183
+.gate NOR     A=new_n182 B=new_n183 Y=new_n184
+.gate XNOR    A=new_n180 B=new_n184 Y=f7
+.gate NOR     A=q30 B=s8 Y=new_n186
+.gate NOR     A=q25 B=s25 Y=new_n187
+.gate XOR     A=new_n186 B=new_n187 Y=new_n188
+.gate NOR     A=q4 B=s21 Y=new_n189
+.gate AND     A=new_n189 B=q9 Y=new_n190
+.gate NOR     A=new_n189 B=q9 Y=new_n191
+.gate NOR     A=new_n190 B=new_n191 Y=new_n192
+.gate XNOR    A=new_n188 B=new_n192 Y=f8
+.gate NOR     A=q31 B=s9 Y=new_n194
+.gate NOR     A=q26 B=s26 Y=new_n195
+.gate XOR     A=new_n194 B=new_n195 Y=new_n196
+.gate NOR     A=q10 B=s22 Y=new_n197
+.gate XNOR    A=new_n197 B=new_n159 Y=new_n198
+.gate XNOR    A=new_n196 B=new_n198 Y=f9
+.gate NOR     A=q27 B=s10 Y=new_n200
+.gate NOR     A=q15 B=s27 Y=new_n201
+.gate XNOR    A=new_n200 B=new_n201 Y=new_n202
+.gate NOR     A=q6 B=s23 Y=new_n203
+.gate XNOR    A=new_n203 B=q11 Y=f23
+.gate XNOR    A=new_n202 B=f23 Y=f10
+.gate NOR     A=q28 B=s11 Y=new_n206
+.gate NOR     A=q16 B=s28 Y=new_n207
+.gate XNOR    A=new_n206 B=new_n207 Y=new_n208
+.gate NOR     A=q12 B=s24 Y=new_n209
+.gate XNOR    A=new_n209 B=q7 Y=f24
+.gate XNOR    A=new_n208 B=f24 Y=f11
+.gate NOR     A=q13 B=s25 Y=new_n212
+.gate XNOR    A=new_n212 B=q8 Y=f25
+.gate NOR     A=q29 B=s12 Y=new_n214
+.gate NOR     A=q0 B=s29 Y=new_n215
+.gate XNOR    A=new_n214 B=new_n215 Y=new_n216
+.gate XNOR    A=f25 B=new_n216 Y=f12
+.gate NOR     A=q14 B=s26 Y=new_n218
+.gate XNOR    A=new_n218 B=q9 Y=f26
+.gate XNOR    A=f26 B=new_n134 Y=f13
+.gate OR      A=q10 B=s27 Y=f27
+.gate XNOR    A=f27 B=new_n141 Y=f14
+.gate OR      A=q11 B=s28 Y=f28
+.gate NOR     A=f28 B=v15 Y=new_n224
+.gate AND     A=f28 B=v15 Y=new_n225
+.gate NOR     A=new_n224 B=new_n225 Y=f15
+.gate OR      A=q12 B=s29 Y=f29
+.gate NOR     A=f29 B=v16 Y=new_n228
+.gate AND     A=f29 B=v16 Y=new_n229
+.gate NOR     A=new_n228 B=new_n229 Y=f16
+.gate OR      A=q13 B=s30 Y=f30
+.gate XNOR    A=f30 B=new_n160 Y=f17
+.gate OR      A=q14 B=s31 Y=f31
+.gate XNOR    A=f31 B=new_n168 Y=f18
+.gate NOT     A=new_n176 Y=f19
+.gate NOT     A=new_n184 Y=f20
+.gate NOT     A=new_n192 Y=f21
+.gate NOT     A=new_n198 Y=f22
+.gate XNOR    A=new_n160 B=new_n131 Y=v0
+.gate XNOR    A=new_n168 B=new_n138 Y=v1
+.gate XNOR    A=new_n176 B=new_n145 Y=v2
+.gate XNOR    A=new_n184 B=new_n151 Y=v3
+.gate XNOR    A=new_n192 B=new_n157 Y=v4
+.gate XNOR    A=new_n198 B=new_n164 Y=v5
+.gate XOR     A=f23 B=new_n172 Y=v6
+.gate XOR     A=f24 B=new_n180 Y=v7
+.gate XOR     A=f25 B=new_n188 Y=v8
+.gate XOR     A=f26 B=new_n196 Y=v9
+.gate XNOR    A=new_n202 B=q10 Y=v10
+.gate XNOR    A=new_n208 B=q11 Y=v11
+.gate XNOR    A=new_n216 B=q12 Y=v12
+.gate XNOR    A=new_n134 B=q13 Y=v13
+.gate XNOR    A=new_n141 B=q14 Y=v14
+.gate NOT     A=new_n160 Y=v17
+.gate NOT     A=new_n168 Y=v18
+.gate NOT     A=new_n176 Y=v19
+.gate NOT     A=new_n184 Y=v20
+.gate NOT     A=new_n192 Y=v21
+.gate NOT     A=new_n198 Y=v22
+.gate XNOR    A=new_n203 B=q11 Y=v23
+.gate XNOR    A=new_n209 B=q7 Y=v24
+.gate XNOR    A=new_n212 B=q8 Y=v25
+.gate XNOR    A=new_n218 B=q9 Y=v26
+.gate BUF     A=q10 Y=v27
+.gate BUF     A=q11 Y=v28
+.gate BUF     A=q12 Y=v29
+.gate BUF     A=q13 Y=v30
+.gate BUF     A=q14 Y=v31
+
+.exdc
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 \
+ q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 \
+ q26 q27 q28 q29 q30 q31
+.outputs f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 \
+ f19 f20 f21 f22 f23 f24 f25 f26 f27 f28 f29 f30 f31 v0 v1 v2 v3 v4 v5 v6 \
+ v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23 v24 v25 \
+ v26 v27 v28 v29 v30 v31
+.names s30 s31 new_n129
+00 1
+.names s28 s29 new_n130
+00 1
+.names new_n129 new_n130 new_n131
+11 1
+.names s26 s27 new_n132
+00 1
+.names s24 s25 new_n133
+00 1
+.names new_n132 new_n133 new_n134
+11 1
+.names new_n131 new_n134 new_n135
+11 1
+.names s22 s23 new_n136
+00 1
+.names s20 s21 new_n137
+00 1
+.names new_n136 new_n137 new_n138
+11 1
+.names s18 s19 new_n139
+00 1
+.names s16 s17 new_n140
+00 1
+.names new_n139 new_n140 new_n141
+11 1
+.names new_n138 new_n141 new_n142
+11 1
+.names new_n135 new_n142 new_n143
+11 1
+.names s14 s15 new_n144
+00 1
+.names s12 s13 new_n145
+00 1
+.names new_n144 new_n145 new_n146
+11 1
+.names s10 s11 new_n147
+00 1
+.names s8 s9 new_n148
+00 1
+.names new_n147 new_n148 new_n149
+11 1
+.names new_n146 new_n149 new_n150
+11 1
+.names s6 s7 new_n151
+00 1
+.names s4 s5 new_n152
+00 1
+.names new_n151 new_n152 new_n153
+11 1
+.names s2 s3 new_n154
+00 1
+.names s0 s1 new_n155
+00 1
+.names new_n154 new_n155 new_n156
+11 1
+.names new_n153 new_n156 new_n157
+11 1
+.names new_n150 new_n157 new_n158
+11 1
+.names new_n143 new_n158 new_n159
+11 1
+.names q30 q31 new_n160
+00 1
+.names q28 q29 new_n161
+00 1
+.names new_n160 new_n161 new_n162
+11 1
+.names q26 q27 new_n163
+00 1
+.names q24 q25 new_n164
+00 1
+.names new_n163 new_n164 new_n165
+11 1
+.names new_n162 new_n165 new_n166
+11 1
+.names q22 q23 new_n167
+00 1
+.names q20 q21 new_n168
+00 1
+.names new_n167 new_n168 new_n169
+11 1
+.names q18 q19 new_n170
+00 1
+.names q16 q17 new_n171
+00 1
+.names new_n170 new_n171 new_n172
+11 1
+.names new_n169 new_n172 new_n173
+11 1
+.names new_n166 new_n173 new_n174
+11 1
+.names q14 q15 new_n175
+00 1
+.names q12 q13 new_n176
+00 1
+.names new_n175 new_n176 new_n177
+11 1
+.names q10 q11 new_n178
+00 1
+.names q8 q9 new_n179
+00 1
+.names new_n178 new_n179 new_n180
+11 1
+.names new_n177 new_n180 new_n181
+11 1
+.names q6 q7 new_n182
+00 1
+.names q4 q5 new_n183
+00 1
+.names new_n182 new_n183 new_n184
+11 1
+.names q2 q3 new_n185
+00 1
+.names q0 q1 new_n186
+00 1
+.names new_n185 new_n186 new_n187
+11 1
+.names new_n184 new_n187 new_n188
+11 1
+.names new_n181 new_n188 new_n189
+11 1
+.names new_n174 new_n189 new_n190
+11 1
+.names new_n159 new_n190 f0
+00 1
+.names f0 f1
+1 1
+.names f0 f2
+1 1
+.names f0 f3
+1 1
+.names f0 f4
+1 1
+.names f0 f5
+1 1
+.names f0 f6
+1 1
+.names f0 f7
+1 1
+.names f0 f8
+1 1
+.names f0 f9
+1 1
+.names f0 f10
+1 1
+.names f0 f11
+1 1
+.names f0 f12
+1 1
+.names f0 f13
+1 1
+.names f0 f14
+1 1
+.names f0 f15
+1 1
+.names f0 f16
+1 1
+.names f0 f17
+1 1
+.names f0 f18
+1 1
+.names f0 f19
+1 1
+.names f0 f20
+1 1
+.names f0 f21
+1 1
+.names f0 f22
+1 1
+.names f0 f23
+1 1
+.names f0 f24
+1 1
+.names f0 f25
+1 1
+.names f0 f26
+1 1
+.names f0 f27
+1 1
+.names f0 f28
+1 1
+.names f0 f29
+1 1
+.names f0 f30
+1 1
+.names f0 f31
+1 1
+.names f0 v0
+1 1
+.names f0 v1
+1 1
+.names f0 v2
+1 1
+.names f0 v3
+1 1
+.names f0 v4
+1 1
+.names f0 v5
+1 1
+.names f0 v6
+1 1
+.names f0 v7
+1 1
+.names f0 v8
+1 1
+.names f0 v9
+1 1
+.names f0 v10
+1 1
+.names f0 v11
+1 1
+.names f0 v12
+1 1
+.names f0 v13
+1 1
+.names f0 v14
+1 1
+.names f0 v15
+1 1
+.names f0 v16
+1 1
+.names f0 v17
+1 1
+.names f0 v18
+1 1
+.names f0 v19
+1 1
+.names f0 v20
+1 1
+.names f0 v21
+1 1
+.names f0 v22
+1 1
+.names f0 v23
+1 1
+.names f0 v24
+1 1
+.names f0 v25
+1 1
+.names f0 v26
+1 1
+.names f0 v27
+1 1
+.names f0 v28
+1 1
+.names f0 v29
+1 1
+.names f0 v30
+1 1
+.names f0 v31
+1 1
+.end

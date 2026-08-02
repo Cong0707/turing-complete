@@ -1,0 +1,47 @@
+#include "leg.lml"
+const _ 0
+const li i1|i2|add
+const uj i1|i2|j
+const ucall i1|i2|call
+#########################
+
+const step sp
+const quad b
+const shift c
+const dir d
+
+# initial dir - any "unnatural" value
+const dir_init 100
+
+label hilbert_loop
+
+	li _ 1 shift
+	li _ dir_init dir
+
+	label loop
+		div step shift quad
+		i2|mod quad 4 quad
+
+		i2|j|neq dir dir_init rotate
+			i2|j|eq quad 3 nodir
+				# base dir found
+				i2|add quad 3 dir
+			label nodir
+			uj _ _ loopend
+		label rotate
+		
+		# rotate dir
+		i1|j|ult 0 quad noflip0
+			i1|sub 3 dir dir
+		label noflip0
+		i2|j|ult quad 3 noflip3
+			i1|sub 1 dir dir
+		label noflip3
+
+		label loopend
+		i2|mul shift 4 shift
+	i2|j|neq shift 1*4*4*4 loop
+
+	i2|mod dir 4 io
+
+ucall _ _ hilbert_loop

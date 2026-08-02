@@ -1,0 +1,22 @@
+const n 14
+
+n
+mov|fa|tc
+mov|fb|out
+
+# keep increasing
+label inc
+	add
+	mov|fd|tb
+	mov|fb|out
+	mov|in|td
+inc j_z # until beep
+
+1
+mov|fa|tc
+# keep decreasing forever
+label dec
+	sub
+	mov|fd|tb
+	mov|fd|out
+dec j

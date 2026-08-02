@@ -1,0 +1,883 @@
+
+## get_clamped_word_size__modelZboardZprototype95list_u4458 @ 0x140236b33 (3230 bytes)
+0000000140236b33  55                               push      rbp
+0000000140236b34  48 81 ec 60 01 00 00             sub       rsp, 0x160
+0000000140236b3b  48 8d ac 24 80 00 00 00          lea       rbp, [rsp + 0x80]
+0000000140236b43  89 c8                            mov       eax, ecx
+0000000140236b45  48 89 95 f8 00 00 00             mov       qword ptr [rbp + 0xf8], rdx
+0000000140236b4c  44 89 c2                         mov       edx, r8d
+0000000140236b4f  88 85 f0 00 00 00                mov       byte ptr [rbp + 0xf0], al
+0000000140236b55  89 d0                            mov       eax, edx
+0000000140236b57  88 85 00 01 00 00                mov       byte ptr [rbp + 0x100], al
+0000000140236b5d  48 8d 05 b1 cd 7c 00             lea       rax, [rip + 0x7ccdb1]
+0000000140236b64  48 89 85 88 00 00 00             mov       qword ptr [rbp + 0x88], rax
+0000000140236b6b  48 8d 05 6e cd 7c 00             lea       rax, [rip + 0x7ccd6e]
+0000000140236b72  48 89 85 98 00 00 00             mov       qword ptr [rbp + 0x98], rax
+0000000140236b79  48 c7 85 90 00 00 00 00 00 00 00 mov       qword ptr [rbp + 0x90], 0
+0000000140236b84  66 c7 85 a0 00 00 00 00 00       mov       word ptr [rbp + 0xa0], 0
+0000000140236b8d  48 8d 85 80 00 00 00             lea       rax, [rbp + 0x80]
+0000000140236b94  48 89 c1                         mov       rcx, rax
+0000000140236b97  e8 14 f9 ff ff                   call      0x1402364b0  ; .text
+0000000140236b9c  e8 83 fb ff ff                   call      0x140236724  ; nimErrorFlag
+0000000140236ba1  48 89 85 d0 00 00 00             mov       qword ptr [rbp + 0xd0], rax
+0000000140236ba8  48 8d 85 b8 00 00 00             lea       rax, [rbp + 0xb8]
+0000000140236baf  ba 08 00 00 00                   mov       edx, 8
+0000000140236bb4  48 89 c1                         mov       rcx, rax
+0000000140236bb7  e8 c8 fb ff ff                   call      0x140236784  ; nimZeroMem
+0000000140236bbc  48 c7 85 90 00 00 00 7f 09 00 00 mov       qword ptr [rbp + 0x90], 0x97f
+0000000140236bc7  c6 85 cf 00 00 00 00             mov       byte ptr [rbp + 0xcf], 0
+0000000140236bce  48 8b 15 bb 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1bbb]
+0000000140236bd5  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140236bdc  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140236bdf  48 89 c1                         mov       rcx, rax
+0000000140236be2  e8 23 8f df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+0000000140236be7  88 85 cf 00 00 00                mov       byte ptr [rbp + 0xcf], al
+0000000140236bed  0f b6 85 cf 00 00 00             movzx     eax, byte ptr [rbp + 0xcf]
+0000000140236bf4  83 f0 01                         xor       eax, 1
+0000000140236bf7  84 c0                            test      al, al
+0000000140236bf9  0f 85 22 01 00 00                jne       0x140236d21
+0000000140236bff  48 c7 85 90 00 00 00 80 09 00 00 mov       qword ptr [rbp + 0x90], 0x980
+0000000140236c0a  c6 85 df 00 00 00 00             mov       byte ptr [rbp + 0xdf], 0
+0000000140236c11  48 c7 85 c0 00 00 00 00 00 00 00 mov       qword ptr [rbp + 0xc0], 0
+0000000140236c1c  0f b6 85 f0 00 00 00             movzx     eax, byte ptr [rbp + 0xf0]
+0000000140236c23  89 c2                            mov       edx, eax
+0000000140236c25  48 8d 05 84 cb 7c 00             lea       rax, [rip + 0x7ccb84]
+0000000140236c2c  48 89 c1                         mov       rcx, rax
+0000000140236c2f  e8 f7 21 e7 ff                   call      0x1400a8e2b  ; X5BX5D___modelZboardZprototype95list_u4239
+0000000140236c34  48 89 85 c0 00 00 00             mov       qword ptr [rbp + 0xc0], rax
+0000000140236c3b  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236c42  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236c45  0f b6 c0                         movzx     eax, al
+0000000140236c48  85 c0                            test      eax, eax
+0000000140236c4a  0f 85 17 0b 00 00                jne       0x140237767
+0000000140236c50  48 8b 85 c0 00 00 00             mov       rax, qword ptr [rbp + 0xc0]
+0000000140236c57  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236c5a  84 c0                            test      al, al
+0000000140236c5c  0f 94 c0                         sete      al
+0000000140236c5f  88 85 df 00 00 00                mov       byte ptr [rbp + 0xdf], al
+0000000140236c65  0f b6 85 df 00 00 00             movzx     eax, byte ptr [rbp + 0xdf]
+0000000140236c6c  83 f0 01                         xor       eax, 1
+0000000140236c6f  84 c0                            test      al, al
+0000000140236c71  75 21                            jne       0x140236c94
+0000000140236c73  0f b6 85 00 01 00 00             movzx     eax, byte ptr [rbp + 0x100]
+0000000140236c7a  85 c0                            test      eax, eax
+0000000140236c7c  0f 95 c0                         setne     al
+0000000140236c7f  83 f0 01                         xor       eax, 1
+0000000140236c82  0f b6 c0                         movzx     eax, al
+0000000140236c85  88 85 df 00 00 00                mov       byte ptr [rbp + 0xdf], al
+0000000140236c8b  80 a5 df 00 00 00 01             and       byte ptr [rbp + 0xdf], 1
+0000000140236c92  eb 01                            jmp       0x140236c95
+0000000140236c94  90                               nop       
+0000000140236c95  0f b6 85 df 00 00 00             movzx     eax, byte ptr [rbp + 0xdf]
+0000000140236c9c  83 f0 01                         xor       eax, 1
+0000000140236c9f  84 c0                            test      al, al
+0000000140236ca1  75 37                            jne       0x140236cda
+0000000140236ca3  48 c7 85 90 00 00 00 81 09 00 00 mov       qword ptr [rbp + 0x90], 0x981
+0000000140236cae  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140236cb9  48 c7 85 90 00 00 00 81 09 00 00 mov       qword ptr [rbp + 0x90], 0x981
+0000000140236cc4  48 8b 05 c5 1a 9a 00             mov       rax, qword ptr [rip + 0x9a1ac5]
+0000000140236ccb  48 8b 00                         mov       rax, qword ptr [rax]
+0000000140236cce  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140236cd5  e9 e2 0a 00 00                   jmp       0x1402377bc
+0000000140236cda  90                               nop       
+0000000140236cdb  48 c7 85 90 00 00 00 82 09 00 00 mov       qword ptr [rbp + 0x90], 0x982
+0000000140236ce6  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140236cf1  48 c7 85 90 00 00 00 82 09 00 00 mov       qword ptr [rbp + 0x90], 0x982
+0000000140236cfc  b9 08 00 00 00                   mov       ecx, 8
+0000000140236d01  e8 91 5e f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140236d06  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140236d0d  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236d14  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236d17  0f b6 c0                         movzx     eax, al
+0000000140236d1a  85 c0                            test      eax, eax
+0000000140236d1c  e9 9b 0a 00 00                   jmp       0x1402377bc
+0000000140236d21  90                               nop       
+0000000140236d22  48 c7 85 90 00 00 00 84 09 00 00 mov       qword ptr [rbp + 0x90], 0x984
+0000000140236d2d  0f b6 85 f0 00 00 00             movzx     eax, byte ptr [rbp + 0xf0]
+0000000140236d34  83 f8 76                         cmp       eax, 0x76
+0000000140236d37  0f 8f 73 09 00 00                jg        0x1402376b0
+0000000140236d3d  83 f8 5f                         cmp       eax, 0x5f
+0000000140236d40  7d 17                            jge       0x140236d59
+0000000140236d42  83 f8 4d                         cmp       eax, 0x4d
+0000000140236d45  0f 8f bd 00 00 00                jg        0x140236e08
+0000000140236d4b  83 f8 12                         cmp       eax, 0x12
+0000000140236d4e  0f 8d 86 00 00 00                jge       0x140236dda
+0000000140236d54  e9 57 09 00 00                   jmp       0x1402376b0
+0000000140236d59  83 e8 5f                         sub       eax, 0x5f
+0000000140236d5c  83 f8 17                         cmp       eax, 0x17
+0000000140236d5f  0f 87 4b 09 00 00                ja        0x1402376b0
+0000000140236d65  89 c0                            mov       eax, eax
+0000000140236d67  48 8d 14 85 00 00 00 00          lea       rdx, [rax*4]
+0000000140236d6f  48 8d 05 b6 cb 7c 00             lea       rax, [rip + 0x7ccbb6]
+0000000140236d76  8b 04 02                         mov       eax, dword ptr [rdx + rax]
+0000000140236d79  48 98                            cdqe      
+0000000140236d7b  48 8d 15 aa cb 7c 00             lea       rdx, [rip + 0x7ccbaa]
+0000000140236d82  48 01 d0                         add       rax, rdx
+0000000140236d85  ff e0                            jmp       rax
+0000000140236d87  83 e8 4e                         sub       eax, 0x4e
+0000000140236d8a  ba 01 00 00 00                   mov       edx, 1
+0000000140236d8f  89 c1                            mov       ecx, eax
+0000000140236d91  48 d3 e2                         shl       rdx, cl
+0000000140236d94  48 89 d0                         mov       rax, rdx
+0000000140236d97  48 89 c2                         mov       rdx, rax
+0000000140236d9a  81 e2 09 10 01 00                and       edx, 0x11009
+0000000140236da0  48 85 d2                         test      rdx, rdx
+0000000140236da3  0f 95 c2                         setne     dl
+0000000140236da6  84 d2                            test      dl, dl
+0000000140236da8  0f 85 2a 07 00 00                jne       0x1402374d8
+0000000140236dae  48 89 c2                         mov       rdx, rax
+0000000140236db1  83 e2 06                         and       edx, 6
+0000000140236db4  48 85 d2                         test      rdx, rdx
+0000000140236db7  0f 95 c2                         setne     dl
+0000000140236dba  84 d2                            test      dl, dl
+0000000140236dbc  0f 85 b7 05 00 00                jne       0x140237379
+0000000140236dc2  25 00 40 00 00                   and       eax, 0x4000
+0000000140236dc7  48 85 c0                         test      rax, rax
+0000000140236dca  0f 95 c0                         setne     al
+0000000140236dcd  84 c0                            test      al, al
+0000000140236dcf  0f 85 95 08 00 00                jne       0x14023766a
+0000000140236dd5  e9 d6 08 00 00                   jmp       0x1402376b0
+0000000140236dda  83 e8 12                         sub       eax, 0x12
+0000000140236ddd  83 f8 3b                         cmp       eax, 0x3b
+0000000140236de0  0f 87 ca 08 00 00                ja        0x1402376b0
+0000000140236de6  89 c0                            mov       eax, eax
+0000000140236de8  48 8d 14 85 00 00 00 00          lea       rdx, [rax*4]
+0000000140236df0  48 8d 05 95 cb 7c 00             lea       rax, [rip + 0x7ccb95]
+0000000140236df7  8b 04 02                         mov       eax, dword ptr [rdx + rax]
+0000000140236dfa  48 98                            cdqe      
+0000000140236dfc  48 8d 15 89 cb 7c 00             lea       rdx, [rip + 0x7ccb89]
+0000000140236e03  48 01 d0                         add       rax, rdx
+0000000140236e06  ff e0                            jmp       rax
+0000000140236e08  83 f8 5e                         cmp       eax, 0x5e
+0000000140236e0b  0f 8f 9f 08 00 00                jg        0x1402376b0
+0000000140236e11  83 f8 4e                         cmp       eax, 0x4e
+0000000140236e14  0f 8d 6d ff ff ff                jge       0x140236d87
+0000000140236e1a  e9 91 08 00 00                   jmp       0x1402376b0
+0000000140236e1f  48 c7 85 90 00 00 00 86 09 00 00 mov       qword ptr [rbp + 0x90], 0x986
+0000000140236e2a  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140236e35  48 c7 85 90 00 00 00 86 09 00 00 mov       qword ptr [rbp + 0x90], 0x986
+0000000140236e40  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140236e47  ba 07 00 00 00                   mov       edx, 7
+0000000140236e4c  48 89 c1                         mov       rcx, rax
+0000000140236e4f  e8 71 aa f4 ff                   call      0x1401818c5  ; plus___modelZsave95mongerZcommon_u202
+0000000140236e54  48 89 45 78                      mov       qword ptr [rbp + 0x78], rax
+0000000140236e58  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236e5f  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236e62  0f b6 c0                         movzx     eax, al
+0000000140236e65  85 c0                            test      eax, eax
+0000000140236e67  0f 85 fd 08 00 00                jne       0x14023776a
+0000000140236e6d  48 8b 45 78                      mov       rax, qword ptr [rbp + 0x78]
+0000000140236e71  ba 08 00 00 00                   mov       edx, 8
+0000000140236e76  48 89 c1                         mov       rcx, rax
+0000000140236e79  e8 90 ab f4 ff                   call      0x140181a0e  ; div__modelZsave95mongerZcommon_u217
+0000000140236e7e  48 89 45 70                      mov       qword ptr [rbp + 0x70], rax
+0000000140236e82  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236e89  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236e8c  0f b6 c0                         movzx     eax, al
+0000000140236e8f  85 c0                            test      eax, eax
+0000000140236e91  0f 85 d6 08 00 00                jne       0x14023776d
+0000000140236e97  48 8b 45 70                      mov       rax, qword ptr [rbp + 0x70]
+0000000140236e9b  ba 08 00 00 00                   mov       edx, 8
+0000000140236ea0  48 89 c1                         mov       rcx, rax
+0000000140236ea3  e8 4b 9f f4 ff                   call      0x140180df3  ; star___modelZsave95mongerZcommon_u213
+0000000140236ea8  48 89 45 68                      mov       qword ptr [rbp + 0x68], rax
+0000000140236eac  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236eb3  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236eb6  0f b6 c0                         movzx     eax, al
+0000000140236eb9  85 c0                            test      eax, eax
+0000000140236ebb  0f 85 af 08 00 00                jne       0x140237770
+0000000140236ec1  48 8b 15 68 1f 9a 00             mov       rdx, qword ptr [rip + 0x9a1f68]
+0000000140236ec8  48 8b 45 68                      mov       rax, qword ptr [rbp + 0x68]
+0000000140236ecc  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140236ecf  48 89 c1                         mov       rcx, rax
+0000000140236ed2  e8 98 9b f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140236ed7  48 89 45 60                      mov       qword ptr [rbp + 0x60], rax
+0000000140236edb  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236ee2  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236ee5  0f b6 c0                         movzx     eax, al
+0000000140236ee8  85 c0                            test      eax, eax
+0000000140236eea  0f 85 83 08 00 00                jne       0x140237773
+0000000140236ef0  b9 02 00 00 00                   mov       ecx, 2
+0000000140236ef5  e8 9d 5c f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140236efa  48 89 45 58                      mov       qword ptr [rbp + 0x58], rax
+0000000140236efe  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236f05  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236f08  0f b6 c0                         movzx     eax, al
+0000000140236f0b  85 c0                            test      eax, eax
+0000000140236f0d  0f 85 63 08 00 00                jne       0x140237776
+0000000140236f13  48 8b 55 58                      mov       rdx, qword ptr [rbp + 0x58]
+0000000140236f17  48 8b 45 60                      mov       rax, qword ptr [rbp + 0x60]
+0000000140236f1b  48 89 c1                         mov       rcx, rax
+0000000140236f1e  e8 a3 9a f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+0000000140236f23  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140236f2a  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236f31  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236f34  0f b6 c0                         movzx     eax, al
+0000000140236f37  85 c0                            test      eax, eax
+0000000140236f39  e9 7e 08 00 00                   jmp       0x1402377bc
+0000000140236f3e  48 c7 85 90 00 00 00 88 09 00 00 mov       qword ptr [rbp + 0x90], 0x988
+0000000140236f49  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140236f54  48 c7 85 90 00 00 00 88 09 00 00 mov       qword ptr [rbp + 0x90], 0x988
+0000000140236f5f  48 8b 05 ca 1e 9a 00             mov       rax, qword ptr [rip + 0x9a1eca]
+0000000140236f66  ba 02 00 00 00                   mov       edx, 2
+0000000140236f6b  48 8b 08                         mov       rcx, qword ptr [rax]
+0000000140236f6e  e8 9b aa f4 ff                   call      0x140181a0e  ; div__modelZsave95mongerZcommon_u217
+0000000140236f73  48 89 45 50                      mov       qword ptr [rbp + 0x50], rax
+0000000140236f77  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236f7e  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236f81  0f b6 c0                         movzx     eax, al
+0000000140236f84  85 c0                            test      eax, eax
+0000000140236f86  0f 85 ed 07 00 00                jne       0x140237779
+0000000140236f8c  48 8b 55 50                      mov       rdx, qword ptr [rbp + 0x50]
+0000000140236f90  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140236f97  48 89 c1                         mov       rcx, rax
+0000000140236f9a  e8 d0 9a f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140236f9f  48 89 45 48                      mov       qword ptr [rbp + 0x48], rax
+0000000140236fa3  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236faa  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236fad  0f b6 c0                         movzx     eax, al
+0000000140236fb0  85 c0                            test      eax, eax
+0000000140236fb2  0f 85 c4 07 00 00                jne       0x14023777c
+0000000140236fb8  b9 01 00 00 00                   mov       ecx, 1
+0000000140236fbd  e8 d5 5b f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140236fc2  48 89 45 40                      mov       qword ptr [rbp + 0x40], rax
+0000000140236fc6  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236fcd  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236fd0  0f b6 c0                         movzx     eax, al
+0000000140236fd3  85 c0                            test      eax, eax
+0000000140236fd5  0f 85 a4 07 00 00                jne       0x14023777f
+0000000140236fdb  48 8b 55 40                      mov       rdx, qword ptr [rbp + 0x40]
+0000000140236fdf  48 8b 45 48                      mov       rax, qword ptr [rbp + 0x48]
+0000000140236fe3  48 89 c1                         mov       rcx, rax
+0000000140236fe6  e8 db 99 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+0000000140236feb  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140236ff2  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140236ff9  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140236ffc  0f b6 c0                         movzx     eax, al
+0000000140236fff  85 c0                            test      eax, eax
+0000000140237001  e9 b6 07 00 00                   jmp       0x1402377bc
+0000000140237006  48 c7 85 90 00 00 00 8a 09 00 00 mov       qword ptr [rbp + 0x90], 0x98a
+0000000140237011  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+000000014023701c  48 c7 85 90 00 00 00 8a 09 00 00 mov       qword ptr [rbp + 0x90], 0x98a
+0000000140237027  48 8b 05 02 1e 9a 00             mov       rax, qword ptr [rip + 0x9a1e02]
+000000014023702e  ba 04 00 00 00                   mov       edx, 4
+0000000140237033  48 8b 08                         mov       rcx, qword ptr [rax]
+0000000140237036  e8 d3 a9 f4 ff                   call      0x140181a0e  ; div__modelZsave95mongerZcommon_u217
+000000014023703b  48 89 45 38                      mov       qword ptr [rbp + 0x38], rax
+000000014023703f  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237046  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237049  0f b6 c0                         movzx     eax, al
+000000014023704c  85 c0                            test      eax, eax
+000000014023704e  0f 85 2e 07 00 00                jne       0x140237782
+0000000140237054  48 8b 55 38                      mov       rdx, qword ptr [rbp + 0x38]
+0000000140237058  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+000000014023705f  48 89 c1                         mov       rcx, rax
+0000000140237062  e8 08 9a f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140237067  48 89 45 30                      mov       qword ptr [rbp + 0x30], rax
+000000014023706b  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237072  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237075  0f b6 c0                         movzx     eax, al
+0000000140237078  85 c0                            test      eax, eax
+000000014023707a  0f 85 05 07 00 00                jne       0x140237785
+0000000140237080  b9 01 00 00 00                   mov       ecx, 1
+0000000140237085  e8 0d 5b f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+000000014023708a  48 89 45 28                      mov       qword ptr [rbp + 0x28], rax
+000000014023708e  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237095  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237098  0f b6 c0                         movzx     eax, al
+000000014023709b  85 c0                            test      eax, eax
+000000014023709d  0f 85 e5 06 00 00                jne       0x140237788
+00000001402370a3  48 8b 55 28                      mov       rdx, qword ptr [rbp + 0x28]
+00000001402370a7  48 8b 45 30                      mov       rax, qword ptr [rbp + 0x30]
+00000001402370ab  48 89 c1                         mov       rcx, rax
+00000001402370ae  e8 13 99 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+00000001402370b3  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+00000001402370ba  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402370c1  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402370c4  0f b6 c0                         movzx     eax, al
+00000001402370c7  85 c0                            test      eax, eax
+00000001402370c9  e9 ee 06 00 00                   jmp       0x1402377bc
+00000001402370ce  48 c7 85 90 00 00 00 8c 09 00 00 mov       qword ptr [rbp + 0x90], 0x98c
+00000001402370d9  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402370e4  48 c7 85 90 00 00 00 8c 09 00 00 mov       qword ptr [rbp + 0x90], 0x98c
+00000001402370ef  48 8b 05 3a 1d 9a 00             mov       rax, qword ptr [rip + 0x9a1d3a]
+00000001402370f6  ba 08 00 00 00                   mov       edx, 8
+00000001402370fb  48 8b 08                         mov       rcx, qword ptr [rax]
+00000001402370fe  e8 0b a9 f4 ff                   call      0x140181a0e  ; div__modelZsave95mongerZcommon_u217
+0000000140237103  48 89 45 20                      mov       qword ptr [rbp + 0x20], rax
+0000000140237107  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023710e  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237111  0f b6 c0                         movzx     eax, al
+0000000140237114  85 c0                            test      eax, eax
+0000000140237116  0f 85 6f 06 00 00                jne       0x14023778b
+000000014023711c  48 8b 55 20                      mov       rdx, qword ptr [rbp + 0x20]
+0000000140237120  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140237127  48 89 c1                         mov       rcx, rax
+000000014023712a  e8 40 99 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+000000014023712f  48 89 45 18                      mov       qword ptr [rbp + 0x18], rax
+0000000140237133  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023713a  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023713d  0f b6 c0                         movzx     eax, al
+0000000140237140  85 c0                            test      eax, eax
+0000000140237142  0f 85 46 06 00 00                jne       0x14023778e
+0000000140237148  b9 01 00 00 00                   mov       ecx, 1
+000000014023714d  e8 45 5a f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237152  48 89 45 10                      mov       qword ptr [rbp + 0x10], rax
+0000000140237156  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023715d  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237160  0f b6 c0                         movzx     eax, al
+0000000140237163  85 c0                            test      eax, eax
+0000000140237165  0f 85 26 06 00 00                jne       0x140237791
+000000014023716b  48 8b 55 10                      mov       rdx, qword ptr [rbp + 0x10]
+000000014023716f  48 8b 45 18                      mov       rax, qword ptr [rbp + 0x18]
+0000000140237173  48 89 c1                         mov       rcx, rax
+0000000140237176  e8 4b 98 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+000000014023717b  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237182  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237189  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023718c  0f b6 c0                         movzx     eax, al
+000000014023718f  85 c0                            test      eax, eax
+0000000140237191  e9 26 06 00 00                   jmp       0x1402377bc
+0000000140237196  48 c7 85 90 00 00 00 8e 09 00 00 mov       qword ptr [rbp + 0x90], 0x98e
+00000001402371a1  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402371ac  48 c7 85 90 00 00 00 8e 09 00 00 mov       qword ptr [rbp + 0x90], 0x98e
+00000001402371b7  48 8b 15 72 1c 9a 00             mov       rdx, qword ptr [rip + 0x9a1c72]
+00000001402371be  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+00000001402371c5  48 8b 12                         mov       rdx, qword ptr [rdx]
+00000001402371c8  48 89 c1                         mov       rcx, rax
+00000001402371cb  e8 9f 98 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+00000001402371d0  48 89 45 08                      mov       qword ptr [rbp + 8], rax
+00000001402371d4  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402371db  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402371de  0f b6 c0                         movzx     eax, al
+00000001402371e1  85 c0                            test      eax, eax
+00000001402371e3  0f 85 ab 05 00 00                jne       0x140237794
+00000001402371e9  b9 02 00 00 00                   mov       ecx, 2
+00000001402371ee  e8 a4 59 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+00000001402371f3  48 89 45 00                      mov       qword ptr [rbp], rax
+00000001402371f7  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402371fe  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237201  0f b6 c0                         movzx     eax, al
+0000000140237204  85 c0                            test      eax, eax
+0000000140237206  0f 85 8b 05 00 00                jne       0x140237797
+000000014023720c  48 8b 55 00                      mov       rdx, qword ptr [rbp]
+0000000140237210  48 8b 45 08                      mov       rax, qword ptr [rbp + 8]
+0000000140237214  48 89 c1                         mov       rcx, rax
+0000000140237217  e8 aa 97 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+000000014023721c  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237223  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023722a  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023722d  0f b6 c0                         movzx     eax, al
+0000000140237230  85 c0                            test      eax, eax
+0000000140237232  e9 85 05 00 00                   jmp       0x1402377bc
+0000000140237237  48 c7 85 90 00 00 00 90 09 00 00 mov       qword ptr [rbp + 0x90], 0x990
+0000000140237242  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+000000014023724d  48 c7 85 90 00 00 00 90 09 00 00 mov       qword ptr [rbp + 0x90], 0x990
+0000000140237258  48 8b 15 d1 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1bd1]
+000000014023725f  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140237266  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140237269  48 89 c1                         mov       rcx, rax
+000000014023726c  e8 fe 97 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140237271  48 89 45 f8                      mov       qword ptr [rbp - 8], rax
+0000000140237275  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023727c  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023727f  0f b6 c0                         movzx     eax, al
+0000000140237282  85 c0                            test      eax, eax
+0000000140237284  0f 85 10 05 00 00                jne       0x14023779a
+000000014023728a  b9 04 00 00 00                   mov       ecx, 4
+000000014023728f  e8 03 59 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237294  48 89 45 f0                      mov       qword ptr [rbp - 0x10], rax
+0000000140237298  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023729f  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402372a2  0f b6 c0                         movzx     eax, al
+00000001402372a5  85 c0                            test      eax, eax
+00000001402372a7  0f 85 f0 04 00 00                jne       0x14023779d
+00000001402372ad  48 8b 55 f0                      mov       rdx, qword ptr [rbp - 0x10]
+00000001402372b1  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+00000001402372b5  48 89 c1                         mov       rcx, rax
+00000001402372b8  e8 09 97 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+00000001402372bd  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+00000001402372c4  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402372cb  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402372ce  0f b6 c0                         movzx     eax, al
+00000001402372d1  85 c0                            test      eax, eax
+00000001402372d3  e9 e4 04 00 00                   jmp       0x1402377bc
+00000001402372d8  48 c7 85 90 00 00 00 92 09 00 00 mov       qword ptr [rbp + 0x90], 0x992
+00000001402372e3  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402372ee  48 c7 85 90 00 00 00 92 09 00 00 mov       qword ptr [rbp + 0x90], 0x992
+00000001402372f9  48 8b 15 30 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1b30]
+0000000140237300  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140237307  48 8b 12                         mov       rdx, qword ptr [rdx]
+000000014023730a  48 89 c1                         mov       rcx, rax
+000000014023730d  e8 5d 97 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140237312  48 89 45 e8                      mov       qword ptr [rbp - 0x18], rax
+0000000140237316  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023731d  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237320  0f b6 c0                         movzx     eax, al
+0000000140237323  85 c0                            test      eax, eax
+0000000140237325  0f 85 75 04 00 00                jne       0x1402377a0
+000000014023732b  b9 08 00 00 00                   mov       ecx, 8
+0000000140237330  e8 62 58 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237335  48 89 45 e0                      mov       qword ptr [rbp - 0x20], rax
+0000000140237339  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237340  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237343  0f b6 c0                         movzx     eax, al
+0000000140237346  85 c0                            test      eax, eax
+0000000140237348  0f 85 55 04 00 00                jne       0x1402377a3
+000000014023734e  48 8b 55 e0                      mov       rdx, qword ptr [rbp - 0x20]
+0000000140237352  48 8b 45 e8                      mov       rax, qword ptr [rbp - 0x18]
+0000000140237356  48 89 c1                         mov       rcx, rax
+0000000140237359  e8 68 96 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+000000014023735e  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237365  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023736c  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023736f  0f b6 c0                         movzx     eax, al
+0000000140237372  85 c0                            test      eax, eax
+0000000140237374  e9 43 04 00 00                   jmp       0x1402377bc
+0000000140237379  48 c7 85 90 00 00 00 94 09 00 00 mov       qword ptr [rbp + 0x90], 0x994
+0000000140237384  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+000000014023738f  48 c7 85 90 00 00 00 94 09 00 00 mov       qword ptr [rbp + 0x90], 0x994
+000000014023739a  48 8b 15 8f 1a 9a 00             mov       rdx, qword ptr [rip + 0x9a1a8f]
+00000001402373a1  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+00000001402373a8  48 8b 12                         mov       rdx, qword ptr [rdx]
+00000001402373ab  48 89 c1                         mov       rcx, rax
+00000001402373ae  e8 bc 96 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+00000001402373b3  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+00000001402373b7  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402373be  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402373c1  0f b6 c0                         movzx     eax, al
+00000001402373c4  85 c0                            test      eax, eax
+00000001402373c6  0f 85 da 03 00 00                jne       0x1402377a6
+00000001402373cc  b9 01 00 00 00                   mov       ecx, 1
+00000001402373d1  e8 c1 57 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+00000001402373d6  48 89 45 d0                      mov       qword ptr [rbp - 0x30], rax
+00000001402373da  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402373e1  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402373e4  0f b6 c0                         movzx     eax, al
+00000001402373e7  85 c0                            test      eax, eax
+00000001402373e9  0f 85 ba 03 00 00                jne       0x1402377a9
+00000001402373ef  48 8b 55 d0                      mov       rdx, qword ptr [rbp - 0x30]
+00000001402373f3  48 8b 45 d8                      mov       rax, qword ptr [rbp - 0x28]
+00000001402373f7  48 89 c1                         mov       rcx, rax
+00000001402373fa  e8 c7 95 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+00000001402373ff  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237406  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023740d  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237410  0f b6 c0                         movzx     eax, al
+0000000140237413  85 c0                            test      eax, eax
+0000000140237415  e9 a2 03 00 00                   jmp       0x1402377bc
+000000014023741a  48 c7 85 90 00 00 00 96 09 00 00 mov       qword ptr [rbp + 0x90], 0x996
+0000000140237425  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140237430  48 c7 85 90 00 00 00 96 09 00 00 mov       qword ptr [rbp + 0x90], 0x996
+000000014023743b  b9 40 00 00 00                   mov       ecx, 0x40
+0000000140237440  e8 52 57 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237445  48 89 45 c8                      mov       qword ptr [rbp - 0x38], rax
+0000000140237449  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237450  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237453  0f b6 c0                         movzx     eax, al
+0000000140237456  85 c0                            test      eax, eax
+0000000140237458  0f 85 4e 03 00 00                jne       0x1402377ac
+000000014023745e  48 8b 55 c8                      mov       rdx, qword ptr [rbp - 0x38]
+0000000140237462  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140237469  48 89 c1                         mov       rcx, rax
+000000014023746c  e8 fe 95 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140237471  48 89 45 c0                      mov       qword ptr [rbp - 0x40], rax
+0000000140237475  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023747c  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023747f  0f b6 c0                         movzx     eax, al
+0000000140237482  85 c0                            test      eax, eax
+0000000140237484  0f 85 25 03 00 00                jne       0x1402377af
+000000014023748a  b9 01 00 00 00                   mov       ecx, 1
+000000014023748f  e8 03 57 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237494  48 89 45 b8                      mov       qword ptr [rbp - 0x48], rax
+0000000140237498  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023749f  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402374a2  0f b6 c0                         movzx     eax, al
+00000001402374a5  85 c0                            test      eax, eax
+00000001402374a7  0f 85 05 03 00 00                jne       0x1402377b2
+00000001402374ad  48 8b 55 b8                      mov       rdx, qword ptr [rbp - 0x48]
+00000001402374b1  48 8b 45 c0                      mov       rax, qword ptr [rbp - 0x40]
+00000001402374b5  48 89 c1                         mov       rcx, rax
+00000001402374b8  e8 09 95 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+00000001402374bd  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+00000001402374c4  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402374cb  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402374ce  0f b6 c0                         movzx     eax, al
+00000001402374d1  85 c0                            test      eax, eax
+00000001402374d3  e9 e4 02 00 00                   jmp       0x1402377bc
+00000001402374d8  48 c7 85 90 00 00 00 98 09 00 00 mov       qword ptr [rbp + 0x90], 0x998
+00000001402374e3  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402374ee  48 c7 85 90 00 00 00 98 09 00 00 mov       qword ptr [rbp + 0x90], 0x998
+00000001402374f9  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+0000000140237500  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237507  e9 b0 02 00 00                   jmp       0x1402377bc
+000000014023750c  48 c7 85 90 00 00 00 9a 09 00 00 mov       qword ptr [rbp + 0x90], 0x99a
+0000000140237517  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140237522  48 c7 85 90 00 00 00 9a 09 00 00 mov       qword ptr [rbp + 0x90], 0x99a
+000000014023752d  b9 01 00 00 00                   mov       ecx, 1
+0000000140237532  e8 60 56 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237537  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+000000014023753e  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237545  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237548  0f b6 c0                         movzx     eax, al
+000000014023754b  85 c0                            test      eax, eax
+000000014023754d  e9 6a 02 00 00                   jmp       0x1402377bc
+0000000140237552  48 c7 85 90 00 00 00 9c 09 00 00 mov       qword ptr [rbp + 0x90], 0x99c
+000000014023755d  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140237568  48 c7 85 90 00 00 00 9c 09 00 00 mov       qword ptr [rbp + 0x90], 0x99c
+0000000140237573  b9 02 00 00 00                   mov       ecx, 2
+0000000140237578  e8 1a 56 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+000000014023757d  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237584  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023758b  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023758e  0f b6 c0                         movzx     eax, al
+0000000140237591  85 c0                            test      eax, eax
+0000000140237593  e9 24 02 00 00                   jmp       0x1402377bc
+0000000140237598  48 c7 85 90 00 00 00 9e 09 00 00 mov       qword ptr [rbp + 0x90], 0x99e
+00000001402375a3  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402375ae  48 c7 85 90 00 00 00 9e 09 00 00 mov       qword ptr [rbp + 0x90], 0x99e
+00000001402375b9  b9 03 00 00 00                   mov       ecx, 3
+00000001402375be  e8 d4 55 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+00000001402375c3  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+00000001402375ca  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402375d1  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402375d4  0f b6 c0                         movzx     eax, al
+00000001402375d7  85 c0                            test      eax, eax
+00000001402375d9  e9 de 01 00 00                   jmp       0x1402377bc
+00000001402375de  48 c7 85 90 00 00 00 a0 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a0
+00000001402375e9  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402375f4  48 c7 85 90 00 00 00 a0 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a0
+00000001402375ff  b9 04 00 00 00                   mov       ecx, 4
+0000000140237604  e8 8e 55 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237609  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237610  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237617  0f b6 00                         movzx     eax, byte ptr [rax]
+000000014023761a  0f b6 c0                         movzx     eax, al
+000000014023761d  85 c0                            test      eax, eax
+000000014023761f  e9 98 01 00 00                   jmp       0x1402377bc
+0000000140237624  48 c7 85 90 00 00 00 a2 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a2
+000000014023762f  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+000000014023763a  48 c7 85 90 00 00 00 a2 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a2
+0000000140237645  b9 08 00 00 00                   mov       ecx, 8
+000000014023764a  e8 48 55 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+000000014023764f  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237656  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023765d  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237660  0f b6 c0                         movzx     eax, al
+0000000140237663  85 c0                            test      eax, eax
+0000000140237665  e9 52 01 00 00                   jmp       0x1402377bc
+000000014023766a  48 c7 85 90 00 00 00 a4 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a4
+0000000140237675  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+0000000140237680  48 c7 85 90 00 00 00 a4 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a4
+000000014023768b  b9 40 00 00 00                   mov       ecx, 0x40
+0000000140237690  e8 02 55 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237695  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+000000014023769c  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402376a3  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402376a6  0f b6 c0                         movzx     eax, al
+00000001402376a9  85 c0                            test      eax, eax
+00000001402376ab  e9 0c 01 00 00                   jmp       0x1402377bc
+00000001402376b0  48 c7 85 90 00 00 00 a6 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a6
+00000001402376bb  48 c7 85 90 00 00 00 7e 09 00 00 mov       qword ptr [rbp + 0x90], 0x97e
+00000001402376c6  48 c7 85 90 00 00 00 a6 09 00 00 mov       qword ptr [rbp + 0x90], 0x9a6
+00000001402376d1  b9 40 00 00 00                   mov       ecx, 0x40
+00000001402376d6  e8 bc 54 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+00000001402376db  48 89 45 b0                      mov       qword ptr [rbp - 0x50], rax
+00000001402376df  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+00000001402376e6  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402376e9  0f b6 c0                         movzx     eax, al
+00000001402376ec  85 c0                            test      eax, eax
+00000001402376ee  0f 85 c1 00 00 00                jne       0x1402377b5
+00000001402376f4  48 8b 55 b0                      mov       rdx, qword ptr [rbp - 0x50]
+00000001402376f8  48 8b 85 f8 00 00 00             mov       rax, qword ptr [rbp + 0xf8]
+00000001402376ff  48 89 c1                         mov       rcx, rax
+0000000140237702  e8 68 93 f4 ff                   call      0x140180a6f  ; min__modelZsave95mongerZcommon_u221
+0000000140237707  48 89 45 a8                      mov       qword ptr [rbp - 0x58], rax
+000000014023770b  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237712  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237715  0f b6 c0                         movzx     eax, al
+0000000140237718  85 c0                            test      eax, eax
+000000014023771a  0f 85 98 00 00 00                jne       0x1402377b8
+0000000140237720  b9 02 00 00 00                   mov       ecx, 2
+0000000140237725  e8 6d 54 f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+000000014023772a  48 89 45 a0                      mov       qword ptr [rbp - 0x60], rax
+000000014023772e  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+0000000140237735  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237738  0f b6 c0                         movzx     eax, al
+000000014023773b  85 c0                            test      eax, eax
+000000014023773d  75 7c                            jne       0x1402377bb
+000000014023773f  48 8b 55 a0                      mov       rdx, qword ptr [rbp - 0x60]
+0000000140237743  48 8b 45 a8                      mov       rax, qword ptr [rbp - 0x58]
+0000000140237747  48 89 c1                         mov       rcx, rax
+000000014023774a  e8 77 92 f4 ff                   call      0x1401809c6  ; max__modelZsave95mongerZcommon_u225
+000000014023774f  48 89 85 b8 00 00 00             mov       qword ptr [rbp + 0xb8], rax
+0000000140237756  48 8b 85 d0 00 00 00             mov       rax, qword ptr [rbp + 0xd0]
+000000014023775d  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237760  0f b6 c0                         movzx     eax, al
+0000000140237763  85 c0                            test      eax, eax
+0000000140237765  eb 55                            jmp       0x1402377bc
+0000000140237767  90                               nop       
+0000000140237768  eb 52                            jmp       0x1402377bc
+000000014023776a  90                               nop       
+000000014023776b  eb 4f                            jmp       0x1402377bc
+000000014023776d  90                               nop       
+000000014023776e  eb 4c                            jmp       0x1402377bc
+0000000140237770  90                               nop       
+0000000140237771  eb 49                            jmp       0x1402377bc
+0000000140237773  90                               nop       
+0000000140237774  eb 46                            jmp       0x1402377bc
+0000000140237776  90                               nop       
+0000000140237777  eb 43                            jmp       0x1402377bc
+0000000140237779  90                               nop       
+000000014023777a  eb 40                            jmp       0x1402377bc
+000000014023777c  90                               nop       
+000000014023777d  eb 3d                            jmp       0x1402377bc
+000000014023777f  90                               nop       
+0000000140237780  eb 3a                            jmp       0x1402377bc
+0000000140237782  90                               nop       
+0000000140237783  eb 37                            jmp       0x1402377bc
+0000000140237785  90                               nop       
+0000000140237786  eb 34                            jmp       0x1402377bc
+0000000140237788  90                               nop       
+0000000140237789  eb 31                            jmp       0x1402377bc
+000000014023778b  90                               nop       
+000000014023778c  eb 2e                            jmp       0x1402377bc
+000000014023778e  90                               nop       
+000000014023778f  eb 2b                            jmp       0x1402377bc
+0000000140237791  90                               nop       
+0000000140237792  eb 28                            jmp       0x1402377bc
+0000000140237794  90                               nop       
+0000000140237795  eb 25                            jmp       0x1402377bc
+0000000140237797  90                               nop       
+0000000140237798  eb 22                            jmp       0x1402377bc
+000000014023779a  90                               nop       
+000000014023779b  eb 1f                            jmp       0x1402377bc
+000000014023779d  90                               nop       
+000000014023779e  eb 1c                            jmp       0x1402377bc
+00000001402377a0  90                               nop       
+00000001402377a1  eb 19                            jmp       0x1402377bc
+00000001402377a3  90                               nop       
+00000001402377a4  eb 16                            jmp       0x1402377bc
+00000001402377a6  90                               nop       
+00000001402377a7  eb 13                            jmp       0x1402377bc
+00000001402377a9  90                               nop       
+00000001402377aa  eb 10                            jmp       0x1402377bc
+00000001402377ac  90                               nop       
+00000001402377ad  eb 0d                            jmp       0x1402377bc
+00000001402377af  90                               nop       
+00000001402377b0  eb 0a                            jmp       0x1402377bc
+00000001402377b2  90                               nop       
+00000001402377b3  eb 07                            jmp       0x1402377bc
+00000001402377b5  90                               nop       
+00000001402377b6  eb 04                            jmp       0x1402377bc
+00000001402377b8  90                               nop       
+00000001402377b9  eb 01                            jmp       0x1402377bc
+00000001402377bb  90                               nop       
+00000001402377bc  e8 7f ed ff ff                   call      0x140236540  ; popFrame
+00000001402377c1  48 8b 85 b8 00 00 00             mov       rax, qword ptr [rbp + 0xb8]
+00000001402377c8  48 81 c4 60 01 00 00             add       rsp, 0x160
+00000001402377cf  5d                               pop       rbp
+00000001402377d0  c3                               ret       
+
+## proto_word_size__modelZboardZprototype95list_u4422 @ 0x1402378b1 (846 bytes)
+00000001402378b1  55                               push      rbp
+00000001402378b2  53                               push      rbx
+00000001402378b3  48 81 ec 98 00 00 00             sub       rsp, 0x98
+00000001402378ba  48 8d ac 24 90 00 00 00          lea       rbp, [rsp + 0x90]
+00000001402378c2  48 89 4d 20                      mov       qword ptr [rbp + 0x20], rcx
+00000001402378c6  48 89 55 28                      mov       qword ptr [rbp + 0x28], rdx
+00000001402378ca  4c 89 c3                         mov       rbx, r8
+00000001402378cd  48 8b 03                         mov       rax, qword ptr [rbx]
+00000001402378d0  48 8b 53 08                      mov       rdx, qword ptr [rbx + 8]
+00000001402378d4  48 89 45 90                      mov       qword ptr [rbp - 0x70], rax
+00000001402378d8  48 89 55 98                      mov       qword ptr [rbp - 0x68], rdx
+00000001402378dc  48 8d 05 e3 c1 7c 00             lea       rax, [rip + 0x7cc1e3]
+00000001402378e3  48 89 45 a8                      mov       qword ptr [rbp - 0x58], rax
+00000001402378e7  48 8d 05 f2 bf 7c 00             lea       rax, [rip + 0x7cbff2]
+00000001402378ee  48 89 45 b8                      mov       qword ptr [rbp - 0x48], rax
+00000001402378f2  48 c7 45 b0 00 00 00 00          mov       qword ptr [rbp - 0x50], 0
+00000001402378fa  66 c7 45 c0 00 00                mov       word ptr [rbp - 0x40], 0
+0000000140237900  48 8d 45 a0                      lea       rax, [rbp - 0x60]
+0000000140237904  48 89 c1                         mov       rcx, rax
+0000000140237907  e8 a4 eb ff ff                   call      0x1402364b0  ; .text
+000000014023790c  e8 13 ee ff ff                   call      0x140236724  ; nimErrorFlag
+0000000140237911  48 89 45 f8                      mov       qword ptr [rbp - 8], rax
+0000000140237915  48 8d 45 d8                      lea       rax, [rbp - 0x28]
+0000000140237919  ba 08 00 00 00                   mov       edx, 8
+000000014023791e  48 89 c1                         mov       rcx, rax
+0000000140237921  e8 5e ee ff ff                   call      0x140236784  ; nimZeroMem
+0000000140237926  48 c7 45 b0 74 09 00 00          mov       qword ptr [rbp - 0x50], 0x974
+000000014023792e  48 8d 05 ab bf 7c 00             lea       rax, [rip + 0x7cbfab]
+0000000140237935  48 89 45 b8                      mov       qword ptr [rbp - 0x48], rax
+0000000140237939  c6 45 f7 00                      mov       byte ptr [rbp - 9], 0
+000000014023793d  48 8b 15 6c 1c 9a 00             mov       rdx, qword ptr [rip + 0x9a1c6c]
+0000000140237944  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+0000000140237948  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+000000014023794c  48 8b 12                         mov       rdx, qword ptr [rdx]
+000000014023794f  48 89 c1                         mov       rcx, rax
+0000000140237952  e8 b3 81 df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+0000000140237957  88 45 f7                         mov       byte ptr [rbp - 9], al
+000000014023795a  0f b6 45 f7                      movzx     eax, byte ptr [rbp - 9]
+000000014023795e  83 f0 01                         xor       eax, 1
+0000000140237961  84 c0                            test      al, al
+0000000140237963  75 36                            jne       0x14023799b
+0000000140237965  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+000000014023796d  48 c7 45 b0 74 09 00 00          mov       qword ptr [rbp - 0x50], 0x974
+0000000140237975  48 8b 45 28                      mov       rax, qword ptr [rbp + 0x28]
+0000000140237979  ba 01 00 00 00                   mov       edx, 1
+000000014023797e  48 89 c1                         mov       rcx, rax
+0000000140237981  e8 6d 94 f4 ff                   call      0x140180df3  ; star___modelZsave95mongerZcommon_u213
+0000000140237986  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+000000014023798a  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+000000014023798e  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237991  0f b6 c0                         movzx     eax, al
+0000000140237994  85 c0                            test      eax, eax
+0000000140237996  e9 51 02 00 00                   jmp       0x140237bec
+000000014023799b  90                               nop       
+000000014023799c  48 c7 45 b0 75 09 00 00          mov       qword ptr [rbp - 0x50], 0x975
+00000001402379a4  c6 45 f6 00                      mov       byte ptr [rbp - 0xa], 0
+00000001402379a8  48 8b 15 c1 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1bc1]
+00000001402379af  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+00000001402379b3  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+00000001402379b7  48 8b 12                         mov       rdx, qword ptr [rdx]
+00000001402379ba  48 89 c1                         mov       rcx, rax
+00000001402379bd  e8 48 81 df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+00000001402379c2  88 45 f6                         mov       byte ptr [rbp - 0xa], al
+00000001402379c5  0f b6 45 f6                      movzx     eax, byte ptr [rbp - 0xa]
+00000001402379c9  83 f0 01                         xor       eax, 1
+00000001402379cc  84 c0                            test      al, al
+00000001402379ce  75 36                            jne       0x140237a06
+00000001402379d0  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+00000001402379d8  48 c7 45 b0 75 09 00 00          mov       qword ptr [rbp - 0x50], 0x975
+00000001402379e0  48 8b 45 28                      mov       rax, qword ptr [rbp + 0x28]
+00000001402379e4  ba 02 00 00 00                   mov       edx, 2
+00000001402379e9  48 89 c1                         mov       rcx, rax
+00000001402379ec  e8 02 94 f4 ff                   call      0x140180df3  ; star___modelZsave95mongerZcommon_u213
+00000001402379f1  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+00000001402379f5  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+00000001402379f9  0f b6 00                         movzx     eax, byte ptr [rax]
+00000001402379fc  0f b6 c0                         movzx     eax, al
+00000001402379ff  85 c0                            test      eax, eax
+0000000140237a01  e9 e6 01 00 00                   jmp       0x140237bec
+0000000140237a06  90                               nop       
+0000000140237a07  48 c7 45 b0 76 09 00 00          mov       qword ptr [rbp - 0x50], 0x976
+0000000140237a0f  c6 45 f5 00                      mov       byte ptr [rbp - 0xb], 0
+0000000140237a13  48 8b 15 66 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1b66]
+0000000140237a1a  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+0000000140237a1e  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+0000000140237a22  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140237a25  48 89 c1                         mov       rcx, rax
+0000000140237a28  e8 dd 80 df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+0000000140237a2d  88 45 f5                         mov       byte ptr [rbp - 0xb], al
+0000000140237a30  0f b6 45 f5                      movzx     eax, byte ptr [rbp - 0xb]
+0000000140237a34  83 f0 01                         xor       eax, 1
+0000000140237a37  84 c0                            test      al, al
+0000000140237a39  75 36                            jne       0x140237a71
+0000000140237a3b  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+0000000140237a43  48 c7 45 b0 76 09 00 00          mov       qword ptr [rbp - 0x50], 0x976
+0000000140237a4b  48 8b 45 28                      mov       rax, qword ptr [rbp + 0x28]
+0000000140237a4f  ba 04 00 00 00                   mov       edx, 4
+0000000140237a54  48 89 c1                         mov       rcx, rax
+0000000140237a57  e8 97 93 f4 ff                   call      0x140180df3  ; star___modelZsave95mongerZcommon_u213
+0000000140237a5c  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+0000000140237a60  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+0000000140237a64  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237a67  0f b6 c0                         movzx     eax, al
+0000000140237a6a  85 c0                            test      eax, eax
+0000000140237a6c  e9 7b 01 00 00                   jmp       0x140237bec
+0000000140237a71  90                               nop       
+0000000140237a72  48 c7 45 b0 77 09 00 00          mov       qword ptr [rbp - 0x50], 0x977
+0000000140237a7a  c6 45 f4 00                      mov       byte ptr [rbp - 0xc], 0
+0000000140237a7e  48 8b 15 0b 1b 9a 00             mov       rdx, qword ptr [rip + 0x9a1b0b]
+0000000140237a85  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+0000000140237a89  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+0000000140237a8d  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140237a90  48 89 c1                         mov       rcx, rax
+0000000140237a93  e8 72 80 df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+0000000140237a98  88 45 f4                         mov       byte ptr [rbp - 0xc], al
+0000000140237a9b  0f b6 45 f4                      movzx     eax, byte ptr [rbp - 0xc]
+0000000140237a9f  83 f0 01                         xor       eax, 1
+0000000140237aa2  84 c0                            test      al, al
+0000000140237aa4  75 36                            jne       0x140237adc
+0000000140237aa6  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+0000000140237aae  48 c7 45 b0 77 09 00 00          mov       qword ptr [rbp - 0x50], 0x977
+0000000140237ab6  48 8b 45 28                      mov       rax, qword ptr [rbp + 0x28]
+0000000140237aba  ba 08 00 00 00                   mov       edx, 8
+0000000140237abf  48 89 c1                         mov       rcx, rax
+0000000140237ac2  e8 2c 93 f4 ff                   call      0x140180df3  ; star___modelZsave95mongerZcommon_u213
+0000000140237ac7  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+0000000140237acb  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+0000000140237acf  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237ad2  0f b6 c0                         movzx     eax, al
+0000000140237ad5  85 c0                            test      eax, eax
+0000000140237ad7  e9 10 01 00 00                   jmp       0x140237bec
+0000000140237adc  90                               nop       
+0000000140237add  48 c7 45 b0 78 09 00 00          mov       qword ptr [rbp - 0x50], 0x978
+0000000140237ae5  c6 45 f3 00                      mov       byte ptr [rbp - 0xd], 0
+0000000140237ae9  48 8b 15 b0 1a 9a 00             mov       rdx, qword ptr [rip + 0x9a1ab0]
+0000000140237af0  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+0000000140237af4  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+0000000140237af8  48 8b 12                         mov       rdx, qword ptr [rdx]
+0000000140237afb  48 89 c1                         mov       rcx, rax
+0000000140237afe  e8 07 80 df ff                   call      0x14002fb0a  ; eqeq___modelZmodel95types_u853
+0000000140237b03  88 45 f3                         mov       byte ptr [rbp - 0xd], al
+0000000140237b06  0f b6 45 f3                      movzx     eax, byte ptr [rbp - 0xd]
+0000000140237b0a  83 f0 01                         xor       eax, 1
+0000000140237b0d  84 c0                            test      al, al
+0000000140237b0f  0f 85 af 00 00 00                jne       0x140237bc4
+0000000140237b15  48 c7 45 b0 79 09 00 00          mov       qword ptr [rbp - 0x50], 0x979
+0000000140237b1d  48 8b 45 90                      mov       rax, qword ptr [rbp - 0x70]
+0000000140237b21  48 89 45 e8                      mov       qword ptr [rbp - 0x18], rax
+0000000140237b25  48 83 7d e8 00                   cmp       qword ptr [rbp - 0x18], 0
+0000000140237b2a  75 1d                            jne       0x140237b49
+0000000140237b2c  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+0000000140237b34  48 c7 45 b0 79 09 00 00          mov       qword ptr [rbp - 0x50], 0x979
+0000000140237b3c  48 8b 45 28                      mov       rax, qword ptr [rbp + 0x28]
+0000000140237b40  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+0000000140237b44  e9 a3 00 00 00                   jmp       0x140237bec
+0000000140237b49  90                               nop       
+0000000140237b4a  48 c7 45 b0 7a 09 00 00          mov       qword ptr [rbp - 0x50], 0x97a
+0000000140237b52  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+0000000140237b5a  48 c7 45 b0 7a 09 00 00          mov       qword ptr [rbp - 0x50], 0x97a
+0000000140237b62  48 c7 45 e0 00 00 00 00          mov       qword ptr [rbp - 0x20], 0
+0000000140237b6a  48 8b 55 90                      mov       rdx, qword ptr [rbp - 0x70]
+0000000140237b6e  48 8b 45 98                      mov       rax, qword ptr [rbp - 0x68]
+0000000140237b72  48 85 c0                         test      rax, rax
+0000000140237b75  74 0a                            je        0x140237b81
+0000000140237b77  48 8b 45 98                      mov       rax, qword ptr [rbp - 0x68]
+0000000140237b7b  48 83 c0 08                      add       rax, 8
+0000000140237b7f  eb 05                            jmp       0x140237b86
+0000000140237b81  b8 00 00 00 00                   mov       eax, 0
+0000000140237b86  41 b8 01 00 00 00                mov       r8d, 1
+0000000140237b8c  48 89 c1                         mov       rcx, rax
+0000000140237b8f  e8 3d fc ff ff                   call      0x1402377d1  ; X5BX5D___modelZboardZprototype95list_u4450
+0000000140237b94  48 89 45 e0                      mov       qword ptr [rbp - 0x20], rax
+0000000140237b98  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+0000000140237b9c  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237b9f  0f b6 c0                         movzx     eax, al
+0000000140237ba2  85 c0                            test      eax, eax
+0000000140237ba4  75 45                            jne       0x140237beb
+0000000140237ba6  48 8b 45 e0                      mov       rax, qword ptr [rbp - 0x20]
+0000000140237baa  48 89 c1                         mov       rcx, rax
+0000000140237bad  e8 e5 4f f4 ff                   call      0x14017cb97  ; bits__modelZsave95mongerZcommon_u192
+0000000140237bb2  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+0000000140237bb6  48 8b 45 f8                      mov       rax, qword ptr [rbp - 8]
+0000000140237bba  0f b6 00                         movzx     eax, byte ptr [rax]
+0000000140237bbd  0f b6 c0                         movzx     eax, al
+0000000140237bc0  85 c0                            test      eax, eax
+0000000140237bc2  eb 28                            jmp       0x140237bec
+0000000140237bc4  90                               nop       
+0000000140237bc5  48 c7 45 b0 7c 09 00 00          mov       qword ptr [rbp - 0x50], 0x97c
+0000000140237bcd  48 c7 45 b0 73 09 00 00          mov       qword ptr [rbp - 0x50], 0x973
+0000000140237bd5  48 c7 45 b0 7c 09 00 00          mov       qword ptr [rbp - 0x50], 0x97c
+0000000140237bdd  48 8b 45 20                      mov       rax, qword ptr [rbp + 0x20]
+0000000140237be1  48 8b 40 08                      mov       rax, qword ptr [rax + 8]
+0000000140237be5  48 89 45 d8                      mov       qword ptr [rbp - 0x28], rax
+0000000140237be9  eb 01                            jmp       0x140237bec
+0000000140237beb  90                               nop       
+0000000140237bec  e8 4f e9 ff ff                   call      0x140236540  ; popFrame
+0000000140237bf1  48 8b 45 d8                      mov       rax, qword ptr [rbp - 0x28]
+0000000140237bf5  48 81 c4 98 00 00 00             add       rsp, 0x98
+0000000140237bfc  5b                               pop       rbx
+0000000140237bfd  5d                               pop       rbp
+0000000140237bfe  c3                               ret       

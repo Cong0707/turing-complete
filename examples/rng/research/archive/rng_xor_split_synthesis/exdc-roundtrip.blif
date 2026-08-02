@@ -1,0 +1,671 @@
+# Benchmark "rng_mode_net" written by ABC on Sun Aug 02 00:46:04 2026
+.model rng_mode_net
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 \
+ q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 \
+ q26 q27 q28 q29 q30 q31
+.outputs f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 \
+ f19 f20 f21 f22 f23 f24 f25 f26 f27 f28 f29 f30 f31 v0 v1 v2 v3 v4 v5 v6 \
+ v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23 v24 v25 \
+ v26 v27 v28 v29 v30 v31
+.names s0 q22 new_m_s0_q22
+1- 1
+-1 1
+.names s1 q23 new_m_s1_q23
+1- 1
+-1 1
+.names s2 q24 new_m_s2_q24
+1- 1
+-1 1
+.names s3 q25 new_m_s3_q25
+1- 1
+-1 1
+.names s4 q26 new_m_s4_q26
+1- 1
+-1 1
+.names s5 q27 new_m_s5_q27
+1- 1
+-1 1
+.names s6 q28 new_m_s6_q28
+1- 1
+-1 1
+.names s7 q29 new_m_s7_q29
+1- 1
+-1 1
+.names s8 q30 new_m_s8_q30
+1- 1
+-1 1
+.names s9 q31 new_m_s9_q31
+1- 1
+-1 1
+.names s10 q27 new_m_s10_q27
+1- 1
+-1 1
+.names s11 q28 new_m_s11_q28
+1- 1
+-1 1
+.names s12 q29 new_m_s12_q29
+1- 1
+-1 1
+.names s13 q30 new_m_s13_q30
+1- 1
+-1 1
+.names s14 q31 new_m_s14_q31
+1- 1
+-1 1
+.names s15 q15 new_m_s15_q15
+1- 1
+-1 1
+.names s16 q16 new_m_s16_q16
+1- 1
+-1 1
+.names s17 q0 new_m_s17_q0
+1- 1
+-1 1
+.names s17 q17 new_m_s17_q17
+1- 1
+-1 1
+.names s18 q1 new_m_s18_q1
+1- 1
+-1 1
+.names s18 q18 new_m_s18_q18
+1- 1
+-1 1
+.names s19 q2 new_m_s19_q2
+1- 1
+-1 1
+.names s19 q19 new_m_s19_q19
+1- 1
+-1 1
+.names s20 q3 new_m_s20_q3
+1- 1
+-1 1
+.names s20 q20 new_m_s20_q20
+1- 1
+-1 1
+.names s21 q4 new_m_s21_q4
+1- 1
+-1 1
+.names s21 q21 new_m_s21_q21
+1- 1
+-1 1
+.names s22 q10 new_m_s22_q10
+1- 1
+-1 1
+.names s22 q22 new_m_s22_q22
+1- 1
+-1 1
+.names s23 q6 new_m_s23_q6
+1- 1
+-1 1
+.names s23 q23 new_m_s23_q23
+1- 1
+-1 1
+.names s24 q12 new_m_s24_q12
+1- 1
+-1 1
+.names s24 q24 new_m_s24_q24
+1- 1
+-1 1
+.names s25 q13 new_m_s25_q13
+1- 1
+-1 1
+.names s25 q25 new_m_s25_q25
+1- 1
+-1 1
+.names s26 q14 new_m_s26_q14
+1- 1
+-1 1
+.names s26 q26 new_m_s26_q26
+1- 1
+-1 1
+.names s27 q10 new_m_s27_q10
+1- 1
+-1 1
+.names s27 q15 new_m_s27_q15
+1- 1
+-1 1
+.names s28 q11 new_m_s28_q11
+1- 1
+-1 1
+.names s28 q16 new_m_s28_q16
+1- 1
+-1 1
+.names s29 q0 new_m_s29_q0
+1- 1
+-1 1
+.names s29 q12 new_m_s29_q12
+1- 1
+-1 1
+.names s30 q1 new_m_s30_q1
+1- 1
+-1 1
+.names s30 q13 new_m_s30_q13
+1- 1
+-1 1
+.names s31 q2 new_m_s31_q2
+1- 1
+-1 1
+.names s31 q14 new_m_s31_q14
+1- 1
+-1 1
+.names new_m_s17_q0 q5 new_x00000021
+10 1
+01 1
+.names new_m_s18_q1 q6 new_x00000042
+10 1
+01 1
+.names new_m_s19_q2 q7 new_x00000084
+10 1
+01 1
+.names new_m_s20_q3 q8 new_x00000108
+10 1
+01 1
+.names new_m_s21_q4 q9 new_x00000210
+10 1
+01 1
+.names q5 new_m_s22_q10 new_x00000420
+10 1
+01 1
+.names new_m_s23_q6 q11 new_x00000840
+10 1
+01 1
+.names q7 new_m_s24_q12 new_x00001080
+10 1
+01 1
+.names q8 new_m_s25_q13 new_x00002100
+10 1
+01 1
+.names q9 new_m_s26_q14 new_x00004200
+10 1
+01 1
+.names q3 new_m_s15_q15 new_x00008008
+10 1
+01 1
+.names q4 new_m_s16_q16 new_x00010010
+10 1
+01 1
+.names new_m_s17_q17 new_m_s0_q22 new_x00420000
+10 1
+01 1
+.names new_m_s18_q18 new_m_s1_q23 new_x00840000
+10 1
+01 1
+.names new_m_s19_q19 new_m_s2_q24 new_x01080000
+10 1
+01 1
+.names new_m_s20_q20 new_m_s3_q25 new_x02100000
+10 1
+01 1
+.names new_m_s21_q21 new_m_s4_q26 new_x04200000
+10 1
+01 1
+.names new_m_s27_q15 new_m_s10_q27 new_x08008000
+10 1
+01 1
+.names new_m_s22_q22 new_m_s5_q27 new_x08400000
+10 1
+01 1
+.names new_m_s28_q16 new_m_s11_q28 new_x10010000
+10 1
+01 1
+.names new_m_s23_q23 new_m_s6_q28 new_x10800000
+10 1
+01 1
+.names new_m_s29_q0 new_m_s12_q29 new_x20000001
+10 1
+01 1
+.names new_m_s24_q24 new_m_s7_q29 new_x21000000
+10 1
+01 1
+.names new_m_s30_q1 new_m_s13_q30 new_x40000002
+10 1
+01 1
+.names new_m_s25_q25 new_m_s8_q30 new_x42000000
+10 1
+01 1
+.names new_m_s31_q2 new_m_s14_q31 new_x80000004
+10 1
+01 1
+.names new_m_s26_q26 new_m_s9_q31 new_x84000000
+10 1
+01 1
+.names new_m_s30_q13 new_x00000021 new_x00002021
+10 1
+01 1
+.names new_m_s31_q14 new_x00000042 new_x00004042
+10 1
+01 1
+.names new_m_s28_q11 new_x00008008 new_x00008808
+10 1
+01 1
+.names new_m_s29_q12 new_x00010010 new_x00011010
+10 1
+01 1
+.names new_x00000021 new_x00420000 new_x00420021
+10 1
+01 1
+.names new_x00000042 new_x00840000 new_x00840042
+10 1
+01 1
+.names new_x00000084 new_x01080000 new_x01080084
+10 1
+01 1
+.names new_x00008008 new_x01080000 new_x01088008
+10 1
+01 1
+.names new_x00000108 new_x02100000 new_x02100108
+10 1
+01 1
+.names new_x00010010 new_x02100000 new_x02110010
+10 1
+01 1
+.names new_x00000021 new_x04200000 new_x04200021
+10 1
+01 1
+.names new_x00000210 new_x04200000 new_x04200210
+10 1
+01 1
+.names q10 new_x08008000 new_x08008400
+10 1
+01 1
+.names new_x00000840 new_x08008000 new_x08008840
+10 1
+01 1
+.names new_x00000042 new_x08400000 new_x08400042
+10 1
+01 1
+.names new_x00000420 new_x08400000 new_x08400420
+10 1
+01 1
+.names q11 new_x10010000 new_x10010800
+10 1
+01 1
+.names new_x00001080 new_x10010000 new_x10011080
+10 1
+01 1
+.names new_x00000084 new_x10800000 new_x10800084
+10 1
+01 1
+.names new_x00000840 new_x10800000 new_x10800840
+10 1
+01 1
+.names q12 new_x20000001 new_x20001001
+10 1
+01 1
+.names new_x20000001 new_x00002100 new_x20002101
+10 1
+01 1
+.names new_x00000108 new_x21000000 new_x21000108
+10 1
+01 1
+.names new_x00001080 new_x21000000 new_x21001080
+10 1
+01 1
+.names q13 new_x40000002 new_x40002002
+10 1
+01 1
+.names new_x40000002 new_x00004200 new_x40004202
+10 1
+01 1
+.names new_x40000002 new_x00420000 new_x40420002
+10 1
+01 1
+.names new_x00000210 new_x42000000 new_x42000210
+10 1
+01 1
+.names new_x00002100 new_x42000000 new_x42002100
+10 1
+01 1
+.names new_m_s27_q10 new_x80000004 new_x80000404
+10 1
+01 1
+.names q14 new_x80000004 new_x80004004
+10 1
+01 1
+.names new_x80000004 new_x00840000 new_x80840004
+10 1
+01 1
+.names new_x00000420 new_x84000000 new_x84000420
+10 1
+01 1
+.names new_x00004200 new_x84000000 new_x84004200
+10 1
+01 1
+.names new_x40420002 f0
+1 1
+.names new_x80840004 f1
+1 1
+.names new_x01088008 f2
+1 1
+.names new_x02110010 f3
+1 1
+.names new_x04200021 f4
+1 1
+.names new_x08400042 f5
+1 1
+.names new_x10800084 f6
+1 1
+.names new_x21000108 f7
+1 1
+.names new_x42000210 f8
+1 1
+.names new_x84000420 f9
+1 1
+.names new_x08008840 f10
+1 1
+.names new_x10011080 f11
+1 1
+.names new_x20002101 f12
+1 1
+.names new_x40004202 f13
+1 1
+.names new_x80000404 f14
+1 1
+.names new_x00008808 f15
+1 1
+.names new_x00011010 f16
+1 1
+.names new_x00002021 f17
+1 1
+.names new_x00004042 f18
+1 1
+.names new_x00000084 f19
+1 1
+.names new_x00000108 f20
+1 1
+.names new_x00000210 f21
+1 1
+.names new_x00000420 f22
+1 1
+.names new_x00000840 f23
+1 1
+.names new_x00001080 f24
+1 1
+.names new_x00002100 f25
+1 1
+.names new_x00004200 f26
+1 1
+.names new_m_s27_q10 f27
+1 1
+.names new_m_s28_q11 f28
+1 1
+.names new_m_s29_q12 f29
+1 1
+.names new_m_s30_q13 f30
+1 1
+.names new_m_s31_q14 f31
+1 1
+.names new_x00420021 v0
+1 1
+.names new_x00840042 v1
+1 1
+.names new_x01080084 v2
+1 1
+.names new_x02100108 v3
+1 1
+.names new_x04200210 v4
+1 1
+.names new_x08400420 v5
+1 1
+.names new_x10800840 v6
+1 1
+.names new_x21001080 v7
+1 1
+.names new_x42002100 v8
+1 1
+.names new_x84004200 v9
+1 1
+.names new_x08008400 v10
+1 1
+.names new_x10010800 v11
+1 1
+.names new_x20001001 v12
+1 1
+.names new_x40002002 v13
+1 1
+.names new_x80004004 v14
+1 1
+.names new_x00008008 v15
+1 1
+.names new_x00010010 v16
+1 1
+.names new_x00000021 v17
+1 1
+.names new_x00000042 v18
+1 1
+.names new_x00000084 v19
+1 1
+.names new_x00000108 v20
+1 1
+.names new_x00000210 v21
+1 1
+.names new_x00000420 v22
+1 1
+.names new_x00000840 v23
+1 1
+.names new_x00001080 v24
+1 1
+.names new_x00002100 v25
+1 1
+.names new_x00004200 v26
+1 1
+.names q10 v27
+1 1
+.names q11 v28
+1 1
+.names q12 v29
+1 1
+.names q13 v30
+1 1
+.names q14 v31
+1 1
+
+.exdc
+.inputs s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 q0 q1 q2 q3 q4 q5 q6 \
+ q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 q22 q23 q24 q25 \
+ q26 q27 q28 q29 q30 q31
+.outputs f0 f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 f15 f16 f17 f18 \
+ f19 f20 f21 f22 f23 f24 f25 f26 f27 f28 f29 f30 f31 v0 v1 v2 v3 v4 v5 v6 \
+ v7 v8 v9 v10 v11 v12 v13 v14 v15 v16 v17 v18 v19 v20 v21 v22 v23 v24 v25 \
+ v26 v27 v28 v29 v30 v31
+.names s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 \
+ s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 new_seed_nonzero
+1------------------------------- 1
+-1------------------------------ 1
+--1----------------------------- 1
+---1---------------------------- 1
+----1--------------------------- 1
+-----1-------------------------- 1
+------1------------------------- 1
+-------1------------------------ 1
+--------1----------------------- 1
+---------1---------------------- 1
+----------1--------------------- 1
+-----------1-------------------- 1
+------------1------------------- 1
+-------------1------------------ 1
+--------------1----------------- 1
+---------------1---------------- 1
+----------------1--------------- 1
+-----------------1-------------- 1
+------------------1------------- 1
+-------------------1------------ 1
+--------------------1----------- 1
+---------------------1---------- 1
+----------------------1--------- 1
+-----------------------1-------- 1
+------------------------1------- 1
+-------------------------1------ 1
+--------------------------1----- 1
+---------------------------1---- 1
+----------------------------1--- 1
+-----------------------------1-- 1
+------------------------------1- 1
+-------------------------------1 1
+.names q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 \
+ q19 q20 q21 q22 q23 q24 q25 q26 q27 q28 q29 q30 q31 new_state_nonzero
+1------------------------------- 1
+-1------------------------------ 1
+--1----------------------------- 1
+---1---------------------------- 1
+----1--------------------------- 1
+-----1-------------------------- 1
+------1------------------------- 1
+-------1------------------------ 1
+--------1----------------------- 1
+---------1---------------------- 1
+----------1--------------------- 1
+-----------1-------------------- 1
+------------1------------------- 1
+-------------1------------------ 1
+--------------1----------------- 1
+---------------1---------------- 1
+----------------1--------------- 1
+-----------------1-------------- 1
+------------------1------------- 1
+-------------------1------------ 1
+--------------------1----------- 1
+---------------------1---------- 1
+----------------------1--------- 1
+-----------------------1-------- 1
+------------------------1------- 1
+-------------------------1------ 1
+--------------------------1----- 1
+---------------------------1---- 1
+----------------------------1--- 1
+-----------------------------1-- 1
+------------------------------1- 1
+-------------------------------1 1
+.names new_seed_nonzero new_state_nonzero new_mixed
+11 1
+.names new_mixed f0
+1 1
+.names new_mixed f1
+1 1
+.names new_mixed f2
+1 1
+.names new_mixed f3
+1 1
+.names new_mixed f4
+1 1
+.names new_mixed f5
+1 1
+.names new_mixed f6
+1 1
+.names new_mixed f7
+1 1
+.names new_mixed f8
+1 1
+.names new_mixed f9
+1 1
+.names new_mixed f10
+1 1
+.names new_mixed f11
+1 1
+.names new_mixed f12
+1 1
+.names new_mixed f13
+1 1
+.names new_mixed f14
+1 1
+.names new_mixed f15
+1 1
+.names new_mixed f16
+1 1
+.names new_mixed f17
+1 1
+.names new_mixed f18
+1 1
+.names new_mixed f19
+1 1
+.names new_mixed f20
+1 1
+.names new_mixed f21
+1 1
+.names new_mixed f22
+1 1
+.names new_mixed f23
+1 1
+.names new_mixed f24
+1 1
+.names new_mixed f25
+1 1
+.names new_mixed f26
+1 1
+.names new_mixed f27
+1 1
+.names new_mixed f28
+1 1
+.names new_mixed f29
+1 1
+.names new_mixed f30
+1 1
+.names new_mixed f31
+1 1
+.names new_mixed v0
+1 1
+.names new_mixed v1
+1 1
+.names new_mixed v2
+1 1
+.names new_mixed v3
+1 1
+.names new_mixed v4
+1 1
+.names new_mixed v5
+1 1
+.names new_mixed v6
+1 1
+.names new_mixed v7
+1 1
+.names new_mixed v8
+1 1
+.names new_mixed v9
+1 1
+.names new_mixed v10
+1 1
+.names new_mixed v11
+1 1
+.names new_mixed v12
+1 1
+.names new_mixed v13
+1 1
+.names new_mixed v14
+1 1
+.names new_mixed v15
+1 1
+.names new_mixed v16
+1 1
+.names new_mixed v17
+1 1
+.names new_mixed v18
+1 1
+.names new_mixed v19
+1 1
+.names new_mixed v20
+1 1
+.names new_mixed v21
+1 1
+.names new_mixed v22
+1 1
+.names new_mixed v23
+1 1
+.names new_mixed v24
+1 1
+.names new_mixed v25
+1 1
+.names new_mixed v26
+1 1
+.names new_mixed v27
+1 1
+.names new_mixed v28
+1 1
+.names new_mixed v29
+1 1
+.names new_mixed v30
+1 1
+.names new_mixed v31
+1 1
+.end

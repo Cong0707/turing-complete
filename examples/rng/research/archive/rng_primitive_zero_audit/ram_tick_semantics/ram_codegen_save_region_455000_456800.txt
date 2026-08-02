@@ -1,0 +1,1154 @@
+0x140455006  mov     rcx, rax
+0x140455009  call    deallocShared
+0x14045500e  mov     rax, [rbp+6700h+var_1B88]
+0x140455015  test    rax, rax
+0x140455018  jz      short loc_140455048
+0x14045501a  mov     rax, [rbp+6700h+var_1B88]
+0x140455021  mov     rax, [rax]
+0x140455024  mov     rdx, rax
+0x140455027  mov     rax, 4000000000000000h
+0x140455031  and     rax, rdx
+0x140455034  test    rax, rax
+0x140455037  jnz     short loc_140455048
+0x140455039  mov     rax, [rbp+6700h+var_1B88]
+0x140455040  mov     rcx, rax
+0x140455043  call    deallocShared
+0x140455048  mov     rax, [rbp+6700h+var_1B78]
+0x14045504f  test    rax, rax
+0x140455052  jz      short loc_1404550B2
+0x140455054  mov     rax, [rbp+6700h+var_1B78]
+0x14045505b  mov     rax, [rax]
+0x14045505e  mov     rdx, rax
+0x140455061  mov     rax, 4000000000000000h
+0x14045506b  and     rax, rdx
+0x14045506e  test    rax, rax
+0x140455071  jnz     short loc_1404550B2
+0x140455073  mov     rax, [rbp+6700h+var_1B78]
+0x14045507a  mov     rcx, rax
+0x14045507d  call    deallocShared
+0x140455082  jmp     short loc_1404550B2
+0x140455084  nop
+0x140455085  jmp     loc_1404551FE
+0x14045508a  nop
+0x14045508b  jmp     loc_1404551FE
+0x140455090  nop
+0x140455091  jmp     loc_1404551FE
+0x140455096  nop
+0x140455097  jmp     loc_1404551FE
+0x14045509c  nop
+0x14045509d  jmp     loc_1404551FE
+0x1404550a2  nop
+0x1404550a3  jmp     loc_1404551FE
+0x1404550a8  nop
+0x1404550a9  jmp     loc_14048AFC6
+0x1404550ae  nop
+0x1404550af  jmp     short loc_1404550B2
+0x1404550b1  nop
+0x1404550b2  mov     [rbp+6700h+var_370], 216h
+0x1404550bd  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x1404550c4  mov     [rbp+6700h+var_368], rax
+0x1404550cb  mov     [rbp+6700h+var_1E0], 0
+0x1404550d6  mov     rax, [rbp+6700h+var_70]
+0x1404550dd  lea     rcx, [rax+298h]
+0x1404550e4  mov     rax, [rbp+6700h+var_66B8]
+0x1404550e8  mov     rdx, [rbp+6700h+var_66B0]
+0x1404550ec  mov     [rbp+6700h+var_6740], rax
+0x1404550f0  mov     [rbp+6700h+var_6738], rdx
+0x1404550f4  mov     rax, [rbp+6700h+var_66A8]
+0x1404550f8  mov     [rbp+6700h+var_6730], rax
+0x1404550fc  lea     rax, [rbp+6700h+var_6740]
+0x140455100  mov     rdx, rax
+0x140455103  call    X5BX5D___modelZsimulationZcode95gen_u1925
+0x140455108  mov     [rbp+6700h+var_1E0], rax
+0x14045510f  mov     rax, [rbp+6700h+var_68]
+0x140455116  movzx   eax, byte ptr [rax]
+0x140455119  movzx   eax, al
+0x14045511c  test    eax, eax
+0x14045511e  jnz     loc_140455204
+0x140455124  mov     rax, [rbp+6700h+var_1E0]
+0x14045512b  mov     rax, [rax+8]
+0x14045512f  mov     edx, 0
+0x140455134  sub     rax, 1
+0x140455138  jno     short loc_14045513F
+0x14045513a  mov     edx, 1
+0x14045513f  mov     rcx, rax
+0x140455142  lea     rax, [rbp+6700h+var_1B58]
+0x140455149  mov     [rax], rcx
+0x14045514c  mov     rax, rdx
+0x14045514f  and     eax, 1
+0x140455152  test    al, al
+0x140455154  jz      short loc_140455160
+0x140455156  call    raiseOverflow
+0x14045515b  jmp     loc_14045520B
+0x140455160  mov     rdx, [rbp+6700h+var_1B58]
+0x140455167  mov     rax, [rbp+6700h+var_1E0]
+0x14045516e  mov     [rax+8], rdx
+0x140455172  jmp     short loc_140455175
+0x140455174  nop
+0x140455175  mov     [rbp+6700h+var_370], 0Dh
+0x140455180  lea     rax, aCUsersAdminCho_486; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2dd18 aCUsersAdminCho_486 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim' qword=0x73726573555c3a43
+0x140455187  mov     [rbp+6700h+var_368], rax
+0x14045518e  add     [rbp+6700h+var_48], 1
+0x140455196  mov     [rbp+6700h+var_370], 0BBh
+0x1404551a1  mov     rax, [rbp+6700h+var_78]
+0x1404551a8  mov     rax, [rax+48h]
+0x1404551ac  mov     [rbp+6700h+var_1E8], rax
+0x1404551b3  mov     rax, [rbp+6700h+var_1E8]
+0x1404551ba  cmp     rax, [rbp+6700h+var_1C8]
+0x1404551c1  jz      short loc_1404551F8
+0x1404551c3  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1165 ; strings: 0x140a28110 TM__THWBxVSaWN2Zh7OMooFH0w_1165 qword=0x94
+0x1404551ca  mov     rdx, cs:off_140A28118 ; strings: 0x140a28118 off_140A28118 qword=0x140a22720 payload='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim(187, 11) `len(a) == L` the length of the seq changed while iterating over it'
+0x1404551d1  mov     [rbp+6700h+var_66F0], rax
+0x1404551d5  mov     [rbp+6700h+var_66E8], rdx
+0x1404551d9  lea     rax, [rbp+6700h+var_66F0]
+0x1404551dd  mov     rcx, rax
+0x1404551e0  call    failedAssertImpl__stdZassertions_u234
+0x1404551e5  mov     rax, [rbp+6700h+var_68]
+0x1404551ec  movzx   eax, byte ptr [rax]
+0x1404551ef  movzx   eax, al
+0x1404551f2  test    eax, eax
+0x1404551f4  jnz     short loc_14045520A
+0x1404551f6  jmp     short loc_1404551F9
+0x1404551f8  nop
+0x1404551f9  jmp     loc_140454730
+0x1404551fe  nop
+0x1404551ff  jmp     loc_14048AFC6
+0x140455204  nop
+0x140455205  jmp     loc_14048AFC6
+0x14045520a  nop
+0x14045520b  jmp     loc_14048AFC6
+0x140455210  nop
+0x140455211  jmp     short loc_140455214
+0x140455213  nop
+0x140455214  mov     [rbp+6700h+var_370], 2CEh
+0x14045521f  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x140455226  mov     [rbp+6700h+var_368], rax
+0x14045522d  jmp     loc_14048AE5F
+0x140455232  nop
+0x140455233  mov     [rbp+6700h+var_370], 2D0h
+0x14045523e  mov     [rbp+6700h+var_19D0], 0
+0x140455249  mov     [rbp+6700h+var_19C8], 0
+0x140455254  lea     rax, [rbp+6700h+var_19E0]
+0x14045525b  mov     edx, 10h
+0x140455260  mov     rcx, rax
+0x140455263  call    nimZeroMem_66
+0x140455268  lea     rax, input__modelZsimulationZcode95gen_u4122 ; strings: 0x140433ba5 input__modelZsimulationZcode95gen_u4122 direct='USH' qword=0x308ec81485355
+0x14045526f  mov     [rbp+6700h+var_19E0], rax
+0x140455276  mov     rax, [rbp+6700h+var_70]
+0x14045527d  mov     [rbp+6700h+var_19D8], rax
+0x140455284  mov     ecx, 20h ; ' '
+0x140455289  call    bits__modelZsave95mongerZcommon_u192
+0x14045528e  mov     [rbp+6700h+var_19E8], rax
+0x140455295  mov     rax, [rbp+6700h+var_68]
+0x14045529c  movzx   eax, byte ptr [rax]
+0x14045529f  movzx   eax, al
+0x1404552a2  test    eax, eax
+0x1404552a4  jnz     loc_140456944
+0x1404552aa  mov     rax, [rbp+6700h+var_19D8]
+0x1404552b1  test    rax, rax
+0x1404552b4  jz      short loc_1404552FB
+0x1404552b6  mov     r10, [rbp+6700h+var_19E0]
+0x1404552bd  mov     rcx, [rbp+6700h+var_19D8]
+0x1404552c4  mov     rax, [rbp+6700h+var_78]
+0x1404552cb  lea     rdx, [rax+8]
+0x1404552cf  lea     rax, [rbp+6700h+var_1980]
+0x1404552d6  mov     r8, [rbp+6700h+var_19E8]
+0x1404552dd  mov     [rsp+6780h+var_6758], rcx
+0x1404552e2  mov     dword ptr [rsp+6780h+var_6760], 0
+0x1404552ea  mov     r9, r8
+0x1404552ed  mov     r8d, 1
+0x1404552f3  mov     rcx, rax
+0x1404552f6  call    r10
+0x1404552f9  jmp     short loc_140455345
+0x1404552fb  mov     r10, [rbp+6700h+var_19E0]
+0x140455302  mov     rax, [rbp+6700h+var_78]
+0x140455309  lea     rdx, [rax+8]
+0x14045530d  lea     rax, [rbp+6700h+var_66F0]
+0x140455311  mov     rcx, [rbp+6700h+var_19E8]
+0x140455318  mov     dword ptr [rsp+6780h+var_6760], 0
+0x140455320  mov     r9, rcx
+0x140455323  mov     r8d, 1
+0x140455329  mov     rcx, rax
+0x14045532c  call    r10
+0x14045532f  mov     rax, [rbp+6700h+var_66F0]
+0x140455333  mov     rdx, [rbp+6700h+var_66E8]
+0x140455337  mov     [rbp+6700h+var_1980], rax
+0x14045533e  mov     [rbp+6700h+var_1978], rdx
+0x140455345  mov     rax, [rbp+6700h+var_68]
+0x14045534c  movzx   eax, byte ptr [rax]
+0x14045534f  movzx   eax, al
+0x140455352  test    eax, eax
+0x140455354  jnz     loc_140456947
+0x14045535a  lea     rax, [rbp+6700h+var_1990]
+0x140455361  mov     rdx, [rbp+6700h+var_6538]
+0x140455368  mov     rcx, rax
+0x14045536b  call    size_to_mask__modelZsimulationZcode95gen_u19
+0x140455370  mov     rax, [rbp+6700h+var_68]
+0x140455377  movzx   eax, byte ptr [rax]
+0x14045537a  movzx   eax, al
+0x14045537d  test    eax, eax
+0x14045537f  jnz     loc_14045694A
+0x140455385  mov     rdx, [rbp+6700h+var_1980]
+0x14045538c  mov     rax, [rbp+6700h+var_1990]
+0x140455393  add     rax, rdx
+0x140455396  lea     rdx, [rax+5]
+0x14045539a  lea     rax, [rbp+6700h+var_66F0]
+0x14045539e  mov     rcx, rax
+0x1404553a1  call    rawNewString
+0x1404553a6  mov     rax, [rbp+6700h+var_66F0]
+0x1404553aa  mov     rdx, [rbp+6700h+var_66E8]
+0x1404553ae  mov     [rbp+6700h+var_19D0], rax
+0x1404553b5  mov     [rbp+6700h+var_19C8], rdx
+0x1404553bc  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1166 ; strings: 0x140a28120 TM__THWBxVSaWN2Zh7OMooFH0w_1166 qword=0x1
+0x1404553c3  mov     rdx, cs:off_140A28128 ; strings: 0x140a28128 off_140A28128 qword=0x140a26110 payload='('
+0x1404553ca  mov     [rbp+6700h+var_66F0], rax
+0x1404553ce  mov     [rbp+6700h+var_66E8], rdx
+0x1404553d2  lea     rdx, [rbp+6700h+var_66F0]
+0x1404553d6  lea     rax, [rbp+6700h+var_19D0]
+0x1404553dd  mov     rcx, rax
+0x1404553e0  call    appendString_29
+0x1404553e5  mov     rax, [rbp+6700h+var_1980]
+0x1404553ec  mov     rdx, [rbp+6700h+var_1978]
+0x1404553f3  mov     [rbp+6700h+var_66F0], rax
+0x1404553f7  mov     [rbp+6700h+var_66E8], rdx
+0x1404553fb  lea     rdx, [rbp+6700h+var_66F0]
+0x1404553ff  lea     rax, [rbp+6700h+var_19D0]
+0x140455406  mov     rcx, rax
+0x140455409  call    appendString_29
+0x14045540e  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1168 ; strings: 0x140a28130 TM__THWBxVSaWN2Zh7OMooFH0w_1168 qword=0x3
+0x140455415  mov     rdx, cs:off_140A28138 ; strings: 0x140a28138 off_140A28138 qword=0x140a27210 payload=' & '
+0x14045541c  mov     [rbp+6700h+var_66F0], rax
+0x140455420  mov     [rbp+6700h+var_66E8], rdx
+0x140455424  lea     rdx, [rbp+6700h+var_66F0]
+0x140455428  lea     rax, [rbp+6700h+var_19D0]
+0x14045542f  mov     rcx, rax
+0x140455432  call    appendString_29
+0x140455437  mov     rax, [rbp+6700h+var_1990]
+0x14045543e  mov     rdx, [rbp+6700h+var_1988]
+0x140455445  mov     [rbp+6700h+var_66F0], rax
+0x140455449  mov     [rbp+6700h+var_66E8], rdx
+0x14045544d  lea     rdx, [rbp+6700h+var_66F0]
+0x140455451  lea     rax, [rbp+6700h+var_19D0]
+0x140455458  mov     rcx, rax
+0x14045545b  call    appendString_29
+0x140455460  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1169 ; strings: 0x140a28140 TM__THWBxVSaWN2Zh7OMooFH0w_1169 qword=0x1
+0x140455467  mov     rdx, cs:off_140A28148 ; strings: 0x140a28148 off_140A28148 qword=0x140a24720 payload=')'
+0x14045546e  mov     [rbp+6700h+var_66F0], rax
+0x140455472  mov     [rbp+6700h+var_66E8], rdx
+0x140455476  lea     rdx, [rbp+6700h+var_66F0]
+0x14045547a  lea     rax, [rbp+6700h+var_19D0]
+0x140455481  mov     rcx, rax
+0x140455484  call    appendString_29
+0x140455489  mov     rax, [rbp+6700h+var_19D0]
+0x140455490  mov     rdx, [rbp+6700h+var_19C8]
+0x140455497  mov     [rbp+6700h+var_1970], rax
+0x14045549e  mov     [rbp+6700h+var_1968], rdx
+0x1404554a5  mov     [rbp+6700h+var_370], 2D2h
+0x1404554b0  mov     [rbp+6700h+var_19A0], 0
+0x1404554bb  lea     rax, TM__THWBxVSaWN2Zh7OMooFH0w_301 ; strings: 0x140a24560 TM__THWBxVSaWN2Zh7OMooFH0w_301 qword=0x4000000000000000
+0x1404554c2  mov     [rbp+6700h+var_1998], rax
+0x1404554c9  mov     [rbp+6700h+var_370], 2D3h
+0x1404554d4  mov     [rbp+6700h+var_19B0], 0
+0x1404554df  lea     rax, TM__THWBxVSaWN2Zh7OMooFH0w_301 ; strings: 0x140a24560 TM__THWBxVSaWN2Zh7OMooFH0w_301 qword=0x4000000000000000
+0x1404554e6  mov     [rbp+6700h+var_19A8], rax
+0x1404554ed  mov     [rbp+6700h+var_370], 2D4h
+0x1404554f8  mov     [rbp+6700h+var_1E9], 0
+0x1404554ff  lea     rax, [rbp+6700h+var_6670]
+0x140455506  mov     rcx, rax
+0x140455509  call    is_little_endian__modelZboardZmemory95manager_u10
+0x14045550e  mov     [rbp+6700h+var_1E9], al
+0x140455514  mov     rax, [rbp+6700h+var_68]
+0x14045551b  movzx   eax, byte ptr [rax]
+0x14045551e  movzx   eax, al
+0x140455521  test    eax, eax
+0x140455523  jnz     loc_14045694D
+0x140455529  movzx   eax, [rbp+6700h+var_1E9]
+0x140455530  xor     eax, 1
+0x140455533  test    al, al
+0x140455535  jnz     loc_140455975
+0x14045553b  mov     [rbp+6700h+var_1C10], 0
+0x140455546  mov     [rbp+6700h+var_1C08], 0
+0x140455551  mov     [rbp+6700h+var_1C20], 0
+0x14045555c  mov     [rbp+6700h+var_1C18], 0
+0x140455567  mov     [rbp+6700h+var_1C30], 0
+0x140455572  mov     [rbp+6700h+var_1C28], 0
+0x14045557d  mov     [rbp+6700h+var_370], 6A3h
+0x140455588  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x14045558f  mov     [rbp+6700h+var_368], rax
+0x140455596  mov     [rbp+6700h+var_370], 2D5h
+0x1404555a1  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x1404555a8  mov     [rbp+6700h+var_368], rax
+0x1404555af  mov     [rbp+6700h+var_1C40], 0
+0x1404555ba  mov     [rbp+6700h+var_1C38], 0
+0x1404555c5  lea     rax, [rbp+6700h+var_1C10]
+0x1404555cc  mov     rdx, [rbp+6700h+var_6668]
+0x1404555d3  mov     rcx, rax
+0x1404555d6  call    dollar___modelZsave95mongerZcommon_u3396
+0x1404555db  mov     rax, [rbp+6700h+var_68]
+0x1404555e2  movzx   eax, byte ptr [rax]
+0x1404555e5  movzx   eax, al
+0x1404555e8  test    eax, eax
+0x1404555ea  jnz     loc_140456950
+0x1404555f0  mov     rdx, [rbp+6700h+var_1C10]
+0x1404555f7  mov     rax, [rbp+6700h+var_1970]
+0x1404555fe  add     rax, rdx
+0x140455601  lea     rdx, [rax+0Dh]
+0x140455605  lea     rax, [rbp+6700h+var_66F0]
+0x140455609  mov     rcx, rax
+0x14045560c  call    rawNewString
+0x140455611  mov     rax, [rbp+6700h+var_66F0]
+0x140455615  mov     rdx, [rbp+6700h+var_66E8]
+0x140455619  mov     [rbp+6700h+var_1C40], rax
+0x140455620  mov     [rbp+6700h+var_1C38], rdx
+0x140455627  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1173 ; strings: 0x140a28180 TM__THWBxVSaWN2Zh7OMooFH0w_1173 qword=0x6
+0x14045562e  mov     rdx, cs:off_140A28188 ; strings: 0x140a28188 off_140A28188 qword=0x140a28170 payload='#DATA_'
+0x140455635  mov     [rbp+6700h+var_66F0], rax
+0x140455639  mov     [rbp+6700h+var_66E8], rdx
+0x14045563d  lea     rdx, [rbp+6700h+var_66F0]
+0x140455641  lea     rax, [rbp+6700h+var_1C40]
+0x140455648  mov     rcx, rax
+0x14045564b  call    appendString_29
+0x140455650  mov     rax, [rbp+6700h+var_1C10]
+0x140455657  mov     rdx, [rbp+6700h+var_1C08]
+0x14045565e  mov     [rbp+6700h+var_66F0], rax
+0x140455662  mov     [rbp+6700h+var_66E8], rdx
+0x140455666  lea     rdx, [rbp+6700h+var_66F0]
+0x14045566a  lea     rax, [rbp+6700h+var_1C40]
+0x140455671  mov     rcx, rax
+0x140455674  call    appendString_29
+0x140455679  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1175 ; strings: 0x140a281a0 TM__THWBxVSaWN2Zh7OMooFH0w_1175 direct='\x07' qword=0x7
+0x140455680  mov     rdx, cs:off_140A281A8 ; strings: 0x140a281a8 off_140A281A8 qword=0x140a28190 points='\x07' payload=' + Int '
+0x140455687  mov     [rbp+6700h+var_66F0], rax
+0x14045568b  mov     [rbp+6700h+var_66E8], rdx
+0x14045568f  lea     rdx, [rbp+6700h+var_66F0]
+0x140455693  lea     rax, [rbp+6700h+var_1C40]
+0x14045569a  mov     rcx, rax
+0x14045569d  call    appendString_29
+0x1404556a2  mov     rax, [rbp+6700h+var_1970]
+0x1404556a9  mov     rdx, [rbp+6700h+var_1968]
+0x1404556b0  mov     [rbp+6700h+var_66F0], rax
+0x1404556b4  mov     [rbp+6700h+var_66E8], rdx
+0x1404556b8  lea     rdx, [rbp+6700h+var_66F0]
+0x1404556bc  lea     rax, [rbp+6700h+var_1C40]
+0x1404556c3  mov     rcx, rax
+0x1404556c6  call    appendString_29
+0x1404556cb  mov     [rbp+6700h+var_370], 6A3h
+0x1404556d6  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x1404556dd  mov     [rbp+6700h+var_368], rax
+0x1404556e4  mov     rax, [rbp+6700h+var_1C40]
+0x1404556eb  mov     rdx, [rbp+6700h+var_1C38]
+0x1404556f2  mov     [rbp+6700h+var_66F0], rax
+0x1404556f6  mov     [rbp+6700h+var_66E8], rdx
+0x1404556fa  lea     rdx, [rbp+6700h+var_66F0]
+0x1404556fe  lea     rax, [rbp+6700h+var_19A0]
+0x140455705  mov     rcx, rax
+0x140455708  call    eqsink___system_u2667
+0x14045570d  mov     [rbp+6700h+var_370], 2D6h
+0x140455718  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x14045571f  mov     [rbp+6700h+var_368], rax
+0x140455726  mov     [rbp+6700h+var_1C50], 0
+0x140455731  mov     [rbp+6700h+var_1C48], 0
+0x14045573c  lea     rax, [rbp+6700h+var_1C20]
+0x140455743  mov     rdx, [rbp+6700h+var_6668]
+0x14045574a  mov     rcx, rax
+0x14045574d  call    dollar___modelZsave95mongerZcommon_u3396
+0x140455752  mov     rax, [rbp+6700h+var_68]
+0x140455759  movzx   eax, byte ptr [rax]
+0x14045575c  movzx   eax, al
+0x14045575f  test    eax, eax
+0x140455761  jnz     loc_140456953
+0x140455767  lea     rax, [rbp+6700h+var_1C30]
+0x14045576e  mov     rdx, [rbp+6700h+var_6538]
+0x140455775  mov     rcx, rax
+0x140455778  call    dollar___modelZsave95mongerZcommon_u263
+0x14045577d  mov     rax, [rbp+6700h+var_68]
+0x140455784  movzx   eax, byte ptr [rax]
+0x140455787  movzx   eax, al
+0x14045578a  test    eax, eax
+0x14045578c  jnz     loc_140456956
+0x140455792  mov     rdx, [rbp+6700h+var_1C20]
+0x140455799  mov     rax, [rbp+6700h+var_1C30]
+0x1404557a0  add     rax, rdx
+0x1404557a3  lea     rdx, [rax+9]
+0x1404557a7  lea     rax, [rbp+6700h+var_66F0]
+0x1404557ab  mov     rcx, rax
+0x1404557ae  call    rawNewString
+0x1404557b3  mov     rax, [rbp+6700h+var_66F0]
+0x1404557b7  mov     rdx, [rbp+6700h+var_66E8]
+0x1404557bb  mov     [rbp+6700h+var_1C50], rax
+0x1404557c2  mov     [rbp+6700h+var_1C48], rdx
+0x1404557c9  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1176 ; strings: 0x140a281b0 TM__THWBxVSaWN2Zh7OMooFH0w_1176 qword=0x6
+0x1404557d0  mov     rdx, cs:off_140A281B8 ; strings: 0x140a281b8 off_140A281B8 qword=0x140a28170 payload='#DATA_'
+0x1404557d7  mov     [rbp+6700h+var_66F0], rax
+0x1404557db  mov     [rbp+6700h+var_66E8], rdx
+0x1404557df  lea     rdx, [rbp+6700h+var_66F0]
+0x1404557e3  lea     rax, [rbp+6700h+var_1C50]
+0x1404557ea  mov     rcx, rax
+0x1404557ed  call    appendString_29
+0x1404557f2  mov     rax, [rbp+6700h+var_1C20]
+0x1404557f9  mov     rdx, [rbp+6700h+var_1C18]
+0x140455800  mov     [rbp+6700h+var_66F0], rax
+0x140455804  mov     [rbp+6700h+var_66E8], rdx
+0x140455808  lea     rdx, [rbp+6700h+var_66F0]
+0x14045580c  lea     rax, [rbp+6700h+var_1C50]
+0x140455813  mov     rcx, rax
+0x140455816  call    appendString_29
+0x14045581b  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1177 ; strings: 0x140a281c0 TM__THWBxVSaWN2Zh7OMooFH0w_1177 qword=0x3
+0x140455822  mov     rdx, cs:off_140A281C8 ; strings: 0x140a281c8 off_140A281C8 qword=0x140a251b0 payload=' + '
+0x140455829  mov     [rbp+6700h+var_66F0], rax
+0x14045582d  mov     [rbp+6700h+var_66E8], rdx
+0x140455831  lea     rdx, [rbp+6700h+var_66F0]
+0x140455835  lea     rax, [rbp+6700h+var_1C50]
+0x14045583c  mov     rcx, rax
+0x14045583f  call    appendString_29
+0x140455844  mov     rax, [rbp+6700h+var_1C30]
+0x14045584b  mov     rdx, [rbp+6700h+var_1C28]
+0x140455852  mov     [rbp+6700h+var_66F0], rax
+0x140455856  mov     [rbp+6700h+var_66E8], rdx
+0x14045585a  lea     rdx, [rbp+6700h+var_66F0]
+0x14045585e  lea     rax, [rbp+6700h+var_1C50]
+0x140455865  mov     rcx, rax
+0x140455868  call    appendString_29
+0x14045586d  mov     [rbp+6700h+var_370], 6A3h
+0x140455878  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x14045587f  mov     [rbp+6700h+var_368], rax
+0x140455886  mov     rax, [rbp+6700h+var_1C50]
+0x14045588d  mov     rdx, [rbp+6700h+var_1C48]
+0x140455894  mov     [rbp+6700h+var_66F0], rax
+0x140455898  mov     [rbp+6700h+var_66E8], rdx
+0x14045589c  lea     rdx, [rbp+6700h+var_66F0]
+0x1404558a0  lea     rax, [rbp+6700h+var_19B0]
+0x1404558a7  mov     rcx, rax
+0x1404558aa  call    eqsink___system_u2667
+0x1404558af  mov     [rbp+6700h+var_370], 18Ah
+0x1404558ba  mov     rax, [rbp+6700h+var_1C28]
+0x1404558c1  test    rax, rax
+0x1404558c4  jz      short loc_1404558F4
+0x1404558c6  mov     rax, [rbp+6700h+var_1C28]
+0x1404558cd  mov     rax, [rax]
+0x1404558d0  mov     rdx, rax
+0x1404558d3  mov     rax, 4000000000000000h
+0x1404558dd  and     rax, rdx
+0x1404558e0  test    rax, rax
+0x1404558e3  jnz     short loc_1404558F4
+0x1404558e5  mov     rax, [rbp+6700h+var_1C28]
+0x1404558ec  mov     rcx, rax
+0x1404558ef  call    deallocShared
+0x1404558f4  mov     rax, [rbp+6700h+var_1C18]
+0x1404558fb  test    rax, rax
+0x1404558fe  jz      short loc_14045592E
+0x140455900  mov     rax, [rbp+6700h+var_1C18]
+0x140455907  mov     rax, [rax]
+0x14045590a  mov     rdx, rax
+0x14045590d  mov     rax, 4000000000000000h
+0x140455917  and     rax, rdx
+0x14045591a  test    rax, rax
+0x14045591d  jnz     short loc_14045592E
+0x14045591f  mov     rax, [rbp+6700h+var_1C18]
+0x140455926  mov     rcx, rax
+0x140455929  call    deallocShared
+0x14045592e  mov     rax, [rbp+6700h+var_1C08]
+0x140455935  test    rax, rax
+0x140455938  jz      loc_140455EC9
+0x14045593e  mov     rax, [rbp+6700h+var_1C08]
+0x140455945  mov     rax, [rax]
+0x140455948  mov     rdx, rax
+0x14045594b  mov     rax, 4000000000000000h
+0x140455955  and     rax, rdx
+0x140455958  test    rax, rax
+0x14045595b  jnz     loc_140455EC9
+0x140455961  mov     rax, [rbp+6700h+var_1C08]
+0x140455968  mov     rcx, rax
+0x14045596b  call    deallocShared
+0x140455970  jmp     loc_140455EC9
+0x140455975  nop
+0x140455976  mov     [rbp+6700h+var_1C60], 0
+0x140455981  mov     [rbp+6700h+var_1C58], 0
+0x14045598c  mov     [rbp+6700h+var_1C70], 0
+0x140455997  mov     [rbp+6700h+var_1C68], 0
+0x1404559a2  mov     [rbp+6700h+var_1C80], 0
+0x1404559ad  mov     [rbp+6700h+var_1C78], 0
+0x1404559b8  mov     [rbp+6700h+var_1C90], 0
+0x1404559c3  mov     [rbp+6700h+var_1C88], 0
+0x1404559ce  mov     [rbp+6700h+var_370], 6A3h
+0x1404559d9  mov     [rbp+6700h+var_370], 2D8h
+0x1404559e4  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x1404559eb  mov     [rbp+6700h+var_368], rax
+0x1404559f2  mov     [rbp+6700h+var_1CA0], 0
+0x1404559fd  mov     [rbp+6700h+var_1C98], 0
+0x140455a08  lea     rax, [rbp+6700h+var_1C60]
+0x140455a0f  mov     rdx, [rbp+6700h+var_6668]
+0x140455a16  mov     rcx, rax
+0x140455a19  call    dollar___modelZsave95mongerZcommon_u3396
+0x140455a1e  mov     rax, [rbp+6700h+var_68]
+0x140455a25  movzx   eax, byte ptr [rax]
+0x140455a28  movzx   eax, al
+0x140455a2b  test    eax, eax
+0x140455a2d  jnz     loc_140456959
+0x140455a33  mov     rdx, [rbp+6700h+var_19C0]
+0x140455a3a  mov     rax, [rbp+6700h+var_6538]
+0x140455a41  mov     rcx, rax
+0x140455a44  call    minus___modelZsave95mongerZcommon_u241
+0x140455a49  mov     [rbp+6700h+var_1CA8], rax
+0x140455a50  mov     rax, [rbp+6700h+var_68]
+0x140455a57  movzx   eax, byte ptr [rax]
+0x140455a5a  movzx   eax, al
+0x140455a5d  test    eax, eax
+0x140455a5f  jnz     loc_14045695C
+0x140455a65  lea     rax, [rbp+6700h+var_1C70]
+0x140455a6c  mov     rdx, [rbp+6700h+var_1CA8]
+0x140455a73  mov     rcx, rax
+0x140455a76  call    dollar___modelZsave95mongerZcommon_u263
+0x140455a7b  mov     rax, [rbp+6700h+var_68]
+0x140455a82  movzx   eax, byte ptr [rax]
+0x140455a85  movzx   eax, al
+0x140455a88  test    eax, eax
+0x140455a8a  jnz     loc_14045695F
+0x140455a90  mov     rdx, [rbp+6700h+var_1C60]
+0x140455a97  mov     rax, [rbp+6700h+var_1C70]
+0x140455a9e  add     rdx, rax
+0x140455aa1  mov     rax, [rbp+6700h+var_1970]
+0x140455aa8  add     rax, rdx
+0x140455aab  lea     rdx, [rax+12h]
+0x140455aaf  lea     rax, [rbp+6700h+var_66F0]
+0x140455ab3  mov     rcx, rax
+0x140455ab6  call    rawNewString
+0x140455abb  mov     rax, [rbp+6700h+var_66F0]
+0x140455abf  mov     rdx, [rbp+6700h+var_66E8]
+0x140455ac3  mov     [rbp+6700h+var_1CA0], rax
+0x140455aca  mov     [rbp+6700h+var_1C98], rdx
+0x140455ad1  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1178 ; strings: 0x140a281d0 TM__THWBxVSaWN2Zh7OMooFH0w_1178 qword=0x6
+0x140455ad8  mov     rdx, cs:off_140A281D8 ; strings: 0x140a281d8 off_140A281D8 qword=0x140a28170 payload='#DATA_'
+0x140455adf  mov     [rbp+6700h+var_66F0], rax
+0x140455ae3  mov     [rbp+6700h+var_66E8], rdx
+0x140455ae7  lea     rdx, [rbp+6700h+var_66F0]
+0x140455aeb  lea     rax, [rbp+6700h+var_1CA0]
+0x140455af2  mov     rcx, rax
+0x140455af5  call    appendString_29
+0x140455afa  mov     rax, [rbp+6700h+var_1C60]
+0x140455b01  mov     rdx, [rbp+6700h+var_1C58]
+0x140455b08  mov     [rbp+6700h+var_66F0], rax
+0x140455b0c  mov     [rbp+6700h+var_66E8], rdx
+0x140455b10  lea     rdx, [rbp+6700h+var_66F0]
+0x140455b14  lea     rax, [rbp+6700h+var_1CA0]
+0x140455b1b  mov     rcx, rax
+0x140455b1e  call    appendString_29
+0x140455b23  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1180 ; strings: 0x140a28200 TM__THWBxVSaWN2Zh7OMooFH0w_1180 direct='\x08' qword=0x8
+0x140455b2a  mov     rdx, cs:off_140A28208 ; strings: 0x140a28208 off_140A28208 qword=0x140a281e0 points='\x08' payload=' + Int ('
+0x140455b31  mov     [rbp+6700h+var_66F0], rax
+0x140455b35  mov     [rbp+6700h+var_66E8], rdx
+0x140455b39  lea     rdx, [rbp+6700h+var_66F0]
+0x140455b3d  lea     rax, [rbp+6700h+var_1CA0]
+0x140455b44  mov     rcx, rax
+0x140455b47  call    appendString_29
+0x140455b4c  mov     rax, [rbp+6700h+var_1C70]
+0x140455b53  mov     rdx, [rbp+6700h+var_1C68]
+0x140455b5a  mov     [rbp+6700h+var_66F0], rax
+0x140455b5e  mov     [rbp+6700h+var_66E8], rdx
+0x140455b62  lea     rdx, [rbp+6700h+var_66F0]
+0x140455b66  lea     rax, [rbp+6700h+var_1CA0]
+0x140455b6d  mov     rcx, rax
+0x140455b70  call    appendString_29
+0x140455b75  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1181 ; strings: 0x140a28210 TM__THWBxVSaWN2Zh7OMooFH0w_1181 qword=0x3
+0x140455b7c  mov     rdx, cs:off_140A28218 ; strings: 0x140a28218 off_140A28218 qword=0x140a27b20 payload=' - '
+0x140455b83  mov     [rbp+6700h+var_66F0], rax
+0x140455b87  mov     [rbp+6700h+var_66E8], rdx
+0x140455b8b  lea     rdx, [rbp+6700h+var_66F0]
+0x140455b8f  lea     rax, [rbp+6700h+var_1CA0]
+0x140455b96  mov     rcx, rax
+0x140455b99  call    appendString_29
+0x140455b9e  mov     rax, [rbp+6700h+var_1970]
+0x140455ba5  mov     rdx, [rbp+6700h+var_1968]
+0x140455bac  mov     [rbp+6700h+var_66F0], rax
+0x140455bb0  mov     [rbp+6700h+var_66E8], rdx
+0x140455bb4  lea     rdx, [rbp+6700h+var_66F0]
+0x140455bb8  lea     rax, [rbp+6700h+var_1CA0]
+0x140455bbf  mov     rcx, rax
+0x140455bc2  call    appendString_29
+0x140455bc7  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1182 ; strings: 0x140a28220 TM__THWBxVSaWN2Zh7OMooFH0w_1182 qword=0x1
+0x140455bce  mov     rdx, cs:off_140A28228 ; strings: 0x140a28228 off_140A28228 qword=0x140a24720 payload=')'
+0x140455bd5  mov     [rbp+6700h+var_66F0], rax
+0x140455bd9  mov     [rbp+6700h+var_66E8], rdx
+0x140455bdd  lea     rdx, [rbp+6700h+var_66F0]
+0x140455be1  lea     rax, [rbp+6700h+var_1CA0]
+0x140455be8  mov     rcx, rax
+0x140455beb  call    appendString_29
+0x140455bf0  mov     [rbp+6700h+var_370], 6A3h
+0x140455bfb  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x140455c02  mov     [rbp+6700h+var_368], rax
+0x140455c09  mov     rax, [rbp+6700h+var_1CA0]
+0x140455c10  mov     rdx, [rbp+6700h+var_1C98]
+0x140455c17  mov     [rbp+6700h+var_66F0], rax
+0x140455c1b  mov     [rbp+6700h+var_66E8], rdx
+0x140455c1f  lea     rdx, [rbp+6700h+var_66F0]
+0x140455c23  lea     rax, [rbp+6700h+var_19A0]
+0x140455c2a  mov     rcx, rax
+0x140455c2d  call    eqsink___system_u2667
+0x140455c32  mov     [rbp+6700h+var_370], 2D9h
+0x140455c3d  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x140455c44  mov     [rbp+6700h+var_368], rax
+0x140455c4b  mov     [rbp+6700h+var_1CC0], 0
+0x140455c56  mov     [rbp+6700h+var_1CB8], 0
+0x140455c61  lea     rax, [rbp+6700h+var_1C80]
+0x140455c68  mov     rdx, [rbp+6700h+var_6668]
+0x140455c6f  mov     rcx, rax
+0x140455c72  call    dollar___modelZsave95mongerZcommon_u3396
+0x140455c77  mov     rax, [rbp+6700h+var_68]
+0x140455c7e  movzx   eax, byte ptr [rax]
+0x140455c81  movzx   eax, al
+0x140455c84  test    eax, eax
+0x140455c86  jnz     loc_140456962
+0x140455c8c  lea     rax, [rbp+6700h+var_1C90]
+0x140455c93  mov     rdx, [rbp+6700h+var_19C0]
+0x140455c9a  mov     rcx, rax
+0x140455c9d  call    dollar___modelZsave95mongerZcommon_u263
+0x140455ca2  mov     rax, [rbp+6700h+var_68]
+0x140455ca9  movzx   eax, byte ptr [rax]
+0x140455cac  movzx   eax, al
+0x140455caf  test    eax, eax
+0x140455cb1  jnz     loc_140456965
+0x140455cb7  mov     rdx, [rbp+6700h+var_1C80]
+0x140455cbe  mov     rax, [rbp+6700h+var_1C90]
+0x140455cc5  add     rax, rdx
+0x140455cc8  lea     rdx, [rax+9]
+0x140455ccc  lea     rax, [rbp+6700h+var_66F0]
+0x140455cd0  mov     rcx, rax
+0x140455cd3  call    rawNewString
+0x140455cd8  mov     rax, [rbp+6700h+var_66F0]
+0x140455cdc  mov     rdx, [rbp+6700h+var_66E8]
+0x140455ce0  mov     [rbp+6700h+var_1CC0], rax
+0x140455ce7  mov     [rbp+6700h+var_1CB8], rdx
+0x140455cee  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1183 ; strings: 0x140a28230 TM__THWBxVSaWN2Zh7OMooFH0w_1183 qword=0x6
+0x140455cf5  mov     rdx, cs:off_140A28238 ; strings: 0x140a28238 off_140A28238 qword=0x140a28170 payload='#DATA_'
+0x140455cfc  mov     [rbp+6700h+var_66F0], rax
+0x140455d00  mov     [rbp+6700h+var_66E8], rdx
+0x140455d04  lea     rdx, [rbp+6700h+var_66F0]
+0x140455d08  lea     rax, [rbp+6700h+var_1CC0]
+0x140455d0f  mov     rcx, rax
+0x140455d12  call    appendString_29
+0x140455d17  mov     rax, [rbp+6700h+var_1C80]
+0x140455d1e  mov     rdx, [rbp+6700h+var_1C78]
+0x140455d25  mov     [rbp+6700h+var_66F0], rax
+0x140455d29  mov     [rbp+6700h+var_66E8], rdx
+0x140455d2d  lea     rdx, [rbp+6700h+var_66F0]
+0x140455d31  lea     rax, [rbp+6700h+var_1CC0]
+0x140455d38  mov     rcx, rax
+0x140455d3b  call    appendString_29
+0x140455d40  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1184 ; strings: 0x140a28240 TM__THWBxVSaWN2Zh7OMooFH0w_1184 qword=0x3
+0x140455d47  mov     rdx, cs:off_140A28248 ; strings: 0x140a28248 off_140A28248 qword=0x140a27b20 payload=' - '
+0x140455d4e  mov     [rbp+6700h+var_66F0], rax
+0x140455d52  mov     [rbp+6700h+var_66E8], rdx
+0x140455d56  lea     rdx, [rbp+6700h+var_66F0]
+0x140455d5a  lea     rax, [rbp+6700h+var_1CC0]
+0x140455d61  mov     rcx, rax
+0x140455d64  call    appendString_29
+0x140455d69  mov     rax, [rbp+6700h+var_1C90]
+0x140455d70  mov     rdx, [rbp+6700h+var_1C88]
+0x140455d77  mov     [rbp+6700h+var_66F0], rax
+0x140455d7b  mov     [rbp+6700h+var_66E8], rdx
+0x140455d7f  lea     rdx, [rbp+6700h+var_66F0]
+0x140455d83  lea     rax, [rbp+6700h+var_1CC0]
+0x140455d8a  mov     rcx, rax
+0x140455d8d  call    appendString_29
+0x140455d92  mov     [rbp+6700h+var_370], 6A3h
+0x140455d9d  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x140455da4  mov     [rbp+6700h+var_368], rax
+0x140455dab  mov     rax, [rbp+6700h+var_1CC0]
+0x140455db2  mov     rdx, [rbp+6700h+var_1CB8]
+0x140455db9  mov     [rbp+6700h+var_66F0], rax
+0x140455dbd  mov     [rbp+6700h+var_66E8], rdx
+0x140455dc1  lea     rdx, [rbp+6700h+var_66F0]
+0x140455dc5  lea     rax, [rbp+6700h+var_19B0]
+0x140455dcc  mov     rcx, rax
+0x140455dcf  call    eqsink___system_u2667
+0x140455dd4  mov     [rbp+6700h+var_370], 18Ah
+0x140455ddf  mov     rax, [rbp+6700h+var_1C88]
+0x140455de6  test    rax, rax
+0x140455de9  jz      short loc_140455E19
+0x140455deb  mov     rax, [rbp+6700h+var_1C88]
+0x140455df2  mov     rax, [rax]
+0x140455df5  mov     rdx, rax
+0x140455df8  mov     rax, 4000000000000000h
+0x140455e02  and     rax, rdx
+0x140455e05  test    rax, rax
+0x140455e08  jnz     short loc_140455E19
+0x140455e0a  mov     rax, [rbp+6700h+var_1C88]
+0x140455e11  mov     rcx, rax
+0x140455e14  call    deallocShared
+0x140455e19  mov     rax, [rbp+6700h+var_1C78]
+0x140455e20  test    rax, rax
+0x140455e23  jz      short loc_140455E53
+0x140455e25  mov     rax, [rbp+6700h+var_1C78]
+0x140455e2c  mov     rax, [rax]
+0x140455e2f  mov     rdx, rax
+0x140455e32  mov     rax, 4000000000000000h
+0x140455e3c  and     rax, rdx
+0x140455e3f  test    rax, rax
+0x140455e42  jnz     short loc_140455E53
+0x140455e44  mov     rax, [rbp+6700h+var_1C78]
+0x140455e4b  mov     rcx, rax
+0x140455e4e  call    deallocShared
+0x140455e53  mov     rax, [rbp+6700h+var_1C68]
+0x140455e5a  test    rax, rax
+0x140455e5d  jz      short loc_140455E8D
+0x140455e5f  mov     rax, [rbp+6700h+var_1C68]
+0x140455e66  mov     rax, [rax]
+0x140455e69  mov     rdx, rax
+0x140455e6c  mov     rax, 4000000000000000h
+0x140455e76  and     rax, rdx
+0x140455e79  test    rax, rax
+0x140455e7c  jnz     short loc_140455E8D
+0x140455e7e  mov     rax, [rbp+6700h+var_1C68]
+0x140455e85  mov     rcx, rax
+0x140455e88  call    deallocShared
+0x140455e8d  mov     rax, [rbp+6700h+var_1C58]
+0x140455e94  test    rax, rax
+0x140455e97  jz      short loc_140455ECA
+0x140455e99  mov     rax, [rbp+6700h+var_1C58]
+0x140455ea0  mov     rax, [rax]
+0x140455ea3  mov     rdx, rax
+0x140455ea6  mov     rax, 4000000000000000h
+0x140455eb0  and     rax, rdx
+0x140455eb3  test    rax, rax
+0x140455eb6  jnz     short loc_140455ECA
+0x140455eb8  mov     rax, [rbp+6700h+var_1C58]
+0x140455ebf  mov     rcx, rax
+0x140455ec2  call    deallocShared
+0x140455ec7  jmp     short loc_140455ECA
+0x140455ec9  nop
+0x140455eca  mov     [rbp+6700h+var_370], 2DBh
+0x140455ed5  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x140455edc  mov     [rbp+6700h+var_368], rax
+0x140455ee3  mov     rax, [rbp+6700h+var_70]
+0x140455eea  movzx   eax, byte ptr [rax+18h]
+0x140455eee  test    al, al
+0x140455ef0  jnz     loc_140456968
+0x140455ef6  mov     [rbp+6700h+var_1CD0], 0
+0x140455f01  mov     [rbp+6700h+var_1CC8], 0
+0x140455f0c  mov     [rbp+6700h+var_1CE0], 0
+0x140455f17  mov     [rbp+6700h+var_1CD8], 0
+0x140455f22  mov     [rbp+6700h+var_1CF0], 0
+0x140455f2d  mov     [rbp+6700h+var_1CE8], 0
+0x140455f38  mov     [rbp+6700h+var_1D00], 0
+0x140455f43  mov     [rbp+6700h+var_1CF8], 0
+0x140455f4e  mov     [rbp+6700h+var_370], 2DCh
+0x140455f59  lea     rax, [rbp+6700h+var_1D10]
+0x140455f60  mov     edx, 10h
+0x140455f65  mov     rcx, rax
+0x140455f68  call    nimZeroMem_66
+0x140455f6d  lea     rax, add_line__modelZsimulationZcode95gen_u2131 ; strings: 0x140436a70 add_line__modelZsimulationZcode95gen_u2131 direct='USH' qword=0xb8ec81485355
+0x140455f74  mov     [rbp+6700h+var_1D10], rax
+0x140455f7b  mov     rax, [rbp+6700h+var_70]
+0x140455f82  mov     [rbp+6700h+var_1D08], rax
+0x140455f89  mov     [rbp+6700h+var_1D20], 0
+0x140455f94  mov     [rbp+6700h+var_1D18], 0
+0x140455f9f  lea     rax, [rbp+6700h+var_1D30]
+0x140455fa6  mov     edx, 10h
+0x140455fab  mov     rcx, rax
+0x140455fae  call    nimZeroMem_66
+0x140455fb3  lea     rax, input__modelZsimulationZcode95gen_u4258 ; strings: 0x14043de0d input__modelZsimulationZcode95gen_u4258 direct='UH' qword=0xc0ec8148e5894855
+0x140455fba  mov     [rbp+6700h+var_1D30], rax
+0x140455fc1  mov     rax, [rbp+6700h+var_70]
+0x140455fc8  mov     [rbp+6700h+var_1D28], rax
+0x140455fcf  mov     rax, [rbp+6700h+var_1D28]
+0x140455fd6  test    rax, rax
+0x140455fd9  jz      short loc_14045601C
+0x140455fdb  mov     r10, [rbp+6700h+var_1D30]
+0x140455fe2  mov     rcx, [rbp+6700h+var_1D28]
+0x140455fe9  mov     rax, [rbp+6700h+var_78]
+0x140455ff0  lea     rdx, [rax+8]
+0x140455ff4  lea     rax, [rbp+6700h+var_1CD0]
+0x140455ffb  mov     [rsp+6780h+var_6758], rcx
+0x140456000  mov     dword ptr [rsp+6780h+var_6760], 0
+0x140456008  mov     r9d, 1
+0x14045600e  mov     r8d, 0
+0x140456014  mov     rcx, rax
+0x140456017  call    r10
+0x14045601a  jmp     short loc_140456062
+0x14045601c  mov     r10, [rbp+6700h+var_1D30]
+0x140456023  mov     rax, [rbp+6700h+var_78]
+0x14045602a  lea     rdx, [rax+8]
+0x14045602e  lea     rax, [rbp+6700h+var_66F0]
+0x140456032  mov     dword ptr [rsp+6780h+var_6760], 0
+0x14045603a  mov     r9d, 1
+0x140456040  mov     r8d, 0
+0x140456046  mov     rcx, rax
+0x140456049  call    r10
+0x14045604c  mov     rax, [rbp+6700h+var_66F0]
+0x140456050  mov     rdx, [rbp+6700h+var_66E8]
+0x140456054  mov     [rbp+6700h+var_1CD0], rax
+0x14045605b  mov     [rbp+6700h+var_1CC8], rdx
+0x140456062  mov     rax, [rbp+6700h+var_68]
+0x140456069  movzx   eax, byte ptr [rax]
+0x14045606c  movzx   eax, al
+0x14045606f  test    eax, eax
+0x140456071  jnz     loc_14045696B
+0x140456077  mov     rax, [rbp+6700h+var_1CD0]
+0x14045607e  lea     rdx, [rax+0Ah]
+0x140456082  lea     rax, [rbp+6700h+var_66F0]
+0x140456086  mov     rcx, rax
+0x140456089  call    rawNewString
+0x14045608e  mov     rax, [rbp+6700h+var_66F0]
+0x140456092  mov     rdx, [rbp+6700h+var_66E8]
+0x140456096  mov     [rbp+6700h+var_1D20], rax
+0x14045609d  mov     [rbp+6700h+var_1D18], rdx
+0x1404560a4  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1186 ; strings: 0x140a28270 TM__THWBxVSaWN2Zh7OMooFH0w_1186 direct='\x08' qword=0x8
+0x1404560ab  mov     rdx, cs:off_140A28278 ; strings: 0x140a28278 off_140A28278 qword=0x140a28250 points='\x08' payload='if Bool '
+0x1404560b2  mov     [rbp+6700h+var_66F0], rax
+0x1404560b6  mov     [rbp+6700h+var_66E8], rdx
+0x1404560ba  lea     rdx, [rbp+6700h+var_66F0]
+0x1404560be  lea     rax, [rbp+6700h+var_1D20]
+0x1404560c5  mov     rcx, rax
+0x1404560c8  call    appendString_29
+0x1404560cd  mov     rax, [rbp+6700h+var_1CD0]
+0x1404560d4  mov     rdx, [rbp+6700h+var_1CC8]
+0x1404560db  mov     [rbp+6700h+var_66F0], rax
+0x1404560df  mov     [rbp+6700h+var_66E8], rdx
+0x1404560e3  lea     rdx, [rbp+6700h+var_66F0]
+0x1404560e7  lea     rax, [rbp+6700h+var_1D20]
+0x1404560ee  mov     rcx, rax
+0x1404560f1  call    appendString_29
+0x1404560f6  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1188 ; strings: 0x140a28280 TM__THWBxVSaWN2Zh7OMooFH0w_1188 qword=0x2
+0x1404560fd  mov     rdx, cs:off_140A28288 ; strings: 0x140a28288 off_140A28288 qword=0x140a278b0 payload=' {'
+0x140456104  mov     [rbp+6700h+var_66F0], rax
+0x140456108  mov     [rbp+6700h+var_66E8], rdx
+0x14045610c  lea     rdx, [rbp+6700h+var_66F0]
+0x140456110  lea     rax, [rbp+6700h+var_1D20]
+0x140456117  mov     rcx, rax
+0x14045611a  call    appendString_29
+0x14045611f  mov     rax, [rbp+6700h+var_1D20]
+0x140456126  mov     rdx, [rbp+6700h+var_1D18]
+0x14045612d  mov     [rbp+6700h+var_1CE0], rax
+0x140456134  mov     [rbp+6700h+var_1CD8], rdx
+0x14045613b  mov     rax, [rbp+6700h+var_1D08]
+0x140456142  test    rax, rax
+0x140456145  jz      short loc_14045617A
+0x140456147  mov     r8, [rbp+6700h+var_1D10]
+0x14045614e  mov     rcx, [rbp+6700h+var_1D08]
+0x140456155  mov     rax, [rbp+6700h+var_1CE0]
+0x14045615c  mov     rdx, [rbp+6700h+var_1CD8]
+0x140456163  mov     [rbp+6700h+var_66F0], rax
+0x140456167  mov     [rbp+6700h+var_66E8], rdx
+0x14045616b  lea     rax, [rbp+6700h+var_66F0]
+0x14045616f  mov     rdx, rcx
+0x140456172  mov     rcx, rax
+0x140456175  call    r8
+0x140456178  jmp     short loc_1404561A1
+0x14045617a  mov     r8, [rbp+6700h+var_1D10]
+0x140456181  mov     rax, [rbp+6700h+var_1CE0]
+0x140456188  mov     rdx, [rbp+6700h+var_1CD8]
+0x14045618f  mov     [rbp+6700h+var_66F0], rax
+0x140456193  mov     [rbp+6700h+var_66E8], rdx
+0x140456197  lea     rax, [rbp+6700h+var_66F0]
+0x14045619b  mov     rcx, rax
+0x14045619e  call    r8
+0x1404561a1  mov     rax, [rbp+6700h+var_68]
+0x1404561a8  movzx   eax, byte ptr [rax]
+0x1404561ab  movzx   eax, al
+0x1404561ae  test    eax, eax
+0x1404561b0  jnz     loc_14045696E
+0x1404561b6  mov     [rbp+6700h+var_370], 2DDh
+0x1404561c1  lea     rax, [rbp+6700h+var_1D40]
+0x1404561c8  mov     edx, 10h
+0x1404561cd  mov     rcx, rax
+0x1404561d0  call    nimZeroMem_66
+0x1404561d5  lea     rax, add_line__modelZsimulationZcode95gen_u2131 ; strings: 0x140436a70 add_line__modelZsimulationZcode95gen_u2131 direct='USH' qword=0xb8ec81485355
+0x1404561dc  mov     [rbp+6700h+var_1D40], rax
+0x1404561e3  mov     rax, [rbp+6700h+var_70]
+0x1404561ea  mov     [rbp+6700h+var_1D38], rax
+0x1404561f1  mov     [rbp+6700h+var_1D50], 0
+0x1404561fc  mov     [rbp+6700h+var_1D48], 0
+0x140456207  lea     rax, [rbp+6700h+var_1D60]
+0x14045620e  mov     edx, 10h
+0x140456213  mov     rcx, rax
+0x140456216  call    nimZeroMem_66
+0x14045621b  lea     rax, input__modelZsimulationZcode95gen_u4122 ; strings: 0x140433ba5 input__modelZsimulationZcode95gen_u4122 direct='USH' qword=0x308ec81485355
+0x140456222  mov     [rbp+6700h+var_1D60], rax
+0x140456229  mov     rax, [rbp+6700h+var_70]
+0x140456230  mov     [rbp+6700h+var_1D58], rax
+0x140456237  mov     rax, [rbp+6700h+var_1D58]
+0x14045623e  test    rax, rax
+0x140456241  jz      short loc_140456288
+0x140456243  mov     r10, [rbp+6700h+var_1D60]
+0x14045624a  mov     rcx, [rbp+6700h+var_1D58]
+0x140456251  mov     rax, [rbp+6700h+var_78]
+0x140456258  lea     rdx, [rax+8]
+0x14045625c  lea     rax, [rbp+6700h+var_1CF0]
+0x140456263  mov     r8, [rbp+6700h+var_19B8]
+0x14045626a  mov     [rsp+6780h+var_6758], rcx
+0x14045626f  mov     dword ptr [rsp+6780h+var_6760], 0
+0x140456277  mov     r9, r8
+0x14045627a  mov     r8d, 2
+0x140456280  mov     rcx, rax
+0x140456283  call    r10
+0x140456286  jmp     short loc_1404562D2
+0x140456288  mov     r10, [rbp+6700h+var_1D60]
+0x14045628f  mov     rax, [rbp+6700h+var_78]
+0x140456296  lea     rdx, [rax+8]
+0x14045629a  lea     rax, [rbp+6700h+var_66F0]
+0x14045629e  mov     rcx, [rbp+6700h+var_19B8]
+0x1404562a5  mov     dword ptr [rsp+6780h+var_6760], 0
+0x1404562ad  mov     r9, rcx
+0x1404562b0  mov     r8d, 2
+0x1404562b6  mov     rcx, rax
+0x1404562b9  call    r10
+0x1404562bc  mov     rax, [rbp+6700h+var_66F0]
+0x1404562c0  mov     rdx, [rbp+6700h+var_66E8]
+0x1404562c4  mov     [rbp+6700h+var_1CF0], rax
+0x1404562cb  mov     [rbp+6700h+var_1CE8], rdx
+0x1404562d2  mov     rax, [rbp+6700h+var_68]
+0x1404562d9  movzx   eax, byte ptr [rax]
+0x1404562dc  movzx   eax, al
+0x1404562df  test    eax, eax
+0x1404562e1  jnz     loc_140456971
+0x1404562e7  mov     rdx, [rbp+6700h+var_19A0]
+0x1404562ee  mov     rax, [rbp+6700h+var_1CF0]
+0x1404562f5  add     rax, rdx
+0x1404562f8  lea     rdx, [rax+0Eh]
+0x1404562fc  lea     rax, [rbp+6700h+var_66F0]
+0x140456300  mov     rcx, rax
+0x140456303  call    rawNewString
+0x140456308  mov     rax, [rbp+6700h+var_66F0]
+0x14045630c  mov     rdx, [rbp+6700h+var_66E8]
+0x140456310  mov     [rbp+6700h+var_1D50], rax
+0x140456317  mov     [rbp+6700h+var_1D48], rdx
+0x14045631e  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1191 ; strings: 0x140a282b0 TM__THWBxVSaWN2Zh7OMooFH0w_1191 direct='\n' qword=0xa
+0x140456325  mov     rdx, cs:off_140A282B8 ; strings: 0x140a282b8 off_140A282B8 qword=0x140a28290 points='\n' payload='    store('
+0x14045632c  mov     [rbp+6700h+var_66F0], rax
+0x140456330  mov     [rbp+6700h+var_66E8], rdx
+0x140456334  lea     rdx, [rbp+6700h+var_66F0]
+0x140456338  lea     rax, [rbp+6700h+var_1D50]
+0x14045633f  mov     rcx, rax
+0x140456342  call    appendString_29
+0x140456347  mov     rax, [rbp+6700h+var_19A0]
+0x14045634e  mov     rdx, [rbp+6700h+var_1998]
+0x140456355  mov     [rbp+6700h+var_66F0], rax
+0x140456359  mov     [rbp+6700h+var_66E8], rdx
+0x14045635d  lea     rdx, [rbp+6700h+var_66F0]
+0x140456361  lea     rax, [rbp+6700h+var_1D50]
+0x140456368  mov     rcx, rax
+0x14045636b  call    appendString_29
+0x140456370  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1192 ; strings: 0x140a282c0 TM__THWBxVSaWN2Zh7OMooFH0w_1192 qword=0x2
+0x140456377  mov     rdx, cs:off_140A282C8 ; strings: 0x140a282c8 off_140A282C8 qword=0x140a22520 payload=', '
+0x14045637e  mov     [rbp+6700h+var_66F0], rax
+0x140456382  mov     [rbp+6700h+var_66E8], rdx
+0x140456386  lea     rdx, [rbp+6700h+var_66F0]
+0x14045638a  lea     rax, [rbp+6700h+var_1D50]
+0x140456391  mov     rcx, rax
+0x140456394  call    appendString_29
+0x140456399  mov     rax, [rbp+6700h+var_1CF0]
+0x1404563a0  mov     rdx, [rbp+6700h+var_1CE8]
+0x1404563a7  mov     [rbp+6700h+var_66F0], rax
+0x1404563ab  mov     [rbp+6700h+var_66E8], rdx
+0x1404563af  lea     rdx, [rbp+6700h+var_66F0]
+0x1404563b3  lea     rax, [rbp+6700h+var_1D50]
+0x1404563ba  mov     rcx, rax
+0x1404563bd  call    appendString_29
+0x1404563c2  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1194 ; strings: 0x140a282d0 TM__THWBxVSaWN2Zh7OMooFH0w_1194 qword=0x2
+0x1404563c9  mov     rdx, cs:off_140A282D8 ; strings: 0x140a282d8 off_140A282D8 qword=0x140a25720 payload=')\n'
+0x1404563d0  mov     [rbp+6700h+var_66F0], rax
+0x1404563d4  mov     [rbp+6700h+var_66E8], rdx
+0x1404563d8  lea     rdx, [rbp+6700h+var_66F0]
+0x1404563dc  lea     rax, [rbp+6700h+var_1D50]
+0x1404563e3  mov     rcx, rax
+0x1404563e6  call    appendString_29
+0x1404563eb  mov     rax, [rbp+6700h+var_1D50]
+0x1404563f2  mov     rdx, [rbp+6700h+var_1D48]
+0x1404563f9  mov     [rbp+6700h+var_1D00], rax
+0x140456400  mov     [rbp+6700h+var_1CF8], rdx
+0x140456407  mov     rax, [rbp+6700h+var_1D38]
+0x14045640e  test    rax, rax
+0x140456411  jz      short loc_140456446
+0x140456413  mov     r8, [rbp+6700h+var_1D40]
+0x14045641a  mov     rcx, [rbp+6700h+var_1D38]
+0x140456421  mov     rax, [rbp+6700h+var_1D00]
+0x140456428  mov     rdx, [rbp+6700h+var_1CF8]
+0x14045642f  mov     [rbp+6700h+var_66F0], rax
+0x140456433  mov     [rbp+6700h+var_66E8], rdx
+0x140456437  lea     rax, [rbp+6700h+var_66F0]
+0x14045643b  mov     rdx, rcx
+0x14045643e  mov     rcx, rax
+0x140456441  call    r8
+0x140456444  jmp     short loc_14045646D
+0x140456446  mov     r8, [rbp+6700h+var_1D40]
+0x14045644d  mov     rax, [rbp+6700h+var_1D00]
+0x140456454  mov     rdx, [rbp+6700h+var_1CF8]
+0x14045645b  mov     [rbp+6700h+var_66F0], rax
+0x14045645f  mov     [rbp+6700h+var_66E8], rdx
+0x140456463  lea     rax, [rbp+6700h+var_66F0]
+0x140456467  mov     rcx, rax
+0x14045646a  call    r8
+0x14045646d  mov     rax, [rbp+6700h+var_68]
+0x140456474  movzx   eax, byte ptr [rax]
+0x140456477  movzx   eax, al
+0x14045647a  test    eax, eax
+0x14045647c  jnz     loc_140456974
+0x140456482  mov     [rbp+6700h+var_370], 2DEh
+0x14045648d  mov     rax, [rbp+6700h+var_19B8]
+0x140456494  cmp     rax, 8
+0x140456498  jle     loc_140456776
+0x14045649e  mov     [rbp+6700h+var_1D80], 0
+0x1404564a9  mov     [rbp+6700h+var_1D78], 0
+0x1404564b4  mov     [rbp+6700h+var_1D90], 0
+0x1404564bf  mov     [rbp+6700h+var_1D88], 0
+0x1404564ca  mov     [rbp+6700h+var_370], 2DFh
+0x1404564d5  lea     rax, [rbp+6700h+var_1DA0]
+0x1404564dc  mov     edx, 10h
+0x1404564e1  mov     rcx, rax
+0x1404564e4  call    nimZeroMem_66
+0x1404564e9  lea     rax, add_line__modelZsimulationZcode95gen_u2131 ; strings: 0x140436a70 add_line__modelZsimulationZcode95gen_u2131 direct='USH' qword=0xb8ec81485355
+0x1404564f0  mov     [rbp+6700h+var_1DA0], rax
+0x1404564f7  mov     rax, [rbp+6700h+var_70]
+0x1404564fe  mov     [rbp+6700h+var_1D98], rax
+0x140456505  mov     [rbp+6700h+var_1DB0], 0
+0x140456510  mov     [rbp+6700h+var_1DA8], 0
+0x14045651b  lea     rax, [rbp+6700h+var_1D80]
+0x140456522  mov     rdx, [rbp+6700h+var_19B8]
+0x140456529  mov     rcx, rax
+0x14045652c  call    dollar___modelZsave95mongerZcommon_u260
+0x140456531  mov     rax, [rbp+6700h+var_68]
+0x140456538  movzx   eax, byte ptr [rax]
+0x14045653b  movzx   eax, al
+0x14045653e  test    eax, eax
+0x140456540  jnz     loc_140456977
+0x140456546  mov     rdx, [rbp+6700h+var_19B0]
+0x14045654d  mov     rax, [rbp+6700h+var_1D80]
+0x140456554  add     rax, rdx
+0x140456557  lea     rdx, [rax+11h]
+0x14045655b  lea     rax, [rbp+6700h+var_66F0]
+0x14045655f  mov     rcx, rax
+0x140456562  call    rawNewString
+0x140456567  mov     rax, [rbp+6700h+var_66F0]
+0x14045656b  mov     rdx, [rbp+6700h+var_66E8]
+0x14045656f  mov     [rbp+6700h+var_1DB0], rax
+0x140456576  mov     [rbp+6700h+var_1DA8], rdx
+0x14045657d  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1196 ; strings: 0x140a282e0 TM__THWBxVSaWN2Zh7OMooFH0w_1196 direct='\n' qword=0xa
+0x140456584  mov     rdx, cs:off_140A282E8 ; strings: 0x140a282e8 off_140A282E8 qword=0x140a28290 points='\n' payload='    store('
+0x14045658b  mov     [rbp+6700h+var_66F0], rax
+0x14045658f  mov     [rbp+6700h+var_66E8], rdx
+0x140456593  lea     rdx, [rbp+6700h+var_66F0]
+0x140456597  lea     rax, [rbp+6700h+var_1DB0]
+0x14045659e  mov     rcx, rax
+0x1404565a1  call    appendString_29
+0x1404565a6  mov     rax, [rbp+6700h+var_19B0]
+0x1404565ad  mov     rdx, [rbp+6700h+var_19A8]
+0x1404565b4  mov     [rbp+6700h+var_66F0], rax
+0x1404565b8  mov     [rbp+6700h+var_66E8], rdx
+0x1404565bc  lea     rdx, [rbp+6700h+var_66F0]
+0x1404565c0  lea     rax, [rbp+6700h+var_1DB0]
+0x1404565c7  mov     rcx, rax
+0x1404565ca  call    appendString_29
+0x1404565cf  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1197 ; strings: 0x140a282f0 TM__THWBxVSaWN2Zh7OMooFH0w_1197 qword=0x3
+0x1404565d6  mov     rdx, cs:off_140A282F8 ; strings: 0x140a282f8 off_140A282F8 qword=0x140a276f0 payload=', U'
+0x1404565dd  mov     [rbp+6700h+var_66F0], rax
+0x1404565e1  mov     [rbp+6700h+var_66E8], rdx
+0x1404565e5  lea     rdx, [rbp+6700h+var_66F0]
+0x1404565e9  lea     rax, [rbp+6700h+var_1DB0]
+0x1404565f0  mov     rcx, rax
+0x1404565f3  call    appendString_29
+0x1404565f8  mov     rax, [rbp+6700h+var_1D80]
+0x1404565ff  mov     rdx, [rbp+6700h+var_1D78]
+0x140456606  mov     [rbp+6700h+var_66F0], rax
+0x14045660a  mov     [rbp+6700h+var_66E8], rdx
+0x14045660e  lea     rdx, [rbp+6700h+var_66F0]
+0x140456612  lea     rax, [rbp+6700h+var_1DB0]
+0x140456619  mov     rcx, rax
+0x14045661c  call    appendString_29
+0x140456621  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1199 ; strings: 0x140a28310 TM__THWBxVSaWN2Zh7OMooFH0w_1199 qword=0x4
+0x140456628  mov     rdx, cs:off_140A28318 ; strings: 0x140a28318 off_140A28318 qword=0x140a28300 payload=' 0)\n'
+0x14045662f  mov     [rbp+6700h+var_66F0], rax
+0x140456633  mov     [rbp+6700h+var_66E8], rdx
+0x140456637  lea     rdx, [rbp+6700h+var_66F0]
+0x14045663b  lea     rax, [rbp+6700h+var_1DB0]
+0x140456642  mov     rcx, rax
+0x140456645  call    appendString_29
+0x14045664a  mov     rax, [rbp+6700h+var_1DB0]
+0x140456651  mov     rdx, [rbp+6700h+var_1DA8]
+0x140456658  mov     [rbp+6700h+var_1D90], rax
+0x14045665f  mov     [rbp+6700h+var_1D88], rdx
+0x140456666  mov     rax, [rbp+6700h+var_1D98]
+0x14045666d  test    rax, rax
+0x140456670  jz      short loc_1404566A5
+0x140456672  mov     r8, [rbp+6700h+var_1DA0]
+0x140456679  mov     rcx, [rbp+6700h+var_1D98]
+0x140456680  mov     rax, [rbp+6700h+var_1D90]
+0x140456687  mov     rdx, [rbp+6700h+var_1D88]
+0x14045668e  mov     [rbp+6700h+var_66F0], rax
+0x140456692  mov     [rbp+6700h+var_66E8], rdx
+0x140456696  lea     rax, [rbp+6700h+var_66F0]
+0x14045669a  mov     rdx, rcx
+0x14045669d  mov     rcx, rax
+0x1404566a0  call    r8
+0x1404566a3  jmp     short loc_1404566CC
+0x1404566a5  mov     r8, [rbp+6700h+var_1DA0]
+0x1404566ac  mov     rax, [rbp+6700h+var_1D90]
+0x1404566b3  mov     rdx, [rbp+6700h+var_1D88]
+0x1404566ba  mov     [rbp+6700h+var_66F0], rax
+0x1404566be  mov     [rbp+6700h+var_66E8], rdx
+0x1404566c2  lea     rax, [rbp+6700h+var_66F0]
+0x1404566c6  mov     rcx, rax
+0x1404566c9  call    r8
+0x1404566cc  mov     rax, [rbp+6700h+var_68]
+0x1404566d3  movzx   eax, byte ptr [rax]
+0x1404566d6  movzx   eax, al
+0x1404566d9  test    eax, eax
+0x1404566db  jnz     loc_140456770
+0x1404566e1  mov     [rbp+6700h+var_370], 18Ah
+0x1404566ec  lea     rax, aCUsersAdminCho_481; "C:\\Users\\Admin\\.choosenim\\toolchain"... ; strings: 0x140a2daf8 aCUsersAdminCho_481 direct='C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim' qword=0x73726573555c3a43
+0x1404566f3  mov     [rbp+6700h+var_368], rax
+0x1404566fa  mov     rax, [rbp+6700h+var_1D88]
+0x140456701  test    rax, rax
+0x140456704  jz      short loc_140456734
+0x140456706  mov     rax, [rbp+6700h+var_1D88]
+0x14045670d  mov     rax, [rax]
+0x140456710  mov     rdx, rax
+0x140456713  mov     rax, 4000000000000000h
+0x14045671d  and     rax, rdx
+0x140456720  test    rax, rax
+0x140456723  jnz     short loc_140456734
+0x140456725  mov     rax, [rbp+6700h+var_1D88]
+0x14045672c  mov     rcx, rax
+0x14045672f  call    deallocShared
+0x140456734  mov     rax, [rbp+6700h+var_1D78]
+0x14045673b  test    rax, rax
+0x14045673e  jz      short loc_140456777
+0x140456740  mov     rax, [rbp+6700h+var_1D78]
+0x140456747  mov     rax, [rax]
+0x14045674a  mov     rdx, rax
+0x14045674d  mov     rax, 4000000000000000h
+0x140456757  and     rax, rdx
+0x14045675a  test    rax, rax
+0x14045675d  jnz     short loc_140456777
+0x14045675f  mov     rax, [rbp+6700h+var_1D78]
+0x140456766  mov     rcx, rax
+0x140456769  call    deallocShared
+0x14045676e  jmp     short loc_140456777
+0x140456770  nop
+0x140456771  jmp     loc_14045696B
+0x140456776  nop
+0x140456777  mov     [rbp+6700h+var_370], 2E0h
+0x140456782  lea     rax, aDTuringcomplet_201; "D:\\TuringComplete_Phu\\model\\simulati"... ; strings: 0x140a2dc10 aDTuringcomplet_201 direct='D:\\TuringComplete_Phu\\model\\simulation\\code_gen.nim' qword=0x6e697275545c3a44
+0x140456789  mov     [rbp+6700h+var_368], rax
+0x140456790  lea     rax, [rbp+6700h+var_1D70]
+0x140456797  mov     edx, 10h
+0x14045679c  mov     rcx, rax
+0x14045679f  call    nimZeroMem_66
+0x1404567a4  lea     rax, add_line__modelZsimulationZcode95gen_u2131 ; strings: 0x140436a70 add_line__modelZsimulationZcode95gen_u2131 direct='USH' qword=0xb8ec81485355
+0x1404567ab  mov     [rbp+6700h+var_1D70], rax
+0x1404567b2  mov     rax, [rbp+6700h+var_70]
+0x1404567b9  mov     [rbp+6700h+var_1D68], rax
+0x1404567c0  mov     rax, [rbp+6700h+var_1D68]
+0x1404567c7  test    rax, rax
+0x1404567ca  jz      short loc_1404567FF
+0x1404567cc  mov     r8, [rbp+6700h+var_1D70]
+0x1404567d3  mov     rcx, [rbp+6700h+var_1D68]
+0x1404567da  mov     rax, cs:TM__THWBxVSaWN2Zh7OMooFH0w_1201 ; strings: 0x140a28320 TM__THWBxVSaWN2Zh7OMooFH0w_1201 qword=0x1
+0x1404567e1  mov     rdx, cs:off_140A28328 ; strings: 0x140a28328 off_140A28328 qword=0x140a261c0 payload='}'
+0x1404567e8  mov     [rbp+6700h+var_66F0], rax
+0x1404567ec  mov     [rbp+6700h+var_66E8], rdx
+0x1404567f0  lea     rax, [rbp+6700h+var_66F0]
+0x1404567f4  mov     rdx, rcx
+0x1404567f7  mov     rcx, rax
+0x1404567fa  call    r8
+0x1404567fd  jmp     short loc_140456826
+0x1404567ff  mov     r8, [rbp+6700h+var_1D70]

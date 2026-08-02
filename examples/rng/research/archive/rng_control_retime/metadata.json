@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "status": "offline-verified; game metric recomputation pending",
+  "strategy": "single init-one phase Delay; NOT moved to output enable only",
+  "sha256": "e1098e932e92c482c85906f8573a48e005a67011d87bef59ceb97791b1624cf1",
+  "gate": 396,
+  "delay": 9,
+  "cycles": 66,
+  "leaderboard_tuple": [
+    396,
+    9,
+    66
+  ],
+  "energy": 235224,
+  "component_count": 155,
+  "wire_count": 294,
+  "component_kind_counts": {
+    "1": 1,
+    "3": 1,
+    "7": 47,
+    "10": 61,
+    "13": 33,
+    "16": 4,
+    "17": 4,
+    "62": 1,
+    "70": 1,
+    "97": 1,
+    "99": 1
+  },
+  "phase_delay_init_data": 1,
+  "timing": {
+    "seed_control": "phase Delay 4 + OR 1 + XOR 2 + XOR 2 = 9",
+    "steady_feedback": "state Delay 4 + OR 1 + XOR 2 + XOR 2 = 9",
+    "output_control": "phase Delay 4 + NOT 1 = 5"
+  },
+  "verification": {
+    "gate": 396,
+    "delay": 9,
+    "cycles": 66,
+    "leaderboard_tuple": [
+      396,
+      9,
+      66
+    ],
+    "declared_energy": 235224,
+    "public_reference": [
+      431,
+      9,
+      66,
+      256014
+    ],
+    "predicted_rank1_improvement": 20790,
+    "matrix_identities": [
+      "C*T=A",
+      "T*C=B",
+      "T*T^-1=I"
+    ],
+    "xor_count": 61,
+    "mode_pair_or_count": 47,
+    "verified_seed_count": 69,
+    "first_seed_prefix": [
+      "00021001",
+      "21211091",
+      "12828955"
+    ],
+    "component_kind_counts": {
+      "1": 1,
+      "3": 1,
+      "7": 47,
+      "10": 61,
+      "13": 33,
+      "16": 4,
+      "17": 4,
+      "62": 1,
+      "70": 1,
+      "97": 1,
+      "99": 1
+    },
+    "connectivity": {
+      "effective_component_count": 155,
+      "supported_component_count": 155,
+      "unsupported_component_kind_counts": {},
+      "pin_count": 479,
+      "connected_pin_count": 479,
+      "unconnected_pin_count": 0,
+      "unconnected_pins": [],
+      "logical_network_count": 185,
+      "logical_edge_count": 261,
+      "multi_driver_network_count": 0,
+      "undriven_network_count": 0,
+      "sinkless_network_count": 0,
+      "width_mismatch_network_count": 0,
+      "unit_logic_depth": 7,
+      "cycle_component_count": 0
+    },
+    "layout": {
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "component_footprint_overlap_count": 0
+    },
+    "live_sprite_layout": {
+      "unsupported_component_kinds": [],
+      "component_overlap_cell_count": 0,
+      "internal_wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "architecture_io_access_cell_count": 7
+    }
+  }
+}

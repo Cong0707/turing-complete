@@ -54,7 +54,7 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     9: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
     10: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
     11: _pins(PinSpec("in0", I, (-1, -1), 1), PinSpec("in1", I, (-1, 1), 1), PinSpec("out", O, (2, 0), 1)),
-    12: _pins(PinSpec("enable", I, (0, -1), 1), PinSpec("in", I, (-1, 0), 1), PinSpec("out", T, (2, 0), 1)),
+    12: _pins(PinSpec("enable", I, (0, 1), 1), PinSpec("in", I, (-1, 0), 1), PinSpec("out", T, (2, 0), 1)),
     13: _pins(PinSpec("in", I, (-3, 0), 1), PinSpec("out", O, (3, 0), 1)),
     # Current Register Bit: save is intentionally offset above the data input.
     # The geometry is evidenced by campaign/saving_bytes/Default/circuit.data.
@@ -73,12 +73,18 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     22: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     23: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     24: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
-    25: _pins(PinSpec("enable", I, (0, -1), 1), PinSpec("in", I, (-1, 0)), PinSpec("out", T, (2, 0))),
+    25: _pins(PinSpec("enable", I, (0, 1), 1), PinSpec("in", I, (-1, 0)), PinSpec("out", T, (2, 0))),
     26: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
     27: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
     28: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0), 1)),
     29: _pins(PinSpec("in", I, (-1, 0)), PinSpec("out", O, (2, 0))),
-    30: _pins(PinSpec("carry_in", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (1, -1)), PinSpec("carry_out", O, (1, 0), 1)),
+    30: _pins(
+        PinSpec("in0", I, (-1, -1)),
+        PinSpec("in1", I, (-1, 1)),
+        PinSpec("carry_in", I, (0, -2), 1),
+        PinSpec("out", O, (2, 0)),
+        PinSpec("carry_out", O, (1, 2), 1),
+    ),
     31: _pins(PinSpec("in0", I, (-1, -1)), PinSpec("in1", I, (-1, 0)), PinSpec("low", O, (1, -1)), PinSpec("high", O, (1, 0))),
     # Current ``com_div`` is a quotient-only primitive.  The old table entry
     # incorrectly described a four-port div/mod block; the installed runtime
@@ -90,14 +96,13 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
     35: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     36: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
     37: _pins(PinSpec("in", I, (-1, -1)), PinSpec("shift", I, (-1, 1), 8), PinSpec("out", O, (2, 0))),
-    # Current Register Word exposes an output-enable control ("load"), a
-    # save control, and a tri-state word output.  It is used directly by the
-    # Saving Bytes candidate and matches the current Tick Tock baseline.
+    # Native Register Word has one save-enable input, one word input, and a
+    # continuously driven word output.  These coordinates and directions are
+    # taken from the installed kind-39 prototype table.
     39: _pins(
-        PinSpec("load", I, (-1, -1), 1),
-        PinSpec("save", I, (-1, 0), 1),
-        PinSpec("in", I, (-1, 1)),
-        PinSpec("out", T, (1, 0)),
+        PinSpec("save", I, (-3, -1), 1),
+        PinSpec("in", I, (-3, 0)),
+        PinSpec("out", O, (3, 0)),
     ),
     42: _pins(PinSpec("select", I, (-1, -1), 1), PinSpec("in0", I, (-1, 0)), PinSpec("in1", I, (-1, 1)), PinSpec("out", O, (2, 0))),
     43: _pins(PinSpec("select", I, (-1, 0), 1), PinSpec("out0", O, (1, 0), 1), PinSpec("out1", O, (1, 1), 1)),
@@ -130,9 +135,17 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
         *(PinSpec(f"in{index}", I, (-1, index - 1), 8) for index in range(4)),
         PinSpec("out", O, (1, 0), 32),
     ),
+    98: _pins(
+        *(PinSpec(f"in{index}", I, (-1, index - 3), 8) for index in range(8)),
+        PinSpec("out", O, (1, 0), 64),
+    ),
     99: _pins(
         PinSpec("in", I, (-1, 0), 32),
         *(PinSpec(f"out{index}", O, (1, index - 1), 8) for index in range(4)),
+    ),
+    100: _pins(
+        PinSpec("in", I, (-1, 0), 64),
+        *(PinSpec(f"out{index}", O, (1, index - 3), 8) for index in range(8)),
     ),
     109: _pins(
         PinSpec("in", I, (-1, 0), 2),
@@ -144,22 +157,20 @@ PIN_SCHEMAS: dict[int, tuple[PinSpec, ...]] = {
         PinSpec("in1", I, (-1, 0), 1),
         PinSpec("out", O, (1, 0), 2),
     ),
-    # The current v15 RAM is the compact five-port component unlocked by
-    # Little Box.  These coordinates are evidenced by a live save's
-    # MEMORYREGFILE circuit: its endpoints land at (-15, -15) through
-    # (-15, -12), and at (+16, -15), relative to the RAM center.
-    #
-    # The RAM implementation accepts an eight-bit address bus even when its
-    # backing buffer has fewer entries.  A narrower source is zero-extended
-    # by the running game; candidates using that legal conversion are audited
-    # explicitly by their level-specific verifier.
-    118: _pins(
-        PinSpec("load", I, (-15, -15), 1),
-        PinSpec("save", I, (-15, -14), 1),
-        PinSpec("address", I, (-15, -13), 8),
-        PinSpec("in", I, (-15, -12)),
-        PinSpec("out", T, (16, -15)),
+    # Native RAM access is represented by independent load/store bars.  The
+    # backing kind-118 RAM is pinless and is associated spatially at compile
+    # time; current v15 loading does not synthesize these port components.
+    54: _pins(
+        PinSpec("enable", I, (-15, -1), 1),
+        PinSpec("address", I, (-15, 0), 32),
+        PinSpec("out", O, (16, -1)),
     ),
+    56: _pins(
+        PinSpec("enable", I, (-15, -1), 1),
+        PinSpec("address", I, (-15, 0), 32),
+        PinSpec("data", I, (-15, 1)),
+    ),
+    118: (),
 }
 
 

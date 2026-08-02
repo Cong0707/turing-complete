@@ -1,0 +1,36 @@
+# while true
+#   if beep
+#     counter--
+#   else
+#     counter++
+#
+
+# init
+1
+mov_a_b
+
+# while true
+label loop
+mov_d_c
+
+# jumpto decrease if /=0
+lb_d
+dec
+j_nz
+
+# increase
+add
+done
+j
+
+# decrease
+label dec
+sub
+done
+j
+
+# ret, loop
+label done
+sb_d
+loop
+j

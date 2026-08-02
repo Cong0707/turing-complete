@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "model": "XOR of two raw/one-gate/depth2-cheap nodes",
+  "feedback_care_points": 16640,
+  "selected_filter_points": 128,
+  "selected_point_linear_rank": 42,
+  "primitive_count": 3530,
+  "enumerated_node_count": 24932390,
+  "unique_128bit_fingerprints": 9641582,
+  "fingerprint_table_bytes": 541065216,
+  "candidate_left_nodes_after_exact_subset_filter": 0,
+  "targets": [
+    {"H_index": 3, "row_hex": "10400300100", "verified_pair_count": 0},
+    {"H_index": 7, "row_hex": "04103001000", "verified_pair_count": 0},
+    {"H_index": 14, "row_hex": "00400488004", "verified_pair_count": 0}
+  ],
+  "status": "no-candidate-in-enumerated-family",
+  "timing": "each node <=3 gate / 2 delay; final XOR gives <=9 gate / 4 delay",
+  "proof_note": "No 128-point hit is an exact exclusion: every full-care identity must hold on the selected subset. Every subset hit is exhaustively verified on all feedback care points."
+}

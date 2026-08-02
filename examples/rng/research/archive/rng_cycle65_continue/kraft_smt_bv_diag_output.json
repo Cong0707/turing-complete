@@ -1,0 +1,300 @@
+{
+  "A_row_weights": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    6,
+    6,
+    5,
+    5,
+    5,
+    7,
+    7,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "A_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+  "C_row_capacities": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "K_sha256": "e9f417bc0e458273d3adf440dcaf87e2609e3802fa899c4472d2683078ac113d",
+  "diagonal_c": true,
+  "elapsed_seconds": 3.396828500000993,
+  "encoder": "pure QF_BV selectors",
+  "equations": [
+    "D*A=B*D",
+    "C*D=A*(A+I)"
+  ],
+  "memory_limit_mb": 448,
+  "model": "65-cycle constant-seed arbitrary invertible T Kraft necessity",
+  "reason_unknown": null,
+  "relaxation": "output-only",
+  "relaxed_assignment": {
+    "C_supports": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        1,
+        25,
+        31
+      ],
+      [
+        2,
+        4,
+        18
+      ],
+      [
+        3,
+        7,
+        12
+      ],
+      [
+        4,
+        12,
+        17
+      ],
+      [
+        5,
+        19
+      ],
+      [
+        6,
+        10,
+        17
+      ],
+      [
+        7,
+        11,
+        17
+      ],
+      [
+        8,
+        24,
+        28
+      ],
+      [
+        3,
+        5,
+        9
+      ],
+      [
+        8,
+        10,
+        12
+      ],
+      [
+        3,
+        11,
+        15
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        27
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        1,
+        15
+      ],
+      [
+        16,
+        31
+      ],
+      [
+        17,
+        29
+      ],
+      [
+        18,
+        28
+      ],
+      [
+        19,
+        21
+      ],
+      [
+        11,
+        20
+      ],
+      [
+        21,
+        30
+      ],
+      [
+        4,
+        22
+      ],
+      [
+        23
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        16,
+        25
+      ],
+      [
+        6,
+        26
+      ],
+      [
+        2,
+        7,
+        27
+      ],
+      [
+        15,
+        25,
+        28
+      ],
+      [
+        3,
+        8,
+        29
+      ],
+      [
+        6,
+        9,
+        30
+      ],
+      [
+        3,
+        9,
+        31
+      ]
+    ],
+    "D": [
+      "0x22177dab",
+      "0x227859f3",
+      "0x70d35db0",
+      "0x1b1051f6",
+      "0x56c8047b",
+      "0x964dd4f9",
+      "0x656c5847",
+      "0x1a73526b",
+      "0x60f62271",
+      "0x8511452b",
+      "0x516d82a4",
+      "0x2b680085",
+      "0x2102209d",
+      "0xe764419f",
+      "0x03ead663",
+      "0x114b51e3",
+      "0xf8efe0f8",
+      "0x370842e7",
+      "0x362bc84b",
+      "0x17c918fb",
+      "0x4d08038d",
+      "0x24f9197f",
+      "0xdf48c859",
+      "0x13019844",
+      "0xcb638aea",
+      "0xb4e9c1ea",
+      "0xed609a63",
+      "0x6ba8839b",
+      "0xa7b38889",
+      "0x7fc46286",
+      "0xe8393f6e",
+      "0x9e89d0d9"
+    ]
+  },
+  "result": "sat",
+  "schema": 1,
+  "sort_basis": false,
+  "statistics": {
+    "max memory": 166.18,
+    "memory": 38.18,
+    "num allocs": 3534650927,
+    "rlimit count": 19596561,
+    "sat backjumps": 11664,
+    "sat backtracks": 57,
+    "sat conflicts": 11721,
+    "sat decisions": 60637,
+    "sat del clause": 53341,
+    "sat elim bool vars res": 5449,
+    "sat elim clauses": 17646,
+    "sat elim literals": 7,
+    "sat minimized lits": 177217,
+    "sat mk clause 2ary": 26402,
+    "sat mk clause 3ary": 12764,
+    "sat mk clause nary": 585569,
+    "sat mk var": 106781,
+    "sat probing assigned": 20,
+    "sat propagations 2ary": 1321111,
+    "sat propagations nary": 15087873,
+    "sat restarts": 1600,
+    "sat scc elim binary": 75,
+    "sat scc elim vars": 1126,
+    "sat subs resolution": 7,
+    "sat subs resolution dyn": 5236,
+    "sat subsumed": 1640,
+    "sat units": 2439,
+    "solve-eqs-elim-vars": 32,
+    "solve-eqs-steps": 32,
+    "time": 3.396
+  },
+  "timeout_ms": 30000
+}

@@ -1,0 +1,335 @@
+{
+  "schema": 1,
+  "candidate_path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_control_simplify\\candidate\\circuit.data",
+  "sha256": "8b3fa9303be44958651ea90653d045a468fb9dd18e678380136d4b724dcd778d",
+  "format_version": 15,
+  "declared_header": [
+    191,
+    10
+  ],
+  "native_score": [
+    191,
+    10,
+    66
+  ],
+  "native_energy": 126060,
+  "header_matches_native": true,
+  "component_count": 152,
+  "wire_count": 338,
+  "component_kind_counts": {
+    "2": 1,
+    "3": 1,
+    "7": 47,
+    "10": 19,
+    "13": 1,
+    "16": 8,
+    "17": 8,
+    "23": 57,
+    "46": 1,
+    "54": 1,
+    "56": 1,
+    "62": 1,
+    "70": 1,
+    "97": 2,
+    "99": 2,
+    "118": 1
+  },
+  "gate_ledger": {
+    "47 x OR Bit @ 1": 47,
+    "19 x XOR Bit @ 3": 57,
+    "57 x U1 XOR Word @ 1": 57,
+    "1 x Delay Bit @ 5": 5,
+    "1 x NOT Bit @ 1": 1,
+    "RAM backing buffer=8": 8,
+    "RAM load calculated_gate=8": 8,
+    "RAM store calculated_gate=8": 8
+  },
+  "xor_frontier": [
+    3,
+    2,
+    1
+  ],
+  "derived_word_xor_base": [
+    24,
+    2
+  ],
+  "u1_word_xor_cost": [
+    1,
+    2
+  ],
+  "ram": {
+    "settings": [
+      2,
+      512,
+      0
+    ],
+    "buffer_size": 8,
+    "backing_cost": [
+      8,
+      0
+    ],
+    "load_cost": [
+      8,
+      0
+    ],
+    "store_cost": [
+      8,
+      0
+    ],
+    "load_word_size": 32,
+    "store_word_size": 32
+  },
+  "architecture_input": {
+    "component_index": 0,
+    "cost": [
+      0,
+      0
+    ],
+    "control_input_edges": [
+      {
+        "wire_index": 2,
+        "source_pin": "out",
+        "sink_pin": "control"
+      }
+    ],
+    "value_output_edges": [
+      {
+        "wire_index": 3,
+        "source_pin": "value",
+        "sink_pin": "in"
+      }
+    ],
+    "native_rule": "max(all input arrivals) + component delay -> every output"
+  },
+  "all_components_mutable": true,
+  "all_component_costs_auto": true,
+  "v15_byte_identical_round_trip": true,
+  "native_delay": 10,
+  "maximum_output_arrival": 10,
+  "critical_terminal_indices": [
+    136
+  ],
+  "selected_critical_path": [
+    {
+      "component_index": 2,
+      "kind": 2,
+      "name": "Constant On",
+      "position": [
+        -410,
+        -270
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 0,
+      "output_arrival": 0
+    },
+    {
+      "component_index": 3,
+      "kind": 13,
+      "name": "Delay Bit",
+      "position": [
+        -392,
+        -270
+      ],
+      "component_delay": 4,
+      "incoming_arrival": 0,
+      "output_arrival": 4,
+      "incoming_edges": [
+        {
+          "wire_index": 0,
+          "source_pin": "out",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 4,
+      "kind": 3,
+      "name": "NOT Bit",
+      "position": [
+        -374,
+        -270
+      ],
+      "component_delay": 1,
+      "incoming_arrival": 4,
+      "output_arrival": 5,
+      "incoming_edges": [
+        {
+          "wire_index": 1,
+          "source_pin": "out",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 0,
+      "kind": 62,
+      "name": "Architecture Input",
+      "position": [
+        -410,
+        0
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 5,
+      "output_arrival": 5,
+      "incoming_edges": [
+        {
+          "wire_index": 2,
+          "source_pin": "out",
+          "sink_pin": "control"
+        }
+      ]
+    },
+    {
+      "component_index": 5,
+      "kind": 99,
+      "name": "Splitter Word 4",
+      "position": [
+        -380,
+        0
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 5,
+      "output_arrival": 5,
+      "incoming_edges": [
+        {
+          "wire_index": 3,
+          "source_pin": "value",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 7,
+      "kind": 17,
+      "name": "Splitter Bit 8",
+      "position": [
+        -350,
+        -56
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 5,
+      "output_arrival": 5,
+      "incoming_edges": [
+        {
+          "wire_index": 6,
+          "source_pin": "out1",
+          "sink_pin": "in"
+        }
+      ]
+    },
+    {
+      "component_index": 25,
+      "kind": 7,
+      "name": "OR Bit",
+      "position": [
+        -175,
+        -42
+      ],
+      "component_delay": 1,
+      "incoming_arrival": 5,
+      "output_arrival": 6,
+      "incoming_edges": [
+        {
+          "wire_index": 24,
+          "source_pin": "out7",
+          "sink_pin": "in1"
+        }
+      ]
+    },
+    {
+      "component_index": 67,
+      "kind": 23,
+      "name": "XOR Word",
+      "position": [
+        -100,
+        -42
+      ],
+      "component_delay": 2,
+      "incoming_arrival": 6,
+      "output_arrival": 8,
+      "incoming_edges": [
+        {
+          "wire_index": 66,
+          "source_pin": "out",
+          "sink_pin": "in1"
+        }
+      ]
+    },
+    {
+      "component_index": 91,
+      "kind": 10,
+      "name": "XOR Bit",
+      "position": [
+        10,
+        -133
+      ],
+      "component_delay": 2,
+      "incoming_arrival": 8,
+      "output_arrival": 10,
+      "incoming_edges": [
+        {
+          "wire_index": 106,
+          "source_pin": "out",
+          "sink_pin": "in0"
+        }
+      ]
+    },
+    {
+      "component_index": 128,
+      "kind": 16,
+      "name": "Maker Bit 8",
+      "position": [
+        220,
+        392
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 10,
+      "output_arrival": 10,
+      "incoming_edges": [
+        {
+          "wire_index": 244,
+          "source_pin": "out",
+          "sink_pin": "in2"
+        }
+      ]
+    },
+    {
+      "component_index": 132,
+      "kind": 97,
+      "name": "Maker Word 4",
+      "position": [
+        250,
+        560
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 10,
+      "output_arrival": 10,
+      "incoming_edges": [
+        {
+          "wire_index": 274,
+          "source_pin": "out",
+          "sink_pin": "in0"
+        }
+      ]
+    },
+    {
+      "component_index": 136,
+      "kind": 56,
+      "name": "RAM Store",
+      "position": [
+        320,
+        550
+      ],
+      "component_delay": 0,
+      "incoming_arrival": 10,
+      "output_arrival": 10,
+      "incoming_edges": [
+        {
+          "wire_index": 173,
+          "source_pin": "out",
+          "sink_pin": "data"
+        }
+      ]
+    }
+  ]
+}

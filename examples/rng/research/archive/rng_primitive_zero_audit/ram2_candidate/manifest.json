@@ -1,0 +1,114 @@
+{
+  "backup_created": false,
+  "formal_post_write_sha256": "78f9cbc9ad2e69830238ce964c418fc81bbced3253e2a0147d949c7a89af6c88",
+  "installed": true,
+  "schema": 1,
+  "source_path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\architecture\\CODEX-RNG\\circuit.data",
+  "source_sha256": "74491d0196e6631cb5b58035fa337fe3c28abd20341b80c9d32bafaf55bacb47",
+  "target_sha256": "78f9cbc9ad2e69830238ce964c418fc81bbced3253e2a0147d949c7a89af6c88",
+  "verification": {
+    "component_count": 137,
+    "component_kind_counts": {
+      "2": 1,
+      "3": 1,
+      "7": 47,
+      "10": 42,
+      "13": 1,
+      "16": 8,
+      "17": 8,
+      "23": 19,
+      "46": 1,
+      "54": 1,
+      "56": 1,
+      "62": 1,
+      "70": 1,
+      "97": 2,
+      "99": 2,
+      "118": 1
+    },
+    "connectivity": {
+      "connected_pin_count": 504,
+      "cycle_component_count": 0,
+      "effective_component_count": 137,
+      "logical_edge_count": 303,
+      "logical_network_count": 196,
+      "multi_driver_network_count": 0,
+      "pin_count": 504,
+      "sinkless_network_count": 0,
+      "supported_component_count": 137,
+      "unconnected_pin_count": 0,
+      "unconnected_pins": [],
+      "undriven_network_count": 0,
+      "unit_logic_depth": 9,
+      "unsupported_component_kind_counts": {},
+      "width_mismatch_network_count": 0
+    },
+    "declared_energy": 120384,
+    "declared_metrics": [
+      304,
+      6,
+      66
+    ],
+    "functional": {
+      "matrix_identities_used": [
+        "C*T=A",
+        "T*C=B"
+      ],
+      "same_tick_order": "load -> recurrence -> store (old-value read)",
+      "seed_count": 69,
+      "ticks_per_seed": 66
+    },
+    "layout": {
+      "component_footprint_overlap_count": 0,
+      "intentional_ram_group_overlap_pair_count": 3,
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0
+    },
+    "native_semantics_certificate": {
+      "pipeline_depth": 0,
+      "read_write_order": "read-before-write",
+      "scored_ram_delay": 0,
+      "settings": [
+        2,
+        512,
+        0
+      ]
+    },
+    "rank1_margin": 135630,
+    "rank1_reference_energy": 256014,
+    "score_derivation": {
+      "critical_path": "mode OR 1 + XOR2 2 + U1 Word XOR 3 = 6",
+      "mode2_ram_4_bytes": 4,
+      "removed_32_bit_delays": -160,
+      "source_gate": 396,
+      "target_gate": 304,
+      "u32_load_port": 32,
+      "u32_store_port": 32
+    },
+    "transform": {
+      "feedback_source_count": 32,
+      "load_position": [
+        320,
+        548
+      ],
+      "ram_buffer_size": 4,
+      "ram_position": [
+        320,
+        560
+      ],
+      "ram_settings": [
+        2,
+        512,
+        0
+      ],
+      "removed_state_delay_count": 32,
+      "retained_wire_count": 193,
+      "state_fanout_wire_count": 69,
+      "store_position": [
+        320,
+        550
+      ]
+    },
+    "wire_count": 308
+  }
+}

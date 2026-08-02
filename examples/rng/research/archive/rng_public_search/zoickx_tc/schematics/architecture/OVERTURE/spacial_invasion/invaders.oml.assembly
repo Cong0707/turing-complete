@@ -1,0 +1,45 @@
+const left  0
+const step  1
+const right 2
+const chill 3
+const actn  4
+const pew   5
+
+const rat   33
+
+# quick actions
+const dochill mov | fe | out
+const dopew   mov | ff | out
+const now     mov | fa | out
+
+# cache codes
+rat # c
+mov | fa | tc
+chill # e
+mov | fa | te
+pew # f
+mov | fa | tf
+
+pew now
+step now
+  now
+  now
+  now
+  now
+
+label loop
+
+label ratsearch
+  dochill
+  # load observation
+  mov | in | tb
+  sub
+  ratsearch j_nz # until rat found
+
+# murder rats
+dopew
+dopew
+dopew
+dopew
+
+loop j

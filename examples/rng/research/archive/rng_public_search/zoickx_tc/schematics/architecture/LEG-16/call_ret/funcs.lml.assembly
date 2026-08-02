@@ -1,0 +1,20 @@
+const mov i1|add
+const uj i1|i2|j
+const _ 0
+
+label loop
+  call _ _ f1
+uj _ _ loop
+
+label f1
+  i1|add 1 a a
+  call _ _ f2
+mov _ stack iar
+
+i1|add 100 c
+i1|add 100 c
+i1|add 100 c
+
+label f2
+  i1|add 1 b b
+mov _ stack iar

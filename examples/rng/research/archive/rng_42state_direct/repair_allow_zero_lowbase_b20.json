@@ -1,0 +1,35 @@
+{
+  "scope": "exact support<=4 repair inside bounded Hamming balls around one frontier",
+  "hidden": 10,
+  "timeout_ms_per_bound": 30000,
+  "attempts": [
+    {
+      "hamming_bound": 8,
+      "status": "unsat",
+      "seconds": 0.4597135999938473
+    },
+    {
+      "hamming_bound": 10,
+      "status": "unsat",
+      "seconds": 1.2717301999946358
+    },
+    {
+      "hamming_bound": 12,
+      "status": "unsat",
+      "seconds": 6.276902099998551
+    },
+    {
+      "hamming_bound": 16,
+      "status": "unknown",
+      "seconds": 30.006275099993218,
+      "reason": "timeout"
+    },
+    {
+      "hamming_bound": 20,
+      "status": "unknown",
+      "seconds": 30.002822900001775,
+      "reason": "timeout"
+    }
+  ],
+  "solution": null
+}

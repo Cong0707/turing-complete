@@ -1,0 +1,270 @@
+{
+  "target_gate": 431,
+  "warning": "cost identities only; timing and functional realizability are separate",
+  "families": [
+    {
+      "name": "common_tristate_word_bus",
+      "fixed": {
+        "state_delay_u32": 160,
+        "feedback_switch_u32": 64,
+        "phase_delay_and_not": 6
+      },
+      "fixed_gate": 230,
+      "logic_gate_budget": 201,
+      "logic_delay_budget": 4,
+      "xor2_xor3_solutions": [
+        {
+          "xor2": 67,
+          "xor3": 0
+        },
+        {
+          "xor2": 63,
+          "xor3": 1
+        },
+        {
+          "xor2": 59,
+          "xor3": 2
+        },
+        {
+          "xor2": 55,
+          "xor3": 3
+        },
+        {
+          "xor2": 51,
+          "xor3": 4
+        },
+        {
+          "xor2": 47,
+          "xor3": 5
+        },
+        {
+          "xor2": 43,
+          "xor3": 6
+        },
+        {
+          "xor2": 39,
+          "xor3": 7
+        },
+        {
+          "xor2": 35,
+          "xor3": 8
+        },
+        {
+          "xor2": 31,
+          "xor3": 9
+        },
+        {
+          "xor2": 27,
+          "xor3": 10
+        },
+        {
+          "xor2": 23,
+          "xor3": 11
+        },
+        {
+          "xor2": 19,
+          "xor3": 12
+        },
+        {
+          "xor2": 15,
+          "xor3": 13
+        },
+        {
+          "xor2": 11,
+          "xor3": 14
+        },
+        {
+          "xor2": 7,
+          "xor3": 15
+        },
+        {
+          "xor2": 3,
+          "xor3": 16
+        }
+      ],
+      "highlight": {
+        "xor2": 47,
+        "xor3": 5
+      },
+      "identity": "160 + 64 + 6 + (47*3 + 5*12) = 431"
+    },
+    {
+      "name": "encoded_47_selector_sites",
+      "fixed_gate": 349,
+      "selector_gate_budget": 82,
+      "solutions": [
+        {
+          "or": 12,
+          "switch": 35
+        }
+      ],
+      "identity": "349 + 12*1 + 35*2 = 431"
+    },
+    {
+      "name": "381_baseline_rewrite_accounting",
+      "equation": "5*extra_delay + 6*xor3_collapse + 2*extra_switch = 50",
+      "solutions": [
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 25
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 1,
+          "extra_switch": 22
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 2,
+          "extra_switch": 19
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 3,
+          "extra_switch": 16
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 4,
+          "extra_switch": 13
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 5,
+          "extra_switch": 10
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 6,
+          "extra_switch": 7
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 7,
+          "extra_switch": 4
+        },
+        {
+          "extra_delay": 0,
+          "xor3_replaces_two_xor2": 8,
+          "extra_switch": 1
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 20
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 1,
+          "extra_switch": 17
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 2,
+          "extra_switch": 14
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 3,
+          "extra_switch": 11
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 4,
+          "extra_switch": 8
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 5,
+          "extra_switch": 5
+        },
+        {
+          "extra_delay": 2,
+          "xor3_replaces_two_xor2": 6,
+          "extra_switch": 2
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 15
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 1,
+          "extra_switch": 12
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 2,
+          "extra_switch": 9
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 3,
+          "extra_switch": 6
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 4,
+          "extra_switch": 3
+        },
+        {
+          "extra_delay": 4,
+          "xor3_replaces_two_xor2": 5,
+          "extra_switch": 0
+        },
+        {
+          "extra_delay": 6,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 10
+        },
+        {
+          "extra_delay": 6,
+          "xor3_replaces_two_xor2": 1,
+          "extra_switch": 7
+        },
+        {
+          "extra_delay": 6,
+          "xor3_replaces_two_xor2": 2,
+          "extra_switch": 4
+        },
+        {
+          "extra_delay": 6,
+          "xor3_replaces_two_xor2": 3,
+          "extra_switch": 1
+        },
+        {
+          "extra_delay": 8,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 5
+        },
+        {
+          "extra_delay": 8,
+          "xor3_replaces_two_xor2": 1,
+          "extra_switch": 2
+        },
+        {
+          "extra_delay": 10,
+          "xor3_replaces_two_xor2": 0,
+          "extra_switch": 0
+        }
+      ],
+      "highlight": {
+        "extra_delay": 4,
+        "xor3_replaces_two_xor2": 5,
+        "extra_switch": 0
+      }
+    },
+    {
+      "name": "42_data_state_bits",
+      "components": {
+        "42_state_delay": 210,
+        "61_xor2": 183,
+        "32_seed_or": 32,
+        "phase_delay_and_not": 6
+      },
+      "identity": "42*5 + 61*3 + 32 + 6 = 431"
+    }
+  ]
+}

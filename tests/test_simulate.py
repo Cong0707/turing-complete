@@ -4,7 +4,7 @@ from dataclasses import replace
 from pathlib import Path
 import unittest
 
-from tc_save_lab.builder import build_recipe
+from tc_save_lab.builder import build_recipe, wire_from_vertices
 from tc_save_lab.capitalize_asic import build_capitalize_asic
 from tc_save_lab.codec import decode_v15
 from tc_save_lab.model import Circuit, Component, Wire
@@ -120,6 +120,49 @@ class CombinationalSimulationTests(unittest.TestCase):
                 {"Output": expected},
                 value,
             )
+
+    def test_bit_switch_tristate_bus_matches_runtime_semantics(self):
+        circuit = Circuit(
+            components=(
+                Component(60, (-10, 0), 0, 1, user_label="A"),
+                Component(60, (-10, 4), 0, 2, user_label="Enable A"),
+                Component(60, (-10, 8), 0, 3, user_label="B"),
+                Component(60, (-10, 12), 0, 4, user_label="Enable B"),
+                Component(12, (-5, 0), 0, 5),
+                Component(12, (-5, 8), 0, 6),
+                Component(68, (5, 4), 0, 7, user_label="Output"),
+            ),
+            wires=(
+                wire_from_vertices(((-9, 0), (-6, 0))),
+                wire_from_vertices(((-9, 4), (-5, 4), (-5, 1))),
+                wire_from_vertices(((-9, 8), (-6, 8))),
+                wire_from_vertices(((-9, 12), (-5, 12), (-5, 9))),
+                wire_from_vertices(((-3, 0), (0, 0), (0, 4))),
+                wire_from_vertices(((-3, 8), (0, 8), (0, 4))),
+                wire_from_vertices(((0, 4), (4, 4))),
+            ),
+        )
+
+        def evaluate(a: int, enable_a: int, b: int, enable_b: int) -> int:
+            return simulate_combinational(
+                circuit,
+                {"A": a, "Enable A": enable_a, "B": b, "Enable B": enable_b},
+            )["Output"]
+
+        self.assertEqual(evaluate(1, 1, 0, 0), 1)
+        self.assertEqual(evaluate(0, 0, 1, 1), 1)
+        self.assertEqual(evaluate(1, 0, 1, 0), 0)
+        self.assertEqual(evaluate(1, 1, 1, 1), 1)
+        with self.assertRaisesRegex(SimulationError, "conflicting drivers"):
+            evaluate(0, 1, 1, 1)
+
+    def test_official_bit_switch_level_computes_xor(self):
+        path = PROJECT_ROOT / "examples" / "bit_switch" / "baseline" / "circuit.data"
+        circuit = decode_v15(path.read_bytes())
+        self.assertEqual(
+            [simulate_combinational(circuit, {"Input": value})["Output"] for value in range(4)],
+            [0, 1, 1, 0],
+        )
 
     def test_clocked_trace_reuses_one_compiled_network_for_changing_inputs(self):
         circuit = build_rng_asic()

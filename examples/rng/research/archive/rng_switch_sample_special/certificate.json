@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "frontier": {
+    "path": ".research/rng_42state_direct/linear42_audit/frontier_excess3_verified.json",
+    "sha256": "4493c98e8eb029f6f106e2f65f22ed5dd2af005cef597def77fcce0a347233ec",
+    "bad_H_rows": [
+      3,
+      7,
+      14
+    ]
+  },
+  "protocol": {
+    "seed_count": 256,
+    "seed_unique_count": 256,
+    "outputs_per_seed": 65,
+    "feedback_transitions_per_seed": 64,
+    "sequence_verification": "PASS"
+  },
+  "switch_model": {
+    "disabled": "Z",
+    "enabled": "actively drives data",
+    "all_Z_data_plane": 0,
+    "active_0_and_1": "SHORT_CIRCUIT",
+    "direct_driver_rule": "enable implies data == target on every care point"
+  },
+  "linear_accounting": {
+    "target_rows": 74,
+    "distinct_nontrivial_targets": 69,
+    "recorded_claimed_xor_count": 61,
+    "feedback_distinct_nontrivial_functions": 39,
+    "output_distinct_nontrivial_functions": 30,
+    "feedback_output_compatible_pairs_on_shared_steady_care": [],
+    "pure_xor_distinct_final_gate_lower_bound": 69,
+    "phase_or": 32,
+    "state_delay_bits": 42,
+    "ready_delay_plus_not": 6,
+    "pure_xor_gate_lower_bound_before_intermediates": 455,
+    "gate_limit": 430
+  },
+  "care_audits": {
+    "output": {
+      "name": "steady output ticks 0..64",
+      "point_count": 16640,
+      "point_unique_count": 16640,
+      "point_linear_rank": 39,
+      "primitive_signal_count": 3198,
+      "nontrivial_target_count": 30,
+      "distinct_nontrivial_target_count": 30,
+      "distinct_nontrivial_target_signature_count": 30,
+      "wire_or_one_cheap_gate_hits": [],
+      "nested_two_cheap_gate_hits": [],
+      "bad_rows": []
+    },
+    "feedback": {
+      "name": "load plus steady ticks 0..63",
+      "point_count": 16640,
+      "point_unique_count": 16640,
+      "point_linear_rank": 42,
+      "primitive_signal_count": 3490,
+      "nontrivial_target_count": 41,
+      "distinct_nontrivial_target_count": 39,
+      "distinct_nontrivial_target_signature_count": 39,
+      "wire_or_one_cheap_gate_hits": [],
+      "nested_two_cheap_gate_hits": [],
+      "bad_rows": [
+        {
+          "index": 3,
+          "row_hex": "10400300100",
+          "support": [
+            8,
+            20,
+            21,
+            34,
+            40
+          ],
+          "support_pattern_counts": [
+            534,
+            522,
+            574,
+            552,
+            543,
+            515,
+            580,
+            547,
+            531,
+            483,
+            519,
+            508,
+            494,
+            504,
+            496,
+            524,
+            516,
+            550,
+            520,
+            502,
+            493,
+            504,
+            513,
+            548,
+            514,
+            516,
+            497,
+            482,
+            522,
+            515,
+            494,
+            528
+          ],
+          "primitive_switch_driver_pairs_checked": 12176610,
+          "primitive_switch_driver_count": 0,
+          "primitive_switch_driver_examples": [],
+          "depth2_three_cheap_gate_outer_filter": {
+            "target_proper_primitive_subsets": 0,
+            "target_proper_primitive_supersets": 0,
+            "complement_proper_primitive_subsets": 0,
+            "complement_proper_primitive_supersets": 0
+          }
+        },
+        {
+          "index": 7,
+          "row_hex": "04103001000",
+          "support": [
+            12,
+            24,
+            25,
+            32,
+            38
+          ],
+          "support_pattern_counts": [
+            578,
+            543,
+            545,
+            530,
+            575,
+            528,
+            557,
+            550,
+            513,
+            498,
+            483,
+            478,
+            475,
+            474,
+            514,
+            504,
+            510,
+            492,
+            542,
+            511,
+            497,
+            536,
+            548,
+            529,
+            472,
+            532,
+            482,
+            529,
+            531,
+            550,
+            536,
+            498
+          ],
+          "primitive_switch_driver_pairs_checked": 12176610,
+          "primitive_switch_driver_count": 0,
+          "primitive_switch_driver_examples": [],
+          "depth2_three_cheap_gate_outer_filter": {
+            "target_proper_primitive_subsets": 0,
+            "target_proper_primitive_supersets": 0,
+            "complement_proper_primitive_subsets": 0,
+            "complement_proper_primitive_supersets": 0
+          }
+        },
+        {
+          "index": 14,
+          "row_hex": "00400488004",
+          "support": [
+            2,
+            15,
+            19,
+            22,
+            34
+          ],
+          "support_pattern_counts": [
+            540,
+            518,
+            519,
+            527,
+            494,
+            536,
+            525,
+            537,
+            568,
+            566,
+            550,
+            527,
+            533,
+            534,
+            502,
+            537,
+            490,
+            511,
+            571,
+            502,
+            519,
+            472,
+            493,
+            504,
+            514,
+            516,
+            514,
+            508,
+            545,
+            505,
+            470,
+            493
+          ],
+          "primitive_switch_driver_pairs_checked": 12176610,
+          "primitive_switch_driver_count": 0,
+          "primitive_switch_driver_examples": [],
+          "depth2_three_cheap_gate_outer_filter": {
+            "target_proper_primitive_subsets": 0,
+            "target_proper_primitive_supersets": 0,
+            "complement_proper_primitive_subsets": 0,
+            "complement_proper_primitive_supersets": 0
+          }
+        }
+      ]
+    }
+  },
+  "conclusions": [
+    "The recorded 61-XOR accounting is not a realizable linear DAG for these H/O rows: 69 distinct nontrivial final forms already require 69 distinct XOR outputs before pair intermediates.",
+    "No nontrivial H/O target equals a wire, one cheap gate, or a nested two-cheap-gate formula on its exact live care set.",
+    "Each bad row observes all 32 assignments of its five support leaves, so support-preserving sample specialization cannot change parity-5.",
+    "For every bad row, no Switch whose enable and data are raw or one-cheap-gate signals can ever become active while agreeing with the target. Therefore no bus made from such drivers can implement the row.",
+    "No bad row is an outer AND/OR/NAND/NOR of two raw-or-one-gate primitive signals; the exact subset/superset filters are empty for both target polarities."
+  ]
+}

@@ -1,0 +1,6458 @@
+{
+  "backend": "D:\\Develop\\Other\\turing-complete\\.research\\rng_depth2_pysat\\search.py",
+  "elapsed_seconds": 48.45480659999885,
+  "evaluated_candidate_count": 6,
+  "peak_working_set_mb": 170.83984375,
+  "restarts": 4,
+  "results": [
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "00000044002",
+          "00000110008",
+          "00000220010",
+          "01100040020",
+          "04000880040",
+          "00201100080",
+          "01000800400",
+          "04008004000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "008",
+          "011",
+          "000",
+          "000",
+          "000",
+          "048",
+          "070",
+          "020",
+          "000",
+          "000",
+          "040",
+          "022",
+          "000",
+          "000",
+          "080",
+          "002",
+          "004",
+          "008",
+          "011",
+          "020",
+          "002",
+          "004",
+          "048",
+          "010",
+          "020",
+          "000",
+          "000",
+          "0c0",
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "reported": {
+          "active_hidden": 8,
+          "base": 55,
+          "defect": 0,
+          "excess4": 19,
+          "max": 7,
+          "optimistic_total_gate": 403,
+          "switch_proxy_total": 783,
+          "total": 195,
+          "unsupported": 0
+        },
+        "sources": [
+          {
+            "lines": [
+              9,
+              10
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_w20_500k_seed202608020432.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 15,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000000880",
+            "gate": 3,
+            "inputs": [
+              7,
+              11
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000004200",
+            "gate": 3,
+            "inputs": [
+              9,
+              14
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010008",
+            "gate": 3,
+            "inputs": [
+              3,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000020010",
+            "gate": 3,
+            "inputs": [
+              4,
+              17
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000022001",
+            "gate": 12,
+            "inputs": [
+              0,
+              13,
+              17
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000044002",
+            "gate": 12,
+            "inputs": [
+              1,
+              14,
+              18
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0000100080",
+            "gate": 3,
+            "inputs": [
+              7,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000100400",
+            "gate": 3,
+            "inputs": [
+              10,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200100",
+            "gate": 3,
+            "inputs": [
+              8,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000840000",
+            "gate": 3,
+            "inputs": [
+              18,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000880000",
+            "gate": 3,
+            "inputs": [
+              19,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0004000200",
+            "gate": 3,
+            "inputs": [
+              9,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0004002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0040400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0042000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0080004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0201000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0202000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400200000",
+            "gate": 3,
+            "inputs": [
+              21,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0404002000",
+            "gate": 12,
+            "inputs": [
+              13,
+              26,
+              34
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0420000008",
+            "gate": 12,
+            "inputs": [
+              3,
+              29,
+              34
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0800000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0808400000",
+            "gate": 12,
+            "inputs": [
+              22,
+              27,
+              35
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0820000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1100000000",
+            "gate": 3,
+            "inputs": [
+              32,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000008004",
+            "gate": 12,
+            "inputs": [
+              2,
+              15,
+              37
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "2000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2200000000",
+            "gate": 3,
+            "inputs": [
+              33,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "3000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000040",
+            "gate": 3,
+            "inputs": [
+              6,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000400",
+            "gate": 3,
+            "inputs": [
+              10,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4200000000",
+            "gate": 3,
+            "inputs": [
+              33,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4800000000",
+            "gate": 3,
+            "inputs": [
+              35,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8080000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8100000000",
+            "gate": 3,
+            "inputs": [
+              32,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "c000000000",
+            "gate": 3,
+            "inputs": [
+              38,
+              39
+            ],
+            "mode": "xor2"
+          }
+        ],
+        "logic_gate": 390,
+        "restarts_at_best": 0,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0000044002"
+            ],
+            "target": "0000044002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000880",
+              "0000100400"
+            ],
+            "target": "0000100c80"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000100000"
+            ],
+            "target": "0000110008"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000200100"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000020010",
+              "0000200000"
+            ],
+            "target": "0000220010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0020000000"
+            ],
+            "target": "0022001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000022001",
+              "0040400000"
+            ],
+            "target": "0040422001"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000001000",
+              "0000022001",
+              "0042000000"
+            ],
+            "target": "0042023001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0004002000",
+              "0040000000"
+            ],
+            "target": "0044002000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200008000"
+            ],
+            "target": "0200008000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200100000"
+            ],
+            "target": "0200100000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100080",
+              "0201000000"
+            ],
+            "target": "0201100080"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0202000000"
+            ],
+            "target": "0202200100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0010000800",
+              "0201000000"
+            ],
+            "target": "0211000800"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400010000"
+            ],
+            "target": "0400010000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400200000"
+            ],
+            "target": "0400200000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0404002000"
+            ],
+            "target": "0404202100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0010008000",
+              "0400000000"
+            ],
+            "target": "0410008000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000880",
+              "0420000008"
+            ],
+            "target": "0420000888"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000200100",
+              "0042000000",
+              "0404002000"
+            ],
+            "target": "0446202100"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0800000001"
+            ],
+            "target": "0800000001"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0800020000"
+            ],
+            "target": "0800020000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000004200",
+              "0808400000"
+            ],
+            "target": "0808404200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010000",
+              "0820000000"
+            ],
+            "target": "0820010000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0004000200",
+              "0080004000",
+              "0808400000"
+            ],
+            "target": "088c404200"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000800000"
+            ],
+            "target": "1000800000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000400",
+              "1000800000"
+            ],
+            "target": "1000800400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "1100000000"
+            ],
+            "target": "1100000002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "1100000000"
+            ],
+            "target": "1100040000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "1100000000"
+            ],
+            "target": "1100040020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000080"
+            ],
+            "target": "2000000080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000080000"
+            ],
+            "target": "2000080000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100080",
+              "2000008004"
+            ],
+            "target": "2000108084"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2001000000"
+            ],
+            "target": "2001000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "2001000000"
+            ],
+            "target": "2003001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000800",
+              "2200000000"
+            ],
+            "target": "2200000800"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0200080000",
+              "2000008004"
+            ],
+            "target": "2200088004"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4000000400"
+            ],
+            "target": "4000000400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000001",
+              "4000002000"
+            ],
+            "target": "4000002001"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000200",
+              "0000020010",
+              "4000400000"
+            ],
+            "target": "4000420210"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000880000",
+              "4000000040"
+            ],
+            "target": "4000880040"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000004000",
+              "4008000000"
+            ],
+            "target": "4008004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0080004000",
+              "4008000000"
+            ],
+            "target": "4088004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0010008000",
+              "4200000000"
+            ],
+            "target": "4210008000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0004000200",
+              "0400000000",
+              "4000400000"
+            ],
+            "target": "4404400200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000020",
+              "4800000000"
+            ],
+            "target": "4800000020"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "4800000000"
+            ],
+            "target": "4800400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "3000000000",
+              "4000000040"
+            ],
+            "target": "7000000040"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000004000"
+            ],
+            "target": "8000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "8008000000"
+            ],
+            "target": "8008400000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8080000000"
+            ],
+            "target": "8080000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000044002",
+              "0004002000",
+              "8080000000"
+            ],
+            "target": "8084046002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000840000",
+              "8100000000"
+            ],
+            "target": "8100840000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000004000",
+              "c000000000"
+            ],
+            "target": "c000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008000000",
+              "c000000000"
+            ],
+            "target": "c008000000"
+          }
+        ],
+        "total_gate": 628
+      },
+      "features": {
+        "distinct_targets": 55,
+        "excess4": 19,
+        "maximum_weight": 7,
+        "total_weight": 195
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    },
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "04000042020",
+          "00400210188",
+          "00900020010",
+          "04440000001",
+          "00200100080",
+          "00000800400",
+          "0c004002000",
+          "0a008004000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "081",
+          "000",
+          "010",
+          "000",
+          "004",
+          "020",
+          "000",
+          "010",
+          "040",
+          "0a0",
+          "000",
+          "000",
+          "048",
+          "040",
+          "080",
+          "010",
+          "004",
+          "00d",
+          "000",
+          "010",
+          "012",
+          "044",
+          "0a0",
+          "000",
+          "010",
+          "040",
+          "080",
+          "020",
+          "000",
+          "000",
+          "040",
+          "080"
+        ],
+        "reported": {
+          "active_hidden": 8,
+          "base": 60,
+          "defect": 0,
+          "excess4": 19,
+          "max": 8,
+          "optimistic_total_gate": 418,
+          "switch_proxy_total": 608,
+          "total": 210,
+          "unsupported": 0
+        },
+        "sources": [
+          {
+            "lines": [
+              30
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_500k_seed202608020412.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 13,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000000042",
+            "gate": 3,
+            "inputs": [
+              1,
+              6
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000000840",
+            "gate": 3,
+            "inputs": [
+              6,
+              11
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000008004",
+            "gate": 3,
+            "inputs": [
+              2,
+              15
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010008",
+            "gate": 3,
+            "inputs": [
+              3,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000021000",
+            "gate": 3,
+            "inputs": [
+              12,
+              17
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200100",
+            "gate": 3,
+            "inputs": [
+              8,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000400200",
+            "gate": 3,
+            "inputs": [
+              9,
+              22
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000404000",
+            "gate": 3,
+            "inputs": [
+              14,
+              22
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000800400",
+            "gate": 3,
+            "inputs": [
+              10,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000840040",
+            "gate": 12,
+            "inputs": [
+              6,
+              18,
+              23
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0001000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0006000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0008004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              27
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0040000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0080004002",
+            "gate": 12,
+            "inputs": [
+              1,
+              14,
+              31
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0084000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100000010",
+            "gate": 3,
+            "inputs": [
+              4,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400000010",
+            "gate": 3,
+            "inputs": [
+              4,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400200000",
+            "gate": 3,
+            "inputs": [
+              21,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0442000000",
+            "gate": 12,
+            "inputs": [
+              25,
+              30,
+              34
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0500000000",
+            "gate": 3,
+            "inputs": [
+              32,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0802000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000000004",
+            "gate": 3,
+            "inputs": [
+              2,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1010000000",
+            "gate": 3,
+            "inputs": [
+              28,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000020",
+            "gate": 3,
+            "inputs": [
+              5,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000100",
+            "gate": 3,
+            "inputs": [
+              8,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000200000",
+            "gate": 3,
+            "inputs": [
+              21,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4002000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4040000000",
+            "gate": 3,
+            "inputs": [
+              30,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4800000000",
+            "gate": 3,
+            "inputs": [
+              35,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8004000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8080000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "a000000000",
+            "gate": 3,
+            "inputs": [
+              37,
+              39
+            ],
+            "mode": "xor2"
+          }
+        ],
+        "logic_gate": 390,
+        "restarts_at_best": 0,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0000008004"
+            ],
+            "target": "0000008004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000200100"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0000400200"
+            ],
+            "target": "0000400200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "0000404000"
+            ],
+            "target": "0000444020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0000800400"
+            ],
+            "target": "0000800400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400200",
+              "0000800400"
+            ],
+            "target": "0000c00600"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000840",
+              "0001080000"
+            ],
+            "target": "0001080840"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "0001080000"
+            ],
+            "target": "0001088004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000021000",
+              "0006000000"
+            ],
+            "target": "0006021000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000840",
+              "0001080000",
+              "0010800000"
+            ],
+            "target": "0011880840"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "0080004002"
+            ],
+            "target": "0080044002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400200",
+              "0084000000"
+            ],
+            "target": "0084400200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "0100000010"
+            ],
+            "target": "0100400010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "0100000001"
+            ],
+            "target": "0108004001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000080",
+              "0200100000"
+            ],
+            "target": "0200100080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400000010"
+            ],
+            "target": "0400000010"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400010000"
+            ],
+            "target": "0400010000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000100",
+              "0400200000"
+            ],
+            "target": "0400200100"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000010008",
+              "0000200100",
+              "0400000080"
+            ],
+            "target": "0400210188"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000002000",
+              "0000400200",
+              "0400200000"
+            ],
+            "target": "0400602200"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000010008",
+              "0010008000",
+              "0400000080"
+            ],
+            "target": "0410018088"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0442000000"
+            ],
+            "target": "0442200100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000001000",
+              "0802000000"
+            ],
+            "target": "0802001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0020001000",
+              "0802000000"
+            ],
+            "target": "0822001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100000010",
+              "0800020000"
+            ],
+            "target": "0900020010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0500000000",
+              "0800020000"
+            ],
+            "target": "0d00020000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000000004"
+            ],
+            "target": "1000000004"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000000080"
+            ],
+            "target": "1000000080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000008000"
+            ],
+            "target": "1000008000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000080000"
+            ],
+            "target": "1000080000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "1000080000"
+            ],
+            "target": "1000088004"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1001000000"
+            ],
+            "target": "1001000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000400",
+              "0010800000",
+              "1000008000"
+            ],
+            "target": "1010808400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001000800",
+              "1010000000"
+            ],
+            "target": "1011000800"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000840040",
+              "0080004002",
+              "1000080000"
+            ],
+            "target": "10808c4042"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0200100000",
+              "1000000000"
+            ],
+            "target": "1200100000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0001000800",
+              "0020010000",
+              "1400000000"
+            ],
+            "target": "1421010800"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0020001000",
+              "0802000000",
+              "1001000000"
+            ],
+            "target": "1823001000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000020"
+            ],
+            "target": "2000000020"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "2000000020"
+            ],
+            "target": "2000040020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2008000000"
+            ],
+            "target": "2008000000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4000000100"
+            ],
+            "target": "4000000100"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4000002000"
+            ],
+            "target": "4000002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "4000002000"
+            ],
+            "target": "4000042020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4002000000"
+            ],
+            "target": "4002000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0020010000",
+              "4000200000"
+            ],
+            "target": "4020210000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4040000000"
+            ],
+            "target": "4040000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200000",
+              "4400000000"
+            ],
+            "target": "4400200000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0040000001",
+              "4400000000"
+            ],
+            "target": "4440000001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000001000",
+              "4800000000"
+            ],
+            "target": "4800001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "1400000000",
+              "4002000000"
+            ],
+            "target": "5402000000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000004000"
+            ],
+            "target": "8000004000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8004000000"
+            ],
+            "target": "8004000000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8080000000"
+            ],
+            "target": "8080000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100000001",
+              "8000000000"
+            ],
+            "target": "8100000001"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000042",
+              "1000080000",
+              "8000004000"
+            ],
+            "target": "9000084042"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000200",
+              "a000000000"
+            ],
+            "target": "a000000200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "a000000000"
+            ],
+            "target": "a000400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "a000000000"
+            ],
+            "target": "a008004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000002000",
+              "8004000000"
+            ],
+            "target": "c004002000"
+          }
+        ],
+        "total_gate": 628
+      },
+      "features": {
+        "distinct_targets": 60,
+        "excess4": 19,
+        "maximum_weight": 8,
+        "total_weight": 210
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    },
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "08040020001",
+          "08000004002",
+          "00100220010",
+          "01200040020",
+          "04000880040",
+          "00001100080",
+          "01000800400",
+          "04008004000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "008",
+          "012",
+          "000",
+          "000",
+          "000",
+          "048",
+          "070",
+          "020",
+          "000",
+          "000",
+          "040",
+          "020",
+          "001",
+          "000",
+          "080",
+          "000",
+          "004",
+          "009",
+          "012",
+          "020",
+          "000",
+          "004",
+          "048",
+          "010",
+          "020",
+          "000",
+          "080",
+          "0c0",
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "reported": {
+          "active_hidden": 8,
+          "base": 55,
+          "defect": 0,
+          "excess4": 24,
+          "max": 8,
+          "optimistic_total_gate": 403,
+          "switch_proxy_total": 643,
+          "total": 200,
+          "unsupported": 0
+        },
+        "sources": [
+          {
+            "lines": [
+              6,
+              7
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_pareto_500k_seed202608020422.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 11,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000000880",
+            "gate": 3,
+            "inputs": [
+              7,
+              11
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000004002",
+            "gate": 3,
+            "inputs": [
+              1,
+              14
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000008004",
+            "gate": 3,
+            "inputs": [
+              2,
+              15
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010100",
+            "gate": 3,
+            "inputs": [
+              8,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000020001",
+            "gate": 3,
+            "inputs": [
+              0,
+              17
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000100400",
+            "gate": 3,
+            "inputs": [
+              10,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000108000",
+            "gate": 3,
+            "inputs": [
+              15,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200008",
+            "gate": 3,
+            "inputs": [
+              3,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200010",
+            "gate": 3,
+            "inputs": [
+              4,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000202100",
+            "gate": 12,
+            "inputs": [
+              8,
+              13,
+              21
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0000880000",
+            "gate": 3,
+            "inputs": [
+              19,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0004002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0008004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              27
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010000008",
+            "gate": 3,
+            "inputs": [
+              3,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0011000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0042000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0080040000",
+            "gate": 3,
+            "inputs": [
+              18,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0120000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400200000",
+            "gate": 3,
+            "inputs": [
+              21,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800400200",
+            "gate": 12,
+            "inputs": [
+              9,
+              22,
+              35
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0820000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1200000000",
+            "gate": 3,
+            "inputs": [
+              33,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "3000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000040",
+            "gate": 3,
+            "inputs": [
+              6,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000400",
+            "gate": 3,
+            "inputs": [
+              10,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000400200",
+            "gate": 12,
+            "inputs": [
+              9,
+              22,
+              38
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "4010000000",
+            "gate": 3,
+            "inputs": [
+              28,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4080000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4800000000",
+            "gate": 3,
+            "inputs": [
+              35,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8004000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8040000000",
+            "gate": 3,
+            "inputs": [
+              30,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8404000000",
+            "gate": 12,
+            "inputs": [
+              26,
+              34,
+              39
+            ],
+            "mode": "xor3"
+          }
+        ],
+        "logic_gate": 396,
+        "restarts_at_best": 0,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000880",
+              "0000100400"
+            ],
+            "target": "0000100c80"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010100",
+              "0000200008"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000080",
+              "0001100000"
+            ],
+            "target": "0001100080"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000010100",
+              "0000200008",
+              "0002100000"
+            ],
+            "target": "0002310108"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000800",
+              "0011000000"
+            ],
+            "target": "0011000800"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0080040000"
+            ],
+            "target": "0080040000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000004002",
+              "0004002000",
+              "0080040000"
+            ],
+            "target": "0084046002"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0100001000"
+            ],
+            "target": "0100001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200010",
+              "0100020000"
+            ],
+            "target": "0100220010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0120000000"
+            ],
+            "target": "0122001000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200800000"
+            ],
+            "target": "0200800000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400010000"
+            ],
+            "target": "0400010000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400200000"
+            ],
+            "target": "0400200000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000108000",
+              "0010000008",
+              "0400010000"
+            ],
+            "target": "0410118008"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000880",
+              "0020100000",
+              "0400010000"
+            ],
+            "target": "0420110880"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0800000001"
+            ],
+            "target": "0800000001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "0800400200"
+            ],
+            "target": "0808404200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010000",
+              "0820000000"
+            ],
+            "target": "0820010000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100020000",
+              "0800000000"
+            ],
+            "target": "0900020000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000800000"
+            ],
+            "target": "1000800000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000400",
+              "1000800000"
+            ],
+            "target": "1000800400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "1200000000"
+            ],
+            "target": "1200000002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "1200000000"
+            ],
+            "target": "1200040000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "1200000000"
+            ],
+            "target": "1200040020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000080"
+            ],
+            "target": "2000000080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000800"
+            ],
+            "target": "2000000800"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000080000"
+            ],
+            "target": "2000080000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "2000080000"
+            ],
+            "target": "2000088004"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000004",
+              "0000108000",
+              "2000000080"
+            ],
+            "target": "2000108084"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2001000000"
+            ],
+            "target": "2001000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0002000000",
+              "0100001000",
+              "2001000000"
+            ],
+            "target": "2103001000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4000000400"
+            ],
+            "target": "4000000400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000001",
+              "4000002000"
+            ],
+            "target": "4000002001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000880000",
+              "4000000040"
+            ],
+            "target": "4000880040"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "4000000000"
+            ],
+            "target": "4008004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008000",
+              "4010000000"
+            ],
+            "target": "4010008000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "4080000000"
+            ],
+            "target": "4088004000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000010",
+              "0100020000",
+              "4000400200"
+            ],
+            "target": "4100420210"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000020",
+              "4800000000"
+            ],
+            "target": "4800000020"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "4800000000"
+            ],
+            "target": "4800400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "3000000000",
+              "4000000040"
+            ],
+            "target": "7000000040"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000004000"
+            ],
+            "target": "8000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "8000004000"
+            ],
+            "target": "8000004002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "8000002000"
+            ],
+            "target": "8002003000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8004000000"
+            ],
+            "target": "8004000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "8008000000"
+            ],
+            "target": "8008400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000020001",
+              "8040000000"
+            ],
+            "target": "8040020001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0004002000",
+              "8040000000"
+            ],
+            "target": "8044002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100400000",
+              "8000002000"
+            ],
+            "target": "8100402000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000202100",
+              "8404000000"
+            ],
+            "target": "8404202100"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000202100",
+              "0042000000",
+              "8404000000"
+            ],
+            "target": "8446202100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000000000",
+              "8000004000"
+            ],
+            "target": "c000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000000000",
+              "8008000000"
+            ],
+            "target": "c008000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000400200",
+              "8404000000"
+            ],
+            "target": "c404400200"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0800400200",
+              "4080000000",
+              "8004000000"
+            ],
+            "target": "c884400200"
+          }
+        ],
+        "total_gate": 634
+      },
+      "features": {
+        "distinct_targets": 55,
+        "excess4": 24,
+        "maximum_weight": 8,
+        "total_weight": 200
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    },
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "000c4022001",
+          "08000044002",
+          "00000110008",
+          "01200040020",
+          "04000880040",
+          "00401100080",
+          "01000800400",
+          "04008004000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "008",
+          "012",
+          "000",
+          "000",
+          "000",
+          "048",
+          "070",
+          "020",
+          "000",
+          "000",
+          "040",
+          "024",
+          "001",
+          "000",
+          "080",
+          "004",
+          "000",
+          "009",
+          "012",
+          "020",
+          "004",
+          "000",
+          "048",
+          "010",
+          "020",
+          "000",
+          "080",
+          "0c0",
+          "000",
+          "000",
+          "000",
+          "000"
+        ],
+        "reported": {
+          "active_hidden": 8,
+          "base": 54,
+          "defect": 0,
+          "excess4": 25,
+          "max": 9,
+          "optimistic_total_gate": 400,
+          "switch_proxy_total": 500,
+          "total": 203,
+          "unsupported": 0
+        },
+        "sources": [
+          {
+            "lines": [
+              6,
+              7
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_w4_500k_seed202608020431.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 123,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000000088",
+            "gate": 3,
+            "inputs": [
+              3,
+              7
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000000c00",
+            "gate": 3,
+            "inputs": [
+              10,
+              11
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000002001",
+            "gate": 3,
+            "inputs": [
+              0,
+              13
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000002100",
+            "gate": 3,
+            "inputs": [
+              8,
+              13
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000006000",
+            "gate": 3,
+            "inputs": [
+              13,
+              14
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010008",
+            "gate": 3,
+            "inputs": [
+              3,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040002",
+            "gate": 3,
+            "inputs": [
+              1,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000100080",
+            "gate": 3,
+            "inputs": [
+              7,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200100",
+            "gate": 3,
+            "inputs": [
+              8,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000210010",
+            "gate": 12,
+            "inputs": [
+              4,
+              16,
+              21
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0000880000",
+            "gate": 3,
+            "inputs": [
+              19,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0008004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              27
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0040002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0040020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0042000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0084000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100020200",
+            "gate": 12,
+            "inputs": [
+              9,
+              17,
+              32
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0100400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0120000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0401000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0402000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800400200",
+            "gate": 12,
+            "inputs": [
+              9,
+              22,
+              35
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "1000800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1200000000",
+            "gate": 3,
+            "inputs": [
+              33,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000008004",
+            "gate": 12,
+            "inputs": [
+              2,
+              15,
+              37
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "2000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "3000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000040",
+            "gate": 3,
+            "inputs": [
+              6,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000400",
+            "gate": 3,
+            "inputs": [
+              10,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000400010",
+            "gate": 12,
+            "inputs": [
+              4,
+              22,
+              38
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "4080000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4800000000",
+            "gate": 3,
+            "inputs": [
+              35,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8004000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8004200000",
+            "gate": 12,
+            "inputs": [
+              21,
+              26,
+              39
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "8008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              39
+            ],
+            "mode": "xor2"
+          }
+        ],
+        "logic_gate": 399,
+        "restarts_at_best": 3,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000c00",
+              "0000100080"
+            ],
+            "target": "0000100c80"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000100000"
+            ],
+            "target": "0000110008"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000200100"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0010008000"
+            ],
+            "target": "0010008000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000088",
+              "0020000800"
+            ],
+            "target": "0020000888"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000006000",
+              "0000040002",
+              "0084000000"
+            ],
+            "target": "0084046002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0084000000"
+            ],
+            "target": "0086001000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000002001",
+              "0040020000",
+              "0084000000"
+            ],
+            "target": "00c4022001"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0100001000"
+            ],
+            "target": "0100001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0120000000"
+            ],
+            "target": "0122001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0084000000",
+              "0100400000"
+            ],
+            "target": "0184400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "0200800000"
+            ],
+            "target": "0200840000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400008000"
+            ],
+            "target": "0400008000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400100000"
+            ],
+            "target": "0400100000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100080",
+              "0401000000"
+            ],
+            "target": "0401100080"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0402000000"
+            ],
+            "target": "0402200100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0010000800",
+              "0401000000"
+            ],
+            "target": "0411000800"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0800000001"
+            ],
+            "target": "0800000001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "0800400200"
+            ],
+            "target": "0808404200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100000000",
+              "0800020000"
+            ],
+            "target": "0900020000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000210010",
+              "0120000000",
+              "0800020000"
+            ],
+            "target": "0920230010"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000800000"
+            ],
+            "target": "1000800000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000400",
+              "1000800000"
+            ],
+            "target": "1000800400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "1200000000"
+            ],
+            "target": "1200000002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040000",
+              "1200000000"
+            ],
+            "target": "1200040000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "1200000000"
+            ],
+            "target": "1200040020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000080"
+            ],
+            "target": "2000000080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000080000"
+            ],
+            "target": "2000080000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100080",
+              "2000008004"
+            ],
+            "target": "2000108084"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2001000000"
+            ],
+            "target": "2001000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0002000000",
+              "0100001000",
+              "2001000000"
+            ],
+            "target": "2103001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000800",
+              "2400000000"
+            ],
+            "target": "2400000800"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0400080000",
+              "2000008004"
+            ],
+            "target": "2400088004"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4000000400"
+            ],
+            "target": "4000000400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000002001",
+              "4000000000"
+            ],
+            "target": "4000002001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000880000",
+              "4000000040"
+            ],
+            "target": "4000880040"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "4000000000"
+            ],
+            "target": "4008004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008004000",
+              "4080000000"
+            ],
+            "target": "4088004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100020200",
+              "4000400010"
+            ],
+            "target": "4100420210"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0010008000",
+              "4400000000"
+            ],
+            "target": "4410008000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000020",
+              "4800000000"
+            ],
+            "target": "4800000020"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "4800000000"
+            ],
+            "target": "4800400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "3000000000",
+              "4000000040"
+            ],
+            "target": "7000000040"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000004000"
+            ],
+            "target": "8000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040002",
+              "8000004000"
+            ],
+            "target": "8000044002"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8004000000"
+            ],
+            "target": "8004000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000002100",
+              "8004200000"
+            ],
+            "target": "8004202100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000400000",
+              "8008000000"
+            ],
+            "target": "8008400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0040002000",
+              "8004000000"
+            ],
+            "target": "8044002000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000002100",
+              "0042000000",
+              "8004200000"
+            ],
+            "target": "8046202100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000000000",
+              "8000004000"
+            ],
+            "target": "c000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "4000000000",
+              "8008000000"
+            ],
+            "target": "c008000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0100020200",
+              "4000400010",
+              "8004200000"
+            ],
+            "target": "c104620210"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0800400200",
+              "4080000000",
+              "8004000000"
+            ],
+            "target": "c884400200"
+          }
+        ],
+        "total_gate": 637
+      },
+      "features": {
+        "distinct_targets": 54,
+        "excess4": 25,
+        "maximum_weight": 9,
+        "total_weight": 203
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    },
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "08040020001",
+          "00000210108",
+          "00000220210",
+          "08000440020",
+          "00000880040",
+          "00201100080",
+          "00004882040",
+          "00088004000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "000",
+          "000",
+          "020",
+          "002",
+          "001",
+          "000",
+          "000",
+          "020",
+          "000",
+          "000",
+          "000",
+          "000",
+          "051",
+          "0d0",
+          "080",
+          "000",
+          "004",
+          "009",
+          "010",
+          "020",
+          "002",
+          "004",
+          "088",
+          "010",
+          "020",
+          "050",
+          "0d0",
+          "000",
+          "000",
+          "000",
+          "050",
+          "080"
+        ],
+        "reported": {
+          "active_hidden": 8
+        },
+        "sources": [
+          {
+            "lines": [
+              2
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_h7_h9.log"
+          },
+          {
+            "lines": [
+              75
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_w20_500k_seed202608020432.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 12,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000000042",
+            "gate": 3,
+            "inputs": [
+              1,
+              6
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000000210",
+            "gate": 3,
+            "inputs": [
+              4,
+              9
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000002001",
+            "gate": 3,
+            "inputs": [
+              0,
+              13
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000008004",
+            "gate": 3,
+            "inputs": [
+              2,
+              15
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000008008",
+            "gate": 3,
+            "inputs": [
+              3,
+              15
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010008",
+            "gate": 3,
+            "inputs": [
+              3,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040002",
+            "gate": 3,
+            "inputs": [
+              1,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000080040",
+            "gate": 3,
+            "inputs": [
+              6,
+              19
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200100",
+            "gate": 3,
+            "inputs": [
+              8,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000220000",
+            "gate": 3,
+            "inputs": [
+              17,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000800400",
+            "gate": 3,
+            "inputs": [
+              10,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0004002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0008404000",
+            "gate": 12,
+            "inputs": [
+              14,
+              22,
+              27
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0010100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0040000001",
+            "gate": 3,
+            "inputs": [
+              0,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0080004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100000010",
+            "gate": 3,
+            "inputs": [
+              4,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0120000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200000008",
+            "gate": 3,
+            "inputs": [
+              3,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200100000",
+            "gate": 3,
+            "inputs": [
+              20,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400200000",
+            "gate": 3,
+            "inputs": [
+              21,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0442000000",
+            "gate": 12,
+            "inputs": [
+              25,
+              30,
+              34
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0800000200",
+            "gate": 3,
+            "inputs": [
+              9,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0804000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0900000000",
+            "gate": 3,
+            "inputs": [
+              32,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000040000",
+            "gate": 3,
+            "inputs": [
+              18,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1000800000",
+            "gate": 3,
+            "inputs": [
+              23,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1004000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1010000000",
+            "gate": 3,
+            "inputs": [
+              28,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000004",
+            "gate": 3,
+            "inputs": [
+              2,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000000080",
+            "gate": 3,
+            "inputs": [
+              7,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2010000000",
+            "gate": 3,
+            "inputs": [
+              28,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "5000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000004000",
+            "gate": 3,
+            "inputs": [
+              14,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8000400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8080000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "c000000000",
+            "gate": 3,
+            "inputs": [
+              38,
+              39
+            ],
+            "mode": "xor2"
+          }
+        ],
+        "logic_gate": 429,
+        "restarts_at_best": 0,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "0000080000"
+            ],
+            "target": "0000088004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000200100"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000210",
+              "0000220000"
+            ],
+            "target": "0000220210"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "0000800400"
+            ],
+            "target": "0000840420"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000080040",
+              "0000800000"
+            ],
+            "target": "0000880040"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "0001000000"
+            ],
+            "target": "0001008004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000080040",
+              "0001000800"
+            ],
+            "target": "0001080840"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000080040",
+              "0000800000",
+              "0004002000"
+            ],
+            "target": "0004882040"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000210",
+              "0000400000",
+              "0040000001"
+            ],
+            "target": "0040400211"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008000000",
+              "0080004000"
+            ],
+            "target": "0088004000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0100000010"
+            ],
+            "target": "0100000010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0120000000"
+            ],
+            "target": "0122001000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200000008"
+            ],
+            "target": "0200000008"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200100000"
+            ],
+            "target": "0200100000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001000080",
+              "0200100000"
+            ],
+            "target": "0201100080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400010000"
+            ],
+            "target": "0400010000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0400200000"
+            ],
+            "target": "0400200000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000100",
+              "0004002000",
+              "0400200000"
+            ],
+            "target": "0404202100"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000008008",
+              "0010100000",
+              "0400010000"
+            ],
+            "target": "0410118008"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0442000000"
+            ],
+            "target": "0442200100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0804000000"
+            ],
+            "target": "0806001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008404000",
+              "0800000200"
+            ],
+            "target": "0808404200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0020010000",
+              "0800000200"
+            ],
+            "target": "0820010200"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000800400",
+              "0080004000",
+              "0800000000"
+            ],
+            "target": "0880804400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000020000",
+              "0900000000"
+            ],
+            "target": "0900020000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000040000"
+            ],
+            "target": "1000040000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "1000800000"
+            ],
+            "target": "1000800000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040002",
+              "1008000000"
+            ],
+            "target": "1008040002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000800400",
+              "1008000000"
+            ],
+            "target": "1008800400"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000008000",
+              "0000800400",
+              "1010000000"
+            ],
+            "target": "1010808400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001000800",
+              "1010000000"
+            ],
+            "target": "1011000800"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100000000",
+              "1000002000"
+            ],
+            "target": "1100002000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000004"
+            ],
+            "target": "2000000004"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000000080"
+            ],
+            "target": "2000000080"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000080000"
+            ],
+            "target": "2000080000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2001000000"
+            ],
+            "target": "2001000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001000800",
+              "2010000000"
+            ],
+            "target": "2011000800"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000040002",
+              "0080004000",
+              "2000000000"
+            ],
+            "target": "2080044002"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0002000000",
+              "0100001000",
+              "2001000000"
+            ],
+            "target": "2103001000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0001000800",
+              "0020010000",
+              "2400000000"
+            ],
+            "target": "2421010800"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002000000",
+              "5000000000"
+            ],
+            "target": "5002000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002100000",
+              "5000000000"
+            ],
+            "target": "5002100000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0040000000",
+              "5000000000"
+            ],
+            "target": "5040000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100001000",
+              "5000000000"
+            ],
+            "target": "5100001000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0400000000",
+              "1004000000",
+              "4000400000"
+            ],
+            "target": "5404400000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0800000200",
+              "1000002000",
+              "4000400000"
+            ],
+            "target": "5800402200"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000004000"
+            ],
+            "target": "8000004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "8000400000"
+            ],
+            "target": "8000440020"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0040000001",
+              "8000020000"
+            ],
+            "target": "8040020001"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8080000000"
+            ],
+            "target": "8080000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000008004",
+              "0000080000",
+              "8080000000"
+            ],
+            "target": "8080088004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0800000000",
+              "8000400000"
+            ],
+            "target": "8800400000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000042",
+              "2000080000",
+              "8000004000"
+            ],
+            "target": "a000084042"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000002001",
+              "0000040020",
+              "c000000000"
+            ],
+            "target": "c000042021"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "1000002000",
+              "c000000000"
+            ],
+            "target": "d000002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "1004000000",
+              "c000000000"
+            ],
+            "target": "d004000000"
+          }
+        ],
+        "total_gate": 667
+      },
+      "features": {
+        "distinct_targets": 56,
+        "excess4": 21,
+        "maximum_weight": 6,
+        "total_weight": 210
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    },
+    {
+      "active_original_hidden_rows": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "candidate": {
+        "D_rows_hex": [
+          "00100002001",
+          "00084004000",
+          "00000011088",
+          "01800040020",
+          "04000080440",
+          "00002100080",
+          "03000800400",
+          "00042002000",
+          "00000000000",
+          "00000000000"
+        ],
+        "X_rows_hex": [
+          "009",
+          "050",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "000",
+          "080",
+          "002",
+          "000",
+          "024",
+          "000",
+          "009",
+          "052",
+          "020",
+          "024",
+          "000",
+          "048",
+          "050",
+          "020",
+          "080",
+          "002",
+          "040",
+          "000",
+          "000",
+          "000",
+          "002"
+        ],
+        "reported": {
+          "active_hidden": 8,
+          "base": 54,
+          "defect": 0,
+          "excess4": 25,
+          "max": 9,
+          "optimistic_total_gate": 400,
+          "switch_proxy_total": 650,
+          "total": 207,
+          "unsupported": 0
+        },
+        "sources": [
+          {
+            "lines": [
+              65
+            ],
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_pareto_500k_seed202608020422.log"
+          }
+        ]
+      },
+      "cover": {
+        "coordinate_moves_through_best": 6,
+        "cycles": 66,
+        "delay": 9,
+        "first_level": [
+          {
+            "form": "0000001001",
+            "gate": 3,
+            "inputs": [
+              0,
+              12
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000001080",
+            "gate": 3,
+            "inputs": [
+              7,
+              12
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000008004",
+            "gate": 3,
+            "inputs": [
+              2,
+              15
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000010008",
+            "gate": 3,
+            "inputs": [
+              3,
+              16
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040002",
+            "gate": 3,
+            "inputs": [
+              1,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000040020",
+            "gate": 3,
+            "inputs": [
+              5,
+              18
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000080040",
+            "gate": 3,
+            "inputs": [
+              6,
+              19
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000100080",
+            "gate": 3,
+            "inputs": [
+              7,
+              20
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000200100",
+            "gate": 3,
+            "inputs": [
+              8,
+              21
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000220010",
+            "gate": 12,
+            "inputs": [
+              4,
+              17,
+              21
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0000800400",
+            "gate": 3,
+            "inputs": [
+              10,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0000804000",
+            "gate": 3,
+            "inputs": [
+              14,
+              23
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001000800",
+            "gate": 3,
+            "inputs": [
+              11,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0001001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              24
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0002001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              25
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0003080000",
+            "gate": 12,
+            "inputs": [
+              19,
+              24,
+              25
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0004002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              26
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0008000200",
+            "gate": 3,
+            "inputs": [
+              9,
+              27
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0010008000",
+            "gate": 3,
+            "inputs": [
+              15,
+              28
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0020010000",
+            "gate": 3,
+            "inputs": [
+              16,
+              29
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0042000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              30
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0084000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              31
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              32
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0100420000",
+            "gate": 12,
+            "inputs": [
+              17,
+              22,
+              32
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0200002000",
+            "gate": 3,
+            "inputs": [
+              13,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200020000",
+            "gate": 3,
+            "inputs": [
+              17,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200040000",
+            "gate": 3,
+            "inputs": [
+              18,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0200400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0204000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0204200000",
+            "gate": 12,
+            "inputs": [
+              21,
+              26,
+              33
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0280000000",
+            "gate": 3,
+            "inputs": [
+              31,
+              33
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0400084000",
+            "gate": 12,
+            "inputs": [
+              14,
+              19,
+              34
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "0420000000",
+            "gate": 3,
+            "inputs": [
+              29,
+              34
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0800400000",
+            "gate": 3,
+            "inputs": [
+              22,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "0900000000",
+            "gate": 3,
+            "inputs": [
+              32,
+              35
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "1800000000",
+            "gate": 3,
+            "inputs": [
+              35,
+              36
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2000080000",
+            "gate": 3,
+            "inputs": [
+              19,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2001000000",
+            "gate": 3,
+            "inputs": [
+              24,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2010000000",
+            "gate": 3,
+            "inputs": [
+              28,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2400000000",
+            "gate": 3,
+            "inputs": [
+              34,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "2400000400",
+            "gate": 12,
+            "inputs": [
+              10,
+              34,
+              37
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "3000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              37
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4000000210",
+            "gate": 12,
+            "inputs": [
+              4,
+              9,
+              38
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "4000000400",
+            "gate": 3,
+            "inputs": [
+              10,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "4008000000",
+            "gate": 3,
+            "inputs": [
+              27,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "5000000000",
+            "gate": 3,
+            "inputs": [
+              36,
+              38
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "5000800000",
+            "gate": 12,
+            "inputs": [
+              23,
+              36,
+              38
+            ],
+            "mode": "xor3"
+          },
+          {
+            "form": "8000001000",
+            "gate": 3,
+            "inputs": [
+              12,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8002000000",
+            "gate": 3,
+            "inputs": [
+              25,
+              39
+            ],
+            "mode": "xor2"
+          },
+          {
+            "form": "8004000000",
+            "gate": 3,
+            "inputs": [
+              26,
+              39
+            ],
+            "mode": "xor2"
+          }
+        ],
+        "logic_gate": 438,
+        "restarts_at_best": 0,
+        "status": "verified-upper-bound",
+        "targets": [
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000001080",
+              "0000010008"
+            ],
+            "target": "0000011088"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000002000",
+              "0000040002"
+            ],
+            "target": "0000042002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "0000100080"
+            ],
+            "target": "0000108084"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000010008",
+              "0000200100"
+            ],
+            "target": "0000210108"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "0000804000"
+            ],
+            "target": "0000804002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000080040",
+              "0001000800"
+            ],
+            "target": "0001080840"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100080",
+              "0002000000"
+            ],
+            "target": "0002100080"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008004",
+              "0003080000"
+            ],
+            "target": "0003088004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040002",
+              "0004000000"
+            ],
+            "target": "0004040002"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "0004002000"
+            ],
+            "target": "0004202100"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0010008000"
+            ],
+            "target": "0012009000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0002001000",
+              "0020000000"
+            ],
+            "target": "0022001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000002000",
+              "0042000000"
+            ],
+            "target": "0042002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0004002000",
+              "0040000000"
+            ],
+            "target": "0044002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000004000",
+              "0084000000"
+            ],
+            "target": "0084004000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000001",
+              "0100002000"
+            ],
+            "target": "0100002001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0040000000",
+              "0100420000"
+            ],
+            "target": "0140420000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0200002000"
+            ],
+            "target": "0200002000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000001001",
+              "0200020000"
+            ],
+            "target": "0200021001"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000020",
+              "0000800400",
+              "0200040000"
+            ],
+            "target": "0200840420"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0204000000"
+            ],
+            "target": "0204000000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "0280000000"
+            ],
+            "target": "0280000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001001000",
+              "0420000000"
+            ],
+            "target": "0421001000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0008000200",
+              "0800400000"
+            ],
+            "target": "0808400200"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000004000",
+              "0008000200",
+              "0800400000"
+            ],
+            "target": "0808404200"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000001",
+              "0900000000"
+            ],
+            "target": "0900000001"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000020000",
+              "0900000000"
+            ],
+            "target": "0900020000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000220010",
+              "0020010000",
+              "0900000000"
+            ],
+            "target": "0920230010"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000040020",
+              "1800000000"
+            ],
+            "target": "1800040020"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2000080000"
+            ],
+            "target": "2000080000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2001000000"
+            ],
+            "target": "2001000000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "2008000000"
+            ],
+            "target": "2008000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0001000800",
+              "2010000000"
+            ],
+            "target": "2011000800"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000000800",
+              "0020010000",
+              "2001000000"
+            ],
+            "target": "2021010800"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0200400000",
+              "2008000000"
+            ],
+            "target": "2208400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000008000",
+              "2400000000"
+            ],
+            "target": "2400008000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000100000",
+              "2400000000"
+            ],
+            "target": "2400100000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000100080",
+              "0002001000",
+              "2400000000"
+            ],
+            "target": "2402101080"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000800400",
+              "3000000000"
+            ],
+            "target": "3000800400"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000080040",
+              "4000000400"
+            ],
+            "target": "4000080440"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "4008000000"
+            ],
+            "target": "4008000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0100420000",
+              "4000000210"
+            ],
+            "target": "4100420210"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0204000000",
+              "4008000000"
+            ],
+            "target": "420c000000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0100420000",
+              "0204200000",
+              "4000000210"
+            ],
+            "target": "4304620210"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000008004",
+              "0400084000",
+              "4008000000"
+            ],
+            "target": "440808c004"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0800400000",
+              "4000000000"
+            ],
+            "target": "4800400000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000000002",
+              "5000000000"
+            ],
+            "target": "5000000002"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "5000800000"
+            ],
+            "target": "5000800000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0200040000",
+              "5000000000"
+            ],
+            "target": "5200040000"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0010008000",
+              "2400000400",
+              "5000800000"
+            ],
+            "target": "7410808400"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8000001000"
+            ],
+            "target": "8000001000"
+          },
+          {
+            "final_gate": 0,
+            "mode": "direct",
+            "sources": [
+              "8002000000"
+            ],
+            "target": "8002000000"
+          },
+          {
+            "final_gate": 3,
+            "mode": "xor2",
+            "sources": [
+              "0000200100",
+              "8004000000"
+            ],
+            "target": "8004200100"
+          },
+          {
+            "final_gate": 12,
+            "mode": "xor3",
+            "sources": [
+              "0000200100",
+              "2400000000",
+              "8000001000"
+            ],
+            "target": "a400201100"
+          }
+        ],
+        "total_gate": 676
+      },
+      "features": {
+        "distinct_targets": 54,
+        "excess4": 25,
+        "maximum_weight": 9,
+        "total_weight": 207
+      },
+      "fixed_gate": 238,
+      "state_bits": 40
+    }
+  ],
+  "schema": 1,
+  "scope": "cancellation-aware depth-two concrete-cover proxy",
+  "seed": 202608020528,
+  "semantic_candidate_count": 22,
+  "source_logs": [
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_500k_seed202608020411.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_500k_seed202608020412.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_500k_seed202608020413.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_candidate_h4.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_candidates_h0_h3.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_final_smoke.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_pareto_500k_seed202608020421.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_pareto_500k_seed202608020422.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_h10.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_h2_h3.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_h7_h9.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_pareto.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_selected_shallow.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_smoke_seed202608020401.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_w20_500k_seed202608020432.log",
+    "D:\\Develop\\Other\\turing-complete\\.research\\rng_switch42_synthesis\\frontier_v2_w4_500k_seed202608020431.log"
+  ],
+  "status": "UPPER_BOUNDS",
+  "warning": "heuristic covers are feasible upper bounds, not exact optima"
+}

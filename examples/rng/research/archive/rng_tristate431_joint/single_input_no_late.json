@@ -1,0 +1,25 @@
+{
+  "model": "fixed B/C 61-XOR DAG; early switches; zero-load late ORs",
+  "source_constraints": {
+    "seed": "at most one distinct EARLY bus",
+    "state": "unrestricted fanout to independent Bit Switch inputs"
+  },
+  "count_constraints": {
+    "exact_early": 32,
+    "exact_late": 0,
+    "max_late": null
+  },
+  "physical_realization_status": "conditional algebraic certificate: requires Z-preserving U32-to-U1 seed breakout not supplied by current Splitter components",
+  "timing": {
+    "early_seed": "ready Delay 4 + NOT 1 + XOR 2 + XOR 2 = 9",
+    "early_steady": "ready Delay 4 + Switch 1 + XOR 2 + XOR 2 = 9",
+    "late_seed": "ready Delay 4 + NOT 1 + OR 1 + at most one XOR 2 <= 8",
+    "late_feedback": "q Delay 4 + XOR 2 + OR 1 + XOR 2 <= 9"
+  },
+  "results": {
+    "64": {
+      "status": "unsat",
+      "reason": ""
+    }
+  }
+}

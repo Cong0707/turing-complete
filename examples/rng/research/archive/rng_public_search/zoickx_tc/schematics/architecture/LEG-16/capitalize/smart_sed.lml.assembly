@@ -1,0 +1,30 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const ucall i1|i2|call
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+
+const space 32
+
+const buf a
+const off b
+
+sav _ space off
+
+label sed
+	mov _ io buf
+	sub buf off io
+	
+	i2|j|eq buf space space_seen
+		sav _ 0 off
+	uj _ _ sed
+	label space_seen
+		sav _ space off
+	uj _ _ sed

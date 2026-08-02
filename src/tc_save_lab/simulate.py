@@ -45,6 +45,7 @@ class _UnionFind:
 class _CompiledCircuit:
     pin_networks: dict[tuple[int, str], int]
     source_widths: dict[str, int]
+    network_driver_counts: dict[int, int]
 
 
 @dataclass(frozen=True)
@@ -94,17 +95,25 @@ def _compile(circuit: Circuit) -> _CompiledCircuit:
                 continue
             pin_networks[(component_index, pin.name)] = network
     source_widths: dict[str, int] = {}
+    network_driver_counts: dict[int, int] = defaultdict(int)
     for component_index, component in enumerate(circuit.components):
-        if component.kind not in SOURCE_KINDS:
-            continue
-        key = component.user_label or str(component.permanent_id)
-        output_pins = [
+        output_pins = tuple(
             pin
             for pin in positioned_pins(component, component_index)
             if pin.direction in {O, T}
-        ]
-        source_widths[key] = sum(pin.width for pin in output_pins)
-    return _CompiledCircuit(pin_networks=pin_networks, source_widths=source_widths)
+        )
+        for pin in output_pins:
+            network = pin_networks.get((component_index, pin.name))
+            if network is not None:
+                network_driver_counts[network] += 1
+        if component.kind in SOURCE_KINDS:
+            key = component.user_label or str(component.permanent_id)
+            source_widths[key] = sum(pin.width for pin in output_pins)
+    return _CompiledCircuit(
+        pin_networks=pin_networks,
+        source_widths=source_widths,
+        network_driver_counts=dict(network_driver_counts),
+    )
 
 
 def _mask(width: int) -> int:
@@ -177,10 +186,19 @@ def _evaluate(kind: int, width: int, values: dict[str, int]) -> dict[str, int]:
         return {
             "out": sum((values[f"in{index}"] & 0xFF) << (index * 8) for index in range(4))
         }
+    if kind == 98:
+        return {
+            "out": sum((values[f"in{index}"] & 0xFF) << (index * 8) for index in range(8))
+        }
     if kind == 99:
         return {
             f"out{index}": (values["in"] >> (index * 8)) & 0xFF
             for index in range(4)
+        }
+    if kind == 100:
+        return {
+            f"out{index}": (values["in"] >> (index * 8)) & 0xFF
+            for index in range(8)
         }
     if kind == 43:
         selected = values["select"] & 1
@@ -205,15 +223,41 @@ def _simulate_compiled(
     inputs: dict[str, int],
 ) -> dict[str, int]:
     network_values: dict[int, int] = {}
+    network_driven_masks: dict[int, int] = {}
+    resolved_drivers: dict[int, int] = defaultdict(int)
 
-    def assign(component_index: int, pin_name: str, value: int) -> None:
+    def resolve_driver(
+        component_index: int,
+        pin_name: str,
+        value: int = 0,
+        *,
+        driven: bool = True,
+    ) -> None:
         network = compiled.pin_networks.get((component_index, pin_name))
         if network is None:
             return
-        previous = network_values.get(network)
-        if previous is not None and previous != value:
+        width = _output_width(circuit, component_index, pin_name)
+        new_mask = _mask(width) if driven else 0
+        previous_mask = network_driven_masks.get(network, 0)
+        conflict_mask = previous_mask & new_mask
+        previous = network_values.get(network, 0)
+        if (previous ^ value) & conflict_mask:
             raise SimulationError(f"conflicting drivers on network {network}")
-        network_values[network] = value
+        network_values[network] = (previous & previous_mask) | (value & new_mask)
+        network_driven_masks[network] = previous_mask | new_mask
+        resolved_drivers[network] += 1
+        if resolved_drivers[network] > compiled.network_driver_counts[network]:
+            raise SimulationError(f"network {network} driver resolved more than once")
+
+    def network_ready(network: int) -> bool:
+        count = compiled.network_driver_counts.get(network, 0)
+        return count > 0 and resolved_drivers[network] == count
+
+    def read_network(network: int) -> int:
+        if not network_ready(network):
+            raise SimulationError(f"network {network} is not fully driven")
+        # High-impedance bits read as zero, matching the runtime Wire value.
+        return network_values.get(network, 0) & network_driven_masks.get(network, 0)
 
     pending: set[int] = set()
     for component_index, component in enumerate(circuit.components):
@@ -225,13 +269,17 @@ def _simulate_compiled(
             raw_value = inputs[key]
             output_pins = [pin for pin in pins if pin.direction in {O, T}]
             if len(output_pins) == 1:
-                assign(component_index, output_pins[0].name, raw_value & _mask(output_pins[0].width))
+                resolve_driver(
+                    component_index,
+                    output_pins[0].name,
+                    raw_value & _mask(output_pins[0].width),
+                )
             else:
                 for bit, pin in enumerate(output_pins):
-                    assign(component_index, pin.name, (raw_value >> bit) & 1)
+                    resolve_driver(component_index, pin.name, (raw_value >> bit) & 1)
         elif component.kind in CONSTANT_KINDS:
             value = component.init_data if component.kind == 46 else int(component.kind == 2)
-            assign(component_index, "out", value & _mask(component.word_size))
+            resolve_driver(component_index, "out", value & _mask(component.word_size))
         elif component.kind not in SINK_KINDS:
             pending.add(component_index)
 
@@ -241,14 +289,25 @@ def _simulate_compiled(
             component = circuit.components[component_index]
             pins = positioned_pins(component, component_index)
             input_pins = [pin for pin in pins if pin.direction == I]
-            if not all(compiled.pin_networks[(component_index, pin.name)] in network_values for pin in input_pins):
+            if not all(
+                network_ready(compiled.pin_networks[(component_index, pin.name)])
+                for pin in input_pins
+            ):
                 continue
             values = {
-                pin.name: network_values[compiled.pin_networks[(component_index, pin.name)]]
+                pin.name: read_network(compiled.pin_networks[(component_index, pin.name)])
                 for pin in input_pins
             }
-            for name, value in _evaluate(component.kind, component.word_size, values).items():
-                assign(component_index, name, value)
+            if component.kind in {12, 25}:
+                resolve_driver(
+                    component_index,
+                    "out",
+                    values["in"],
+                    driven=values["enable"] == 1,
+                )
+            else:
+                for name, value in _evaluate(component.kind, component.word_size, values).items():
+                    resolve_driver(component_index, name, value)
             pending.remove(component_index)
             progressed = True
         if not progressed:
@@ -266,10 +325,13 @@ def _simulate_compiled(
             if pin.direction == I
         ]
         if len(pins) == 1:
-            outputs[key] = network_values[compiled.pin_networks[(component_index, pins[0].name)]]
+            outputs[key] = read_network(
+                compiled.pin_networks[(component_index, pins[0].name)]
+            )
         else:
             outputs[key] = sum(
-                (network_values[compiled.pin_networks[(component_index, pin.name)]] & 1) << bit
+                (read_network(compiled.pin_networks[(component_index, pin.name)]) & 1)
+                << bit
                 for bit, pin in enumerate(pins)
             )
     return outputs
@@ -323,24 +385,53 @@ def _simulate_clocked_tick(
     if memory is not None:
         current_memory.update(memory)
     network_values: dict[int, int] = {}
+    network_driven_masks: dict[int, int] = {}
+    resolved_drivers: dict[int, int] = defaultdict(int)
 
-    def assign(component_index: int, pin_name: str, value: int) -> None:
+    def resolve_driver(
+        component_index: int,
+        pin_name: str,
+        value: int = 0,
+        *,
+        driven: bool = True,
+    ) -> None:
         network = compiled.pin_networks.get((component_index, pin_name))
         if network is None:
             return
-        previous = network_values.get(network)
-        if previous is not None and previous != value:
+        width = _output_width(circuit, component_index, pin_name)
+        new_mask = _mask(width) if driven else 0
+        previous_mask = network_driven_masks.get(network, 0)
+        conflict_mask = previous_mask & new_mask
+        previous = network_values.get(network, 0)
+        if (previous ^ value) & conflict_mask:
             raise SimulationError(f"conflicting drivers on network {network}")
-        network_values[network] = value
+        network_values[network] = (previous & previous_mask) | (value & new_mask)
+        network_driven_masks[network] = previous_mask | new_mask
+        resolved_drivers[network] += 1
+        if resolved_drivers[network] > compiled.network_driver_counts[network]:
+            raise SimulationError(f"network {network} driver resolved more than once")
+
+    def network_ready(network: int) -> bool:
+        count = compiled.network_driver_counts.get(network, 0)
+        return count > 0 and resolved_drivers[network] == count
+
+    def read_network(network: int) -> int:
+        if not network_ready(network):
+            raise SimulationError(f"network {network} is not fully driven")
+        return network_values.get(network, 0) & network_driven_masks.get(network, 0)
 
     pending: set[int] = set()
     for component_index, component in enumerate(circuit.components):
         if component.kind in CLOCKED_MEMORY_KINDS:
             key = component.permanent_id or -(component_index + 1)
-            assign(component_index, "out", current_memory[key] & _mask(component.word_size))
+            resolve_driver(
+                component_index,
+                "out",
+                current_memory[key] & _mask(component.word_size),
+            )
         elif component.kind in CONSTANT_KINDS:
             value = component.init_data if component.kind == 46 else int(component.kind == 2)
-            assign(component_index, "out", value & _mask(component.word_size))
+            resolve_driver(component_index, "out", value & _mask(component.word_size))
         elif component.kind in SOURCE_KINDS:
             key = _component_key(component_index, component.permanent_id, component.user_label)
             try:
@@ -353,10 +444,14 @@ def _simulate_clocked_tick(
                 if pin.direction in {O, T}
             ]
             if len(output_pins) == 1:
-                assign(component_index, output_pins[0].name, raw_value & _mask(output_pins[0].width))
+                resolve_driver(
+                    component_index,
+                    output_pins[0].name,
+                    raw_value & _mask(output_pins[0].width),
+                )
             else:
                 for bit, pin in enumerate(output_pins):
-                    assign(component_index, pin.name, (raw_value >> bit) & 1)
+                    resolve_driver(component_index, pin.name, (raw_value >> bit) & 1)
         elif component.kind not in SINK_KINDS | {ARCHITECTURE_OUTPUT_KIND}:
             pending.add(component_index)
 
@@ -366,10 +461,13 @@ def _simulate_clocked_tick(
             component = circuit.components[component_index]
             pins = positioned_pins(component, component_index)
             input_pins = [pin for pin in pins if pin.direction == I]
-            if not all(compiled.pin_networks[(component_index, pin.name)] in network_values for pin in input_pins):
+            if not all(
+                network_ready(compiled.pin_networks[(component_index, pin.name)])
+                for pin in input_pins
+            ):
                 continue
             values = {
-                pin.name: network_values[compiled.pin_networks[(component_index, pin.name)]]
+                pin.name: read_network(compiled.pin_networks[(component_index, pin.name)])
                 for pin in input_pins
             }
             if component.kind == ARCHITECTURE_INPUT_KIND:
@@ -379,13 +477,27 @@ def _simulate_clocked_tick(
                         raw_value = inputs[key]
                     except KeyError as exc:
                         raise SimulationError(f"missing architecture input {key!r}") from exc
-                    assign(component_index, "value", raw_value & _mask(component.word_size))
-            elif component.kind == 25:
-                if values["enable"] == 1:
-                    assign(component_index, "out", values["in"] & _mask(component.word_size))
+                    resolve_driver(
+                        component_index,
+                        "value",
+                        raw_value & _mask(component.word_size),
+                    )
+                else:
+                    resolve_driver(component_index, "value", driven=False)
+            elif component.kind in {12, 25}:
+                resolve_driver(
+                    component_index,
+                    "out",
+                    values["in"] & _mask(component.word_size),
+                    driven=values["enable"] == 1,
+                )
             else:
                 for name, value in _evaluate(component.kind, component.word_size, values).items():
-                    assign(component_index, name, value & _mask(_output_width(circuit, component_index, name)))
+                    resolve_driver(
+                        component_index,
+                        name,
+                        value & _mask(_output_width(circuit, component_index, name)),
+                    )
             pending.remove(component_index)
             progressed = True
         if not progressed:
@@ -397,25 +509,25 @@ def _simulate_clocked_tick(
         if component.kind != ARCHITECTURE_OUTPUT_KIND:
             continue
         control_network = compiled.pin_networks[(component_index, "control")]
-        if control_network not in network_values:
+        if not network_ready(control_network):
             raise SimulationError(f"architecture output {component.permanent_id} control is undriven")
-        if network_values[control_network] != 1:
+        if read_network(control_network) != 1:
             continue
         value_network = compiled.pin_networks[(component_index, "value")]
-        if value_network not in network_values:
+        if not network_ready(value_network):
             raise SimulationError(f"architecture output {component.permanent_id} value is undriven")
         key = _component_key(component_index, component.permanent_id, component.user_label)
-        outputs[key] = network_values[value_network] & _mask(component.word_size)
+        outputs[key] = read_network(value_network) & _mask(component.word_size)
 
     next_memory: dict[int, int] = {}
     for component_index, component in enumerate(circuit.components):
         if component.kind not in CLOCKED_MEMORY_KINDS:
             continue
         input_network = compiled.pin_networks[(component_index, "in")]
-        if input_network not in network_values:
+        if not network_ready(input_network):
             raise SimulationError(f"delay input {component.permanent_id} is undriven")
         key = component.permanent_id or -(component_index + 1)
-        next_memory[key] = network_values[input_network] & _mask(component.word_size)
+        next_memory[key] = read_network(input_network) & _mask(component.word_size)
     return ClockedTickResult(outputs=outputs, memory=next_memory)
 
 

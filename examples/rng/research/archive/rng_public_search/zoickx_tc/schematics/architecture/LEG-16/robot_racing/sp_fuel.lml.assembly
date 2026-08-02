@@ -1,0 +1,42 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const _ 0
+const true 1
+const false 0
+#########################
+
+const right 0b00
+const down 0b01
+const left 0b10
+const up 0b11
+const M 4
+
+const heading a
+const direction b
+const size c
+const no_inner d
+const depth e
+
+sav _ 1 direction
+sav _ 4 depth
+
+label step
+	mov _ no_inner stack
+	sav _ false no_inner
+	neg _ direction direction
+	add heading direction heading
+	call|ult sp depth step
+	i2|mod heading M io
+	i1|j|eq true stack skip_inner
+		sav _ true no_inner
+		i2|add depth 1 depth
+		call|ult sp depth step
+		i2|sub depth 1 depth
+		i2|mod heading M io
+	label skip_inner
+	call|ult sp depth step
+	add heading direction heading
+	neg _ direction direction
+mov _ stack iar

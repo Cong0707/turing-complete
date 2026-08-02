@@ -1,0 +1,24 @@
+#include "leg.lml"
+const mov i1|add
+const uj i1|i2|j
+const _ 0
+#########################
+
+const rem a
+const rem_prev b
+const den c
+const quo d
+
+mov _ io rem_prev
+mov _ io den
+
+label loop
+	sub rem_prev den rem
+	j|uge rem rem_prev done
+	i1|add 1 quo quo
+	mov _ rem rem_prev
+uj _ _ loop
+
+label done
+mov _ quo io
+mov _ rem_prev io

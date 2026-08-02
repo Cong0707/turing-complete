@@ -1,0 +1,531 @@
+{
+  "schema": 1,
+  "scope": "fixed current 61-XOR B/C DAG; init0; one output; 65 cycles",
+  "network_fingerprint_sha256": "e2d6c9cf4db9837bfabe70c59307ee559e948ff819973af9c859f57f015c594b",
+  "matrix_identities": {
+    "C*T=A": true,
+    "T*C=B": true,
+    "tick0_feedback=T*A": true
+  },
+  "cycle_protocol": {
+    "seed_count": 69,
+    "outputs_per_seed": 65,
+    "tick0_output": "A*seed",
+    "tick0_feedback": "T*A*seed",
+    "steady_output": "C*q",
+    "steady_feedback": "B*q"
+  },
+  "timing": {
+    "early_seed": "phase Delay 4 + NOT 1 + XOR 2 + XOR 2 = 9",
+    "early_state": "state Delay 4 + Bit Switch 1 + XOR 2 + XOR 2 = 9",
+    "late_seed": "phase Delay 4 + NOT 1 + OR 1 + at most one XOR 2 <= 8",
+    "late_state": "state Delay 4 + XOR 2 + OR 1 + XOR 2 <= 9",
+    "standard_seed": "phase Delay 4 + NOT 1 + OR 1 + XOR 2 + XOR 2 = 10"
+  },
+  "accounting": {
+    "fixed_base_gate": 349,
+    "fixed_base_breakdown": "32 Delay Bit=160, phase Delay+NOT=6, 61 XOR=183",
+    "early_delay9_phase_budget_for_gate437": 88,
+    "standard_delay10_phase_budget_for_gate393": 44
+  },
+  "static_bound": {
+    "direct_target_max_load_weight": 1,
+    "first_layer_target_max_load_weight": 2,
+    "second_layer_target_max_load_weight": 4,
+    "late_or_rule": "other tick-zero label must be identically zero",
+    "conclusion": "a required row above its target bound makes the model infeasible at every phase budget",
+    "minimum_phase_cost": "infinite (no feasible labeling in either modeled routing family)"
+  },
+  "static_obstructions": [
+    {
+      "branch": "B_feedback",
+      "index": 0,
+      "steady_node": "40420002",
+      "node_class": "second",
+      "required_label": "80464002",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 1,
+      "steady_node": "80840004",
+      "node_class": "second",
+      "required_label": "008c8004",
+      "required_weight": 5,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 2,
+      "steady_node": "01088008",
+      "node_class": "second",
+      "required_label": "11198008",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 3,
+      "steady_node": "02110010",
+      "node_class": "second",
+      "required_label": "22330010",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 4,
+      "steady_node": "04200021",
+      "node_class": "second",
+      "required_label": "44662021",
+      "required_weight": 9,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 5,
+      "steady_node": "08400042",
+      "node_class": "second",
+      "required_label": "88cc4042",
+      "required_weight": 9,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 6,
+      "steady_node": "10800084",
+      "node_class": "second",
+      "required_label": "11988084",
+      "required_weight": 8,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 7,
+      "steady_node": "21000108",
+      "node_class": "second",
+      "required_label": "23310108",
+      "required_weight": 8,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 8,
+      "steady_node": "42000210",
+      "node_class": "second",
+      "required_label": "46620210",
+      "required_weight": 8,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 9,
+      "steady_node": "84000420",
+      "node_class": "second",
+      "required_label": "8cc40420",
+      "required_weight": 8,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 10,
+      "steady_node": "08008840",
+      "node_class": "second",
+      "required_label": "09888840",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 11,
+      "steady_node": "10011080",
+      "node_class": "second",
+      "required_label": "13111080",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 12,
+      "steady_node": "20002101",
+      "node_class": "second",
+      "required_label": "26220101",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 13,
+      "steady_node": "40004202",
+      "node_class": "second",
+      "required_label": "4c440202",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 14,
+      "steady_node": "80000404",
+      "node_class": "second",
+      "required_label": "88888404",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 15,
+      "steady_node": "00008808",
+      "node_class": "second",
+      "required_label": "01118808",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 16,
+      "steady_node": "00011010",
+      "node_class": "second",
+      "required_label": "02231010",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 17,
+      "steady_node": "00002021",
+      "node_class": "second",
+      "required_label": "04460021",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 18,
+      "steady_node": "00004042",
+      "node_class": "second",
+      "required_label": "088c0042",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "B_feedback",
+      "index": 19,
+      "steady_node": "00000084",
+      "node_class": "first",
+      "required_label": "01188084",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 20,
+      "steady_node": "00000108",
+      "node_class": "first",
+      "required_label": "02310108",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 21,
+      "steady_node": "00000210",
+      "node_class": "first",
+      "required_label": "04620210",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 22,
+      "steady_node": "00000420",
+      "node_class": "first",
+      "required_label": "08c40420",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 23,
+      "steady_node": "00000840",
+      "node_class": "first",
+      "required_label": "11880840",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 24,
+      "steady_node": "00001080",
+      "node_class": "first",
+      "required_label": "23101080",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 25,
+      "steady_node": "00002100",
+      "node_class": "first",
+      "required_label": "46202100",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 26,
+      "steady_node": "00004200",
+      "node_class": "first",
+      "required_label": "8c404200",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "B_feedback",
+      "index": 27,
+      "steady_node": "00000400",
+      "node_class": "direct",
+      "required_label": "08800400",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "B_feedback",
+      "index": 28,
+      "steady_node": "00000800",
+      "node_class": "direct",
+      "required_label": "11000800",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "B_feedback",
+      "index": 29,
+      "steady_node": "00001000",
+      "node_class": "direct",
+      "required_label": "22001000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "B_feedback",
+      "index": 30,
+      "steady_node": "00002000",
+      "node_class": "direct",
+      "required_label": "44002000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "B_feedback",
+      "index": 31,
+      "steady_node": "00004000",
+      "node_class": "direct",
+      "required_label": "88004000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "C_output",
+      "index": 12,
+      "steady_node": "20001001",
+      "node_class": "second",
+      "required_label": "42023001",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "C_output",
+      "index": 13,
+      "steady_node": "40002002",
+      "node_class": "second",
+      "required_label": "84046002",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "C_output",
+      "index": 14,
+      "steady_node": "80004004",
+      "node_class": "second",
+      "required_label": "0808c004",
+      "required_weight": 5,
+      "topology_weight_upper_bound": 4
+    },
+    {
+      "branch": "C_output",
+      "index": 15,
+      "steady_node": "00008008",
+      "node_class": "first",
+      "required_label": "10118008",
+      "required_weight": 5,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 16,
+      "steady_node": "00010010",
+      "node_class": "first",
+      "required_label": "20230010",
+      "required_weight": 5,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 17,
+      "steady_node": "00000021",
+      "node_class": "first",
+      "required_label": "40462021",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 18,
+      "steady_node": "00000042",
+      "node_class": "first",
+      "required_label": "808c4042",
+      "required_weight": 7,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 19,
+      "steady_node": "00000084",
+      "node_class": "first",
+      "required_label": "01188084",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 20,
+      "steady_node": "00000108",
+      "node_class": "first",
+      "required_label": "02310108",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 21,
+      "steady_node": "00000210",
+      "node_class": "first",
+      "required_label": "04620210",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 22,
+      "steady_node": "00000420",
+      "node_class": "first",
+      "required_label": "08c40420",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 23,
+      "steady_node": "00000840",
+      "node_class": "first",
+      "required_label": "11880840",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 24,
+      "steady_node": "00001080",
+      "node_class": "first",
+      "required_label": "23101080",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 25,
+      "steady_node": "00002100",
+      "node_class": "first",
+      "required_label": "46202100",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 26,
+      "steady_node": "00004200",
+      "node_class": "first",
+      "required_label": "8c404200",
+      "required_weight": 6,
+      "topology_weight_upper_bound": 2
+    },
+    {
+      "branch": "C_output",
+      "index": 27,
+      "steady_node": "00000400",
+      "node_class": "direct",
+      "required_label": "08800400",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "C_output",
+      "index": 28,
+      "steady_node": "00000800",
+      "node_class": "direct",
+      "required_label": "11000800",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "C_output",
+      "index": 29,
+      "steady_node": "00001000",
+      "node_class": "direct",
+      "required_label": "22001000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "C_output",
+      "index": 30,
+      "steady_node": "00002000",
+      "node_class": "direct",
+      "required_label": "44002000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    },
+    {
+      "branch": "C_output",
+      "index": 31,
+      "steady_node": "00004000",
+      "node_class": "direct",
+      "required_label": "88004000",
+      "required_weight": 3,
+      "topology_weight_upper_bound": 1
+    }
+  ],
+  "results": {
+    "early_budget_88": {
+      "status": "unsat",
+      "budget": 88,
+      "reason": ""
+    },
+    "early_unbounded": {
+      "status": "unsat",
+      "budget": null,
+      "reason": ""
+    },
+    "standard_budget_44": {
+      "status": "unsat",
+      "budget": 44,
+      "reason": ""
+    },
+    "standard_unbounded": {
+      "status": "unsat",
+      "budget": null,
+      "reason": ""
+    }
+  }
+}

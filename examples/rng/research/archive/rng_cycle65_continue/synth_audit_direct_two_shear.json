@@ -1,0 +1,372 @@
+{
+  "schema": 1,
+  "scope": "research-only fixed two-shear direct 64-target XOR2 timing audit",
+  "model": {
+    "targets": [
+      "B*q xor D*seed",
+      "C*q xor A*seed"
+    ],
+    "T": "R17*R13",
+    "q_arrival": 4,
+    "seed_arrival": 0,
+    "xor2_delay": 2,
+    "deadline": 9,
+    "xor_budget": 92
+  },
+  "matrix_checks": {
+    "T*T_inverse=I": true,
+    "C*T=A": true,
+    "T*C=B": true,
+    "D=T*(A+I)": true,
+    "protocol_seeds": 256,
+    "outputs_per_seed": 65
+  },
+  "row_weight_histograms": {
+    "B": {
+      "1": 5,
+      "2": 8,
+      "3": 5,
+      "4": 14
+    },
+    "D": {
+      "2": 5,
+      "5": 8,
+      "6": 11,
+      "7": 5,
+      "8": 3
+    },
+    "C": {
+      "1": 5,
+      "2": 12,
+      "3": 5,
+      "4": 10
+    },
+    "A": {
+      "3": 5,
+      "4": 12,
+      "5": 3,
+      "6": 10,
+      "7": 2
+    }
+  },
+  "existing_artifacts": [
+    {
+      "path": ".research/rng_joint_sat/agent_joint/fixed-two-shear.json",
+      "bytes": 1682,
+      "sha256": "0580d6453006254760a6e295deca3e0f9692ede63e90746cf094800d3f244af3"
+    },
+    {
+      "path": ".research/rng_constant_seed_math/two_shear_direct.v",
+      "bytes": 5063,
+      "sha256": "e18463df06662bc768829fd7b9e0256d1d380de6752556e6b7aa6418f93c849c"
+    },
+    {
+      "path": ".research/rng_constant_seed_math/two_shear_direct_mapped.v",
+      "bytes": 23800,
+      "sha256": "7e6f7f29c82253a8418e90b6ef02bf67329be90b0fcafc216ea7e416ff90cdca"
+    },
+    {
+      "path": ".research/rng_constant_seed_math/two_shear_direct_yosys.log",
+      "bytes": 11425,
+      "sha256": "6b7205a92b2e169d1ca0a1ceeea3abf7d2e6b28f8fff963c220a5e8957c22a9c"
+    },
+    {
+      "path": ".research/rng_cycle65_fixed/cycle65_fixed_certificate.json",
+      "bytes": 14270,
+      "sha256": "36b807e6b6a177bacbd0e00cf4adccdfe0904caaa04cde7572a68abd9ad0097f"
+    }
+  ],
+  "existing_model_findings": [
+    "fixed-two-shear.json contains only 32-bit T/B/C depth-two synthesis, not D/A or the direct 64-bit targets",
+    "two_shear_direct_mapped.v is an unconstrained Yosys/ABC area mapping (83 XOR, 207 XNOR, 3 NOT), not an arrival-constrained <=92-XOR witness",
+    "cycle65_fixed_certificate.json proves only phase-labeling failure on the fixed 61-XOR B/C DAG, whereas this certificate covers every XOR2 DAG for the direct targets"
+  ],
+  "timing_lemma": {
+    "fanin_arrival_limit": 7,
+    "earliest_derived_q_arrival": 6,
+    "statement": "A deadline-9 target with q support weight 4 must have zero seed support in every fan-in-two XOR DAG.",
+    "proof": [
+      "The final XOR fanins must arrive by 7.",
+      "A signal arriving by 7 contains at most two q leaves.",
+      "A by-7 signal containing two q leaves must XOR two raw q leaves and therefore has zero seed support.",
+      "Four q leaves require two such q-pair fanins, so the final target has zero seed support."
+    ]
+  },
+  "obstruction_count": 24,
+  "obstruction_count_by_branch": {
+    "feedback": 14,
+    "output": 10
+  },
+  "obstructions": [
+    {
+      "branch": "feedback",
+      "index": 0,
+      "q_mask": "40420002",
+      "q_weight": 4,
+      "seed_mask": "c0446003",
+      "seed_weight": 8,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 1,
+      "q_mask": "80840004",
+      "q_weight": 4,
+      "seed_mask": "8088c006",
+      "seed_weight": 7,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 2,
+      "q_mask": "01088008",
+      "q_weight": 4,
+      "seed_mask": "1111000c",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 3,
+      "q_mask": "02110010",
+      "q_weight": 4,
+      "seed_mask": "22220018",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 4,
+      "q_mask": "04200021",
+      "q_weight": 4,
+      "seed_mask": "44442031",
+      "seed_weight": 8,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 5,
+      "q_mask": "08400042",
+      "q_weight": 4,
+      "seed_mask": "88884062",
+      "seed_weight": 8,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 6,
+      "q_mask": "10800084",
+      "q_weight": 4,
+      "seed_mask": "111080c4",
+      "seed_weight": 7,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 7,
+      "q_mask": "21000108",
+      "q_weight": 4,
+      "seed_mask": "22210188",
+      "seed_weight": 7,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 8,
+      "q_mask": "42000210",
+      "q_weight": 4,
+      "seed_mask": "44420310",
+      "seed_weight": 7,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 9,
+      "q_mask": "84000420",
+      "q_weight": 4,
+      "seed_mask": "88840620",
+      "seed_weight": 7,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 10,
+      "q_mask": "08008840",
+      "q_weight": 4,
+      "seed_mask": "01088c40",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 11,
+      "q_mask": "10011080",
+      "q_weight": 4,
+      "seed_mask": "02111880",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 12,
+      "q_mask": "20002101",
+      "q_weight": 4,
+      "seed_mask": "04221101",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "feedback",
+      "index": 13,
+      "q_mask": "40004202",
+      "q_weight": 4,
+      "seed_mask": "08442202",
+      "seed_weight": 6,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 0,
+      "q_mask": "00420021",
+      "q_weight": 4,
+      "seed_mask": "00042021",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 1,
+      "q_mask": "00840042",
+      "q_weight": 4,
+      "seed_mask": "00084042",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 2,
+      "q_mask": "01080084",
+      "q_weight": 4,
+      "seed_mask": "00108084",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 3,
+      "q_mask": "02100108",
+      "q_weight": 4,
+      "seed_mask": "00210108",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 4,
+      "q_mask": "04200210",
+      "q_weight": 4,
+      "seed_mask": "00420210",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 5,
+      "q_mask": "08400420",
+      "q_weight": 4,
+      "seed_mask": "00840420",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 6,
+      "q_mask": "10800840",
+      "q_weight": 4,
+      "seed_mask": "01080840",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 7,
+      "q_mask": "21001080",
+      "q_weight": 4,
+      "seed_mask": "02101080",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 8,
+      "q_mask": "42002100",
+      "q_weight": 4,
+      "seed_mask": "04202100",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    },
+    {
+      "branch": "output",
+      "index": 9,
+      "q_mask": "84004200",
+      "q_weight": 4,
+      "seed_mask": "08404200",
+      "seed_weight": 4,
+      "deadline": 9,
+      "minimum_arrival": 10,
+      "reason": "q_weight_4_exhausts_both_depth_2_XOR_fanins_so_seed_support_must_be_zero"
+    }
+  ],
+  "result": {
+    "status": "unsat",
+    "budget_dependency": "none",
+    "best_xor_count": null,
+    "verdict": "No direct fixed-two-shear XOR2 DAG meets delay <= 9, even with unlimited XOR gates; therefore none meets XOR <= 92."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-08-02T04:10:48.6120754+08:00",
+  "threshold_proxy_exclusive": 549,
+  "source": {
+    "path": ".research/rng_switch42_synthesis/search_active_state_tradeoff.cpp",
+    "sha256": "90101a39e7ad5d0f8c29e5430718054d64070687faa1548a9530238db133e7f2"
+  },
+  "executable": {
+    "path": ".research/rng_switch42_synthesis/search_active_state_tradeoff.exe",
+    "sha256": "e41a7d594c6ddc0fe25d3515b8dff5b8f6a451e01b080b2ca5698e2b560a534d",
+    "compile_command": "g++ -std=c++20 -O3 -DNDEBUG -o .research\\rng_switch42_synthesis\\search_active_state_tradeoff.exe .research\\rng_switch42_synthesis\\search_active_state_tradeoff.cpp"
+  },
+  "runs": [
+    {
+      "log": "active_tradeoff_smoke_seed20260802021.log",
+      "iterations_per_restart": 100000,
+      "restarts": 2,
+      "seed": 20260802021,
+      "exit_code": 2,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_smoke_seed20260802022.log",
+      "iterations_per_restart": 100000,
+      "restarts": 2,
+      "seed": 20260802022,
+      "exit_code": 2,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_2m_seed20260802031.log",
+      "iterations_per_restart": 2000000,
+      "restarts": 2,
+      "seed": 20260802031,
+      "exit_code": 2,
+      "elapsed_seconds": 8.932,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_2m_seed20260802032.log",
+      "iterations_per_restart": 2000000,
+      "restarts": 2,
+      "seed": 20260802032,
+      "exit_code": 2,
+      "elapsed_seconds": 13.108,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_2m_r4_seed20260802041.log",
+      "iterations_per_restart": 2000000,
+      "restarts": 4,
+      "seed": 20260802041,
+      "exit_code": 2,
+      "elapsed_seconds": 23.615,
+      "peak_working_set_mib": 4.461,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_2m_r4_seed20260802042.log",
+      "iterations_per_restart": 2000000,
+      "restarts": 4,
+      "seed": 20260802042,
+      "exit_code": 2,
+      "elapsed_seconds": 23.799,
+      "peak_working_set_mib": 4.465,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_1m_r8_seed20260802051.log",
+      "iterations_per_restart": 1000000,
+      "restarts": 8,
+      "seed": 20260802051,
+      "exit_code": 2,
+      "elapsed_seconds": 24.325,
+      "peak_working_set_mib": 4.473,
+      "best_switch_proxy_total": 506
+    },
+    {
+      "log": "active_tradeoff_1m_r8_seed20260802052.log",
+      "iterations_per_restart": 1000000,
+      "restarts": 8,
+      "seed": 20260802052,
+      "exit_code": 2,
+      "elapsed_seconds": 24.140,
+      "peak_working_set_mib": 4.465,
+      "best_switch_proxy_total": 506
+    }
+  ],
+  "best": {
+    "unsupported": 0,
+    "excess4": 6,
+    "maximum_weight": 6,
+    "distinct_nontrivial_targets": 66,
+    "active_hidden": 10,
+    "optimistic_total_gate": 446,
+    "switch_proxy_total": 506,
+    "budget_defect": 16,
+    "total_weight": 235,
+    "X": [
+      "010", "022", "040", "004", "008", "090", "0e0", "040",
+      "100", "200", "080", "044", "101", "100", "200", "004",
+      "008", "011", "022", "040", "004", "108", "210", "020",
+      "040", "100", "300", "280", "000", "000", "100", "000"
+    ],
+    "D": [
+      "20040020001", "20000044002", "00000110008", "00100220010",
+      "02200040020", "08000880040", "00401100080", "02000800400",
+      "20084002000", "08008404000"
+    ]
+  },
+  "validation": {
+    "method": "Independent GF(2) simulation over all 32 input basis vectors",
+    "ticks": "0..65",
+    "result": "PASS",
+    "coverage": "By linearity, all 2^32 seeds"
+  },
+  "conclusion": "One unique candidate beat proxy 549. No run improved below proxy 506."
+}

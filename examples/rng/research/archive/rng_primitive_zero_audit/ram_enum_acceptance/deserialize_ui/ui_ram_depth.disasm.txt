@@ -1,0 +1,174 @@
+range	0x14076c360-0x14076c730
+000000014076c360  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c363  0f b6 c0                          movzx   eax, al
+000000014076c366  85 c0                             test    eax, eax
+000000014076c368  0f 85 85 04 00 00                 jnz     loc_14076C7F3
+000000014076c36e  eb 01                             jmp     short loc_14076C371
+000000014076c370  90                                nop
+000000014076c371  48 c7 85 e0 32 00 00 a2 03 00 00  mov     [rbp+4760h+var_1480], 3A2h
+000000014076c37c  48 c7 85 a0 44 00 00 00 00 00 00  mov     [rbp+4760h+var_2C0], 0
+000000014076c387  48 8d 85 00 39 00 00              lea     rax, [rbp+4760h+var_E60]
+000000014076c38e  48 89 c2                          mov     rdx, rax
+000000014076c391  b9 00 00 00 00                    mov     ecx, 0
+000000014076c396  e8 da f9 e6 ff                    call    get_setting__presenterZutilitiesZhelper95functions_u2758
+000000014076c39b  48 89 85 a0 44 00 00              mov     [rbp+4760h+var_2C0], rax
+000000014076c3a2  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014076c3a9  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c3ac  0f b6 c0                          movzx   eax, al
+000000014076c3af  85 c0                             test    eax, eax
+000000014076c3b1  0f 85 3f 04 00 00                 jnz     loc_14076C7F6
+000000014076c3b7  48 83 bd a0 44 00 00 01           cmp     [rbp+4760h+var_2C0], 1
+000000014076c3bf  0f 94 c0                          setz    al
+000000014076c3c2  88 85 9f 44 00 00                 mov     [rbp+4760h+var_2C1], al
+000000014076c3c8  48 c7 85 e0 32 00 00 a3 03 00 00  mov     [rbp+4760h+var_1480], 3A3h
+000000014076c3d3  0f b6 85 9f 44 00 00              movzx   eax, [rbp+4760h+var_2C1]
+000000014076c3da  83 f0 01                          xor     eax, 1
+000000014076c3dd  84 c0                             test    al, al
+000000014076c3df  0f 85 d3 03 00 00                 jnz     loc_14076C7B8
+000000014076c3e5  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014076c3ec  ba 00 02 00 00                    mov     edx, 200h
+000000014076c3f1  48 89 c1                          mov     rcx, rax
+000000014076c3f4  e8 d7 2c fe ff                    call    nimZeroMem_161
+000000014076c3f9  48 c7 85 b0 1e 00 00 00 00 00 00  mov     [rbp+4760h+var_28B0], 0
+000000014076c404  48 c7 85 b8 1e 00 00 00 00 00 00  mov     [rbp+4760h+var_28A8], 0
+000000014076c40f  48 c7 85 e0 32 00 00 a4 03 00 00  mov     [rbp+4760h+var_1480], 3A4h
+000000014076c41a  48 8d 85 20 02 00 00              lea     rax, [rbp+4760h+var_4540]
+000000014076c421  41 b8 00 02 00 00                 mov     r8d, 200h
+000000014076c427  48 8d 15 52 67 44 00              lea     rdx, TM__k3RXUR56r9bIQKD2e3VIalQ_133
+000000014076c42e  48 89 c1                          mov     rcx, rax
+000000014076c431  e8 de 2e fe ff                    call    nimCopyMem_101
+000000014076c436  48 c7 85 e0 32 00 00 a9 03 00 00  mov     [rbp+4760h+var_1480], 3A9h
+000000014076c441  f2 0f 10 8d 98 47 00 00           movsd   xmm1, [rbp+4760h+arg_28]
+000000014076c449  f2 0f 10 05 0f 75 44 00           movsd   xmm0, cs:qword_140BB3960
+000000014076c451  f2 0f 59 c1                       mulsd   xmm0, xmm1
+000000014076c455  66 0f ef e4                       pxor    xmm4, xmm4
+000000014076c459  f2 0f 5a e0                       cvtsd2ss xmm4, xmm0
+000000014076c45d  66 0f 7e e0                       movd    eax, xmm4
+000000014076c461  66 0f 6e c0                       movd    xmm0, eax
+000000014076c465  e8 b6 85 1f 00                    call    igSetCursorPosY
+000000014076c46a  48 c7 85 e0 32 00 00 aa 03 00 00  mov     [rbp+4760h+var_1480], 3AAh
+000000014076c475  48 c7 85 e0 32 00 00 af 03 00 00  mov     [rbp+4760h+var_1480], 3AFh
+000000014076c480  48 c7 85 90 44 00 00 00 00 00 00  mov     [rbp+4760h+var_2D0], 0
+000000014076c48b  48 8d 85 00 39 00 00              lea     rax, [rbp+4760h+var_E60]
+000000014076c492  48 89 c2                          mov     rdx, rax
+000000014076c495  b9 01 00 00 00                    mov     ecx, 1
+000000014076c49a  e8 d6 f8 e6 ff                    call    get_setting__presenterZutilitiesZhelper95functions_u2758
+000000014076c49f  48 89 85 90 44 00 00              mov     [rbp+4760h+var_2D0], rax
+000000014076c4a6  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014076c4ad  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c4b0  0f b6 c0                          movzx   eax, al
+000000014076c4b3  85 c0                             test    eax, eax
+000000014076c4b5  0f 85 8a 02 00 00                 jnz     loc_14076C745
+000000014076c4bb  48 8b 85 90 44 00 00              mov     rax, [rbp+4760h+var_2D0]
+000000014076c4c2  48 89 85 88 44 00 00              mov     [rbp+4760h+var_2D8], rax
+000000014076c4c9  48 c7 85 e0 32 00 00 aa 03 00 00  mov     [rbp+4760h+var_1480], 3AAh
+000000014076c4d4  48 c7 85 e0 32 00 00 b0 03 00 00  mov     [rbp+4760h+var_1480], 3B0h
+000000014076c4df  48 8d 8d b0 1e 00 00              lea     rcx, [rbp+4760h+var_28B0]
+000000014076c4e6  48 8b 05 43 50 44 00              mov     rax, cs:TM__k3RXUR56r9bIQKD2e3VIalQ_166
+000000014076c4ed  48 8b 15 44 50 44 00              mov     rdx, cs:off_140BB1538
+000000014076c4f4  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014076c4f8  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014076c4fc  48 8d 95 90 01 00 00              lea     rdx, [rbp+4760h+var_45D0]
+000000014076c503  48 8d 45 50                       lea     rax, [rbp+4760h+var_4710]
+000000014076c507  48 c7 44 24 20 00 00 00 00        mov     [rsp+47E0h+var_47C0], 0
+000000014076c510  49 89 d1                          mov     r9, rdx
+000000014076c513  49 89 c0                          mov     r8, rax
+000000014076c516  48 b8 c0 de 73 90 06 68 7d 2b     mov     rax, 2B7D68069073DEC0h
+000000014076c520  48 89 c2                          mov     rdx, rax
+000000014076c523  e8 bf 6a 9f ff                    call    translate__modelZisa95specZtranslations_u47
+000000014076c528  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014076c52f  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c532  0f b6 c0                          movzx   eax, al
+000000014076c535  85 c0                             test    eax, eax
+000000014076c537  0f 85 0b 02 00 00                 jnz     loc_14076C748
+000000014076c53d  48 c7 85 e0 32 00 00 76 00 00 00  mov     [rbp+4760h+var_1480], 76h ; 'v'
+000000014076c548  66 0f ef c0                       pxor    xmm0, xmm0
+000000014076c54c  f2 0f 11 85 80 44 00 00           movsd   [rbp+4760h+var_2E0], xmm0
+000000014076c554  e8 7c a1 8f ff                    call    high__pureZrandom_u148
+000000014076c559  66 48 0f 7e c0                    movq    rax, xmm0
+000000014076c55e  48 89 85 80 44 00 00              mov     [rbp+4760h+var_2E0], rax
+000000014076c565  48 c7 85 e0 32 00 00 77 00 00 00  mov     [rbp+4760h+var_1480], 77h ; 'w'
+000000014076c570  48 83 bd 88 44 00 00 1e           cmp     [rbp+4760h+var_2D8], 1Eh
+000000014076c578  7f 32                             jg      short loc_14076C5AC
+000000014076c57a  48 8b 85 88 44 00 00              mov     rax, [rbp+4760h+var_2D8]
+000000014076c581  48 83 f8 1f                       cmp     rax, 1Fh
+000000014076c585  76 25                             jbe     short loc_14076C5AC
+000000014076c587  48 8b 85 88 44 00 00              mov     rax, [rbp+4760h+var_2D8]
+000000014076c58e  ba 1f 00 00 00                    mov     edx, 1Fh
+000000014076c593  48 39 d0                          cmp     rax, rdx
+000000014076c596  48 0f 4f c2                       cmovg   rax, rdx
+000000014076c59a  ba 1f 00 00 00                    mov     edx, 1Fh
+000000014076c59f  48 89 c1                          mov     rcx, rax
+000000014076c5a2  e8 38 8d 8b ff                    call    raiseIndexError2
+000000014076c5a7  e9 a6 01 00 00                    jmp     loc_14076C752
+000000014076c5ac  48 c7 85 e0 32 00 00 aa 03 00 00  mov     [rbp+4760h+var_1480], 3AAh
+000000014076c5b7  48 8b 85 88 44 00 00              mov     rax, [rbp+4760h+var_2D8]
+000000014076c5be  ba 1f 00 00 00                    mov     edx, 1Fh
+000000014076c5c3  48 39 d0                          cmp     rax, rdx
+000000014076c5c6  48 89 d1                          mov     rcx, rdx
+000000014076c5c9  48 0f 4e c8                       cmovle  rcx, rax
+000000014076c5cd  48 8b 85 b0 1e 00 00              mov     rax, [rbp+4760h+var_28B0]
+000000014076c5d4  48 8b 95 b8 1e 00 00              mov     rdx, [rbp+4760h+var_28A8]
+000000014076c5db  48 89 45 50                       mov     [rbp+4760h+var_4710], rax
+000000014076c5df  48 89 55 58                       mov     [rbp+4760h+var_4708], rdx
+000000014076c5e3  48 89 c8                          mov     rax, rcx
+000000014076c5e6  48 c1 e0 04                       shl     rax, 4
+000000014076c5ea  48 8d 80 50 47 00 00              lea     rax, [rax+4750h]
+000000014076c5f1  48 01 e8                          add     rax, rbp
+000000014076c5f4  48 2d 30 45 00 00                 sub     rax, 4530h
+000000014076c5fa  48 8b 50 08                       mov     rdx, [rax+8]
+000000014076c5fe  48 8b 00                          mov     rax, [rax]
+000000014076c601  48 89 45 f0                       mov     [rbp+4760h+var_4770], rax
+000000014076c605  48 89 55 f8                       mov     [rbp+4760h+var_4768], rdx
+000000014076c609  f2 0f 10 8d a8 47 00 00           movsd   xmm1, [rbp+4760h+arg_38]
+000000014076c611  48 8b 8d c8 45 00 00              mov     rcx, [rbp+4760h+var_198]
+000000014076c618  48 8b 85 78 47 00 00              mov     rax, [rbp+4760h+arg_8]
+000000014076c61f  48 c7 44 24 60 00 00 00 00        mov     [rsp+47E0h+var_4780], 0
+000000014076c628  48 8d 95 af 1e 00 00              lea     rdx, [rbp+4760h+var_28B1]
+000000014076c62f  48 89 54 24 58                    mov     [rsp+47E0h+var_4788], rdx
+000000014076c634  48 8d 55 f0                       lea     rdx, [rbp+4760h+var_4770]
+000000014076c638  48 89 54 24 50                    mov     [rsp+47E0h+var_4790], rdx
+000000014076c63d  f2 0f 10 85 80 44 00 00           movsd   xmm0, [rbp+4760h+var_2E0]
+000000014076c645  f2 0f 11 44 24 48                 movsd   [rsp+47E0h+var_4798], xmm0
+000000014076c64b  f2 0f 10 85 b8 45 00 00           movsd   xmm0, [rbp+4760h+var_1A8]
+000000014076c653  f2 0f 11 44 24 40                 movsd   [rsp+47E0h+var_47A0], xmm0
+000000014076c659  48 c7 44 24 38 20 00 00 00        mov     [rsp+47E0h+var_47A8], 20h ; ' '
+000000014076c662  48 8d 95 20 02 00 00              lea     rdx, [rbp+4760h+var_4540]
+000000014076c669  48 89 54 24 30                    mov     [rsp+47E0h+var_47B0], rdx
+000000014076c66e  48 8d 55 50                       lea     rdx, [rbp+4760h+var_4710]
+000000014076c672  48 89 54 24 28                    mov     [rsp+47E0h+var_47B8], rdx
+000000014076c677  48 8b 95 88 44 00 00              mov     rdx, [rbp+4760h+var_2D8]
+000000014076c67e  48 89 54 24 20                    mov     [rsp+47E0h+var_47C0], rdx
+000000014076c683  66 0f 28 d9                       movapd  xmm3, xmm1
+000000014076c687  49 89 c8                          mov     r8, rcx
+000000014076c68a  48 89 c2                          mov     rdx, rax
+000000014076c68d  48 8b 8d 70 47 00 00              mov     rcx, [rbp+4760h+arg_0]
+000000014076c694  e8 b9 33 fe ff                    call    config_listbox__presenterZboard95uiZbottom95panelZcomponent95description_u4470
+000000014076c699  48 89 85 78 44 00 00              mov     [rbp+4760h+var_2E8], rax
+000000014076c6a0  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014076c6a7  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c6aa  0f b6 c0                          movzx   eax, al
+000000014076c6ad  85 c0                             test    eax, eax
+000000014076c6af  0f 85 96 00 00 00                 jnz     loc_14076C74B
+000000014076c6b5  48 c7 85 e0 32 00 00 b4 03 00 00  mov     [rbp+4760h+var_1480], 3B4h
+000000014076c6c0  48 83 bd 78 44 00 00 00           cmp     [rbp+4760h+var_2E8], 0
+000000014076c6c8  0f 88 80 00 00 00                 js      loc_14076C74E
+000000014076c6ce  48 c7 85 e0 32 00 00 b5 03 00 00  mov     [rbp+4760h+var_1480], 3B5h
+000000014076c6d9  48 8b 95 78 44 00 00              mov     rdx, [rbp+4760h+var_2E8]
+000000014076c6e0  48 8b 85 c8 45 00 00              mov     rax, [rbp+4760h+var_198]
+000000014076c6e7  49 89 d1                          mov     r9, rdx
+000000014076c6ea  49 89 c0                          mov     r8, rax
+000000014076c6ed  ba 01 00 00 00                    mov     edx, 1
+000000014076c6f2  48 8b 8d 70 47 00 00              mov     rcx, [rbp+4760h+arg_0]
+000000014076c6f9  e8 e1 ec e6 ff                    call    set_setting__presenterZutilitiesZhelper95functions_u2766
+000000014076c6fe  48 8b 85 d0 45 00 00              mov     rax, [rbp+4760h+var_190]
+000000014076c705  0f b6 00                          movzx   eax, byte ptr [rax]
+000000014076c708  0f b6 c0                          movzx   eax, al
+000000014076c70b  85 c0                             test    eax, eax
+000000014076c70d  75 42                             jnz     short loc_14076C751
+000000014076c70f  48 c7 85 e0 32 00 00 b8 03 00 00  mov     [rbp+4760h+var_1480], 3B8h
+000000014076c71a  48 8b 85 78 47 00 00              mov     rax, [rbp+4760h+arg_8]
+000000014076c721  48 05 50 12 00 00                 add     rax, 1250h
+000000014076c727  ba 30 00 00 00                    mov     edx, 30h ; '0'
+000000014076c72c  48 89 c1                          mov     rcx, rax
+000000014076c72f  e8 b9 a8 e4 ff                    call    upgrade__presenterZcontext_u2701

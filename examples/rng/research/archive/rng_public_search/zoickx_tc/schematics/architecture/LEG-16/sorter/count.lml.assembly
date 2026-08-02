@@ -1,0 +1,34 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+
+label count
+
+	i1|add 1 c c
+	mov _ io ptr
+	i1|add 1 ram ram
+
+i2|j|ule c 14 count
+
+sav _ 0 ptr
+
+label output
+
+	label outputN
+		i2|j|eq ram 0 doneN
+		mov _ ptr io
+		i2|sub ram 1 ram
+	uj _ _ outputN
+	label doneN
+	
+	i1|add 1 ptr ptr
+
+uj _ _ output

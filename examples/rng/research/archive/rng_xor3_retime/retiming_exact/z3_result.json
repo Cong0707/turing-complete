@@ -1,0 +1,986 @@
+{
+  "canonical_model": {
+    "delay_bit_gate_delay": [
+      5,
+      4
+    ],
+    "fixed_gate_outside_xor_and_state": 38,
+    "state_bits": 32,
+    "steady_state_or_gate_delay": [
+      1,
+      1
+    ],
+    "xor2_count": 61,
+    "xor2_gate_delay": [
+      3,
+      2
+    ],
+    "xor3_gate_delay": [
+      12,
+      2
+    ]
+  },
+  "cycle_mean_relaxation": {
+    "period_5_minimum_xor3": 17,
+    "period_5_witness": [
+      [
+        "b19",
+        "a2"
+      ],
+      [
+        "b20",
+        "a3"
+      ],
+      [
+        "b21",
+        "a4"
+      ],
+      [
+        "b22",
+        "a5"
+      ],
+      [
+        "b23",
+        "a6"
+      ],
+      [
+        "b24",
+        "a7"
+      ],
+      [
+        "b25",
+        "a8"
+      ],
+      [
+        "b26",
+        "a9"
+      ],
+      [
+        "b27",
+        "a10"
+      ],
+      [
+        "b29",
+        "a12"
+      ],
+      [
+        "b30",
+        "a13"
+      ],
+      [
+        "b31",
+        "a14"
+      ],
+      [
+        "y12",
+        "b17"
+      ],
+      [
+        "y13",
+        "b18"
+      ],
+      [
+        "y17",
+        "b17"
+      ],
+      [
+        "y18",
+        "b18"
+      ],
+      [
+        "y23",
+        "b28"
+      ]
+    ],
+    "period_6_minimum_xor3": 9,
+    "period_6_witness": [
+      [
+        "b19",
+        "a2"
+      ],
+      [
+        "b21",
+        "a4"
+      ],
+      [
+        "b23",
+        "a6"
+      ],
+      [
+        "b24",
+        "a7"
+      ],
+      [
+        "b26",
+        "a9"
+      ],
+      [
+        "b28",
+        "a11"
+      ],
+      [
+        "b29",
+        "a12"
+      ],
+      [
+        "y17",
+        "b17"
+      ],
+      [
+        "y18",
+        "b18"
+      ]
+    ],
+    "warning": "necessary cycle-average condition, not full retiming"
+  },
+  "exact_conditional_edge_retiming": {
+    "io_phase_constraint": "relaxed (favorable lower-bound model)",
+    "period_5_lower_bound_source": "seven disjoint cycle groups",
+    "period_5_minimum_xor3": 17,
+    "period_6_minimum_xor3": 11,
+    "period_6_optimize_proof_rerun": true,
+    "period_6_solver_witness": [
+      [
+        "b17",
+        "a17"
+      ],
+      [
+        "b19",
+        "a2"
+      ],
+      [
+        "b21",
+        "a4"
+      ],
+      [
+        "b23",
+        "a6"
+      ],
+      [
+        "b24",
+        "a7"
+      ],
+      [
+        "b26",
+        "a9"
+      ],
+      [
+        "b29",
+        "a12"
+      ],
+      [
+        "y13",
+        "b18"
+      ],
+      [
+        "y18",
+        "b18"
+      ],
+      [
+        "y22",
+        "b27"
+      ],
+      [
+        "y25",
+        "b30"
+      ]
+    ]
+  },
+  "gate_lower_bounds": {
+    "period_5_unrestricted_register_count": {
+      "fixed_control_and_or_gate": 38,
+      "score_delay_if_delay_bit_is_4": 9,
+      "state_register_lower_bound": 32,
+      "total_gate_lower_bound": 483,
+      "xor_network_gate_lower_bound": 285
+    },
+    "period_5_with_four_extra_delay_bits": {
+      "fixed_control_and_or_gate": 38,
+      "score_delay_if_delay_bit_is_4": 9,
+      "state_register_lower_bound": 36,
+      "total_gate_lower_bound": 503,
+      "xor_network_gate_lower_bound": 285
+    },
+    "period_6_unrestricted_register_count": {
+      "fixed_control_and_or_gate": 38,
+      "score_delay_if_delay_bit_is_4": 10,
+      "state_register_lower_bound": 32,
+      "total_gate_lower_bound": 447,
+      "xor_network_gate_lower_bound": 249
+    },
+    "period_6_with_two_extra_delay_bits": {
+      "fixed_control_and_or_gate": 38,
+      "score_delay_if_delay_bit_is_4": 10,
+      "state_register_lower_bound": 34,
+      "total_gate_lower_bound": 457,
+      "xor_network_gate_lower_bound": 249
+    }
+  },
+  "implementable_witnesses": {
+    "5": {
+      "active_xor_gate_count": 59,
+      "all_transformed_gates_have_two_or_three_distinct_inputs": true,
+      "dead_xor_gates": [
+        "b17",
+        "b18"
+      ],
+      "gf2_outputs_equal_canonical": true,
+      "minimum_retimed_state_registers": 32,
+      "physical_gate_in_relaxed_io_retiming_model": 528,
+      "register_placements": [
+        {
+          "count": 1,
+          "source": "x1",
+          "target": "op_a1"
+        },
+        {
+          "count": 1,
+          "source": "op_or0",
+          "target": "or0"
+        },
+        {
+          "count": 1,
+          "source": "or2",
+          "target": "x2"
+        },
+        {
+          "count": 1,
+          "source": "or3",
+          "target": "x3"
+        },
+        {
+          "count": 1,
+          "source": "or4",
+          "target": "x4"
+        },
+        {
+          "count": 1,
+          "source": "op_or5",
+          "target": "or5"
+        },
+        {
+          "count": 1,
+          "source": "or6",
+          "target": "x6"
+        },
+        {
+          "count": 1,
+          "source": "op_or7",
+          "target": "or7"
+        },
+        {
+          "count": 1,
+          "source": "op_or8",
+          "target": "or8"
+        },
+        {
+          "count": 1,
+          "source": "or9",
+          "target": "x9"
+        },
+        {
+          "count": 1,
+          "source": "or10",
+          "target": "x10"
+        },
+        {
+          "count": 1,
+          "source": "op_or11",
+          "target": "or11"
+        },
+        {
+          "count": 1,
+          "source": "op_or12",
+          "target": "or12"
+        },
+        {
+          "count": 1,
+          "source": "op_or13",
+          "target": "or13"
+        },
+        {
+          "count": 1,
+          "source": "or14",
+          "target": "x14"
+        },
+        {
+          "count": 1,
+          "source": "or15",
+          "target": "x15"
+        },
+        {
+          "count": 1,
+          "source": "op_or16",
+          "target": "or16"
+        },
+        {
+          "count": 1,
+          "source": "or17",
+          "target": "x17"
+        },
+        {
+          "count": 1,
+          "source": "op_or18",
+          "target": "or18"
+        },
+        {
+          "count": 1,
+          "source": "or19",
+          "target": "x19"
+        },
+        {
+          "count": 1,
+          "source": "op_or20",
+          "target": "or20"
+        },
+        {
+          "count": 1,
+          "source": "op_or21",
+          "target": "or21"
+        },
+        {
+          "count": 1,
+          "source": "or22",
+          "target": "x22"
+        },
+        {
+          "count": 1,
+          "source": "op_or23",
+          "target": "or23"
+        },
+        {
+          "count": 1,
+          "source": "or24",
+          "target": "x24"
+        },
+        {
+          "count": 1,
+          "source": "or25",
+          "target": "x25"
+        },
+        {
+          "count": 1,
+          "source": "or26",
+          "target": "x26"
+        },
+        {
+          "count": 1,
+          "source": "or27",
+          "target": "x27"
+        },
+        {
+          "count": 1,
+          "source": "op_or28",
+          "target": "or28"
+        },
+        {
+          "count": 1,
+          "source": "or29",
+          "target": "x29"
+        },
+        {
+          "count": 1,
+          "source": "op_or30",
+          "target": "or30"
+        },
+        {
+          "count": 1,
+          "source": "or31",
+          "target": "x31"
+        }
+      ],
+      "replacement_cost_audit": [
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b19",
+          "parent": "a2",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b19",
+            "y2"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b20",
+          "parent": "a3",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b20",
+            "y3"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b21",
+          "parent": "a4",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b21",
+            "y4"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b22",
+          "parent": "a5",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b22",
+            "y0",
+            "y5"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b23",
+          "parent": "a6",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b23",
+            "y1",
+            "y6"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b24",
+          "parent": "a7",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b24",
+            "y2",
+            "y7"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b25",
+          "parent": "a8",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b25",
+            "y3",
+            "y8"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b26",
+          "parent": "a9",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b26",
+            "y4",
+            "y9"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b27",
+          "parent": "a10",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b27",
+            "y10",
+            "y5"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b29",
+          "parent": "a12",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b29",
+            "y12",
+            "y7"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y12",
+          "parent": "b17",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y12",
+            "y17"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y13",
+          "parent": "b18",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y13",
+            "y18"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y17",
+          "parent": "b17",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y12",
+            "y17"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y18",
+          "parent": "b18",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y13",
+            "y18"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "y23",
+          "parent": "b28",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "OUT28",
+            "y23"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "y25",
+          "parent": "b30",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "OUT30",
+            "y25"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "y26",
+          "parent": "b31",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "OUT31",
+            "y26"
+          ]
+        }
+      ],
+      "substitution_count": 17,
+      "substitutions": [
+        [
+          "b19",
+          "a2"
+        ],
+        [
+          "b20",
+          "a3"
+        ],
+        [
+          "b21",
+          "a4"
+        ],
+        [
+          "b22",
+          "a5"
+        ],
+        [
+          "b23",
+          "a6"
+        ],
+        [
+          "b24",
+          "a7"
+        ],
+        [
+          "b25",
+          "a8"
+        ],
+        [
+          "b26",
+          "a9"
+        ],
+        [
+          "b27",
+          "a10"
+        ],
+        [
+          "b29",
+          "a12"
+        ],
+        [
+          "y12",
+          "b17"
+        ],
+        [
+          "y13",
+          "b18"
+        ],
+        [
+          "y17",
+          "b17"
+        ],
+        [
+          "y18",
+          "b18"
+        ],
+        [
+          "y23",
+          "b28"
+        ],
+        [
+          "y25",
+          "b30"
+        ],
+        [
+          "y26",
+          "b31"
+        ]
+      ],
+      "xor_cost_identity": "183 + 9*XOR3 - 3*dead_parent",
+      "xor_gate_cost": 330
+    },
+    "6": {
+      "active_xor_gate_count": 59,
+      "all_transformed_gates_have_two_or_three_distinct_inputs": true,
+      "dead_xor_gates": [
+        "a18",
+        "b17"
+      ],
+      "gf2_outputs_equal_canonical": true,
+      "minimum_retimed_state_registers": 32,
+      "physical_gate_in_relaxed_io_retiming_model": 474,
+      "register_placements": [
+        {
+          "count": 1,
+          "source": "op_y25",
+          "target": "y25"
+        },
+        {
+          "count": 1,
+          "source": "op_y4",
+          "target": "y4"
+        },
+        {
+          "count": 1,
+          "source": "op_y13",
+          "target": "y13"
+        },
+        {
+          "count": 1,
+          "source": "op_y23",
+          "target": "y23"
+        },
+        {
+          "count": 1,
+          "source": "op_y17",
+          "target": "y17"
+        },
+        {
+          "count": 1,
+          "source": "op_y26",
+          "target": "y26"
+        },
+        {
+          "count": 1,
+          "source": "op_or0",
+          "target": "or0"
+        },
+        {
+          "count": 1,
+          "source": "op_or1",
+          "target": "or1"
+        },
+        {
+          "count": 1,
+          "source": "or2",
+          "target": "x2"
+        },
+        {
+          "count": 1,
+          "source": "op_or3",
+          "target": "or3"
+        },
+        {
+          "count": 1,
+          "source": "op_or5",
+          "target": "or5"
+        },
+        {
+          "count": 1,
+          "source": "op_or6",
+          "target": "or6"
+        },
+        {
+          "count": 1,
+          "source": "op_or7",
+          "target": "or7"
+        },
+        {
+          "count": 1,
+          "source": "or8",
+          "target": "x8"
+        },
+        {
+          "count": 1,
+          "source": "or9",
+          "target": "x9"
+        },
+        {
+          "count": 1,
+          "source": "y10",
+          "target": "op_or10"
+        },
+        {
+          "count": 1,
+          "source": "op_or11",
+          "target": "or11"
+        },
+        {
+          "count": 1,
+          "source": "or12",
+          "target": "x12"
+        },
+        {
+          "count": 1,
+          "source": "op_or14",
+          "target": "or14"
+        },
+        {
+          "count": 1,
+          "source": "y15",
+          "target": "op_or15"
+        },
+        {
+          "count": 1,
+          "source": "op_or16",
+          "target": "or16"
+        },
+        {
+          "count": 1,
+          "source": "y18",
+          "target": "op_or18"
+        },
+        {
+          "count": 1,
+          "source": "op_or19",
+          "target": "or19"
+        },
+        {
+          "count": 1,
+          "source": "y20",
+          "target": "op_or20"
+        },
+        {
+          "count": 1,
+          "source": "or21",
+          "target": "x21"
+        },
+        {
+          "count": 1,
+          "source": "op_or22",
+          "target": "or22"
+        },
+        {
+          "count": 1,
+          "source": "or24",
+          "target": "x24"
+        },
+        {
+          "count": 1,
+          "source": "op_or27",
+          "target": "or27"
+        },
+        {
+          "count": 1,
+          "source": "op_or28",
+          "target": "or28"
+        },
+        {
+          "count": 1,
+          "source": "op_or29",
+          "target": "or29"
+        },
+        {
+          "count": 1,
+          "source": "or30",
+          "target": "x30"
+        },
+        {
+          "count": 1,
+          "source": "b31",
+          "target": "op_or31"
+        }
+      ],
+      "replacement_cost_audit": [
+        {
+          "category": "single_fanout_parent_deleted_net_plus_6",
+          "child": "b18",
+          "parent": "a18",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "b18"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b19",
+          "parent": "a2",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b19",
+            "y2"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b21",
+          "parent": "a4",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b21",
+            "y4"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b22",
+          "parent": "a5",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b22",
+            "y0",
+            "y5"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b24",
+          "parent": "a7",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b24",
+            "y2",
+            "y7"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b26",
+          "parent": "a9",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b26",
+            "y4",
+            "y9"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b27",
+          "parent": "a10",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b27",
+            "y10",
+            "y5"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "b29",
+          "parent": "a12",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "b29",
+            "y12",
+            "y7"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y12",
+          "parent": "b17",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y12",
+            "y17"
+          ]
+        },
+        {
+          "category": "shared_parent_deleted_collectively",
+          "child": "y17",
+          "parent": "b17",
+          "parent_alive_after_rewrite": false,
+          "parent_original_consumers": [
+            "y12",
+            "y17"
+          ]
+        },
+        {
+          "category": "parent_retained_bypass_net_plus_9",
+          "child": "y25",
+          "parent": "b30",
+          "parent_alive_after_rewrite": true,
+          "parent_original_consumers": [
+            "OUT30",
+            "y25"
+          ]
+        }
+      ],
+      "substitution_count": 11,
+      "substitutions": [
+        [
+          "b18",
+          "a18"
+        ],
+        [
+          "b19",
+          "a2"
+        ],
+        [
+          "b21",
+          "a4"
+        ],
+        [
+          "b22",
+          "a5"
+        ],
+        [
+          "b24",
+          "a7"
+        ],
+        [
+          "b26",
+          "a9"
+        ],
+        [
+          "b27",
+          "a10"
+        ],
+        [
+          "b29",
+          "a12"
+        ],
+        [
+          "y12",
+          "b17"
+        ],
+        [
+          "y17",
+          "b17"
+        ],
+        [
+          "y25",
+          "b30"
+        ]
+      ],
+      "xor_cost_identity": "183 + 9*XOR3 - 3*dead_parent",
+      "xor_gate_cost": 276
+    }
+  },
+  "target_421_period_6_possible": false,
+  "target_431_period_5_possible": false
+}

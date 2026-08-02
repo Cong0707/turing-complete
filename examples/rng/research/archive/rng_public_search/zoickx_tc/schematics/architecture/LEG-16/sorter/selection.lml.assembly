@@ -1,0 +1,43 @@
+#include "leg.lml"
+const mov i1|add
+const sav i1|i2|add
+const neg i1|sub
+const uj i1|i2|j
+const _ 0
+const ptr f
+const bnot bnand
+const true 1
+const false 0
+#########################
+
+const min a
+const minptr b
+const inf 255
+
+label read
+
+	mov _ io ram
+	i1|add 1 ptr ptr
+
+i2|j|ult ptr 15 read
+
+label select
+
+	sav _ 0 ptr
+	sav _ inf min
+
+	label iterate
+		j|ult min ram else
+		mov _ ram min
+		mov _ ptr minptr
+		label else
+		
+		i1|add 1 ptr ptr
+	i2|j|ult ptr 15 iterate
+	
+	mov _ minptr ptr
+	sav _ inf ram
+	
+	mov _ min io
+
+uj _ _ select

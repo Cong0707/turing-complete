@@ -1,0 +1,822 @@
+{
+  "consequences": {
+    "D_total_weight_lower_bound": 65,
+    "D_weight_tail_lower_bounds": {
+      "rows_with_weight_at_least_2": 8,
+      "rows_with_weight_at_least_3": 8,
+      "rows_with_weight_at_least_4": 8,
+      "rows_with_weight_at_least_5": 7,
+      "rows_with_weight_at_least_6": 2
+    },
+    "rows_with_B_weight_3_upper_bound": 25,
+    "rows_with_B_weight_at_most_2": 7,
+    "rows_with_D_weight_at_least_5": 7
+  },
+  "distance_forest_bounds": [
+    {
+      "compatibility_distance_limit": 2,
+      "compatibility_edges": [],
+      "forest_edge_upper_bound_formula": "(h-1)+h+min(h,matching_number)",
+      "high_D_row_count_lower_bound": 8,
+      "high_D_weight_at_least": 2,
+      "low_D_weight_limit": 1,
+      "maximum_clique": [
+        12
+      ],
+      "maximum_clique_size": 1,
+      "maximum_matching": [],
+      "maximum_matching_size": 0,
+      "target_count": 15,
+      "target_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "target_weights": [
+        12,
+        11,
+        10,
+        10,
+        12,
+        10,
+        10,
+        9,
+        9,
+        11,
+        10,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "compatibility_distance_limit": 4,
+      "compatibility_edges": [
+        [
+          13,
+          26,
+          4
+        ]
+      ],
+      "forest_edge_upper_bound_formula": "(h-1)+h+min(h,matching_number)",
+      "high_D_row_count_lower_bound": 8,
+      "high_D_weight_at_least": 3,
+      "low_D_weight_limit": 2,
+      "maximum_clique": [
+        13,
+        26
+      ],
+      "maximum_clique_size": 2,
+      "maximum_matching": [
+        [
+          13,
+          26
+        ]
+      ],
+      "maximum_matching_size": 1,
+      "target_count": 15,
+      "target_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "target_weights": [
+        12,
+        11,
+        10,
+        10,
+        12,
+        10,
+        10,
+        9,
+        9,
+        11,
+        10,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "compatibility_distance_limit": 6,
+      "compatibility_edges": [
+        [
+          13,
+          26,
+          4
+        ]
+      ],
+      "forest_edge_upper_bound_formula": "(h-1)+h+min(h,matching_number)",
+      "high_D_row_count_lower_bound": 8,
+      "high_D_weight_at_least": 4,
+      "low_D_weight_limit": 3,
+      "maximum_clique": [
+        13,
+        26
+      ],
+      "maximum_clique_size": 2,
+      "maximum_matching": [
+        [
+          13,
+          26
+        ]
+      ],
+      "maximum_matching_size": 1,
+      "target_count": 15,
+      "target_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "target_weights": [
+        12,
+        11,
+        10,
+        10,
+        12,
+        10,
+        10,
+        9,
+        9,
+        11,
+        10,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "compatibility_distance_limit": 8,
+      "compatibility_edges": [
+        [
+          12,
+          16,
+          8
+        ],
+        [
+          12,
+          25,
+          7
+        ],
+        [
+          13,
+          26,
+          4
+        ],
+        [
+          15,
+          19,
+          7
+        ]
+      ],
+      "forest_edge_upper_bound_formula": "(h-1)+h+min(h,matching_number)",
+      "high_D_row_count_lower_bound": 7,
+      "high_D_weight_at_least": 5,
+      "low_D_weight_limit": 4,
+      "maximum_clique": [
+        12,
+        16
+      ],
+      "maximum_clique_size": 2,
+      "maximum_matching": [
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          26
+        ],
+        [
+          15,
+          19
+        ]
+      ],
+      "maximum_matching_size": 3,
+      "target_count": 15,
+      "target_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "target_weights": [
+        12,
+        11,
+        10,
+        10,
+        12,
+        10,
+        10,
+        9,
+        9,
+        11,
+        10,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "compatibility_distance_limit": 10,
+      "compatibility_edges": [
+        [
+          12,
+          16,
+          8
+        ],
+        [
+          13,
+          21,
+          10
+        ]
+      ],
+      "forest_edge_upper_bound_formula": "(h-1)+h+min(h,matching_number)",
+      "high_D_row_count_lower_bound": 2,
+      "high_D_weight_at_least": 6,
+      "low_D_weight_limit": 5,
+      "maximum_clique": [
+        12,
+        16
+      ],
+      "maximum_clique_size": 2,
+      "maximum_matching": [
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          21
+        ]
+      ],
+      "maximum_matching_size": 2,
+      "target_count": 4,
+      "target_indices": [
+        12,
+        13,
+        16,
+        21
+      ],
+      "target_weights": [
+        12,
+        11,
+        12,
+        11
+      ]
+    }
+  ],
+  "equations": [
+    "B=T*A*T^-1",
+    "D=T*(A+I)",
+    "C=A*T^-1",
+    "D*A=B*D",
+    "C*D=A*(A+I)"
+  ],
+  "general_triangle_pruning": {
+    "identity": "A*C=C*B",
+    "justification": "triangle inequality on (C*B)_i plus wt(B_j)<=q_j",
+    "necessary_inequality": "wt((A*C)_i) <= sum(q_j for j in supp(C_i))",
+    "q_j": "floor((16-wt(D_j))/4)"
+  },
+  "lossless_search_normalization": {
+    "capacity_2_rows_extra_columns_at_most": 1,
+    "capacity_3_rows_extra_columns_at_most": 2,
+    "preserves": [
+      "C row weights",
+      "paired feedback loads 4*wt(B_i)+wt(D_i) up to row permutation",
+      "D*A=B*D and C*D=K"
+    ],
+    "statement": "choose a perfect matching of invertible C and simultaneously permute q coordinates so that every C row contains its diagonal entry"
+  },
+  "matrix": {
+    "A_row_weights": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      6,
+      6,
+      5,
+      5,
+      5,
+      7,
+      7,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "A_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+    "C_row_capacities": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "K_row_weights": [
+      7,
+      7,
+      7,
+      7,
+      9,
+      9,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      12,
+      11,
+      10,
+      10,
+      12,
+      10,
+      10,
+      9,
+      9,
+      11,
+      10,
+      9,
+      9,
+      9,
+      9,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "K_rows": [
+      "0x040c2460",
+      "0x081848c0",
+      "0x10309180",
+      "0x20612300",
+      "0x40c26601",
+      "0x8184cc02",
+      "0x03099804",
+      "0x06131009",
+      "0x0c262012",
+      "0x084cc024",
+      "0x10998048",
+      "0x21330090",
+      "0xc6666102",
+      "0x8cccc204",
+      "0x19998408",
+      "0x33330810",
+      "0x66663021",
+      "0x48cc2061",
+      "0x919840c2",
+      "0x33300184",
+      "0x66600308",
+      "0xccc02611",
+      "0x8980cc22",
+      "0x13019844",
+      "0x26031089",
+      "0x4c062112",
+      "0x880cc224",
+      "0x01088c40",
+      "0x02111880",
+      "0x04221101",
+      "0x08442202",
+      "0x0088c404"
+    ],
+    "K_sha256": "e9f417bc0e458273d3adf440dcaf87e2609e3802fa899c4472d2683078ac113d",
+    "capacity_2_indices": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "rank_A": 32,
+    "rank_A_plus_I": 32,
+    "rank_K": 32
+  },
+  "model": "arbitrary invertible T, 65-cycle delay-9 Kraft necessary conditions",
+  "normalized_singleton_propagation": {
+    "C_total_weight_lower_bound": 48,
+    "capacity_2_rows_forced_to_weight_2": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26
+    ],
+    "capacity_2_singleton_allowed_indices": [
+      25
+    ],
+    "capacity_3_singleton_forbidden_indices": [
+      4,
+      5
+    ],
+    "checked_indices": [
+      4,
+      5,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26
+    ],
+    "forced_extra_C_entries": 16,
+    "orbits": {
+      "12": {
+        "orbit_rows": [
+          "0xc6666102",
+          "0x4228a417",
+          "0x83910569",
+          "0xcba3f091"
+        ],
+        "orbit_weights": [
+          12,
+          11,
+          12,
+          16
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "13": {
+        "orbit_rows": [
+          "0x8cccc204",
+          "0x8451482e",
+          "0x07220ad2",
+          "0x87474123"
+        ],
+        "orbit_weights": [
+          11,
+          11,
+          11,
+          13
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "14": {
+        "orbit_rows": [
+          "0x19998408",
+          "0x08a2905c",
+          "0x0e4415a4",
+          "0x1e8e2247"
+        ],
+        "orbit_weights": [
+          10,
+          10,
+          11,
+          14
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "15": {
+        "orbit_rows": [
+          "0x33330810",
+          "0x114500b9",
+          "0x98886b6b"
+        ],
+        "orbit_weights": [
+          10,
+          10,
+          15
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "16": {
+        "orbit_rows": [
+          "0x66663021",
+          "0xa68a4151",
+          "0x3dd05090",
+          "0xc7f5a17d"
+        ],
+        "orbit_weights": [
+          12,
+          12,
+          12,
+          20
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "17": {
+        "orbit_rows": [
+          "0x48cc2061",
+          "0x51d4a4e5"
+        ],
+        "orbit_weights": [
+          10,
+          15
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "18": {
+        "orbit_rows": [
+          "0x919840c2",
+          "0xa3a949ca"
+        ],
+        "orbit_weights": [
+          10,
+          15
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "19": {
+        "orbit_rows": [
+          "0x33300184",
+          "0x56439b9c"
+        ],
+        "orbit_weights": [
+          9,
+          16
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "20": {
+        "orbit_rows": [
+          "0x66600308",
+          "0xac873738"
+        ],
+        "orbit_weights": [
+          9,
+          16
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "21": {
+        "orbit_rows": [
+          "0xccc02611",
+          "0xcd0eae53"
+        ],
+        "orbit_weights": [
+          11,
+          17
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "22": {
+        "orbit_rows": [
+          "0x8980cc22",
+          "0x9b0cd4ae"
+        ],
+        "orbit_weights": [
+          10,
+          16
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "23": {
+        "orbit_rows": [
+          "0x13019844",
+          "0x2619095d"
+        ],
+        "orbit_weights": [
+          9,
+          13
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "24": {
+        "orbit_rows": [
+          "0x26031089",
+          "0xc8325299"
+        ],
+        "orbit_weights": [
+          9,
+          13
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "25": {
+        "orbit_rows": [
+          "0x4c062112",
+          "0x80640533",
+          "0x1040c521"
+        ],
+        "orbit_weights": [
+          9,
+          10,
+          8
+        ],
+        "outcome": "not_obstructed_after_reaching_weight_at_most_8",
+        "singleton_impossible": false
+      },
+      "26": {
+        "orbit_rows": [
+          "0x880cc224",
+          "0x11d9026e"
+        ],
+        "orbit_weights": [
+          9,
+          13
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "4": {
+        "orbit_rows": [
+          "0x40c26601",
+          "0x89c24a66"
+        ],
+        "orbit_weights": [
+          9,
+          13
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      },
+      "5": {
+        "orbit_rows": [
+          "0x8184cc02",
+          "0x138494cc",
+          "0xa48edcc7"
+        ],
+        "orbit_weights": [
+          9,
+          12,
+          17
+        ],
+        "outcome": "impossible_weight_exceeds_12",
+        "singleton_impossible": true
+      }
+    },
+    "reasoning": [
+      "any singleton C_i=e_j implies D_j=K_i; normalization is not required",
+      "all D rows have weight at most 12 because B is invertible and 4*wt(B_i)+wt(D_i)<=16",
+      "wt(D_j) in [9,12] forces wt(B_j)=1 and therefore D_j*A equals another D row",
+      "an orbit value of weight above 12 is a contradiction; weight at most 8 ends this obstruction"
+    ]
+  },
+  "schema": 1,
+  "similarity_invariants": {
+    "B_digraph_strongly_connected": true,
+    "B_total_row_weight_lower_bound_from_cycle_space": 35,
+    "characteristic_polynomial_exponents": [
+      0,
+      6,
+      9,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      32
+    ],
+    "characteristic_polynomial_hex": "0x1003ec241",
+    "characteristic_polynomial_weight": 11,
+    "cycle_space_argument": "irreducibility makes the B digraph strongly connected; the 11 nonzero charpoly coefficients need at least 11 distinct cycle-cover witnesses, while an m-edge strongly connected digraph has cycle-space dimension m-32+1",
+    "cyclic_vector": "0x00000001",
+    "det_A": 1,
+    "det_A_plus_I": 1,
+    "irreducible_checks": {
+      "gcd(p,x^(2^16)+x)": "0x1",
+      "x^(2^32)_mod_p": "0x2"
+    },
+    "primitive_order": 4294967295,
+    "primitive_prime_divisor_residues": {
+      "17": "0x453fc3bf",
+      "257": "0x2a769229",
+      "3": "0x9a1b191d",
+      "5": "0xa15dd03",
+      "65537": "0x4056b73d"
+    },
+    "trace_A": 0
+  },
+  "status": "strict necessary lower bounds only; they do not contradict the Kraft caps, so arbitrary-T feasibility remains open"
+}

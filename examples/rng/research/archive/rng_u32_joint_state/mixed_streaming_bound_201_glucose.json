@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "model": "complete natural-state depth-two XOR2/XOR3 cover",
+  "encoding": "streamed one-way weighted sequential CNF",
+  "bound_gate": 201,
+  "combination_delay": 4,
+  "result": "unsat",
+  "solver_results": [
+    {
+      "solver": "glucose42",
+      "status": "unsat",
+      "option_build_seconds": 27.090995000005933,
+      "cnf_build_seconds": 1.2553373999980977,
+      "solve_seconds": 7.112149299995508,
+      "stats": {
+        "restarts": 6,
+        "conflicts": 1643,
+        "decisions": 124443,
+        "propagations": 36445379
+      },
+      "formula": {
+        "sha256": "fdaa6d9fdd34b81c8fb2b025f7bfdc64106623e1d45e4d03255c43c9488a11b8",
+        "variables": 502479,
+        "clauses": 1210958,
+        "candidate_first_forms": 5235,
+        "candidate_options": 71717,
+        "selector_counter_auxiliary": 71717,
+        "cost_counter_auxiliary": 353760,
+        "cost_variables": 5280,
+        "cost_bound_units": 67
+      }
+    }
+  ],
+  "target_rows": [
+    "00042021",
+    "00084042",
+    "00108084",
+    "00210108",
+    "00420210",
+    "00840420",
+    "01080840",
+    "02101080",
+    "04202100",
+    "08404200",
+    "10808400",
+    "21010800",
+    "42023001",
+    "84046002",
+    "0808c004",
+    "10118008",
+    "20230010",
+    "40462021",
+    "808c4042",
+    "01188084",
+    "02310108",
+    "04620210",
+    "08c40420",
+    "11880840",
+    "23101080",
+    "46202100",
+    "8c404200",
+    "08800400",
+    "11000800",
+    "22001000",
+    "44002000",
+    "88004000"
+  ]
+}

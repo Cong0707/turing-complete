@@ -1,0 +1,2960 @@
+{
+  "schema": 1,
+  "model": "depth-two XOR2 / shared-control Switch-XOR3 heuristic",
+  "scope": "atomic-cost minimal DNF options; valid upper-bound search, not a complete arbitrary-Switch UNSAT model",
+  "combination_delay": 4,
+  "gate_cost": 433,
+  "target_gate_cost": 201,
+  "target_met": false,
+  "cost_breakdown": {
+    "first_level_base": 186,
+    "final_level_base": 161,
+    "unique_pair_nor": 65,
+    "minimum_pair_and": 21,
+    "atomic_xor2_xor3_cost": 435
+  },
+  "counts": {
+    "selected_first_forms": 47,
+    "xor3_nodes": 22,
+    "unique_pair_nor": 65,
+    "selected_pair_and": 21
+  },
+  "search": {
+    "kind": "randomized coordinate descent upper bound",
+    "seed": 87693252,
+    "restarts": 1,
+    "sweeps": 1,
+    "pool_size": 8,
+    "random_size": 8
+  },
+  "selected_first_forms": [
+    "00000021",
+    "00000042",
+    "00000084",
+    "00000108",
+    "00000210",
+    "00000420",
+    "00000840",
+    "00001001",
+    "00001080",
+    "00002100",
+    "00004002",
+    "00004200",
+    "00008400",
+    "00010008",
+    "00020010",
+    "00022000",
+    "00042000",
+    "00080040",
+    "00084000",
+    "00108000",
+    "00210000",
+    "00401080",
+    "00420000",
+    "00440000",
+    "00800004",
+    "00840000",
+    "01000800",
+    "01080000",
+    "01100000",
+    "02008000",
+    "02100000",
+    "02500000",
+    "04002000",
+    "04200000",
+    "08000404",
+    "08008004",
+    "08400000",
+    "10108000",
+    "10800000",
+    "20009000",
+    "20010000",
+    "22000000",
+    "40022000",
+    "42000000",
+    "80840000",
+    "84000000",
+    "88000002"
+  ],
+  "outputs": [
+    {
+      "index": 0,
+      "target": "00042021",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000021",
+        "00042000"
+      ],
+      "sources": [
+        "00000021",
+        "00042000"
+      ]
+    },
+    {
+      "index": 1,
+      "target": "00084042",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000042",
+        "00084000"
+      ],
+      "sources": [
+        "00000042",
+        "00084000"
+      ]
+    },
+    {
+      "index": 2,
+      "target": "00108084",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000084",
+        "00108000"
+      ],
+      "sources": [
+        "00000084",
+        "00108000"
+      ]
+    },
+    {
+      "index": 3,
+      "target": "00210108",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000108",
+        "00210000"
+      ],
+      "sources": [
+        "00000108",
+        "00210000"
+      ]
+    },
+    {
+      "index": 4,
+      "target": "00420210",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000210",
+        "00420000"
+      ],
+      "sources": [
+        "00000210",
+        "00420000"
+      ]
+    },
+    {
+      "index": 5,
+      "target": "00840420",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000420",
+        "00840000"
+      ],
+      "sources": [
+        "00000420",
+        "00840000"
+      ]
+    },
+    {
+      "index": 6,
+      "target": "01080840",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00000840",
+        "01080000"
+      ],
+      "sources": [
+        "00000840",
+        "01080000"
+      ]
+    },
+    {
+      "index": 7,
+      "target": "02101080",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00401080",
+        "02500000"
+      ],
+      "sources": [
+        "00401080",
+        "02500000"
+      ]
+    },
+    {
+      "index": 8,
+      "target": "04202100",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00002100",
+        "04200000"
+      ],
+      "sources": [
+        "00002100",
+        "04200000"
+      ]
+    },
+    {
+      "index": 9,
+      "target": "08404200",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00004200",
+        "08400000"
+      ],
+      "sources": [
+        "00004200",
+        "08400000"
+      ]
+    },
+    {
+      "index": 10,
+      "target": "10808400",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00008400",
+        "10800000"
+      ],
+      "sources": [
+        "00008400",
+        "10800000"
+      ]
+    },
+    {
+      "index": 11,
+      "target": "21010800",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "01000800",
+        "20010000"
+      ],
+      "sources": [
+        "01000800",
+        "20010000"
+      ]
+    },
+    {
+      "index": 12,
+      "target": "42023001",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00001001",
+        "00022000",
+        "42000000"
+      ],
+      "sources": [
+        "00001001",
+        "00022000",
+        "42000000"
+      ]
+    },
+    {
+      "index": 13,
+      "target": "84046002",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00004002",
+        "00042000",
+        "84000000"
+      ],
+      "sources": [
+        "00004002",
+        "00042000",
+        "84000000"
+      ]
+    },
+    {
+      "index": 14,
+      "target": "0808c004",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00084000",
+        "08008004"
+      ],
+      "sources": [
+        "00084000",
+        "08008004"
+      ]
+    },
+    {
+      "index": 15,
+      "target": "10118008",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00010008",
+        "10108000"
+      ],
+      "sources": [
+        "00010008",
+        "10108000"
+      ]
+    },
+    {
+      "index": 16,
+      "target": "20230010",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00020010",
+        "00210000"
+      ],
+      "sources": [
+        "00020010",
+        "00210000",
+        "20000000"
+      ]
+    },
+    {
+      "index": 17,
+      "target": "40462021",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000021",
+        "00440000",
+        "40022000"
+      ],
+      "sources": [
+        "00000021",
+        "00440000",
+        "40022000"
+      ]
+    },
+    {
+      "index": 18,
+      "target": "808c4042",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000042",
+        "00084000",
+        "80840000"
+      ],
+      "sources": [
+        "00000042",
+        "00084000",
+        "80840000"
+      ]
+    },
+    {
+      "index": 19,
+      "target": "01188084",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000084",
+        "00108000",
+        "01080000"
+      ],
+      "sources": [
+        "00000084",
+        "00108000",
+        "01080000"
+      ]
+    },
+    {
+      "index": 20,
+      "target": "02310108",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000108",
+        "00210000",
+        "02100000"
+      ],
+      "sources": [
+        "00000108",
+        "00210000",
+        "02100000"
+      ]
+    },
+    {
+      "index": 21,
+      "target": "04620210",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000210",
+        "00420000",
+        "04200000"
+      ],
+      "sources": [
+        "00000210",
+        "00420000",
+        "04200000"
+      ]
+    },
+    {
+      "index": 22,
+      "target": "08c40420",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00000420",
+        "00840000",
+        "08400000"
+      ],
+      "sources": [
+        "00000420",
+        "00840000",
+        "08400000"
+      ]
+    },
+    {
+      "index": 23,
+      "target": "11880840",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00080040",
+        "01000800",
+        "10800000"
+      ],
+      "sources": [
+        "00080040",
+        "01000800",
+        "10800000"
+      ]
+    },
+    {
+      "index": 24,
+      "target": "23101080",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00001080",
+        "01100000",
+        "22000000"
+      ],
+      "sources": [
+        "00001080",
+        "01100000",
+        "22000000"
+      ]
+    },
+    {
+      "index": 25,
+      "target": "46202100",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00002100",
+        "04200000",
+        "42000000"
+      ],
+      "sources": [
+        "00002100",
+        "04200000",
+        "42000000"
+      ]
+    },
+    {
+      "index": 26,
+      "target": "8c404200",
+      "final_gate_cost_atomic": 12,
+      "final_base_gate": 8,
+      "required_first_forms": [
+        "00004200",
+        "08400000",
+        "84000000"
+      ],
+      "sources": [
+        "00004200",
+        "08400000",
+        "84000000"
+      ]
+    },
+    {
+      "index": 27,
+      "target": "08800400",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00800004",
+        "08000404"
+      ],
+      "sources": [
+        "00800004",
+        "08000404"
+      ]
+    },
+    {
+      "index": 28,
+      "target": "11000800",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "01000800"
+      ],
+      "sources": [
+        "01000800",
+        "10000000"
+      ]
+    },
+    {
+      "index": 29,
+      "target": "22001000",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "02008000",
+        "20009000"
+      ],
+      "sources": [
+        "02008000",
+        "20009000"
+      ]
+    },
+    {
+      "index": 30,
+      "target": "44002000",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "04002000"
+      ],
+      "sources": [
+        "04002000",
+        "40000000"
+      ]
+    },
+    {
+      "index": 31,
+      "target": "88004000",
+      "final_gate_cost_atomic": 3,
+      "final_base_gate": 3,
+      "required_first_forms": [
+        "00004002",
+        "88000002"
+      ],
+      "sources": [
+        "00004002",
+        "88000002"
+      ]
+    }
+  ],
+  "xor3_nodes": [
+    {
+      "sources": [
+        "00000080",
+        "00001000",
+        "00400000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000080",
+            "00001000",
+            "00001080"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000080",
+            "00400000",
+            "00400080"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00001000",
+            "00400000",
+            "00401000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000080",
+            "00001000",
+            "00001080"
+          ],
+          "coset_zero_label": "00001080",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000080",
+            "00400000",
+            "00400080"
+          ],
+          "coset_zero_label": "00400080",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00001000",
+            "00400000",
+            "00401000"
+          ],
+          "coset_zero_label": "00401000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000080",
+          "00001000",
+          "00001080"
+        ],
+        "coset_zero_label": "00001080",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00100000",
+        "00400000",
+        "02000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00100000",
+            "00400000",
+            "00500000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00100000",
+            "02000000",
+            "02100000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00400000",
+            "02000000",
+            "02400000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00100000",
+            "00400000",
+            "00500000"
+          ],
+          "coset_zero_label": "00500000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00100000",
+            "02000000",
+            "02100000"
+          ],
+          "coset_zero_label": "02100000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00400000",
+            "02000000",
+            "02400000"
+          ],
+          "coset_zero_label": "02400000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00100000",
+          "00400000",
+          "00500000"
+        ],
+        "coset_zero_label": "00500000",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000004",
+        "00000400",
+        "08000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000004",
+            "00000400",
+            "00000404"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000004",
+            "08000000",
+            "08000004"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000400",
+            "08000000",
+            "08000400"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000004",
+            "00000400",
+            "00000404"
+          ],
+          "coset_zero_label": "00000404",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000004",
+            "08000000",
+            "08000004"
+          ],
+          "coset_zero_label": "08000004",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000400",
+            "08000000",
+            "08000400"
+          ],
+          "coset_zero_label": "08000400",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000004",
+          "08000000",
+          "08000004"
+        ],
+        "coset_zero_label": "08000004",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000004",
+        "00008000",
+        "08000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000004",
+            "00008000",
+            "00008004"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000004",
+            "08000000",
+            "08000004"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00008000",
+            "08000000",
+            "08008000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000004",
+            "00008000",
+            "00008004"
+          ],
+          "coset_zero_label": "00008004",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000004",
+            "08000000",
+            "08000004"
+          ],
+          "coset_zero_label": "08000004",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00008000",
+            "08000000",
+            "08008000"
+          ],
+          "coset_zero_label": "08008000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000004",
+          "08000000",
+          "08000004"
+        ],
+        "coset_zero_label": "08000004",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00008000",
+        "00100000",
+        "10000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00008000",
+            "00100000",
+            "00108000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00008000",
+            "10000000",
+            "10008000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00100000",
+            "10000000",
+            "10100000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00008000",
+            "00100000",
+            "00108000"
+          ],
+          "coset_zero_label": "00108000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00008000",
+            "10000000",
+            "10008000"
+          ],
+          "coset_zero_label": "10008000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00100000",
+            "10000000",
+            "10100000"
+          ],
+          "coset_zero_label": "10100000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00008000",
+          "00100000",
+          "00108000"
+        ],
+        "coset_zero_label": "00108000",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00001000",
+        "00008000",
+        "20000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00001000",
+            "00008000",
+            "00009000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00001000",
+            "20000000",
+            "20001000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00008000",
+            "20000000",
+            "20008000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00001000",
+            "00008000",
+            "00009000"
+          ],
+          "coset_zero_label": "00009000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00001000",
+            "20000000",
+            "20001000"
+          ],
+          "coset_zero_label": "20001000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00008000",
+            "20000000",
+            "20008000"
+          ],
+          "coset_zero_label": "20008000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00001000",
+          "00008000",
+          "00009000"
+        ],
+        "coset_zero_label": "00009000",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00002000",
+        "00020000",
+        "40000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00002000",
+            "00020000",
+            "00022000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00002000",
+            "40000000",
+            "40002000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00020000",
+            "40000000",
+            "40020000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00002000",
+            "00020000",
+            "00022000"
+          ],
+          "coset_zero_label": "00022000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00002000",
+            "40000000",
+            "40002000"
+          ],
+          "coset_zero_label": "40002000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00020000",
+            "40000000",
+            "40020000"
+          ],
+          "coset_zero_label": "40020000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00002000",
+          "00020000",
+          "00022000"
+        ],
+        "coset_zero_label": "00022000",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00040000",
+        "00800000",
+        "80000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00040000",
+            "00800000",
+            "00840000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00040000",
+            "80000000",
+            "80040000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00800000",
+            "80000000",
+            "80800000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00040000",
+            "00800000",
+            "00840000"
+          ],
+          "coset_zero_label": "00840000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00040000",
+            "80000000",
+            "80040000"
+          ],
+          "coset_zero_label": "80040000",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00800000",
+            "80000000",
+            "80800000"
+          ],
+          "coset_zero_label": "80800000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00040000",
+          "00800000",
+          "00840000"
+        ],
+        "coset_zero_label": "00840000",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000002",
+        "08000000",
+        "80000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000002",
+            "08000000",
+            "08000002"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000002",
+            "80000000",
+            "80000002"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "08000000",
+            "80000000",
+            "88000000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000002",
+            "08000000",
+            "08000002"
+          ],
+          "coset_zero_label": "08000002",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000002",
+            "80000000",
+            "80000002"
+          ],
+          "coset_zero_label": "80000002",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "08000000",
+            "80000000",
+            "88000000"
+          ],
+          "coset_zero_label": "88000000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000002",
+          "08000000",
+          "08000002"
+        ],
+        "coset_zero_label": "08000002",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00001001",
+        "00022000",
+        "42000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00001001",
+            "00022000",
+            "00023001"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00001001",
+            "42000000",
+            "42001001"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00022000",
+            "42000000",
+            "42022000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00001001",
+            "00022000",
+            "00023001"
+          ],
+          "coset_zero_label": "00023001",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00001001",
+            "42000000",
+            "42001001"
+          ],
+          "coset_zero_label": "42001001",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00022000",
+            "42000000",
+            "42022000"
+          ],
+          "coset_zero_label": "42022000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00001001",
+          "00022000",
+          "00023001"
+        ],
+        "coset_zero_label": "00023001",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00004002",
+        "00042000",
+        "84000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00004002",
+            "00042000",
+            "00046002"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00004002",
+            "84000000",
+            "84004002"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00042000",
+            "84000000",
+            "84042000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00004002",
+            "00042000",
+            "00046002"
+          ],
+          "coset_zero_label": "00046002",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00004002",
+            "84000000",
+            "84004002"
+          ],
+          "coset_zero_label": "84004002",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00042000",
+            "84000000",
+            "84042000"
+          ],
+          "coset_zero_label": "84042000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00004002",
+          "00042000",
+          "00046002"
+        ],
+        "coset_zero_label": "00046002",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00020010",
+        "00210000",
+        "20000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00020010",
+            "00210000",
+            "00230010"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00020010",
+            "20000000",
+            "20020010"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00210000",
+            "20000000",
+            "20210000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00020010",
+            "00210000",
+            "00230010"
+          ],
+          "coset_zero_label": "00230010",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00020010",
+            "20000000",
+            "20020010"
+          ],
+          "coset_zero_label": "20020010",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00210000",
+            "20000000",
+            "20210000"
+          ],
+          "coset_zero_label": "20210000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00020010",
+          "00210000",
+          "00230010"
+        ],
+        "coset_zero_label": "00230010",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000021",
+        "00440000",
+        "40022000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000021",
+            "00440000",
+            "00440021"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000021",
+            "40022000",
+            "40022021"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00440000",
+            "40022000",
+            "40462000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000021",
+            "00440000",
+            "00440021"
+          ],
+          "coset_zero_label": "00440021",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000021",
+            "40022000",
+            "40022021"
+          ],
+          "coset_zero_label": "40022021",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00440000",
+            "40022000",
+            "40462000"
+          ],
+          "coset_zero_label": "40462000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000021",
+          "00440000",
+          "00440021"
+        ],
+        "coset_zero_label": "00440021",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000042",
+        "00084000",
+        "80840000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000042",
+            "00084000",
+            "00084042"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000042",
+            "80840000",
+            "80840042"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00084000",
+            "80840000",
+            "808c4000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000042",
+            "00084000",
+            "00084042"
+          ],
+          "coset_zero_label": "00084042",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000042",
+            "80840000",
+            "80840042"
+          ],
+          "coset_zero_label": "80840042",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00084000",
+            "80840000",
+            "808c4000"
+          ],
+          "coset_zero_label": "808c4000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000042",
+          "00084000",
+          "00084042"
+        ],
+        "coset_zero_label": "00084042",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000084",
+        "00108000",
+        "01080000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000084",
+            "00108000",
+            "00108084"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000084",
+            "01080000",
+            "01080084"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00108000",
+            "01080000",
+            "01188000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000084",
+            "00108000",
+            "00108084"
+          ],
+          "coset_zero_label": "00108084",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000084",
+            "01080000",
+            "01080084"
+          ],
+          "coset_zero_label": "01080084",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00108000",
+            "01080000",
+            "01188000"
+          ],
+          "coset_zero_label": "01188000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000084",
+          "00108000",
+          "00108084"
+        ],
+        "coset_zero_label": "00108084",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000108",
+        "00210000",
+        "02100000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000108",
+            "00210000",
+            "00210108"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000108",
+            "02100000",
+            "02100108"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00210000",
+            "02100000",
+            "02310000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000108",
+            "00210000",
+            "00210108"
+          ],
+          "coset_zero_label": "00210108",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000108",
+            "02100000",
+            "02100108"
+          ],
+          "coset_zero_label": "02100108",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00210000",
+            "02100000",
+            "02310000"
+          ],
+          "coset_zero_label": "02310000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000108",
+          "00210000",
+          "00210108"
+        ],
+        "coset_zero_label": "00210108",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000210",
+        "00420000",
+        "04200000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000210",
+            "00420000",
+            "00420210"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000210",
+            "04200000",
+            "04200210"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00420000",
+            "04200000",
+            "04620000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000210",
+            "00420000",
+            "00420210"
+          ],
+          "coset_zero_label": "00420210",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000210",
+            "04200000",
+            "04200210"
+          ],
+          "coset_zero_label": "04200210",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00420000",
+            "04200000",
+            "04620000"
+          ],
+          "coset_zero_label": "04620000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000210",
+          "00420000",
+          "00420210"
+        ],
+        "coset_zero_label": "00420210",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00000420",
+        "00840000",
+        "08400000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00000420",
+            "00840000",
+            "00840420"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00000420",
+            "08400000",
+            "08400420"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00840000",
+            "08400000",
+            "08c40000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00000420",
+            "00840000",
+            "00840420"
+          ],
+          "coset_zero_label": "00840420",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00000420",
+            "08400000",
+            "08400420"
+          ],
+          "coset_zero_label": "08400420",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00840000",
+            "08400000",
+            "08c40000"
+          ],
+          "coset_zero_label": "08c40000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00000420",
+          "00840000",
+          "00840420"
+        ],
+        "coset_zero_label": "00840420",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00080040",
+        "01000800",
+        "10800000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00080040",
+            "01000800",
+            "01080840"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00080040",
+            "10800000",
+            "10880040"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "01000800",
+            "10800000",
+            "11800800"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00080040",
+            "01000800",
+            "01080840"
+          ],
+          "coset_zero_label": "01080840",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00080040",
+            "10800000",
+            "10880040"
+          ],
+          "coset_zero_label": "10880040",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "01000800",
+            "10800000",
+            "11800800"
+          ],
+          "coset_zero_label": "11800800",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00080040",
+          "01000800",
+          "01080840"
+        ],
+        "coset_zero_label": "01080840",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00001080",
+        "01100000",
+        "22000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00001080",
+            "01100000",
+            "01101080"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00001080",
+            "22000000",
+            "22001080"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "01100000",
+            "22000000",
+            "23100000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00001080",
+            "01100000",
+            "01101080"
+          ],
+          "coset_zero_label": "01101080",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00001080",
+            "22000000",
+            "22001080"
+          ],
+          "coset_zero_label": "22001080",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "01100000",
+            "22000000",
+            "23100000"
+          ],
+          "coset_zero_label": "23100000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00001080",
+          "01100000",
+          "01101080"
+        ],
+        "coset_zero_label": "01101080",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00002100",
+        "04200000",
+        "42000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00002100",
+            "04200000",
+            "04202100"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00002100",
+            "42000000",
+            "42002100"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "04200000",
+            "42000000",
+            "46200000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00002100",
+            "04200000",
+            "04202100"
+          ],
+          "coset_zero_label": "04202100",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00002100",
+            "42000000",
+            "42002100"
+          ],
+          "coset_zero_label": "42002100",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "04200000",
+            "42000000",
+            "46200000"
+          ],
+          "coset_zero_label": "46200000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00002100",
+          "04200000",
+          "04202100"
+        ],
+        "coset_zero_label": "04202100",
+        "kind": "AND"
+      }
+    },
+    {
+      "sources": [
+        "00004200",
+        "08400000",
+        "84000000"
+      ],
+      "nor_controls": [
+        {
+          "span": [
+            "00004200",
+            "08400000",
+            "08404200"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "00004200",
+            "84000000",
+            "84004200"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        },
+        {
+          "span": [
+            "08400000",
+            "84000000",
+            "8c400000"
+          ],
+          "coset_zero_label": "00000000",
+          "kind": "NOR"
+        }
+      ],
+      "and_choices": [
+        {
+          "span": [
+            "00004200",
+            "08400000",
+            "08404200"
+          ],
+          "coset_zero_label": "08404200",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "00004200",
+            "84000000",
+            "84004200"
+          ],
+          "coset_zero_label": "84004200",
+          "kind": "AND"
+        },
+        {
+          "span": [
+            "08400000",
+            "84000000",
+            "8c400000"
+          ],
+          "coset_zero_label": "8c400000",
+          "kind": "AND"
+        }
+      ],
+      "selected_and": {
+        "span": [
+          "00004200",
+          "08400000",
+          "08404200"
+        ],
+        "coset_zero_label": "08404200",
+        "kind": "AND"
+      }
+    }
+  ],
+  "unique_nor_controls": [
+    {
+      "span": [
+        "00000002",
+        "08000000",
+        "08000002"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000002",
+        "80000000",
+        "80000002"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000004",
+        "00000400",
+        "00000404"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000004",
+        "00008000",
+        "00008004"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000004",
+        "08000000",
+        "08000004"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000021",
+        "00440000",
+        "00440021"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000021",
+        "40022000",
+        "40022021"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000042",
+        "00084000",
+        "00084042"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000042",
+        "80840000",
+        "80840042"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000080",
+        "00001000",
+        "00001080"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000080",
+        "00400000",
+        "00400080"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000084",
+        "00108000",
+        "00108084"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000084",
+        "01080000",
+        "01080084"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000108",
+        "00210000",
+        "00210108"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000108",
+        "02100000",
+        "02100108"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000210",
+        "00420000",
+        "00420210"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000210",
+        "04200000",
+        "04200210"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000400",
+        "08000000",
+        "08000400"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000420",
+        "00840000",
+        "00840420"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00000420",
+        "08400000",
+        "08400420"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001000",
+        "00008000",
+        "00009000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001000",
+        "00400000",
+        "00401000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001000",
+        "20000000",
+        "20001000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001001",
+        "00022000",
+        "00023001"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001001",
+        "42000000",
+        "42001001"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001080",
+        "01100000",
+        "01101080"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00001080",
+        "22000000",
+        "22001080"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00002000",
+        "00020000",
+        "00022000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00002000",
+        "40000000",
+        "40002000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00002100",
+        "04200000",
+        "04202100"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00002100",
+        "42000000",
+        "42002100"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00004002",
+        "00042000",
+        "00046002"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00004002",
+        "84000000",
+        "84004002"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00004200",
+        "08400000",
+        "08404200"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00004200",
+        "84000000",
+        "84004200"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00008000",
+        "00100000",
+        "00108000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00008000",
+        "08000000",
+        "08008000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00008000",
+        "10000000",
+        "10008000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00008000",
+        "20000000",
+        "20008000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00020000",
+        "40000000",
+        "40020000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00020010",
+        "00210000",
+        "00230010"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00020010",
+        "20000000",
+        "20020010"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00022000",
+        "42000000",
+        "42022000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00040000",
+        "00800000",
+        "00840000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00040000",
+        "80000000",
+        "80040000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00042000",
+        "84000000",
+        "84042000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00080040",
+        "01000800",
+        "01080840"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00080040",
+        "10800000",
+        "10880040"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00084000",
+        "80840000",
+        "808c4000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00100000",
+        "00400000",
+        "00500000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00100000",
+        "02000000",
+        "02100000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00100000",
+        "10000000",
+        "10100000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00108000",
+        "01080000",
+        "01188000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00210000",
+        "02100000",
+        "02310000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00210000",
+        "20000000",
+        "20210000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00400000",
+        "02000000",
+        "02400000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00420000",
+        "04200000",
+        "04620000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00440000",
+        "40022000",
+        "40462000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00800000",
+        "80000000",
+        "80800000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "00840000",
+        "08400000",
+        "08c40000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "01000800",
+        "10800000",
+        "11800800"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "01100000",
+        "22000000",
+        "23100000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "04200000",
+        "42000000",
+        "46200000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "08000000",
+        "80000000",
+        "88000000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    },
+    {
+      "span": [
+        "08400000",
+        "84000000",
+        "8c400000"
+      ],
+      "coset_zero_label": "00000000",
+      "kind": "NOR"
+    }
+  ],
+  "selected_and_controls": [
+    {
+      "span": [
+        "00000002",
+        "08000000",
+        "08000002"
+      ],
+      "coset_zero_label": "08000002",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000004",
+        "08000000",
+        "08000004"
+      ],
+      "coset_zero_label": "08000004",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000021",
+        "00440000",
+        "00440021"
+      ],
+      "coset_zero_label": "00440021",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000042",
+        "00084000",
+        "00084042"
+      ],
+      "coset_zero_label": "00084042",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000080",
+        "00001000",
+        "00001080"
+      ],
+      "coset_zero_label": "00001080",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000084",
+        "00108000",
+        "00108084"
+      ],
+      "coset_zero_label": "00108084",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000108",
+        "00210000",
+        "00210108"
+      ],
+      "coset_zero_label": "00210108",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000210",
+        "00420000",
+        "00420210"
+      ],
+      "coset_zero_label": "00420210",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00000420",
+        "00840000",
+        "00840420"
+      ],
+      "coset_zero_label": "00840420",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00001000",
+        "00008000",
+        "00009000"
+      ],
+      "coset_zero_label": "00009000",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00001001",
+        "00022000",
+        "00023001"
+      ],
+      "coset_zero_label": "00023001",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00001080",
+        "01100000",
+        "01101080"
+      ],
+      "coset_zero_label": "01101080",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00002000",
+        "00020000",
+        "00022000"
+      ],
+      "coset_zero_label": "00022000",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00002100",
+        "04200000",
+        "04202100"
+      ],
+      "coset_zero_label": "04202100",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00004002",
+        "00042000",
+        "00046002"
+      ],
+      "coset_zero_label": "00046002",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00004200",
+        "08400000",
+        "08404200"
+      ],
+      "coset_zero_label": "08404200",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00008000",
+        "00100000",
+        "00108000"
+      ],
+      "coset_zero_label": "00108000",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00020010",
+        "00210000",
+        "00230010"
+      ],
+      "coset_zero_label": "00230010",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00040000",
+        "00800000",
+        "00840000"
+      ],
+      "coset_zero_label": "00840000",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00080040",
+        "01000800",
+        "01080840"
+      ],
+      "coset_zero_label": "01080840",
+      "kind": "AND"
+    },
+    {
+      "span": [
+        "00100000",
+        "00400000",
+        "00500000"
+      ],
+      "coset_zero_label": "00500000",
+      "kind": "AND"
+    }
+  ]
+}

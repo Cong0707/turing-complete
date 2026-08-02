@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "result": "pass",
+  "binary": {
+    "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+    "size": 15754739,
+    "sha256": "C93F5E8E826050C3F92E2B3891D26FCDFC933658614185CB9B2EB6A34C5B8D1C",
+    "image_base": "0x140000000",
+    "constants": {
+      "AUTO_SIZE": {
+        "va": "0x140995870",
+        "value": 9223372036854775808,
+        "hex": "0x8000000000000000"
+      },
+      "VARIABLE_WIDTH": {
+        "va": "0x140995878",
+        "value": 9223372036854775807,
+        "hex": "0x7fffffffffffffff"
+      },
+      "VARIABLE_WIDTH2": {
+        "va": "0x140995880",
+        "value": 9223372036854775806,
+        "hex": "0x7ffffffffffffffe"
+      },
+      "VARIABLE_WIDTH4": {
+        "va": "0x140995888",
+        "value": 9223372036854775805,
+        "hex": "0x7ffffffffffffffd"
+      },
+      "VARIABLE_WIDTH8": {
+        "va": "0x140995890",
+        "value": 9223372036854775804,
+        "hex": "0x7ffffffffffffffc"
+      },
+      "MAX_WIRE_WIDTH": {
+        "va": "0x140995898",
+        "value": 2048,
+        "hex": "0x0000000000000800"
+      }
+    },
+    "opcode_checks": {
+      "reject_custom_kind_78": {
+        "va": "0x14023683d",
+        "bytes": "807d104e"
+      },
+      "auto_size_fallback_bits_2": {
+        "va": "0x1402368c2",
+        "bytes": "b902000000"
+      },
+      "output_index_bounds_check": {
+        "va": "0x140236920",
+        "bytes": "0fb75518"
+      },
+      "variable_width_x1": {
+        "va": "0x1402369c6",
+        "bytes": "ba01000000"
+      },
+      "variable_width2_x2": {
+        "va": "0x140236a2d",
+        "bytes": "ba02000000"
+      },
+      "variable_width4_x4": {
+        "va": "0x140236a94",
+        "bytes": "ba04000000"
+      },
+      "variable_width8_x8": {
+        "va": "0x140236af8",
+        "bytes": "ba08000000"
+      }
+    },
+    "clamp_jump_table": {
+      "base_va": "0x140a0392c",
+      "entries": {
+        "95": {
+          "index": 0,
+          "entry_va": "0x140a0392c",
+          "relative": -8177075,
+          "target_va": "0x140237379"
+        },
+        "96": {
+          "index": 1,
+          "entry_va": "0x140a03930",
+          "relative": -8177075,
+          "target_va": "0x140237379"
+        }
+      },
+      "shared_target_semantics": "max(Bits(1), min(serialized_word_size, MAX_WIRE_WIDTH))"
+    }
+  },
+  "get_output_word_size": {
+    "address": "0x1402367c6",
+    "kind_95_explicit": "returns component word_size because output[0] is VARIABLE_WIDTH",
+    "kind_95_auto_size": "AUTO_SIZE first becomes Bits(2), then VARIABLE_WIDTH multiplies by 1",
+    "kind_96_output": "no legal output index; output count is zero and bounds checking raises",
+    "settings_or_label_dependency": false
+  },
+  "prototypes": {
+    "kind_95": {
+      "name": "com_verilog_input",
+      "input_count": 0,
+      "output_count": 1,
+      "output_0_descriptor": "0x7fffffffffffffff"
+    },
+    "kind_96": {
+      "name": "com_verilog_output",
+      "input_count": 1,
+      "output_count": 0,
+      "input_0_descriptor": "0x7fffffffffffffff"
+    }
+  },
+  "v15_retention": {
+    "v15_source": {
+      "enum_range_acceptance": true,
+      "kind_assignment": true,
+      "component_list_has_no_kind_filter": true
+    },
+    "v15_binary_component_parser": {
+      "binary_kind_upper_bound_124": true,
+      "accepted_kind_is_stored": true
+    },
+    "v15_binary_component_list": {
+      "every_parsed_component_is_added": true
+    },
+    "load_schematic_raw": {
+      "only_zero_kind_skips_main_add_path": true,
+      "custom_kind_has_separate_check": true,
+      "word_size_is_clamped": true,
+      "component_reaches_board_add": true
+    },
+    "board_add_component": {
+      "only_custom_78_uses_custom_presence_gate": true,
+      "normal_kind_uses_prototype_table": true
+    },
+    "serializer": {
+      "serializer_writes_raw_kind": true,
+      "serializer_writes_word_size": true,
+      "only_custom_has_extra_tail": true
+    },
+    "enum_and_unused_set": {
+      "kind_95_enum": true,
+      "kind_96_enum": true,
+      "unused_set_present": true,
+      "kind_95_not_unused": true,
+      "kind_96_not_unused": true
+    },
+    "conclusion": "raw v15 kinds 95/96 are accepted, mounted through the native prototype table, and preserved on save"
+  },
+  "strict_conclusion": {
+    "explicit_kind_95_width_range_after_mount": [
+      1,
+      2048
+    ],
+    "auto_size_kind_95_effective_output_width": 2,
+    "proven": "width metadata and v15 retention",
+    "not_proven_here": "that changing width yields arbitrary seed-bit extraction or a useful free truncation in generated Verilog"
+  },
+  "scope": {
+    "game_process_started": false,
+    "formal_save_files_accessed": false,
+    "formal_save_files_modified": false
+  }
+}

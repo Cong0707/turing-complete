@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "level": "rng",
+  "strategy": "split B/C RAM8 encoded-state network",
+  "sha256": "8b3fa9303be44958651ea90653d045a468fb9dd18e678380136d4b724dcd778d",
+  "format_version": 15,
+  "leaderboard_tuple": [
+    191,
+    10,
+    66
+  ],
+  "energy": 126060,
+  "component_count": 152,
+  "wire_count": 338,
+  "component_kind_counts": {
+    "2": 1,
+    "3": 1,
+    "7": 47,
+    "10": 19,
+    "13": 1,
+    "16": 8,
+    "17": 8,
+    "23": 57,
+    "46": 1,
+    "54": 1,
+    "56": 1,
+    "62": 1,
+    "70": 1,
+    "97": 2,
+    "99": 2,
+    "118": 1
+  },
+  "cost_terms": {
+    "mode_or": 47,
+    "b_final_bit_xor": 57,
+    "u1_word_xor": 57,
+    "ready_delay_and_not": 6,
+    "ram_backing": 8,
+    "ram_load": 8,
+    "ram_store": 8
+  },
+  "delay_certificate": {
+    "local_b_data_path": "mode OR 1 + U1 Word XOR 2 + Bit XOR 2 = 5",
+    "local_c_data_path": "U1 Word XOR 2 + U1 Word XOR 2 = 4",
+    "full_scored_delay": "10: native Architecture Input switched-control propagation includes the ready-control arrival"
+  },
+  "ram_settings": [
+    2,
+    512,
+    0
+  ],
+  "ram_buffer_size": 8,
+  "runtime_test_seed_count": 256,
+  "runtime_tick_count": 16896,
+  "first_seed_prefix": [
+    "48669548",
+    "e3b830cf",
+    "bc6e3466"
+  ],
+  "connectivity": {
+    "effective_component_count": 152,
+    "supported_component_count": 152,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 549,
+    "connected_pin_count": 549,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 211,
+    "logical_edge_count": 333,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 9,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_footprint_overlap_count": 0,
+    "intentional_ram_group_overlap_pair_count": 2
+  },
+  "live_sprite_layout": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cell_count": 124,
+    "internal_wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "architecture_io_access_cell_count": 7,
+    "ram_group_endpoint_collision_count": 3
+  }
+}

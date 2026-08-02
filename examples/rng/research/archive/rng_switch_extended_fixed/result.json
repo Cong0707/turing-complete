@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "model": "fixed 61-XOR DAG, extended timing-safe unit EARLY occurrences",
+  "require_matching": true,
+  "limits": {
+    "early": 32,
+    "late": 18,
+    "phase_cost": 82
+  },
+  "b_cone": {
+    "first_nodes": 27,
+    "second_nodes": 19,
+    "direct_b_targets": 5
+  },
+  "results": {
+    "at_most_32_early": {
+      "status": "unsat",
+      "reason": ""
+    },
+    "exactly_32_early": {
+      "status": "unsat",
+      "reason": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+000000014043dfe0  f8                               clc       
+000000014043dfe1  00 00                            add       byte ptr [rax], al
+000000014043dfe3  00 48 c7                         add       byte ptr [rax - 0x39], cl
+000000014043dfe6  85 f0                            test      eax, esi
+000000014043dfe8  00 00                            add       byte ptr [rax], al
+000000014043dfea  00 00                            add       byte ptr [rax], al
+000000014043dfec  00 00                            add       byte ptr [rax], al
+000000014043dfee  00 66 c7                         add       byte ptr [rsi - 0x39], ah
+000000014043dff1  85 00                            test      dword ptr [rax], eax
+000000014043dff3  01 00                            add       dword ptr [rax], eax
+000000014043dff5  00 00                            add       byte ptr [rax], al
+000000014043dff7  00 48 8d                         add       byte ptr [rax - 0x73], cl
+000000014043dffa  85 e0                            test      eax, esp
+000000014043dffc  00 00                            add       byte ptr [rax], al
+000000014043dffe  00 48 89                         add       byte ptr [rax - 0x77], cl
+000000014043e001  c1 e8 4e                         shr       eax, 0x4e
+000000014043e004  54                               push      rsp

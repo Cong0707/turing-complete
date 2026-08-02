@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "runtime": {
+    "game_root": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete",
+    "sha256": {
+      "Turing Complete.exe": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c",
+      "compile.dll": "d4f258ca43456df685592f4562cd4450a0baecc47972d6c615042e34e33eb08b",
+      "campaign/rng/test.si": "b396a9d5bba76bec2ceb123478dadc4616b6057894f17775982ed097c62fd50c",
+      "campaign/rng/meta.txt": "b75269554e75007582f0f4b7a2d022767e618faca18e6c5337a93a953ff32141"
+    },
+    "test_count": 256,
+    "test_ids": [
+      0,
+      255
+    ],
+    "input_semantics": "arch_get_input is evaluated by generated circuit code on every tick; rng/test.si returns the unchanged initial_seed every time",
+    "output_semantics": "each enabled architecture-output tick invokes arch_check_output once"
+  },
+  "samples": {
+    "seed_formula": "seed(test_id) = 1 + (((test_id + 1) * 0x4848f09881d3ddd1 mod 2^64) mod 0xfffffffe)",
+    "seed_vector_encoding": "256 little-endian U32 values in test-id order",
+    "seed_vector_sha256": "d8ef931e5eb213217aa4faedc43783f0875e52607f991e89080c6046aad1e24b",
+    "seed_count": 256,
+    "seed_unique_count": 256,
+    "seed_linear_rank_gf2": 32,
+    "seed_affine_rank_gf2": 32,
+    "first_full_rank_prefix_length": 66,
+    "trajectory_definition": "seed plus F(seed)..F^65(seed) for each test",
+    "trajectory_state_count": 16896,
+    "trajectory_unique_state_count": 16896,
+    "first_seeds_hex": [
+      "1265bf04",
+      "24cb7e07",
+      "37313d0a",
+      "4996fc09",
+      "5bfcbb0c",
+      "6e627a0f",
+      "80c83912",
+      "932df811"
+    ],
+    "linear_specialization_consequence": "the tested initial seeds span GF(2)^32, so any linear 32-bit first-step network agreeing with F on all tests is exactly F on every 32-bit input"
+  },
+  "continuous_seed_affine_state": {
+    "definition": "q_t = T(x_t xor s), where x_0=s and T is any invertible GF(2) map",
+    "initial_state": "q_0 = 0",
+    "transition": "q_(t+1) = B*q_t xor D*s",
+    "B": "T*A*T^-1",
+    "D": "T*(A+I) = (B+I)*T",
+    "output_forms": [
+      "x_(t+1) = T^-1*q_(t+1) xor s",
+      "x_(t+1) = (A*T^-1)*q_t xor A*s"
+    ],
+    "protocol_precondition": "s is continuously available because rng arch_get_input returns initial_seed on every tick",
+    "scope": "algebraic protocol certificate only; a concrete circuit still needs joint XOR synthesis, timing, routing, and in-game verification"
+  }
+}
