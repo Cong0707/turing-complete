@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "model": "complete exact-x56 legal-shear component audit",
+  "scope": {
+    "state_rows": "T/B/C rows remain nonzero and weight <= 4",
+    "network": "shared scalar depth-two XOR2 DAG",
+    "neighbor": "one GF(2) row shear",
+    "phase": "physical U32 Switch phase CNF",
+    "not_global_lower_bound": true
+  },
+  "cost_model": {
+    "ordinary_xor": [
+      3,
+      2
+    ],
+    "u1_xor": [
+      3,
+      2
+    ],
+    "u2_xor": [
+      6,
+      2
+    ],
+    "u3_xor": [
+      9,
+      2
+    ],
+    "u4_xor": [
+      12,
+      2
+    ],
+    "u8_xor": [
+      24,
+      2
+    ],
+    "width_w_xor": [
+      "3*w",
+      2
+    ],
+    "x56_logic_gate": 168,
+    "fixed_shell_gate": 230,
+    "phase_repair_budget": 33,
+    "target": [
+      431,
+      9,
+      66
+    ]
+  },
+  "source_pool": {
+    "input_records": 7738,
+    "unique_states": 3578,
+    "exact_xor_histogram": {
+      "56": 205,
+      "57": 3373
+    },
+    "x56_seed_count": 205
+  },
+  "x56_component": {
+    "level_widths": [
+      205,
+      43,
+      27,
+      11,
+      2,
+      0
+    ],
+    "total_states": 288,
+    "neighbor_levels": [
+      {
+        "summary": "hidden-neighbor-all-cover-summary.json",
+        "scored_unique_neighbors": 29549,
+        "exact_xor_histogram": {
+          "56": 43,
+          "57": 3541,
+          "58": 18919,
+          "59": 3634,
+          "60": 1076,
+          "61": 904,
+          "62": 1432
+        },
+        "new_x56": 43,
+        "frontier": "hidden-neighbor-new-exact-x56.jsonl",
+        "frontier_count": 43
+      },
+      {
+        "summary": "plateau-r2-all-cover-summary.json",
+        "scored_unique_neighbors": 5518,
+        "exact_xor_histogram": {
+          "56": 27,
+          "57": 663,
+          "58": 3624,
+          "59": 709,
+          "60": 183,
+          "61": 115,
+          "62": 197
+        },
+        "new_x56": 27,
+        "frontier": "plateau-r2-new-x56.jsonl",
+        "frontier_count": 27
+      },
+      {
+        "summary": "plateau-r3-all-cover-summary.json",
+        "scored_unique_neighbors": 3118,
+        "exact_xor_histogram": {
+          "56": 11,
+          "57": 369,
+          "58": 2138,
+          "59": 406,
+          "60": 75,
+          "61": 40,
+          "62": 79
+        },
+        "new_x56": 11,
+        "frontier": "plateau-r3-new-x56.jsonl",
+        "frontier_count": 11
+      },
+      {
+        "summary": "plateau-r4-all-cover-summary.json",
+        "scored_unique_neighbors": 1086,
+        "exact_xor_histogram": {
+          "56": 2,
+          "57": 124,
+          "58": 780,
+          "59": 147,
+          "60": 16,
+          "61": 5,
+          "62": 12
+        },
+        "new_x56": 2,
+        "frontier": "plateau-r4-new-x56.jsonl",
+        "frontier_count": 2
+      },
+      {
+        "summary": "plateau-r5-all-cover-summary.json",
+        "scored_unique_neighbors": 167,
+        "exact_xor_histogram": {
+          "57": 18,
+          "58": 123,
+          "59": 24,
+          "60": 2
+        },
+        "new_x56": 0,
+        "frontier": null,
+        "frontier_count": 0
+      }
+    ],
+    "x55_found": false
+  },
+  "phase_audit": {
+    "groups": [
+      {
+        "file": "hidden-x56-all-phase.json",
+        "records": 205,
+        "covers": 609,
+        "unsat": 609
+      },
+      {
+        "file": "hidden-neighbor-new-all-phase.json",
+        "records": 43,
+        "covers": 113,
+        "unsat": 113
+      },
+      {
+        "file": "plateau-r2-r4-all-phase.json",
+        "records": 40,
+        "covers": 78,
+        "unsat": 78
+      }
+    ],
+    "records": 288,
+    "covers": 800,
+    "statuses": {
+      "unsat": 800
+    },
+    "sat": 0,
+    "unknown": 0
+  },
+  "files": {
+    "2026-08-03-XOR\u5bbd\u5ea6\u6210\u672c\u4e0e\u9690\u85cfx56\u524d\u6cbf\u5ba1\u8ba1.md": "1a0fe782f19425bdf56a951e6f1833a84baf3eda5aa3b03eaf3dd8787b3ee7b3",
+    "audit_hidden_covers.py": "ba8be249ac9c829bf033876769361af63680a915870167042691db3e6d2206ed",
+    "audit_hidden_phase.py": "6e552e777faf90cfbe8e70a8fb4ecbab9a716d74e550b3ced5507a8051bdb552",
+    "summarize_hidden_frontier.py": "2e77956e915fba622c9802f3de1ca747d9ad09b39d3399f963b525ce4149e126",
+    "radius10-15-hidden-x56.jsonl": "880817a6a8807b4e846ede0eaa34b29cf49f8bdd9d4ade2318ce440ff526f2f1",
+    "radius10-15-summary.json": "52195e68d5525832c04303421d11f6e70a15cf2bdee0b5e2c43f5d885525db25",
+    "hidden-x56-all-phase.json": "17844f7c38b1a302002709e1e56cac6a4892ce6a90215ef3dc7878777a520c12",
+    "hidden-neighbor-new-exact-x56.jsonl": "beb79b6b1dbea7d3c86e4dcf0a3d743ba313f76314c86e88a31d5f7b851be786",
+    "hidden-neighbor-new-all-phase.json": "2e310d78954ba644b399a82a991fcd3b8b14c8e9de52158df56024577b633eca",
+    "plateau-r2-new-x56.jsonl": "a1af3410ea50efc7770bd5a77baea601cefef266a81f51a731f28fd023216fe1",
+    "plateau-r3-new-x56.jsonl": "8d339c6eef6fa4a845f11a7876b77d24e02b3314e73188b82e09558c002982d5",
+    "plateau-r4-new-x56.jsonl": "93d979c1df5ff593b36211d94743ad35f1c9e9be4323247442226c0509113175",
+    "plateau-r2-r4-x56.jsonl": "303e1713ef6692c926c042915c850a61acbf7a265067245ac0f0ac4f017415aa",
+    "plateau-r2-r4-all-phase.json": "c7bee67c0f6ffc1716f591098a5474dfed1de023f421f41b67905e72ce1ca494",
+    "hidden-neighbor-all-cover-summary.json": "87ef3816bc303a0772f12886bc20a753d1eaaee30fe6703a5ef216cccfa74efa",
+    "plateau-r2-all-cover-summary.json": "23f1e3e515a127616a9cfcb68dc57351b3cf99031f6339395dc38328a42d837e",
+    "plateau-r3-all-cover-summary.json": "5824d8b074ef463e41fc923491b5e79f9bfca7be5a9d70e319213c4bfcac7c5f",
+    "plateau-r4-all-cover-summary.json": "8b93293eb0a91b9aa9b8dde55d89fcdc553eabfd5c94dd9b538351945cab45e8",
+    "plateau-r5-all-cover-summary.json": "4f0c4d1a23ea8474ea7a282e4048d97c895aa9a7fc33aa940dc08863407ebbd9"
+  }
+}
