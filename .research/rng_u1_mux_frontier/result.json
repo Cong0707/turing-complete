@@ -1,0 +1,664 @@
+{
+  "schema": 1,
+  "status": "offline-verified; game verification pending",
+  "artifact": "candidate.data",
+  "sha256": "b4a8d804f05140d933d082fc3f8d53d9d62d99f9d894e841bbb3fc65b9012bd1",
+  "leaderboard_tuple": [
+    350,
+    10,
+    67
+  ],
+  "energy": 234500,
+  "reference": [
+    402,
+    9,
+    67,
+    242406
+  ],
+  "improvement": 7906,
+  "uses_ram": false,
+  "all_delay_init_data_zero": true,
+  "component_count": 226,
+  "wire_count": 468,
+  "gate_table": {
+    "component_kind_counts": {
+      "3": 4,
+      "4": 27,
+      "6": 40,
+      "7": 75,
+      "13": 34,
+      "16": 4,
+      "17": 4,
+      "42": 34,
+      "62": 1,
+      "70": 1,
+      "97": 1,
+      "99": 1
+    },
+    "category_costs": {
+      "32 state Delay Bit": 160,
+      "2 phase Delay Bit": 10,
+      "47 mode OR": 47,
+      "27 positive XOR cells (3 each)": 81,
+      "13 selected first-layer complements": 13,
+      "3 selected direct-leaf NOT": 3,
+      "34 width-one MUX": 34,
+      "phase OR + NOT": 2
+    },
+    "total": 350,
+    "cost_model": {
+      "NOT/AND/NAND/OR": "1 gate / 1 delay",
+      "U1 MUX": "1 gate / 3 delay from imported byte_mux 34/3 frontier",
+      "Delay Bit": "5 gate / 4 delay",
+      "positive XOR": "three explicit primitives / 3 gate / 2 delay",
+      "selected complement": "one extra NAND or NOT / 1 gate / 1 delay"
+    }
+  },
+  "complement_cover": {
+    "problem": "one complemented data endpoint must cover each second-layer XOR edge",
+    "vertex_count": 32,
+    "edge_count": 34,
+    "exact_minimum_cover_size": 16,
+    "first_layer_complement_count": 13,
+    "direct_group_complement_count": 3,
+    "first_layer_complements": [
+      "00000021",
+      "00000084",
+      "00000210",
+      "00000840",
+      "00002100",
+      "00008008",
+      "00840000",
+      "02100000",
+      "08400000",
+      "10010000",
+      "21000000",
+      "40000002",
+      "84000000"
+    ],
+    "direct_group_complements": [
+      {
+        "state": "00000400",
+        "seed": "08000000"
+      },
+      {
+        "state": "00001000",
+        "seed": "20000000"
+      },
+      {
+        "state": "00004000",
+        "seed": "80000000"
+      }
+    ],
+    "orientations": [
+      {
+        "output": "00002021",
+        "selector_vertex": "('direct', 8192, 1073741824)",
+        "data_vertex": "('first', 33)"
+      },
+      {
+        "output": "00004042",
+        "selector_vertex": "('first', 66)",
+        "data_vertex": "('direct', 16384, 2147483648)"
+      },
+      {
+        "output": "00008808",
+        "selector_vertex": "('direct', 2048, 268435456)",
+        "data_vertex": "('first', 32776)"
+      },
+      {
+        "output": "00011010",
+        "selector_vertex": "('first', 65552)",
+        "data_vertex": "('direct', 4096, 536870912)"
+      },
+      {
+        "output": "00420021",
+        "selector_vertex": "('first', 4325376)",
+        "data_vertex": "('first', 33)"
+      },
+      {
+        "output": "00840042",
+        "selector_vertex": "('first', 66)",
+        "data_vertex": "('first', 8650752)"
+      },
+      {
+        "output": "01080084",
+        "selector_vertex": "('first', 17301504)",
+        "data_vertex": "('first', 132)"
+      },
+      {
+        "output": "01088008",
+        "selector_vertex": "('first', 17301504)",
+        "data_vertex": "('first', 32776)"
+      },
+      {
+        "output": "02100108",
+        "selector_vertex": "('first', 264)",
+        "data_vertex": "('first', 34603008)"
+      },
+      {
+        "output": "02110010",
+        "selector_vertex": "('first', 65552)",
+        "data_vertex": "('first', 34603008)"
+      },
+      {
+        "output": "04200021",
+        "selector_vertex": "('first', 69206016)",
+        "data_vertex": "('first', 33)"
+      },
+      {
+        "output": "04200210",
+        "selector_vertex": "('first', 69206016)",
+        "data_vertex": "('first', 528)"
+      },
+      {
+        "output": "08008400",
+        "selector_vertex": "('first', 134250496)",
+        "data_vertex": "('direct', 1024, 134217728)"
+      },
+      {
+        "output": "08008840",
+        "selector_vertex": "('first', 134250496)",
+        "data_vertex": "('first', 2112)"
+      },
+      {
+        "output": "08400042",
+        "selector_vertex": "('first', 66)",
+        "data_vertex": "('first', 138412032)"
+      },
+      {
+        "output": "08400420",
+        "selector_vertex": "('first', 1056)",
+        "data_vertex": "('first', 138412032)"
+      },
+      {
+        "output": "10010800",
+        "selector_vertex": "('direct', 2048, 268435456)",
+        "data_vertex": "('first', 268500992)"
+      },
+      {
+        "output": "10011080",
+        "selector_vertex": "('first', 4224)",
+        "data_vertex": "('first', 268500992)"
+      },
+      {
+        "output": "10800084",
+        "selector_vertex": "('first', 276824064)",
+        "data_vertex": "('first', 132)"
+      },
+      {
+        "output": "10800840",
+        "selector_vertex": "('first', 276824064)",
+        "data_vertex": "('first', 2112)"
+      },
+      {
+        "output": "20001001",
+        "selector_vertex": "('first', 536870913)",
+        "data_vertex": "('direct', 4096, 536870912)"
+      },
+      {
+        "output": "20002101",
+        "selector_vertex": "('first', 536870913)",
+        "data_vertex": "('first', 8448)"
+      },
+      {
+        "output": "21000108",
+        "selector_vertex": "('first', 264)",
+        "data_vertex": "('first', 553648128)"
+      },
+      {
+        "output": "21001080",
+        "selector_vertex": "('first', 4224)",
+        "data_vertex": "('first', 553648128)"
+      },
+      {
+        "output": "40002002",
+        "selector_vertex": "('direct', 8192, 1073741824)",
+        "data_vertex": "('first', 1073741826)"
+      },
+      {
+        "output": "40004202",
+        "selector_vertex": "('first', 16896)",
+        "data_vertex": "('first', 1073741826)"
+      },
+      {
+        "output": "40420002",
+        "selector_vertex": "('first', 4325376)",
+        "data_vertex": "('first', 1073741826)"
+      },
+      {
+        "output": "42000210",
+        "selector_vertex": "('first', 1107296256)",
+        "data_vertex": "('first', 528)"
+      },
+      {
+        "output": "42002100",
+        "selector_vertex": "('first', 1107296256)",
+        "data_vertex": "('first', 8448)"
+      },
+      {
+        "output": "80000404",
+        "selector_vertex": "('first', 2147483652)",
+        "data_vertex": "('direct', 1024, 134217728)"
+      },
+      {
+        "output": "80004004",
+        "selector_vertex": "('first', 2147483652)",
+        "data_vertex": "('direct', 16384, 2147483648)"
+      },
+      {
+        "output": "80840004",
+        "selector_vertex": "('first', 2147483652)",
+        "data_vertex": "('first', 8650752)"
+      },
+      {
+        "output": "84000420",
+        "selector_vertex": "('first', 1056)",
+        "data_vertex": "('first', 2214592512)"
+      },
+      {
+        "output": "84004200",
+        "selector_vertex": "('first', 16896)",
+        "data_vertex": "('first', 2214592512)"
+      }
+    ]
+  },
+  "load_dont_care_reuse": {
+    "raw_direct_leaf_count_before": 10,
+    "shared_mode_rail_count_after": 5,
+    "selected_complement_groups": 3,
+    "unselected_complement_groups": 2,
+    "not_gate_count": 3,
+    "pairs": [
+      {
+        "state_bit": 10,
+        "shared_mode_pair": {
+          "seed_bit": 27,
+          "state_bit": 10
+        },
+        "feedback_target": "80000404",
+        "feedback_membership": "B-only",
+        "output_target": "08008400",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 11,
+        "shared_mode_pair": {
+          "seed_bit": 28,
+          "state_bit": 11
+        },
+        "feedback_target": "00008808",
+        "feedback_membership": "B-only",
+        "output_target": "10010800",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 12,
+        "shared_mode_pair": {
+          "seed_bit": 29,
+          "state_bit": 12
+        },
+        "feedback_target": "00011010",
+        "feedback_membership": "B-only",
+        "output_target": "20001001",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 13,
+        "shared_mode_pair": {
+          "seed_bit": 30,
+          "state_bit": 13
+        },
+        "feedback_target": "00002021",
+        "feedback_membership": "B-only",
+        "output_target": "40002002",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 14,
+        "shared_mode_pair": {
+          "seed_bit": 31,
+          "state_bit": 14
+        },
+        "feedback_target": "00004042",
+        "feedback_membership": "B-only",
+        "output_target": "80004004",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      }
+    ]
+  },
+  "mux": {
+    "serialized_kind": 42,
+    "serialized_word_size": 1,
+    "pin_semantics": "select=0 -> in0; select=1 -> in1; ordinary driven output",
+    "exhaustive_macro_rows": [
+      {
+        "select": 0,
+        "in0": 0,
+        "in1": 1,
+        "out": 0
+      },
+      {
+        "select": 0,
+        "in0": 1,
+        "in1": 0,
+        "out": 1
+      },
+      {
+        "select": 1,
+        "in0": 0,
+        "in1": 1,
+        "out": 1
+      },
+      {
+        "select": 1,
+        "in0": 1,
+        "in1": 0,
+        "out": 0
+      }
+    ],
+    "mux_count": 34,
+    "multi_driver_network_count": 0,
+    "z_generated_by_mux": false
+  },
+  "z_audit": {
+    "mux_input_pin_count": 102,
+    "all_mux_inputs_single_ordinary_driver": true,
+    "mux_output_direction": "ordinary output",
+    "mux_input_driver_kind_counts": {
+      "3": 6,
+      "4": 58,
+      "6": 28,
+      "7": 10
+    },
+    "z_leak_count": 0,
+    "multi_driver_count": 0
+  },
+  "native_score": {
+    "gate": 350,
+    "delay": 10,
+    "mux_delay": 3,
+    "critical_terminal_type": "output",
+    "critical_path": [
+      {
+        "component_index": 2,
+        "kind": 13,
+        "position": [
+          -580,
+          -390
+        ],
+        "component_gate": 5,
+        "component_delay": 4,
+        "arrival": 4
+      },
+      {
+        "component_index": 0,
+        "kind": 62,
+        "position": [
+          -600,
+          0
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 6,
+        "kind": 99,
+        "position": [
+          -565,
+          0
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 8,
+        "kind": 17,
+        "position": [
+          -530,
+          -56
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 52,
+        "kind": 7,
+        "position": [
+          -250,
+          238
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 5
+      },
+      {
+        "component_index": 180,
+        "kind": 7,
+        "position": [
+          -170,
+          230
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 6
+      },
+      {
+        "component_index": 182,
+        "kind": 4,
+        "position": [
+          -125,
+          230
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 7
+      },
+      {
+        "component_index": 219,
+        "kind": 42,
+        "position": [
+          30,
+          279
+        ],
+        "component_gate": 1,
+        "component_delay": 3,
+        "arrival": 10
+      }
+    ]
+  },
+  "default_prototype_fallback": {
+    "leaderboard_tuple": [
+      350,
+      11,
+      67
+    ],
+    "energy": 257950,
+    "native_score": {
+      "gate": 350,
+      "delay": 11,
+      "mux_delay": 4,
+      "critical_terminal_type": "output",
+      "critical_path": [
+        {
+          "component_index": 2,
+          "kind": 13,
+          "position": [
+            -580,
+            -390
+          ],
+          "component_gate": 5,
+          "component_delay": 4,
+          "arrival": 4
+        },
+        {
+          "component_index": 0,
+          "kind": 62,
+          "position": [
+            -600,
+            0
+          ],
+          "component_gate": 0,
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 6,
+          "kind": 99,
+          "position": [
+            -565,
+            0
+          ],
+          "component_gate": 0,
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 8,
+          "kind": 17,
+          "position": [
+            -530,
+            -56
+          ],
+          "component_gate": 0,
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 52,
+          "kind": 7,
+          "position": [
+            -250,
+            238
+          ],
+          "component_gate": 1,
+          "component_delay": 1,
+          "arrival": 5
+        },
+        {
+          "component_index": 180,
+          "kind": 7,
+          "position": [
+            -170,
+            230
+          ],
+          "component_gate": 1,
+          "component_delay": 1,
+          "arrival": 6
+        },
+        {
+          "component_index": 182,
+          "kind": 4,
+          "position": [
+            -125,
+            230
+          ],
+          "component_gate": 1,
+          "component_delay": 1,
+          "arrival": 7
+        },
+        {
+          "component_index": 219,
+          "kind": 42,
+          "position": [
+            30,
+            279
+          ],
+          "component_gate": 1,
+          "component_delay": 4,
+          "arrival": 11
+        }
+      ]
+    },
+    "competitive": false
+  },
+  "cost_provenance": {
+    "component": "com_mux",
+    "kind": 42,
+    "word_size": 1,
+    "profile_frontier_snapshot": "examples/byte_mux/level.json score_history=34&3&1|",
+    "unlock_evidence": "campaign/byte_mux/meta.txt unlocks_components=[com_mux]",
+    "runtime_dispatch": "kind42 is outside default bitmap; imported component cost is used when present",
+    "gate_formula": "b*(w//8)+(w%8) for remainder<=3; w=1 gives 1",
+    "delay_formula": "b; imported byte_mux delay=3 gives U1 MUX delay=3",
+    "fallback": "without imported component cost, default prototype is 1 gate / 4 delay"
+  },
+  "connectivity": {
+    "effective_component_count": 226,
+    "supported_component_count": 226,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 724,
+    "connected_pin_count": 724,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 256,
+    "logical_edge_count": 434,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 8,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "conservative": {
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "component_footprint_overlap_count": 0
+    },
+    "sprite": {
+      "unsupported_component_kinds": [],
+      "component_overlap_cell_count": 0,
+      "internal_wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0
+    }
+  },
+  "stream": {
+    "seed_count": 288,
+    "tick_count": 19296,
+    "output_count": 18720,
+    "outputs_per_seed": 65,
+    "coverage": "256 deterministic full-width seeds + every U32 unit basis + high-bit boundaries",
+    "control_trace": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "gf2": {
+    "field": "GF(2)",
+    "basis_vectors": 32,
+    "iterations_per_basis": 65,
+    "checked_outputs": 2080,
+    "identities": [
+      "C*T=A",
+      "T*C=B",
+      "T*T^-1=I"
+    ],
+    "full_space_conclusion": "linearity extends the basis proof to every U32 seed"
+  },
+  "timing_explanation": "Delay 4 + mode OR 1 + explicit positive/complement cell 2 + imported U1 MUX 3 = 10",
+  "evidence_boundary": "v15 structure, exact MUX macro, topology, 256x67 ticks, GF(2), Z boundary and geometry are offline verified; game/server must confirm imported 1/3 MUX cost"
+}

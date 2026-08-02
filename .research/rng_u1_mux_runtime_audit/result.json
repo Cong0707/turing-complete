@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "status": "rejected: candidate score ledger contradicts current runtime",
+  "read_only": true,
+  "game_started": false,
+  "inputs": {
+    "game_exe": {
+      "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+      "sha256": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c"
+    },
+    "levels": {
+      "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\levels.txt",
+      "sha256": "a72b2cc151050f483545e8c5b096da0d93f092de8193f9c26fc7769a3c496123"
+    },
+    "score_capture": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_score_runtime\\score-functions.json",
+      "sha256": "8b4541b956c859acb6a0bd9764edcc094b7336405b6e30fa3d11edde01146375"
+    },
+    "candidate_report": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_u1_mux_frontier\\result.json",
+      "sha256": "38cc2572f13b26986cbe70412d9b4efd9ca3f6516113fce11cbf873e77f71191"
+    }
+  },
+  "profile_frontiers": {
+    "byte_mux": {
+      "solved": true,
+      "schematic": "Default",
+      "gate": 34,
+      "delay": 3,
+      "score": 1
+    },
+    "rng": {
+      "solved": true,
+      "schematic": "CODEX-RNG",
+      "gate": 245,
+      "delay": 7,
+      "score": 66
+    }
+  },
+  "runtime_evidence": {
+    "gate_function": {
+      "name": "get_gate_cost__modelZscores_u2232",
+      "address": "0x0000000140275f1b"
+    },
+    "delay_function": {
+      "name": "get_delay_cost__modelZscores_u2270",
+      "address": "0x0000000140276fb1"
+    },
+    "kind42_in_direct_delay_mask": true
+  },
+  "runtime_formula": {
+    "gate": "q=imported_gate div 8; r=imported_gate mod 8; r>3 ? (q+1)*width+r-8 : q*width+r",
+    "delay_kind42": "imported_delay",
+    "imported_byte_mux": [
+      34,
+      3
+    ],
+    "kind42_width_table": {
+      "1": {
+        "gate": 6,
+        "delay": 3
+      },
+      "2": {
+        "gate": 10,
+        "delay": 3
+      },
+      "3": {
+        "gate": 14,
+        "delay": 3
+      },
+      "4": {
+        "gate": 18,
+        "delay": 3
+      },
+      "5": {
+        "gate": 22,
+        "delay": 3
+      },
+      "6": {
+        "gate": 26,
+        "delay": 3
+      },
+      "7": {
+        "gate": 30,
+        "delay": 3
+      },
+      "8": {
+        "gate": 34,
+        "delay": 3
+      }
+    }
+  },
+  "circuits": {
+    "candidate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_u1_mux_frontier\\candidate.data",
+      "sha256": "b4a8d804f05140d933d082fc3f8d53d9d62d99f9d894e841bbb3fc65b9012bd1",
+      "bytes": 21355,
+      "format_version": 15,
+      "stored_gate": 350,
+      "stored_delay": 10,
+      "component_count": 226,
+      "wire_count": 468,
+      "component_kind_counts": {
+        "3": 4,
+        "4": 27,
+        "6": 40,
+        "7": 75,
+        "13": 34,
+        "16": 4,
+        "17": 4,
+        "42": 34,
+        "62": 1,
+        "70": 1,
+        "97": 1,
+        "99": 1
+      },
+      "kind42_word_sizes": {
+        "1": 34
+      },
+      "custom_id": 0,
+      "design_bytes": 0,
+      "dependency_count": 0
+    },
+    "deployed": {
+      "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\architecture\\CODEX-RNG\\circuit.data",
+      "sha256": "b4a8d804f05140d933d082fc3f8d53d9d62d99f9d894e841bbb3fc65b9012bd1",
+      "bytes": 21355,
+      "format_version": 15,
+      "stored_gate": 350,
+      "stored_delay": 10,
+      "component_count": 226,
+      "wire_count": 468,
+      "component_kind_counts": {
+        "3": 4,
+        "4": 27,
+        "6": 40,
+        "7": 75,
+        "13": 34,
+        "16": 4,
+        "17": 4,
+        "42": 34,
+        "62": 1,
+        "70": 1,
+        "97": 1,
+        "99": 1
+      },
+      "kind42_word_sizes": {
+        "1": 34
+      },
+      "custom_id": 0,
+      "design_bytes": 0,
+      "dependency_count": 0
+    },
+    "byte_mux_file": {
+      "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\byte_mux\\Default\\circuit.data",
+      "sha256": "b44fa2f651b523e54821db496ce429f00d302e952493340de84e7214cf2d30c8",
+      "bytes": 956,
+      "format_version": 15,
+      "stored_gate": 33,
+      "stored_delay": 2,
+      "component_count": 5,
+      "wire_count": 4,
+      "component_kind_counts": {
+        "42": 1,
+        "60": 1,
+        "61": 2,
+        "69": 1
+      },
+      "kind42_word_sizes": {
+        "8": 1
+      },
+      "custom_id": 4474616436706468016,
+      "design_bytes": 512,
+      "dependency_count": 0
+    },
+    "candidate_equals_deployed": true,
+    "byte_mux_file_header_is_not_profile_frontier": [
+      33,
+      2
+    ]
+  },
+  "finding": {
+    "mux_count": 34,
+    "mux_word_size": 1,
+    "claimed_u1_mux": [
+      1,
+      3
+    ],
+    "runtime_u1_mux": [
+      6,
+      3
+    ],
+    "claimed_rng": [
+      350,
+      10,
+      67
+    ],
+    "corrected_rng": [
+      520,
+      10,
+      67
+    ],
+    "claimed_energy": 234500,
+    "corrected_energy": 348400,
+    "verified_reference": [
+      402,
+      9,
+      67
+    ],
+    "verified_reference_energy": 242406,
+    "corrected_candidate_minus_reference": 105994
+  },
+  "identity_risk": {
+    "custom_id": 0,
+    "design_bytes": 0,
+    "assessment": "standalone v15 payload; loading/submission identity requires separate game verification"
+  },
+  "conclusion": "The 34 U1 MUX candidate may be structurally valid, but the current executable charges each kind-42 width-one MUX as 6/3, not 1/3. Its corrected score is 520/10/67, so it is not an RNG leaderboard frontier."
+}
