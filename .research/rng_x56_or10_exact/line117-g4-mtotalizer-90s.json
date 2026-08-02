@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "status": "unsat-complete",
+  "model": "exact joint arbitrary pair cover + mediated B weight1/2 + tick-zero OR labels",
+  "complete": true,
+  "truncated": false,
+  "topology_limit": null,
+  "component_limit": null,
+  "global_beam": null,
+  "cost": {
+    "fixed_shell_gate": 166,
+    "xor2_gate": 3,
+    "xor2_delay": 2,
+    "or_gate": 1,
+    "or_delay": 1,
+    "logic_budget": 221
+  },
+  "target": {
+    "gate": 387,
+    "delay": 10,
+    "cycles": 66
+  },
+  "input_record_count": 1,
+  "processed_record_count": 1,
+  "statuses": {
+    "unsat": 1
+  },
+  "solver": "g4",
+  "budget_encoding": "mtotalizer",
+  "timeout_seconds_per_record": 90.0,
+  "peak_rss_bytes": 275726336,
+  "peak_rss_mb": 262.953,
+  "elapsed_seconds": 18.302683600020828,
+  "winner": null,
+  "records": [
+    {
+      "record": 116,
+      "source_path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_word_residual_search\\radius14-x56-neighbors.jsonl",
+      "source_line": 117,
+      "radius": 11,
+      "parent": 1130,
+      "dst": 18,
+      "src": 26,
+      "source_greedy_xor": 56,
+      "T_sha256": "606ff88a569152d6963d1a93383ae3a85441af074baf8cfce758a023a9467c28",
+      "status": "unsat",
+      "elapsed_seconds": 18.256601100001717,
+      "variable_count": 152520,
+      "clause_count": 870143,
+      "clause_sha256": "b829f932655bab1508e668dbd0211b7bfaa2984cdf7c1a050cf59caf4b3aacda",
+      "peak_rss_bytes": 275726336,
+      "solver_stats": {
+        "restarts": 144,
+        "conflicts": 53185,
+        "decisions": 206083,
+        "propagations": 385948888
+      },
+      "xor_count": null,
+      "or_count": null,
+      "logic_cost": null,
+      "selected_pairs": [],
+      "decompositions": {},
+      "low_modes": {},
+      "pair_labels": {},
+      "pair_orientations": {},
+      "mappings": [],
+      "peak_rss_mb": 262.953
+    }
+  ]
+}
