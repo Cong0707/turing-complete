@@ -1,0 +1,757 @@
+{
+  "schema": 1,
+  "status": "unsat-or-budget",
+  "model": "65-cycle cyclic retime with joint tick-zero B/C labels",
+  "prefix_stage_count": 0,
+  "xor_count": 61,
+  "or_budget": 44,
+  "proved_or_lower_bound": 46,
+  "proved_seed_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "per_seed_minimum": [
+    5,
+    5,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "lower_bound_only": [
+    {
+      "seed": 13,
+      "target": "4202310142023101",
+      "or_lower_bound": 7
+    }
+  ],
+  "failed_seed": 14,
+  "failed_seed_lower_bound": 7,
+  "failed_target": "8404620284046202",
+  "site_count": 111,
+  "unique_influence_count": 83,
+  "maximum_sites_per_seed": 6,
+  "completeness": "All XOR-combinations of legal site influence masks through size 6 were enumerated for the failed seed; all earlier reported seed minima are exact. Different seed bits cannot share one physical one-bit OR.",
+  "assignments": [
+    {
+      "seed": 0,
+      "target": "0002100100021001",
+      "feedback_target": "00021001",
+      "visible_target": "00021001",
+      "or_count": 5,
+      "sites": [
+        {
+          "source": 32,
+          "source_form": "00002001",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000000100000001",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 66,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 44,
+          "source_form": "02001000",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000100000001000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 78,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 22,
+          "source_form": "00400000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0042000000420000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 56,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        },
+        {
+          "source": 61,
+          "source_form": "08800400",
+          "source_depth": 2,
+          "remaining_xor": 0,
+          "influence": "0800000008000000",
+          "uses": [
+            {
+              "kind": "feedback",
+              "target": -1,
+              "pin": -1,
+              "output_bit": 27,
+              "remaining_xor": 0
+            },
+            {
+              "kind": "visible",
+              "target": -1,
+              "pin": -1,
+              "output_bit": 27,
+              "remaining_xor": 0
+            }
+          ]
+        },
+        {
+          "source": 27,
+          "source_form": "08000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0840000008400000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 61,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "target": "0004200200042002",
+      "feedback_target": "00042002",
+      "visible_target": "00042002",
+      "or_count": 5,
+      "sites": [
+        {
+          "source": 33,
+          "source_form": "00004002",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000000200000002",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 67,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 45,
+          "source_form": "04002000",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000200000002000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 79,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 23,
+          "source_form": "00800000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0084000000840000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 57,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        },
+        {
+          "source": 62,
+          "source_form": "11000800",
+          "source_depth": 2,
+          "remaining_xor": 0,
+          "influence": "1000000010000000",
+          "uses": [
+            {
+              "kind": "feedback",
+              "target": -1,
+              "pin": -1,
+              "output_bit": 28,
+              "remaining_xor": 0
+            },
+            {
+              "kind": "visible",
+              "target": -1,
+              "pin": -1,
+              "output_bit": 28,
+              "remaining_xor": 0
+            }
+          ]
+        },
+        {
+          "source": 28,
+          "source_form": "10000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "1080000010800000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 62,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "target": "0008400400084004",
+      "feedback_target": "00084004",
+      "visible_target": "00084004",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 34,
+          "source_form": "00008004",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000000400000004",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 68,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 19,
+          "source_form": "00080000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0008400000084000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 53,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 3,
+      "target": "0010800800108008",
+      "feedback_target": "00108008",
+      "visible_target": "00108008",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 35,
+          "source_form": "00010008",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000000800000008",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 69,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 20,
+          "source_form": "00100000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0010800000108000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 54,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 4,
+      "target": "0021001000210010",
+      "feedback_target": "00210010",
+      "visible_target": "00210010",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 36,
+          "source_form": "00020010",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000001000000010",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 70,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 21,
+          "source_form": "00200000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0021000000210000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 55,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 5,
+      "target": "0042002100420021",
+      "feedback_target": "00420021",
+      "visible_target": "00420021",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 37,
+          "source_form": "00040020",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000002100000021",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 66,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 71,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 22,
+          "source_form": "00400000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0042000000420000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 56,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 6,
+      "target": "0084004200840042",
+      "feedback_target": "00840042",
+      "visible_target": "00840042",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 38,
+          "source_form": "00080040",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000004200000042",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 67,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 72,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 23,
+          "source_form": "00800000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0084000000840000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 57,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 7,
+      "target": "0108008401080084",
+      "feedback_target": "01080084",
+      "visible_target": "01080084",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 39,
+          "source_form": "00100080",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000008400000084",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 68,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 73,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 24,
+          "source_form": "01000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0108000001080000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 58,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 8,
+      "target": "0210010802100108",
+      "feedback_target": "02100108",
+      "visible_target": "02100108",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 40,
+          "source_form": "00200100",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000010800000108",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 69,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 74,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 25,
+          "source_form": "02000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0210000002100000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 59,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 9,
+      "target": "0420021004200210",
+      "feedback_target": "04200210",
+      "visible_target": "04200210",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 41,
+          "source_form": "00400200",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000021000000210",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 70,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 75,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 26,
+          "source_form": "04000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0420000004200000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 60,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 10,
+      "target": "0840042008400420",
+      "feedback_target": "08400420",
+      "visible_target": "08400420",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 42,
+          "source_form": "00800400",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000042000000420",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 71,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 76,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 27,
+          "source_form": "08000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "0840000008400000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 61,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 11,
+      "target": "1080084010800840",
+      "feedback_target": "10800840",
+      "visible_target": "10800840",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 43,
+          "source_form": "01000800",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000084000000840",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 72,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 77,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 28,
+          "source_form": "10000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "1080000010800000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 62,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "seed": 12,
+      "target": "2100108021001080",
+      "feedback_target": "21001080",
+      "visible_target": "21001080",
+      "or_count": 2,
+      "sites": [
+        {
+          "source": 44,
+          "source_form": "02001000",
+          "source_depth": 1,
+          "remaining_xor": 1,
+          "influence": "0000108000001080",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 73,
+              "pin": 1,
+              "output_bit": -1,
+              "remaining_xor": 1
+            },
+            {
+              "kind": "gate",
+              "target": 78,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 1
+            }
+          ]
+        },
+        {
+          "source": 29,
+          "source_form": "20000000",
+          "source_depth": 0,
+          "remaining_xor": 2,
+          "influence": "2100000021000000",
+          "uses": [
+            {
+              "kind": "gate",
+              "target": 63,
+              "pin": 0,
+              "output_bit": -1,
+              "remaining_xor": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "certificate_sha256": "c5098f888e78e3fb1ecf3b0c03de42707549b63b4400da29a5b6aa6421892582"
+}

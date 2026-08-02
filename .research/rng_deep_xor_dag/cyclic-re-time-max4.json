@@ -1,0 +1,4843 @@
+{
+  "schema": 1,
+  "results": [
+    {
+      "schema": 1,
+      "status": "exact-within-bound",
+      "model": "61-XOR cyclic retime plus legal late OR edge injection",
+      "prefix_stage_count": 0,
+      "stage_order": [
+        [
+          "right",
+          13
+        ],
+        [
+          "left",
+          17
+        ],
+        [
+          "right",
+          5
+        ]
+      ],
+      "visible_boundary_after_stage": 3,
+      "xor_count": 61,
+      "or_count": 44,
+      "logic_cost": 227,
+      "gate": 393,
+      "delay": 10,
+      "cycles": 66,
+      "energy": 259380,
+      "beats_431_9_66": false,
+      "site_count": 77,
+      "unique_influence_count": 49,
+      "maximum_sites_per_seed": 4,
+      "T": [
+        "00000001",
+        "00000002",
+        "00000004",
+        "00000008",
+        "00000010",
+        "00000020",
+        "00000040",
+        "00000080",
+        "00000100",
+        "00000200",
+        "00000400",
+        "00000800",
+        "00001000",
+        "00002000",
+        "00004000",
+        "00008000",
+        "00010000",
+        "00020000",
+        "00040000",
+        "00080000",
+        "00100000",
+        "00200000",
+        "00400000",
+        "00800000",
+        "01000000",
+        "02000000",
+        "04000000",
+        "08000000",
+        "10000000",
+        "20000000",
+        "40000000",
+        "80000000"
+      ],
+      "B": [
+        "00042021",
+        "00084042",
+        "00108084",
+        "00210108",
+        "00420210",
+        "00840420",
+        "01080840",
+        "02101080",
+        "04202100",
+        "08404200",
+        "10808400",
+        "21010800",
+        "42023001",
+        "84046002",
+        "0808c004",
+        "10118008",
+        "20230010",
+        "40462021",
+        "808c4042",
+        "01188084",
+        "02310108",
+        "04620210",
+        "08c40420",
+        "11880840",
+        "23101080",
+        "46202100",
+        "8c404200",
+        "08800400",
+        "11000800",
+        "22001000",
+        "44002000",
+        "88004000"
+      ],
+      "C": [
+        "00042021",
+        "00084042",
+        "00108084",
+        "00210108",
+        "00420210",
+        "00840420",
+        "01080840",
+        "02101080",
+        "04202100",
+        "08404200",
+        "10808400",
+        "21010800",
+        "42023001",
+        "84046002",
+        "0808c004",
+        "10118008",
+        "20230010",
+        "40462021",
+        "808c4042",
+        "01188084",
+        "02310108",
+        "04620210",
+        "08c40420",
+        "11880840",
+        "23101080",
+        "46202100",
+        "8c404200",
+        "08800400",
+        "11000800",
+        "22001000",
+        "44002000",
+        "88004000"
+      ],
+      "gate_dag": [
+        {
+          "output": 32,
+          "left": 0,
+          "right": 13,
+          "stage": 0
+        },
+        {
+          "output": 33,
+          "left": 1,
+          "right": 14,
+          "stage": 0
+        },
+        {
+          "output": 34,
+          "left": 2,
+          "right": 15,
+          "stage": 0
+        },
+        {
+          "output": 35,
+          "left": 3,
+          "right": 16,
+          "stage": 0
+        },
+        {
+          "output": 36,
+          "left": 4,
+          "right": 17,
+          "stage": 0
+        },
+        {
+          "output": 37,
+          "left": 5,
+          "right": 18,
+          "stage": 0
+        },
+        {
+          "output": 38,
+          "left": 6,
+          "right": 19,
+          "stage": 0
+        },
+        {
+          "output": 39,
+          "left": 7,
+          "right": 20,
+          "stage": 0
+        },
+        {
+          "output": 40,
+          "left": 8,
+          "right": 21,
+          "stage": 0
+        },
+        {
+          "output": 41,
+          "left": 9,
+          "right": 22,
+          "stage": 0
+        },
+        {
+          "output": 42,
+          "left": 10,
+          "right": 23,
+          "stage": 0
+        },
+        {
+          "output": 43,
+          "left": 11,
+          "right": 24,
+          "stage": 0
+        },
+        {
+          "output": 44,
+          "left": 12,
+          "right": 25,
+          "stage": 0
+        },
+        {
+          "output": 45,
+          "left": 13,
+          "right": 26,
+          "stage": 0
+        },
+        {
+          "output": 46,
+          "left": 14,
+          "right": 27,
+          "stage": 0
+        },
+        {
+          "output": 47,
+          "left": 15,
+          "right": 28,
+          "stage": 0
+        },
+        {
+          "output": 48,
+          "left": 16,
+          "right": 29,
+          "stage": 0
+        },
+        {
+          "output": 49,
+          "left": 17,
+          "right": 30,
+          "stage": 0
+        },
+        {
+          "output": 50,
+          "left": 18,
+          "right": 31,
+          "stage": 0
+        },
+        {
+          "output": 51,
+          "left": 49,
+          "right": 32,
+          "stage": 1
+        },
+        {
+          "output": 52,
+          "left": 50,
+          "right": 33,
+          "stage": 1
+        },
+        {
+          "output": 53,
+          "left": 19,
+          "right": 34,
+          "stage": 1
+        },
+        {
+          "output": 54,
+          "left": 20,
+          "right": 35,
+          "stage": 1
+        },
+        {
+          "output": 55,
+          "left": 21,
+          "right": 36,
+          "stage": 1
+        },
+        {
+          "output": 56,
+          "left": 22,
+          "right": 37,
+          "stage": 1
+        },
+        {
+          "output": 57,
+          "left": 23,
+          "right": 38,
+          "stage": 1
+        },
+        {
+          "output": 58,
+          "left": 24,
+          "right": 39,
+          "stage": 1
+        },
+        {
+          "output": 59,
+          "left": 25,
+          "right": 40,
+          "stage": 1
+        },
+        {
+          "output": 60,
+          "left": 26,
+          "right": 41,
+          "stage": 1
+        },
+        {
+          "output": 61,
+          "left": 27,
+          "right": 42,
+          "stage": 1
+        },
+        {
+          "output": 62,
+          "left": 28,
+          "right": 43,
+          "stage": 1
+        },
+        {
+          "output": 63,
+          "left": 29,
+          "right": 44,
+          "stage": 1
+        },
+        {
+          "output": 64,
+          "left": 30,
+          "right": 45,
+          "stage": 1
+        },
+        {
+          "output": 65,
+          "left": 31,
+          "right": 46,
+          "stage": 1
+        },
+        {
+          "output": 66,
+          "left": 32,
+          "right": 37,
+          "stage": 2
+        },
+        {
+          "output": 67,
+          "left": 33,
+          "right": 38,
+          "stage": 2
+        },
+        {
+          "output": 68,
+          "left": 34,
+          "right": 39,
+          "stage": 2
+        },
+        {
+          "output": 69,
+          "left": 35,
+          "right": 40,
+          "stage": 2
+        },
+        {
+          "output": 70,
+          "left": 36,
+          "right": 41,
+          "stage": 2
+        },
+        {
+          "output": 71,
+          "left": 37,
+          "right": 42,
+          "stage": 2
+        },
+        {
+          "output": 72,
+          "left": 38,
+          "right": 43,
+          "stage": 2
+        },
+        {
+          "output": 73,
+          "left": 39,
+          "right": 44,
+          "stage": 2
+        },
+        {
+          "output": 74,
+          "left": 40,
+          "right": 45,
+          "stage": 2
+        },
+        {
+          "output": 75,
+          "left": 41,
+          "right": 46,
+          "stage": 2
+        },
+        {
+          "output": 76,
+          "left": 42,
+          "right": 47,
+          "stage": 2
+        },
+        {
+          "output": 77,
+          "left": 43,
+          "right": 48,
+          "stage": 2
+        },
+        {
+          "output": 78,
+          "left": 44,
+          "right": 51,
+          "stage": 2
+        },
+        {
+          "output": 79,
+          "left": 45,
+          "right": 52,
+          "stage": 2
+        },
+        {
+          "output": 80,
+          "left": 46,
+          "right": 53,
+          "stage": 2
+        },
+        {
+          "output": 81,
+          "left": 47,
+          "right": 54,
+          "stage": 2
+        },
+        {
+          "output": 82,
+          "left": 48,
+          "right": 55,
+          "stage": 2
+        },
+        {
+          "output": 83,
+          "left": 51,
+          "right": 56,
+          "stage": 2
+        },
+        {
+          "output": 84,
+          "left": 52,
+          "right": 57,
+          "stage": 2
+        },
+        {
+          "output": 85,
+          "left": 53,
+          "right": 58,
+          "stage": 2
+        },
+        {
+          "output": 86,
+          "left": 54,
+          "right": 59,
+          "stage": 2
+        },
+        {
+          "output": 87,
+          "left": 55,
+          "right": 60,
+          "stage": 2
+        },
+        {
+          "output": 88,
+          "left": 56,
+          "right": 61,
+          "stage": 2
+        },
+        {
+          "output": 89,
+          "left": 57,
+          "right": 62,
+          "stage": 2
+        },
+        {
+          "output": 90,
+          "left": 58,
+          "right": 63,
+          "stage": 2
+        },
+        {
+          "output": 91,
+          "left": 59,
+          "right": 64,
+          "stage": 2
+        },
+        {
+          "output": 92,
+          "left": 60,
+          "right": 65,
+          "stage": 2
+        }
+      ],
+      "assignments": [
+        {
+          "seed": 0,
+          "target": "00000001",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 32,
+              "source_form": "00002001",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000001",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 66,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "target": "00000002",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 33,
+              "source_form": "00004002",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000002",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 67,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "target": "00000004",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 34,
+              "source_form": "00008004",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000004",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 68,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 3,
+          "target": "00000008",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 35,
+              "source_form": "00010008",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000008",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 69,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 4,
+          "target": "00000010",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 36,
+              "source_form": "00020010",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000010",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 70,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 5,
+          "target": "00000020",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 37,
+              "source_form": "00040020",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000020",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 71,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 6,
+          "target": "00000040",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 38,
+              "source_form": "00080040",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000040",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 72,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 7,
+          "target": "00000080",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 39,
+              "source_form": "00100080",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000080",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 73,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 8,
+          "target": "00000100",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 40,
+              "source_form": "00200100",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000100",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 74,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 9,
+          "target": "00000200",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 41,
+              "source_form": "00400200",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000200",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 75,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 10,
+          "target": "00000400",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 42,
+              "source_form": "00800400",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000400",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 76,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 11,
+          "target": "00000800",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 43,
+              "source_form": "01000800",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00000800",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 77,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 12,
+          "target": "00001000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 44,
+              "source_form": "02001000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00001000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 78,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 13,
+          "target": "00002000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 45,
+              "source_form": "04002000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00002000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 79,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 14,
+          "target": "00004000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 46,
+              "source_form": "08004000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00004000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 80,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 15,
+          "target": "00008000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 47,
+              "source_form": "10008000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00008000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 81,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 16,
+          "target": "00010000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 48,
+              "source_form": "20010000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00010000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 82,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "target": "00020000",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 22,
+              "source_form": "00400000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00420000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 56,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 61,
+              "source_form": "08800400",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "08000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 27,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 27,
+              "source_form": "08000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "08400000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 61,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 18,
+          "target": "00040000",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 23,
+              "source_form": "00800000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00840000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 57,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 62,
+              "source_form": "11000800",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "10000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 28,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "10800000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 62,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "target": "00080000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 46,
+              "source_form": "08004000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00004000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 80,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 19,
+              "source_form": "00080000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00084000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 53,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 20,
+          "target": "00100000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 47,
+              "source_form": "10008000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00008000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 81,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 20,
+              "source_form": "00100000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00108000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 54,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 21,
+          "target": "00200000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 48,
+              "source_form": "20010000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00010000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 82,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 21,
+              "source_form": "00200000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00210000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 55,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 22,
+          "target": "00400000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 61,
+              "source_form": "08800400",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "08000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 27,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 27,
+              "source_form": "08000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "08400000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 61,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 23,
+          "target": "00800000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 62,
+              "source_form": "11000800",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "10000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 28,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "10800000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 62,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 24,
+          "target": "01000000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 63,
+              "source_form": "22001000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "20000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 29,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 29,
+              "source_form": "20000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "21000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 63,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 25,
+          "target": "02000000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 64,
+              "source_form": "44002000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "40000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 30,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "42000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 64,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 26,
+          "target": "04000000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 65,
+              "source_form": "88004000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "80000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 31,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 31,
+              "source_form": "80000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "84000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 65,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 27,
+          "target": "08000000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 61,
+              "source_form": "08800400",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "08000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 27,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 28,
+          "target": "10000000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 62,
+              "source_form": "11000800",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "10000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 28,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 29,
+          "target": "20000000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 63,
+              "source_form": "22001000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "20000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 29,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 30,
+          "target": "40000000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 64,
+              "source_form": "44002000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "40000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 30,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 31,
+          "target": "80000000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 65,
+              "source_form": "88004000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "80000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 31,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "certificate_sha256": "46d951f09d7000a46edf6619e66928882cf7f44004d57b5f25c71da9bebc9f56"
+    },
+    {
+      "schema": 1,
+      "status": "exact-within-bound",
+      "model": "61-XOR cyclic retime plus legal late OR edge injection",
+      "prefix_stage_count": 1,
+      "stage_order": [
+        [
+          "left",
+          17
+        ],
+        [
+          "right",
+          5
+        ],
+        [
+          "right",
+          13
+        ]
+      ],
+      "visible_boundary_after_stage": 2,
+      "xor_count": 61,
+      "or_count": 43,
+      "logic_cost": 226,
+      "gate": 392,
+      "delay": 10,
+      "cycles": 66,
+      "energy": 258720,
+      "beats_431_9_66": false,
+      "site_count": 76,
+      "unique_influence_count": 52,
+      "maximum_sites_per_seed": 4,
+      "T": [
+        "00002001",
+        "00004002",
+        "00008004",
+        "00010008",
+        "00020010",
+        "00040020",
+        "00080040",
+        "00100080",
+        "00200100",
+        "00400200",
+        "00800400",
+        "01000800",
+        "02001000",
+        "04002000",
+        "08004000",
+        "10008000",
+        "20010000",
+        "40020000",
+        "80040000",
+        "00080000",
+        "00100000",
+        "00200000",
+        "00400000",
+        "00800000",
+        "01000000",
+        "02000000",
+        "04000000",
+        "08000000",
+        "10000000",
+        "20000000",
+        "40000000",
+        "80000000"
+      ],
+      "B": [
+        "00042023",
+        "00084046",
+        "0010808c",
+        "00210118",
+        "00420231",
+        "00840462",
+        "010808c4",
+        "02101188",
+        "04202310",
+        "08404620",
+        "10808c40",
+        "21011880",
+        "42023101",
+        "84046202",
+        "08084404",
+        "10108808",
+        "20211010",
+        "40422021",
+        "80844042",
+        "01080084",
+        "02100108",
+        "04200210",
+        "08400420",
+        "10800840",
+        "21001080",
+        "42002100",
+        "84004200",
+        "08000400",
+        "10000800",
+        "20001000",
+        "40002000",
+        "80004000"
+      ],
+      "C": [
+        "00000021",
+        "00000042",
+        "00000084",
+        "00000108",
+        "00000210",
+        "00000420",
+        "00000840",
+        "00001080",
+        "00002100",
+        "00004200",
+        "00008400",
+        "00010800",
+        "00021001",
+        "00042002",
+        "00084004",
+        "00108008",
+        "00210010",
+        "00420021",
+        "00840042",
+        "01080084",
+        "02100108",
+        "04200210",
+        "08400420",
+        "10800840",
+        "21001080",
+        "42002100",
+        "84004200",
+        "08000400",
+        "10000800",
+        "20001000",
+        "40002000",
+        "80004000"
+      ],
+      "gate_dag": [
+        {
+          "output": 32,
+          "left": 17,
+          "right": 0,
+          "stage": 0
+        },
+        {
+          "output": 33,
+          "left": 18,
+          "right": 1,
+          "stage": 0
+        },
+        {
+          "output": 34,
+          "left": 19,
+          "right": 2,
+          "stage": 0
+        },
+        {
+          "output": 35,
+          "left": 20,
+          "right": 3,
+          "stage": 0
+        },
+        {
+          "output": 36,
+          "left": 21,
+          "right": 4,
+          "stage": 0
+        },
+        {
+          "output": 37,
+          "left": 22,
+          "right": 5,
+          "stage": 0
+        },
+        {
+          "output": 38,
+          "left": 23,
+          "right": 6,
+          "stage": 0
+        },
+        {
+          "output": 39,
+          "left": 24,
+          "right": 7,
+          "stage": 0
+        },
+        {
+          "output": 40,
+          "left": 25,
+          "right": 8,
+          "stage": 0
+        },
+        {
+          "output": 41,
+          "left": 26,
+          "right": 9,
+          "stage": 0
+        },
+        {
+          "output": 42,
+          "left": 27,
+          "right": 10,
+          "stage": 0
+        },
+        {
+          "output": 43,
+          "left": 28,
+          "right": 11,
+          "stage": 0
+        },
+        {
+          "output": 44,
+          "left": 29,
+          "right": 12,
+          "stage": 0
+        },
+        {
+          "output": 45,
+          "left": 30,
+          "right": 13,
+          "stage": 0
+        },
+        {
+          "output": 46,
+          "left": 31,
+          "right": 14,
+          "stage": 0
+        },
+        {
+          "output": 47,
+          "left": 0,
+          "right": 5,
+          "stage": 1
+        },
+        {
+          "output": 48,
+          "left": 1,
+          "right": 6,
+          "stage": 1
+        },
+        {
+          "output": 49,
+          "left": 2,
+          "right": 7,
+          "stage": 1
+        },
+        {
+          "output": 50,
+          "left": 3,
+          "right": 8,
+          "stage": 1
+        },
+        {
+          "output": 51,
+          "left": 4,
+          "right": 9,
+          "stage": 1
+        },
+        {
+          "output": 52,
+          "left": 5,
+          "right": 10,
+          "stage": 1
+        },
+        {
+          "output": 53,
+          "left": 6,
+          "right": 11,
+          "stage": 1
+        },
+        {
+          "output": 54,
+          "left": 7,
+          "right": 12,
+          "stage": 1
+        },
+        {
+          "output": 55,
+          "left": 8,
+          "right": 13,
+          "stage": 1
+        },
+        {
+          "output": 56,
+          "left": 9,
+          "right": 14,
+          "stage": 1
+        },
+        {
+          "output": 57,
+          "left": 10,
+          "right": 15,
+          "stage": 1
+        },
+        {
+          "output": 58,
+          "left": 11,
+          "right": 16,
+          "stage": 1
+        },
+        {
+          "output": 59,
+          "left": 12,
+          "right": 32,
+          "stage": 1
+        },
+        {
+          "output": 60,
+          "left": 13,
+          "right": 33,
+          "stage": 1
+        },
+        {
+          "output": 61,
+          "left": 14,
+          "right": 34,
+          "stage": 1
+        },
+        {
+          "output": 62,
+          "left": 15,
+          "right": 35,
+          "stage": 1
+        },
+        {
+          "output": 63,
+          "left": 16,
+          "right": 36,
+          "stage": 1
+        },
+        {
+          "output": 64,
+          "left": 32,
+          "right": 37,
+          "stage": 1
+        },
+        {
+          "output": 65,
+          "left": 33,
+          "right": 38,
+          "stage": 1
+        },
+        {
+          "output": 66,
+          "left": 34,
+          "right": 39,
+          "stage": 1
+        },
+        {
+          "output": 67,
+          "left": 35,
+          "right": 40,
+          "stage": 1
+        },
+        {
+          "output": 68,
+          "left": 36,
+          "right": 41,
+          "stage": 1
+        },
+        {
+          "output": 69,
+          "left": 37,
+          "right": 42,
+          "stage": 1
+        },
+        {
+          "output": 70,
+          "left": 38,
+          "right": 43,
+          "stage": 1
+        },
+        {
+          "output": 71,
+          "left": 39,
+          "right": 44,
+          "stage": 1
+        },
+        {
+          "output": 72,
+          "left": 40,
+          "right": 45,
+          "stage": 1
+        },
+        {
+          "output": 73,
+          "left": 41,
+          "right": 46,
+          "stage": 1
+        },
+        {
+          "output": 74,
+          "left": 47,
+          "right": 60,
+          "stage": 2
+        },
+        {
+          "output": 75,
+          "left": 48,
+          "right": 61,
+          "stage": 2
+        },
+        {
+          "output": 76,
+          "left": 49,
+          "right": 62,
+          "stage": 2
+        },
+        {
+          "output": 77,
+          "left": 50,
+          "right": 63,
+          "stage": 2
+        },
+        {
+          "output": 78,
+          "left": 51,
+          "right": 64,
+          "stage": 2
+        },
+        {
+          "output": 79,
+          "left": 52,
+          "right": 65,
+          "stage": 2
+        },
+        {
+          "output": 80,
+          "left": 53,
+          "right": 66,
+          "stage": 2
+        },
+        {
+          "output": 81,
+          "left": 54,
+          "right": 67,
+          "stage": 2
+        },
+        {
+          "output": 82,
+          "left": 55,
+          "right": 68,
+          "stage": 2
+        },
+        {
+          "output": 83,
+          "left": 56,
+          "right": 69,
+          "stage": 2
+        },
+        {
+          "output": 84,
+          "left": 57,
+          "right": 70,
+          "stage": 2
+        },
+        {
+          "output": 85,
+          "left": 58,
+          "right": 71,
+          "stage": 2
+        },
+        {
+          "output": 86,
+          "left": 59,
+          "right": 72,
+          "stage": 2
+        },
+        {
+          "output": 87,
+          "left": 60,
+          "right": 73,
+          "stage": 2
+        },
+        {
+          "output": 88,
+          "left": 61,
+          "right": 42,
+          "stage": 2
+        },
+        {
+          "output": 89,
+          "left": 62,
+          "right": 43,
+          "stage": 2
+        },
+        {
+          "output": 90,
+          "left": 63,
+          "right": 44,
+          "stage": 2
+        },
+        {
+          "output": 91,
+          "left": 64,
+          "right": 45,
+          "stage": 2
+        },
+        {
+          "output": 92,
+          "left": 65,
+          "right": 46,
+          "stage": 2
+        }
+      ],
+      "assignments": [
+        {
+          "seed": 0,
+          "target": "00000001",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 0,
+              "source_form": "00000001",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000001",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 47,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "target": "00000002",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 1,
+              "source_form": "00000002",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000002",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 48,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "target": "00000004",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 2,
+              "source_form": "00000004",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000004",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 49,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 3,
+          "target": "00000008",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 3,
+              "source_form": "00000008",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000008",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 50,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 4,
+          "target": "00000010",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 4,
+              "source_form": "00000010",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000010",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 51,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 5,
+          "target": "00000020",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 5,
+              "source_form": "00000020",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000020",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 52,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 6,
+          "target": "00000040",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 6,
+              "source_form": "00000040",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000040",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 53,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 7,
+          "target": "00000080",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 7,
+              "source_form": "00000080",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000080",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 54,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 8,
+          "target": "00000100",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 8,
+              "source_form": "00000100",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000100",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 55,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 9,
+          "target": "00000200",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 9,
+              "source_form": "00000200",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000200",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 56,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 10,
+          "target": "00000400",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 10,
+              "source_form": "00000400",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000400",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 57,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 11,
+          "target": "00000800",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 11,
+              "source_form": "00000800",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000800",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 58,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 12,
+          "target": "00001000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 12,
+              "source_form": "00001000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00001000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 59,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 13,
+          "target": "00002001",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 13,
+              "source_form": "00002000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00002001",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 60,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 14,
+          "target": "00004002",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 14,
+              "source_form": "00004000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00004002",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 61,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 15,
+          "target": "00008004",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 15,
+              "source_form": "00008000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00008004",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 62,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 16,
+          "target": "00010008",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 16,
+              "source_form": "00010000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00010008",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 63,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "target": "00020010",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 4,
+              "source_form": "00000010",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000010",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 51,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 45,
+              "source_form": "40002000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 91,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 18,
+          "target": "00040020",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 5,
+              "source_form": "00000020",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000020",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 52,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 46,
+              "source_form": "80004000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 92,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "target": "00080040",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 6,
+              "source_form": "00000040",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000040",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 53,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 66,
+              "source_form": "01080084",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00080000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 19,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 20,
+          "target": "00100080",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 7,
+              "source_form": "00000080",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000080",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 54,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 67,
+              "source_form": "02100108",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00100000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 20,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 21,
+          "target": "00200100",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 8,
+              "source_form": "00000100",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000100",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 55,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 68,
+              "source_form": "04200210",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00200000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 21,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 22,
+          "target": "00400200",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 9,
+              "source_form": "00000200",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000200",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 56,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 69,
+              "source_form": "08400420",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00400000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 22,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 23,
+          "target": "00800400",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 10,
+              "source_form": "00000400",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000400",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 57,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 70,
+              "source_form": "10800840",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00800000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 23,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 24,
+          "target": "01000800",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 11,
+              "source_form": "00000800",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000800",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 58,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 71,
+              "source_form": "21001080",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "01000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 24,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 25,
+          "target": "02001000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 12,
+              "source_form": "00001000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00001000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 59,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 72,
+              "source_form": "42002100",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "02000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 25,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 26,
+          "target": "04002000",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 0,
+              "source_form": "00000001",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00000001",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 47,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 13,
+              "source_form": "00002000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00002001",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 60,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 73,
+              "source_form": "84004200",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "04000000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 26,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 27,
+          "target": "08004000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 42,
+              "source_form": "08000400",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "08004000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 88,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 27,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 28,
+          "target": "10008000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 43,
+              "source_form": "10000800",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "10008000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 89,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 28,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 29,
+          "target": "20010000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 44,
+              "source_form": "20001000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "20010000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 90,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 29,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 30,
+          "target": "40020000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 45,
+              "source_form": "40002000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "40020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 91,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 30,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 31,
+          "target": "80040000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 46,
+              "source_form": "80004000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "80040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 92,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 31,
+                  "remaining_xor": 0
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "certificate_sha256": "cf21c8aa1fd30fb1777a90b6af4e63b5f2e0a019957e32e70ec37a4b9068b3ed"
+    },
+    {
+      "schema": 1,
+      "status": "exact-within-bound",
+      "model": "61-XOR cyclic retime plus legal late OR edge injection",
+      "prefix_stage_count": 2,
+      "stage_order": [
+        [
+          "right",
+          5
+        ],
+        [
+          "right",
+          13
+        ],
+        [
+          "left",
+          17
+        ]
+      ],
+      "visible_boundary_after_stage": 1,
+      "xor_count": 61,
+      "or_count": 73,
+      "logic_cost": 256,
+      "gate": 422,
+      "delay": 10,
+      "cycles": 66,
+      "energy": 278520,
+      "beats_431_9_66": false,
+      "site_count": 42,
+      "unique_influence_count": 38,
+      "maximum_sites_per_seed": 4,
+      "T": [
+        "00002001",
+        "00004002",
+        "00008004",
+        "00010008",
+        "00020010",
+        "00040020",
+        "00080040",
+        "00100080",
+        "00200100",
+        "00400200",
+        "00800400",
+        "01000800",
+        "02001000",
+        "04002000",
+        "08004000",
+        "10008000",
+        "20010000",
+        "40022001",
+        "80044002",
+        "00088004",
+        "00110008",
+        "00220010",
+        "00440020",
+        "00880040",
+        "01100080",
+        "02200100",
+        "04400200",
+        "08800400",
+        "11000800",
+        "22001000",
+        "44002000",
+        "88004000"
+      ],
+      "B": [
+        "00042021",
+        "00084042",
+        "00108084",
+        "00210108",
+        "00420210",
+        "00840420",
+        "01080840",
+        "02101080",
+        "04202100",
+        "08404200",
+        "10808400",
+        "21010800",
+        "42021000",
+        "84042000",
+        "08084000",
+        "10108000",
+        "20210000",
+        "40462021",
+        "808c4042",
+        "01188084",
+        "02310108",
+        "04620210",
+        "08c40420",
+        "11880840",
+        "23101080",
+        "46202100",
+        "8c404200",
+        "18808400",
+        "31010800",
+        "62021000",
+        "c4042000",
+        "88084000"
+      ],
+      "C": [
+        "00000021",
+        "00000042",
+        "00000084",
+        "00000108",
+        "00000210",
+        "00000420",
+        "00000840",
+        "00001080",
+        "00002100",
+        "00004200",
+        "00008400",
+        "00010800",
+        "00021000",
+        "00042000",
+        "00084000",
+        "00108000",
+        "00210000",
+        "00420000",
+        "00840000",
+        "01080000",
+        "02100000",
+        "04200000",
+        "08400000",
+        "10800000",
+        "21000000",
+        "42000000",
+        "84000000",
+        "08000000",
+        "10000000",
+        "20000000",
+        "40000000",
+        "80000000"
+      ],
+      "gate_dag": [
+        {
+          "output": 32,
+          "left": 0,
+          "right": 5,
+          "stage": 0
+        },
+        {
+          "output": 33,
+          "left": 1,
+          "right": 6,
+          "stage": 0
+        },
+        {
+          "output": 34,
+          "left": 2,
+          "right": 7,
+          "stage": 0
+        },
+        {
+          "output": 35,
+          "left": 3,
+          "right": 8,
+          "stage": 0
+        },
+        {
+          "output": 36,
+          "left": 4,
+          "right": 9,
+          "stage": 0
+        },
+        {
+          "output": 37,
+          "left": 5,
+          "right": 10,
+          "stage": 0
+        },
+        {
+          "output": 38,
+          "left": 6,
+          "right": 11,
+          "stage": 0
+        },
+        {
+          "output": 39,
+          "left": 7,
+          "right": 12,
+          "stage": 0
+        },
+        {
+          "output": 40,
+          "left": 8,
+          "right": 13,
+          "stage": 0
+        },
+        {
+          "output": 41,
+          "left": 9,
+          "right": 14,
+          "stage": 0
+        },
+        {
+          "output": 42,
+          "left": 10,
+          "right": 15,
+          "stage": 0
+        },
+        {
+          "output": 43,
+          "left": 11,
+          "right": 16,
+          "stage": 0
+        },
+        {
+          "output": 44,
+          "left": 12,
+          "right": 17,
+          "stage": 0
+        },
+        {
+          "output": 45,
+          "left": 13,
+          "right": 18,
+          "stage": 0
+        },
+        {
+          "output": 46,
+          "left": 14,
+          "right": 19,
+          "stage": 0
+        },
+        {
+          "output": 47,
+          "left": 15,
+          "right": 20,
+          "stage": 0
+        },
+        {
+          "output": 48,
+          "left": 16,
+          "right": 21,
+          "stage": 0
+        },
+        {
+          "output": 49,
+          "left": 17,
+          "right": 22,
+          "stage": 0
+        },
+        {
+          "output": 50,
+          "left": 18,
+          "right": 23,
+          "stage": 0
+        },
+        {
+          "output": 51,
+          "left": 19,
+          "right": 24,
+          "stage": 0
+        },
+        {
+          "output": 52,
+          "left": 20,
+          "right": 25,
+          "stage": 0
+        },
+        {
+          "output": 53,
+          "left": 21,
+          "right": 26,
+          "stage": 0
+        },
+        {
+          "output": 54,
+          "left": 22,
+          "right": 27,
+          "stage": 0
+        },
+        {
+          "output": 55,
+          "left": 23,
+          "right": 28,
+          "stage": 0
+        },
+        {
+          "output": 56,
+          "left": 24,
+          "right": 29,
+          "stage": 0
+        },
+        {
+          "output": 57,
+          "left": 25,
+          "right": 30,
+          "stage": 0
+        },
+        {
+          "output": 58,
+          "left": 26,
+          "right": 31,
+          "stage": 0
+        },
+        {
+          "output": 59,
+          "left": 32,
+          "right": 45,
+          "stage": 1
+        },
+        {
+          "output": 60,
+          "left": 33,
+          "right": 46,
+          "stage": 1
+        },
+        {
+          "output": 61,
+          "left": 34,
+          "right": 47,
+          "stage": 1
+        },
+        {
+          "output": 62,
+          "left": 35,
+          "right": 48,
+          "stage": 1
+        },
+        {
+          "output": 63,
+          "left": 36,
+          "right": 49,
+          "stage": 1
+        },
+        {
+          "output": 64,
+          "left": 37,
+          "right": 50,
+          "stage": 1
+        },
+        {
+          "output": 65,
+          "left": 38,
+          "right": 51,
+          "stage": 1
+        },
+        {
+          "output": 66,
+          "left": 39,
+          "right": 52,
+          "stage": 1
+        },
+        {
+          "output": 67,
+          "left": 40,
+          "right": 53,
+          "stage": 1
+        },
+        {
+          "output": 68,
+          "left": 41,
+          "right": 54,
+          "stage": 1
+        },
+        {
+          "output": 69,
+          "left": 42,
+          "right": 55,
+          "stage": 1
+        },
+        {
+          "output": 70,
+          "left": 43,
+          "right": 56,
+          "stage": 1
+        },
+        {
+          "output": 71,
+          "left": 44,
+          "right": 57,
+          "stage": 1
+        },
+        {
+          "output": 72,
+          "left": 45,
+          "right": 58,
+          "stage": 1
+        },
+        {
+          "output": 73,
+          "left": 46,
+          "right": 27,
+          "stage": 1
+        },
+        {
+          "output": 74,
+          "left": 47,
+          "right": 28,
+          "stage": 1
+        },
+        {
+          "output": 75,
+          "left": 48,
+          "right": 29,
+          "stage": 1
+        },
+        {
+          "output": 76,
+          "left": 49,
+          "right": 30,
+          "stage": 1
+        },
+        {
+          "output": 77,
+          "left": 50,
+          "right": 31,
+          "stage": 1
+        },
+        {
+          "output": 78,
+          "left": 76,
+          "right": 59,
+          "stage": 2
+        },
+        {
+          "output": 79,
+          "left": 77,
+          "right": 60,
+          "stage": 2
+        },
+        {
+          "output": 80,
+          "left": 51,
+          "right": 61,
+          "stage": 2
+        },
+        {
+          "output": 81,
+          "left": 52,
+          "right": 62,
+          "stage": 2
+        },
+        {
+          "output": 82,
+          "left": 53,
+          "right": 63,
+          "stage": 2
+        },
+        {
+          "output": 83,
+          "left": 54,
+          "right": 64,
+          "stage": 2
+        },
+        {
+          "output": 84,
+          "left": 55,
+          "right": 65,
+          "stage": 2
+        },
+        {
+          "output": 85,
+          "left": 56,
+          "right": 66,
+          "stage": 2
+        },
+        {
+          "output": 86,
+          "left": 57,
+          "right": 67,
+          "stage": 2
+        },
+        {
+          "output": 87,
+          "left": 58,
+          "right": 68,
+          "stage": 2
+        },
+        {
+          "output": 88,
+          "left": 27,
+          "right": 69,
+          "stage": 2
+        },
+        {
+          "output": 89,
+          "left": 28,
+          "right": 70,
+          "stage": 2
+        },
+        {
+          "output": 90,
+          "left": 29,
+          "right": 71,
+          "stage": 2
+        },
+        {
+          "output": 91,
+          "left": 30,
+          "right": 72,
+          "stage": 2
+        },
+        {
+          "output": 92,
+          "left": 31,
+          "right": 73,
+          "stage": 2
+        }
+      ],
+      "assignments": [
+        {
+          "seed": 0,
+          "target": "00020001",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 59,
+              "source_form": "00042021",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000001",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 0,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 76,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 1,
+          "target": "00040002",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 60,
+              "source_form": "00084042",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000002",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 1,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 31,
+              "source_form": "80000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 77,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 2,
+          "target": "00080004",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 61,
+              "source_form": "00108084",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000004",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 2,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 51,
+              "source_form": "01080000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00080000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 80,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 3,
+          "target": "00100008",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 62,
+              "source_form": "00210108",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000008",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 3,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 52,
+              "source_form": "02100000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00100000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 81,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 4,
+          "target": "00200010",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 63,
+              "source_form": "00420210",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000010",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 4,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 53,
+              "source_form": "04200000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00200000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 82,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 5,
+          "target": "00400020",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 64,
+              "source_form": "00840420",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000020",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 5,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 54,
+              "source_form": "08400000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00400000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 83,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 6,
+          "target": "00800040",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 65,
+              "source_form": "01080840",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000040",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 6,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 55,
+              "source_form": "10800000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00800000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 84,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 7,
+          "target": "01000080",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 66,
+              "source_form": "02101080",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000080",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 7,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 56,
+              "source_form": "21000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "01000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 85,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 8,
+          "target": "02000100",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 67,
+              "source_form": "04202100",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000100",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 8,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 57,
+              "source_form": "42000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "02000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 86,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 9,
+          "target": "04000200",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 68,
+              "source_form": "08404200",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000200",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 9,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 58,
+              "source_form": "84000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "04000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 87,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 10,
+          "target": "08000400",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 69,
+              "source_form": "10808400",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000400",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 10,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 27,
+              "source_form": "08000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "08000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 88,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 11,
+          "target": "10000800",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 70,
+              "source_form": "21010800",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000800",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 11,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "10000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 89,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 12,
+          "target": "20001000",
+          "or_count": 2,
+          "sites": [
+            {
+              "source": 71,
+              "source_form": "42021000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00001000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 12,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 29,
+              "source_form": "20000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "20000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 90,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 13,
+          "target": "40022001",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 59,
+              "source_form": "00042021",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000001",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 0,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 72,
+              "source_form": "84042000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00002000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 13,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "40020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 76,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                },
+                {
+                  "kind": "gate",
+                  "target": 91,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 14,
+          "target": "80044002",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 60,
+              "source_form": "00084042",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000002",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 1,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 73,
+              "source_form": "08084000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00004000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 14,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 31,
+              "source_form": "80000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "80040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 77,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                },
+                {
+                  "kind": "gate",
+                  "target": 92,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 15,
+          "target": "00088004",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 61,
+              "source_form": "00108084",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000004",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 2,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "00008000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 74,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 51,
+              "source_form": "01080000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00080000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 80,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 16,
+          "target": "00110008",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 62,
+              "source_form": "00210108",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000008",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 3,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 29,
+              "source_form": "20000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "00010000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 75,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 52,
+              "source_form": "02100000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00100000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 81,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 17,
+          "target": "00220010",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 63,
+              "source_form": "00420210",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000010",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 4,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 76,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 53,
+              "source_form": "04200000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00200000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 82,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 18,
+          "target": "00440020",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 64,
+              "source_form": "00840420",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000020",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 5,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 31,
+              "source_form": "80000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "00040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 77,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                }
+              ]
+            },
+            {
+              "source": 54,
+              "source_form": "08400000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00400000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 83,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 19,
+          "target": "00880040",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 65,
+              "source_form": "01080840",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000040",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 6,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 51,
+              "source_form": "01080000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00080000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 80,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 55,
+              "source_form": "10800000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00800000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 84,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 20,
+          "target": "01100080",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 66,
+              "source_form": "02101080",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000080",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 7,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 52,
+              "source_form": "02100000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00100000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 81,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 56,
+              "source_form": "21000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "01000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 85,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 21,
+          "target": "02200100",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 67,
+              "source_form": "04202100",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000100",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 8,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 53,
+              "source_form": "04200000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00200000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 82,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 57,
+              "source_form": "42000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "02000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 86,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 22,
+          "target": "04400200",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 68,
+              "source_form": "08404200",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000200",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 9,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 54,
+              "source_form": "08400000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00400000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 83,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 58,
+              "source_form": "84000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "04000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 87,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 23,
+          "target": "08800400",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 69,
+              "source_form": "10808400",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000400",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 10,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 55,
+              "source_form": "10800000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "00800000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 84,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 27,
+              "source_form": "08000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "08000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 88,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 24,
+          "target": "11000800",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 70,
+              "source_form": "21010800",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00000800",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 11,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 56,
+              "source_form": "21000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "01000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 85,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "10000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 89,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 25,
+          "target": "22001000",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 71,
+              "source_form": "42021000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00001000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 12,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 57,
+              "source_form": "42000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "02000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 86,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 29,
+              "source_form": "20000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "20000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 90,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 26,
+          "target": "44002000",
+          "or_count": 3,
+          "sites": [
+            {
+              "source": 72,
+              "source_form": "84042000",
+              "source_depth": 2,
+              "remaining_xor": 0,
+              "influence": "00002000",
+              "uses": [
+                {
+                  "kind": "output",
+                  "target": -1,
+                  "pin": -1,
+                  "output_bit": 13,
+                  "remaining_xor": 0
+                }
+              ]
+            },
+            {
+              "source": 58,
+              "source_form": "84000000",
+              "source_depth": 1,
+              "remaining_xor": 1,
+              "influence": "04000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 87,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            },
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "40000000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 91,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 27,
+          "target": "88004000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 27,
+              "source_form": "08000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "88004000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 73,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                },
+                {
+                  "kind": "gate",
+                  "target": 88,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 28,
+          "target": "10008000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 28,
+              "source_form": "10000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "10008000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 74,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "gate",
+                  "target": 89,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 29,
+          "target": "20010000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 29,
+              "source_form": "20000000",
+              "source_depth": 0,
+              "remaining_xor": 1,
+              "influence": "20010000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 75,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                },
+                {
+                  "kind": "gate",
+                  "target": 90,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 30,
+          "target": "40020000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 30,
+              "source_form": "40000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "40020000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 76,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                },
+                {
+                  "kind": "gate",
+                  "target": 91,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "seed": 31,
+          "target": "80040000",
+          "or_count": 1,
+          "sites": [
+            {
+              "source": 31,
+              "source_form": "80000000",
+              "source_depth": 0,
+              "remaining_xor": 2,
+              "influence": "80040000",
+              "uses": [
+                {
+                  "kind": "gate",
+                  "target": 77,
+                  "pin": 1,
+                  "output_bit": -1,
+                  "remaining_xor": 2
+                },
+                {
+                  "kind": "gate",
+                  "target": 92,
+                  "pin": 0,
+                  "output_bit": -1,
+                  "remaining_xor": 1
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "certificate_sha256": "f60ff92e22479a3a422aa6698d07fbe032a641b2062b7c665fb97144240170a3"
+    },
+    {
+      "schema": 1,
+      "status": "unreachable",
+      "prefix_stage_count": 3,
+      "failed_seed": 0,
+      "site_count": 77
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "status": "unsat-or-budget",
+  "model": "65-cycle cyclic retime with joint tick-zero B/C labels",
+  "prefix_stage_count": 2,
+  "xor_count": 61,
+  "or_budget": 44,
+  "proved_or_lower_bound": 49,
+  "proved_seed_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "per_seed_minimum": [],
+  "lower_bound_only": [
+    {
+      "seed": 0,
+      "target": "0002100120201011",
+      "or_lower_bound": 7
+    },
+    {
+      "seed": 1,
+      "target": "0004200240422023",
+      "or_lower_bound": 7
+    },
+    {
+      "seed": 2,
+      "target": "0008400480844046",
+      "or_lower_bound": 7
+    },
+    {
+      "seed": 3,
+      "target": "001080080108808c",
+      "or_lower_bound": 7
+    },
+    {
+      "seed": 4,
+      "target": "0021001002110118",
+      "or_lower_bound": 7
+    },
+    {
+      "seed": 5,
+      "target": "0042002104200231",
+      "or_lower_bound": 7
+    }
+  ],
+  "failed_seed": 6,
+  "failed_seed_lower_bound": 7,
+  "failed_target": "0084004208400462",
+  "site_count": 99,
+  "unique_influence_count": 95,
+  "maximum_sites_per_seed": 6,
+  "completeness": "All XOR-combinations of legal site influence masks through size 6 were enumerated for the failed seed; all earlier reported seed minima are exact. Different seed bits cannot share one physical one-bit OR.",
+  "assignments": [],
+  "certificate_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "status": "crosschecked",
+  "model": "relaxed legal-site 64-bit influence cover",
+  "prefix_stage_count": 1,
+  "site_count": 143,
+  "unique_influence_count": 119,
+  "seed_columns": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "per_seed_minimum": [
+    5,
+    5,
+    4,
+    4,
+    4,
+    6,
+    6,
+    5,
+    6
+  ],
+  "records": [
+    {
+      "seed": 0,
+      "target": "0002100100021011",
+      "minimum": 5,
+      "below": {
+        "bound": 4,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 5,
+        "status": "sat",
+        "influences": [
+          "0000000000000010",
+          "0000000000020000",
+          "0000000100000001",
+          "0000100000001000",
+          "0002000000000000"
+        ]
+      }
+    },
+    {
+      "seed": 1,
+      "target": "0004200200042023",
+      "minimum": 5,
+      "below": {
+        "bound": 4,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 5,
+        "status": "sat",
+        "influences": [
+          "0000000000000020",
+          "0000000000040000",
+          "0000000200000002",
+          "0000200000002001",
+          "0004000000000000"
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "target": "0008400400084046",
+      "minimum": 4,
+      "below": {
+        "bound": 3,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 4,
+        "status": "sat",
+        "influences": [
+          "0000000000000040",
+          "0000000400000004",
+          "0000400000004002",
+          "0008000000080000"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "target": "001080080010808c",
+      "minimum": 4,
+      "below": {
+        "bound": 3,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 4,
+        "status": "sat",
+        "influences": [
+          "0000000000000080",
+          "0000000800000008",
+          "0000800000008004",
+          "0010000000100000"
+        ]
+      }
+    },
+    {
+      "seed": 4,
+      "target": "0021001000210118",
+      "minimum": 4,
+      "below": {
+        "bound": 3,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 4,
+        "status": "sat",
+        "influences": [
+          "0000000000000100",
+          "0000001000000010",
+          "0001000000010008",
+          "0020000000200000"
+        ]
+      }
+    },
+    {
+      "seed": 5,
+      "target": "0042002100420231",
+      "minimum": 6,
+      "below": {
+        "bound": 5,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 6,
+        "status": "sat",
+        "influences": [
+          "0000000000000010",
+          "0000000000000200",
+          "0000000000020000",
+          "0000002100000021",
+          "0002000000000000",
+          "0040000000400000"
+        ]
+      }
+    },
+    {
+      "seed": 6,
+      "target": "0084004200840462",
+      "minimum": 6,
+      "below": {
+        "bound": 5,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 6,
+        "status": "sat",
+        "influences": [
+          "0000000000000020",
+          "0000000000000400",
+          "0000000000040000",
+          "0000004200000042",
+          "0004000000000000",
+          "0080000000800000"
+        ]
+      }
+    },
+    {
+      "seed": 7,
+      "target": "01080084010808c4",
+      "minimum": 5,
+      "below": {
+        "bound": 4,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 5,
+        "status": "sat",
+        "influences": [
+          "0000000000000040",
+          "0000000000000800",
+          "0000008400000084",
+          "0008000000080000",
+          "0100000001000000"
+        ]
+      }
+    },
+    {
+      "seed": 8,
+      "target": "0210010802101188",
+      "minimum": 6,
+      "below": {
+        "bound": 5,
+        "status": "unsat"
+      },
+      "at": {
+        "bound": 6,
+        "status": "sat",
+        "influences": [
+          "0000000000000080",
+          "0000010800000108",
+          "0000100000000000",
+          "0000100000001000",
+          "0010000000100000",
+          "0200000002000000"
+        ]
+      }
+    }
+  ],
+  "sum_lower_bound": 45,
+  "or_budget": 44,
+  "conclusion": "first nine seed columns alone exceed the no-RAM 393/10/65 OR budget",
+  "certificate_sha256": "0b04d0dc043e09cc1bca6f9657fb042fcdba37bf2bc424731152e6614d215b66"
+}
