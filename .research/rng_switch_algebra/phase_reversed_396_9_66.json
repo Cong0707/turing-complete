@@ -1,9 +1,13 @@
 {
   "schema": 1,
-  "status": "offline-verified-candidate",
+  "status": "RETRACTED",
+  "retracted_at": "2026-08-03",
+  "retraction_reason": "The offline simulator honored Delay Bit init_data=1, but the current game runtime resets the phase Delay Bit to zero. The circuit therefore disables input, enables output, and submits zero on the first tick.",
+  "decisive_runtime_evidence": "examples/rng/research/archive/rng_single_output_protocol/2026-08-02-\u5355\u8f93\u51fa\u534f\u8bae\u4e0e\u96f6\u521d\u6001\u521d\u59cb\u5316.md",
+  "deployment_allowed": false,
   "artifact": "phase_reversed_396_9_66.data",
   "sha256": "29b355cefb02c1f8f9a4cccb051175e185fcbcdaca6ff321cb45447b60a09b05",
-  "leaderboard_tuple_prediction": [
+  "invalid_offline_tuple_prediction": [
     396,
     9,
     66
@@ -40,8 +44,8 @@
     "97": 1,
     "99": 1
   },
-  "verified_seed_count": 256,
-  "verified_tick_count": 16896,
+  "offline_simulator_seed_count": 256,
+  "offline_simulator_tick_count": 16896,
   "first_seed_prefix": [
     "00021001",
     "21211091",
@@ -75,5 +79,5 @@
     "internal_wire_collision_count": 0,
     "wire_interior_pin_contact_count": 0
   },
-  "evidence_boundary": "gate/delay are structurally predicted from reviewed 2.1.281 costs; game and server recomputation remain required"
+  "evidence_boundary": "RETRACTED: these checks validate only a simulator assumption rejected by decisive game-runtime evidence; this artifact must not be deployed or submitted"
 }

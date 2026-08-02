@@ -1,4 +1,4 @@
-"""Derive and verify the normal no-RAM 396/9/66 RNG candidate.
+"""Preserve the retracted 396/9/66 RNG artifact as a simulator counterexample.
 
 The checked-in encoded-state generator already has a two-XOR-layer steady
 network.  Its declared delay 10 is caused only by the load-phase polarity:
@@ -10,6 +10,12 @@ can then drive Architecture Input directly, while the existing NOT drives the
 Architecture Output.  After the first edge the phase state becomes zero and
 stays there.  Gate count and cycle count do not change; the longest seed and
 feedback paths both become 9.
+
+The current game runtime resets Delay Bit state to zero and does not honor the
+saved init_data=1 assumption used below.  Consequently this topology disables
+input, enables output, and submits zero on its first runtime tick.  The script
+is intentionally retained to reproduce the offline-model mismatch; its output
+is not a deployable candidate.
 
 This research derivation writes only beside itself.  It never reads or writes
 the live save and never launches the game.
@@ -230,10 +236,22 @@ def verify(circuit) -> dict[str, object]:
 
     return {
         "schema": 1,
-        "status": "offline-verified-candidate",
+        "status": "RETRACTED",
+        "retracted_at": "2026-08-03",
+        "retraction_reason": (
+            "The offline simulator honored Delay Bit init_data=1, but the "
+            "current game runtime resets the phase Delay Bit to zero. The "
+            "circuit therefore disables input, enables output, and submits "
+            "zero on the first tick."
+        ),
+        "decisive_runtime_evidence": (
+            "examples/rng/research/archive/rng_single_output_protocol/"
+            "2026-08-02-单输出协议与零初态初始化.md"
+        ),
+        "deployment_allowed": False,
         "artifact": OUTPUT_DATA.name,
         "sha256": sha256(payload).hexdigest(),
-        "leaderboard_tuple_prediction": [396, 9, 66],
+        "invalid_offline_tuple_prediction": [396, 9, 66],
         "energy_prediction": 396 * 9 * 66,
         "reference_energy_431_9_66": 431 * 9 * 66,
         "energy_margin": (431 - 396) * 9 * 66,
@@ -253,8 +271,8 @@ def verify(circuit) -> dict[str, object]:
             "phase_to_output_enable": "Delay 4 + NOT 1 = 5",
         },
         "component_kind_counts": dict(sorted(counts.items())),
-        "verified_seed_count": len(seeds),
-        "verified_tick_count": total_ticks,
+        "offline_simulator_seed_count": len(seeds),
+        "offline_simulator_tick_count": total_ticks,
         "first_seed_prefix": first_prefix,
         "connectivity": connectivity,
         "layout": layout,
@@ -265,8 +283,9 @@ def verify(circuit) -> dict[str, object]:
             "wire_interior_pin_contact_count": len(sprite.wire_interior_pin_contacts),
         },
         "evidence_boundary": (
-            "gate/delay are structurally predicted from reviewed 2.1.281 costs; "
-            "game and server recomputation remain required"
+            "RETRACTED: these checks validate only a simulator assumption "
+            "rejected by decisive game-runtime evidence; this artifact must "
+            "not be deployed or submitted"
         ),
     }
 
@@ -283,11 +302,11 @@ def main() -> None:
                 key: result[key]
                 for key in (
                     "status",
-                    "leaderboard_tuple_prediction",
+                    "invalid_offline_tuple_prediction",
                     "energy_prediction",
                     "energy_margin",
-                    "verified_seed_count",
-                    "verified_tick_count",
+                    "offline_simulator_seed_count",
+                    "offline_simulator_tick_count",
                     "sprite_layout",
                 )
             },
