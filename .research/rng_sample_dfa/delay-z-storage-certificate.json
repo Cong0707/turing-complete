@@ -1,0 +1,37 @@
+{
+  "artifact_sha256": {
+    "delay-native-audit/get_output_z_value_bit.c": "b7558eee78778786548c146c8842a9587dedf68150beed7a1e14d824a51c0411",
+    "delay-native-audit/get_output_z_value_bus.c": "f51bf0f23b805a785c8cf14396978df1baaab08bc81e4cfbd5914c1a119264c2",
+    "delay-native-audit/input_bit.c": "aae96f57231d05d19cf68d6ed9a2030ba4f23a3633b53021a53cb001e19d468e",
+    "delay-native-audit/input_word.c": "aef129a6f7f3a7be453d7b94485bbd0e86348633d7bcb33c71b72911928b0371",
+    "delay-native-audit/load_and_output.c": "e8e64567b4367a43e5d2c5a8ed2a3968fa174cb1ccb7a7b1be3db28c580f757a",
+    "delay-native-audit/manifest.json": "d912aff5ac1af2db435d60f9f8e5682a03f45875ce32bf56af007dec38056e21",
+    "delay-native-audit/store_bit.c": "364c33d63213906519cf4c4bfa5ac7c8aab3399b1c467c37eb486896b087ed59",
+    "delay-native-audit/store_output.c": "f45ae6ed7f6b8a422905db15a7fa978b2c52138e702034f5e0c2dcddae75bd52",
+    "delay-native-audit/store_word.c": "c44b670720e349e9082cc1538f7ccfb09e801f8e18bf3f0093e47bebdc0a2bb0",
+    "delay-native-audit/xrefs.json": "780427b83aa1c5e353a24d181154fe5ae3627fbaca88a2300b5da994de6b13d5"
+  },
+  "assertions": {
+    "dynamic_z_helper_returns_not_z_predicate": true,
+    "load_path_passes_literal_one_as_drive_predicate": true,
+    "store_bit_has_no_z_state_access": true,
+    "store_bit_uses_one_value_state_slot": true,
+    "store_output_treats_nonzero_predicate_as_driven": true
+  },
+  "component": {
+    "dispatcher_function": "add_circuit_code__modelZsimulationZcode95gen_u4264",
+    "fixed_drive_literal_xref": "0x000000014044a797",
+    "id": 13,
+    "name": "com_delay_line_bit",
+    "store_bit_xref": "0x000000014044a862"
+  },
+  "conclusion": "Delay Bit stores only its U1 value. On the following tick its loaded value is passed to store_output with the constant non-Z predicate 1, so input high impedance is neither stored nor restored.",
+  "input": {
+    "executable": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+    "executable_sha256": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c",
+    "image_base": "0x0000000140000000"
+  },
+  "modeling_rule": "Model com_delay_line_bit as one ordinary binary state bit, never as a ternary value/Z memory cell.",
+  "schema": 1,
+  "scope": "Turing Complete v2.1.281 native simulation code generation"
+}

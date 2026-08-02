@@ -1,0 +1,81 @@
+{
+  "status": "RETRACTED_FIXED_LOCAL_SAMPLE_NOT_SERVER_SEED_SPACE",
+  "schema": 1,
+  "scope": "legal finite-care RNG state and decoder audit; no save/game access",
+  "runtime_contract": {
+    "tests": 256,
+    "outputs_per_test": 65,
+    "seed_vector_sha256": "d8ef931e5eb213217aa4faedc43783f0875e52607f991e89080c6046aad1e24b",
+    "first_seeds_hex": [
+      "1265bf04",
+      "24cb7e07",
+      "37313d0a",
+      "4996fc09",
+      "5bfcbb0c",
+      "6e627a0f",
+      "80c83912",
+      "932df811"
+    ]
+  },
+  "care": {
+    "required_output_points": 16640,
+    "unique_natural_states": 16640,
+    "unique_required_outputs": 16640,
+    "unique_encoded_states": 16640,
+    "encoded_state_rank": 32,
+    "output_stream_sha256": "1c112d5a12f35bd27dcc107f80cec02d0b8355f7e036a750aa3e9acace686345"
+  },
+  "dfa": {
+    "input_disabled_after_load": {
+      "pairwise_distinct_required_output_states": 16640,
+      "minimum_data_state_bits": 15,
+      "reason": "every live state has a different immediate 32-bit output"
+    },
+    "persistent_seed_as_external_side_information": {
+      "minimum_position_classes": 65,
+      "minimum_data_state_bits": 7,
+      "realizing_abstract_encoding": "shared offset 0..64 for every seed",
+      "boundary": "the 7-bit state bound ignores the gate and delay cost of decoding A^(offset+1)*seed"
+    }
+  },
+  "deleted_coordinate_support": [],
+  "counter_output_pla": {
+    "path": ".research\\rng_sample_dfa\\counter_output_care.pla",
+    "input_bits": 39,
+    "output_bits": 32,
+    "care_rows": 16640,
+    "sha256": "3c0259cd8d44b438f49f3c103b7519f86000db2f12431521cdbe903cb9319e5e"
+  },
+  "counter_output_bit0_pla": {
+    "path": ".research\\rng_sample_dfa\\counter_output_v0_care.pla",
+    "input_bits": 39,
+    "output_bits": 1,
+    "care_rows": 16640,
+    "output_bit": 0,
+    "sha256": "deaa862151fe248edc47a34af89baad2d2f08611a472b0d4046564731e488f25"
+  },
+  "deleted_state_bit17_pla": {
+    "path": ".research\\rng_sample_dfa\\deleted_state_q17_care.pla",
+    "input_bits": 31,
+    "output_bits": 1,
+    "care_rows": 16641,
+    "target_bit": 17,
+    "sha256": "cb11084a6e0233ea4131e269fe110355726e26ecbe6383ec2f66a78a72be5bca"
+  },
+  "component_cost_boundary": {
+    "delay_bit": {
+      "gate": 5,
+      "delay": 4
+    },
+    "ordinary_or_u1_xor": {
+      "gate": 3,
+      "delay": 2
+    },
+    "cheap_boolean_gate": {
+      "gate": 1,
+      "delay": 1
+    },
+    "seven_delay_bits_gate_floor": 35,
+    "warning": "DFA state-bit bounds are not score bounds; the shared output decoder and counter transition must fit the remaining real gate/delay budget"
+  }
+}

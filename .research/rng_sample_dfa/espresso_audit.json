@@ -1,0 +1,62 @@
+{
+  "status": "RETRACTED_FIXED_LOCAL_SAMPLE_NOT_SERVER_SEED_SPACE",
+  "schema": 1,
+  "tool": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_42state_direct\\sample_nonlinear\\agent_care\\espresso-src\\bin\\espresso.exe",
+    "sha256": "571c5890ca61acf9f607eeb3532622b7dadc47a8703b034f7ced969640fcd5af",
+    "command": "espresso -efast -s -x <pla>"
+  },
+  "experiments": [
+    {
+      "pla": ".research\\rng_sample_dfa\\counter_output_v0_care.pla",
+      "pla_sha256": "deaa862151fe248edc47a34af89baad2d2f08611a472b0d4046564731e488f25",
+      "timeout_seconds": 15,
+      "status": "completed",
+      "returncode": 0,
+      "heuristic_cost": {
+        "seconds": 6.02,
+        "cubes": 1219,
+        "sparse_cubes": 0,
+        "input_literals": 13366,
+        "output_literals": 1219,
+        "total_cost": 14585
+      },
+      "decisive_output_lines": [
+        "# PLA is D:\\Develop\\Other\\turing-complete\\.research\\rng_sample_dfa\\counter_output_v0_care.pla with 39 inputs and 1 outputs",
+        "# ON-set cost is  c=8294(8294) in=323466 out=8294 tot=331760",
+        "# OFF-set cost is c=8346(8346) in=325494 out=8346 tot=333840",
+        "# DC-set cost is  c=3241(2033) in=24049 out=3241 tot=27290",
+        "# ESPRESSO\tTime was 6.02 sec, cost is c=1219(0) in=13366 out=1219 tot=14585"
+      ]
+    },
+    {
+      "pla": ".research\\rng_sample_dfa\\deleted_state_q17_care.pla",
+      "pla_sha256": "cb11084a6e0233ea4131e269fe110355726e26ecbe6383ec2f66a78a72be5bca",
+      "timeout_seconds": 15,
+      "status": "timeout",
+      "returncode": null,
+      "heuristic_cost": null,
+      "decisive_output_lines": [
+        "# PLA is D:\\Develop\\Other\\turing-complete\\.research\\rng_sample_dfa\\deleted_state_q17_care.pla with 31 inputs and 1 outputs",
+        "# ON-set cost is  c=8255(8255) in=255905 out=8255 tot=264160",
+        "# OFF-set cost is c=8386(8386) in=259966 out=8386 tot=268352",
+        "# DC-set cost is  c=179633(178289) in=2216926 out=179633 tot=2396559"
+      ]
+    },
+    {
+      "pla": ".research\\rng_sample_dfa\\counter_output_care.pla",
+      "pla_sha256": "3c0259cd8d44b438f49f3c103b7519f86000db2f12431521cdbe903cb9319e5e",
+      "timeout_seconds": 15,
+      "status": "timeout",
+      "returncode": null,
+      "heuristic_cost": null,
+      "decisive_output_lines": [
+        "# PLA is D:\\Develop\\Other\\turing-complete\\.research\\rng_sample_dfa\\counter_output_care.pla with 39 inputs and 32 outputs",
+        "# ON-set cost is  c=16640(16640) in=648960 out=265557 tot=914517",
+        "# OFF-set cost is c=16640(16640) in=648960 out=266923 tot=915883",
+        "# DC-set cost is  c=3241(2097) in=24049 out=103712 tot=127761"
+      ]
+    }
+  ],
+  "interpretation": "A completed Espresso result is a heuristic SOP upper bound, not a lower bound. A timeout is only a bounded tool result. Neither may be reported as UNSAT."
+}

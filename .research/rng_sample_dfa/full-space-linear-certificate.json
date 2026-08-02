@@ -1,0 +1,608 @@
+{
+  "arbitrary_boolean_one_time_input_bound": {
+    "boundary": "Persistent seed access invalidates this counting bound; a phase-specific combinational decoder may then use fewer data bits.",
+    "data_state_bit_lower_bound": 32,
+    "including_pre_output_phase_bit_lower_bound": 33,
+    "including_pre_output_phase_state_count_lower_bound": 4294967297,
+    "phase_proof": "A pre-output state with output disabled must differ from every loaded state when all controls are internal and seed is closed.",
+    "proof": "After the input closes, the first required output A*seed is a bijection. Therefore two seeds cannot share the same internal state before that output, independent of linearity.",
+    "seed_domain_size": 4294967296
+  },
+  "matrix": {
+    "A_rank": 32,
+    "A_rows_hex": [
+      "00042021",
+      "00084042",
+      "00108084",
+      "00210108",
+      "00420210",
+      "00840420",
+      "01080840",
+      "02101080",
+      "04202100",
+      "08404200",
+      "10808400",
+      "21010800",
+      "42023001",
+      "84046002",
+      "0808c004",
+      "10118008",
+      "20230010",
+      "40462021",
+      "808c4042",
+      "01188084",
+      "02310108",
+      "04620210",
+      "08c40420",
+      "11880840",
+      "23101080",
+      "46202100",
+      "8c404200",
+      "08800400",
+      "11000800",
+      "22001000",
+      "44002000",
+      "88004000"
+    ],
+    "A_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+    "characteristic_polynomial_hex": "0x1003ec241",
+    "characteristic_polynomial_irreducible": true,
+    "irreducibility_checks_hex": {
+      "gcd_p_x_to_2^16_plus_x": "0x1",
+      "x_to_2^32_mod_p": "0x2"
+    },
+    "unit_basis_power_checks": 2080
+  },
+  "periodic_linear_state_bound": {
+    "algebra": "rank(A^p + I)",
+    "all_algebraic_results_p_1_through_65": [
+      {
+        "p": 1,
+        "rank": 32,
+        "sha256": "ab7e0aa9b5314a5a804b5a5a276bbebc6a7c9a13f0d93eb20e4a4aeac9304a6a"
+      },
+      {
+        "p": 2,
+        "rank": 32,
+        "sha256": "17c5d47ba2b7313dd4be48cad114251b74b3a70833ce720dbd72d2f39b43fdb6"
+      },
+      {
+        "p": 3,
+        "rank": 32,
+        "sha256": "a25dc4d55f28ed39c38706d50d1bfe6b49ecf8fb7e7ef7be9ae9de95e6424fb2"
+      },
+      {
+        "p": 4,
+        "rank": 32,
+        "sha256": "a789c6143936fd3cd258e1032530d1a0bfda84e6d56cf699fef8022a1515d64b"
+      },
+      {
+        "p": 5,
+        "rank": 32,
+        "sha256": "871f5a680f76c655a574cf141499adb6d0bd9131f11f20fb205c870b0e3d1088"
+      },
+      {
+        "p": 6,
+        "rank": 32,
+        "sha256": "49f3ac8a86adfb92647330143b6ed4d50495602bbd4ab1746a61530a6a49c8ba"
+      },
+      {
+        "p": 7,
+        "rank": 32,
+        "sha256": "90d798029b68d2b537c180484858d51cd2c1206260e3bb64384d393d6521d923"
+      },
+      {
+        "p": 8,
+        "rank": 32,
+        "sha256": "4693b7c48b348342e85e10b3e7de2cfb14cbef1d9d9c90fcdb668fb1e0043882"
+      },
+      {
+        "p": 9,
+        "rank": 32,
+        "sha256": "fbbd6fc0b12f46f3a61e0d1dc9619d36fd4ae9daa68e32cb41810e872f86ee8b"
+      },
+      {
+        "p": 10,
+        "rank": 32,
+        "sha256": "933ba4dd71714f11da6aa970eca90d1ace6883d6e1e163f310a14bfea4c5498a"
+      },
+      {
+        "p": 11,
+        "rank": 32,
+        "sha256": "ae992b52e272ba6fa224eb5991e0f10f2516e4b45f2eb9ff6a3aead82dfbd684"
+      },
+      {
+        "p": 12,
+        "rank": 32,
+        "sha256": "2b823d7662ef466c0e01b23dda854c69f99d19aecc58b92599188e5b58ab31bb"
+      },
+      {
+        "p": 13,
+        "rank": 32,
+        "sha256": "d9c8cea2e1175aa4e8497dc2e3fb3e86b5c3ab2190496e4c9712b55bee1a4f03"
+      },
+      {
+        "p": 14,
+        "rank": 32,
+        "sha256": "df671cb589278df4c6cdc8f38a59cd78620ac7b02fea0df8f54ed2ebbee40301"
+      },
+      {
+        "p": 15,
+        "rank": 32,
+        "sha256": "361a7fbe3e902d8154a227a817804cb509c51f724bff5525127c569157b50ffc"
+      },
+      {
+        "p": 16,
+        "rank": 32,
+        "sha256": "0f543a49be783c5ce2f58aee42c59f20b5fe882295457e3af174945ee0afd1d3"
+      },
+      {
+        "p": 17,
+        "rank": 32,
+        "sha256": "d0e3a16e8fec65c8def0a2f346ecca976e9e511393d7c8371748baa647f4dffc"
+      },
+      {
+        "p": 18,
+        "rank": 32,
+        "sha256": "7a77b93c12c04af0528f38d194be55f909af2541ba521598ea71b98bce814b00"
+      },
+      {
+        "p": 19,
+        "rank": 32,
+        "sha256": "193ff3fa8685edcbc947f461024775b204b052f65a20ed908c00003505c9c708"
+      },
+      {
+        "p": 20,
+        "rank": 32,
+        "sha256": "0cbc2d167da5a0caa5a22fe753131d4ba04768c72cd958995b282334a9932bad"
+      },
+      {
+        "p": 21,
+        "rank": 32,
+        "sha256": "ecdd3c14c5b6df58623cbec19c1abf31c33da5a7999f44caa17a5b2b4de1b16d"
+      },
+      {
+        "p": 22,
+        "rank": 32,
+        "sha256": "aa5a3de5b94bb3d854ce9fa7907431d4c0fbb4fc21c82bd6344b97df1a49e4eb"
+      },
+      {
+        "p": 23,
+        "rank": 32,
+        "sha256": "c4dd1cce50f759f687a67a744e6fbb872e12c25b42f02d73157c3b0d27279303"
+      },
+      {
+        "p": 24,
+        "rank": 32,
+        "sha256": "91f033d06efded92aa8ea640aeb55d6c06d9c7030f4b76e0b0fedb34291c359d"
+      },
+      {
+        "p": 25,
+        "rank": 32,
+        "sha256": "7ad88ba1f308efdf9b01178267acd225a3673bce9425025f3c34180904e9b53e"
+      },
+      {
+        "p": 26,
+        "rank": 32,
+        "sha256": "03e0110110ee343fd407d27fa8ff52c9f98bc6ea044c320019b6d9e236019de0"
+      },
+      {
+        "p": 27,
+        "rank": 32,
+        "sha256": "6dbdd56e02110645d1516648882cf030e59d9ab7b9a46a19c42895311ecc5d48"
+      },
+      {
+        "p": 28,
+        "rank": 32,
+        "sha256": "9bdc3f182b8f1770b9a70992d30b1757a33b72493d7a7019e1ecf971d051a2dd"
+      },
+      {
+        "p": 29,
+        "rank": 32,
+        "sha256": "f84df1a58557b06efe31aa3be8f8a5f46fbcee497af876935329a557bda41c3e"
+      },
+      {
+        "p": 30,
+        "rank": 32,
+        "sha256": "a4c756ddce7290f90a6b760e0329eba47e97df70115750522bca7a39769e9aae"
+      },
+      {
+        "p": 31,
+        "rank": 32,
+        "sha256": "972d14092bbd0330d0deea2eb2b2d2491a8667eb24d0cb4d3b28f02e48f5a260"
+      },
+      {
+        "p": 32,
+        "rank": 32,
+        "sha256": "0ee888d05c730f4a1c7c3c0260a29022ba7e52ae87e83dcee11421c4a08e8e60"
+      },
+      {
+        "p": 33,
+        "rank": 32,
+        "sha256": "384be4375bb4b70026e84e8225b94a07b74fb2e5d34736aa67c3e38057679bea"
+      },
+      {
+        "p": 34,
+        "rank": 32,
+        "sha256": "1df8b0ff57ab57fcb4e8907ffca8b2f02c05a5a612162d5a0bd168c274947728"
+      },
+      {
+        "p": 35,
+        "rank": 32,
+        "sha256": "b2ac519307bd98d9e4120c3bce854d96e264b23681373da5b1b84b303fc7a52d"
+      },
+      {
+        "p": 36,
+        "rank": 32,
+        "sha256": "f437975d91fc922e60923a10f9c8cb821c2c781f0e9aa5c949725e602fa3815f"
+      },
+      {
+        "p": 37,
+        "rank": 32,
+        "sha256": "f15a0772430f5c3c5e849a7785772149390990c0068fd81f602d85527f15be77"
+      },
+      {
+        "p": 38,
+        "rank": 32,
+        "sha256": "ac8a101e28069937956f52e018ac93d9d41e3c03aad02678a70de39365711a19"
+      },
+      {
+        "p": 39,
+        "rank": 32,
+        "sha256": "3ef2c9b573c2aacb5c85bd969f96dfd01bfdb5ea11b40178fcda15a090b253ee"
+      },
+      {
+        "p": 40,
+        "rank": 32,
+        "sha256": "2be741728f161ee158796d2d637bab7abf1f17ce103aac14919286ca5360e66a"
+      },
+      {
+        "p": 41,
+        "rank": 32,
+        "sha256": "89211953a7c87cf0c104eb27472387d9261a734d95372a2ce2752e9a9a2e4386"
+      },
+      {
+        "p": 42,
+        "rank": 32,
+        "sha256": "81b244edbc3d4e4f312532ecbb4c5aac3876b52ffbcf56d0a1f0f7dd30e762b0"
+      },
+      {
+        "p": 43,
+        "rank": 32,
+        "sha256": "81230efb06878b5bdee44d36586c542472a7b8011ecdb4cca95a5570db3c5243"
+      },
+      {
+        "p": 44,
+        "rank": 32,
+        "sha256": "8e4614ae0b5306eb7f92bff114b9dde6e21ab425f457790937a1d2da37608b61"
+      },
+      {
+        "p": 45,
+        "rank": 32,
+        "sha256": "cd983652b94a1d9cf230fa59cbe5722a80a45141f0a3611bade5982af0c79cff"
+      },
+      {
+        "p": 46,
+        "rank": 32,
+        "sha256": "67630391950ae46b608bebfb119025d6ace9994a3c260364d80102c84f31ac9d"
+      },
+      {
+        "p": 47,
+        "rank": 32,
+        "sha256": "1a5be75c9c32a4d42c19fc55eb398d9a7b1aaf7af81590f9fec167ef01caffb9"
+      },
+      {
+        "p": 48,
+        "rank": 32,
+        "sha256": "e923c92e83c6096a16eb3fbb3ce3143dee6735cc5edb35a48f965828404b3fcc"
+      },
+      {
+        "p": 49,
+        "rank": 32,
+        "sha256": "28e588cecf544ed42b185975deafcbf00b9fa03cdbd6df498be170bfd6943373"
+      },
+      {
+        "p": 50,
+        "rank": 32,
+        "sha256": "58c2edc447320788e7dcfb9977df523b1178c8b80f1e4a10e54d48db13f1422e"
+      },
+      {
+        "p": 51,
+        "rank": 32,
+        "sha256": "dc9465340a3285deab926dc20f668a9d89a7bcd6b2a2e4ac4ebc8cf7a20375ff"
+      },
+      {
+        "p": 52,
+        "rank": 32,
+        "sha256": "70a1b614e593de84d743553e6cac151103336de5dc47163cb81afcfd9bb8d496"
+      },
+      {
+        "p": 53,
+        "rank": 32,
+        "sha256": "31340b12fcd75e5b5f678c79a0a32c4a6f4dd50a62de437f0a4f5e72ab54cfca"
+      },
+      {
+        "p": 54,
+        "rank": 32,
+        "sha256": "419992db8cfc8cb7facc9514b18aa8ef5d4a68ab218ec2c74acd9de5b16a71ce"
+      },
+      {
+        "p": 55,
+        "rank": 32,
+        "sha256": "dc7fa35a8aad1e5bb821f721c3b4cab37bcb15e4cda49704ee9d48883e6a3685"
+      },
+      {
+        "p": 56,
+        "rank": 32,
+        "sha256": "2187d9060019d4ec08cbbcb9e4d5afa79eeb6eab05417ad915dfe5f09d3e9272"
+      },
+      {
+        "p": 57,
+        "rank": 32,
+        "sha256": "bee399fb5c687b9817b9503b31cf2405dc6bec1ae414f9a4a822c11a3a99dced"
+      },
+      {
+        "p": 58,
+        "rank": 32,
+        "sha256": "fb979ea0ecc4c81f99842e80bd83d69635e1e783031fb9c99e6c38bbc2b344ac"
+      },
+      {
+        "p": 59,
+        "rank": 32,
+        "sha256": "7e032d13d0afb7257e3d8a73ab0a829044745d46addb9fdb1d4adda546475feb"
+      },
+      {
+        "p": 60,
+        "rank": 32,
+        "sha256": "5fcd00f55b1497e987f170ddc2a8f1950c800ed7b5f5574d7eb241dee1fa83ec"
+      },
+      {
+        "p": 61,
+        "rank": 32,
+        "sha256": "e884544eae89facdc9140c8c63cc8c66f652fb3729ddc495663ef87e198a9ff3"
+      },
+      {
+        "p": 62,
+        "rank": 32,
+        "sha256": "1a0d4f0841403f563a816a05ec9e56cda973d88cc7b8c593aba64583de8e0380"
+      },
+      {
+        "p": 63,
+        "rank": 32,
+        "sha256": "5204e624274e32489573e680be1ab0802a175b79d89491a4da26a71a942b7a75"
+      },
+      {
+        "p": 64,
+        "rank": 32,
+        "sha256": "a686902d9930b7e78d66179879fd7d7709935e1c0dee4578633b5d3a19daf70d"
+      },
+      {
+        "p": 65,
+        "rank": 32,
+        "sha256": "59522c22709ca31cfac9bae6707d2ec7df297f071baa8f684d8c332b6853743e"
+      }
+    ],
+    "data_state_bit_lower_bound": 32,
+    "period_65_boundary": "rank(A^65+I)=32 is an algebraic fact, but 65 required outputs contain no repeated phase for a 65-phase machine, so this finite protocol alone gives no p=65 data-state lower bound.",
+    "protocol_applicable_all_full_rank": true,
+    "protocol_applicable_periods": [
+      1,
+      64
+    ],
+    "reason": "At two required output ticks with the same phase, the direct seed term cancels. The output difference factors through the data-state difference, while A^t(A^p+I) has rank 32."
+  },
+  "phase_seed_linear_separation": {
+    "interpretation": "Any identity y(phase,seed)=XOR_i g_i(phase)*M_i(seed) with fixed word-linear M_i needs at least 32 nonzero gated terms.",
+    "lower_bound_terms": 32,
+    "matching_basis": "A^1 through A^32",
+    "minimal_term_map_property": "The power slices form the 32-dimensional field GF(2)[A]. Irreducibility makes every nonzero map in this slice space invertible. Hence every map in a minimal 32-term separated decomposition is a full-rank 32-bit transform.",
+    "phase_function_masks_65bit_hex": [
+      "151c6f80100000001",
+      "0a38df00200000002",
+      "1471be00400000004",
+      "08e37c00800000008",
+      "11c6f801000000010",
+      "038df002000000020",
+      "12078f84100000040",
+      "040f1f08200000080",
+      "081e3e10400000100",
+      "052013a0900000200",
+      "0a402741200000400",
+      "14804e82400000800",
+      "09009d04800001000",
+      "12013a09000002000",
+      "111e1b92100004000",
+      "172058a4300008000",
+      "0e40b148600010000",
+      "099d0d10d00020000",
+      "062675a1b00040000",
+      "195084c3700080000",
+      "07bd6606f00100000",
+      "1a66a38df00200000",
+      "14cd471be00400000",
+      "099a8e37c00800000",
+      "13351c6f801000000",
+      "066a38df002000000",
+      "0cd471be004000000",
+      "19a8e37c008000000",
+      "1351c6f8010000000",
+      "06a38df0020000000",
+      "0d471be0040000000",
+      "1a8e37c0080000000"
+    ],
+    "phase_function_weights": [
+      15,
+      14,
+      14,
+      13,
+      13,
+      12,
+      14,
+      13,
+      13,
+      11,
+      11,
+      11,
+      10,
+      10,
+      15,
+      14,
+      13,
+      15,
+      17,
+      15,
+      20,
+      20,
+      19,
+      18,
+      18,
+      17,
+      17,
+      17,
+      16,
+      15,
+      15,
+      15
+    ],
+    "physical_limit": "This is a lower bound for the separated feed-forward family, not a global lower bound for arbitrary stateful tri-state circuits.",
+    "power_coefficient_masks_hex": [
+      "00000001",
+      "00000002",
+      "00000004",
+      "00000008",
+      "00000010",
+      "00000020",
+      "00000040",
+      "00000080",
+      "00000100",
+      "00000200",
+      "00000400",
+      "00000800",
+      "00001000",
+      "00002000",
+      "00004000",
+      "00008000",
+      "00010000",
+      "00020000",
+      "00040000",
+      "00080000",
+      "00100000",
+      "00200000",
+      "00400000",
+      "00800000",
+      "01000000",
+      "02000000",
+      "04000000",
+      "08000000",
+      "10000000",
+      "20000000",
+      "40000000",
+      "80000000",
+      "003ec241",
+      "007d8482",
+      "00fb0904",
+      "01f61208",
+      "03ec2410",
+      "07d84820",
+      "0fb09040",
+      "1f612080",
+      "3ec24100",
+      "7d848200",
+      "fb090400",
+      "f62cca41",
+      "ec6756c3",
+      "d8f06fc7",
+      "b1de1dcf",
+      "6382f9df",
+      "c705f3be",
+      "8e35253d",
+      "1c54883b",
+      "38a91076",
+      "715220ec",
+      "e2a441d8",
+      "c57641f1",
+      "8ad241a3",
+      "159a4107",
+      "2b34820e",
+      "5669041c",
+      "acd20838",
+      "599ad231",
+      "b335a462",
+      "66558a85",
+      "ccab150a",
+      "9968e855"
+    ],
+    "power_coefficient_weights": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      15,
+      18,
+      19,
+      20,
+      19,
+      19,
+      16,
+      13,
+      13,
+      13,
+      13,
+      16,
+      13,
+      12,
+      12,
+      12,
+      12,
+      15,
+      15,
+      14,
+      14,
+      15
+    ],
+    "rank": 32,
+    "tensor_flattening": "65 phases by 1024 output/seed matrix entries"
+  },
+  "schema": 1,
+  "scope": "all 2^32 seeds; linear identities certified on all 32 unit seeds",
+  "transition": "x ^= x >> 13; x ^= (x << 17) & 0xffffffff; x ^= x >> 5"
+}
