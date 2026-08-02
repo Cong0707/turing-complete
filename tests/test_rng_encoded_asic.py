@@ -67,11 +67,11 @@ class RngEncodedAsicTests(unittest.TestCase):
         self.assertEqual(len(WORD_XOR_ROWS), 19)
         counts = Counter(component.kind for component in self.circuit.components)
         self.assertEqual(counts[1], 0)
-        self.assertEqual(counts[2], 1)
+        self.assertEqual(counts[2], 0)
         self.assertEqual(counts[3], 1)
-        self.assertEqual(counts[7], 47)
+        self.assertEqual(counts[7], 48)
         self.assertEqual(counts[10], 42)
-        self.assertEqual(counts[13], 33)
+        self.assertEqual(counts[13], 34)
         self.assertEqual(counts[23], 19)
 
         self.assertEqual(
@@ -80,7 +80,7 @@ class RngEncodedAsicTests(unittest.TestCase):
                 for component in self.circuit.components
                 if component.kind == 13
             ),
-            {0: 33},
+            {0: 34},
         )
 
     def test_writer_emits_canonical_verified_candidate(self):
@@ -91,9 +91,9 @@ class RngEncodedAsicTests(unittest.TestCase):
             (EXPECTED_GATE, EXPECTED_DELAY),
         )
         self.assertEqual(self.metadata["cycles"], EXPECTED_CYCLES)
-        self.assertEqual(self.metadata["verified_seed_count"], 69)
-        self.assertEqual(self.metadata["leaderboard_tuple"], [396, 10, 66])
-        self.assertEqual(self.metadata["declared_energy"], 261360)
+        self.assertEqual(self.metadata["verified_seed_count"], 256)
+        self.assertEqual(self.metadata["leaderboard_tuple"], [402, 9, 67])
+        self.assertEqual(self.metadata["declared_energy"], 242406)
         self.assertEqual(self.metadata["bit_xor_count"], 42)
         self.assertEqual(self.metadata["word_xor_count"], 19)
         self.assertEqual(
@@ -112,7 +112,7 @@ class RngEncodedAsicTests(unittest.TestCase):
             (self.candidate_path.parent / "metadata.json").read_text(encoding="utf-8")
         )
         self.assertEqual(disk_metadata["sha256"], self.metadata["sha256"])
-        self.assertEqual(disk_metadata["leaderboard_tuple"], [396, 10, 66])
+        self.assertEqual(disk_metadata["leaderboard_tuple"], [402, 9, 67])
         self.assertEqual(disk_metadata["live_sprite_layout"], self.metadata["live_sprite_layout"])
 
 

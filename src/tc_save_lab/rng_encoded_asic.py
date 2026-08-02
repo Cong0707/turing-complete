@@ -1,18 +1,20 @@
-"""Build the encoded-state 396/10/66 RNG architecture candidate.
+"""Build the encoded-state 402/9/67 RNG architecture candidate.
 
-The circuit uses one physical depth-two XOR network in two modes.  A zero-init
-ready register and one inverter enable the architecture input only during the
-seed-load tick; afterwards the disabled input contributes zero and the same OR
-gates expose the encoded state bits.  Nineteen feedback-only second-layer XORs
-retain the one-bit Word XOR representation used by the validated circuit.  The
-current game charges every one-bit XOR as 3 gates / 2 delay, regardless of
-whether it is represented by Bit XOR or a U1 Word XOR.
+The circuit uses one physical depth-two XOR network in two modes.  Two
+zero-initialized phase registers generate a one-tick input pulse without
+relying on unsupported nonzero Delay Bit initialization: tick zero is idle,
+tick one loads the seed, and ticks 2 through 66 emit all 65 required values.
+After loading, the disabled input contributes zero and the same OR gates expose
+the encoded state bits.  Nineteen feedback-only second-layer XORs retain the
+one-bit Word XOR representation used by the validated circuit.  The current
+game charges every one-bit XOR as 3 gates / 2 delay, regardless of whether it
+is represented by Bit XOR or a U1 Word XOR.
 """
 
 from __future__ import annotations
 
 from collections import Counter
-from copy import deepcopy, replace
+from copy import deepcopy
 from dataclasses import dataclass
 from functools import lru_cache
 from hashlib import sha256
@@ -27,7 +29,7 @@ from .builder import stable_permanent_id, wire_from_vertices
 from .codec import decode_v15, encode_v15
 from .model import Circuit, Component, Point
 from .pins import analyze_connectivity, positioned_pins, rotate_offset
-from .simulate import initial_clocked_memory, simulate_clocked_tick, simulate_clocked_ticks
+from .simulate import initial_clocked_memory, simulate_clocked_ticks
 from .sprite_geometry import DEFAULT_COMPONENT_SPRITE_ROOT, audit_sprite_geometry
 
 
@@ -35,9 +37,9 @@ WORD_BITS = 32
 WORD_MASK = (1 << WORD_BITS) - 1
 IDENTITY = tuple(1 << bit for bit in range(WORD_BITS))
 
-EXPECTED_GATE = 396
-EXPECTED_DELAY = 10
-EXPECTED_CYCLES = 66
+EXPECTED_GATE = 402
+EXPECTED_DELAY = 9
+EXPECTED_CYCLES = 67
 PUBLIC_REFERENCE = (431, 9, 66, 256_014)
 
 
@@ -663,9 +665,10 @@ def build_rng_encoded_asic() -> Circuit:
         ui_order=-2,
         user_label="RNG output",
     )
-    one = component("initialize-one", 2, (-410, -270))
-    ready_delay = component("ready-delay", 13, (-392, -270), init_data=0)
-    not_ready = component("not-ready", 3, (-374, -270))
+    load_pulse_delay = component("load-pulse-delay", 13, (-390, -280), init_data=0)
+    output_active_delay = component("output-active-delay", 13, (-390, -260), init_data=0)
+    phase_any = component("phase-any", 7, (-365, -270))
+    not_phase_any = component("not-phase-any", 3, (-345, -270))
 
     seed_word_splitter = component("seed-splitter-32", 99, (-380, 0), word_size=8)
     seed_byte_splitters = tuple(
@@ -752,9 +755,10 @@ def build_rng_encoded_asic() -> Circuit:
     components = (
         level_input,
         level_output,
-        one,
-        ready_delay,
-        not_ready,
+        load_pulse_delay,
+        output_active_delay,
+        phase_any,
+        not_phase_any,
         seed_word_splitter,
         *seed_byte_splitters,
         *state_delays,
@@ -773,11 +777,14 @@ def build_rng_encoded_asic() -> Circuit:
     mode_sources = {pair: _pin(gate, "out") for pair, gate in mode_ors.items()}
 
     wires = [
-        route(_pin(one, "out"), _pin(ready_delay, "in")),
-        route(_pin(ready_delay, "out"), _pin(not_ready, "in")),
-        route(_pin(not_ready, "out"), _pin(level_input, "control")),
+        route(_pin(load_pulse_delay, "out"), _pin(level_input, "control")),
         route(_pin(level_input, "value"), _pin(seed_word_splitter, "in")),
-        route(_pin(ready_delay, "out"), _pin(level_output, "control")),
+        route(_pin(output_active_delay, "out"), _pin(level_output, "control")),
+        route(_pin(load_pulse_delay, "out"), _pin(phase_any, "in0")),
+        route(_pin(output_active_delay, "out"), _pin(phase_any, "in1")),
+        route(_pin(phase_any, "out"), _pin(not_phase_any, "in")),
+        route(_pin(not_phase_any, "out"), _pin(load_pulse_delay, "in")),
+        route(_pin(phase_any, "out"), _pin(output_active_delay, "in")),
     ]
     for group, splitter in enumerate(seed_byte_splitters):
         wires.append(
@@ -852,19 +859,11 @@ def build_rng_encoded_asic() -> Circuit:
         delay=EXPECTED_DELAY,
         description=(
             "Codex RNG ASIC: encoded depth-two XOR network with 19 feedback-only "
-            "U1 Word XOR representations and a zero-init ready register"
+            "U1 Word XOR representations and a zero-init one-tick load pulse"
         ),
         components=components,
         wires=tuple(wires),
     )
-
-
-def _disabled_input_probe(circuit: Circuit) -> Circuit:
-    components = list(circuit.components)
-    if not components or components[0].kind != 62:
-        raise RuntimeError("RNG architecture input is not the expected first component")
-    components[0] = replace(components[0], kind=61)
-    return replace(circuit, components=tuple(components))
 
 
 def _encoded_memory(circuit: Circuit, memory: dict[int, int]) -> int:
@@ -876,27 +875,26 @@ def _encoded_memory(circuit: Circuit, memory: dict[int, int]) -> int:
 
 
 def _verify_output_stream(circuit: Circuit, seed: int) -> tuple[int, ...]:
-    first = simulate_clocked_tick(
+    trace = simulate_clocked_ticks(
         circuit,
         inputs={"Seed": seed},
+        tick_count=EXPECTED_CYCLES,
         memory=initial_clocked_memory(circuit),
     )
-    if first.outputs:
-        raise RuntimeError(f"RNG emitted during seed-load tick: {first.outputs}")
+    idle, loaded = trace[:2]
+    if idle.outputs:
+        raise RuntimeError(f"RNG emitted during idle tick: {idle.outputs}")
+    if _encoded_memory(circuit, idle.memory) != 0:
+        raise RuntimeError(f"RNG state changed during idle tick for {seed:08x}")
+    if loaded.outputs:
+        raise RuntimeError(f"RNG emitted during seed-load tick: {loaded.outputs}")
     expected_encoded = apply_matrix(T, seed)
-    if _encoded_memory(circuit, first.memory) != expected_encoded:
+    if _encoded_memory(circuit, loaded.memory) != expected_encoded:
         raise RuntimeError(f"RNG encoded seed-load mismatch for {seed:08x}")
 
-    probe = _disabled_input_probe(circuit)
-    trace = simulate_clocked_ticks(
-        probe,
-        inputs={"Seed": 0},
-        tick_count=EXPECTED_CYCLES - 1,
-        memory=first.memory,
-    )
     expected = seed
     outputs: list[int] = []
-    for tick, result in enumerate(trace, start=1):
+    for tick, result in enumerate(trace[2:], start=1):
         expected = xorshift32(expected)
         if result.outputs != {"RNG output": expected}:
             raise RuntimeError(
@@ -952,7 +950,7 @@ def _layout_safety(circuit: Circuit) -> dict[str, int]:
 def _verification_seeds() -> tuple[int, ...]:
     values = [0, 1, 2, 0x12345678, 0xFFFFFFFF]
     generator = random.Random(20260801)
-    while len(values) < 69:
+    while len(values) < 256:
         candidate = generator.getrandbits(32)
         if candidate not in values:
             values.append(candidate)
@@ -963,7 +961,7 @@ def _verify_rng_encoded_asic(circuit: Circuit) -> dict[str, object]:
     if (circuit.gate, circuit.delay) != (EXPECTED_GATE, EXPECTED_DELAY):
         raise RuntimeError("RNG encoded candidate metric declaration changed")
     kind_counts = Counter(component.kind for component in circuit.components)
-    expected_counts = {1: 0, 2: 1, 3: 1, 7: 47, 10: 42, 13: 33, 23: 19}
+    expected_counts = {1: 0, 2: 0, 3: 1, 7: 48, 10: 42, 13: 34, 23: 19}
     for kind, count in expected_counts.items():
         if kind_counts[kind] != count:
             raise RuntimeError(
@@ -973,9 +971,9 @@ def _verify_rng_encoded_asic(circuit: Circuit) -> dict[str, object]:
     delay_initial_values = Counter(
         component.init_data for component in circuit.components if component.kind == 13
     )
-    if delay_initial_values != {0: 33}:
+    if delay_initial_values != {0: 34}:
         raise RuntimeError(
-            "RNG encoded candidate requires all 33 delay bits to start at zero, "
+            "RNG encoded candidate requires all 34 delay bits to start at zero, "
             f"got {dict(delay_initial_values)}"
         )
 
@@ -1100,7 +1098,7 @@ def write_rng_encoded_asic(project_root: Path) -> dict[str, object]:
         "title": "Random Number Generator",
         "strategy": (
             "encoded-state depth-two XOR network with dual-mode OR leaves and "
-            "19 feedback-only U1 Word XOR representations"
+            "a zero-initialized one-tick load pulse"
         ),
         "deployment_target": "schematics/architecture/CODEX-RNG/circuit.data",
         "sha256": sha256(payload).hexdigest(),

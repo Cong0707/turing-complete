@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "status": "offline verified; game verification pending",
+  "sha256": "21f638b968ef9f2c3a2601fd46de1624e81e0a4e1198c39f5c6eff1ba566aa93",
+  "leaderboard_tuple": [
+    402,
+    9,
+    67
+  ],
+  "energy": 242406,
+  "reference_energy": 256014,
+  "improvement": 13608,
+  "component_count": 156,
+  "wire_count": 297,
+  "all_delay_init_data": 0,
+  "timing": {
+    "seed": "load-pulse Delay 4 + OR 1 + XOR 2 + XOR 2 = 9",
+    "feedback": "state Delay 4 + OR 1 + XOR 2 + XOR 2 = 9",
+    "controller_to_load": "max(two Delay outputs at 4) + OR 1 + NOT 1 = 6",
+    "controller_to_output": "max(two Delay outputs at 4) + OR 1 = 5"
+  },
+  "structure": {
+    "native_score": {
+      "gate": 402,
+      "delay": 9,
+      "critical_terminal_type": "output",
+      "critical_path": [
+        {
+          "component_index": 2,
+          "kind": 13,
+          "position": [
+            -390,
+            -280
+          ],
+          "component_delay": 4,
+          "arrival": 4
+        },
+        {
+          "component_index": 0,
+          "kind": 62,
+          "position": [
+            -410,
+            0
+          ],
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 6,
+          "kind": 99,
+          "position": [
+            -380,
+            0
+          ],
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 8,
+          "kind": 17,
+          "position": [
+            -350,
+            -56
+          ],
+          "component_delay": 0,
+          "arrival": 4
+        },
+        {
+          "component_index": 52,
+          "kind": 7,
+          "position": [
+            -175,
+            186
+          ],
+          "component_delay": 1,
+          "arrival": 5
+        },
+        {
+          "component_index": 116,
+          "kind": 10,
+          "position": [
+            -100,
+            182
+          ],
+          "component_delay": 2,
+          "arrival": 7
+        },
+        {
+          "component_index": 149,
+          "kind": 23,
+          "position": [
+            10,
+            217
+          ],
+          "component_delay": 2,
+          "arrival": 9
+        }
+      ]
+    },
+    "component_kind_counts": {
+      "3": 1,
+      "7": 48,
+      "10": 42,
+      "13": 34,
+      "16": 4,
+      "17": 4,
+      "23": 19,
+      "62": 1,
+      "70": 1,
+      "97": 1,
+      "99": 1
+    },
+    "connectivity": {
+      "effective_component_count": 156,
+      "supported_component_count": 156,
+      "unsupported_component_kind_counts": {},
+      "pin_count": 483,
+      "connected_pin_count": 483,
+      "unconnected_pin_count": 0,
+      "unconnected_pins": [],
+      "logical_network_count": 186,
+      "logical_edge_count": 263,
+      "multi_driver_network_count": 0,
+      "undriven_network_count": 0,
+      "sinkless_network_count": 0,
+      "width_mismatch_network_count": 0,
+      "unit_logic_depth": 7,
+      "cycle_component_count": 0
+    },
+    "layout": {
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "component_footprint_overlap_count": 0
+    },
+    "live_sprite_layout": {
+      "unsupported_component_kinds": [],
+      "component_overlap_cell_count": 0,
+      "internal_wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0
+    }
+  },
+  "stream": {
+    "seed_count": 256,
+    "tick_count": 17152,
+    "output_count": 16640,
+    "control_trace": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ]
+    ]
+  }
+}
