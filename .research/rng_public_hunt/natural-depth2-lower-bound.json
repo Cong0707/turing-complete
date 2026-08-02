@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "model": "cancellation-capable depth-two XOR2/Switch-XOR3 natural xorshift32",
+  "costs": {
+    "xor2": [
+      3,
+      2
+    ],
+    "switch_xor3": [
+      12,
+      2
+    ]
+  },
+  "row_weight_counts": {
+    "3": 5,
+    "4": 12,
+    "5": 3,
+    "6": 10,
+    "7": 2
+  },
+  "weight6_rows": [
+    "42023001",
+    "84046002",
+    "01188084",
+    "02310108",
+    "04620210",
+    "08c40420",
+    "11880840",
+    "23101080",
+    "46202100",
+    "8c404200"
+  ],
+  "weight6_rank": 10,
+  "weight7_rows": [
+    "40462021",
+    "808c4042"
+  ],
+  "weight7_intersection_size": 1,
+  "case_bounds": [
+    {
+      "weight6_final_xor2": 0,
+      "first_xor3": 2,
+      "weight6_final_xor3": 10,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 3,
+      "xor3_lower_bound": 14,
+      "xor2_lower_bound": 19,
+      "logic_gate_lower_bound": 225
+    },
+    {
+      "weight6_final_xor2": 1,
+      "first_xor3": 2,
+      "weight6_final_xor3": 9,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 3,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 20,
+      "logic_gate_lower_bound": 216
+    },
+    {
+      "weight6_final_xor2": 2,
+      "first_xor3": 3,
+      "weight6_final_xor3": 8,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 2,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 20,
+      "logic_gate_lower_bound": 216
+    },
+    {
+      "weight6_final_xor2": 3,
+      "first_xor3": 4,
+      "weight6_final_xor3": 7,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 1,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 20,
+      "logic_gate_lower_bound": 216
+    },
+    {
+      "weight6_final_xor2": 4,
+      "first_xor3": 5,
+      "weight6_final_xor3": 6,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 20,
+      "logic_gate_lower_bound": 216
+    },
+    {
+      "weight6_final_xor2": 5,
+      "first_xor3": 6,
+      "weight6_final_xor3": 5,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 21,
+      "logic_gate_lower_bound": 219
+    },
+    {
+      "weight6_final_xor2": 6,
+      "first_xor3": 7,
+      "weight6_final_xor3": 4,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 22,
+      "logic_gate_lower_bound": 222
+    },
+    {
+      "weight6_final_xor2": 7,
+      "first_xor3": 8,
+      "weight6_final_xor3": 3,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 23,
+      "logic_gate_lower_bound": 225
+    },
+    {
+      "weight6_final_xor2": 8,
+      "first_xor3": 9,
+      "weight6_final_xor3": 2,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 24,
+      "logic_gate_lower_bound": 228
+    },
+    {
+      "weight6_final_xor2": 9,
+      "first_xor3": 10,
+      "weight6_final_xor3": 1,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 25,
+      "logic_gate_lower_bound": 231
+    },
+    {
+      "weight6_final_xor2": 10,
+      "first_xor3": 11,
+      "weight6_final_xor3": 0,
+      "weight7_final_xor3": 2,
+      "extra_xor3": 0,
+      "weight3_final_gate_lower_bound": 0,
+      "xor3_lower_bound": 13,
+      "xor2_lower_bound": 26,
+      "logic_gate_lower_bound": 234
+    }
+  ],
+  "logic_gate_lower_bound": 216,
+  "full_rng_gate_lower_bound_with_230_shell": 446,
+  "target_rejected": [
+    431,
+    9,
+    66
+  ]
+}
