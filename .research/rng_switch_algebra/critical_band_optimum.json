@@ -1,0 +1,774 @@
+{
+  "schema": 1,
+  "status": "optimal",
+  "model": "critical y12..y26 cancellation-free XOR2/shared-control Switch-XOR3",
+  "solver": "g4",
+  "critical_outputs": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "fixed": {
+    "xor2_count": 34,
+    "gate": 102,
+    "first_forms": [
+      "00002001",
+      "00004002",
+      "00008004",
+      "00010008",
+      "00020010",
+      "00040020",
+      "00080040",
+      "00100080",
+      "00200100",
+      "00400200",
+      "00800400",
+      "01000800",
+      "02001000",
+      "04002000",
+      "08004000",
+      "10008000",
+      "20010000"
+    ]
+  },
+  "increment_gate_optimum": 198,
+  "core_gate": 300,
+  "total_gate_with_198_shell": 498,
+  "delay": 4,
+  "counts": {
+    "new_first_xor2": 2,
+    "new_first_switch_xor3": 8,
+    "final_xor2": 6,
+    "final_switch_xor3": 9,
+    "bit_switch": 68,
+    "paid_shared_control": 38
+  },
+  "selected_first_forms": [
+    "00002001",
+    "00004002",
+    "00088004",
+    "00110008",
+    "00220010",
+    "00440020",
+    "00800400",
+    "00880040",
+    "01000800",
+    "01100080",
+    "02001000",
+    "02200100",
+    "04002000",
+    "04400200",
+    "08004000",
+    "10008000",
+    "20010000",
+    "40020000",
+    "80040000"
+  ],
+  "outputs": [
+    {
+      "output": 12,
+      "target": "42023001",
+      "option_index": 49,
+      "final_arity": 3,
+      "sources": [
+        "00002001",
+        "02001000",
+        "40020000"
+      ]
+    },
+    {
+      "output": 13,
+      "target": "84046002",
+      "option_index": 49,
+      "final_arity": 3,
+      "sources": [
+        "00004002",
+        "04002000",
+        "80040000"
+      ]
+    },
+    {
+      "output": 14,
+      "target": "0808c004",
+      "option_index": 8,
+      "final_arity": 2,
+      "sources": [
+        "00088004",
+        "08004000"
+      ]
+    },
+    {
+      "output": 15,
+      "target": "10118008",
+      "option_index": 8,
+      "final_arity": 2,
+      "sources": [
+        "00110008",
+        "10008000"
+      ]
+    },
+    {
+      "output": 16,
+      "target": "20230010",
+      "option_index": 8,
+      "final_arity": 2,
+      "sources": [
+        "00220010",
+        "20010000"
+      ]
+    },
+    {
+      "output": 17,
+      "target": "40462021",
+      "option_index": 48,
+      "final_arity": 3,
+      "sources": [
+        "00002001",
+        "00440020",
+        "40020000"
+      ]
+    },
+    {
+      "output": 18,
+      "target": "808c4042",
+      "option_index": 48,
+      "final_arity": 3,
+      "sources": [
+        "00004002",
+        "00880040",
+        "80040000"
+      ]
+    },
+    {
+      "output": 19,
+      "target": "01188084",
+      "option_index": 2,
+      "final_arity": 2,
+      "sources": [
+        "00088004",
+        "01100080"
+      ]
+    },
+    {
+      "output": 20,
+      "target": "02310108",
+      "option_index": 2,
+      "final_arity": 2,
+      "sources": [
+        "00110008",
+        "02200100"
+      ]
+    },
+    {
+      "output": 21,
+      "target": "04620210",
+      "option_index": 2,
+      "final_arity": 2,
+      "sources": [
+        "00220010",
+        "04400200"
+      ]
+    },
+    {
+      "output": 22,
+      "target": "08c40420",
+      "option_index": 82,
+      "final_arity": 3,
+      "sources": [
+        "00440020",
+        "00800400",
+        "08000000"
+      ]
+    },
+    {
+      "output": 23,
+      "target": "11880840",
+      "option_index": 82,
+      "final_arity": 3,
+      "sources": [
+        "00880040",
+        "01000800",
+        "10000000"
+      ]
+    },
+    {
+      "output": 24,
+      "target": "23101080",
+      "option_index": 82,
+      "final_arity": 3,
+      "sources": [
+        "01100080",
+        "02001000",
+        "20000000"
+      ]
+    },
+    {
+      "output": 25,
+      "target": "46202100",
+      "option_index": 82,
+      "final_arity": 3,
+      "sources": [
+        "02200100",
+        "04002000",
+        "40000000"
+      ]
+    },
+    {
+      "output": 26,
+      "target": "8c404200",
+      "option_index": 82,
+      "final_arity": 3,
+      "sources": [
+        "04400200",
+        "08004000",
+        "80000000"
+      ]
+    }
+  ],
+  "triple_gates": [
+    {
+      "tag": [
+        "form",
+        557060
+      ],
+      "sources": [
+        "00000004",
+        "00008000",
+        "00080000"
+      ],
+      "pairs": [
+        {
+          "left": "00000004",
+          "right": "00008000",
+          "special_and": true
+        },
+        {
+          "left": "00000004",
+          "right": "00080000",
+          "special_and": false
+        },
+        {
+          "left": "00008000",
+          "right": "00080000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        1114120
+      ],
+      "sources": [
+        "00000008",
+        "00010000",
+        "00100000"
+      ],
+      "pairs": [
+        {
+          "left": "00000008",
+          "right": "00010000",
+          "special_and": true
+        },
+        {
+          "left": "00000008",
+          "right": "00100000",
+          "special_and": false
+        },
+        {
+          "left": "00010000",
+          "right": "00100000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        2228240
+      ],
+      "sources": [
+        "00000010",
+        "00020000",
+        "00200000"
+      ],
+      "pairs": [
+        {
+          "left": "00000010",
+          "right": "00020000",
+          "special_and": true
+        },
+        {
+          "left": "00000010",
+          "right": "00200000",
+          "special_and": false
+        },
+        {
+          "left": "00020000",
+          "right": "00200000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        4456480
+      ],
+      "sources": [
+        "00000020",
+        "00040000",
+        "00400000"
+      ],
+      "pairs": [
+        {
+          "left": "00000020",
+          "right": "00040000",
+          "special_and": true
+        },
+        {
+          "left": "00000020",
+          "right": "00400000",
+          "special_and": false
+        },
+        {
+          "left": "00040000",
+          "right": "00400000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        8912960
+      ],
+      "sources": [
+        "00000040",
+        "00080000",
+        "00800000"
+      ],
+      "pairs": [
+        {
+          "left": "00000040",
+          "right": "00080000",
+          "special_and": true
+        },
+        {
+          "left": "00000040",
+          "right": "00800000",
+          "special_and": false
+        },
+        {
+          "left": "00080000",
+          "right": "00800000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        17825920
+      ],
+      "sources": [
+        "00000080",
+        "00100000",
+        "01000000"
+      ],
+      "pairs": [
+        {
+          "left": "00000080",
+          "right": "00100000",
+          "special_and": true
+        },
+        {
+          "left": "00000080",
+          "right": "01000000",
+          "special_and": false
+        },
+        {
+          "left": "00100000",
+          "right": "01000000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        35651840
+      ],
+      "sources": [
+        "00000100",
+        "00200000",
+        "02000000"
+      ],
+      "pairs": [
+        {
+          "left": "00000100",
+          "right": "00200000",
+          "special_and": true
+        },
+        {
+          "left": "00000100",
+          "right": "02000000",
+          "special_and": false
+        },
+        {
+          "left": "00200000",
+          "right": "02000000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "form",
+        71303680
+      ],
+      "sources": [
+        "00000200",
+        "00400000",
+        "04000000"
+      ],
+      "pairs": [
+        {
+          "left": "00000200",
+          "right": "00400000",
+          "special_and": true
+        },
+        {
+          "left": "00000200",
+          "right": "04000000",
+          "special_and": false
+        },
+        {
+          "left": "00400000",
+          "right": "04000000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        12,
+        49
+      ],
+      "sources": [
+        "00002001",
+        "02001000",
+        "40020000"
+      ],
+      "pairs": [
+        {
+          "left": "00002001",
+          "right": "02001000",
+          "special_and": false
+        },
+        {
+          "left": "00002001",
+          "right": "40020000",
+          "special_and": true
+        },
+        {
+          "left": "02001000",
+          "right": "40020000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        13,
+        49
+      ],
+      "sources": [
+        "00004002",
+        "04002000",
+        "80040000"
+      ],
+      "pairs": [
+        {
+          "left": "00004002",
+          "right": "04002000",
+          "special_and": false
+        },
+        {
+          "left": "00004002",
+          "right": "80040000",
+          "special_and": true
+        },
+        {
+          "left": "04002000",
+          "right": "80040000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        17,
+        48
+      ],
+      "sources": [
+        "00002001",
+        "00440020",
+        "40020000"
+      ],
+      "pairs": [
+        {
+          "left": "00002001",
+          "right": "00440020",
+          "special_and": false
+        },
+        {
+          "left": "00002001",
+          "right": "40020000",
+          "special_and": true
+        },
+        {
+          "left": "00440020",
+          "right": "40020000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        18,
+        48
+      ],
+      "sources": [
+        "00004002",
+        "00880040",
+        "80040000"
+      ],
+      "pairs": [
+        {
+          "left": "00004002",
+          "right": "00880040",
+          "special_and": false
+        },
+        {
+          "left": "00004002",
+          "right": "80040000",
+          "special_and": true
+        },
+        {
+          "left": "00880040",
+          "right": "80040000",
+          "special_and": false
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        22,
+        82
+      ],
+      "sources": [
+        "00440020",
+        "00800400",
+        "08000000"
+      ],
+      "pairs": [
+        {
+          "left": "00440020",
+          "right": "00800400",
+          "special_and": false
+        },
+        {
+          "left": "00440020",
+          "right": "08000000",
+          "special_and": false
+        },
+        {
+          "left": "00800400",
+          "right": "08000000",
+          "special_and": true
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        23,
+        82
+      ],
+      "sources": [
+        "00880040",
+        "01000800",
+        "10000000"
+      ],
+      "pairs": [
+        {
+          "left": "00880040",
+          "right": "01000800",
+          "special_and": false
+        },
+        {
+          "left": "00880040",
+          "right": "10000000",
+          "special_and": false
+        },
+        {
+          "left": "01000800",
+          "right": "10000000",
+          "special_and": true
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        24,
+        82
+      ],
+      "sources": [
+        "01100080",
+        "02001000",
+        "20000000"
+      ],
+      "pairs": [
+        {
+          "left": "01100080",
+          "right": "02001000",
+          "special_and": false
+        },
+        {
+          "left": "01100080",
+          "right": "20000000",
+          "special_and": false
+        },
+        {
+          "left": "02001000",
+          "right": "20000000",
+          "special_and": true
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        25,
+        82
+      ],
+      "sources": [
+        "02200100",
+        "04002000",
+        "40000000"
+      ],
+      "pairs": [
+        {
+          "left": "02200100",
+          "right": "04002000",
+          "special_and": false
+        },
+        {
+          "left": "02200100",
+          "right": "40000000",
+          "special_and": false
+        },
+        {
+          "left": "04002000",
+          "right": "40000000",
+          "special_and": true
+        }
+      ]
+    },
+    {
+      "tag": [
+        "output",
+        26,
+        82
+      ],
+      "sources": [
+        "04400200",
+        "08004000",
+        "80000000"
+      ],
+      "pairs": [
+        {
+          "left": "04400200",
+          "right": "08004000",
+          "special_and": false
+        },
+        {
+          "left": "04400200",
+          "right": "80000000",
+          "special_and": false
+        },
+        {
+          "left": "08004000",
+          "right": "80000000",
+          "special_and": true
+        }
+      ]
+    }
+  ],
+  "paid_controls_anf": [
+    "1 + x2 + x19 + x2*x19",
+    "1 + x15 + x19 + x15*x19",
+    "1 + x3 + x20 + x3*x20",
+    "1 + x16 + x20 + x16*x20",
+    "1 + x4 + x21 + x4*x21",
+    "1 + x17 + x21 + x17*x21",
+    "1 + x5 + x22 + x5*x22",
+    "1 + x18 + x22 + x18*x22",
+    "1 + x6 + x23 + x6*x23",
+    "1 + x19 + x23 + x19*x23",
+    "1 + x7 + x24 + x7*x24",
+    "1 + x20 + x24 + x20*x24",
+    "1 + x8 + x25 + x8*x25",
+    "1 + x21 + x25 + x21*x25",
+    "1 + x9 + x26 + x9*x26",
+    "1 + x22 + x26 + x22*x26",
+    "1 + x0 + x12 + x0*x12 + x13 + x12*x13 + x25 + x0*x25 + x13*x25",
+    "1 + x0 + x13 + x17 + x0*x17 + x13*x17 + x30 + x0*x30 + x13*x30",
+    "x0*x17 + x13*x17 + x0*x30 + x13*x30",
+    "1 + x12 + x17 + x12*x17 + x25 + x17*x25 + x30 + x12*x30 + x25*x30",
+    "1 + x1 + x13 + x1*x13 + x14 + x13*x14 + x26 + x1*x26 + x14*x26",
+    "1 + x1 + x14 + x18 + x1*x18 + x14*x18 + x31 + x1*x31 + x14*x31",
+    "x1*x18 + x14*x18 + x1*x31 + x14*x31",
+    "1 + x13 + x18 + x13*x18 + x26 + x18*x26 + x31 + x13*x31 + x26*x31",
+    "1 + x0 + x5 + x0*x5 + x13 + x5*x13 + x18 + x0*x18 + x13*x18 + x22 + x0*x22 + x13*x22",
+    "1 + x5 + x17 + x5*x17 + x18 + x17*x18 + x22 + x17*x22 + x30 + x5*x30 + x18*x30 + x22*x30",
+    "1 + x1 + x6 + x1*x6 + x14 + x6*x14 + x19 + x1*x19 + x14*x19 + x23 + x1*x23 + x14*x23",
+    "1 + x6 + x18 + x6*x18 + x19 + x18*x19 + x23 + x18*x23 + x31 + x6*x31 + x19*x31 + x23*x31",
+    "1 + x5 + x10 + x5*x10 + x18 + x10*x18 + x22 + x10*x22 + x23 + x5*x23 + x18*x23 + x22*x23",
+    "1 + x5 + x18 + x22 + x27 + x5*x27 + x18*x27 + x22*x27",
+    "1 + x6 + x11 + x6*x11 + x19 + x11*x19 + x23 + x11*x23 + x24 + x6*x24 + x19*x24 + x23*x24",
+    "1 + x6 + x19 + x23 + x28 + x6*x28 + x19*x28 + x23*x28",
+    "1 + x7 + x12 + x7*x12 + x20 + x12*x20 + x24 + x12*x24 + x25 + x7*x25 + x20*x25 + x24*x25",
+    "1 + x7 + x20 + x24 + x29 + x7*x29 + x20*x29 + x24*x29",
+    "1 + x8 + x13 + x8*x13 + x21 + x13*x21 + x25 + x13*x25 + x26 + x8*x26 + x21*x26 + x25*x26",
+    "1 + x8 + x21 + x25 + x30 + x8*x30 + x21*x30 + x25*x30",
+    "1 + x9 + x14 + x9*x14 + x22 + x14*x22 + x26 + x14*x26 + x27 + x9*x27 + x22*x27 + x26*x27",
+    "1 + x9 + x22 + x26 + x31 + x9*x31 + x22*x31 + x26*x31"
+  ],
+  "formula": {
+    "variables": 13673,
+    "hard_clauses": 91180,
+    "soft_clauses": 8921,
+    "candidate_options": 1305,
+    "candidate_forms": 449
+  }
+}

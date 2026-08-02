@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "status": "offline-verified-candidate",
+  "artifact": "phase_reversed_396_9_66.data",
+  "sha256": "29b355cefb02c1f8f9a4cccb051175e185fcbcdaca6ff321cb45447b60a09b05",
+  "leaderboard_tuple_prediction": [
+    396,
+    9,
+    66
+  ],
+  "energy_prediction": 235224,
+  "reference_energy_431_9_66": 256014,
+  "energy_margin": 20790,
+  "normal_components_only": true,
+  "uses_ram": false,
+  "phase_reversal": {
+    "tick0": "phase=1: Architecture Input enabled, output disabled",
+    "tick1_plus": "phase=0: Architecture Input Z, output enabled",
+    "phase_delay_init": 1,
+    "phase_delay_next": 0,
+    "constant_kind": 1
+  },
+  "path_certificate": {
+    "state_to_state": "Delay 4 + mode OR 1 + depth-two XOR 4 = 9",
+    "phase_to_seed_state": "Delay 4 + mode OR 1 + depth-two XOR 4 = 9",
+    "state_to_output": "Delay 4 + mode OR 1 + depth-two XOR 4 = 9",
+    "phase_to_output_enable": "Delay 4 + NOT 1 = 5"
+  },
+  "component_kind_counts": {
+    "1": 1,
+    "3": 1,
+    "7": 47,
+    "10": 42,
+    "13": 33,
+    "16": 4,
+    "17": 4,
+    "23": 19,
+    "62": 1,
+    "70": 1,
+    "97": 1,
+    "99": 1
+  },
+  "verified_seed_count": 256,
+  "verified_tick_count": 16896,
+  "first_seed_prefix": [
+    "00021001",
+    "21211091",
+    "12828955"
+  ],
+  "connectivity": {
+    "effective_component_count": 155,
+    "supported_component_count": 155,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 479,
+    "connected_pin_count": 479,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 185,
+    "logical_edge_count": 261,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 7,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "wire_component_contact_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "component_footprint_overlap_count": 0
+  },
+  "sprite_layout": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cell_count": 0,
+    "internal_wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0
+  },
+  "evidence_boundary": "gate/delay are structurally predicted from reviewed 2.1.281 costs; game and server recomputation remain required"
+}
