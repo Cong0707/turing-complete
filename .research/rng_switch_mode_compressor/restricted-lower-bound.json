@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "scope": "fixed two-shear 61-XOR DAG; explicit depth-two dual rails; one-layer Bit Switch XOR buses; zero-init 67-cycle controller",
+  "not_a_global_bound": true,
+  "topology": {
+    "xor_gate_count": 61,
+    "first_layer_count": 27,
+    "second_layer_count": 34,
+    "all_first_layer_nodes_feed_second_layer": true,
+    "first_layer_fanout": {
+      "00000021": [
+        "00002021",
+        "00420021",
+        "04200021"
+      ],
+      "00000042": [
+        "00004042",
+        "00840042",
+        "08400042"
+      ],
+      "00000084": [
+        "01080084",
+        "10800084"
+      ],
+      "00000108": [
+        "02100108",
+        "21000108"
+      ],
+      "00000210": [
+        "04200210",
+        "42000210"
+      ],
+      "00000420": [
+        "08400420",
+        "84000420"
+      ],
+      "00000840": [
+        "08008840",
+        "10800840"
+      ],
+      "00001080": [
+        "10011080",
+        "21001080"
+      ],
+      "00002100": [
+        "20002101",
+        "42002100"
+      ],
+      "00004200": [
+        "40004202",
+        "84004200"
+      ],
+      "00008008": [
+        "00008808",
+        "01088008"
+      ],
+      "00010010": [
+        "00011010",
+        "02110010"
+      ],
+      "00420000": [
+        "00420021",
+        "40420002"
+      ],
+      "00840000": [
+        "00840042",
+        "80840004"
+      ],
+      "01080000": [
+        "01080084",
+        "01088008"
+      ],
+      "02100000": [
+        "02100108",
+        "02110010"
+      ],
+      "04200000": [
+        "04200021",
+        "04200210"
+      ],
+      "08008000": [
+        "08008400",
+        "08008840"
+      ],
+      "08400000": [
+        "08400042",
+        "08400420"
+      ],
+      "10010000": [
+        "10010800",
+        "10011080"
+      ],
+      "10800000": [
+        "10800084",
+        "10800840"
+      ],
+      "20000001": [
+        "20001001",
+        "20002101"
+      ],
+      "21000000": [
+        "21000108",
+        "21001080"
+      ],
+      "40000002": [
+        "40002002",
+        "40004202",
+        "40420002"
+      ],
+      "42000000": [
+        "42000210",
+        "42002100"
+      ],
+      "80000004": [
+        "80000404",
+        "80004004",
+        "80840004"
+      ],
+      "84000000": [
+        "84000420",
+        "84004200"
+      ]
+    },
+    "distinct_direct_second_layer_state_bits": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "dual_rail_synthesis": {
+    "minimum_gate_cost": 4,
+    "maximum_delay": 2,
+    "witness": [
+      "AND(1010,1100)",
+      "NOR(1010,1100)",
+      "NOR(0001,1000)",
+      "OR(0001,1000)"
+    ],
+    "target_tables": {
+      "xor": "0110",
+      "xnor": "1001"
+    }
+  },
+  "switch_bus_synthesis": {
+    "minimum_switch_count": 2,
+    "minimum_gate_cost": 4,
+    "z_is_numeric_zero": true,
+    "witness": [
+      {
+        "enable": "not_x",
+        "data": "y",
+        "covered": 2
+      },
+      {
+        "enable": "not_y",
+        "data": "x",
+        "covered": 4
+      }
+    ]
+  },
+  "imported_complete_proofs": {
+    "pair_cover": {
+      "minimum_pair_set_count": 1,
+      "canonicalization_complete": true,
+      "exact_mode_or_minimum": 47
+    },
+    "phase": {
+      "checked_wirings": 67684,
+      "logic_cost_le_1_solution_count": 0,
+      "minimum_fixed_shell_gate": 12
+    }
+  },
+  "category_lower_bounds": {
+    "32 state Delay Bit": 160,
+    "67-cycle zero-init phase shell": 12,
+    "47 fixed mode OR": 47,
+    "27 dual XOR/XNOR cells": 108,
+    "34 two-Switch XOR buses": 136,
+    "5 shared direct-leaf complements": 5
+  },
+  "gate_lower_bound": 468,
+  "delay": 8,
+  "cycles": 67,
+  "energy": 250848,
+  "conclusion": "The existing 468/8/67 candidate is gate-optimal inside this restricted compressor family. A <=452 candidate must change the DAG, state encoding, timing protocol, or Switch macro family."
+}

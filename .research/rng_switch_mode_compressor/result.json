@@ -1,0 +1,701 @@
+{
+  "schema": 1,
+  "status": "offline-verified; game verification pending",
+  "artifact": "candidate.data",
+  "sha256": "13d17623c683a114e07cd948d353e23ec61b03147893e8e7db2b849999e7df5f",
+  "leaderboard_tuple": [
+    468,
+    8,
+    67
+  ],
+  "energy": 250848,
+  "reference": [
+    431,
+    9,
+    66,
+    256014
+  ],
+  "improvement": 5166,
+  "uses_ram": false,
+  "all_delay_init_data_zero": true,
+  "component_count": 276,
+  "wire_count": 566,
+  "gate_table": {
+    "component_kind_counts": {
+      "3": 6,
+      "4": 27,
+      "6": 54,
+      "7": 75,
+      "12": 68,
+      "13": 34,
+      "16": 4,
+      "17": 4,
+      "62": 1,
+      "70": 1,
+      "97": 1,
+      "99": 1
+    },
+    "category_costs": {
+      "32 state Delay Bit": 160,
+      "2 phase Delay Bit": 10,
+      "47 mode OR": 47,
+      "27 dual XOR/XNOR cells (4 each)": 108,
+      "5 shared direct-leaf NOT": 5,
+      "68 Bit Switch": 136,
+      "phase OR + NOT": 2
+    },
+    "total": 468,
+    "cost_model": {
+      "NOT/AND/NAND/OR": "1 gate / 1 delay",
+      "Bit Switch": "2 gate / 1 delay",
+      "Delay Bit": "5 gate / 4 delay",
+      "dual XOR/XNOR": "four explicit primitives / 4 gate / 2 delay"
+    }
+  },
+  "load_dont_care_reuse": {
+    "raw_direct_leaf_count_before": 10,
+    "shared_mode_rail_count_after": 5,
+    "saved_not_gate": 5,
+    "pairs": [
+      {
+        "state_bit": 10,
+        "shared_mode_pair": {
+          "seed_bit": 27,
+          "state_bit": 10
+        },
+        "feedback_target": "80000404",
+        "feedback_membership": "B-only",
+        "output_target": "08008400",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 11,
+        "shared_mode_pair": {
+          "seed_bit": 28,
+          "state_bit": 11
+        },
+        "feedback_target": "00008808",
+        "feedback_membership": "B-only",
+        "output_target": "10010800",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 12,
+        "shared_mode_pair": {
+          "seed_bit": 29,
+          "state_bit": 12
+        },
+        "feedback_target": "00011010",
+        "feedback_membership": "B-only",
+        "output_target": "20001001",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 13,
+        "shared_mode_pair": {
+          "seed_bit": 30,
+          "state_bit": 13
+        },
+        "feedback_target": "00002021",
+        "feedback_membership": "B-only",
+        "output_target": "40002002",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      },
+      {
+        "state_bit": 14,
+        "shared_mode_pair": {
+          "seed_bit": 31,
+          "state_bit": 14
+        },
+        "feedback_target": "00004042",
+        "feedback_membership": "B-only",
+        "output_target": "80004004",
+        "output_membership": "C-only",
+        "steady_identity": "mode_leaf = state_leaf because architecture input is disabled",
+        "load_safety": "C-only value is not observed and never feeds encoded-state B"
+      }
+    ]
+  },
+  "tristate": {
+    "semantics": "Switch output is Z iff enable != 1; bus rejects disagreeing active drivers",
+    "exhaustive_macro_rows": [
+      {
+        "x": 0,
+        "y": 0,
+        "driver_left_one": {
+          "value": 1,
+          "is_z": true
+        },
+        "driver_left_zero": {
+          "value": 0,
+          "is_z": false
+        },
+        "active_driver_count": 1,
+        "conflict": false,
+        "bus": {
+          "value": 0,
+          "is_z": false,
+          "arrival": 8
+        }
+      },
+      {
+        "x": 0,
+        "y": 1,
+        "driver_left_one": {
+          "value": 0,
+          "is_z": true
+        },
+        "driver_left_zero": {
+          "value": 1,
+          "is_z": false
+        },
+        "active_driver_count": 1,
+        "conflict": false,
+        "bus": {
+          "value": 1,
+          "is_z": false,
+          "arrival": 8
+        }
+      },
+      {
+        "x": 1,
+        "y": 0,
+        "driver_left_one": {
+          "value": 1,
+          "is_z": false
+        },
+        "driver_left_zero": {
+          "value": 0,
+          "is_z": true
+        },
+        "active_driver_count": 1,
+        "conflict": false,
+        "bus": {
+          "value": 1,
+          "is_z": false,
+          "arrival": 8
+        }
+      },
+      {
+        "x": 1,
+        "y": 1,
+        "driver_left_one": {
+          "value": 0,
+          "is_z": false
+        },
+        "driver_left_zero": {
+          "value": 1,
+          "is_z": true
+        },
+        "active_driver_count": 1,
+        "conflict": false,
+        "bus": {
+          "value": 0,
+          "is_z": false,
+          "arrival": 8
+        }
+      }
+    ],
+    "all_rows_exactly_one_active_driver": true,
+    "all_rows_bus_is_z_false": true,
+    "multi_driver_network_count": 34,
+    "networks": [
+      {
+        "network": 463,
+        "driver_component_indices": [
+          255,
+          256
+        ],
+        "sink_component_indices": [
+          11
+        ]
+      },
+      {
+        "network": 465,
+        "driver_component_indices": [
+          265,
+          266
+        ],
+        "sink_component_indices": [
+          12
+        ]
+      },
+      {
+        "network": 467,
+        "driver_component_indices": [
+          217,
+          218
+        ],
+        "sink_component_indices": [
+          13
+        ]
+      },
+      {
+        "network": 469,
+        "driver_component_indices": [
+          221,
+          222
+        ],
+        "sink_component_indices": [
+          14
+        ]
+      },
+      {
+        "network": 471,
+        "driver_component_indices": [
+          223,
+          224
+        ],
+        "sink_component_indices": [
+          15
+        ]
+      },
+      {
+        "network": 473,
+        "driver_component_indices": [
+          231,
+          232
+        ],
+        "sink_component_indices": [
+          16
+        ]
+      },
+      {
+        "network": 475,
+        "driver_component_indices": [
+          239,
+          240
+        ],
+        "sink_component_indices": [
+          17
+        ]
+      },
+      {
+        "network": 477,
+        "driver_component_indices": [
+          247,
+          248
+        ],
+        "sink_component_indices": [
+          18
+        ]
+      },
+      {
+        "network": 479,
+        "driver_component_indices": [
+          257,
+          258
+        ],
+        "sink_component_indices": [
+          19
+        ]
+      },
+      {
+        "network": 481,
+        "driver_component_indices": [
+          267,
+          268
+        ],
+        "sink_component_indices": [
+          20
+        ]
+      },
+      {
+        "network": 483,
+        "driver_component_indices": [
+          229,
+          230
+        ],
+        "sink_component_indices": [
+          21
+        ]
+      },
+      {
+        "network": 485,
+        "driver_component_indices": [
+          237,
+          238
+        ],
+        "sink_component_indices": [
+          22
+        ]
+      },
+      {
+        "network": 487,
+        "driver_component_indices": [
+          245,
+          246
+        ],
+        "sink_component_indices": [
+          23
+        ]
+      },
+      {
+        "network": 489,
+        "driver_component_indices": [
+          253,
+          254
+        ],
+        "sink_component_indices": [
+          24
+        ]
+      },
+      {
+        "network": 491,
+        "driver_component_indices": [
+          261,
+          262
+        ],
+        "sink_component_indices": [
+          25
+        ]
+      },
+      {
+        "network": 493,
+        "driver_component_indices": [
+          207,
+          208
+        ],
+        "sink_component_indices": [
+          26
+        ]
+      },
+      {
+        "network": 495,
+        "driver_component_indices": [
+          209,
+          210
+        ],
+        "sink_component_indices": [
+          27
+        ]
+      },
+      {
+        "network": 497,
+        "driver_component_indices": [
+          203,
+          204
+        ],
+        "sink_component_indices": [
+          28
+        ]
+      },
+      {
+        "network": 499,
+        "driver_component_indices": [
+          205,
+          206
+        ],
+        "sink_component_indices": [
+          29
+        ]
+      },
+      {
+        "network": 514,
+        "driver_component_indices": [
+          211,
+          212
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 516,
+        "driver_component_indices": [
+          213,
+          214
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 518,
+        "driver_component_indices": [
+          215,
+          216
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 520,
+        "driver_component_indices": [
+          219,
+          220
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 522,
+        "driver_component_indices": [
+          225,
+          226
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 534,
+        "driver_component_indices": [
+          227,
+          228
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 524,
+        "driver_component_indices": [
+          233,
+          234
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 536,
+        "driver_component_indices": [
+          235,
+          236
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 526,
+        "driver_component_indices": [
+          241,
+          242
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 538,
+        "driver_component_indices": [
+          243,
+          244
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 528,
+        "driver_component_indices": [
+          249,
+          250
+        ],
+        "sink_component_indices": [
+          271
+        ]
+      },
+      {
+        "network": 540,
+        "driver_component_indices": [
+          251,
+          252
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 530,
+        "driver_component_indices": [
+          259,
+          260
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 542,
+        "driver_component_indices": [
+          263,
+          264
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      },
+      {
+        "network": 532,
+        "driver_component_indices": [
+          269,
+          270
+        ],
+        "sink_component_indices": [
+          272
+        ]
+      }
+    ]
+  },
+  "native_score": {
+    "gate": 468,
+    "delay": 8,
+    "critical_terminal_type": "output",
+    "critical_path": [
+      {
+        "component_index": 2,
+        "kind": 13,
+        "position": [
+          -580,
+          -390
+        ],
+        "component_gate": 5,
+        "component_delay": 4,
+        "arrival": 4
+      },
+      {
+        "component_index": 0,
+        "kind": 62,
+        "position": [
+          -600,
+          0
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 6,
+        "kind": 99,
+        "position": [
+          -565,
+          0
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 9,
+        "kind": 17,
+        "position": [
+          -530,
+          56
+        ],
+        "component_gate": 0,
+        "component_delay": 0,
+        "arrival": 4
+      },
+      {
+        "component_index": 70,
+        "kind": 7,
+        "position": [
+          -250,
+          -144
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 5
+      },
+      {
+        "component_index": 110,
+        "kind": 7,
+        "position": [
+          -170,
+          -148
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 6
+      },
+      {
+        "component_index": 113,
+        "kind": 6,
+        "position": [
+          -125,
+          -140
+        ],
+        "component_gate": 1,
+        "component_delay": 1,
+        "arrival": 7
+      },
+      {
+        "component_index": 268,
+        "kind": 12,
+        "position": [
+          30,
+          282
+        ],
+        "component_gate": 2,
+        "component_delay": 1,
+        "arrival": 8
+      }
+    ]
+  },
+  "connectivity": {
+    "effective_component_count": 276,
+    "supported_component_count": 276,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 838,
+    "connected_pin_count": 838,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 272,
+    "logical_edge_count": 513,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 8,
+    "cycle_component_count": 0
+  },
+  "layout": {
+    "conservative": {
+      "wire_component_contact_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "component_footprint_overlap_count": 0
+    },
+    "sprite": {
+      "unsupported_component_kinds": [],
+      "component_overlap_cell_count": 0,
+      "internal_wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0
+    }
+  },
+  "stream": {
+    "seed_count": 288,
+    "tick_count": 19296,
+    "output_count": 18720,
+    "outputs_per_seed": 65,
+    "coverage": "256 deterministic full-width seeds + every U32 unit basis + high-bit boundaries",
+    "control_trace": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "timing_explanation": "Delay 4 + mode OR 1 + explicit dual cell 2 + Bit Switch 1 = 8",
+  "evidence_boundary": "v15 structure, explicit primitive costs, exact tristate macro, topology, 256x67 ticks and geometry are offline verified; game/server must recompute score"
+}
