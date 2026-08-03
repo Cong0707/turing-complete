@@ -1,0 +1,532 @@
+{
+  "schema": "byte-adder-reachable-output-phase-independent-audit-v1",
+  "status": "accepted",
+  "care_relation": {
+    "path": ".research/byte_adder_root/abc_residual_current80/care_pla/reachable_relation_fr.pla",
+    "sha256": "1e84f6a3d9d28393cbce99b0eb5fb0f33fb65c39e15ec48a8ecdb798928f0566",
+    "rows": 23328,
+    "input_count": 21,
+    "output_count": 9,
+    "duplicate_identical_rows": 0,
+    "functional_conflicts": 0,
+    "input_labels_exact": true,
+    "output_labels_exact": true
+  },
+  "contract": {
+    "expected_phases": 512,
+    "required": 6,
+    "boundary_arrivals": {
+      "n2": 0,
+      "n4": 0,
+      "n5": 0,
+      "n16": 0,
+      "n17": 0,
+      "n22": 1,
+      "n25": 1,
+      "n28": 1,
+      "n29": 1,
+      "n31": 1,
+      "n32": 1,
+      "n34": 1,
+      "n36": 2,
+      "n39": 2,
+      "n43": 1,
+      "n44": 1,
+      "n45": 2,
+      "n51": 1,
+      "n56": 3,
+      "n62": 4,
+      "n69": 5
+    },
+    "old_parser_command": "read_blif -n",
+    "phase_polarity_restoration_checked": true,
+    "timing_augmentation_checked": true
+  },
+  "summaries": [
+    {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/summary.json",
+      "sha256": "cdaa1dbc7908fb13fd68e334c4d3d91b3d9845eba1c014752cde84868cf75359",
+      "schema": "byte-adder-reachable-output-phase-search-v1",
+      "record_count": 512,
+      "complete": true,
+      "summary_mask_count": 512,
+      "local_phase_count": 1,
+      "local_masks": [
+        134
+      ],
+      "local_polarity_artifacts_verified": true
+    },
+    {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/timing_d6_summary.json",
+      "sha256": "1c0cc322ccec326c5fb0376140115a9c22b69efe5ab012610f91a969adde3f69",
+      "schema": "byte-adder-reachable-output-phase-timing-map-v1",
+      "record_count": 2048,
+      "complete": true,
+      "summary_candidate_count": 2048,
+      "expected_candidate_count": 2048,
+      "abc_reported_unmet_count": 2048,
+      "abc_reported_met_count": 0,
+      "local_phase_count": 1,
+      "local_masks": [
+        134
+      ],
+      "local_timing_artifacts_verified": true
+    }
+  ],
+  "artifact_set": {
+    "verified_file_count": 14,
+    "path_sha256_set_sha256": "5b44b991909f898dcd834c56db6a6312933765e40ebe63231add7cebfebcc032"
+  },
+  "selection": {
+    "requested_top": 32,
+    "selected_count": 5,
+    "accepted_count": 5,
+    "rejected_count": 0,
+    "energy_strictly_below": 560,
+    "hit_count": 0,
+    "hits": [],
+    "best_actual": {
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped.blif",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped.blif",
+      "mask_hex": "0x086",
+      "recipe": null,
+      "metrics": {
+        "gate": 85,
+        "delay": 9,
+        "energy": 765,
+        "output_arrivals": [
+          4,
+          5,
+          7,
+          5,
+          8,
+          6,
+          7,
+          9,
+          9
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "4ca71202f10b98531f2825c65d202fac1b2cf70eff56ca105015ddeba549ee65"
+      }
+    }
+  },
+  "results": [
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": null,
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped.blif",
+      "source_mapped_blif_sha256": "8c647abb51fc0ee7b41606f1380820dbc20ab8a3cb964e004c03a07cc525885b",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped.blif",
+      "import_blif_sha256": "8c647abb51fc0ee7b41606f1380820dbc20ab8a3cb964e004c03a07cc525885b",
+      "normalization": null,
+      "discovery_metrics": {
+        "gate": 85,
+        "delay": 9,
+        "energy": 765
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 85,
+        "delay": 9,
+        "energy": 765,
+        "output_arrivals": [
+          4,
+          5,
+          7,
+          5,
+          8,
+          6,
+          7,
+          9,
+          9
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "4ca71202f10b98531f2825c65d202fac1b2cf70eff56ca105015ddeba549ee65"
+      },
+      "mapped_residual": {
+        "cell_count": 38,
+        "materialized_new_node_count": 38,
+        "kind_counts": {
+          "AND": 10,
+          "NAND": 1,
+          "NOR": 11,
+          "NOT": 3,
+          "OR": 11,
+          "XOR": 2
+        },
+        "residual_gate": 42
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "8c056852600c9a4e93d869537752ab58bed977dd064db5ee46d541db58338298",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "dch_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_dch_d6.blif",
+      "source_mapped_blif_sha256": "fa5030df2cfc815a3cb069f97325760e198465b226ddc22ba9998a7f3ec46d87",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_dch_d6.blif",
+      "import_blif_sha256": "f554e7041724f0400b4514596c204714f6e92358dd23af51e2d6ff1c160ccfcb",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_dch_d6.blif",
+        "source_sha256": "fa5030df2cfc815a3cb069f97325760e198465b226ddc22ba9998a7f3ec46d87",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_dch_d6.blif",
+        "normalized_sha256": "f554e7041724f0400b4514596c204714f6e92358dd23af51e2d6ff1c160ccfcb",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 86,
+        "delay": 9,
+        "energy": 774
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 86,
+        "delay": 9,
+        "energy": 774,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          7,
+          9,
+          9
+        ],
+        "reachable_nodes": 84,
+        "structural_sha256": "9ed55c9fcbfa35e2f75f6a18042d5361cc4af2ed8375d2631b70279d89c2ca8f"
+      },
+      "mapped_residual": {
+        "cell_count": 39,
+        "materialized_new_node_count": 39,
+        "kind_counts": {
+          "AND": 8,
+          "NAND": 5,
+          "NOR": 13,
+          "NOT": 4,
+          "OR": 7,
+          "XOR": 2
+        },
+        "residual_gate": 43
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "d0d4f15821ff784de8df6ac0f7e6ea5e9452345ee971588b661cbc7f79b1fafb",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "resub8_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_resub8_d6.blif",
+      "source_mapped_blif_sha256": "2a89172093fb790755ac0377cc88f7b66bd03ad41a09084d8151d0db739949a5",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_resub8_d6.blif",
+      "import_blif_sha256": "4e1fe288bee71231fca2700bf8ad86bd341ecfdb3d6084103e812485086b4562",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_resub8_d6.blif",
+        "source_sha256": "2a89172093fb790755ac0377cc88f7b66bd03ad41a09084d8151d0db739949a5",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_resub8_d6.blif",
+        "normalized_sha256": "4e1fe288bee71231fca2700bf8ad86bd341ecfdb3d6084103e812485086b4562",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 86,
+        "delay": 9,
+        "energy": 774
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 86,
+        "delay": 9,
+        "energy": 774,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          7,
+          9,
+          9
+        ],
+        "reachable_nodes": 84,
+        "structural_sha256": "1fa8bfb526e74a9bb88ca515bb9ffe34c87748c8575126db65612c4d583d806d"
+      },
+      "mapped_residual": {
+        "cell_count": 39,
+        "materialized_new_node_count": 39,
+        "kind_counts": {
+          "AND": 8,
+          "NAND": 5,
+          "NOR": 13,
+          "NOT": 4,
+          "OR": 7,
+          "XOR": 2
+        },
+        "residual_gate": 43
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "f0571bca7516aeaaf104f6ac5a9fd0e22bdeae89acdf18b315727c7194cfa207",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "dc2_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_dc2_d6.blif",
+      "source_mapped_blif_sha256": "241aa89dce278da9156fad03b586f156bc0411c3d01d0d376a753ca9648f8c74",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_dc2_d6.blif",
+      "import_blif_sha256": "f4c983160882cb1c1670e3ff41150098cb0b7813f970e07685eb3b396a7ec94c",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_dc2_d6.blif",
+        "source_sha256": "241aa89dce278da9156fad03b586f156bc0411c3d01d0d376a753ca9648f8c74",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_dc2_d6.blif",
+        "normalized_sha256": "f4c983160882cb1c1670e3ff41150098cb0b7813f970e07685eb3b396a7ec94c",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 88,
+        "delay": 9,
+        "energy": 792
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 88,
+        "delay": 9,
+        "energy": 792,
+        "output_arrivals": [
+          5,
+          4,
+          6,
+          7,
+          7,
+          6,
+          7,
+          9,
+          9
+        ],
+        "reachable_nodes": 88,
+        "structural_sha256": "02241c1fce04f1ac9d7b81d5970043ac00dc16e84aec45dd95b3a7945a767d89"
+      },
+      "mapped_residual": {
+        "cell_count": 43,
+        "materialized_new_node_count": 43,
+        "kind_counts": {
+          "AND": 9,
+          "NAND": 4,
+          "NOR": 15,
+          "NOT": 6,
+          "OR": 8,
+          "XOR": 1
+        },
+        "residual_gate": 45
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "c182dbc13a4d0d992f0e853b62d022df57fc6c8cabe855a2aed14a11b906e760",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "plain_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_plain_d6.blif",
+      "source_mapped_blif_sha256": "00d96e23c5272794db8b5f9e9b54480642111b1cdc22ba082314960a4554afe9",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_plain_d6.blif",
+      "import_blif_sha256": "a4bcd5f1fb86c9f50da30673ffac0787f7585f60aa3d03b0a3cbef24bbee557d",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped_plain_d6.blif",
+        "source_sha256": "00d96e23c5272794db8b5f9e9b54480642111b1cdc22ba082314960a4554afe9",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/normalized_for_import/phase_086/mapped_plain_d6.blif",
+        "normalized_sha256": "a4bcd5f1fb86c9f50da30673ffac0787f7585f60aa3d03b0a3cbef24bbee557d",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 88,
+        "delay": 9,
+        "energy": 792
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 88,
+        "delay": 9,
+        "energy": 792,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          8,
+          9,
+          9
+        ],
+        "reachable_nodes": 84,
+        "structural_sha256": "144237766d089dd251b9f837f03164a3863608c671c125325417e63005a7e43f"
+      },
+      "mapped_residual": {
+        "cell_count": 39,
+        "materialized_new_node_count": 39,
+        "kind_counts": {
+          "AND": 8,
+          "NAND": 2,
+          "NOR": 14,
+          "NOT": 5,
+          "OR": 7,
+          "XOR": 3
+        },
+        "residual_gate": 45
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "cb1cbb8588e64b09b8de30124992df8eb21e661bc9c67c728be2dd7d488e23e3",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    }
+  ],
+  "safety": {
+    "espresso_enumeration_run": false,
+    "abc_mapping_run": false,
+    "timing_annotations_validated_before_normalization": true,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "repository_candidate_written": false,
+    "game_started": false
+  }
+}

@@ -1,0 +1,975 @@
+{
+  "schema": "byte-adder-reachable-output-grouping-search-v1",
+  "input": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/reachable_relation_fr.pla",
+  "input_sha256": "1e84f6a3d9d28393cbce99b0eb5fb0f33fb65c39e15ec48a8ecdb798928f0566",
+  "metadata": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/metadata.json",
+  "metadata_sha256": "13052a0b6024940bf11f2b81d93dc4223924973f82e1e7d1808b7007a32d007e",
+  "library": "/root/congProjects/turing-complete-works/.research/turing-complete.genlib",
+  "library_sha256": "d7eb0d22a061c68d2caa073cb8ab08abd50ae7443d4b2f0a25655393f9511f5e",
+  "abc_commands": "fx; strash; dch; map -a",
+  "expected_groupings": 10,
+  "completed_groupings": 10,
+  "error_count": 0,
+  "errors": [],
+  "results": [
+    {
+      "name": "all",
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "implicants": 34,
+          "input_literals": 83,
+          "output_literals": 34
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 83,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 37,
+      "kind_counts": {
+        "AND": 9,
+        "NAND": 1,
+        "NOR": 11,
+        "NOT": 3,
+        "OR": 10,
+        "XOR": 3
+      },
+      "residual_gate": 43,
+      "total_gate": 86,
+      "output_arrivals": [
+        4,
+        5,
+        7,
+        5,
+        8,
+        6,
+        7,
+        9,
+        8
+      ],
+      "delay": 9,
+      "energy": 774,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/all/input.blif",
+      "input_blif_sha256": "991ce1a5023436727128063daf9f7ca2c1817684d941f715a74b959f3119dd58",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/all/mapped.blif",
+      "mapped_blif_sha256": "cbd2cf294c8dab1eb4cb386a4c069d41a33ae8a163add377de58a72500a1e58a",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/all/abc.log",
+      "abc_log_sha256": "7e5a58903cf98b438bcf9bb22a3926665663b6e0601729813714db03daa7fc2e"
+    },
+    {
+      "name": "adjacent_pairs",
+      "groups": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1
+          ],
+          "implicants": 7,
+          "input_literals": 17,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            2,
+            3
+          ],
+          "implicants": 10,
+          "input_literals": 27,
+          "output_literals": 10
+        },
+        {
+          "outputs": [
+            4,
+            5
+          ],
+          "implicants": 7,
+          "input_literals": 16,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            6,
+            7
+          ],
+          "implicants": 7,
+          "input_literals": 19,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            8
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/adjacent_pairs/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/adjacent_pairs/mapped.blif",
+      "mapped_blif_sha256": "a5712bc28d5fe91fbdda3a160ecaa819d2c23d63d651f4b3e572533ffb03bcce",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/adjacent_pairs/abc.log",
+      "abc_log_sha256": "66f8c120734b9ccd96618ab0b9c70e134069c042fe91a639ef358ea291425c62"
+    },
+    {
+      "name": "high_independent",
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "implicants": 24,
+          "input_literals": 60,
+          "output_literals": 24
+        },
+        {
+          "outputs": [
+            6
+          ],
+          "implicants": 3,
+          "input_literals": 7,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            7
+          ],
+          "implicants": 4,
+          "input_literals": 12,
+          "output_literals": 4
+        },
+        {
+          "outputs": [
+            8
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/high_independent/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/high_independent/mapped.blif",
+      "mapped_blif_sha256": "9536e1bc0030e28cbabe17557156d6855cafba2b4b1c66d920d33601f5146174",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/high_independent/abc.log",
+      "abc_log_sha256": "2a022fb7df71c2269c40ab7990d8cd852aa745bb4b44bcaef8458cc95742b5dd"
+    },
+    {
+      "name": "independent",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            1
+          ],
+          "implicants": 4,
+          "input_literals": 11,
+          "output_literals": 4
+        },
+        {
+          "outputs": [
+            2
+          ],
+          "implicants": 7,
+          "input_literals": 20,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            3
+          ],
+          "implicants": 3,
+          "input_literals": 7,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            4
+          ],
+          "implicants": 5,
+          "input_literals": 12,
+          "output_literals": 5
+        },
+        {
+          "outputs": [
+            5
+          ],
+          "implicants": 2,
+          "input_literals": 4,
+          "output_literals": 2
+        },
+        {
+          "outputs": [
+            6
+          ],
+          "implicants": 3,
+          "input_literals": 7,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            7
+          ],
+          "implicants": 4,
+          "input_literals": 12,
+          "output_literals": 4
+        },
+        {
+          "outputs": [
+            8
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/independent/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/independent/mapped.blif",
+      "mapped_blif_sha256": "6d04a884f699af51926ab8bbdf9b4f5a9a1cda692489b9b2dce44af7a9fd040c",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/independent/abc.log",
+      "abc_log_sha256": "566a420f86582fc188a27f2dbb399c6bbc5b5aea68b877298c853c3721cee2f5"
+    },
+    {
+      "name": "low4_mid2_high3",
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "implicants": 17,
+          "input_literals": 44,
+          "output_literals": 17
+        },
+        {
+          "outputs": [
+            4,
+            5
+          ],
+          "implicants": 7,
+          "input_literals": 16,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            6,
+            7,
+            8
+          ],
+          "implicants": 10,
+          "input_literals": 25,
+          "output_literals": 10
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low4_mid2_high3/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low4_mid2_high3/mapped.blif",
+      "mapped_blif_sha256": "a5712bc28d5fe91fbdda3a160ecaa819d2c23d63d651f4b3e572533ffb03bcce",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low4_mid2_high3/abc.log",
+      "abc_log_sha256": "e0400f8015d5e51093a2667ad36070b9a3c91f4a550bd3c14e7a93ae17fcc92e"
+    },
+    {
+      "name": "low5_high4",
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "implicants": 22,
+          "input_literals": 56,
+          "output_literals": 22
+        },
+        {
+          "outputs": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "implicants": 12,
+          "input_literals": 29,
+          "output_literals": 12
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low5_high4/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low5_high4/mapped.blif",
+      "mapped_blif_sha256": "bf65fa2e84748c2261950aea819e65b076e46952d69b41d8006fd1d50895ebf9",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low5_high4/abc.log",
+      "abc_log_sha256": "2c19a585fcfef93a48ef6a6e8ecff75050b4987d9348f52e463870be2c6a2738"
+    },
+    {
+      "name": "low_independent",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            1
+          ],
+          "implicants": 4,
+          "input_literals": 11,
+          "output_literals": 4
+        },
+        {
+          "outputs": [
+            2
+          ],
+          "implicants": 7,
+          "input_literals": 20,
+          "output_literals": 7
+        },
+        {
+          "outputs": [
+            3
+          ],
+          "implicants": 3,
+          "input_literals": 7,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            4
+          ],
+          "implicants": 5,
+          "input_literals": 12,
+          "output_literals": 5
+        },
+        {
+          "outputs": [
+            5
+          ],
+          "implicants": 2,
+          "input_literals": 4,
+          "output_literals": 2
+        },
+        {
+          "outputs": [
+            6,
+            7,
+            8
+          ],
+          "implicants": 10,
+          "input_literals": 25,
+          "output_literals": 10
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low_independent/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low_independent/mapped.blif",
+      "mapped_blif_sha256": "0ad06d2b761e7fe1ef216ba53ddafa601ef8d044947fb49b8f06e3200d4b03dc",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low_independent/abc.log",
+      "abc_log_sha256": "a897275962039e73e53932eb95dfff3940deca73876e1c0049239f4af5b896b3"
+    },
+    {
+      "name": "staggered_pairs",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0
+          ],
+          "implicants": 3,
+          "input_literals": 6,
+          "output_literals": 3
+        },
+        {
+          "outputs": [
+            1,
+            2
+          ],
+          "implicants": 11,
+          "input_literals": 31,
+          "output_literals": 11
+        },
+        {
+          "outputs": [
+            3,
+            4
+          ],
+          "implicants": 8,
+          "input_literals": 19,
+          "output_literals": 8
+        },
+        {
+          "outputs": [
+            5,
+            6
+          ],
+          "implicants": 5,
+          "input_literals": 11,
+          "output_literals": 5
+        },
+        {
+          "outputs": [
+            7,
+            8
+          ],
+          "implicants": 7,
+          "input_literals": 18,
+          "output_literals": 7
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/staggered_pairs/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/staggered_pairs/mapped.blif",
+      "mapped_blif_sha256": "95c63edf58398079498ae33e456ef78eb40edc9b8905169e69b14e0c9727efba",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/staggered_pairs/abc.log",
+      "abc_log_sha256": "cfe4439f0f614b5cacfbc0439ac6ddb51622e064f41d05f6e8adf905ab811499"
+    },
+    {
+      "name": "three_clusters",
+      "groups": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2
+          ],
+          "implicants": 14,
+          "input_literals": 37,
+          "output_literals": 14
+        },
+        {
+          "outputs": [
+            3,
+            4,
+            5
+          ],
+          "implicants": 10,
+          "input_literals": 23,
+          "output_literals": 10
+        },
+        {
+          "outputs": [
+            6,
+            7,
+            8
+          ],
+          "implicants": 10,
+          "input_literals": 25,
+          "output_literals": 10
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 85,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 41,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 14,
+        "XOR": 2
+      },
+      "residual_gate": 45,
+      "total_gate": 88,
+      "output_arrivals": [
+        6,
+        5,
+        8,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 880,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/three_clusters/input.blif",
+      "input_blif_sha256": "42149614fef802a8b260b39bd2911448a05fa9735cbb5c2aa84d6482ad256f02",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/three_clusters/mapped.blif",
+      "mapped_blif_sha256": "355f022083e125f8063590015c057477b039a6fd89a74703c8a5e27b8ac542a3",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/three_clusters/abc.log",
+      "abc_log_sha256": "021bb2d28c4f601a4a41b22055bc1bbc0194236ed59b58198520264266e1a5a8"
+    },
+    {
+      "name": "low6_high3",
+      "groups": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          6,
+          7,
+          8
+        ]
+      ],
+      "group_stats": [
+        {
+          "outputs": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "implicants": 24,
+          "input_literals": 59,
+          "output_literals": 24
+        },
+        {
+          "outputs": [
+            6,
+            7,
+            8
+          ],
+          "implicants": 10,
+          "input_literals": 25,
+          "output_literals": 10
+        }
+      ],
+      "combined_implicants": 34,
+      "combined_input_literals": 84,
+      "combined_output_literals": 34,
+      "care_mismatches": 0,
+      "mapped_components": 42,
+      "kind_counts": {
+        "AND": 13,
+        "NAND": 1,
+        "NOR": 7,
+        "NOT": 4,
+        "OR": 15,
+        "XOR": 2
+      },
+      "residual_gate": 46,
+      "total_gate": 89,
+      "output_arrivals": [
+        6,
+        5,
+        6,
+        5,
+        8,
+        6,
+        7,
+        10,
+        8
+      ],
+      "delay": 10,
+      "energy": 890,
+      "input_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low6_high3/input.blif",
+      "input_blif_sha256": "ce00d0fed82c301d38c7cb03d53f1dd5c96e2c2cd92eeacfba403c094426616a",
+      "mapped_blif": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low6_high3/mapped.blif",
+      "mapped_blif_sha256": "b1dd5883eb1af836e86f2335168530619d6963978bf059bfe042d08300791545",
+      "abc_log": "/root/congProjects/turing-complete-works/.research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/low6_high3/abc.log",
+      "abc_log_sha256": "c27dc11772628280750d266646e588c575650f5968c1bea38106506006a95173"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "byte-adder-abc-mapped-residual-materialization-pipeline-v1",
+  "status": "accepted",
+  "inputs": {
+    ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    ".research/byte_adder_root/abc_residual_current80/metadata.json": "13052a0b6024940bf11f2b81d93dc4223924973f82e1e7d1808b7007a32d007e",
+    ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086/mapped.blif": "bd8d5f6de44cd66c76481df1124703ed92b509b3446efed4d599096b6c78b884",
+    ".research/byte_adder_root/graft_abc_mapped_residual.py": "a6fdb8755af1ac25ea703a708b4bf02121a768eef2e6722df00ecc224001142b",
+    ".research/byte_adder_builder_layout_agent/materialize_factory_dag.py": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+    ".research/byte_adder_builder_verify_restart/audit_factory_candidate.py": "e0c1e05ce9964b9d233f827af0a154511fb3a2fe45fa66c3a98675ba6aac5902"
+  },
+  "limits": {
+    "expected_gate": 86,
+    "expected_delay": 7,
+    "expected_energy": 602,
+    "max_gate": 86,
+    "max_delay": 7,
+    "max_energy": 602
+  },
+  "metrics": {
+    "gate": 86,
+    "delay": 7,
+    "energy": 602,
+    "output_arrivals": [
+      5,
+      5,
+      6,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "reachable_nodes": 84,
+    "structural_sha256": "5e108baaa3797fb3607f0ceb979753ad5020cd434d02351caeb3a8a48c028104"
+  },
+  "mapped_residual": {
+    "cell_count": 39,
+    "materialized_new_node_count": 39,
+    "kind_counts": {
+      "AND": 11,
+      "NAND": 2,
+      "NOR": 9,
+      "NOT": 4,
+      "OR": 11,
+      "XOR": 2
+    },
+    "residual_gate": 43
+  },
+  "checks": {
+    "same_process_importer_json_byte_identical": true,
+    "authoritative_partition_recomputed": true,
+    "fixed_bus_slice_byte_identical": true,
+    "full_131072_rows": true,
+    "mismatch_union_zero": true,
+    "bus_conflict_zero": true,
+    "primary_output_z_zero": true,
+    "physical_net_partition_zero": true,
+    "dead_node_zero": true,
+    "materializer_clean": true,
+    "v15_round_trip_verified": true,
+    "independent_physical_audit_clean": true,
+    "deterministic_physical_rebuild_byte_identical": true,
+    "immutable_inputs_unchanged": true,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "repository_candidate_written": false,
+    "game_started": false
+  },
+  "outputs": {
+    "grafted_factory_dag": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/grafted_factory_dag.json",
+      "sha256": "7c3c2bad268b9c77c192a8411c72bcfb57523af37a2f9ce71049833d248de85f"
+    },
+    "research_candidate": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/materialized/candidate/circuit.data",
+      "sha256": "62495b80760565225f3c586fbf30a198e27fbf4a12a8db8c6d4571a6cff71ff4"
+    },
+    "materializer_certificate": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/materialized/machine_certificate.json",
+      "sha256": "5bd1b080cf4bbc2dbdc0ff847a1fecc3777db489e1d6554b07e6bd07e48de277"
+    },
+    "materializer_semantic_proxy": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/materialized/semantic_proxy.circuit.data",
+      "sha256": "aa8522c3fb837b3c129564e55abdb209b4b956f65cf11c9a60d95b24b5a63caf"
+    },
+    "independent_audit": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/independent_audit.json",
+      "sha256": "b9589de2712c1976e2135dbea60a36b901e3c15678415f6699b3bd7fb91fe737"
+    },
+    "independent_semantic_proxy": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x2/perm_022_phase_086_pipeline_regression/independent_proxy.circuit.data",
+      "sha256": "aa8522c3fb837b3c129564e55abdb209b4b956f65cf11c9a60d95b24b5a63caf"
+    }
+  },
+  "scripts": {
+    "pipeline": {
+      "path": ".research/byte_adder_root/run_abc_mapped_residual_pipeline.py",
+      "sha256": "70168e491dcf4499d650522c591333c6c74b03d27bea5812d12699d45f89aab0"
+    },
+    "importer": {
+      "path": ".research/byte_adder_root/graft_abc_mapped_residual.py",
+      "sha256": "a6fdb8755af1ac25ea703a708b4bf02121a768eef2e6722df00ecc224001142b"
+    },
+    "materializer": {
+      "path": ".research/byte_adder_builder_layout_agent/materialize_factory_dag.py",
+      "sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf"
+    },
+    "independent_auditor": {
+      "path": ".research/byte_adder_builder_verify_restart/audit_factory_candidate.py",
+      "sha256": "e0c1e05ce9964b9d233f827af0a154511fb3a2fe45fa66c3a98675ba6aac5902"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "byte-adder-reachable-output-grouping-independent-summary-audit-v1",
+  "status": "accepted",
+  "summary": {
+    "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_groupings/summary.json",
+    "sha256": "b64414fce90423954bdb6a77a4bce78bffa9a74264c8b742589b32a90b3a4b45",
+    "record_count": 10,
+    "names_unique": true,
+    "groups_are_disjoint_complete_partitions": true,
+    "group_definitions_exact": true,
+    "care_mismatches_zero": true,
+    "metric_equations_exact": true,
+    "best": {
+      "name": "all",
+      "gate": 86,
+      "delay": 9,
+      "energy": 774
+    },
+    "energy_strictly_below": 560,
+    "hit_count": 0
+  },
+  "local_artifacts": {
+    "group_directory_count": 0,
+    "group_directories": [],
+    "summary_only": true,
+    "per_group_sha_recomputed": false,
+    "importer_run": false
+  },
+  "artifact_set": {
+    "verified_file_count": 5,
+    "path_sha256_set_sha256": "94bb4a92e4ec3df2abfff5529adc105ee1ec1dc8b080ab50367236e5310985df"
+  },
+  "scope_note": "Per-group BLIF/log artifacts are absent locally; acceptance covers summary combinatorics, source hashes, reported care status, and metric equations only.",
+  "safety": {
+    "espresso_enumeration_run": false,
+    "abc_mapping_run": false,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "repository_candidate_written": false,
+    "game_started": false
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "byte-adder-abc-mapped-residual-materialization-pipeline-v1",
+  "status": "accepted",
+  "inputs": {
+    ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    ".research/byte_adder_root/abc_residual_current80/metadata.json": "13052a0b6024940bf11f2b81d93dc4223924973f82e1e7d1808b7007a32d007e",
+    ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086/mapped.blif": "8c647abb51fc0ee7b41606f1380820dbc20ab8a3cb964e004c03a07cc525885b",
+    ".research/byte_adder_root/graft_abc_mapped_residual.py": "a6fdb8755af1ac25ea703a708b4bf02121a768eef2e6722df00ecc224001142b",
+    ".research/byte_adder_builder_layout_agent/materialize_factory_dag.py": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+    ".research/byte_adder_builder_verify_restart/audit_factory_candidate.py": "e0c1e05ce9964b9d233f827af0a154511fb3a2fe45fa66c3a98675ba6aac5902"
+  },
+  "limits": {
+    "expected_gate": 85,
+    "expected_delay": 9,
+    "expected_energy": 765,
+    "max_gate": 85,
+    "max_delay": 9,
+    "max_energy": 765
+  },
+  "metrics": {
+    "gate": 85,
+    "delay": 9,
+    "energy": 765,
+    "output_arrivals": [
+      4,
+      5,
+      7,
+      5,
+      8,
+      6,
+      7,
+      9,
+      9
+    ],
+    "reachable_nodes": 83,
+    "structural_sha256": "4ca71202f10b98531f2825c65d202fac1b2cf70eff56ca105015ddeba549ee65"
+  },
+  "mapped_residual": {
+    "cell_count": 38,
+    "materialized_new_node_count": 38,
+    "kind_counts": {
+      "AND": 10,
+      "NAND": 1,
+      "NOR": 11,
+      "NOT": 3,
+      "OR": 11,
+      "XOR": 2
+    },
+    "residual_gate": 42
+  },
+  "checks": {
+    "same_process_importer_json_byte_identical": true,
+    "authoritative_partition_recomputed": true,
+    "fixed_bus_slice_byte_identical": true,
+    "full_131072_rows": true,
+    "mismatch_union_zero": true,
+    "bus_conflict_zero": true,
+    "primary_output_z_zero": true,
+    "physical_net_partition_zero": true,
+    "dead_node_zero": true,
+    "materializer_clean": true,
+    "v15_round_trip_verified": true,
+    "independent_physical_audit_clean": true,
+    "deterministic_physical_rebuild_byte_identical": true,
+    "immutable_inputs_unchanged": true,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "repository_candidate_written": false,
+    "game_started": false
+  },
+  "outputs": {
+    "grafted_factory_dag": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/grafted_factory_dag.json",
+      "sha256": "87d3833a62ada2cd38aa4ca18f3bfc310447f52b703d4501431d077df6772d23"
+    },
+    "research_candidate": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/materialized/candidate/circuit.data",
+      "sha256": "04b7465793a1367184e303c26b922f1e032232c082044ae8b695c7a90ad0e439"
+    },
+    "materializer_certificate": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/materialized/machine_certificate.json",
+      "sha256": "b488f53c34df360f0157e35fcf79c917df5eabdc13b5cf7371551bcbfe1cca25"
+    },
+    "materializer_semantic_proxy": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/materialized/semantic_proxy.circuit.data",
+      "sha256": "29186da9e3ac3db5754ce80556b30516caaee8b6a3cb3d7ef08cb26a9d1b7d41"
+    },
+    "independent_audit": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/independent_audit.json",
+      "sha256": "e6d6a6df41ebfcfa05e8a9e7721c46b15f9392e268f29554d12b5ece7fa134a0"
+    },
+    "independent_semantic_proxy": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/output_phase_all/phase_086_pipeline_regression/independent_proxy.circuit.data",
+      "sha256": "29186da9e3ac3db5754ce80556b30516caaee8b6a3cb3d7ef08cb26a9d1b7d41"
+    }
+  },
+  "scripts": {
+    "pipeline": {
+      "path": ".research/byte_adder_root/run_abc_mapped_residual_pipeline.py",
+      "sha256": "70168e491dcf4499d650522c591333c6c74b03d27bea5812d12699d45f89aab0"
+    },
+    "importer": {
+      "path": ".research/byte_adder_root/graft_abc_mapped_residual.py",
+      "sha256": "a6fdb8755af1ac25ea703a708b4bf02121a768eef2e6722df00ecc224001142b"
+    },
+    "materializer": {
+      "path": ".research/byte_adder_builder_layout_agent/materialize_factory_dag.py",
+      "sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf"
+    },
+    "independent_auditor": {
+      "path": ".research/byte_adder_builder_verify_restart/audit_factory_candidate.py",
+      "sha256": "e0c1e05ce9964b9d233f827af0a154511fb3a2fe45fa66c3a98675ba6aac5902"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+# Benchmark "reachable_phase_086" written by ABC on Tue Aug  4 06:23:02 2026
+.model reachable_phase_086
+.inputs n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 \
+ n51 n56 n62 n69
+.outputs out0 out1 out2 out3 out4 out5 out6 out7 out8
+
+
+
+
+.gate NOT     A=n43 Y=new_n31_1
+.gate NOR     A=n45 B=new_n31_1 Y=new_n32_1
+.gate OR      A=n44 B=new_n31_1 Y=new_n33
+.gate AND     A=new_n33 B=n2 Y=new_n34_1
+.gate OR      A=new_n34_1 B=new_n32_1 Y=out0
+.gate NOR     A=n5 B=n4 Y=new_n36_1
+.gate NOR     A=new_n36_1 B=n22 Y=new_n37
+.gate XOR     A=new_n37 B=n45 Y=out1
+.gate NOT     A=n25 Y=new_n39_1
+.gate NAND    A=n56 B=new_n39_1 Y=new_n40
+.gate AND     A=n51 B=new_n39_1 Y=new_n41
+.gate NOR     A=n45 B=n22 Y=new_n42
+.gate NOR     A=new_n42 B=new_n36_1 Y=new_n43_1
+.gate OR      A=new_n43_1 B=new_n41 Y=new_n44_1
+.gate AND     A=new_n44_1 B=new_n40 Y=out2
+.gate NOR     A=n29 B=n28 Y=new_n46
+.gate XOR     A=new_n46 B=n56 Y=out3
+.gate OR      A=n32 B=n31 Y=new_n48
+.gate NOT     A=n29 Y=new_n49
+.gate AND     A=n56 B=new_n49 Y=new_n50
+.gate OR      A=new_n50 B=n28 Y=new_n51_1
+.gate AND     A=new_n51_1 B=new_n48 Y=new_n52
+.gate NOR     A=n62 B=n32 Y=new_n53
+.gate OR      A=new_n53 B=new_n52 Y=out4
+.gate XOR     A=n62 B=n36 Y=out5
+.gate NOT     A=n39 Y=new_n56_1
+.gate AND     A=n62 B=n36 Y=new_n57
+.gate OR      A=new_n57 B=n34 Y=new_n58
+.gate AND     A=new_n58 B=new_n56_1 Y=new_n59
+.gate NOR     A=n69 B=new_n56_1 Y=new_n60
+.gate OR      A=new_n60 B=new_n59 Y=out6
+.gate NAND    A=n17 B=n16 Y=new_n62_1
+.gate OR      A=n17 B=n16 Y=new_n63
+.gate AND     A=new_n63 B=new_n62_1 Y=new_n64
+.gate AND     A=new_n64 B=n69 Y=new_n65
+.gate NOR     A=new_n64 B=n69 Y=new_n66
+.gate NOR     A=new_n66 B=new_n65 Y=out7
+.gate NOT     A=new_n62_1 Y=new_n68
+.gate OR      A=new_n65 B=new_n68 Y=out8
+.end

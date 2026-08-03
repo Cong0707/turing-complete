@@ -1,0 +1,139 @@
+{
+  "schema": "turing-complete-byte-adder-independent-factory-candidate-audit-v1",
+  "dag": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\output_phase_all\\phase_086_pipeline_regression\\grafted_factory_dag.json",
+  "candidate": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\output_phase_all\\phase_086_pipeline_regression\\materialized\\candidate\\circuit.data",
+  "candidate_sha256": "04b7465793a1367184e303c26b922f1e032232c082044ae8b695c7a90ad0e439",
+  "factory": {
+    "dag_sha256": "87d3833a62ada2cd38aa4ca18f3bfc310447f52b703d4501431d077df6772d23",
+    "factory_dag_sha256": "8c056852600c9a4e93d869537752ab58bed977dd064db5ee46d541db58338298",
+    "factory_hash_form": "compact-ascii",
+    "structural_sha256": "4ca71202f10b98531f2825c65d202fac1b2cf70eff56ca105015ddeba549ee65",
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+    "gate": 85,
+    "delay": 9,
+    "energy": 765,
+    "node_count": 83,
+    "bus_node_count": 5,
+    "tri_state_output_count": 10,
+    "vectors_checked": 131072,
+    "mismatch_count": 0,
+    "conflict_assignment_count": 0,
+    "output_z_assignment_count": 0,
+    "recursive_cost_delay_verified": true,
+    "referenced_certificates": []
+  },
+  "v15_round_trip_byte_identical": true,
+  "deterministic_rebuild_byte_identical": true,
+  "component_count": 79,
+  "wire_count": 156,
+  "pin_count": 242,
+  "component_kind_counts": {
+    "3": 3,
+    "4": 18,
+    "6": 1,
+    "7": 18,
+    "9": 19,
+    "10": 2,
+    "12": 10,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2
+  },
+  "physical_primitive_gate": 85,
+  "native_com_add_count": 0,
+  "connectivity": {
+    "unconnected_pin_count": 0,
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0
+  },
+  "geometry": {
+    "unsupported_component_kind_count": 0,
+    "component_overlap_cell_count": 0,
+    "wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "pin_position_collision_count": 0,
+    "pin_without_wire_endpoint_count": 0,
+    "wire_endpoint_without_pin_count": 0,
+    "wire_self_intersection_count": 0,
+    "wire_zero_length_step_count": 0,
+    "foreign_network_edge_overlap_count": 0
+  },
+  "physical_net_partition": {
+    "bus_node_count": 5,
+    "switch_count": 10,
+    "distinct_bus_network_count": 5,
+    "violation_count": 0,
+    "buses": [
+      {
+        "node": 45,
+        "driver_count": 2,
+        "arrival": 2,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 49152
+      },
+      {
+        "node": 55,
+        "driver_count": 2,
+        "arrival": 2,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 24576
+      },
+      {
+        "node": 56,
+        "driver_count": 2,
+        "arrival": 3,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 36864
+      },
+      {
+        "node": 62,
+        "driver_count": 2,
+        "arrival": 4,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 36864
+      },
+      {
+        "node": 69,
+        "driver_count": 2,
+        "arrival": 5,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 40960
+      }
+    ]
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "node_replay_count": 83,
+    "node_replay_mismatch_count": 0,
+    "packed_conflict_cases": 0,
+    "sum_correct": true,
+    "carry_correct": true,
+    "primary_output_z_count": 0,
+    "output_arrivals": [
+      4,
+      5,
+      7,
+      5,
+      8,
+      6,
+      7,
+      9,
+      9
+    ],
+    "global_recursive_delay": 9
+  },
+  "materializer_certificate": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\output_phase_all\\phase_086_pipeline_regression\\materialized\\machine_certificate.json",
+    "sha256": "b488f53c34df360f0157e35fcf79c917df5eabdc13b5cf7371551bcbfe1cca25",
+    "candidate_hash_matches": true,
+    "score_matches": true,
+    "dag_hash_matches": true
+  },
+  "formal_save_read": false,
+  "formal_save_written": false,
+  "game_started": false
+}

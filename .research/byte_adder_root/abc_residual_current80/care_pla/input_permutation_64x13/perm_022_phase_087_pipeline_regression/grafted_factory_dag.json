@@ -1,0 +1,2314 @@
+{
+  "schema": "byte-adder-abc-mapped-residual-graft-v1",
+  "status": "sat",
+  "family": "authoritative 80/7 fixed BUS slice plus Berkeley ABC mapped ordinary residual",
+  "source": {
+    "authoritative_dag": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+    "authoritative_dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "authoritative_factory_dag_sha256": "90cd25fbbc68736078b4373bd2721cb5c86923b34d284c2283b589bbf8cb09b5",
+    "metadata": ".research/byte_adder_root/abc_residual_current80/metadata.json",
+    "metadata_sha256": "13052a0b6024940bf11f2b81d93dc4223924973f82e1e7d1808b7007a32d007e",
+    "mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_64x13/perm_022_phase_087/mapped.blif",
+    "mapped_blif_sha256": "7560bf6726356be1f6df77b3e2e4c980a7341bc77c3fed780f829f831644fd4d",
+    "importer": ".research/byte_adder_root/graft_abc_mapped_residual.py",
+    "importer_sha256": "a6fdb8755af1ac25ea703a708b4bf02121a768eef2e6722df00ecc224001142b"
+  },
+  "partition": {
+    "bus_nodes": [
+      45,
+      55,
+      56,
+      62,
+      69
+    ],
+    "fixed_nodes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      18,
+      22,
+      25,
+      28,
+      29,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      43,
+      44,
+      45,
+      50,
+      51,
+      54,
+      55,
+      56,
+      59,
+      60,
+      61,
+      62,
+      66,
+      67,
+      68,
+      69
+    ],
+    "fixed_gate": 43,
+    "residual_nodes": [
+      23,
+      24,
+      30,
+      33,
+      40,
+      41,
+      42,
+      46,
+      47,
+      48,
+      49,
+      52,
+      53,
+      57,
+      58,
+      63,
+      64,
+      65,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88
+    ],
+    "residual_gate": 37,
+    "boundary": [
+      {
+        "id": 2,
+        "operation": "INPUT",
+        "arrival": 0,
+        "may_z": false
+      },
+      {
+        "id": 4,
+        "operation": "INPUT",
+        "arrival": 0,
+        "may_z": false
+      },
+      {
+        "id": 5,
+        "operation": "INPUT",
+        "arrival": 0,
+        "may_z": false
+      },
+      {
+        "id": 16,
+        "operation": "INPUT",
+        "arrival": 0,
+        "may_z": false
+      },
+      {
+        "id": 17,
+        "operation": "INPUT",
+        "arrival": 0,
+        "may_z": false
+      },
+      {
+        "id": 22,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 25,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 28,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 29,
+        "operation": "NOR",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 31,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 32,
+        "operation": "NOR",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 34,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 36,
+        "operation": "NOR",
+        "arrival": 2,
+        "may_z": false
+      },
+      {
+        "id": 39,
+        "operation": "NOR",
+        "arrival": 2,
+        "may_z": false
+      },
+      {
+        "id": 43,
+        "operation": "OR",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 44,
+        "operation": "AND",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 45,
+        "operation": "BUS",
+        "arrival": 2,
+        "may_z": true
+      },
+      {
+        "id": 51,
+        "operation": "OR",
+        "arrival": 1,
+        "may_z": false
+      },
+      {
+        "id": 56,
+        "operation": "BUS",
+        "arrival": 3,
+        "may_z": true
+      },
+      {
+        "id": 62,
+        "operation": "BUS",
+        "arrival": 4,
+        "may_z": true
+      },
+      {
+        "id": 69,
+        "operation": "BUS",
+        "arrival": 5,
+        "may_z": true
+      }
+    ],
+    "outputs": [
+      49,
+      77,
+      81,
+      83,
+      86,
+      65,
+      73,
+      88,
+      75
+    ],
+    "output_arrivals": [
+      4,
+      4,
+      7,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "retained_shell_nodes": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      22,
+      25,
+      28,
+      29,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      43,
+      44,
+      45,
+      50,
+      51,
+      54,
+      55,
+      56,
+      59,
+      60,
+      61,
+      62,
+      66,
+      67,
+      68,
+      69
+    ],
+    "retained_shell_node_count": 45,
+    "fixed_slice_sha256": "f460ea3da858f0ff79df48ff33fa7892b398a5bee4c68d55d86e9af4291244e1",
+    "fixed_slice_byte_identical": true
+  },
+  "mapped_residual": {
+    "model": "reachable_phase_087",
+    "primary_inputs": [
+      "n2",
+      "n4",
+      "n5",
+      "n16",
+      "n17",
+      "n22",
+      "n25",
+      "n28",
+      "n29",
+      "n31",
+      "n32",
+      "n34",
+      "n36",
+      "n39",
+      "n43",
+      "n44",
+      "n45",
+      "n51",
+      "n56",
+      "n62",
+      "n69"
+    ],
+    "primary_outputs": [
+      "out0",
+      "out1",
+      "out2",
+      "out3",
+      "out4",
+      "out5",
+      "out6",
+      "out7",
+      "out8"
+    ],
+    "cell_count": 38,
+    "materialized_new_node_count": 38,
+    "kind_counts": {
+      "AND": 11,
+      "NAND": 4,
+      "NOR": 8,
+      "NOT": 3,
+      "OR": 10,
+      "XOR": 2
+    },
+    "residual_gate": 42,
+    "first_allocated_node_id": 89,
+    "node_id_policy": "mapped non-alias nodes in BLIF order after max authoritative node ID",
+    "cells": [
+      {
+        "index": 0,
+        "line": 6,
+        "kind": "NAND",
+        "inputs": [
+          "n44",
+          "n2"
+        ],
+        "output": "new_n31_1",
+        "input_node_ids": [
+          44,
+          2
+        ],
+        "output_node_id": 89,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 1,
+        "line": 7,
+        "kind": "NAND",
+        "inputs": [
+          "new_n31_1",
+          "n45"
+        ],
+        "output": "new_n32_1",
+        "input_node_ids": [
+          89,
+          45
+        ],
+        "output_node_id": 90,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 2,
+        "line": 8,
+        "kind": "OR",
+        "inputs": [
+          "n43",
+          "n2"
+        ],
+        "output": "new_n33",
+        "input_node_ids": [
+          43,
+          2
+        ],
+        "output_node_id": 91,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 3,
+        "line": 9,
+        "kind": "AND",
+        "inputs": [
+          "new_n33",
+          "new_n32_1"
+        ],
+        "output": "out0",
+        "input_node_ids": [
+          91,
+          90
+        ],
+        "output_node_id": 92,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 4,
+        "line": 10,
+        "kind": "NOT",
+        "inputs": [
+          "n22"
+        ],
+        "output": "new_n35",
+        "input_node_ids": [
+          22
+        ],
+        "output_node_id": 93,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 5,
+        "line": 11,
+        "kind": "OR",
+        "inputs": [
+          "n5",
+          "n4"
+        ],
+        "output": "new_n36_1",
+        "input_node_ids": [
+          5,
+          4
+        ],
+        "output_node_id": 94,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 6,
+        "line": 12,
+        "kind": "AND",
+        "inputs": [
+          "new_n36_1",
+          "new_n35"
+        ],
+        "output": "new_n37",
+        "input_node_ids": [
+          94,
+          93
+        ],
+        "output_node_id": 95,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 7,
+        "line": 13,
+        "kind": "XOR",
+        "inputs": [
+          "new_n37",
+          "n45"
+        ],
+        "output": "out1",
+        "input_node_ids": [
+          95,
+          45
+        ],
+        "output_node_id": 96,
+        "materialized_new_node": true,
+        "cost": 3,
+        "delay": 2
+      },
+      {
+        "index": 8,
+        "line": 14,
+        "kind": "NOT",
+        "inputs": [
+          "n25"
+        ],
+        "output": "new_n39_1",
+        "input_node_ids": [
+          25
+        ],
+        "output_node_id": 97,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 9,
+        "line": 15,
+        "kind": "NAND",
+        "inputs": [
+          "n56",
+          "new_n39_1"
+        ],
+        "output": "new_n40",
+        "input_node_ids": [
+          56,
+          97
+        ],
+        "output_node_id": 98,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 10,
+        "line": 16,
+        "kind": "AND",
+        "inputs": [
+          "n51",
+          "new_n39_1"
+        ],
+        "output": "new_n41",
+        "input_node_ids": [
+          51,
+          97
+        ],
+        "output_node_id": 99,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 11,
+        "line": 17,
+        "kind": "OR",
+        "inputs": [
+          "n45",
+          "n22"
+        ],
+        "output": "new_n42",
+        "input_node_ids": [
+          45,
+          22
+        ],
+        "output_node_id": 100,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 12,
+        "line": 18,
+        "kind": "AND",
+        "inputs": [
+          "new_n42",
+          "new_n36_1"
+        ],
+        "output": "new_n43_1",
+        "input_node_ids": [
+          100,
+          94
+        ],
+        "output_node_id": 101,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 13,
+        "line": 19,
+        "kind": "OR",
+        "inputs": [
+          "new_n43_1",
+          "new_n41"
+        ],
+        "output": "new_n44_1",
+        "input_node_ids": [
+          101,
+          99
+        ],
+        "output_node_id": 102,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 14,
+        "line": 20,
+        "kind": "AND",
+        "inputs": [
+          "new_n44_1",
+          "new_n40"
+        ],
+        "output": "out2",
+        "input_node_ids": [
+          102,
+          98
+        ],
+        "output_node_id": 103,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 15,
+        "line": 21,
+        "kind": "NOR",
+        "inputs": [
+          "n29",
+          "n28"
+        ],
+        "output": "new_n46",
+        "input_node_ids": [
+          29,
+          28
+        ],
+        "output_node_id": 104,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 16,
+        "line": 22,
+        "kind": "XOR",
+        "inputs": [
+          "new_n46",
+          "n56"
+        ],
+        "output": "out3",
+        "input_node_ids": [
+          104,
+          56
+        ],
+        "output_node_id": 105,
+        "materialized_new_node": true,
+        "cost": 3,
+        "delay": 2
+      },
+      {
+        "index": 17,
+        "line": 23,
+        "kind": "NOT",
+        "inputs": [
+          "n29"
+        ],
+        "output": "new_n48",
+        "input_node_ids": [
+          29
+        ],
+        "output_node_id": 106,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 18,
+        "line": 24,
+        "kind": "AND",
+        "inputs": [
+          "n56",
+          "new_n48"
+        ],
+        "output": "new_n49",
+        "input_node_ids": [
+          56,
+          106
+        ],
+        "output_node_id": 107,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 19,
+        "line": 25,
+        "kind": "OR",
+        "inputs": [
+          "new_n49",
+          "n28"
+        ],
+        "output": "new_n50",
+        "input_node_ids": [
+          107,
+          28
+        ],
+        "output_node_id": 108,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 20,
+        "line": 26,
+        "kind": "OR",
+        "inputs": [
+          "n32",
+          "n31"
+        ],
+        "output": "new_n51_1",
+        "input_node_ids": [
+          32,
+          31
+        ],
+        "output_node_id": 109,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 21,
+        "line": 27,
+        "kind": "AND",
+        "inputs": [
+          "new_n51_1",
+          "new_n50"
+        ],
+        "output": "new_n52",
+        "input_node_ids": [
+          109,
+          108
+        ],
+        "output_node_id": 110,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 22,
+        "line": 28,
+        "kind": "NOR",
+        "inputs": [
+          "n62",
+          "n32"
+        ],
+        "output": "new_n53",
+        "input_node_ids": [
+          62,
+          32
+        ],
+        "output_node_id": 111,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 23,
+        "line": 29,
+        "kind": "OR",
+        "inputs": [
+          "new_n53",
+          "new_n52"
+        ],
+        "output": "out4",
+        "input_node_ids": [
+          111,
+          110
+        ],
+        "output_node_id": 112,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 24,
+        "line": 30,
+        "kind": "AND",
+        "inputs": [
+          "n62",
+          "n36"
+        ],
+        "output": "new_n55",
+        "input_node_ids": [
+          62,
+          36
+        ],
+        "output_node_id": 113,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 25,
+        "line": 31,
+        "kind": "NOR",
+        "inputs": [
+          "n62",
+          "n36"
+        ],
+        "output": "new_n56_1",
+        "input_node_ids": [
+          62,
+          36
+        ],
+        "output_node_id": 114,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 26,
+        "line": 32,
+        "kind": "NOR",
+        "inputs": [
+          "new_n56_1",
+          "new_n55"
+        ],
+        "output": "out5",
+        "input_node_ids": [
+          114,
+          113
+        ],
+        "output_node_id": 115,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 27,
+        "line": 33,
+        "kind": "OR",
+        "inputs": [
+          "n39",
+          "n34"
+        ],
+        "output": "new_n58",
+        "input_node_ids": [
+          39,
+          34
+        ],
+        "output_node_id": 116,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 28,
+        "line": 34,
+        "kind": "OR",
+        "inputs": [
+          "new_n58",
+          "new_n55"
+        ],
+        "output": "new_n59",
+        "input_node_ids": [
+          116,
+          113
+        ],
+        "output_node_id": 117,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 29,
+        "line": 35,
+        "kind": "NAND",
+        "inputs": [
+          "n69",
+          "n39"
+        ],
+        "output": "new_n60",
+        "input_node_ids": [
+          69,
+          39
+        ],
+        "output_node_id": 118,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 30,
+        "line": 36,
+        "kind": "AND",
+        "inputs": [
+          "new_n60",
+          "new_n59"
+        ],
+        "output": "out6",
+        "input_node_ids": [
+          118,
+          117
+        ],
+        "output_node_id": 119,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 31,
+        "line": 37,
+        "kind": "AND",
+        "inputs": [
+          "n17",
+          "n16"
+        ],
+        "output": "new_n62_1",
+        "input_node_ids": [
+          17,
+          16
+        ],
+        "output_node_id": 120,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 32,
+        "line": 38,
+        "kind": "NOR",
+        "inputs": [
+          "n17",
+          "n16"
+        ],
+        "output": "new_n63",
+        "input_node_ids": [
+          17,
+          16
+        ],
+        "output_node_id": 121,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 33,
+        "line": 39,
+        "kind": "NOR",
+        "inputs": [
+          "new_n63",
+          "new_n62_1"
+        ],
+        "output": "new_n64",
+        "input_node_ids": [
+          121,
+          120
+        ],
+        "output_node_id": 122,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 34,
+        "line": 40,
+        "kind": "AND",
+        "inputs": [
+          "new_n64",
+          "n69"
+        ],
+        "output": "new_n65",
+        "input_node_ids": [
+          122,
+          69
+        ],
+        "output_node_id": 123,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 35,
+        "line": 41,
+        "kind": "NOR",
+        "inputs": [
+          "new_n64",
+          "n69"
+        ],
+        "output": "new_n66",
+        "input_node_ids": [
+          122,
+          69
+        ],
+        "output_node_id": 124,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 36,
+        "line": 42,
+        "kind": "NOR",
+        "inputs": [
+          "new_n66",
+          "new_n65"
+        ],
+        "output": "out7",
+        "input_node_ids": [
+          124,
+          123
+        ],
+        "output_node_id": 125,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      },
+      {
+        "index": 37,
+        "line": 43,
+        "kind": "OR",
+        "inputs": [
+          "new_n65",
+          "new_n62_1"
+        ],
+        "output": "out8",
+        "input_node_ids": [
+          123,
+          120
+        ],
+        "output_node_id": 126,
+        "materialized_new_node": true,
+        "cost": 1,
+        "delay": 1
+      }
+    ]
+  },
+  "metrics": {
+    "gate": 85,
+    "delay": 7,
+    "energy": 595,
+    "output_arrivals": [
+      4,
+      5,
+      6,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "reachable_nodes": 83,
+    "structural_sha256": "cde6dcdb10e66cf5f8ff2c84f1775ca7ed0ba654d7db418dd1d45633c17d6c80"
+  },
+  "semantic": {
+    "truth_table_rows": 131072,
+    "mismatch_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mismatch_union_count": 0,
+    "conflict_assignment_count": 0,
+    "z_assignment_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+  },
+  "z_bus_audit": {
+    "authoritative_bus_node_ids": [
+      45,
+      55,
+      56,
+      62,
+      69
+    ],
+    "grafted_bus_node_ids": [
+      45,
+      55,
+      56,
+      62,
+      69
+    ],
+    "fixed_bus_slice_preserved": true,
+    "full_truth_rows": 131072,
+    "packed_conflict_cases": 0,
+    "primary_output_z_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "physical": {
+    "bus_nodes": 5,
+    "bus_node_ids": [
+      45,
+      55,
+      56,
+      62,
+      69
+    ],
+    "new_bus_node_count": 0,
+    "partial_driver_reuse_possible": false,
+    "physical_net_partition_violation_count": 0,
+    "reason": "all resolved BUS nodes and complete owned driver sets are byte-identical to the authoritative fixed slice"
+  },
+  "dead_node_audit": {
+    "mapped_blif_dead_cell_count": 0,
+    "dead_shell_node_count": 0,
+    "dead_generated_node_count": 0,
+    "reachable_node_count": 83,
+    "serialized_node_count": 83
+  },
+  "authority_review": {
+    "metrics": {
+      "gate": 80,
+      "delay": 7,
+      "energy": 560,
+      "output_arrivals": [
+        4,
+        4,
+        7,
+        5,
+        7,
+        6,
+        7,
+        7,
+        7
+      ],
+      "reachable_nodes": 82,
+      "structural_sha256": "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f"
+    },
+    "semantic": {
+      "truth_table_rows": 131072,
+      "mismatch_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_union_count": 0,
+      "conflict_assignment_count": 0,
+      "z_assignment_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    "partition_recomputed": true
+  },
+  "determinism": {
+    "canonical_factory_hash": "compact ASCII insertion-order JSON",
+    "stable_new_node_allocation": true,
+    "cli_rebuilds_twice_and_requires_byte_identity": true
+  },
+  "test_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  },
+  "factory_dag": {
+    "outputs": [
+      92,
+      96,
+      103,
+      105,
+      112,
+      115,
+      119,
+      125,
+      126
+    ],
+    "nodes": [
+      {
+        "id": 2,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a0"
+      },
+      {
+        "id": 3,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b0"
+      },
+      {
+        "id": 4,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a1"
+      },
+      {
+        "id": 5,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b1"
+      },
+      {
+        "id": 6,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a2"
+      },
+      {
+        "id": 7,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b2"
+      },
+      {
+        "id": 8,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a3"
+      },
+      {
+        "id": 9,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b3"
+      },
+      {
+        "id": 10,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a4"
+      },
+      {
+        "id": 11,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b4"
+      },
+      {
+        "id": 12,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a5"
+      },
+      {
+        "id": 13,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b5"
+      },
+      {
+        "id": 14,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a6"
+      },
+      {
+        "id": 15,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b6"
+      },
+      {
+        "id": 16,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a7"
+      },
+      {
+        "id": 17,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b7"
+      },
+      {
+        "id": 18,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "cin"
+      },
+      {
+        "id": 22,
+        "op": "AND",
+        "args": [
+          4,
+          5
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 25,
+        "op": "AND",
+        "args": [
+          6,
+          7
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 28,
+        "op": "AND",
+        "args": [
+          8,
+          9
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 29,
+        "op": "NOR",
+        "args": [
+          8,
+          9
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 31,
+        "op": "AND",
+        "args": [
+          10,
+          11
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 32,
+        "op": "NOR",
+        "args": [
+          10,
+          11
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 34,
+        "op": "AND",
+        "args": [
+          12,
+          13
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 35,
+        "op": "NOR",
+        "args": [
+          12,
+          13
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 36,
+        "op": "NOR",
+        "args": [
+          34,
+          35
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 37,
+        "op": "AND",
+        "args": [
+          14,
+          15
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 38,
+        "op": "NOR",
+        "args": [
+          14,
+          15
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 39,
+        "op": "NOR",
+        "args": [
+          37,
+          38
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 43,
+        "op": "OR",
+        "args": [
+          3,
+          18
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 44,
+        "op": "AND",
+        "args": [
+          3,
+          18
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 45,
+        "op": "BUS",
+        "args": [
+          2,
+          43,
+          44,
+          44
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_node_45",
+        "drivers": [
+          {
+            "enable": 2,
+            "data": 43,
+            "owner": "bus_node_45"
+          },
+          {
+            "enable": 44,
+            "data": 44,
+            "owner": "bus_node_45"
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "op": "OR",
+        "args": [
+          4,
+          5
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 51,
+        "op": "OR",
+        "args": [
+          6,
+          7
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 54,
+        "op": "OR",
+        "args": [
+          22,
+          25
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 55,
+        "op": "BUS",
+        "args": [
+          25,
+          51,
+          50,
+          51
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_node_55",
+        "drivers": [
+          {
+            "enable": 25,
+            "data": 51,
+            "owner": "bus_node_55"
+          },
+          {
+            "enable": 50,
+            "data": 51,
+            "owner": "bus_node_55"
+          }
+        ]
+      },
+      {
+        "id": 56,
+        "op": "BUS",
+        "args": [
+          45,
+          55,
+          54,
+          55
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_node_56",
+        "drivers": [
+          {
+            "enable": 45,
+            "data": 55,
+            "owner": "bus_node_56"
+          },
+          {
+            "enable": 54,
+            "data": 55,
+            "owner": "bus_node_56"
+          }
+        ]
+      },
+      {
+        "id": 59,
+        "op": "OR",
+        "args": [
+          28,
+          31
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 60,
+        "op": "NOR",
+        "args": [
+          29,
+          32
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 61,
+        "op": "OR",
+        "args": [
+          31,
+          60
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 62,
+        "op": "BUS",
+        "args": [
+          56,
+          61,
+          59,
+          61
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_node_62",
+        "drivers": [
+          {
+            "enable": 56,
+            "data": 61,
+            "owner": "bus_node_62"
+          },
+          {
+            "enable": 59,
+            "data": 61,
+            "owner": "bus_node_62"
+          }
+        ]
+      },
+      {
+        "id": 66,
+        "op": "AND",
+        "args": [
+          36,
+          39
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 67,
+        "op": "NOR",
+        "args": [
+          38,
+          66
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 68,
+        "op": "OR",
+        "args": [
+          34,
+          37
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 69,
+        "op": "BUS",
+        "args": [
+          66,
+          62,
+          68,
+          67
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_node_69",
+        "drivers": [
+          {
+            "enable": 66,
+            "data": 62,
+            "owner": "bus_node_69"
+          },
+          {
+            "enable": 68,
+            "data": 67,
+            "owner": "bus_node_69"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "op": "NAND",
+        "args": [
+          44,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n31_1"
+      },
+      {
+        "id": 90,
+        "op": "NAND",
+        "args": [
+          89,
+          45
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "abc:new_n32_1"
+      },
+      {
+        "id": 91,
+        "op": "OR",
+        "args": [
+          43,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n33"
+      },
+      {
+        "id": 92,
+        "op": "AND",
+        "args": [
+          91,
+          90
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": "abc:out0"
+      },
+      {
+        "id": 93,
+        "op": "NOT",
+        "args": [
+          22
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n35"
+      },
+      {
+        "id": 94,
+        "op": "OR",
+        "args": [
+          5,
+          4
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": "abc:new_n36_1"
+      },
+      {
+        "id": 95,
+        "op": "AND",
+        "args": [
+          94,
+          93
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "abc:new_n37"
+      },
+      {
+        "id": 96,
+        "op": "XOR",
+        "args": [
+          95,
+          45
+        ],
+        "cost": 3,
+        "step_delay": 2,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:out1"
+      },
+      {
+        "id": 97,
+        "op": "NOT",
+        "args": [
+          25
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n39_1"
+      },
+      {
+        "id": 98,
+        "op": "NAND",
+        "args": [
+          56,
+          97
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": "abc:new_n40"
+      },
+      {
+        "id": 99,
+        "op": "AND",
+        "args": [
+          51,
+          97
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "abc:new_n41"
+      },
+      {
+        "id": 100,
+        "op": "OR",
+        "args": [
+          45,
+          22
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "abc:new_n42"
+      },
+      {
+        "id": 101,
+        "op": "AND",
+        "args": [
+          100,
+          94
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": "abc:new_n43_1"
+      },
+      {
+        "id": 102,
+        "op": "OR",
+        "args": [
+          101,
+          99
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:new_n44_1"
+      },
+      {
+        "id": 103,
+        "op": "AND",
+        "args": [
+          102,
+          98
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:out2"
+      },
+      {
+        "id": 104,
+        "op": "NOR",
+        "args": [
+          29,
+          28
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n46"
+      },
+      {
+        "id": 105,
+        "op": "XOR",
+        "args": [
+          104,
+          56
+        ],
+        "cost": 3,
+        "step_delay": 2,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:out3"
+      },
+      {
+        "id": 106,
+        "op": "NOT",
+        "args": [
+          29
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n48"
+      },
+      {
+        "id": 107,
+        "op": "AND",
+        "args": [
+          56,
+          106
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": "abc:new_n49"
+      },
+      {
+        "id": 108,
+        "op": "OR",
+        "args": [
+          107,
+          28
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:new_n50"
+      },
+      {
+        "id": 109,
+        "op": "OR",
+        "args": [
+          32,
+          31
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n51_1"
+      },
+      {
+        "id": 110,
+        "op": "AND",
+        "args": [
+          109,
+          108
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:new_n52"
+      },
+      {
+        "id": 111,
+        "op": "NOR",
+        "args": [
+          62,
+          32
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:new_n53"
+      },
+      {
+        "id": 112,
+        "op": "OR",
+        "args": [
+          111,
+          110
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 7,
+        "may_z": false,
+        "label": "abc:out4"
+      },
+      {
+        "id": 113,
+        "op": "AND",
+        "args": [
+          62,
+          36
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:new_n55"
+      },
+      {
+        "id": 114,
+        "op": "NOR",
+        "args": [
+          62,
+          36
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": "abc:new_n56_1"
+      },
+      {
+        "id": 115,
+        "op": "NOR",
+        "args": [
+          114,
+          113
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:out5"
+      },
+      {
+        "id": 116,
+        "op": "OR",
+        "args": [
+          39,
+          34
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "abc:new_n58"
+      },
+      {
+        "id": 117,
+        "op": "OR",
+        "args": [
+          116,
+          113
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:new_n59"
+      },
+      {
+        "id": 118,
+        "op": "NAND",
+        "args": [
+          69,
+          39
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:new_n60"
+      },
+      {
+        "id": 119,
+        "op": "AND",
+        "args": [
+          118,
+          117
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 7,
+        "may_z": false,
+        "label": "abc:out6"
+      },
+      {
+        "id": 120,
+        "op": "AND",
+        "args": [
+          17,
+          16
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": "abc:new_n62_1"
+      },
+      {
+        "id": 121,
+        "op": "NOR",
+        "args": [
+          17,
+          16
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": "abc:new_n63"
+      },
+      {
+        "id": 122,
+        "op": "NOR",
+        "args": [
+          121,
+          120
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "abc:new_n64"
+      },
+      {
+        "id": 123,
+        "op": "AND",
+        "args": [
+          122,
+          69
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:new_n65"
+      },
+      {
+        "id": 124,
+        "op": "NOR",
+        "args": [
+          122,
+          69
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": "abc:new_n66"
+      },
+      {
+        "id": 125,
+        "op": "NOR",
+        "args": [
+          124,
+          123
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 7,
+        "may_z": false,
+        "label": "abc:out7"
+      },
+      {
+        "id": 126,
+        "op": "OR",
+        "args": [
+          123,
+          120
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 7,
+        "may_z": false,
+        "label": "abc:out8"
+      }
+    ],
+    "live_node_count": 83,
+    "sha256": "775b2cf43103e5b64f07f574f47480c813c70f808ee799488e42c9702ee51e1f"
+  }
+}

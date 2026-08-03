@@ -1,0 +1,139 @@
+{
+  "schema": "turing-complete-byte-adder-independent-factory-candidate-audit-v1",
+  "dag": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\input_permutation_64x13\\perm_022_phase_087_pipeline_regression\\grafted_factory_dag.json",
+  "candidate": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\input_permutation_64x13\\perm_022_phase_087_pipeline_regression\\materialized\\candidate\\circuit.data",
+  "candidate_sha256": "b48220901fe4882b85abd4dbd3d6dcc6c32984643535ec33b5a2baa137da0663",
+  "factory": {
+    "dag_sha256": "386784c534ac9586ca6fa98bd60947eb387f82a7984dc18a7f6e00796497de7c",
+    "factory_dag_sha256": "775b2cf43103e5b64f07f574f47480c813c70f808ee799488e42c9702ee51e1f",
+    "factory_hash_form": "compact-ascii",
+    "structural_sha256": "cde6dcdb10e66cf5f8ff2c84f1775ca7ed0ba654d7db418dd1d45633c17d6c80",
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+    "gate": 85,
+    "delay": 7,
+    "energy": 595,
+    "node_count": 83,
+    "bus_node_count": 5,
+    "tri_state_output_count": 10,
+    "vectors_checked": 131072,
+    "mismatch_count": 0,
+    "conflict_assignment_count": 0,
+    "output_z_assignment_count": 0,
+    "recursive_cost_delay_verified": true,
+    "referenced_certificates": []
+  },
+  "v15_round_trip_byte_identical": true,
+  "deterministic_rebuild_byte_identical": true,
+  "component_count": 79,
+  "wire_count": 156,
+  "pin_count": 242,
+  "component_kind_counts": {
+    "3": 3,
+    "4": 19,
+    "6": 4,
+    "7": 17,
+    "9": 16,
+    "10": 2,
+    "12": 10,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2
+  },
+  "physical_primitive_gate": 85,
+  "native_com_add_count": 0,
+  "connectivity": {
+    "unconnected_pin_count": 0,
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0
+  },
+  "geometry": {
+    "unsupported_component_kind_count": 0,
+    "component_overlap_cell_count": 0,
+    "wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "pin_position_collision_count": 0,
+    "pin_without_wire_endpoint_count": 0,
+    "wire_endpoint_without_pin_count": 0,
+    "wire_self_intersection_count": 0,
+    "wire_zero_length_step_count": 0,
+    "foreign_network_edge_overlap_count": 0
+  },
+  "physical_net_partition": {
+    "bus_node_count": 5,
+    "switch_count": 10,
+    "distinct_bus_network_count": 5,
+    "violation_count": 0,
+    "buses": [
+      {
+        "node": 45,
+        "driver_count": 2,
+        "arrival": 2,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 49152
+      },
+      {
+        "node": 55,
+        "driver_count": 2,
+        "arrival": 2,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 24576
+      },
+      {
+        "node": 56,
+        "driver_count": 2,
+        "arrival": 3,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 36864
+      },
+      {
+        "node": 62,
+        "driver_count": 2,
+        "arrival": 4,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 36864
+      },
+      {
+        "node": 69,
+        "driver_count": 2,
+        "arrival": 5,
+        "conflict_assignment_count": 0,
+        "z_assignment_count": 40960
+      }
+    ]
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "node_replay_count": 83,
+    "node_replay_mismatch_count": 0,
+    "packed_conflict_cases": 0,
+    "sum_correct": true,
+    "carry_correct": true,
+    "primary_output_z_count": 0,
+    "output_arrivals": [
+      4,
+      5,
+      6,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "global_recursive_delay": 7
+  },
+  "materializer_certificate": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\abc_residual_current80\\care_pla\\input_permutation_64x13\\perm_022_phase_087_pipeline_regression\\materialized\\machine_certificate.json",
+    "sha256": "4321e67dbacfadc27a7c5b00672157bc63e3a7e546916770fa4b0d4463564d7c",
+    "candidate_hash_matches": true,
+    "score_matches": true,
+    "dag_hash_matches": true
+  },
+  "formal_save_read": false,
+  "formal_save_written": false,
+  "game_started": false
+}

@@ -1,0 +1,248 @@
+{
+  "schema": "byte-adder-80d7-abc-residual-export-v1",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "bus_nodes": [
+    45,
+    55,
+    56,
+    62,
+    69
+  ],
+  "fixed_nodes": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    18,
+    22,
+    25,
+    28,
+    29,
+    31,
+    32,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    43,
+    44,
+    45,
+    50,
+    51,
+    54,
+    55,
+    56,
+    59,
+    60,
+    61,
+    62,
+    66,
+    67,
+    68,
+    69
+  ],
+  "fixed_gate": 43,
+  "residual_nodes": [
+    23,
+    24,
+    30,
+    33,
+    40,
+    41,
+    42,
+    46,
+    47,
+    48,
+    49,
+    52,
+    53,
+    57,
+    58,
+    63,
+    64,
+    65,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88
+  ],
+  "residual_gate": 37,
+  "boundary": [
+    {
+      "id": 2,
+      "operation": "INPUT",
+      "arrival": 0,
+      "may_z": false
+    },
+    {
+      "id": 4,
+      "operation": "INPUT",
+      "arrival": 0,
+      "may_z": false
+    },
+    {
+      "id": 5,
+      "operation": "INPUT",
+      "arrival": 0,
+      "may_z": false
+    },
+    {
+      "id": 16,
+      "operation": "INPUT",
+      "arrival": 0,
+      "may_z": false
+    },
+    {
+      "id": 17,
+      "operation": "INPUT",
+      "arrival": 0,
+      "may_z": false
+    },
+    {
+      "id": 22,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 25,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 28,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 29,
+      "operation": "NOR",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 31,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 32,
+      "operation": "NOR",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 34,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 36,
+      "operation": "NOR",
+      "arrival": 2,
+      "may_z": false
+    },
+    {
+      "id": 39,
+      "operation": "NOR",
+      "arrival": 2,
+      "may_z": false
+    },
+    {
+      "id": 43,
+      "operation": "OR",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 44,
+      "operation": "AND",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 45,
+      "operation": "BUS",
+      "arrival": 2,
+      "may_z": true
+    },
+    {
+      "id": 51,
+      "operation": "OR",
+      "arrival": 1,
+      "may_z": false
+    },
+    {
+      "id": 56,
+      "operation": "BUS",
+      "arrival": 3,
+      "may_z": true
+    },
+    {
+      "id": 62,
+      "operation": "BUS",
+      "arrival": 4,
+      "may_z": true
+    },
+    {
+      "id": 69,
+      "operation": "BUS",
+      "arrival": 5,
+      "may_z": true
+    }
+  ],
+  "outputs": [
+    49,
+    77,
+    81,
+    83,
+    86,
+    65,
+    73,
+    88,
+    75
+  ],
+  "output_arrivals": [
+    4,
+    4,
+    7,
+    5,
+    7,
+    6,
+    7,
+    7,
+    7
+  ],
+  "warning": "ABC is only a candidate finder; mapped cells and PI arrival constraints must be translated and replayed in the authoritative game model."
+}
