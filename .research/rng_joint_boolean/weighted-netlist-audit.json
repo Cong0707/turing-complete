@@ -1,0 +1,487 @@
+{
+  "schema": 1,
+  "status": "verified mapped netlists; no live save access",
+  "current_costs": {
+    "gate": {
+      "AND": 1,
+      "NAND": 1,
+      "NOR": 1,
+      "NOT": 1,
+      "OR": 1,
+      "XNOR": 3,
+      "XOR": 3,
+      "BUF": 0
+    },
+    "delay": {
+      "AND": 1,
+      "NAND": 1,
+      "NOR": 1,
+      "NOT": 1,
+      "OR": 1,
+      "XNOR": 2,
+      "XOR": 2,
+      "BUF": 0
+    }
+  },
+  "netlists": [
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_joint_boolean\\full_dc2_area.v",
+      "sha256": "132143aa8dc554f264717820889bc3ec6acd219f0824a3285157a4c529cf1b12",
+      "cell_count": 164,
+      "kind_counts": {
+        "AND": 10,
+        "BUF": 13,
+        "NAND": 4,
+        "NOR": 67,
+        "NOT": 19,
+        "OR": 2,
+        "XNOR": 34,
+        "XOR": 15
+      },
+      "logic_gate": 249,
+      "verification": {
+        "legal_mode_vector_count": 4170
+      },
+      "timing": {
+        "67_cycle_load_pulse_seed_at_4": {
+          "seed_arrival": 4,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        },
+        "66_cycle_one_shot_not_ready_seed_at_5": {
+          "seed_arrival": 5,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 10,
+          "maximum_output_arrival": 10,
+          "maximum_arrival": 10,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "s0",
+              "kind": "PI",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 6
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 8
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 10
+            }
+          ]
+        },
+        "persistent_seed_at_0": {
+          "seed_arrival": 0,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_joint_boolean\\full_direct_map.v",
+      "sha256": "da3f44d0b186b0476b6d5bcb7cd2f2ed0627ca2481811c3c88d9bb4489efeeda",
+      "cell_count": 150,
+      "kind_counts": {
+        "AND": 2,
+        "BUF": 13,
+        "NAND": 6,
+        "NOR": 51,
+        "NOT": 19,
+        "OR": 3,
+        "XNOR": 34,
+        "XOR": 22
+      },
+      "logic_gate": 249,
+      "verification": {
+        "legal_mode_vector_count": 4170
+      },
+      "timing": {
+        "67_cycle_load_pulse_seed_at_4": {
+          "seed_arrival": 4,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        },
+        "66_cycle_one_shot_not_ready_seed_at_5": {
+          "seed_arrival": 5,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 10,
+          "maximum_output_arrival": 10,
+          "maximum_arrival": 10,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "s0",
+              "kind": "PI",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 6
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 8
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 10
+            }
+          ]
+        },
+        "persistent_seed_at_0": {
+          "seed_arrival": 0,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_joint_boolean\\full_fx_map.v",
+      "sha256": "28d494dcdb93d035e223e0a517d8dad74f2562fe0906fb741e6ceffdcfb6e329",
+      "cell_count": 259,
+      "kind_counts": {
+        "AND": 22,
+        "BUF": 13,
+        "NAND": 56,
+        "NOR": 65,
+        "NOT": 14,
+        "OR": 22,
+        "XNOR": 63,
+        "XOR": 4
+      },
+      "logic_gate": 380,
+      "verification": {
+        "legal_mode_vector_count": 4170
+      },
+      "timing": {
+        "67_cycle_load_pulse_seed_at_4": {
+          "seed_arrival": 4,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 11,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 11,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q1",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n130",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n131",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "new_n133",
+              "kind": "XNOR",
+              "arrival": 9
+            },
+            {
+              "signal": "fb0",
+              "kind": "XNOR",
+              "arrival": 11
+            }
+          ]
+        },
+        "66_cycle_one_shot_not_ready_seed_at_5": {
+          "seed_arrival": 5,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 12,
+          "maximum_output_arrival": 10,
+          "maximum_arrival": 12,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "s30",
+              "kind": "PI",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n130",
+              "kind": "NOR",
+              "arrival": 6
+            },
+            {
+              "signal": "new_n131",
+              "kind": "XNOR",
+              "arrival": 8
+            },
+            {
+              "signal": "new_n133",
+              "kind": "XNOR",
+              "arrival": 10
+            },
+            {
+              "signal": "fb0",
+              "kind": "XNOR",
+              "arrival": 12
+            }
+          ]
+        },
+        "persistent_seed_at_0": {
+          "seed_arrival": 0,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 11,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 11,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q1",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n130",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n131",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "new_n133",
+              "kind": "XNOR",
+              "arrival": 9
+            },
+            {
+              "signal": "fb0",
+              "kind": "XNOR",
+              "arrival": 11
+            }
+          ]
+        }
+      }
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_joint_boolean\\full_resyn_area.v",
+      "sha256": "0efd5b7207244b149144475c29ed1a5438556f99625f608db22c977018e47725",
+      "cell_count": 150,
+      "kind_counts": {
+        "AND": 4,
+        "BUF": 13,
+        "NAND": 2,
+        "NOR": 55,
+        "NOT": 19,
+        "OR": 1,
+        "XNOR": 34,
+        "XOR": 22
+      },
+      "logic_gate": 249,
+      "verification": {
+        "legal_mode_vector_count": 4170
+      },
+      "timing": {
+        "67_cycle_load_pulse_seed_at_4": {
+          "seed_arrival": 4,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        },
+        "66_cycle_one_shot_not_ready_seed_at_5": {
+          "seed_arrival": 5,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 10,
+          "maximum_output_arrival": 10,
+          "maximum_arrival": 10,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "s0",
+              "kind": "PI",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 6
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 8
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 10
+            }
+          ]
+        },
+        "persistent_seed_at_0": {
+          "seed_arrival": 0,
+          "state_arrival": 4,
+          "maximum_feedback_arrival": 9,
+          "maximum_output_arrival": 9,
+          "maximum_arrival": 9,
+          "critical_terminal": "fb0",
+          "critical_path": [
+            {
+              "signal": "q22",
+              "kind": "PI",
+              "arrival": 4
+            },
+            {
+              "signal": "new_n133",
+              "kind": "NOR",
+              "arrival": 5
+            },
+            {
+              "signal": "new_n134",
+              "kind": "XNOR",
+              "arrival": 7
+            },
+            {
+              "signal": "fb0",
+              "kind": "XOR",
+              "arrival": 9
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
