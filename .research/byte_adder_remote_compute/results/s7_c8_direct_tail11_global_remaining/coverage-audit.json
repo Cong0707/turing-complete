@@ -1,0 +1,573 @@
+{
+  "batches": {
+    "first_full_cnf": {
+      "cpu_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "finished": true,
+      "memory_mb_per_process": 1024,
+      "nice": 0,
+      "non_unsat": [],
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "record_count": 2,
+      "script_sha256": "d2ae098e23bf64d4ba5729b2edd2247221053680eb75577c214e0c8b23375e9e",
+      "spec": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11/s7_c8_direct_tail11.json",
+      "spec_sha256": "f8474f3ef8a4f84abb5bb79f0587e5b5aacf9b380c7580e5e69abbb47fcf67a7",
+      "stderr_bytes": 0,
+      "stdout_json_lines": 2,
+      "summary": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11/s7-c8-direct-tail11-summary.json",
+      "summary_sha256": "f99daac964d3eb006f6dd8b7c789ab8ec91d7cf2306743aa2b58331041bfc5a6",
+      "terminal_counts": {
+        "state:completed": 2,
+        "status:unsat": 2
+      },
+      "timeout_seconds": 3600.0,
+      "workers": 2
+    },
+    "first_full_cnf_manifest": {
+      "entries": 15,
+      "failures": [],
+      "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11/SHA256SUMS.txt"
+    },
+    "global_slot0": {
+      "cpu_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "finished": true,
+      "memory_mb_per_process": 768,
+      "nice": 5,
+      "non_unsat": [],
+      "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+      "record_count": 16,
+      "script_sha256": "27ec73e2fb3fa40c9e34dc48af8866ef2af3cf84514d301700c0d54ef3627b43",
+      "spec": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_remote_compute/s7_c8_direct_tail11_global_remaining_glucose_slot0.json",
+      "spec_sha256": "ba9c2b24306d682b1f1292fc39f65e29ac7812580172e3d6ca21c9b3edf4ccd8",
+      "stderr_bytes": 0,
+      "stdout_json_lines": 16,
+      "summary": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_remote_compute/s7-c8-direct-tail11-global-remaining-glucose-slot0-summary.json",
+      "summary_sha256": "ac1e3540ca331a73d1ce953bf5b09048ad71817a0df8bbcdcae14ad84d0445af",
+      "terminal_counts": {
+        "state:completed": 16,
+        "status:unsat": 16
+      },
+      "timeout_seconds": 3600.0,
+      "workers": 8
+    }
+  },
+  "conclusion": "Within the executed paid-source, true-tristate, BUS-conflict, physical-net-partition, deadline-6 and dead-component model, every exact-cost-11 S7/C8 joint-tail decomposition is UNSAT.",
+  "coverage": {
+    "covered_triple_count": 16,
+    "duplicate_partition": [],
+    "full_cnf": {
+      "4/1/3": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n4_s1x3.json",
+        "sha256": "a62a3c7ec79391301bc1cf136f7aa0e221faa6bb2c536db2ac64a068bd9562eb",
+        "slot0_kind": null,
+        "solve_seconds": 0.4251058000008925,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "5/0/3": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n5_x3.json",
+        "sha256": "549d14b0c1b910df81fcdf83f7040f1c2085c247fa0bdbf92c6d8014a82b70a7",
+        "slot0_kind": null,
+        "solve_seconds": 3.9069789000004675,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "5/2/2": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n5_s2x2.json",
+        "sha256": "8743e82fe9e9c0acbcb70c310db9ff1f2e499a1b794cf36838b342eb686e11b8",
+        "slot0_kind": null,
+        "solve_seconds": 2.2532723999993323,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "5/4/1": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n5_s4x1.json",
+        "sha256": "bd6c626f814687d5c30d172487ab8c6dce0f5106c2815113e6c3d6b948391619",
+        "slot0_kind": null,
+        "solve_seconds": 1.443085399998381,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "6/1/2": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n6_s1x2.json",
+        "sha256": "0ff7859779357f6ee7f7c55650ec5adf1da50753b18e4fcdc9729daef9f904f4",
+        "slot0_kind": null,
+        "solve_seconds": 42.80005390000042,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "6/3/1": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n6_s3x1.json",
+        "sha256": "17d94a768e5b30f9408e0b015db663ad02d90d17942dadc2764056437ca4b249",
+        "slot0_kind": null,
+        "solve_seconds": 61.43638569999894,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "6/5/0": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n6_s5.json",
+        "sha256": "eca04b1fa87b873606ffb432da5b4df1dbc8403d8cc01d0fc6a3c674b75a12ad",
+        "slot0_kind": null,
+        "solve_seconds": 8.368963300001269,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "7/0/2": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n7_x2.json",
+        "sha256": "511c8bbf6e766c53e394aeba0b9c5f157a42962a904a956c86ddfa89b7aa3227",
+        "slot0_kind": null,
+        "solve_seconds": 30.175301499999478,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "7/2/1": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n7_s2x1.json",
+        "sha256": "dc5e148f74773ab986cfca00a2f420fc079a609b5879084b0e882fb56ccaa194",
+        "slot0_kind": null,
+        "solve_seconds": 64.37919240000156,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "7/4/0": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n7_s4.json",
+        "sha256": "5fde38404731f5856e5dc8294365cef0ef3c82480dc8069e6921e43e8ae24073",
+        "slot0_kind": null,
+        "solve_seconds": 87.50300520000019,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "8/1/1": {
+        "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n8_s1x1.json",
+        "sha256": "8083755725d98d4841358249e2ae1d2b833744b3460963e9670987796a6825ce",
+        "slot0_kind": null,
+        "solve_seconds": 68.34745750000002,
+        "source": "local-full-cnf",
+        "status": "unsat"
+      },
+      "8/3/0": {
+        "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11/tail11-results/d6_tail_g11_n8_s3_x0.json",
+        "sha256": "6f23274ec8f2155f39022f4938f2d007cfeaf5be1364c68f050f43fc7d95e76f",
+        "slot0_kind": null,
+        "solve_seconds": 1056.4613844330306,
+        "source": "remote-first-batch-full-cnf",
+        "status": "unsat"
+      },
+      "9/2/0": {
+        "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11/tail11-results/d6_tail_g11_n9_s2_x0.json",
+        "sha256": "26c6ca167d03a83b11f4dda32044a97dc8d8ac5e69ead863b673d70a07476209",
+        "slot0_kind": null,
+        "solve_seconds": 1448.2187706989935,
+        "source": "remote-first-batch-full-cnf",
+        "status": "unsat"
+      }
+    },
+    "missing": [],
+    "non_unsat": [],
+    "selected_evidence_count": 30,
+    "slot0_partitions": {
+      "10/1/0": {
+        "allowed_kinds": [
+          "NOT",
+          "AND",
+          "OR",
+          "NAND",
+          "NOR",
+          "SWITCH"
+        ],
+        "complete": true,
+        "evidence": {
+          "AND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_and.json",
+            "sha256": "eeb4c7950eceacd2e216148d8087aa2b30049677d1066d5c207ae88a6f5dd6d2",
+            "slot0_kind": "AND",
+            "solve_seconds": 274.3344568790053,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NAND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_nand.json",
+            "sha256": "5d000dee4b04bc4a2a4a9cea8e57a304bd0754c3a66aa31ce1f2edc5290aee85",
+            "slot0_kind": "NAND",
+            "solve_seconds": 357.45682770904386,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_nor.json",
+            "sha256": "478acc9fddd2955ebf277c7552020f91fe24d0f05406d12645986bcc2e09a877",
+            "slot0_kind": "NOR",
+            "solve_seconds": 399.6036546989926,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOT": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_not.json",
+            "sha256": "e6852e43d29efd07120162cabd3e8b0166e1aa0e02d890cc3e4c4d227ee2b279",
+            "slot0_kind": "NOT",
+            "solve_seconds": 1048.0749680700246,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "OR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_or.json",
+            "sha256": "b57682ba5537b7c27de516b8aa6a52e0c54ed685f7d165dfcb2c9c70b8fd6c20",
+            "slot0_kind": "OR",
+            "solve_seconds": 467.0121676969575,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "SWITCH": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n10s1_slot0_switch.json",
+            "sha256": "fcd7ef4f151a3f66804635968d8b38ae2f28df790d181d72f35cbed49fdabe6b",
+            "slot0_kind": "SWITCH",
+            "solve_seconds": 363.73996142396936,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          }
+        },
+        "mutually_exclusive": true
+      },
+      "11/0/0": {
+        "allowed_kinds": [
+          "NOT",
+          "AND",
+          "OR",
+          "NAND",
+          "NOR"
+        ],
+        "complete": true,
+        "evidence": {
+          "AND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n11o_slot0_and.json",
+            "sha256": "9a6e65143c938f4b9d0e1e442ba6df7650475c43cbb6f9ebd714759a10082ced",
+            "slot0_kind": "AND",
+            "solve_seconds": 712.5995646580122,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NAND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n11o_slot0_nand.json",
+            "sha256": "813bd36078da354e41ea996f14c56cddf69f5bdf0cdcc75b91710d206548c12a",
+            "slot0_kind": "NAND",
+            "solve_seconds": 474.29672893701354,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n11o_slot0_nor.json",
+            "sha256": "424dd50b16df791ae3a3c8ae3016a8625820e761c4b813fcad1a03e20bb8ffd6",
+            "slot0_kind": "NOR",
+            "solve_seconds": 409.0339561870205,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOT": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n11o_slot0_not.json",
+            "sha256": "ba61752c21f84d251ff6dfcf4868cca8edae5734ac4ba4dbf3a0727b8f08e400",
+            "slot0_kind": "NOT",
+            "solve_seconds": 386.27519647497684,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "OR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n11o_slot0_or.json",
+            "sha256": "f3ab5b8f6f631c3c0ea6f224f01298e75b8d8920ecc3b0be34eeee830718a236",
+            "slot0_kind": "OR",
+            "solve_seconds": 565.8341592299985,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          }
+        },
+        "mutually_exclusive": true
+      },
+      "9/0/1": {
+        "allowed_kinds": [
+          "NOT",
+          "AND",
+          "OR",
+          "NAND",
+          "NOR",
+          "XOR"
+        ],
+        "complete": true,
+        "evidence": {
+          "AND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n9x1_slot0_and.json",
+            "sha256": "0296c2df173558f02cd680bf6223b2f113cc74e307b122476c88d83ecd0d33a1",
+            "slot0_kind": "AND",
+            "solve_seconds": 230.89992585603613,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NAND": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n9x1_slot0_nand.json",
+            "sha256": "9f5d9f4f492ea3dd3bad1f97ebba2465230b836e27db5083d9a029c8a47ba54b",
+            "slot0_kind": "NAND",
+            "solve_seconds": 146.73446254100418,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n9x1_slot0_nor.json",
+            "sha256": "0539cd99dcbe2cb253dbd0bd8370dc3c5467bb0907e94b707e0b2e7b723d7c0d",
+            "slot0_kind": "NOR",
+            "solve_seconds": 84.43304146203445,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "NOT": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n9x1_slot0_not.json",
+            "sha256": "24c6b6e5da902f593b8084d97df359803684c47e6b137225af16a7c7ccbb13af",
+            "slot0_kind": "NOT",
+            "solve_seconds": 74.2289713199716,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "OR": {
+            "path": ".research/byte_adder_remote_compute/results/s7_c8_direct_tail11_global_remaining/.research/byte_adder_han_knowles_fused_agent/tail11-global-results/n9x1_slot0_or.json",
+            "sha256": "4535054e58efd8e291589b153caa710ca440c41f6ff48c57698199bc81bd3217",
+            "slot0_kind": "OR",
+            "solve_seconds": 234.69215919001726,
+            "source": "remote-global-glucose42-slot0-shard",
+            "status": "unsat"
+          },
+          "XOR": {
+            "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n9_x1_slot0_xor_glucose42.json",
+            "sha256": "a839682b269d48aeae64f0e007dfe449994eb5d39d09b275ddd10d5c415dfb68",
+            "slot0_kind": "XOR",
+            "solve_seconds": 76.37761960000353,
+            "source": "local-glucose42-slot0-shard",
+            "status": "unsat"
+          }
+        },
+        "mutually_exclusive": true
+      }
+    }
+  },
+  "decomposition": {
+    "count": 16,
+    "equation": "components + switches + 2*xors = 11",
+    "feasibility": "switches + xors <= components",
+    "triples": [
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        5,
+        4,
+        1
+      ],
+      [
+        5,
+        2,
+        2
+      ],
+      [
+        5,
+        0,
+        3
+      ],
+      [
+        6,
+        5,
+        0
+      ],
+      [
+        6,
+        3,
+        1
+      ],
+      [
+        6,
+        1,
+        2
+      ],
+      [
+        7,
+        4,
+        0
+      ],
+      [
+        7,
+        2,
+        1
+      ],
+      [
+        7,
+        0,
+        2
+      ],
+      [
+        8,
+        3,
+        0
+      ],
+      [
+        8,
+        1,
+        1
+      ],
+      [
+        9,
+        2,
+        0
+      ],
+      [
+        9,
+        0,
+        1
+      ],
+      [
+        10,
+        1,
+        0
+      ],
+      [
+        11,
+        0,
+        0
+      ]
+    ]
+  },
+  "errors": [],
+  "excluded_artifacts": [
+    {
+      "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n8_s3.json",
+      "reason": "timed-out historical run; status=unknown; replaced by first-batch full-CNF UNSAT",
+      "sha256": "e049e7f9318fca3f582870178db4d70b53ca7705911ab665b0898a62b1989e10",
+      "status": "unknown"
+    },
+    {
+      "path": ".research/byte_adder_han_knowles_fused_agent/d6_tail_g11_n9_x1_slot0_not_glucose42.json",
+      "reason": "duplicate NOT shard; remote global NOT shard selected so the proof partition stays one-to-one",
+      "sha256": "3d22993a62a5d0cf88be039958c3f574ca3899654d9d1f80d229704c6a4125c3",
+      "status": "unsat"
+    }
+  ],
+  "model": {
+    "deadline": 6,
+    "gate_bound": 11,
+    "mode": "tail",
+    "primitive_costs": {
+      "AND": 1,
+      "NAND": 1,
+      "NOR": 1,
+      "NOT": 1,
+      "OR": 1,
+      "SWITCH": 2,
+      "XOR": 3
+    },
+    "primitive_delays": {
+      "AND": 1,
+      "NAND": 1,
+      "NOR": 1,
+      "NOT": 1,
+      "OR": 1,
+      "SWITCH": 1,
+      "XOR": 2
+    },
+    "primitive_kinds": [
+      "NOT",
+      "AND",
+      "OR",
+      "NAND",
+      "NOR",
+      "XOR",
+      "SWITCH"
+    ],
+    "source_contract": {
+      "bus_conflict_encoding": true,
+      "dead_component_forbidden": true,
+      "deadline_6": true,
+      "exact_switch_count": true,
+      "exact_xor_count": true,
+      "one_kind_per_slot": true,
+      "physical_net_partition": true,
+      "physical_partition_definition": true,
+      "seven_kind_slot0_cli": true,
+      "slot0_unit_clause": true,
+      "switch_z_semantics": true,
+      "two_tail_targets": true,
+      "weighted_gate_bound": true
+    },
+    "target": "joint S7/C8 tail"
+  },
+  "provenance": {
+    "archive_files": 55,
+    "archive_members": 58,
+    "executed_spec_sha256": "ba9c2b24306d682b1f1292fc39f65e29ac7812580172e3d6ca21c9b3edf4ccd8",
+    "global_summary_sha256": "ac1e3540ca331a73d1ce953bf5b09048ad71817a0df8bbcdcae14ad84d0445af",
+    "hashes": {
+      "executed-exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      "executed-exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      "executed-joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4",
+      "executed-remote_sweep.py": "e01b02714242172b0a3bd4271af90151b6145411665599ba0a3390dd5d442962",
+      "executed-search_d6_paid_suffix.py": "27ec73e2fb3fa40c9e34dc48af8866ef2af3cf84514d301700c0d54ef3627b43",
+      "remote-evidence.tar.gz": "0bce967170c833c9c053c243fd40e03b88e478241e3841f67374c16a65e78be6"
+    }
+  },
+  "schema": "tc-byte-adder-tail11-coverage-audit-v1",
+  "scope_limits": [
+    "not a global byte-adder lower bound",
+    "does not automatically prove every cost <= 11 UNSAT"
+  ]
+}

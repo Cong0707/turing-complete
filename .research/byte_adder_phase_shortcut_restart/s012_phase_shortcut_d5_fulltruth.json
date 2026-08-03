@@ -1,0 +1,54 @@
+{
+  "schema": "fast-negative-s12-phase-shortcut-fulltruth-v1",
+  "status": "verified",
+  "formula_gate_cost": 7,
+  "formula": [
+    "t0=NOR(Q1,P2)",
+    "t1=AND(P2,nC3)",
+    "t2=NAND(nC1,P1)",
+    "t3=AND(t0,t2)",
+    "t4=OR(nC1,P1)",
+    "S1=NAND(t2,t4)",
+    "S2=OR(t1,t3)"
+  ],
+  "metrics_for_s0_s1_s2_slice": {
+    "gate": 35,
+    "delay": 5,
+    "energy": 175,
+    "output_arrivals": [
+      4,
+      4,
+      5
+    ],
+    "reachable_nodes": 33,
+    "structural_sha256": "98496bfa3ebd5c2abf8910364f549e994dd5b8692f9e9c7413ecd8c54d6d0102"
+  },
+  "semantic": {
+    "truth_table_rows": 131072,
+    "mismatch_count_by_output": [
+      0,
+      0,
+      0
+    ],
+    "mismatch_union_count": 0,
+    "conflict_assignment_count": 0,
+    "z_assignment_count_by_output": [
+      0,
+      0,
+      0
+    ],
+    "output_vector_sha256": "046e34eafc3615688d0e38b62be30153241bc7b5b9abc1a4cd8e2ca70e4eafc5"
+  },
+  "physical": {
+    "exact_witness": "s12_g7_d5_exact.json",
+    "exact_witness_sha256": "ce961b00057aa1949cd8e702e04d02fc455d70c2eb9c095cbf0fe7e9fa8534a1",
+    "bit0_witness": "fast_negative_bit0_g11_n9_s2_x0.json",
+    "bit0_witness_sha256": "a43caacab9adf9064b3a14a7b656cc949664a75d8996271f81c25f49ca7ef1bd",
+    "complete_switch_driver_sets_replayed": true,
+    "partial_switch_pin_reuse": false
+  },
+  "test_domain": {
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  }
+}

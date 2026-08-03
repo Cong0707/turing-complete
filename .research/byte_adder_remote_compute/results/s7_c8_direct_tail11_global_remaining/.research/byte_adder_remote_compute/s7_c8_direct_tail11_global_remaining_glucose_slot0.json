@@ -1,0 +1,53 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "s7-c8-direct-tail11-global-remaining-glucose42-slot0",
+  "script": "../byte_adder_han_knowles_fused_agent/search_d6_paid_suffix.py",
+  "working_directory": "../..",
+  "values": [
+    {"name": "n9x1_slot0_not", "components": 9, "switches": 0, "xors": 1, "slot0_kind": "NOT"},
+    {"name": "n9x1_slot0_and", "components": 9, "switches": 0, "xors": 1, "slot0_kind": "AND"},
+    {"name": "n9x1_slot0_or", "components": 9, "switches": 0, "xors": 1, "slot0_kind": "OR"},
+    {"name": "n9x1_slot0_nand", "components": 9, "switches": 0, "xors": 1, "slot0_kind": "NAND"},
+    {"name": "n9x1_slot0_nor", "components": 9, "switches": 0, "xors": 1, "slot0_kind": "NOR"},
+
+    {"name": "n10s1_slot0_not", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "NOT"},
+    {"name": "n10s1_slot0_and", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "AND"},
+    {"name": "n10s1_slot0_or", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "OR"},
+    {"name": "n10s1_slot0_nand", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "NAND"},
+    {"name": "n10s1_slot0_nor", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "NOR"},
+    {"name": "n10s1_slot0_switch", "components": 10, "switches": 1, "xors": 0, "slot0_kind": "SWITCH"},
+
+    {"name": "n11o_slot0_not", "components": 11, "switches": 0, "xors": 0, "slot0_kind": "NOT"},
+    {"name": "n11o_slot0_and", "components": 11, "switches": 0, "xors": 0, "slot0_kind": "AND"},
+    {"name": "n11o_slot0_or", "components": 11, "switches": 0, "xors": 0, "slot0_kind": "OR"},
+    {"name": "n11o_slot0_nand", "components": 11, "switches": 0, "xors": 0, "slot0_kind": "NAND"},
+    {"name": "n11o_slot0_nor", "components": 11, "switches": 0, "xors": 0, "slot0_kind": "NOR"}
+  ],
+  "workers": 8,
+  "timeout_seconds": 3600,
+  "memory_mb_per_process": 768,
+  "cpu_set": "0-23",
+  "log_directory": "logs/s7_c8_direct_tail11_global_remaining_glucose_slot0",
+  "result_directory": "run-results/s7_c8_direct_tail11_global_remaining_glucose_slot0",
+  "summary": "s7-c8-direct-tail11-global-remaining-glucose-slot0-summary.json",
+  "arguments": [
+    "--mode",
+    "tail",
+    "--gate-bound",
+    "11",
+    "--components",
+    "{components}",
+    "--switches",
+    "{switches}",
+    "--xors",
+    "{xors}",
+    "--slot0-kind",
+    "{slot0_kind}",
+    "--timeout",
+    "0",
+    "--solver",
+    "glucose42",
+    "--output",
+    ".research/byte_adder_han_knowles_fused_agent/tail11-global-results/{name}.json"
+  ]
+}
