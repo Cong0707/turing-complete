@@ -1,0 +1,402 @@
+{
+  "schema": 1,
+  "status": "proved-cancellation-free-lower-bound",
+  "model": "65-cycle visible outputs [C65|A], arbitrary invertible C65",
+  "seed_projection": {
+    "candidate_forms": 861,
+    "non_singleton_forms": 829,
+    "decomposition_choices": 5133,
+    "variables": 5962,
+    "hard_clauses": 13421,
+    "soft_clauses": 829,
+    "solver": "RC2 + Glucose 4",
+    "optimum_seed_merge_nodes": 61,
+    "argument": "Every useful cancellation-free intermediate is a nonempty subset of at least one A row. The weighted AND/OR DAG selects every required A row and one disjoint bipartition for each selected non-singleton form, so its optimum is exactly L_cf(A)."
+  },
+  "q_injection": {
+    "minimum_nodes": 32,
+    "argument": "Project every signal to its q half. Each q dimension must first cross from a seed-empty signal into a seed-nonempty signal at an injection gate. All C65 rows lie in the span of these crossing forms; rank(C65)=32 therefore requires at least 32 injection gates.",
+    "disjoint_from_seed_merge": "A seed merge has two seed-nonempty children; an injection has exactly one."
+  },
+  "lower_bound": {
+    "xor_nodes": 93,
+    "logic_gate": 279,
+    "state_gate": 160,
+    "total_gate": 439,
+    "delay_9_cycles_65_energy_floor": 256815,
+    "excludes_total_414_delay_9_cycles_65": true,
+    "excludes_total_466_delay_8_cycles_65": false
+  },
+  "transition_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+  "chosen_seed_forms": [
+    "00002001",
+    "00004002",
+    "00008004",
+    "00010008",
+    "00020010",
+    "00040020",
+    "00042021",
+    "00044002",
+    "00080040",
+    "00084042",
+    "00088004",
+    "00100080",
+    "00108084",
+    "00110008",
+    "00200100",
+    "00210108",
+    "00220010",
+    "00400200",
+    "00420210",
+    "00440020",
+    "00800400",
+    "00840420",
+    "00880040",
+    "01000800",
+    "01080840",
+    "01100080",
+    "01188084",
+    "02001000",
+    "02101080",
+    "02200100",
+    "02310108",
+    "04002000",
+    "04202100",
+    "04400200",
+    "04620210",
+    "08004000",
+    "0808c004",
+    "08404200",
+    "08800400",
+    "08c40420",
+    "10008000",
+    "10118008",
+    "10808400",
+    "11000800",
+    "11880840",
+    "20010000",
+    "20230010",
+    "21010800",
+    "22001000",
+    "23101080",
+    "40002001",
+    "40022001",
+    "40462021",
+    "42023001",
+    "44002000",
+    "46202100",
+    "80044002",
+    "808c4042",
+    "84046002",
+    "88004000",
+    "8c404200"
+  ],
+  "chosen_decompositions": [
+    {
+      "form": "00002001",
+      "left": "00000001",
+      "right": "00002000"
+    },
+    {
+      "form": "00004002",
+      "left": "00000002",
+      "right": "00004000"
+    },
+    {
+      "form": "00008004",
+      "left": "00000004",
+      "right": "00008000"
+    },
+    {
+      "form": "00010008",
+      "left": "00000008",
+      "right": "00010000"
+    },
+    {
+      "form": "00020010",
+      "left": "00000010",
+      "right": "00020000"
+    },
+    {
+      "form": "00040020",
+      "left": "00000020",
+      "right": "00040000"
+    },
+    {
+      "form": "00042021",
+      "left": "00002001",
+      "right": "00040020"
+    },
+    {
+      "form": "00044002",
+      "left": "00004002",
+      "right": "00040000"
+    },
+    {
+      "form": "00080040",
+      "left": "00000040",
+      "right": "00080000"
+    },
+    {
+      "form": "00084042",
+      "left": "00004002",
+      "right": "00080040"
+    },
+    {
+      "form": "00088004",
+      "left": "00008004",
+      "right": "00080000"
+    },
+    {
+      "form": "00100080",
+      "left": "00000080",
+      "right": "00100000"
+    },
+    {
+      "form": "00108084",
+      "left": "00008004",
+      "right": "00100080"
+    },
+    {
+      "form": "00110008",
+      "left": "00010008",
+      "right": "00100000"
+    },
+    {
+      "form": "00200100",
+      "left": "00000100",
+      "right": "00200000"
+    },
+    {
+      "form": "00210108",
+      "left": "00010008",
+      "right": "00200100"
+    },
+    {
+      "form": "00220010",
+      "left": "00020010",
+      "right": "00200000"
+    },
+    {
+      "form": "00400200",
+      "left": "00000200",
+      "right": "00400000"
+    },
+    {
+      "form": "00420210",
+      "left": "00020010",
+      "right": "00400200"
+    },
+    {
+      "form": "00440020",
+      "left": "00040020",
+      "right": "00400000"
+    },
+    {
+      "form": "00800400",
+      "left": "00000400",
+      "right": "00800000"
+    },
+    {
+      "form": "00840420",
+      "left": "00040020",
+      "right": "00800400"
+    },
+    {
+      "form": "00880040",
+      "left": "00080040",
+      "right": "00800000"
+    },
+    {
+      "form": "01000800",
+      "left": "00000800",
+      "right": "01000000"
+    },
+    {
+      "form": "01080840",
+      "left": "00080040",
+      "right": "01000800"
+    },
+    {
+      "form": "01100080",
+      "left": "00100080",
+      "right": "01000000"
+    },
+    {
+      "form": "01188084",
+      "left": "00088004",
+      "right": "01100080"
+    },
+    {
+      "form": "02001000",
+      "left": "00001000",
+      "right": "02000000"
+    },
+    {
+      "form": "02101080",
+      "left": "00100080",
+      "right": "02001000"
+    },
+    {
+      "form": "02200100",
+      "left": "00200100",
+      "right": "02000000"
+    },
+    {
+      "form": "02310108",
+      "left": "00110008",
+      "right": "02200100"
+    },
+    {
+      "form": "04002000",
+      "left": "00002000",
+      "right": "04000000"
+    },
+    {
+      "form": "04202100",
+      "left": "00200100",
+      "right": "04002000"
+    },
+    {
+      "form": "04400200",
+      "left": "00400200",
+      "right": "04000000"
+    },
+    {
+      "form": "04620210",
+      "left": "00220010",
+      "right": "04400200"
+    },
+    {
+      "form": "08004000",
+      "left": "00004000",
+      "right": "08000000"
+    },
+    {
+      "form": "0808c004",
+      "left": "00088004",
+      "right": "08004000"
+    },
+    {
+      "form": "08404200",
+      "left": "00400200",
+      "right": "08004000"
+    },
+    {
+      "form": "08800400",
+      "left": "00800400",
+      "right": "08000000"
+    },
+    {
+      "form": "08c40420",
+      "left": "00440020",
+      "right": "08800400"
+    },
+    {
+      "form": "10008000",
+      "left": "00008000",
+      "right": "10000000"
+    },
+    {
+      "form": "10118008",
+      "left": "00110008",
+      "right": "10008000"
+    },
+    {
+      "form": "10808400",
+      "left": "00800400",
+      "right": "10008000"
+    },
+    {
+      "form": "11000800",
+      "left": "01000800",
+      "right": "10000000"
+    },
+    {
+      "form": "11880840",
+      "left": "00880040",
+      "right": "11000800"
+    },
+    {
+      "form": "20010000",
+      "left": "00010000",
+      "right": "20000000"
+    },
+    {
+      "form": "20230010",
+      "left": "00220010",
+      "right": "20010000"
+    },
+    {
+      "form": "21010800",
+      "left": "01000800",
+      "right": "20010000"
+    },
+    {
+      "form": "22001000",
+      "left": "02001000",
+      "right": "20000000"
+    },
+    {
+      "form": "23101080",
+      "left": "01100080",
+      "right": "22001000"
+    },
+    {
+      "form": "40002001",
+      "left": "00002001",
+      "right": "40000000"
+    },
+    {
+      "form": "40022001",
+      "left": "40002001",
+      "right": "00020000"
+    },
+    {
+      "form": "40462021",
+      "left": "40022001",
+      "right": "00440020"
+    },
+    {
+      "form": "42023001",
+      "left": "40022001",
+      "right": "02001000"
+    },
+    {
+      "form": "44002000",
+      "left": "04002000",
+      "right": "40000000"
+    },
+    {
+      "form": "46202100",
+      "left": "02200100",
+      "right": "44002000"
+    },
+    {
+      "form": "80044002",
+      "left": "00044002",
+      "right": "80000000"
+    },
+    {
+      "form": "808c4042",
+      "left": "80044002",
+      "right": "00880040"
+    },
+    {
+      "form": "84046002",
+      "left": "80044002",
+      "right": "04002000"
+    },
+    {
+      "form": "88004000",
+      "left": "08004000",
+      "right": "80000000"
+    },
+    {
+      "form": "8c404200",
+      "left": "04400200",
+      "right": "88004000"
+    }
+  ],
+  "scope": "The 93-node result is global for cancellation-free XOR2 DAGs and already follows from the 32 visible outputs. It does not cover XOR cancellation, nonlinear Switch/Z sharing, or a reachable-sample-specialized Boolean network."
+}
