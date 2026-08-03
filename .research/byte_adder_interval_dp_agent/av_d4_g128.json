@@ -1,0 +1,39 @@
+{
+  "schema": "byte-adder-av-joint-named-interval-v1",
+  "cost_model": {
+    "ordinary_gate": [
+      1,
+      1
+    ],
+    "xor": [
+      3,
+      2
+    ],
+    "bit_switch_driver": [
+      2,
+      1
+    ],
+    "maker_splitter_z_adapter": [
+      0,
+      0
+    ],
+    "joint_sum_av_shell": 56
+  },
+  "physical_rule": "each fast A/V node owns exactly one resolved BUS; its two drivers have the same data and are not reused by another BUS",
+  "test_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  },
+  "runs": [
+    {
+      "status": "unsat",
+      "reason": "empty carry arrival state"
+    }
+  ],
+  "witnesses": [],
+  "claims": {
+    "named_av_interval_family_exact_if_sat_or_unsat": true,
+    "global_boolean_lower_bound": false
+  }
+}
