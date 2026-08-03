@@ -1,0 +1,28 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "s7-c8-direct-tail11",
+  "script": "search_d6_paid_suffix.py",
+  "working_directory": "../..",
+  "values": [
+    {"name": "n8_s3_x0", "components": 8, "switches": 3, "xors": 0},
+    {"name": "n9_s2_x0", "components": 9, "switches": 2, "xors": 0}
+  ],
+  "workers": 2,
+  "timeout_seconds": 3600,
+  "memory_mb_per_process": 1024,
+  "cpu_set": "0-31",
+  "nice": 0,
+  "log_directory": "tail11-logs",
+  "result_directory": "tail11-run-results",
+  "summary": "s7-c8-direct-tail11-summary.json",
+  "arguments": [
+    "--mode", "tail",
+    "--gate-bound", "11",
+    "--components", "{components}",
+    "--switches", "{switches}",
+    "--xors", "{xors}",
+    "--timeout", "0",
+    "--solver", "cadical195",
+    "--output", ".research/byte_adder_han_knowles_fused_agent/tail11-results/d6_tail_g11_{name}.json"
+  ]
+}

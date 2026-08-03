@@ -156,6 +156,9 @@ class Sweep:
         self.timeout = float(self.spec.get("timeout_seconds", 3600))
         self.memory_mb = int(self.spec.get("memory_mb_per_process", 0))
         self.cpu_set = parse_cpu_set(self.spec.get("cpu_set"))
+        self.nice = int(self.spec.get("nice", 5))
+        if not -20 <= self.nice <= 19:
+            raise ValueError("nice must be between -20 and 19")
         self.dry_run = dry_run
 
         script = Path(str(self.spec["script"]))
@@ -185,7 +188,7 @@ class Sweep:
         arguments = [str(item) for item in expand(self.spec["arguments"], value)]
         command = [sys.executable, str(self.script), *arguments]
         if os.name == "posix":
-            command = ["nice", "-n", "5", *command]
+            command = ["nice", "-n", str(self.nice), *command]
             if self.memory_mb > 0:
                 command = [
                     "prlimit",
@@ -210,6 +213,7 @@ class Sweep:
             "workers": self.workers,
             "timeout_seconds": self.timeout,
             "memory_mb_per_process": self.memory_mb,
+            "nice": self.nice,
             "cpu_set": sorted(self.cpu_set) if self.cpu_set else None,
             "updated_at": utc_now(),
             "finished": finished,
@@ -233,6 +237,9 @@ class Sweep:
                 "output_sha256": sha256(output) if output else None,
                 "finished_at": utc_now(),
             }
+
+        if output is not None:
+            output.parent.mkdir(parents=True, exist_ok=True)
 
         log_path = self.log_directory / f"{safe_name}.log"
         record_path = self.result_directory / f"{safe_name}.json"
