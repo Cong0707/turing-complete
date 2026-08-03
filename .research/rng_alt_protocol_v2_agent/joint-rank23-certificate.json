@@ -1,0 +1,194 @@
+{
+  "schema": 1,
+  "date": "2026-08-03",
+  "model": "persistent-seed 66-cycle / 8-delay joint sparse-row search",
+  "base": {
+    "score": [
+      3,
+      20,
+      34
+    ],
+    "combined_weight": 181,
+    "c_weight": 68,
+    "bad_rows": [
+      13,
+      16,
+      27
+    ],
+    "bad_metrics": [
+      17,
+      34,
+      17
+    ],
+    "sensitive_supports": [
+      [
+        1,
+        13,
+        14,
+        18,
+        30,
+        31
+      ],
+      [
+        4,
+        11,
+        16,
+        17,
+        21,
+        24,
+        28,
+        29
+      ],
+      [
+        0,
+        12,
+        13,
+        17,
+        29,
+        30
+      ]
+    ]
+  },
+  "coordinate_scope": {
+    "completable_rank2_coordinate_pairs": 343,
+    "rank3_hitting_coordinate_triples": 672,
+    "sparse_nonzero_rows": 5488,
+    "replacement_values_per_changed_row": 5487
+  },
+  "observed_summary": {
+    "status": "unsat-in-subspace",
+    "max_hamming": 12,
+    "destination_pairs": 343,
+    "checked": 10326758967,
+    "within_radius": 10326758967,
+    "invertible": 542967173,
+    "repaired_original": 0,
+    "pair_with_possible_third": 859128,
+    "pair_destination_options": 875394,
+    "pair_beam": 61078,
+    "rank3_checked": 90568464,
+    "rank3_invertible": 33644182,
+    "rank3_repaired": 0,
+    "rank3_empty_intersection": 44581,
+    "best": [
+      3,
+      20,
+      34
+    ]
+  },
+  "formula_cross_check": {
+    "seed": "0x66a123",
+    "attempts": 79647,
+    "joint_invertible_rank2_verified": 4096,
+    "rank2_categories": {
+      "regular_regular": 1968,
+      "singular_singular": 1466,
+      "mixed": 662
+    },
+    "legal_sequential_rank3_verified": 4096
+  },
+  "beam": {
+    "per_pair_and_third_destination": 256,
+    "per_pair_and_original_bad_mask": 64,
+    "ordering": [
+      "over",
+      "excess",
+      "maximum",
+      "combined_weight"
+    ]
+  },
+  "monitored_replay": {
+    "elapsed_seconds": 70.66,
+    "peak_working_set_bytes": 7794688,
+    "peak_working_set_mib": 7.434,
+    "poll_interval_ms": 100,
+    "exit_code": 2,
+    "exit_code_meaning": "search completed without a hit"
+  },
+  "second_center_cross_check": {
+    "score": [
+      3,
+      20,
+      34
+    ],
+    "bad_rows": [
+      12,
+      16,
+      18
+    ],
+    "scope": "24 hit-all pairs with a 2048-value rank3 bridge beam"
+  },
+  "artifacts": [
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/sparse-c66-run-c6602.jsonl",
+      "bytes": 23745,
+      "sha256": "405e64d5c1df1ab6a60371371695b45db62d818265892189ab798f160874229f"
+    },
+    {
+      "path": ".research/rng65_joint_basis_agent/phase8-legal-transvection-beam.jsonl",
+      "bytes": 26517,
+      "sha256": "15e1c4e60d95744f3c430e32ada69763c9dd05fbf1be7ee451c04ccf57656a75"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/search_joint_singular_c66.cpp",
+      "bytes": 26373,
+      "sha256": "7d1fcb268bb20173464bb115c4ef6297d7c06af067af1b78f61571aa008ae3e3"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/search_sparse_c66.cpp",
+      "bytes": 13175,
+      "sha256": "ce14a011340c359324968f1f5991399eaa7428a75dff1ac592a33ede29772bf3"
+    },
+    {
+      "path": ".research/rng65_joint_basis_agent/search_legal_transvections.cpp",
+      "bytes": 14062,
+      "sha256": "6490b8a12235eba18b4eac7e787e62efbe5b48e5bb1893a54e9bbddd2b654e31"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/audit_joint_rank23_certificate.py",
+      "bytes": 16606,
+      "sha256": "07a8e37c111dfbe6779a42e98800aa0bc6081503399f75c0d3673a2652b02069"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/joint-rank3-main-allcoords-b256.jsonl",
+      "bytes": 376,
+      "sha256": "05cfb3a8d08584a15da973fb1c391014f212832e42f31491a090e917e8662c4e"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/joint-rank3-main-allcoords-b256-monitored.jsonl",
+      "bytes": 376,
+      "sha256": "05cfb3a8d08584a15da973fb1c391014f212832e42f31491a090e917e8662c4e"
+    },
+    {
+      "path": ".research/rng_alt_protocol_v2_agent/joint-rank3-second-beam2048.jsonl",
+      "bytes": 301,
+      "sha256": "b4cf4952cf9e2b2684aa2975b5388759e3bbe6a10c6a63552eaf15b85064c418"
+    }
+  ],
+  "fixed_input_provenance": {
+    "status": "fixed-inputs-preserved",
+    "inputs": [
+      ".research/rng_alt_protocol_v2_agent/sparse-c66-run-c6602.jsonl",
+      ".research/rng65_joint_basis_agent/phase8-legal-transvection-beam.jsonl"
+    ],
+    "limitation": "The exact source revisions and invocation parameters that created these two JSONL inputs are unavailable, so they cannot be claimed as byte-for-byte regenerated.",
+    "continuation_sources": [
+      ".research/rng_alt_protocol_v2_agent/search_sparse_c66.cpp",
+      ".research/rng65_joint_basis_agent/search_legal_transvections.cpp"
+    ],
+    "continuation_sources_scope": "These current sources can validate or continue from the fixed inputs; they are not evidence of exact input regeneration."
+  },
+  "replay": {
+    "compile": "g++ -std=c++20 -O3 -march=native -DNDEBUG .research/rng_alt_protocol_v2_agent/search_joint_singular_c66.cpp -o .research/rng_alt_protocol_v2_agent/search_joint_singular_c66.exe",
+    "search": ".research/rng_alt_protocol_v2_agent/search_joint_singular_c66.exe .research/rng_alt_protocol_v2_agent/sparse-c66-run-c6602.jsonl .research/rng_alt_protocol_v2_agent/joint-rank3-main-allcoords-b256.jsonl 12 256",
+    "audit": ".venv/Scripts/python.exe .research/rng_alt_protocol_v2_agent/audit_joint_rank23_certificate.py",
+    "input_mode": "Replay starts from the two committed fixed-input JSONL files; it does not regenerate those centers."
+  },
+  "scope_limit": [
+    "The rank-2 coordinate/value scan is exhaustive only for pairs that can be completed into a three-coordinate hitting set.",
+    "The rank-3 value scan keeps finite beams; it is not a global rank-3 UNSAT proof.",
+    "A full-rank three-row replacement with no invertible two-row intermediate is outside this sequential bridge search.",
+    "The mixed-Kraft row bound is a timing necessity, not a shared physical XOR/Switch DAG certificate.",
+    "The two center JSONL files are fixed inputs: their original exact generator revisions and invocation parameters are unavailable, and the current continuation sources do not reproduce them byte-for-byte."
+  ]
+}
