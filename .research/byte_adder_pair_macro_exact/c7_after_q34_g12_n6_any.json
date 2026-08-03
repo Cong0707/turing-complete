@@ -1,0 +1,155 @@
+{
+  "schema": "exact-97d6-c7-after-q34-v1",
+  "status": "sat",
+  "interface": "c7_after_q34",
+  "free_sources": [
+    "a3",
+    "b3",
+    "a4",
+    "b4",
+    "C3",
+    "G3",
+    "Q3",
+    "P3",
+    "G4",
+    "Q4",
+    "P4",
+    "A34",
+    "N34",
+    "V34",
+    "A56",
+    "V56",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "a3": 0,
+    "b3": 0,
+    "a4": 0,
+    "b4": 0,
+    "C3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "A34": 2,
+    "N34": 2,
+    "V34": 3,
+    "A56": 2,
+    "V56": 2,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 12,
+  "max_delay": 4,
+  "components": 6,
+  "exact_switches": null,
+  "exact_xors": null,
+  "solver": "glucose42",
+  "variables": 29828,
+  "clauses": 230746,
+  "solve_seconds": 1.5291545000000042,
+  "physical_nets": true,
+  "output_deadlines": [
+    4
+  ],
+  "actual_gate": 11,
+  "network": [
+    {
+      "slot": 0,
+      "source": 18,
+      "kind": "OR",
+      "left_bus": [
+        11
+      ],
+      "right_bus": [
+        14
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 1,
+      "source": 19,
+      "kind": "SWITCH",
+      "left_bus": [
+        12
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 2,
+      "source": 20,
+      "kind": "SWITCH",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 3,
+      "source": 21,
+      "kind": "SWITCH",
+      "left_bus": [
+        14
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 4,
+      "source": 22,
+      "kind": "SWITCH",
+      "left_bus": [
+        18
+      ],
+      "right_bus": [
+        19,
+        20,
+        21
+      ],
+      "cost": 2,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 5,
+      "source": 23,
+      "kind": "SWITCH",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        19,
+        20,
+        21
+      ],
+      "cost": 2,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      22,
+      23
+    ]
+  ],
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0
+  }
+}

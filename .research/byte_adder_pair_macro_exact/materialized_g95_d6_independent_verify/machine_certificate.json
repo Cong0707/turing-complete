@@ -1,0 +1,347 @@
+{
+  "schema": "turing-complete-byte-adder-factory-dag-materialization-v1",
+  "source_review": {
+    "dag_source": ".research/byte_adder_pair_macro_exact/byte-adder-av-reduced-g95-d6.json",
+    "dag_source_sha256": "016bb0aa535c8bac59d2d9fe43ca08fa33e4c55101037c58b5aaf9ba5a8c0a63",
+    "builder": ".research/byte_adder_pair_macro_exact/build_av_reduced_95_d6.py",
+    "builder_sha256": "7c5d46439627e7a0ccd5dbf5cbf8494af5a62496c05783b77d3b40856da2a25d",
+    "generator_replay_equal": true,
+    "factory_dag_sha256": "bc15b744b20c63503dc5d9612d18a13c510d31fcec72222b3836dcf12eb42607",
+    "factory_dag_hash_form": "sorted-compact",
+    "structural_sha256": "11adba38b17dc7af71c3720e9f09274c33071518435eef97369f1ba82ee2b537",
+    "referenced_certificates": [],
+    "recursive_cost_delay_verified": true,
+    "bus_node_count": 8,
+    "bus_resolved_name_forms": {
+      "bus-short": 8
+    },
+    "tri_state_output_count": 17
+  },
+  "serialized_score": {
+    "gate": 95,
+    "delay": 6,
+    "energy": 570
+  },
+  "candidate_sha256": "cd793a2414a14da4d80482a175baf050f2817273058ab9e61bebfce67d19d8df",
+  "component_count": 86,
+  "wire_count": 177,
+  "component_kind_counts": {
+    "4": 15,
+    "6": 2,
+    "7": 15,
+    "9": 29,
+    "12": 17,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2
+  },
+  "reviewed_gate": 95,
+  "native_com_add_count": 0,
+  "connectivity": {
+    "unconnected_pin_count": 0,
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0,
+    "topology_only_unit_depth": 8,
+    "topology_depth_note": "non-Z-aware graph depth; packed tri-state depth is authoritative"
+  },
+  "geometry": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": 0,
+    "wire_collisions": 0,
+    "wire_interior_pin_contacts": 0
+  },
+  "resolved_networks": {
+    "physical_resolved_network_count": 89,
+    "intended_resolved_network_count": 89,
+    "mixed_intended_physical_network_count": 0,
+    "fragmented_intended_network_count": 0,
+    "tri_state_output_pin_count": 17,
+    "tri_state_outputs_with_exactly_one_resolved_network": 17,
+    "tri_state_assignments": [
+      {
+        "component_index": 34,
+        "permanent_id": 2945013929131863903,
+        "pin": "out",
+        "position": [
+          1210,
+          -132
+        ],
+        "resolved_network": "signal:48",
+        "incident_wire_count": 5
+      },
+      {
+        "component_index": 35,
+        "permanent_id": 4199399189302896963,
+        "pin": "out",
+        "position": [
+          1250,
+          -120
+        ],
+        "resolved_network": "signal:48",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 39,
+        "permanent_id": 2876013477942639517,
+        "pin": "out",
+        "position": [
+          1410,
+          -72
+        ],
+        "resolved_network": "signal:52",
+        "incident_wire_count": 3
+      },
+      {
+        "component_index": 40,
+        "permanent_id": 2326153754360431176,
+        "pin": "out",
+        "position": [
+          1450,
+          -60
+        ],
+        "resolved_network": "signal:52",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 41,
+        "permanent_id": 6530544705065621050,
+        "pin": "out",
+        "position": [
+          1490,
+          -48
+        ],
+        "resolved_network": "signal:53",
+        "incident_wire_count": 5
+      },
+      {
+        "component_index": 42,
+        "permanent_id": 6244266373552846666,
+        "pin": "out",
+        "position": [
+          1530,
+          -36
+        ],
+        "resolved_network": "signal:53",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 46,
+        "permanent_id": 2277719534596454355,
+        "pin": "out",
+        "position": [
+          1690,
+          12
+        ],
+        "resolved_network": "signal:57",
+        "incident_wire_count": 5
+      },
+      {
+        "component_index": 47,
+        "permanent_id": 4151289713974314095,
+        "pin": "out",
+        "position": [
+          1730,
+          24
+        ],
+        "resolved_network": "signal:57",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 49,
+        "permanent_id": 1179496603265693947,
+        "pin": "out",
+        "position": [
+          1810,
+          48
+        ],
+        "resolved_network": "signal:59",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 50,
+        "permanent_id": 2627870350828975713,
+        "pin": "out",
+        "position": [
+          1850,
+          60
+        ],
+        "resolved_network": "signal:59",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 52,
+        "permanent_id": 3063517839243345091,
+        "pin": "out",
+        "position": [
+          1930,
+          84
+        ],
+        "resolved_network": "signal:61",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 53,
+        "permanent_id": 5999343302544882165,
+        "pin": "out",
+        "position": [
+          1970,
+          96
+        ],
+        "resolved_network": "signal:61",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 54,
+        "permanent_id": 4184005192367277092,
+        "pin": "out",
+        "position": [
+          2010,
+          108
+        ],
+        "resolved_network": "signal:61",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 55,
+        "permanent_id": 5511639576625335975,
+        "pin": "out",
+        "position": [
+          2050,
+          120
+        ],
+        "resolved_network": "signal:62",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 56,
+        "permanent_id": 6342069677027318900,
+        "pin": "out",
+        "position": [
+          2090,
+          132
+        ],
+        "resolved_network": "signal:62",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 79,
+        "permanent_id": 3998123192244039515,
+        "pin": "out",
+        "position": [
+          3010,
+          408
+        ],
+        "resolved_network": "signal:85",
+        "incident_wire_count": 2
+      },
+      {
+        "component_index": 80,
+        "permanent_id": 2341662631122443554,
+        "pin": "out",
+        "position": [
+          3050,
+          420
+        ],
+        "resolved_network": "signal:85",
+        "incident_wire_count": 1
+      }
+    ],
+    "adversarial_foreign_label_rejected": true
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "node_replay_count": 86,
+    "node_replay_mismatch_count": 0,
+    "bus_nodes": [
+      {
+        "node": 48,
+        "driver_count": 2,
+        "arrival": 2,
+        "z_assignment_count": 49152,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 52,
+        "driver_count": 2,
+        "arrival": 2,
+        "z_assignment_count": 24576,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 53,
+        "driver_count": 2,
+        "arrival": 3,
+        "z_assignment_count": 36864,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 57,
+        "driver_count": 2,
+        "arrival": 4,
+        "z_assignment_count": 36864,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 59,
+        "driver_count": 2,
+        "arrival": 2,
+        "z_assignment_count": 24576,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 61,
+        "driver_count": 3,
+        "arrival": 3,
+        "z_assignment_count": 27648,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 62,
+        "driver_count": 2,
+        "arrival": 4,
+        "z_assignment_count": 20736,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 85,
+        "driver_count": 2,
+        "arrival": 5,
+        "z_assignment_count": 49152,
+        "conflict_assignment_count": 0
+      }
+    ],
+    "packed_conflict_cases": 0,
+    "output_arrivals": [
+      4,
+      4,
+      6,
+      5,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "global_depth": 6,
+    "sum_depth": 6,
+    "carry_depth": 6,
+    "sum_correct": true,
+    "carry_correct": true
+  },
+  "v15_round_trip_verified": true,
+  "research_candidate": "D:/Develop/Other/turing-complete/.research/byte_adder_pair_macro_exact/materialized_g95_d6_independent_verify/candidate/circuit.data",
+  "research_candidate_matches": true,
+  "deployment": {
+    "requested": false,
+    "repository_candidate": "D:/Develop/Other/turing-complete/examples/byte_adder/candidate/circuit.data",
+    "repository_candidate_written": false,
+    "formal_save": "C:/Users/cong/AppData/Roaming/Turing Complete/schematics/byte_adder/Default/circuit.data",
+    "formal_save_written": false,
+    "backup_created": false,
+    "game_started": false
+  }
+}
