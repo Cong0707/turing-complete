@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "query": {
+    "inputs": 2,
+    "supports": [
+      [
+        0,
+        1
+      ]
+    ],
+    "weak_output": false,
+    "gate_bound": 2,
+    "max_delay": 2,
+    "slot_range": [
+      1,
+      2
+    ],
+    "library": "basic"
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "unsat",
+      "input_count": 2,
+      "targets": [
+        "6"
+      ],
+      "exact_drive": [
+        true
+      ],
+      "gate_bound": 2,
+      "max_delay": 2,
+      "slots": 1,
+      "timeout_ms": 30000,
+      "memory_mb": 500,
+      "solve_seconds": 0.007286899985047057,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "unsat",
+      "input_count": 2,
+      "targets": [
+        "6"
+      ],
+      "exact_drive": [
+        true
+      ],
+      "gate_bound": 2,
+      "max_delay": 2,
+      "slots": 2,
+      "timeout_ms": 30000,
+      "memory_mb": 500,
+      "solve_seconds": 0.015655199997127056,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "status": "sat",
+  "experiment": "directed BUS alias counterexample",
+  "targets": ["6", "a"],
+  "require_driven": [true, true],
+  "verification": {
+    "all_truth_assignments": 4
+  },
+  "network": {
+    "sources": [
+      {"index": 0, "name": "shared", "value": "2", "driven": "3", "depth": 0},
+      {"index": 1, "name": "left_only", "value": "4", "driven": "c", "depth": 0},
+      {"index": 2, "name": "right_only", "value": "8", "driven": "c", "depth": 0}
+    ],
+    "gates": [],
+    "outputs": [[0, 1], [0, 2]],
+    "cost": 0,
+    "depth": 0
+  }
+}

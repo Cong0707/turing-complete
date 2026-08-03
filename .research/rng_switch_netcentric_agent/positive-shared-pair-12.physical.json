@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "model": "union-find physical replay of compact CNF witness",
+  "valid": true,
+  "source_names": [
+    "x0",
+    "x1",
+    "x2",
+    "not_x2",
+    "x3",
+    "not_x3",
+    "const0",
+    "const1"
+  ],
+  "all_truth_assignments": 16,
+  "cost": 12,
+  "depth": 3,
+  "alias_divergence_count": 0,
+  "alias_divergences": [],
+  "dependency_errors": [],
+  "conflicts": [],
+  "gates": [
+    {
+      "terminal": 8,
+      "kind": "AND",
+      "left_physical_drivers": [
+        0
+      ],
+      "right_physical_drivers": [
+        1
+      ],
+      "value": "8888",
+      "driven": "ffff",
+      "depth": 1
+    },
+    {
+      "terminal": 9,
+      "kind": "NOR",
+      "left_physical_drivers": [
+        0
+      ],
+      "right_physical_drivers": [
+        1
+      ],
+      "value": "1111",
+      "driven": "ffff",
+      "depth": 1
+    },
+    {
+      "terminal": 10,
+      "kind": "NOR",
+      "left_physical_drivers": [
+        8
+      ],
+      "right_physical_drivers": [
+        9
+      ],
+      "value": "6666",
+      "driven": "ffff",
+      "depth": 2
+    },
+    {
+      "terminal": 11,
+      "kind": "OR",
+      "left_physical_drivers": [
+        8
+      ],
+      "right_physical_drivers": [
+        9
+      ],
+      "value": "9999",
+      "driven": "ffff",
+      "depth": 2
+    },
+    {
+      "terminal": 12,
+      "kind": "SWITCH",
+      "left_physical_drivers": [
+        4
+      ],
+      "right_physical_drivers": [
+        11
+      ],
+      "value": "9900",
+      "driven": "ff00",
+      "depth": 3
+    },
+    {
+      "terminal": 13,
+      "kind": "SWITCH",
+      "left_physical_drivers": [
+        10
+      ],
+      "right_physical_drivers": [
+        5
+      ],
+      "value": "0066",
+      "driven": "6666",
+      "depth": 3
+    },
+    {
+      "terminal": 14,
+      "kind": "SWITCH",
+      "left_physical_drivers": [
+        3
+      ],
+      "right_physical_drivers": [
+        10
+      ],
+      "value": "0606",
+      "driven": "0f0f",
+      "depth": 3
+    },
+    {
+      "terminal": 15,
+      "kind": "SWITCH",
+      "left_physical_drivers": [
+        2
+      ],
+      "right_physical_drivers": [
+        11
+      ],
+      "value": "9090",
+      "driven": "f0f0",
+      "depth": 3
+    }
+  ],
+  "outputs": [
+    {
+      "output": 0,
+      "physical_drivers": [
+        14,
+        15
+      ],
+      "value": "9696",
+      "driven": "ffff",
+      "conflict": "0000",
+      "depth": 3,
+      "target": "9696",
+      "matches": true
+    },
+    {
+      "output": 1,
+      "physical_drivers": [
+        12,
+        13
+      ],
+      "value": "9966",
+      "driven": "ff66",
+      "conflict": "0000",
+      "depth": 3,
+      "target": "9966",
+      "matches": true
+    }
+  ]
+}

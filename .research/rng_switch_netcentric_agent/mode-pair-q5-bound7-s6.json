@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "query": {
+    "nodes": [
+      "00000021",
+      "00000420"
+    ],
+    "baseline_gate": 8,
+    "gate_bound": 7,
+    "max_delay": 3,
+    "slot_range": [
+      6,
+      6
+    ],
+    "source_boundary": "selected raw Seed/state terminals only"
+  },
+  "scenario": {
+    "state_bits": [
+      0,
+      5,
+      10
+    ],
+    "seed_bits": [
+      17,
+      22
+    ],
+    "reachable_rows": 12,
+    "padded_rows": 16,
+    "rows": [
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 1,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 1
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 1,
+          "22": 1
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 1,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 1,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 0,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 1,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 1,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      }
+    ],
+    "targets": [
+      {
+        "node": "00000021",
+        "value": "066a",
+        "driven": "ffff",
+        "baseline_gate": 4
+      },
+      {
+        "node": "00000420",
+        "value": "03cc",
+        "driven": "ffff",
+        "baseline_gate": 4
+      }
+    ]
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "reachable load/steady rows with exact undirected physical net ownership",
+      "status": "unsat",
+      "input_count": 4,
+      "scenario_width": 16,
+      "gate_bound": 7,
+      "max_delay": 3,
+      "slots": 6,
+      "timeout_ms": 120000,
+      "memory_mb": 600,
+      "solve_seconds": 111.31279310001992,
+      "targets": [
+        "066a",
+        "03cc"
+      ],
+      "exact_drive": [
+        true,
+        true
+      ],
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "AND": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "NAND": [
+          1,
+          1
+        ],
+        "NOR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      }
+    }
+  ]
+}

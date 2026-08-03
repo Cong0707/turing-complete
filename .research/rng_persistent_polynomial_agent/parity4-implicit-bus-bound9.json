@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "model": "four-input parity; arbitrary reviewed scalar gates and implicit conflict-free buses at every input/output",
+  "scope_relaxation": "a driver may appear in multiple logical buses; UNSAT is safe, SAT requires a unique electrical-net audit",
+  "status": "sat",
+  "gate_bound": 9,
+  "max_delay": 4,
+  "slots": 8,
+  "timeout_ms": 30000,
+  "memory_mb": 700,
+  "solve_seconds": 3.1632410000020172,
+  "library": {
+    "NOP": {
+      "gate": 0,
+      "delay": 0
+    },
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "target_value": "6996",
+  "network": [
+    {
+      "slot": 0,
+      "kind": "XOR",
+      "left_drivers": [
+        0
+      ],
+      "right_drivers": [
+        2
+      ],
+      "cost": 3,
+      "depth": 2,
+      "value": "5a5a",
+      "driven": "ffff"
+    },
+    {
+      "slot": 1,
+      "kind": "XOR",
+      "left_drivers": [
+        1
+      ],
+      "right_drivers": [
+        3
+      ],
+      "cost": 3,
+      "depth": 2,
+      "value": "33cc",
+      "driven": "ffff"
+    },
+    {
+      "slot": 2,
+      "kind": "XOR",
+      "left_drivers": [
+        6
+      ],
+      "right_drivers": [
+        7
+      ],
+      "cost": 3,
+      "depth": 4,
+      "value": "6996",
+      "driven": "ffff"
+    }
+  ],
+  "output_drivers": [
+    8,
+    12
+  ],
+  "output_value": "6996",
+  "output_driven": "ffff",
+  "output_depth": 4,
+  "replayed_gate_cost": 9
+}

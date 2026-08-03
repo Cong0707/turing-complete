@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "query": {
+    "inputs": 3,
+    "supports": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "weak_output": true,
+    "gate_bound": 8,
+    "max_delay": 2,
+    "slot_range": [
+      7,
+      7
+    ],
+    "library": "reviewed"
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "unsat",
+      "input_count": 3,
+      "targets": [
+        "66",
+        "5a",
+        "3c"
+      ],
+      "exact_drive": [
+        false,
+        false,
+        false
+      ],
+      "gate_bound": 8,
+      "max_delay": 2,
+      "slots": 7,
+      "timeout_ms": 180000,
+      "memory_mb": 800,
+      "solve_seconds": 98.57744950000779,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "AND": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "NAND": [
+          1,
+          1
+        ],
+        "NOR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "model": "actual V targets with physical BUS alias closure and free complements",
+  "status": "unknown",
+  "source_mode": "all-dual",
+  "inputs": 6,
+  "target_truth_tables_hex": [
+    "6996699669966996",
+    "6666999999996666"
+  ],
+  "gate_bound": 14,
+  "max_delay": 4,
+  "components": 7,
+  "exact_switches": 2,
+  "exact_xors": 2,
+  "exact_output_drivers": null,
+  "terminal_switch_drivers": null,
+  "physical_alias_closure": true,
+  "adjacent_kind_order": true,
+  "solver": "glucose4",
+  "timeout_seconds": 60.0,
+  "variables": 14009,
+  "clauses": 104283,
+  "solve_seconds": 60.15004889998818,
+  "library": {
+    "NOT": [
+      1,
+      1
+    ],
+    "AND": [
+      1,
+      1
+    ],
+    "OR": [
+      1,
+      1
+    ],
+    "NAND": [
+      1,
+      1
+    ],
+    "NOR": [
+      1,
+      1
+    ],
+    "XOR": [
+      3,
+      2
+    ],
+    "SWITCH": [
+      2,
+      1
+    ]
+  },
+  "relaxations": [
+    "all six raw complements are free",
+    "zero output may be Z"
+  ],
+  "sat_requires_union_find_replay": true,
+  "reason_unknown": "timeout"
+}

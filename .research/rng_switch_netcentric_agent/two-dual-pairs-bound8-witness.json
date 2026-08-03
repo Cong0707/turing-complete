@@ -1,0 +1,326 @@
+{
+  "schema": 1,
+  "query": {
+    "inputs": 4,
+    "supports": [
+      {
+        "bits": [
+          0,
+          1
+        ],
+        "inverted": false
+      },
+      {
+        "bits": [
+          0,
+          1
+        ],
+        "inverted": true
+      },
+      {
+        "bits": [
+          2,
+          3
+        ],
+        "inverted": false
+      },
+      {
+        "bits": [
+          2,
+          3
+        ],
+        "inverted": true
+      }
+    ],
+    "weak_output": false,
+    "gate_bound": 8,
+    "max_delay": 2,
+    "slot_range": [
+      8,
+      8
+    ],
+    "library": "reviewed",
+    "free_complements": false,
+    "exact_xors": null,
+    "exact_switches": null
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "sat",
+      "input_count": 4,
+      "targets": [
+        "6666",
+        "9999",
+        "0ff0",
+        "f00f"
+      ],
+      "exact_drive": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "gate_bound": 8,
+      "max_delay": 2,
+      "slots": 8,
+      "timeout_ms": 120000,
+      "memory_mb": 700,
+      "free_complements": false,
+      "exact_xors": null,
+      "exact_switches": null,
+      "solve_seconds": 10.150029800017364,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "AND": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "NAND": [
+          1,
+          1
+        ],
+        "NOR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      },
+      "network": {
+        "sources": [
+          {
+            "terminal": 0,
+            "name": "x0",
+            "net": 0,
+            "value": "aaaa",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 1,
+            "name": "x1",
+            "net": 1,
+            "value": "cccc",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 2,
+            "name": "x2",
+            "net": 2,
+            "value": "f0f0",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 3,
+            "name": "x3",
+            "net": 3,
+            "value": "ff00",
+            "driven": "ffff",
+            "depth": 0
+          }
+        ],
+        "gates": [
+          {
+            "terminal": 4,
+            "kind": "OR",
+            "left_net": 2,
+            "right_net": 3,
+            "value": "fff0",
+            "driven": "ffff",
+            "depth": 1,
+            "cost": 1
+          },
+          {
+            "terminal": 5,
+            "kind": "OR",
+            "left_net": 0,
+            "right_net": 1,
+            "value": "eeee",
+            "driven": "ffff",
+            "depth": 1,
+            "cost": 1
+          },
+          {
+            "terminal": 6,
+            "kind": "NAND",
+            "left_net": 0,
+            "right_net": 1,
+            "value": "7777",
+            "driven": "ffff",
+            "depth": 1,
+            "cost": 1
+          },
+          {
+            "terminal": 7,
+            "kind": "NAND",
+            "left_net": 2,
+            "right_net": 3,
+            "value": "0fff",
+            "driven": "ffff",
+            "depth": 1,
+            "cost": 1
+          },
+          {
+            "terminal": 8,
+            "kind": "NAND",
+            "left_net": 4,
+            "right_net": 7,
+            "value": "f00f",
+            "driven": "ffff",
+            "depth": 2,
+            "cost": 1
+          },
+          {
+            "terminal": 9,
+            "kind": "AND",
+            "left_net": 4,
+            "right_net": 7,
+            "value": "0ff0",
+            "driven": "ffff",
+            "depth": 2,
+            "cost": 1
+          },
+          {
+            "terminal": 10,
+            "kind": "NAND",
+            "left_net": 5,
+            "right_net": 6,
+            "value": "9999",
+            "driven": "ffff",
+            "depth": 2,
+            "cost": 1
+          },
+          {
+            "terminal": 11,
+            "kind": "AND",
+            "left_net": 5,
+            "right_net": 6,
+            "value": "6666",
+            "driven": "ffff",
+            "depth": 2,
+            "cost": 1
+          }
+        ],
+        "nets": [
+          {
+            "net": 0,
+            "drivers": [
+              0
+            ]
+          },
+          {
+            "net": 1,
+            "drivers": [
+              1
+            ]
+          },
+          {
+            "net": 2,
+            "drivers": [
+              2
+            ]
+          },
+          {
+            "net": 3,
+            "drivers": [
+              3
+            ]
+          },
+          {
+            "net": 4,
+            "drivers": [
+              4
+            ]
+          },
+          {
+            "net": 5,
+            "drivers": [
+              5
+            ]
+          },
+          {
+            "net": 6,
+            "drivers": [
+              6
+            ]
+          },
+          {
+            "net": 7,
+            "drivers": [
+              7
+            ]
+          },
+          {
+            "net": 8,
+            "drivers": [
+              8
+            ]
+          },
+          {
+            "net": 9,
+            "drivers": [
+              9
+            ]
+          },
+          {
+            "net": 10,
+            "drivers": [
+              10
+            ]
+          },
+          {
+            "net": 11,
+            "drivers": [
+              11
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "net": 11,
+            "target": "6666",
+            "exact_drive": true,
+            "depth": 2
+          },
+          {
+            "net": 10,
+            "target": "9999",
+            "exact_drive": true,
+            "depth": 2
+          },
+          {
+            "net": 9,
+            "target": "0ff0",
+            "exact_drive": true,
+            "depth": 2
+          },
+          {
+            "net": 8,
+            "target": "f00f",
+            "exact_drive": true,
+            "depth": 2
+          }
+        ],
+        "cost": 8,
+        "depth": 2
+      }
+    }
+  ]
+}

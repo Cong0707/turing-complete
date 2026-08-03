@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "model": "single-driver ordinary-gate exact CNF with free input complements",
+  "status": "unknown",
+  "slots": 14,
+  "max_delay": 4,
+  "inputs": 6,
+  "source_names": [
+    "x0",
+    "not_x0",
+    "x1",
+    "not_x1",
+    "x2",
+    "not_x2",
+    "x3",
+    "not_x3",
+    "x4",
+    "not_x4",
+    "x5",
+    "not_x5",
+    "const0",
+    "const1"
+  ],
+  "targets_hex": [
+    "6996699669966996",
+    "6666999999996666"
+  ],
+  "library": {
+    "NOT": [
+      1,
+      1
+    ],
+    "AND": [
+      1,
+      1
+    ],
+    "OR": [
+      1,
+      1
+    ],
+    "NAND": [
+      1,
+      1
+    ],
+    "NOR": [
+      1,
+      1
+    ]
+  },
+  "solver": "maplecm",
+  "timeout_seconds": 180.0,
+  "variables": 9966,
+  "clauses": 103192,
+  "solve_seconds": 180.04643740001484,
+  "free_complements": true,
+  "physical_reason": "without Switch, every useful net has one active driver",
+  "fixed_xor_tree": false,
+  "reason_unknown": "timeout"
+}

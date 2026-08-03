@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "model": "late phase correction over all physically reachable load/steady rows",
+  "rows": [
+    {
+      "name": "load_s0",
+      "lane": 0,
+      "base": 0,
+      "ready": 0,
+      "not_ready": 1,
+      "target": 0
+    },
+    {
+      "name": "load_s1",
+      "lane": 1,
+      "base": 0,
+      "ready": 0,
+      "not_ready": 1,
+      "target": 1
+    },
+    {
+      "name": "steady_q0_n0",
+      "lane": 0,
+      "base": 0,
+      "ready": 1,
+      "not_ready": 0,
+      "target": 0
+    },
+    {
+      "name": "steady_q0_n1",
+      "lane": 0,
+      "base": 1,
+      "ready": 1,
+      "not_ready": 0,
+      "target": 1
+    },
+    {
+      "name": "steady_q1_n0",
+      "lane": 1,
+      "base": 0,
+      "ready": 1,
+      "not_ready": 0,
+      "target": 0
+    },
+    {
+      "name": "steady_q1_n1",
+      "lane": 1,
+      "base": 1,
+      "ready": 1,
+      "not_ready": 0,
+      "target": 1
+    }
+  ],
+  "zero_gate_matches": [],
+  "one_gate_matches": [],
+  "one_switch_matches": [],
+  "minimum_gate": 2,
+  "witness": {
+    "gate0": "pulse = AND(lane, not_ready)",
+    "gate1": "result = OR(pulse, base)",
+    "truth_table": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "delay": 2
+  },
+  "fixed_dag_zero_lane_frontier": {
+    "29": "unsat",
+    "30": "sat",
+    "total_gate": 443,
+    "lower_sha256": "cf630999f234823e974be60cebd45323318bfabe4a2382a36eb7ba15e7dc4b9f",
+    "upper_sha256": "866d285f29d1d65b01263f291991b55ccab914f3ecded998101668a6ea149bfb"
+  }
+}

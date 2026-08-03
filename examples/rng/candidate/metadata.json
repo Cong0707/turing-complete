@@ -2,79 +2,106 @@
   "schema": 1,
   "level": "rng",
   "title": "Random Number Generator",
-  "strategy": "certificate-derived encoded state with explicit dual rails and always-driven two-Switch XOR buses",
+  "strategy": "encoded-state depth-two XOR network with dual-mode OR leaves and a zero-initialized one-tick load pulse",
   "deployment_target": "schematics/architecture/CODEX-RNG/circuit.data",
-  "sha256": "f4a92e89325a8243166c0b2ec151dd93986819160c53946c7d1f5f1823b9e469",
+  "sha256": "21f638b968ef9f2c3a2601fd46de1624e81e0a4e1198c39f5c6eff1ba566aa93",
   "format_version": 15,
-  "component_count": 272,
-  "wire_count": 555,
-  "metric_status": "offline verified: 466 gate / 8 delay / 67 cycles; game verification pending",
+  "component_count": 156,
+  "wire_count": 297,
+  "metric_status": "game verified: 402 gate / 9 delay / 67 cycles, 242406 energy",
   "game_verification": {
-    "date": null,
-    "status": "pending",
-    "previous_verified_front": {
-      "leaderboard_tuple": [402, 9, 67],
-      "energy": 242406
-    },
+    "date": "2026-08-03",
+    "status": "passed",
+    "leaderboard_tuple": [
+      402,
+      9,
+      67
+    ],
+    "energy": 242406,
     "server_submission_status": "not asserted"
   },
-  "gate": 466,
-  "delay": 8,
+  "gate": 402,
+  "delay": 9,
   "cycles": 67,
-  "leaderboard_tuple": [466, 8, 67],
-  "declared_energy": 249776,
-  "public_reference": [431, 9, 66, 256014],
-  "predicted_reference_improvement": 6238,
-  "uses_ram": false,
-  "all_delay_init_data_zero": true,
-  "matrix_identities": ["C*T=A", "T*C=B"],
-  "certificate": {
-    "path": ".research/rng8delay_reduce_agent/best294-mixed.json",
-    "sha256": "2b3e64e715d98dc70b1d2339b968b7ab04521256fb7054569a697da1b2814235",
-    "pair_count": 29,
-    "dual_pair_count": 26,
-    "ordinary_pair_count": 3,
-    "final_switch_count": 32,
-    "mode_or_count": 47,
-    "direct_not_count": 6
+  "leaderboard_tuple": [
+    402,
+    9,
+    67
+  ],
+  "declared_energy": 242406,
+  "public_reference": [
+    431,
+    9,
+    66,
+    256014
+  ],
+  "predicted_rank1_improvement": 13608,
+  "matrix_identities": [
+    "C*T=A",
+    "T*C=B",
+    "T*T^-1=I"
+  ],
+  "xor_count": 61,
+  "bit_xor_count": 42,
+  "word_xor_count": 19,
+  "xor_cost_model": {
+    "bit_xor": [
+      3,
+      2
+    ],
+    "u1_word_xor": [
+      3,
+      2
+    ]
   },
+  "xor_gate_cost": 183,
+  "mode_pair_or_count": 47,
+  "verified_seed_count": 256,
+  "first_seed_prefix": [
+    "00021001",
+    "21211091",
+    "12828955"
+  ],
   "component_kind_counts": {
-    "3": 7,
-    "4": 26,
-    "6": 52,
-    "7": 74,
-    "10": 3,
-    "12": 64,
+    "3": 1,
+    "7": 48,
+    "10": 42,
     "13": 34,
     "16": 4,
     "17": 4,
+    "23": 19,
     "62": 1,
     "70": 1,
     "97": 1,
     "99": 1
   },
-  "offline_verification": {
-    "seed_count": 288,
-    "tick_count": 19296,
-    "outputs_per_seed": 65,
-    "all_switch_buses_exactly_one_active_driver": true,
-    "all_switch_buses_non_z": true,
-    "switch_bus_count": 32,
-    "v15_round_trip": true
-  },
   "connectivity": {
+    "effective_component_count": 156,
+    "supported_component_count": 156,
     "unsupported_component_kind_counts": {},
+    "pin_count": 483,
+    "connected_pin_count": 483,
     "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 186,
+    "logical_edge_count": 263,
     "multi_driver_network_count": 0,
     "undriven_network_count": 0,
+    "sinkless_network_count": 0,
     "width_mismatch_network_count": 0,
+    "unit_logic_depth": 7,
     "cycle_component_count": 0
   },
   "layout": {
     "wire_component_contact_count": 0,
     "wire_interior_pin_contact_count": 0,
-    "component_footprint_overlap_count": 0,
-    "sprite_internal_wire_collision_count": 0,
-    "sprite_component_overlap_cell_count": 0
+    "component_footprint_overlap_count": 0
+  },
+  "live_sprite_layout": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cell_count": 0,
+    "internal_wire_collision_count": 0,
+    "wire_interior_pin_contact_count": 0,
+    "architecture_io_access_cell_count": 7
   }
 }

@@ -1,0 +1,1413 @@
+{
+  "schema": 1,
+  "status": "verified-lower-bound-restricted-to-ordinary-xor2",
+  "scope": "61 safe targets of the over=3 persistent-seed center; all seed-only linear computation is free; q cancellation and sharing are allowed; nonlinear gates and resolved Switch buses are excluded",
+  "certificate": ".research\\rng_persistent_polynomial_agent\\over3-joint-certificate.json",
+  "certificate_sha256": "25434914d99e9f42b5e3ee42e47dc9e3b0b01722cc01e40a28e41d36332176b6",
+  "excluded_target_indices": [
+    13,
+    16,
+    27
+  ],
+  "safe_target_count": 61,
+  "q1_target_count": 11,
+  "q3_target_count": 26,
+  "reason": {
+    "state_input_arrival": 4,
+    "xor2_delay": 2,
+    "deadline": 8,
+    "q3_final_operands": "one disjoint q-pair plus one q-unit",
+    "q_pair_seed_label": 0,
+    "q_unit_seed_label": "the complete target seed label",
+    "seed_only_gate_cost": 0
+  },
+  "model": {
+    "hard_clauses": 182,
+    "id_pool_variables_before_cardinality": 223,
+    "cost_node_variables": 145,
+    "base_q1_units_available_without_extra_cost": [
+      {
+        "q_bit": 0,
+        "seed": "08000000"
+      },
+      {
+        "q_bit": 1,
+        "seed": "10000000"
+      },
+      {
+        "q_bit": 2,
+        "seed": "20000000"
+      },
+      {
+        "q_bit": 3,
+        "seed": "40000000"
+      },
+      {
+        "q_bit": 4,
+        "seed": "80000000"
+      },
+      {
+        "q_bit": 10,
+        "seed": "08000020"
+      },
+      {
+        "q_bit": 20,
+        "seed": "40000100"
+      },
+      {
+        "q_bit": 23,
+        "seed": "10000040"
+      },
+      {
+        "q_bit": 24,
+        "seed": "20000080"
+      },
+      {
+        "q_bit": 25,
+        "seed": "00008000"
+      },
+      {
+        "q_bit": 26,
+        "seed": "80000200"
+      }
+    ]
+  },
+  "q3_extra_gate_optimum": 41,
+  "target_gate_baseline": 61,
+  "q_involving_xor2_lower_bound": 102,
+  "logic_gate_lower_bound": 306,
+  "logic_budget": 292,
+  "exceeds_logic_budget": true,
+  "rc2": {
+    "solver": "g4",
+    "seconds": 0.0036694000009447336
+  },
+  "boundary_checks": [
+    {
+      "solver": "g4",
+      "bound": 40,
+      "status": "UNSAT",
+      "seconds": 0.0064286999986507,
+      "variables": 4423,
+      "clauses": 8647
+    },
+    {
+      "solver": "g4",
+      "bound": 41,
+      "status": "SAT",
+      "seconds": 0.007625199999893084,
+      "variables": 4487,
+      "clauses": 8773
+    },
+    {
+      "solver": "m22",
+      "bound": 40,
+      "status": "UNSAT",
+      "seconds": 0.008455099974526092,
+      "variables": 4423,
+      "clauses": 8647
+    },
+    {
+      "solver": "m22",
+      "bound": 41,
+      "status": "SAT",
+      "seconds": 0.00594709999859333,
+      "variables": 4487,
+      "clauses": 8773
+    }
+  ],
+  "selected_cost_nodes": [
+    {
+      "kind": "pair",
+      "q": "00800002",
+      "seed": "00000000",
+      "variable": 4
+    },
+    {
+      "kind": "unit",
+      "q": "00000020",
+      "seed": "00800400",
+      "variable": 5
+    },
+    {
+      "kind": "pair",
+      "q": "01000004",
+      "seed": "00000000",
+      "variable": 13
+    },
+    {
+      "kind": "unit",
+      "q": "00020000",
+      "seed": "01000800",
+      "variable": 14
+    },
+    {
+      "kind": "pair",
+      "q": "00100008",
+      "seed": "00000000",
+      "variable": 25
+    },
+    {
+      "kind": "unit",
+      "q": "08000000",
+      "seed": "02001000",
+      "variable": 26
+    },
+    {
+      "kind": "pair",
+      "q": "04000010",
+      "seed": "00000000",
+      "variable": 31
+    },
+    {
+      "kind": "unit",
+      "q": "00002000",
+      "seed": "04002000",
+      "variable": 32
+    },
+    {
+      "kind": "pair",
+      "q": "02000002",
+      "seed": "00000000",
+      "variable": 37
+    },
+    {
+      "kind": "unit",
+      "q": "00000001",
+      "seed": "10008400",
+      "variable": 38
+    },
+    {
+      "kind": "pair",
+      "q": "00800040",
+      "seed": "00000000",
+      "variable": 49
+    },
+    {
+      "kind": "unit",
+      "q": "00400000",
+      "seed": "08040020",
+      "variable": 50
+    },
+    {
+      "kind": "pair",
+      "q": "40010000",
+      "seed": "00000000",
+      "variable": 55
+    },
+    {
+      "kind": "unit",
+      "q": "00000002",
+      "seed": "42010008",
+      "variable": 56
+    },
+    {
+      "kind": "pair",
+      "q": "00000088",
+      "seed": "00000000",
+      "variable": 64
+    },
+    {
+      "kind": "unit",
+      "q": "00000001",
+      "seed": "40400001",
+      "variable": 65
+    },
+    {
+      "kind": "pair",
+      "q": "00000050",
+      "seed": "00000000",
+      "variable": 73
+    },
+    {
+      "kind": "unit",
+      "q": "00000002",
+      "seed": "80800002",
+      "variable": 74
+    },
+    {
+      "kind": "pair",
+      "q": "02080000",
+      "seed": "00000000",
+      "variable": 82
+    },
+    {
+      "kind": "unit",
+      "q": "00000010",
+      "seed": "0008c004",
+      "variable": 83
+    },
+    {
+      "kind": "pair",
+      "q": "84000000",
+      "seed": "00000000",
+      "variable": 91
+    },
+    {
+      "kind": "unit",
+      "q": "00000100",
+      "seed": "40200100",
+      "variable": 92
+    },
+    {
+      "kind": "pair",
+      "q": "21000000",
+      "seed": "00000000",
+      "variable": 103
+    },
+    {
+      "kind": "unit",
+      "q": "10000000",
+      "seed": "10080040",
+      "variable": 104
+    },
+    {
+      "kind": "pair",
+      "q": "00100800",
+      "seed": "00000000",
+      "variable": 112
+    },
+    {
+      "kind": "unit",
+      "q": "00008000",
+      "seed": "20100080",
+      "variable": 113
+    },
+    {
+      "kind": "unit",
+      "q": "02000000",
+      "seed": "10110008",
+      "variable": 121
+    },
+    {
+      "kind": "pair",
+      "q": "00000401",
+      "seed": "00000000",
+      "variable": 129
+    },
+    {
+      "kind": "unit",
+      "q": "00000200",
+      "seed": "80400200",
+      "variable": 130
+    },
+    {
+      "kind": "pair",
+      "q": "00000480",
+      "seed": "00000000",
+      "variable": 141
+    },
+    {
+      "kind": "unit",
+      "q": "00200000",
+      "seed": "84020010",
+      "variable": 142
+    },
+    {
+      "kind": "unit",
+      "q": "00001000",
+      "seed": "00000001",
+      "variable": 150
+    },
+    {
+      "kind": "unit",
+      "q": "00004000",
+      "seed": "00000002",
+      "variable": 155
+    },
+    {
+      "kind": "unit",
+      "q": "00080000",
+      "seed": "00000004",
+      "variable": 160
+    },
+    {
+      "kind": "unit",
+      "q": "40000000",
+      "seed": "00000008",
+      "variable": 174
+    },
+    {
+      "kind": "unit",
+      "q": "00200000",
+      "seed": "00000010",
+      "variable": 176
+    },
+    {
+      "kind": "unit",
+      "q": "00400000",
+      "seed": "00000020",
+      "variable": 190
+    },
+    {
+      "kind": "unit",
+      "q": "10000000",
+      "seed": "00000040",
+      "variable": 198
+    },
+    {
+      "kind": "unit",
+      "q": "00008000",
+      "seed": "00000080",
+      "variable": 203
+    },
+    {
+      "kind": "unit",
+      "q": "00000100",
+      "seed": "00000100",
+      "variable": 211
+    },
+    {
+      "kind": "unit",
+      "q": "00000200",
+      "seed": "00000200",
+      "variable": 219
+    }
+  ],
+  "targets": [
+    {
+      "target_index": 0,
+      "target": "0080040000800022",
+      "q": "00800022",
+      "seed": "00800400",
+      "options": [
+        {
+          "remaining_q_bit": 1,
+          "pair_q": "00800020",
+          "unit_q": "00000002",
+          "unit_seed": "00800400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 3
+        },
+        {
+          "remaining_q_bit": 5,
+          "pair_q": "00800002",
+          "unit_q": "00000020",
+          "unit_seed": "00800400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 6
+        },
+        {
+          "remaining_q_bit": 23,
+          "pair_q": "00000022",
+          "unit_q": "00800000",
+          "unit_seed": "00800400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 9
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 5,
+        "pair_q": "00800002",
+        "unit_q": "00000020",
+        "unit_seed": "00800400",
+        "unit_reuses_q1_target": false,
+        "option_variable": 6
+      }
+    },
+    {
+      "target_index": 1,
+      "target": "0100080001020004",
+      "q": "01020004",
+      "seed": "01000800",
+      "options": [
+        {
+          "remaining_q_bit": 2,
+          "pair_q": "01020000",
+          "unit_q": "00000004",
+          "unit_seed": "01000800",
+          "unit_reuses_q1_target": false,
+          "option_variable": 12
+        },
+        {
+          "remaining_q_bit": 17,
+          "pair_q": "01000004",
+          "unit_q": "00020000",
+          "unit_seed": "01000800",
+          "unit_reuses_q1_target": false,
+          "option_variable": 15
+        },
+        {
+          "remaining_q_bit": 24,
+          "pair_q": "00020004",
+          "unit_q": "01000000",
+          "unit_seed": "01000800",
+          "unit_reuses_q1_target": false,
+          "option_variable": 18
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 17,
+        "pair_q": "01000004",
+        "unit_q": "00020000",
+        "unit_seed": "01000800",
+        "unit_reuses_q1_target": false,
+        "option_variable": 15
+      }
+    },
+    {
+      "target_index": 2,
+      "target": "0200100008100008",
+      "q": "08100008",
+      "seed": "02001000",
+      "options": [
+        {
+          "remaining_q_bit": 3,
+          "pair_q": "08100000",
+          "unit_q": "00000008",
+          "unit_seed": "02001000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 21
+        },
+        {
+          "remaining_q_bit": 20,
+          "pair_q": "08000008",
+          "unit_q": "00100000",
+          "unit_seed": "02001000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 24
+        },
+        {
+          "remaining_q_bit": 27,
+          "pair_q": "00100008",
+          "unit_q": "08000000",
+          "unit_seed": "02001000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 27
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 27,
+        "pair_q": "00100008",
+        "unit_q": "08000000",
+        "unit_seed": "02001000",
+        "unit_reuses_q1_target": false,
+        "option_variable": 27
+      }
+    },
+    {
+      "target_index": 3,
+      "target": "0400200004002010",
+      "q": "04002010",
+      "seed": "04002000",
+      "options": [
+        {
+          "remaining_q_bit": 4,
+          "pair_q": "04002000",
+          "unit_q": "00000010",
+          "unit_seed": "04002000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 30
+        },
+        {
+          "remaining_q_bit": 13,
+          "pair_q": "04000010",
+          "unit_q": "00002000",
+          "unit_seed": "04002000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 33
+        },
+        {
+          "remaining_q_bit": 26,
+          "pair_q": "00002010",
+          "unit_q": "04000000",
+          "unit_seed": "04002000",
+          "unit_reuses_q1_target": false,
+          "option_variable": 36
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 13,
+        "pair_q": "04000010",
+        "unit_q": "00002000",
+        "unit_seed": "04002000",
+        "unit_reuses_q1_target": false,
+        "option_variable": 33
+      }
+    },
+    {
+      "target_index": 5,
+      "target": "1000840002000003",
+      "q": "02000003",
+      "seed": "10008400",
+      "options": [
+        {
+          "remaining_q_bit": 0,
+          "pair_q": "02000002",
+          "unit_q": "00000001",
+          "unit_seed": "10008400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 39
+        },
+        {
+          "remaining_q_bit": 1,
+          "pair_q": "02000001",
+          "unit_q": "00000002",
+          "unit_seed": "10008400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 42
+        },
+        {
+          "remaining_q_bit": 25,
+          "pair_q": "00000003",
+          "unit_q": "02000000",
+          "unit_seed": "10008400",
+          "unit_reuses_q1_target": false,
+          "option_variable": 45
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 0,
+        "pair_q": "02000002",
+        "unit_q": "00000001",
+        "unit_seed": "10008400",
+        "unit_reuses_q1_target": false,
+        "option_variable": 39
+      }
+    },
+    {
+      "target_index": 10,
+      "target": "0804002000c00040",
+      "q": "00c00040",
+      "seed": "08040020",
+      "options": [
+        {
+          "remaining_q_bit": 6,
+          "pair_q": "00c00000",
+          "unit_q": "00000040",
+          "unit_seed": "08040020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 48
+        },
+        {
+          "remaining_q_bit": 22,
+          "pair_q": "00800040",
+          "unit_q": "00400000",
+          "unit_seed": "08040020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 51
+        },
+        {
+          "remaining_q_bit": 23,
+          "pair_q": "00400040",
+          "unit_q": "00800000",
+          "unit_seed": "08040020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 54
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 22,
+        "pair_q": "00800040",
+        "unit_q": "00400000",
+        "unit_seed": "08040020",
+        "unit_reuses_q1_target": false,
+        "option_variable": 51
+      }
+    },
+    {
+      "target_index": 11,
+      "target": "4201000840010002",
+      "q": "40010002",
+      "seed": "42010008",
+      "options": [
+        {
+          "remaining_q_bit": 1,
+          "pair_q": "40010000",
+          "unit_q": "00000002",
+          "unit_seed": "42010008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 57
+        },
+        {
+          "remaining_q_bit": 16,
+          "pair_q": "40000002",
+          "unit_q": "00010000",
+          "unit_seed": "42010008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 60
+        },
+        {
+          "remaining_q_bit": 30,
+          "pair_q": "00010002",
+          "unit_q": "40000000",
+          "unit_seed": "42010008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 63
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 1,
+        "pair_q": "40010000",
+        "unit_q": "00000002",
+        "unit_seed": "42010008",
+        "unit_reuses_q1_target": false,
+        "option_variable": 57
+      }
+    },
+    {
+      "target_index": 12,
+      "target": "4040000100000089",
+      "q": "00000089",
+      "seed": "40400001",
+      "options": [
+        {
+          "remaining_q_bit": 0,
+          "pair_q": "00000088",
+          "unit_q": "00000001",
+          "unit_seed": "40400001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 66
+        },
+        {
+          "remaining_q_bit": 3,
+          "pair_q": "00000081",
+          "unit_q": "00000008",
+          "unit_seed": "40400001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 69
+        },
+        {
+          "remaining_q_bit": 7,
+          "pair_q": "00000009",
+          "unit_q": "00000080",
+          "unit_seed": "40400001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 72
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 0,
+        "pair_q": "00000088",
+        "unit_q": "00000001",
+        "unit_seed": "40400001",
+        "unit_reuses_q1_target": false,
+        "option_variable": 66
+      }
+    },
+    {
+      "target_index": 14,
+      "target": "8080000200000052",
+      "q": "00000052",
+      "seed": "80800002",
+      "options": [
+        {
+          "remaining_q_bit": 1,
+          "pair_q": "00000050",
+          "unit_q": "00000002",
+          "unit_seed": "80800002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 75
+        },
+        {
+          "remaining_q_bit": 4,
+          "pair_q": "00000042",
+          "unit_q": "00000010",
+          "unit_seed": "80800002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 78
+        },
+        {
+          "remaining_q_bit": 6,
+          "pair_q": "00000012",
+          "unit_q": "00000040",
+          "unit_seed": "80800002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 81
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 1,
+        "pair_q": "00000050",
+        "unit_q": "00000002",
+        "unit_seed": "80800002",
+        "unit_reuses_q1_target": false,
+        "option_variable": 75
+      }
+    },
+    {
+      "target_index": 18,
+      "target": "0008c00402080010",
+      "q": "02080010",
+      "seed": "0008c004",
+      "options": [
+        {
+          "remaining_q_bit": 4,
+          "pair_q": "02080000",
+          "unit_q": "00000010",
+          "unit_seed": "0008c004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 84
+        },
+        {
+          "remaining_q_bit": 19,
+          "pair_q": "02000010",
+          "unit_q": "00080000",
+          "unit_seed": "0008c004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 87
+        },
+        {
+          "remaining_q_bit": 25,
+          "pair_q": "00080010",
+          "unit_q": "02000000",
+          "unit_seed": "0008c004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 90
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 4,
+        "pair_q": "02080000",
+        "unit_q": "00000010",
+        "unit_seed": "0008c004",
+        "unit_reuses_q1_target": false,
+        "option_variable": 84
+      }
+    },
+    {
+      "target_index": 20,
+      "target": "4020010084000100",
+      "q": "84000100",
+      "seed": "40200100",
+      "options": [
+        {
+          "remaining_q_bit": 8,
+          "pair_q": "84000000",
+          "unit_q": "00000100",
+          "unit_seed": "40200100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 93
+        },
+        {
+          "remaining_q_bit": 26,
+          "pair_q": "80000100",
+          "unit_q": "04000000",
+          "unit_seed": "40200100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 96
+        },
+        {
+          "remaining_q_bit": 31,
+          "pair_q": "04000100",
+          "unit_q": "80000000",
+          "unit_seed": "40200100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 99
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 8,
+        "pair_q": "84000000",
+        "unit_q": "00000100",
+        "unit_seed": "40200100",
+        "unit_reuses_q1_target": false,
+        "option_variable": 93
+      }
+    },
+    {
+      "target_index": 23,
+      "target": "1008004031000000",
+      "q": "31000000",
+      "seed": "10080040",
+      "options": [
+        {
+          "remaining_q_bit": 24,
+          "pair_q": "30000000",
+          "unit_q": "01000000",
+          "unit_seed": "10080040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 102
+        },
+        {
+          "remaining_q_bit": 28,
+          "pair_q": "21000000",
+          "unit_q": "10000000",
+          "unit_seed": "10080040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 105
+        },
+        {
+          "remaining_q_bit": 29,
+          "pair_q": "11000000",
+          "unit_q": "20000000",
+          "unit_seed": "10080040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 108
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 28,
+        "pair_q": "21000000",
+        "unit_q": "10000000",
+        "unit_seed": "10080040",
+        "unit_reuses_q1_target": false,
+        "option_variable": 105
+      }
+    },
+    {
+      "target_index": 24,
+      "target": "2010008000108800",
+      "q": "00108800",
+      "seed": "20100080",
+      "options": [
+        {
+          "remaining_q_bit": 11,
+          "pair_q": "00108000",
+          "unit_q": "00000800",
+          "unit_seed": "20100080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 111
+        },
+        {
+          "remaining_q_bit": 15,
+          "pair_q": "00100800",
+          "unit_q": "00008000",
+          "unit_seed": "20100080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 114
+        },
+        {
+          "remaining_q_bit": 20,
+          "pair_q": "00008800",
+          "unit_q": "00100000",
+          "unit_seed": "20100080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 117
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 15,
+        "pair_q": "00100800",
+        "unit_q": "00008000",
+        "unit_seed": "20100080",
+        "unit_reuses_q1_target": false,
+        "option_variable": 114
+      }
+    },
+    {
+      "target_index": 25,
+      "target": "1011000842010000",
+      "q": "42010000",
+      "seed": "10110008",
+      "options": [
+        {
+          "remaining_q_bit": 16,
+          "pair_q": "42000000",
+          "unit_q": "00010000",
+          "unit_seed": "10110008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 120
+        },
+        {
+          "remaining_q_bit": 25,
+          "pair_q": "40010000",
+          "unit_q": "02000000",
+          "unit_seed": "10110008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 122
+        },
+        {
+          "remaining_q_bit": 30,
+          "pair_q": "02010000",
+          "unit_q": "40000000",
+          "unit_seed": "10110008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 125
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 25,
+        "pair_q": "40010000",
+        "unit_q": "02000000",
+        "unit_seed": "10110008",
+        "unit_reuses_q1_target": false,
+        "option_variable": 122
+      }
+    },
+    {
+      "target_index": 26,
+      "target": "8040020000000601",
+      "q": "00000601",
+      "seed": "80400200",
+      "options": [
+        {
+          "remaining_q_bit": 0,
+          "pair_q": "00000600",
+          "unit_q": "00000001",
+          "unit_seed": "80400200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 128
+        },
+        {
+          "remaining_q_bit": 9,
+          "pair_q": "00000401",
+          "unit_q": "00000200",
+          "unit_seed": "80400200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 131
+        },
+        {
+          "remaining_q_bit": 10,
+          "pair_q": "00000201",
+          "unit_q": "00000400",
+          "unit_seed": "80400200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 134
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 9,
+        "pair_q": "00000401",
+        "unit_q": "00000200",
+        "unit_seed": "80400200",
+        "unit_reuses_q1_target": false,
+        "option_variable": 131
+      }
+    },
+    {
+      "target_index": 31,
+      "target": "8402001000200480",
+      "q": "00200480",
+      "seed": "84020010",
+      "options": [
+        {
+          "remaining_q_bit": 7,
+          "pair_q": "00200400",
+          "unit_q": "00000080",
+          "unit_seed": "84020010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 137
+        },
+        {
+          "remaining_q_bit": 10,
+          "pair_q": "00200080",
+          "unit_q": "00000400",
+          "unit_seed": "84020010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 140
+        },
+        {
+          "remaining_q_bit": 21,
+          "pair_q": "00000480",
+          "unit_q": "00200000",
+          "unit_seed": "84020010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 143
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 21,
+        "pair_q": "00000480",
+        "unit_q": "00200000",
+        "unit_seed": "84020010",
+        "unit_reuses_q1_target": false,
+        "option_variable": 143
+      }
+    },
+    {
+      "target_index": 32,
+      "target": "0000000100001480",
+      "q": "00001480",
+      "seed": "00000001",
+      "options": [
+        {
+          "remaining_q_bit": 7,
+          "pair_q": "00001400",
+          "unit_q": "00000080",
+          "unit_seed": "00000001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 146
+        },
+        {
+          "remaining_q_bit": 10,
+          "pair_q": "00001080",
+          "unit_q": "00000400",
+          "unit_seed": "00000001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 149
+        },
+        {
+          "remaining_q_bit": 12,
+          "pair_q": "00000480",
+          "unit_q": "00001000",
+          "unit_seed": "00000001",
+          "unit_reuses_q1_target": false,
+          "option_variable": 151
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 12,
+        "pair_q": "00000480",
+        "unit_q": "00001000",
+        "unit_seed": "00000001",
+        "unit_reuses_q1_target": false,
+        "option_variable": 151
+      }
+    },
+    {
+      "target_index": 33,
+      "target": "0000000200804040",
+      "q": "00804040",
+      "seed": "00000002",
+      "options": [
+        {
+          "remaining_q_bit": 6,
+          "pair_q": "00804000",
+          "unit_q": "00000040",
+          "unit_seed": "00000002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 154
+        },
+        {
+          "remaining_q_bit": 14,
+          "pair_q": "00800040",
+          "unit_q": "00004000",
+          "unit_seed": "00000002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 156
+        },
+        {
+          "remaining_q_bit": 23,
+          "pair_q": "00004040",
+          "unit_q": "00800000",
+          "unit_seed": "00000002",
+          "unit_reuses_q1_target": false,
+          "option_variable": 159
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 14,
+        "pair_q": "00800040",
+        "unit_q": "00004000",
+        "unit_seed": "00000002",
+        "unit_reuses_q1_target": false,
+        "option_variable": 156
+      }
+    },
+    {
+      "target_index": 34,
+      "target": "0000000421080000",
+      "q": "21080000",
+      "seed": "00000004",
+      "options": [
+        {
+          "remaining_q_bit": 19,
+          "pair_q": "21000000",
+          "unit_q": "00080000",
+          "unit_seed": "00000004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 161
+        },
+        {
+          "remaining_q_bit": 24,
+          "pair_q": "20080000",
+          "unit_q": "01000000",
+          "unit_seed": "00000004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 164
+        },
+        {
+          "remaining_q_bit": 29,
+          "pair_q": "01080000",
+          "unit_q": "20000000",
+          "unit_seed": "00000004",
+          "unit_reuses_q1_target": false,
+          "option_variable": 167
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 19,
+        "pair_q": "21000000",
+        "unit_q": "00080000",
+        "unit_seed": "00000004",
+        "unit_reuses_q1_target": false,
+        "option_variable": 161
+      }
+    },
+    {
+      "target_index": 35,
+      "target": "0000000840100800",
+      "q": "40100800",
+      "seed": "00000008",
+      "options": [
+        {
+          "remaining_q_bit": 11,
+          "pair_q": "40100000",
+          "unit_q": "00000800",
+          "unit_seed": "00000008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 170
+        },
+        {
+          "remaining_q_bit": 20,
+          "pair_q": "40000800",
+          "unit_q": "00100000",
+          "unit_seed": "00000008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 173
+        },
+        {
+          "remaining_q_bit": 30,
+          "pair_q": "00100800",
+          "unit_q": "40000000",
+          "unit_seed": "00000008",
+          "unit_reuses_q1_target": false,
+          "option_variable": 175
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 30,
+        "pair_q": "00100800",
+        "unit_q": "40000000",
+        "unit_seed": "00000008",
+        "unit_reuses_q1_target": false,
+        "option_variable": 175
+      }
+    },
+    {
+      "target_index": 36,
+      "target": "0000001084200000",
+      "q": "84200000",
+      "seed": "00000010",
+      "options": [
+        {
+          "remaining_q_bit": 21,
+          "pair_q": "84000000",
+          "unit_q": "00200000",
+          "unit_seed": "00000010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 177
+        },
+        {
+          "remaining_q_bit": 26,
+          "pair_q": "80200000",
+          "unit_q": "04000000",
+          "unit_seed": "00000010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 180
+        },
+        {
+          "remaining_q_bit": 31,
+          "pair_q": "04200000",
+          "unit_q": "80000000",
+          "unit_seed": "00000010",
+          "unit_reuses_q1_target": false,
+          "option_variable": 183
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 21,
+        "pair_q": "84000000",
+        "unit_q": "00200000",
+        "unit_seed": "00000010",
+        "unit_reuses_q1_target": false,
+        "option_variable": 177
+      }
+    },
+    {
+      "target_index": 37,
+      "target": "0000002000400401",
+      "q": "00400401",
+      "seed": "00000020",
+      "options": [
+        {
+          "remaining_q_bit": 0,
+          "pair_q": "00400400",
+          "unit_q": "00000001",
+          "unit_seed": "00000020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 186
+        },
+        {
+          "remaining_q_bit": 10,
+          "pair_q": "00400001",
+          "unit_q": "00000400",
+          "unit_seed": "00000020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 189
+        },
+        {
+          "remaining_q_bit": 22,
+          "pair_q": "00000401",
+          "unit_q": "00400000",
+          "unit_seed": "00000020",
+          "unit_reuses_q1_target": false,
+          "option_variable": 191
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 22,
+        "pair_q": "00000401",
+        "unit_q": "00400000",
+        "unit_seed": "00000020",
+        "unit_reuses_q1_target": false,
+        "option_variable": 191
+      }
+    },
+    {
+      "target_index": 38,
+      "target": "0000004010800002",
+      "q": "10800002",
+      "seed": "00000040",
+      "options": [
+        {
+          "remaining_q_bit": 1,
+          "pair_q": "10800000",
+          "unit_q": "00000002",
+          "unit_seed": "00000040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 194
+        },
+        {
+          "remaining_q_bit": 23,
+          "pair_q": "10000002",
+          "unit_q": "00800000",
+          "unit_seed": "00000040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 197
+        },
+        {
+          "remaining_q_bit": 28,
+          "pair_q": "00800002",
+          "unit_q": "10000000",
+          "unit_seed": "00000040",
+          "unit_reuses_q1_target": false,
+          "option_variable": 199
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 28,
+        "pair_q": "00800002",
+        "unit_q": "10000000",
+        "unit_seed": "00000040",
+        "unit_reuses_q1_target": false,
+        "option_variable": 199
+      }
+    },
+    {
+      "target_index": 39,
+      "target": "0000008001008004",
+      "q": "01008004",
+      "seed": "00000080",
+      "options": [
+        {
+          "remaining_q_bit": 2,
+          "pair_q": "01008000",
+          "unit_q": "00000004",
+          "unit_seed": "00000080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 202
+        },
+        {
+          "remaining_q_bit": 15,
+          "pair_q": "01000004",
+          "unit_q": "00008000",
+          "unit_seed": "00000080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 204
+        },
+        {
+          "remaining_q_bit": 24,
+          "pair_q": "00008004",
+          "unit_q": "01000000",
+          "unit_seed": "00000080",
+          "unit_reuses_q1_target": false,
+          "option_variable": 207
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 15,
+        "pair_q": "01000004",
+        "unit_q": "00008000",
+        "unit_seed": "00000080",
+        "unit_reuses_q1_target": false,
+        "option_variable": 204
+      }
+    },
+    {
+      "target_index": 40,
+      "target": "0000010000100108",
+      "q": "00100108",
+      "seed": "00000100",
+      "options": [
+        {
+          "remaining_q_bit": 3,
+          "pair_q": "00100100",
+          "unit_q": "00000008",
+          "unit_seed": "00000100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 210
+        },
+        {
+          "remaining_q_bit": 8,
+          "pair_q": "00100008",
+          "unit_q": "00000100",
+          "unit_seed": "00000100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 212
+        },
+        {
+          "remaining_q_bit": 20,
+          "pair_q": "00000108",
+          "unit_q": "00100000",
+          "unit_seed": "00000100",
+          "unit_reuses_q1_target": false,
+          "option_variable": 215
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 8,
+        "pair_q": "00100008",
+        "unit_q": "00000100",
+        "unit_seed": "00000100",
+        "unit_reuses_q1_target": false,
+        "option_variable": 212
+      }
+    },
+    {
+      "target_index": 41,
+      "target": "0000020004000210",
+      "q": "04000210",
+      "seed": "00000200",
+      "options": [
+        {
+          "remaining_q_bit": 4,
+          "pair_q": "04000200",
+          "unit_q": "00000010",
+          "unit_seed": "00000200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 218
+        },
+        {
+          "remaining_q_bit": 9,
+          "pair_q": "04000010",
+          "unit_q": "00000200",
+          "unit_seed": "00000200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 220
+        },
+        {
+          "remaining_q_bit": 26,
+          "pair_q": "00000210",
+          "unit_q": "04000000",
+          "unit_seed": "00000200",
+          "unit_reuses_q1_target": false,
+          "option_variable": 223
+        }
+      ],
+      "chosen_option": {
+        "remaining_q_bit": 9,
+        "pair_q": "04000010",
+        "unit_q": "00000200",
+        "unit_seed": "00000200",
+        "unit_reuses_q1_target": false,
+        "option_variable": 220
+      }
+    }
+  ],
+  "working_set": {
+    "initial_bytes": 24612864,
+    "final_bytes": 26427392
+  }
+}

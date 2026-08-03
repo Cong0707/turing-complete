@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "query": {
+    "inputs": 3,
+    "supports": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "weak_output": true,
+    "gate_bound": 6,
+    "max_delay": 4,
+    "slot_range": [
+      1,
+      3
+    ],
+    "library": "basic"
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "unsat",
+      "input_count": 3,
+      "targets": [
+        "96"
+      ],
+      "exact_drive": [
+        false
+      ],
+      "gate_bound": 6,
+      "max_delay": 4,
+      "slots": 1,
+      "timeout_ms": 30000,
+      "memory_mb": 500,
+      "solve_seconds": 0.01002610000432469,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "schema": 1,
+      "model": "exact physical net_id partition; no directed BUS aliases",
+      "status": "sat",
+      "input_count": 3,
+      "targets": [
+        "96"
+      ],
+      "exact_drive": [
+        false
+      ],
+      "gate_bound": 6,
+      "max_delay": 4,
+      "slots": 2,
+      "timeout_ms": 30000,
+      "memory_mb": 500,
+      "solve_seconds": 0.0208684999961406,
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      },
+      "network": {
+        "sources": [
+          {
+            "terminal": 0,
+            "name": "x0",
+            "net": 0,
+            "value": "aa",
+            "driven": "ff",
+            "depth": 0
+          },
+          {
+            "terminal": 1,
+            "name": "x1",
+            "net": 1,
+            "value": "cc",
+            "driven": "ff",
+            "depth": 0
+          },
+          {
+            "terminal": 2,
+            "name": "x2",
+            "net": 2,
+            "value": "f0",
+            "driven": "ff",
+            "depth": 0
+          }
+        ],
+        "gates": [
+          {
+            "terminal": 3,
+            "kind": "XOR",
+            "left_net": 0,
+            "right_net": 2,
+            "value": "5a",
+            "driven": "ff",
+            "depth": 2,
+            "cost": 3
+          },
+          {
+            "terminal": 4,
+            "kind": "XOR",
+            "left_net": 1,
+            "right_net": 3,
+            "value": "96",
+            "driven": "ff",
+            "depth": 4,
+            "cost": 3
+          }
+        ],
+        "nets": [
+          {
+            "net": 0,
+            "drivers": [
+              0
+            ]
+          },
+          {
+            "net": 1,
+            "drivers": [
+              1
+            ]
+          },
+          {
+            "net": 2,
+            "drivers": [
+              2
+            ]
+          },
+          {
+            "net": 3,
+            "drivers": [
+              3
+            ]
+          },
+          {
+            "net": 4,
+            "drivers": [
+              4
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "net": 4,
+            "target": "96",
+            "exact_drive": false,
+            "depth": 4
+          }
+        ],
+        "cost": 6,
+        "depth": 4
+      }
+    }
+  ]
+}

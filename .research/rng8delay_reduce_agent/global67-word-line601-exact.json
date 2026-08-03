@@ -1,0 +1,920 @@
+{
+  "schema": 1,
+  "status": "range_unsat",
+  "scope": {
+    "source": "D:\\Develop\\Other\\turing-complete\\.research\\rng8delay_reduce_agent\\global67-word-line601.jsonl",
+    "bounds": "D:\\Develop\\Other\\turing-complete\\.research\\rng_or_frontier\\or-hitting-target229-r7-x59.csv",
+    "bounds_ignored": true,
+    "first_selected_record": 1,
+    "last_selected_record": 1,
+    "candidate_count": 1,
+    "eligible_candidate_count": 1,
+    "max_heavy_or_lower_bound": 44,
+    "excluded_original_lines": [],
+    "stopped_on_budget": false,
+    "load_tick_output": "unobserved",
+    "load_tick_state": "T*seed",
+    "phase_protocol": "tick0 idle, tick1 load, tick2..66 output",
+    "terminal_split_enabled": false,
+    "shell": 172,
+    "logic_budget": 280,
+    "target": [
+      452,
+      8,
+      67
+    ],
+    "cost_formula": "mode_or + 3*pair + dual_pair + direct_not + 3*final_native_xor + 4*final_switch_xor + terminal_split",
+    "topology": "all depth-two XOR2 covers, including non-minimal mediated weight-1/2 rows",
+    "c_only_load_labels": "unconstrained and eligible for direct-rail reuse"
+  },
+  "solver": {
+    "names": [
+      "g4"
+    ],
+    "adapt": false,
+    "exhaust": false,
+    "minz": false,
+    "trim": 1
+  },
+  "best": {
+    "logic_cost": 309,
+    "gate": 481,
+    "source_line": 1
+  },
+  "elapsed_seconds": 3.589392,
+  "records": [
+    {
+      "variable_count_before_rc2": 60537,
+      "hard_clause_count": 793359,
+      "soft_clause_count": 4638,
+      "hard_cnf_sha256": "c056a13363e6107bd6cf6ea42d50d263cea2806f27a5a6b0ee164b93b34d6116",
+      "hard_solver_results": [
+        {
+          "solver": "g4",
+          "status": "sat",
+          "elapsed_seconds": 0.197173
+        }
+      ],
+      "elapsed_seconds": 3.122038,
+      "peak_working_set_mb": 239.957,
+      "optimum_logic_cost": 309,
+      "status": "over_budget",
+      "certificate": {
+        "metrics": {
+          "shell": 172,
+          "logic": 309,
+          "gate": 481,
+          "delay": 8,
+          "cycles": 67,
+          "energy": 257816,
+          "within_target": false,
+          "ordinary_xor": 64,
+          "ordinary_excess_over_reference": 5,
+          "pair_count": 32,
+          "dual_pair_count": 26,
+          "direct_not_count": 11,
+          "final_native_xor_count": 0,
+          "final_switch_xor_count": 32,
+          "mode_or_count": 48,
+          "terminal_split_count": 0
+        },
+        "category_costs": {
+          "mode_or": 48,
+          "pair_xor": 96,
+          "dual_pair_extra": 26,
+          "direct_not": 11,
+          "final_native": 0,
+          "final_switch": 128,
+          "terminal_split": 0
+        },
+        "selected_options": {
+          "00000021": "direct",
+          "00000042": "direct",
+          "00000084": "direct",
+          "00000108": "direct",
+          "00000210": "direct",
+          "00000400": "direct",
+          "00000401": "direct",
+          "00000420": "direct",
+          "00000800": "direct",
+          "00000802": "direct",
+          "00000840": "direct",
+          "00001000": "direct",
+          "00001004": "direct",
+          "00001080": "direct",
+          "00002000": "direct",
+          "00002008": "direct",
+          "00002100": "direct",
+          "00004000": "direct",
+          "00004010": "direct",
+          "00004200": "direct",
+          "00008008": "direct",
+          "00008808": "heavy:00008008+q11",
+          "00010010": "direct",
+          "00011010": "heavy:00010010+q12",
+          "00020002": "mediated:40000002^40020000",
+          "00040004": "mediated:80000004^80040000",
+          "00080084": "heavy:00000084+q19",
+          "00088008": "heavy:00080008+q15",
+          "00400042": "heavy:00000042+q22",
+          "00400062": "heavy:00000042^00400020",
+          "00400400": "direct",
+          "02000108": "heavy:00000108+q25",
+          "02010010": "heavy:02010000+q4",
+          "04000021": "heavy:00000021+q26",
+          "04000210": "heavy:00000210+q26",
+          "08008400": "heavy:08008000+q10",
+          "08008840": "heavy:00000840^08008000",
+          "10010800": "heavy:10010000+q11",
+          "10011080": "heavy:00001080^10010000",
+          "10800084": "heavy:00000084^10800000",
+          "10800840": "heavy:00000840^10800000",
+          "20001001": "heavy:20000001+q12",
+          "20002101": "heavy:00002100^20000001",
+          "21000108": "heavy:00000108^21000000",
+          "21001080": "heavy:00001080^21000000",
+          "40002002": "heavy:40000002+q13",
+          "40004202": "heavy:00004200^40000002",
+          "40020021": "heavy:00000021^40020000",
+          "40100210": "heavy:00000210^40100000",
+          "40102100": "heavy:00002100^40100000",
+          "80000404": "heavy:80000004+q10",
+          "80004004": "heavy:80000004+q14",
+          "80040042": "heavy:00000042^80040000",
+          "80200420": "heavy:00000420^80200000",
+          "80204200": "heavy:00004200^80200000"
+        },
+        "final_implementations": {
+          "00008808": "switch",
+          "00011010": "switch",
+          "00020002": "switch",
+          "00040004": "switch",
+          "00080084": "switch",
+          "00088008": "switch",
+          "00400042": "switch",
+          "00400062": "switch",
+          "02000108": "switch",
+          "02010010": "switch",
+          "04000021": "switch",
+          "04000210": "switch",
+          "08008400": "switch",
+          "08008840": "switch",
+          "10010800": "switch",
+          "10011080": "switch",
+          "10800084": "switch",
+          "10800840": "switch",
+          "20001001": "switch",
+          "20002101": "switch",
+          "21000108": "switch",
+          "21001080": "switch",
+          "40002002": "switch",
+          "40004202": "switch",
+          "40020021": "switch",
+          "40100210": "switch",
+          "40102100": "switch",
+          "80000404": "switch",
+          "80004004": "switch",
+          "80040042": "switch",
+          "80200420": "switch",
+          "80204200": "switch"
+        },
+        "terminal_splits": [],
+        "selected_pairs": [
+          "00000021",
+          "00000042",
+          "00000084",
+          "00000108",
+          "00000210",
+          "00000401",
+          "00000420",
+          "00000802",
+          "00000840",
+          "00001004",
+          "00001080",
+          "00002008",
+          "00002100",
+          "00004010",
+          "00004200",
+          "00008008",
+          "00010010",
+          "00080008",
+          "00400020",
+          "00400400",
+          "02010000",
+          "08008000",
+          "10010000",
+          "10800000",
+          "20000001",
+          "21000000",
+          "40000002",
+          "40020000",
+          "40100000",
+          "80000004",
+          "80040000",
+          "80200000"
+        ],
+        "dual_pairs": [
+          "00000021",
+          "00000042",
+          "00000084",
+          "00000108",
+          "00000210",
+          "00000420",
+          "00000840",
+          "00001080",
+          "00002100",
+          "00004200",
+          "00008008",
+          "00010010",
+          "00080008",
+          "00400020",
+          "02010000",
+          "08008000",
+          "10010000",
+          "10800000",
+          "20000001",
+          "21000000",
+          "40000002",
+          "40020000",
+          "40100000",
+          "80000004",
+          "80040000",
+          "80200000"
+        ],
+        "pair_pin_seed_bits": {
+          "00000021": [
+            17,
+            21
+          ],
+          "00000042": [
+            18,
+            5
+          ],
+          "00000084": [
+            19,
+            null
+          ],
+          "00000108": [
+            20,
+            24
+          ],
+          "00000210": [
+            21,
+            25
+          ],
+          "00000401": [
+            17,
+            22
+          ],
+          "00000420": [
+            22,
+            null
+          ],
+          "00000802": [
+            18,
+            23
+          ],
+          "00000840": [
+            null,
+            23
+          ],
+          "00001004": [
+            19,
+            24
+          ],
+          "00001080": [
+            null,
+            24
+          ],
+          "00002008": [
+            20,
+            25
+          ],
+          "00002100": [
+            null,
+            25
+          ],
+          "00004010": [
+            21,
+            26
+          ],
+          "00004200": [
+            null,
+            26
+          ],
+          "00008008": [
+            15,
+            null
+          ],
+          "00010010": [
+            16,
+            null
+          ],
+          "00080008": [
+            15,
+            19
+          ],
+          "00400020": [
+            22,
+            null
+          ],
+          "00400400": [
+            null,
+            null
+          ],
+          "02010000": [
+            20,
+            3
+          ],
+          "08008000": [
+            27,
+            10
+          ],
+          "10010000": [
+            11,
+            28
+          ],
+          "10800000": [
+            6,
+            23
+          ],
+          "20000001": [
+            12,
+            29
+          ],
+          "21000000": [
+            null,
+            7
+          ],
+          "40000002": [
+            30,
+            13
+          ],
+          "40020000": [
+            0,
+            17
+          ],
+          "40100000": [
+            null,
+            8
+          ],
+          "80000004": [
+            14,
+            31
+          ],
+          "80040000": [
+            1,
+            18
+          ],
+          "80200000": [
+            9,
+            26
+          ]
+        },
+        "pair_load_labels": {
+          "00000021": "00220000",
+          "00000042": "00040020",
+          "00000084": "00080000",
+          "00000108": "01100000",
+          "00000210": "02200000",
+          "00000401": "00420000",
+          "00000420": "00400000",
+          "00000802": "00840000",
+          "00000840": "00800000",
+          "00001004": "01080000",
+          "00001080": "01000000",
+          "00002008": "02100000",
+          "00002100": "02000000",
+          "00004010": "04200000",
+          "00004200": "04000000",
+          "00008008": "00008000",
+          "00010010": "00010000",
+          "00080008": "00088000",
+          "00400020": "00400000",
+          "00400400": "00000000",
+          "02010000": "00100008",
+          "08008000": "08000400",
+          "10010000": "10000800",
+          "10800000": "00800040",
+          "20000001": "20001000",
+          "21000000": "00000080",
+          "40000002": "40002000",
+          "40020000": "00020001",
+          "40100000": "00000100",
+          "80000004": "80004000",
+          "80040000": "00040002",
+          "80200000": "04000200"
+        },
+        "direct_rails": [
+          {
+            "steady_row": "00000400",
+            "option": "direct",
+            "state_bit": 10,
+            "seed_bit": 27,
+            "needs_not": false
+          },
+          {
+            "steady_row": "00000800",
+            "option": "direct",
+            "state_bit": 11,
+            "seed_bit": 28,
+            "needs_not": false
+          },
+          {
+            "steady_row": "00001000",
+            "option": "direct",
+            "state_bit": 12,
+            "seed_bit": 29,
+            "needs_not": false
+          },
+          {
+            "steady_row": "00002000",
+            "option": "direct",
+            "state_bit": 13,
+            "seed_bit": 30,
+            "needs_not": false
+          },
+          {
+            "steady_row": "00004000",
+            "option": "direct",
+            "state_bit": 14,
+            "seed_bit": 31,
+            "needs_not": false
+          },
+          {
+            "steady_row": "00008808",
+            "option": "heavy:00008008+q11",
+            "state_bit": 11,
+            "seed_bit": 28,
+            "needs_not": true
+          },
+          {
+            "steady_row": "00011010",
+            "option": "heavy:00010010+q12",
+            "state_bit": 12,
+            "seed_bit": 29,
+            "needs_not": true
+          },
+          {
+            "steady_row": "00080084",
+            "option": "heavy:00000084+q19",
+            "state_bit": 19,
+            "seed_bit": 19,
+            "needs_not": true
+          },
+          {
+            "steady_row": "00088008",
+            "option": "heavy:00080008+q15",
+            "state_bit": 15,
+            "seed_bit": 2,
+            "needs_not": true
+          },
+          {
+            "steady_row": "00400042",
+            "option": "heavy:00000042+q22",
+            "state_bit": 22,
+            "seed_bit": 27,
+            "needs_not": true
+          },
+          {
+            "steady_row": "02000108",
+            "option": "heavy:00000108+q25",
+            "state_bit": 25,
+            "seed_bit": 3,
+            "needs_not": true
+          },
+          {
+            "steady_row": "02010010",
+            "option": "heavy:02010000+q4",
+            "state_bit": 4,
+            "seed_bit": 16,
+            "needs_not": true
+          },
+          {
+            "steady_row": "04000021",
+            "option": "heavy:00000021+q26",
+            "state_bit": 26,
+            "seed_bit": 4,
+            "needs_not": true
+          },
+          {
+            "steady_row": "04000210",
+            "option": "heavy:00000210+q26",
+            "state_bit": 26,
+            "seed_bit": 4,
+            "needs_not": true
+          },
+          {
+            "steady_row": "08008400",
+            "option": "heavy:08008000+q10",
+            "state_bit": 10,
+            "seed_bit": 27,
+            "needs_not": true
+          },
+          {
+            "steady_row": "10010800",
+            "option": "heavy:10010000+q11",
+            "state_bit": 11,
+            "seed_bit": 28,
+            "needs_not": true
+          },
+          {
+            "steady_row": "20001001",
+            "option": "heavy:20000001+q12",
+            "state_bit": 12,
+            "seed_bit": 29,
+            "needs_not": true
+          },
+          {
+            "steady_row": "40002002",
+            "option": "heavy:40000002+q13",
+            "state_bit": 13,
+            "seed_bit": null,
+            "needs_not": true
+          },
+          {
+            "steady_row": "80000404",
+            "option": "heavy:80000004+q10",
+            "state_bit": 10,
+            "seed_bit": 27,
+            "needs_not": true
+          },
+          {
+            "steady_row": "80004004",
+            "option": "heavy:80000004+q14",
+            "state_bit": 14,
+            "seed_bit": null,
+            "needs_not": true
+          }
+        ],
+        "direct_not_rails": [
+          {
+            "state": 4,
+            "seed": 16
+          },
+          {
+            "state": 10,
+            "seed": 27
+          },
+          {
+            "state": 11,
+            "seed": 28
+          },
+          {
+            "state": 12,
+            "seed": 29
+          },
+          {
+            "state": 13,
+            "seed": null
+          },
+          {
+            "state": 14,
+            "seed": null
+          },
+          {
+            "state": 15,
+            "seed": 2
+          },
+          {
+            "state": 19,
+            "seed": 19
+          },
+          {
+            "state": 22,
+            "seed": 27
+          },
+          {
+            "state": 25,
+            "seed": 3
+          },
+          {
+            "state": 26,
+            "seed": 4
+          }
+        ],
+        "mode_pairs": [
+          {
+            "seed": 0,
+            "state": 17
+          },
+          {
+            "seed": 1,
+            "state": 18
+          },
+          {
+            "seed": 2,
+            "state": 15
+          },
+          {
+            "seed": 3,
+            "state": 25
+          },
+          {
+            "seed": 4,
+            "state": 26
+          },
+          {
+            "seed": 5,
+            "state": 6
+          },
+          {
+            "seed": 6,
+            "state": 23
+          },
+          {
+            "seed": 7,
+            "state": 29
+          },
+          {
+            "seed": 8,
+            "state": 30
+          },
+          {
+            "seed": 9,
+            "state": 21
+          },
+          {
+            "seed": 10,
+            "state": 27
+          },
+          {
+            "seed": 11,
+            "state": 16
+          },
+          {
+            "seed": 12,
+            "state": 0
+          },
+          {
+            "seed": 13,
+            "state": 30
+          },
+          {
+            "seed": 14,
+            "state": 2
+          },
+          {
+            "seed": 15,
+            "state": 3
+          },
+          {
+            "seed": 16,
+            "state": 4
+          },
+          {
+            "seed": 17,
+            "state": 0
+          },
+          {
+            "seed": 17,
+            "state": 30
+          },
+          {
+            "seed": 18,
+            "state": 1
+          },
+          {
+            "seed": 18,
+            "state": 31
+          },
+          {
+            "seed": 19,
+            "state": 2
+          },
+          {
+            "seed": 19,
+            "state": 19
+          },
+          {
+            "seed": 20,
+            "state": 3
+          },
+          {
+            "seed": 20,
+            "state": 16
+          },
+          {
+            "seed": 21,
+            "state": 4
+          },
+          {
+            "seed": 21,
+            "state": 5
+          },
+          {
+            "seed": 22,
+            "state": 5
+          },
+          {
+            "seed": 22,
+            "state": 10
+          },
+          {
+            "seed": 23,
+            "state": 11
+          },
+          {
+            "seed": 23,
+            "state": 28
+          },
+          {
+            "seed": 24,
+            "state": 8
+          },
+          {
+            "seed": 24,
+            "state": 12
+          },
+          {
+            "seed": 25,
+            "state": 9
+          },
+          {
+            "seed": 25,
+            "state": 13
+          },
+          {
+            "seed": 26,
+            "state": 14
+          },
+          {
+            "seed": 26,
+            "state": 31
+          },
+          {
+            "seed": 27,
+            "state": 10
+          },
+          {
+            "seed": 27,
+            "state": 15
+          },
+          {
+            "seed": 27,
+            "state": 22
+          },
+          {
+            "seed": 28,
+            "state": 11
+          },
+          {
+            "seed": 28,
+            "state": 28
+          },
+          {
+            "seed": 29,
+            "state": 12
+          },
+          {
+            "seed": 29,
+            "state": 29
+          },
+          {
+            "seed": 30,
+            "state": 1
+          },
+          {
+            "seed": 30,
+            "state": 13
+          },
+          {
+            "seed": 31,
+            "state": 14
+          },
+          {
+            "seed": 31,
+            "state": 31
+          }
+        ]
+      },
+      "source_line": 1,
+      "dataset_index": 1,
+      "bounds": {
+        "line": 1,
+        "xor": 62,
+        "or_lower_bound": 40,
+        "heavy_or_lower_bound": 40,
+        "target_or": 280
+      },
+      "provenance": {
+        "hash": "4298d81644d10380",
+        "lower": {
+          "strict_logic": 257,
+          "proxy_logic": 296,
+          "timing_violations": 0,
+          "timing_excess": 0,
+          "heavy_finals": 30,
+          "forced_low_finals": 2,
+          "pair_node_lower": 21,
+          "dual_pair_lower": 21,
+          "mode_or_lower": 40,
+          "direct_not_lower": 5,
+          "greedy_xor": 62
+        }
+      },
+      "T": [
+        "40022001",
+        "80044002",
+        "00088004",
+        "00110008",
+        "00220010",
+        "00440020",
+        "00880040",
+        "01100080",
+        "02200100",
+        "04400200",
+        "08800400",
+        "11000800",
+        "22001000",
+        "44002000",
+        "88004000",
+        "10008000",
+        "20010000",
+        "00420000",
+        "00840000",
+        "01080000",
+        "02000000",
+        "04000000",
+        "08040020",
+        "00800000",
+        "01000000",
+        "02100000",
+        "04200000",
+        "08000000",
+        "10000000",
+        "20000000",
+        "40000000",
+        "80000000"
+      ],
+      "B": [
+        "00020002",
+        "00040004",
+        "00088008",
+        "02010010",
+        "04000021",
+        "00400062",
+        "10800084",
+        "21000108",
+        "40100210",
+        "80200420",
+        "08008840",
+        "10011080",
+        "20002101",
+        "40004202",
+        "80000404",
+        "00008808",
+        "00011010",
+        "00000401",
+        "00000802",
+        "00001004",
+        "00002100",
+        "00004200",
+        "00400042",
+        "00000840",
+        "00001080",
+        "00002008",
+        "00004010",
+        "00000400",
+        "00000800",
+        "00001000",
+        "00002000",
+        "00004000"
+      ],
+      "C": [
+        "40020021",
+        "80040042",
+        "00080084",
+        "02000108",
+        "04000210",
+        "00400400",
+        "10800840",
+        "21001080",
+        "40102100",
+        "80204200",
+        "08008400",
+        "10010800",
+        "20001001",
+        "40002002",
+        "80004004",
+        "00008008",
+        "00010010",
+        "00000021",
+        "00000042",
+        "00000084",
+        "00000108",
+        "00000210",
+        "00000420",
+        "00000840",
+        "00001080",
+        "00002100",
+        "00004200",
+        "00000400",
+        "00000800",
+        "00001000",
+        "00002000",
+        "00004000"
+      ]
+    }
+  ]
+}

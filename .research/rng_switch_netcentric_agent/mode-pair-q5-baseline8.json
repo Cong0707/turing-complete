@@ -1,0 +1,451 @@
+{
+  "schema": 1,
+  "query": {
+    "nodes": [
+      "00000021",
+      "00000420"
+    ],
+    "baseline_gate": 8,
+    "gate_bound": 8,
+    "max_delay": 3,
+    "slot_range": [
+      4,
+      4
+    ],
+    "source_boundary": "selected raw Seed/state terminals only"
+  },
+  "scenario": {
+    "state_bits": [
+      0,
+      5,
+      10
+    ],
+    "seed_bits": [
+      17,
+      22
+    ],
+    "reachable_rows": 12,
+    "padded_rows": 16,
+    "rows": [
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 1,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 1
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 1,
+          "22": 1
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 1,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 1,
+          "10": 0
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 0,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 0,
+          "5": 1,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "steady",
+        "state": {
+          "0": 1,
+          "5": 1,
+          "10": 1
+        },
+        "seed": {
+          "17": null,
+          "22": null
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      },
+      {
+        "phase": "load",
+        "state": {
+          "0": 0,
+          "5": 0,
+          "10": 0
+        },
+        "seed": {
+          "17": 0,
+          "22": 0
+        }
+      }
+    ],
+    "targets": [
+      {
+        "node": "00000021",
+        "value": "066a",
+        "driven": "ffff",
+        "baseline_gate": 4
+      },
+      {
+        "node": "00000420",
+        "value": "03cc",
+        "driven": "ffff",
+        "baseline_gate": 4
+      }
+    ]
+  },
+  "results": [
+    {
+      "schema": 1,
+      "model": "reachable load/steady rows with exact undirected physical net ownership",
+      "status": "sat",
+      "input_count": 4,
+      "scenario_width": 16,
+      "gate_bound": 8,
+      "max_delay": 3,
+      "slots": 4,
+      "timeout_ms": 60000,
+      "memory_mb": 550,
+      "solve_seconds": 1.6859870000043884,
+      "targets": [
+        "066a",
+        "03cc"
+      ],
+      "exact_drive": [
+        true,
+        true
+      ],
+      "library": {
+        "NOT": [
+          1,
+          1
+        ],
+        "AND": [
+          1,
+          1
+        ],
+        "OR": [
+          1,
+          1
+        ],
+        "NAND": [
+          1,
+          1
+        ],
+        "NOR": [
+          1,
+          1
+        ],
+        "XOR": [
+          3,
+          2
+        ],
+        "SWITCH": [
+          2,
+          1
+        ]
+      },
+      "network": {
+        "sources": [
+          {
+            "terminal": 0,
+            "name": "q0",
+            "net": 0,
+            "value": "0aa0",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 1,
+            "name": "q5",
+            "net": 1,
+            "value": "0cc0",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 2,
+            "name": "q10",
+            "net": 2,
+            "value": "0f00",
+            "driven": "ffff",
+            "depth": 0
+          },
+          {
+            "terminal": 3,
+            "name": "seed17",
+            "net": 3,
+            "value": "000a",
+            "driven": "f00f",
+            "depth": 0
+          },
+          {
+            "terminal": 4,
+            "name": "seed22",
+            "net": 4,
+            "value": "000c",
+            "driven": "f00f",
+            "depth": 0
+          }
+        ],
+        "gates": [
+          {
+            "terminal": 5,
+            "kind": "XOR",
+            "left_net": 1,
+            "right_net": 2,
+            "value": "03c0",
+            "driven": "ffff",
+            "depth": 2,
+            "cost": 3
+          },
+          {
+            "terminal": 6,
+            "kind": "OR",
+            "left_net": 0,
+            "right_net": 3,
+            "value": "0aaa",
+            "driven": "ffff",
+            "depth": 1,
+            "cost": 1
+          },
+          {
+            "terminal": 7,
+            "kind": "XOR",
+            "left_net": 1,
+            "right_net": 6,
+            "value": "066a",
+            "driven": "ffff",
+            "depth": 3,
+            "cost": 3
+          },
+          {
+            "terminal": 8,
+            "kind": "OR",
+            "left_net": 4,
+            "right_net": 5,
+            "value": "03cc",
+            "driven": "ffff",
+            "depth": 3,
+            "cost": 1
+          }
+        ],
+        "nets": [
+          {
+            "net": 0,
+            "drivers": [
+              0
+            ]
+          },
+          {
+            "net": 1,
+            "drivers": [
+              1
+            ]
+          },
+          {
+            "net": 2,
+            "drivers": [
+              2
+            ]
+          },
+          {
+            "net": 3,
+            "drivers": [
+              3
+            ]
+          },
+          {
+            "net": 4,
+            "drivers": [
+              4
+            ]
+          },
+          {
+            "net": 5,
+            "drivers": [
+              5
+            ]
+          },
+          {
+            "net": 6,
+            "drivers": [
+              6
+            ]
+          },
+          {
+            "net": 7,
+            "drivers": [
+              7
+            ]
+          },
+          {
+            "net": 8,
+            "drivers": [
+              8
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "net": 7,
+            "target": "066a",
+            "exact_drive": true,
+            "depth": 3,
+            "node": "00000021"
+          },
+          {
+            "net": 8,
+            "target": "03cc",
+            "exact_drive": true,
+            "depth": 3,
+            "node": "00000420"
+          }
+        ],
+        "cost": 8,
+        "depth": 3
+      }
+    }
+  ]
+}

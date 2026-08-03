@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "scope": "depth-one final layer with free positive/negative operand rails",
+  "output_zero_may_be_z": true,
+  "library": {
+    "NOT/AND/OR/NAND/NOR": [
+      1,
+      1
+    ],
+    "SWITCH": [
+      2,
+      1
+    ],
+    "XOR": [
+      3,
+      2
+    ]
+  },
+  "pair_isomorphism_checks": [
+    {
+      "target": "x0 XOR x1",
+      "target_table": "66",
+      "compatible_distinct_driver_functions": 4,
+      "minimum_gate": 4,
+      "minimum_terminal_count": 2,
+      "witness": [
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x0",
+          "data_or_right": "x1",
+          "value": "44",
+          "driven": "55",
+          "cost": 2
+        },
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x1",
+          "data_or_right": "x0",
+          "value": "22",
+          "driven": "33",
+          "cost": 2
+        }
+      ]
+    },
+    {
+      "target": "x0 XOR x2",
+      "target_table": "5a",
+      "compatible_distinct_driver_functions": 4,
+      "minimum_gate": 4,
+      "minimum_terminal_count": 2,
+      "witness": [
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x0",
+          "data_or_right": "x2",
+          "value": "50",
+          "driven": "55",
+          "cost": 2
+        },
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x2",
+          "data_or_right": "x0",
+          "value": "0a",
+          "driven": "0f",
+          "cost": 2
+        }
+      ]
+    },
+    {
+      "target": "x1 XOR x2",
+      "target_table": "3c",
+      "compatible_distinct_driver_functions": 4,
+      "minimum_gate": 4,
+      "minimum_terminal_count": 2,
+      "witness": [
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x1",
+          "data_or_right": "x2",
+          "value": "30",
+          "driven": "33",
+          "cost": 2
+        },
+        {
+          "kind": "SWITCH",
+          "enable_or_left": "not_x2",
+          "data_or_right": "x1",
+          "value": "0c",
+          "driven": "0f",
+          "cost": 2
+        }
+      ]
+    }
+  ],
+  "additivity_argument": [
+    "At delay one, a paid gate output cannot feed another paid gate.",
+    "Every paid output terminal therefore belongs directly to at most one physical output net.",
+    "Different XOR truth tables cannot be the same physical net.",
+    "Shared input fanout is free, but paid output terminals cannot be copied across isolated nets.",
+    "Therefore the four-gate single-output minima add over distinct outputs."
+  ],
+  "actual_468_final_layer": {
+    "distinct_xor_outputs": 34,
+    "minimum_gate": 136,
+    "implemented_gate": 136,
+    "reduction_possible_inside_fixed_depth1_dualrail_layer": false
+  }
+}

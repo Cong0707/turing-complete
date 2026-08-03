@@ -51,11 +51,10 @@ def solve_duplicates(
     timeout_seconds: float,
     solver_name: str,
     *,
+    pairs_override: frozenset[int] | None = None,
     b_fanins_override: dict[int, tuple[int, ...]] | None = None,
     fixed_xor_override: int | None = None,
 ) -> dict[str, object]:
-    if not duplicate_pairs or not duplicate_pairs <= FIRST_LAYER:
-        raise ValueError("duplicate pair set is empty or outside the fixed first layer")
     started = time.monotonic()
     fixed_xor = (
         BASE_XOR + len(duplicate_pairs)
@@ -100,8 +99,10 @@ def solve_duplicates(
             [output, left, -right],
         ))
 
-    pairs = tuple(sorted(FIRST_LAYER))
+    pairs = tuple(sorted(FIRST_LAYER if pairs_override is None else pairs_override))
     pair_set = frozenset(pairs)
+    if not duplicate_pairs or not duplicate_pairs <= pair_set:
+        raise ValueError("duplicate pair set is empty or outside the selected first layer")
     nodes_by_pair = {
         pair: tuple((pair, copy) for copy in range(2 if pair in duplicate_pairs else 1))
         for pair in pairs

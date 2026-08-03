@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "model": "persistent seed exact support completion with fixed C rows",
+  "equations": [
+    "C*B=A*C",
+    "C*D=A*(A+I)"
+  ],
+  "support_limit": 9,
+  "status": "unsat",
+  "solver": "cadical195",
+  "conflict_budget": 1000000,
+  "variables": 43170,
+  "variable_kinds": {
+    "AND": 10240,
+    "B": 1024,
+    "C": 160,
+    "CARD_AUX": 16290,
+    "D": 1024,
+    "XOR_AUX": 14432
+  },
+  "clauses": 124676,
+  "build_seconds": 0.10259429999860004,
+  "solve_seconds": 7.9671827999991365,
+  "rss_mb": null,
+  "center": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_energy_alt_lift\\persistent-t-tabu128.jsonl",
+    "source_score": {
+      "over": 3,
+      "excess": 4,
+      "max": 11,
+      "standalone": 2445,
+      "weight": 495,
+      "cover_gate": -1
+    },
+    "free_rows": [
+      12,
+      17,
+      18,
+      22,
+      31
+    ],
+    "fixed_rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "phase_hint_applied": true
+  },
+  "transition_sha256": "b05c6d821814fb084ee2ade6d742a4b91f9a9f749dcb313836469be43bd7e97f",
+  "scope": "SAT/UNSAT is exact only in the stated fixed-C-row neighbourhood. SAT still requires arrival-aware physical synthesis."
+}
