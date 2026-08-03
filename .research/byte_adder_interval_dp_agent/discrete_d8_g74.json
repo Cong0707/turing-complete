@@ -1,0 +1,50 @@
+{
+  "schema": "byte-adder-discrete-named-interval-v1",
+  "cost_model": {
+    "ordinary_gate": [
+      1,
+      1
+    ],
+    "xor_xnor": [
+      3,
+      2
+    ],
+    "bit_switch_driver": [
+      2,
+      1
+    ],
+    "fixed_gp_sum_shell_gate": 48
+  },
+  "test_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  },
+  "runs": [
+    {
+      "status": "unsat",
+      "delay_bound": 8,
+      "gate_bound": 74,
+      "solve_seconds": 0.10687300001154654,
+      "interval_state_count": 230,
+      "interval_recipe_count": 1546,
+      "carry_state_counts": [
+        1,
+        2,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "carry_edge_count": 253
+    }
+  ],
+  "witnesses": [],
+  "claims": {
+    "named_interval_family_exact_if_status_sat_or_unsat": true,
+    "global_boolean_lower_bound": false
+  }
+}

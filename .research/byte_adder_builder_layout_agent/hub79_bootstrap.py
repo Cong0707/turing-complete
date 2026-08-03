@@ -347,6 +347,175 @@ def _channel_route(
     return tuple(wires)
 
 
+def _audit_resolved_networks(
+    components: tuple[Component, ...],
+    wires: tuple,
+    connections: tuple[Connection, ...],
+) -> dict[str, object]:
+    """Prove intended tri-state nets and physical endpoint nets are isomorphic.
+
+    The game resolves wires which share an endpoint into one electrical
+    network.  Geometry auditing rejects a wire passing through a foreign pin,
+    but it does not retain the logical network label used by the router.  This
+    audit independently rebuilds physical endpoint connectivity and verifies
+    a one-to-one mapping with those labels.  In particular, every tri-state
+    output pin must be an endpoint of one and only one resolved network.
+    """
+
+    if len(wires) != len(connections):
+        raise RuntimeError(
+            f"wire/connection count mismatch: {len(wires)} != {len(connections)}"
+        )
+
+    parents = list(range(len(wires)))
+
+    def find(index: int) -> int:
+        while parents[index] != index:
+            parents[index] = parents[parents[index]]
+            index = parents[index]
+        return index
+
+    def union(left: int, right: int) -> None:
+        left_root = find(left)
+        right_root = find(right)
+        if left_root != right_root:
+            parents[right_root] = left_root
+
+    endpoint_wires: dict[Point, list[int]] = defaultdict(list)
+    for wire_index, (wire, connection) in enumerate(zip(wires, connections)):
+        points = wire_points(wire)
+        if not points:
+            raise RuntimeError(f"empty routed wire {wire_index}")
+        physical_endpoints = {points[0], points[-1]}
+        intended_endpoints = {connection.source, connection.sink}
+        if physical_endpoints != intended_endpoints:
+            raise RuntimeError(
+                f"wire {wire_index} endpoint mismatch: "
+                f"physical={sorted(physical_endpoints)!r}, "
+                f"intended={sorted(intended_endpoints)!r}"
+            )
+        endpoint_wires[points[0]].append(wire_index)
+        endpoint_wires[points[-1]].append(wire_index)
+
+    for wire_indices in endpoint_wires.values():
+        for wire_index in wire_indices[1:]:
+            union(wire_indices[0], wire_index)
+
+    labels_by_root: dict[int, set[str]] = defaultdict(set)
+    roots_by_label: dict[str, set[int]] = defaultdict(set)
+    for wire_index, connection in enumerate(connections):
+        root = find(wire_index)
+        labels_by_root[root].add(connection.network)
+        roots_by_label[connection.network].add(root)
+
+    mixed_roots = {
+        root: sorted(labels)
+        for root, labels in labels_by_root.items()
+        if len(labels) != 1
+    }
+    fragmented_labels = {
+        label: sorted(roots)
+        for label, roots in roots_by_label.items()
+        if len(roots) != 1
+    }
+    if mixed_roots or fragmented_labels:
+        raise RuntimeError(
+            "resolved-network mapping is not one-to-one: "
+            f"mixed={mixed_roots!r}, fragmented={fragmented_labels!r}"
+        )
+
+    tri_state_assignments = []
+    for component_index, component in enumerate(components):
+        for pin in positioned_pins(component, component_index):
+            if pin.direction != T:
+                continue
+            touching_wires = endpoint_wires.get(pin.position, [])
+            roots = {find(wire_index) for wire_index in touching_wires}
+            labels = {
+                connections[wire_index].network for wire_index in touching_wires
+            }
+            if len(roots) != 1 or len(labels) != 1:
+                raise RuntimeError(
+                    "tri-state output does not belong to exactly one resolved network: "
+                    f"component={component_index}, pin={pin.name!r}, "
+                    f"position={pin.position!r}, roots={sorted(roots)!r}, "
+                    f"labels={sorted(labels)!r}"
+                )
+            root = next(iter(roots))
+            label = next(iter(labels))
+            if labels_by_root[root] != {label} or roots_by_label[label] != {root}:
+                raise RuntimeError(
+                    f"tri-state output mapping disagrees for component {component_index}"
+                )
+            tri_state_assignments.append(
+                {
+                    "component_index": component_index,
+                    "permanent_id": component.permanent_id,
+                    "pin": pin.name,
+                    "position": list(pin.position),
+                    "resolved_network": label,
+                    "incident_wire_count": len(touching_wires),
+                }
+            )
+
+    if len(tri_state_assignments) != 49:
+        raise RuntimeError(
+            f"published Hub79 tri-state output population changed: "
+            f"{len(tri_state_assignments)} != 49"
+        )
+    return {
+        "physical_resolved_network_count": len(labels_by_root),
+        "intended_resolved_network_count": len(roots_by_label),
+        "mixed_intended_physical_network_count": len(mixed_roots),
+        "fragmented_intended_network_count": len(fragmented_labels),
+        "tri_state_output_pin_count": len(tri_state_assignments),
+        "tri_state_outputs_with_exactly_one_resolved_network": len(
+            tri_state_assignments
+        ),
+        "tri_state_assignments": tri_state_assignments,
+    }
+
+
+def _self_test_resolved_network_guard(
+    components: tuple[Component, ...],
+    wires: tuple,
+    connections: tuple[Connection, ...],
+) -> bool:
+    """Inject one foreign label and require the physical-net guard to reject it."""
+
+    tri_state_positions = {
+        pin.position
+        for component_index, component in enumerate(components)
+        for pin in positioned_pins(component, component_index)
+        if pin.direction == T
+    }
+    label_counts = Counter(connection.network for connection in connections)
+    target = next(
+        (
+            index
+            for index, connection in enumerate(connections)
+            if label_counts[connection.network] > 1
+            and (
+                connection.source in tri_state_positions
+                or connection.sink in tri_state_positions
+            )
+        ),
+        None,
+    )
+    if target is None:
+        raise RuntimeError("no multi-wire tri-state network available for guard self-test")
+    mutated = list(connections)
+    mutated[target] = replace(
+        mutated[target],
+        network="adversarial:foreign-resolved-network",
+    )
+    try:
+        _audit_resolved_networks(components, wires, tuple(mutated))
+    except RuntimeError:
+        return True
+    raise RuntimeError("resolved-network guard accepted an injected foreign label")
+
+
 def _network_connections(
     source: Circuit,
     compiled,
@@ -469,6 +638,10 @@ def build() -> dict[str, object]:
     components = _place_internal(components, source, engine, compiled, networks, outputs)
     connections = _network_connections(source, compiled, replacement, components)
     wires = _channel_route(components, connections)
+    resolved_networks = _audit_resolved_networks(components, wires, connections)
+    resolved_networks["adversarial_foreign_label_rejected"] = (
+        _self_test_resolved_network_guard(components, wires, connections)
+    )
     # Keep the published score and all non-layout metadata; no custom port IDs
     # or design bytes are copied into this campaign candidate.
     candidate = replace(
@@ -533,7 +706,7 @@ def build() -> dict[str, object]:
     if sum(reviewed_cost.values()) != 154:
         raise RuntimeError(f"cost mismatch: {reviewed_cost}")
     certificate = {
-        "schema": "turing-complete-byte-adder-hub79-campaign-bootstrap-v1",
+        "schema": "turing-complete-byte-adder-hub79-campaign-bootstrap-v2",
         "source": str(SOURCE.relative_to(ROOT)).replace("\\", "/"),
         "source_sha256": sha256(SOURCE.read_bytes()).hexdigest(),
         "candidate": str(OUT_CIRCUIT.relative_to(ROOT)).replace("\\", "/"),
@@ -544,6 +717,7 @@ def build() -> dict[str, object]:
         "component_kind_counts": {str(k): v for k, v in sorted(kind_counts.items())},
         "reviewed_gate_cost_breakdown": reviewed_cost,
         "semantic": semantic,
+        "resolved_networks": resolved_networks,
         "connectivity": {
             "unsupported_component_kind_counts": connectivity[
                 "unsupported_component_kind_counts"

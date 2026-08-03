@@ -1,0 +1,634 @@
+{
+  "schema": "byte-adder-discrete-named-interval-v1",
+  "cost_model": {
+    "ordinary_gate": [
+      1,
+      1
+    ],
+    "xor_xnor": [
+      3,
+      2
+    ],
+    "bit_switch_driver": [
+      2,
+      1
+    ],
+    "fixed_gp_sum_shell_gate": 48
+  },
+  "test_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  },
+  "runs": [
+    {
+      "status": "sat",
+      "delay_bound": 8,
+      "gate_bound": 82,
+      "solve_seconds": 0.08045000000856817,
+      "interval_state_count": 230,
+      "interval_recipe_count": 1546,
+      "carry_state_counts": [
+        1,
+        2,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "carry_edge_count": 253,
+      "model_gate": 82,
+      "actual_gate": 82,
+      "actual_delay": 8,
+      "selected_interval_recipe_count": 3,
+      "selected_carry_edges": [
+        "C1<-C0:switch[0,0]@(1, 2)",
+        "C2<-C1:ordinary[1,1]@(1, 2)",
+        "C3<-C1:switch[1,2]@(3, 3)",
+        "C4<-C3:ordinary[3,3]@(1, 2)",
+        "C5<-C3:switch[3,4]@(4, 3)",
+        "C6<-C5:switch[5,5]@(1, 2)",
+        "C7<-C5:switch[5,6]@(4, 3)",
+        "C8<-C7:ordinary[7,7]@(1, 2)"
+      ]
+    }
+  ],
+  "witnesses": [
+    {
+      "family": "discrete-named-shared-carry-interval-dag",
+      "detail": "delay_bound=8;C1<-C0:switch[0,0]@(1, 2);C2<-C1:ordinary[1,1]@(1, 2);C3<-C1:switch[1,2]@(3, 3);C4<-C3:ordinary[3,3]@(1, 2);C5<-C3:switch[3,4]@(4, 3);C6<-C5:switch[5,5]@(1, 2);C7<-C5:switch[5,6]@(4, 3);C8<-C7:ordinary[7,7]@(1, 2)",
+      "gate": 82,
+      "delay": 8,
+      "energy": 656,
+      "output_arrivals": [
+        4,
+        5,
+        7,
+        6,
+        8,
+        7,
+        8,
+        8,
+        8
+      ],
+      "reachable_nodes": 82,
+      "structural_sha256": "42b937a3263f3d2a8b8ae9d5c95a0a15df7a3e73ef7e45da29b2c6af28b518dc",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 7,
+        "sum3": 6,
+        "sum4": 8,
+        "sum5": 7,
+        "sum6": 8,
+        "sum7": 8,
+        "cout": 8
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 62,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 64,
+            "op": "NOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 43,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 44,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 66,
+            "op": "NOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 43,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 44,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 69,
+            "op": "NOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          }
+        ],
+        "sum3": [
+          {
+            "node": 6,
+            "op": "INPUT",
+            "label": "a2",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 25,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 27,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 48,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 49,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 71,
+            "op": "NOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          }
+        ],
+        "sum4": [
+          {
+            "node": 6,
+            "op": "INPUT",
+            "label": "a2",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 25,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 27,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 48,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 49,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 50,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 72,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ],
+        "sum5": [
+          {
+            "node": 10,
+            "op": "INPUT",
+            "label": "a4",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 31,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 33,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 51,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 52,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 75,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 77,
+            "op": "NOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          }
+        ],
+        "sum6": [
+          {
+            "node": 10,
+            "op": "INPUT",
+            "label": "a4",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 31,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 33,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 51,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 52,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 55,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 78,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 80,
+            "op": "NOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ],
+        "sum7": [
+          {
+            "node": 10,
+            "op": "INPUT",
+            "label": "a4",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 31,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 33,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 51,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 52,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 59,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 82,
+            "op": "NOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ],
+        "cout": [
+          {
+            "node": 10,
+            "op": "INPUT",
+            "label": "a4",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 31,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 33,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 51,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 52,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 59,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    }
+  ],
+  "claims": {
+    "named_interval_family_exact_if_status_sat_or_unsat": true,
+    "global_boolean_lower_bound": false
+  }
+}
