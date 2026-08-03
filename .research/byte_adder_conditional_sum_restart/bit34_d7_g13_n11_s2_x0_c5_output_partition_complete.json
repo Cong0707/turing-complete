@@ -1,0 +1,50 @@
+{
+  "schema": "tc-byte-adder-bit34-c5-output-partition-ledger-v1",
+  "scope": {
+    "profile": "d7_80",
+    "gate_bound": 13,
+    "components": 11,
+    "exact_switches": 2,
+    "exact_xors": 0,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "physical_nets": true,
+    "boundary_rows": 48
+  },
+  "partition_argument": [
+    "The exact encoder adds a non-empty selector clause for C5, so its driver count is at least one.",
+    "The encoder's active-bus normalization forbids any paid source or ordinary component output from coexisting with another selected driver.",
+    "Therefore every C5 bus with at least two drivers consists only of Switch outputs.",
+    "The base case contains exactly two Switch components, so a multi-driver C5 bus has exactly those two drivers.",
+    "The single-driver ledger covers driver count one; the pair-cone ledger covers driver count two. No third case exists."
+  ],
+  "branches": {
+    "single_driver": {
+      "artifact_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_n11_s2_x0_c5_single_driver_cone_merged_complete.json",
+      "artifact_sha256": "04b86fa150af61d635c9bd1cf3b8d98347387ac20ef7f366c9283910b2b87fb6",
+      "coverage_complete": true,
+      "all_unsat": true
+    },
+    "two_switch_c5_net": {
+      "artifact_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_n11_s2_x0_c5_pair_cone_maplechrono_complete.json",
+      "artifact_sha256": "481da1da3a97cf996a62d42e3ede32d607723342cc0e960be4790247dd2a1da7",
+      "coverage_complete": true,
+      "all_unsat": true
+    }
+  },
+  "exact_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_joint_sat.py",
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "pair_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_c5_pair_cone_shards.py",
+  "pair_search_sha256": "185542f3bb4da3f94a6f2646ca78c6e2dffabafd67bcfd0b9ea3e1fa2b9409c7",
+  "single_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_c5_single_driver_cone_shards.py",
+  "single_search_sha256": "d44811583028967a086cb0bce2b74f879b48b72290d182b165a64ba9af8c6f7d",
+  "summarizer_sha256": "bcab53e7546df1426e98c8ffa0a3d3ce9f8bd676dd824228a920e566a5a10bae",
+  "errors": [],
+  "coverage_complete": true,
+  "all_unsat": true,
+  "conclusion": "fixed d7_80 g13/n11/s2/x0 is UNSAT",
+  "scope_warning": "This does not cover other component counts or Switch/XOR cost decompositions at gate 13."
+}

@@ -1,0 +1,203 @@
+{
+  "schema": "tc-byte-adder-bit34-c5-pair-cone-positive-regression-v1",
+  "status": "sat",
+  "profile": "d7_80",
+  "gate_bound": 14,
+  "components": 12,
+  "exact_switches": 2,
+  "exact_xors": 0,
+  "boundary_rows": 48,
+  "output_deadlines": [
+    5,
+    7,
+    4
+  ],
+  "cone_size": 3,
+  "cone_constraint_sha256": "9f1e3af478b8cbb667a2827aef1d485a268ed7cd0f92a93025a54aa0c18cfd0f",
+  "solver": "glucose42",
+  "variables": 29773,
+  "clauses": 238985,
+  "solve_seconds": 0.11066980000032345,
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "cone_search_sha256": "185542f3bb4da3f94a6f2646ca78c6e2dffabafd67bcfd0b9ea3e1fa2b9409c7",
+  "script_sha256": "f4a2776da4be1fe7c3be26608b0bd0a98e18e7065e11ceb32f47edaa852ae25f",
+  "certificate": {
+    "actual_gate": 14,
+    "network": [
+      {
+        "slot": 0,
+        "source": 13,
+        "kind": "OR",
+        "left_bus": [
+          5
+        ],
+        "right_bus": [
+          8
+        ],
+        "cost": 1,
+        "depth_upper_bound": 2
+      },
+      {
+        "slot": 1,
+        "source": 14,
+        "kind": "NOR",
+        "left_bus": [
+          6
+        ],
+        "right_bus": [
+          9
+        ],
+        "cost": 1,
+        "depth_upper_bound": 2
+      },
+      {
+        "slot": 2,
+        "source": 15,
+        "kind": "OR",
+        "left_bus": [
+          8
+        ],
+        "right_bus": [
+          14
+        ],
+        "cost": 1,
+        "depth_upper_bound": 3
+      },
+      {
+        "slot": 3,
+        "source": 16,
+        "kind": "SWITCH",
+        "left_bus": [
+          13
+        ],
+        "right_bus": [
+          15
+        ],
+        "cost": 2,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 4,
+        "source": 17,
+        "kind": "SWITCH",
+        "left_bus": [
+          4
+        ],
+        "right_bus": [
+          15
+        ],
+        "cost": 2,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 5,
+        "source": 18,
+        "kind": "AND",
+        "left_bus": [
+          4
+        ],
+        "right_bus": [
+          7
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 6,
+        "source": 19,
+        "kind": "OR",
+        "left_bus": [
+          5
+        ],
+        "right_bus": [
+          18
+        ],
+        "cost": 1,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 7,
+        "source": 20,
+        "kind": "NOR",
+        "left_bus": [
+          4
+        ],
+        "right_bus": [
+          7
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 8,
+        "source": 21,
+        "kind": "NOR",
+        "left_bus": [
+          18
+        ],
+        "right_bus": [
+          20
+        ],
+        "cost": 1,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 9,
+        "source": 22,
+        "kind": "AND",
+        "left_bus": [
+          10
+        ],
+        "right_bus": [
+          19
+        ],
+        "cost": 1,
+        "depth_upper_bound": 6
+      },
+      {
+        "slot": 10,
+        "source": 23,
+        "kind": "NOR",
+        "left_bus": [
+          10
+        ],
+        "right_bus": [
+          19
+        ],
+        "cost": 1,
+        "depth_upper_bound": 6
+      },
+      {
+        "slot": 11,
+        "source": 24,
+        "kind": "NOR",
+        "left_bus": [
+          22
+        ],
+        "right_bus": [
+          23
+        ],
+        "cost": 1,
+        "depth_upper_bound": 7
+      }
+    ],
+    "output_buses": [
+      [
+        21
+      ],
+      [
+        24
+      ],
+      [
+        16,
+        17
+      ]
+    ]
+  },
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0
+  }
+}

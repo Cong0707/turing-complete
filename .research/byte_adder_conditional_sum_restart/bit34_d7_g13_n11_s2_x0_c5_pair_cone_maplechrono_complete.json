@@ -1,0 +1,385 @@
+{
+  "schema": "tc-byte-adder-bit34-c5-pair-cone-shards-v1",
+  "scope": {
+    "profile": "d7_80",
+    "gate_bound": 13,
+    "components": 11,
+    "exact_switches": 2,
+    "exact_xors": 0,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "physical_nets": true,
+    "restriction": "the two Switch outputs are exactly the C5 physical net"
+  },
+  "coverage_argument": "The C5 physical-net partition forbids either selected Switch output from feeding the other through a different bus.  For any covered DAG, topologically order all ordinary ancestors of the two Switches first, then the two Switches, then every remaining ordinary gate.  The ancestor count is exactly one k in 0..9.",
+  "cone_size_domain": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "requested_cone_sizes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "solver": "maplechrono",
+  "timeout_seconds_per_shard": 120.0,
+  "pysat_version": "1.9.dev7",
+  "script_sha256": "185542f3bb4da3f94a6f2646ca78c6e2dffabafd67bcfd0b9ea3e1fa2b9409c7",
+  "exact_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_joint_sat.py",
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "results": [
+    {
+      "cone_size": 0,
+      "ordinary_ancestor_slots": [],
+      "switch_slots": [
+        0,
+        1
+      ],
+      "c5_output_sources": [
+        13,
+        14
+      ],
+      "prefix_user_clause_lengths": [],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "7aeedac65f69f4f2573d64761801700348fc5efdffa7caa51ee07558a768ee11",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204769,
+      "build_seconds": 0.17643350000071223,
+      "solve_seconds": 0.09806109999772161,
+      "elapsed_seconds": 0.27449849999902654
+    },
+    {
+      "cone_size": 1,
+      "ordinary_ancestor_slots": [
+        0
+      ],
+      "switch_slots": [
+        1,
+        2
+      ],
+      "c5_output_sources": [
+        14,
+        15
+      ],
+      "prefix_user_clause_lengths": [
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "ead2ad8a3097d6595383c2d9a8642d12488b79e1a5fda4ca5532f186afb74a58",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204770,
+      "build_seconds": 0.17603740000049584,
+      "solve_seconds": 8.05310290000125,
+      "elapsed_seconds": 8.229145500001323
+    },
+    {
+      "cone_size": 2,
+      "ordinary_ancestor_slots": [
+        0,
+        1
+      ],
+      "switch_slots": [
+        2,
+        3
+      ],
+      "c5_output_sources": [
+        15,
+        16
+      ],
+      "prefix_user_clause_lengths": [
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "259a873f3f1cab716f92c71c5214bc7dbae9a71881577fd90f5ead5fa07561ba",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204771,
+      "build_seconds": 0.1890127999977267,
+      "solve_seconds": 9.3027562999996,
+      "elapsed_seconds": 9.491770999997243
+    },
+    {
+      "cone_size": 3,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2
+      ],
+      "switch_slots": [
+        3,
+        4
+      ],
+      "c5_output_sources": [
+        16,
+        17
+      ],
+      "prefix_user_clause_lengths": [
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "9f1e3af478b8cbb667a2827aef1d485a268ed7cd0f92a93025a54aa0c18cfd0f",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204772,
+      "build_seconds": 0.24933519999831333,
+      "solve_seconds": 56.64355830000204,
+      "elapsed_seconds": 56.89289529999951
+    },
+    {
+      "cone_size": 4,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "switch_slots": [
+        4,
+        5
+      ],
+      "c5_output_sources": [
+        17,
+        18
+      ],
+      "prefix_user_clause_lengths": [
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "eeb5bad1545870dcf0a9072613be2b277c40334fff259f91cc40b1a01df42f1b",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204773,
+      "build_seconds": 0.16485759999704896,
+      "solve_seconds": 31.948259799999505,
+      "elapsed_seconds": 32.11311879999994
+    },
+    {
+      "cone_size": 5,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "switch_slots": [
+        5,
+        6
+      ],
+      "c5_output_sources": [
+        18,
+        19
+      ],
+      "prefix_user_clause_lengths": [
+        12,
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "0e4873c1182343321d471cd82dc3722fc62e3001c4a0b8b8a5c9dde66ae6f20b",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204774,
+      "build_seconds": 0.1704859999990731,
+      "solve_seconds": 46.81829710000238,
+      "elapsed_seconds": 46.98878550000154
+    },
+    {
+      "cone_size": 6,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "switch_slots": [
+        6,
+        7
+      ],
+      "c5_output_sources": [
+        19,
+        20
+      ],
+      "prefix_user_clause_lengths": [
+        14,
+        12,
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "e363c5595261cebd08ce318db7f3b837e0f14ad571b26241627d13e5b976cc45",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204775,
+      "build_seconds": 0.2162739999985206,
+      "solve_seconds": 31.496839399998862,
+      "elapsed_seconds": 31.71311549999882
+    },
+    {
+      "cone_size": 7,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "switch_slots": [
+        7,
+        8
+      ],
+      "c5_output_sources": [
+        20,
+        21
+      ],
+      "prefix_user_clause_lengths": [
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "8f8632977bf014397d9fbd9f227da9f918274209232f145be6540b7a8a25623f",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204776,
+      "build_seconds": 0.2032937000003585,
+      "solve_seconds": 15.261778500000219,
+      "elapsed_seconds": 15.465074299998378
+    },
+    {
+      "cone_size": 8,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "switch_slots": [
+        8,
+        9
+      ],
+      "c5_output_sources": [
+        21,
+        22
+      ],
+      "prefix_user_clause_lengths": [
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "3bd9beb394b8756b715604ee1d8d2b3c79ea769534c9d9405a8120543add21c6",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204777,
+      "build_seconds": 0.1722221999989415,
+      "solve_seconds": 13.786453299999266,
+      "elapsed_seconds": 13.958677200000238
+    },
+    {
+      "cone_size": 9,
+      "ordinary_ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "switch_slots": [
+        9,
+        10
+      ],
+      "c5_output_sources": [
+        22,
+        23
+      ],
+      "prefix_user_clause_lengths": [
+        20,
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4
+      ],
+      "normal_form": "all ordinary Switch ancestors first; the two independent C5-net Switches next; all remaining ordinary gates last",
+      "constraint_sha256": "e9eaff2dbae062fbb4a27eacad837b3c7772c818cece5d219ad905f37ede14d0",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204778,
+      "build_seconds": 0.19174779999957536,
+      "solve_seconds": 15.571901499999512,
+      "elapsed_seconds": 15.763651099998242
+    }
+  ],
+  "terminal_cone_sizes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "unknown_cone_sizes": [],
+  "missing_cone_sizes": [],
+  "sat_cone_sizes": [],
+  "coverage_complete": true,
+  "all_unsat": true
+}

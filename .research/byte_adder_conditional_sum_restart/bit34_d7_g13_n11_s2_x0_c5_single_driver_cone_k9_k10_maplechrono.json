@@ -1,0 +1,140 @@
+{
+  "schema": "tc-byte-adder-bit34-c5-single-driver-cone-shards-v1",
+  "scope": {
+    "profile": "d7_80",
+    "gate_bound": 13,
+    "components": 11,
+    "exact_switches": 2,
+    "exact_xors": 0,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "physical_nets": true,
+    "restriction": "C5 has exactly one selected output driver"
+  },
+  "coverage_argument": "A singleton C5 driver is either a paid source/free constant or one component.  For a component driver, topologically order all of its component ancestors first, the driver next, and every non-ancestor afterward.  Its ancestor count is exactly one k in 0..10.",
+  "shard_domain": [
+    "source",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9",
+    "k10"
+  ],
+  "requested_shards": [
+    "k9",
+    "k10"
+  ],
+  "solver": "maplechrono",
+  "timeout_seconds_per_shard": 180.0,
+  "pysat_version": "1.9.dev7",
+  "script_sha256": "d44811583028967a086cb0bce2b74f879b48b72290d182b165a64ba9af8c6f7d",
+  "exact_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_joint_sat.py",
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "results": [
+    {
+      "shard": "k9",
+      "driver_class": "component",
+      "ancestor_count": 9,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "driver_slot": 9,
+      "driver_source": 22,
+      "ancestor_user_clause_lengths": [
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "2d3e7447a55dbe583190ab3e7ad19d2233c33a302f345c8d27a132218016e597",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204776,
+      "build_seconds": 0.18745180000041728,
+      "solve_seconds": 22.036114200000156,
+      "elapsed_seconds": 22.223570800000743
+    },
+    {
+      "shard": "k10",
+      "driver_class": "component",
+      "ancestor_count": 10,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "driver_slot": 10,
+      "driver_source": 23,
+      "ancestor_user_clause_lengths": [
+        20,
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "cf1a53b9dd2ce496a5c721a36e5af140f6b3653976e957f6527034958cdefc53",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204777,
+      "build_seconds": 0.2043556000026001,
+      "solve_seconds": 26.504027599999972,
+      "elapsed_seconds": 26.708386400001473
+    }
+  ],
+  "terminal_shards": [
+    "k9",
+    "k10"
+  ],
+  "unknown_shards": [],
+  "missing_shards": [
+    "source",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8"
+  ],
+  "sat_shards": [],
+  "coverage_complete": false,
+  "all_unsat": false
+}

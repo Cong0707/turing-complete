@@ -1,0 +1,415 @@
+{
+  "schema": "tc-byte-adder-bit34-c5-single-driver-cone-shards-v1",
+  "scope": {
+    "profile": "d7_80",
+    "gate_bound": 13,
+    "components": 11,
+    "exact_switches": 2,
+    "exact_xors": 0,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "physical_nets": true,
+    "restriction": "C5 has exactly one selected output driver"
+  },
+  "coverage_argument": "A singleton C5 driver is either a paid source/free constant or one component.  For a component driver, topologically order all of its component ancestors first, the driver next, and every non-ancestor afterward.  Its ancestor count is exactly one k in 0..10.",
+  "shard_domain": [
+    "source",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9",
+    "k10"
+  ],
+  "requested_shards": [
+    "source",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8",
+    "k9",
+    "k10"
+  ],
+  "solver": "glucose42",
+  "timeout_seconds_per_shard": 30.0,
+  "pysat_version": "1.9.dev7",
+  "script_sha256": "d44811583028967a086cb0bce2b74f879b48b72290d182b165a64ba9af8c6f7d",
+  "exact_search_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\exact_bit34_joint_sat.py",
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "results": [
+    {
+      "shard": "source",
+      "driver_class": "paid source or free constant",
+      "forbidden_component_output_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "constraint_sha256": "ad8dbcdd951bc3f8565ba90029e242769231bf0e3c8b0594f82e4c6df8dc891f",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204754,
+      "build_seconds": 0.1840784000014537,
+      "solve_seconds": 0.08306199999788078,
+      "elapsed_seconds": 0.26714649999848916
+    },
+    {
+      "shard": "k0",
+      "driver_class": "component",
+      "ancestor_count": 0,
+      "ancestor_slots": [],
+      "driver_slot": 0,
+      "driver_source": 13,
+      "ancestor_user_clause_lengths": [],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "51086be70cd9022700d94354dd7e37b974ea597c73ec13294251337143c6d9fb",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204767,
+      "build_seconds": 0.20626899999842863,
+      "solve_seconds": 0.11396240000249236,
+      "elapsed_seconds": 0.32024140000066836
+    },
+    {
+      "shard": "k1",
+      "driver_class": "component",
+      "ancestor_count": 1,
+      "ancestor_slots": [
+        0
+      ],
+      "driver_slot": 1,
+      "driver_source": 14,
+      "ancestor_user_clause_lengths": [
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "8532e76919165b4177456bd337ae16d7e992f82054a4fea3463df2686399cd6e",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204768,
+      "build_seconds": 0.24777019999964978,
+      "solve_seconds": 0.12641489999805344,
+      "elapsed_seconds": 0.37418699999761884
+    },
+    {
+      "shard": "k2",
+      "driver_class": "component",
+      "ancestor_count": 2,
+      "ancestor_slots": [
+        0,
+        1
+      ],
+      "driver_slot": 2,
+      "driver_source": 15,
+      "ancestor_user_clause_lengths": [
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "0b157fe650245fd8f0454e7afc8064c005bd03e6e76dbe7d9b354eca44ec083f",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204769,
+      "build_seconds": 0.2695944999977655,
+      "solve_seconds": 0.13349190000008093,
+      "elapsed_seconds": 0.40309069999784697
+    },
+    {
+      "shard": "k3",
+      "driver_class": "component",
+      "ancestor_count": 3,
+      "ancestor_slots": [
+        0,
+        1,
+        2
+      ],
+      "driver_slot": 3,
+      "driver_source": 16,
+      "ancestor_user_clause_lengths": [
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "4287e2c0243ca890021ceab3637693ff452794aa138971a2a767f69d06a0cc8a",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204770,
+      "build_seconds": 0.20462159999806318,
+      "solve_seconds": 2.5405609000008553,
+      "elapsed_seconds": 2.7451841999973112
+    },
+    {
+      "shard": "k4",
+      "driver_class": "component",
+      "ancestor_count": 4,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "driver_slot": 4,
+      "driver_source": 17,
+      "ancestor_user_clause_lengths": [
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "79a0358bede24df8bd5b3bcb4f69058e92dbe87046881937434e5bc0b1d2dc56",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204771,
+      "build_seconds": 0.21081240000057733,
+      "solve_seconds": 6.823287399998662,
+      "elapsed_seconds": 7.034105800001271
+    },
+    {
+      "shard": "k5",
+      "driver_class": "component",
+      "ancestor_count": 5,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "driver_slot": 5,
+      "driver_source": 18,
+      "ancestor_user_clause_lengths": [
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "f03542dd84cdc395dcfd6d182de4ac677b1bd3ae5c2e9d5983bf79a7f7da2caf",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204772,
+      "build_seconds": 0.2629049999995914,
+      "solve_seconds": 16.325063199998112,
+      "elapsed_seconds": 16.587969899999734
+    },
+    {
+      "shard": "k6",
+      "driver_class": "component",
+      "ancestor_count": 6,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "driver_slot": 6,
+      "driver_source": 19,
+      "ancestor_user_clause_lengths": [
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "d7c11ee6824f445e8c7a330cca732cc1027130f6f27a9f911ac1c8090924ab3c",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204773,
+      "build_seconds": 0.2852610999980243,
+      "solve_seconds": 21.659140100000513,
+      "elapsed_seconds": 21.944402599998284
+    },
+    {
+      "shard": "k7",
+      "driver_class": "component",
+      "ancestor_count": 7,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "driver_slot": 7,
+      "driver_source": 20,
+      "ancestor_user_clause_lengths": [
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "aa335e39bbbd76092d89aea710e61071e591d9ec22187d51b56e7fe57dc08c67",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204774,
+      "build_seconds": 0.1933473999997659,
+      "solve_seconds": 7.263188499997341,
+      "elapsed_seconds": 7.456537699999899
+    },
+    {
+      "shard": "k8",
+      "driver_class": "component",
+      "ancestor_count": 8,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "driver_slot": 8,
+      "driver_source": 21,
+      "ancestor_user_clause_lengths": [
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "34266aec2ece0a173ef48cca0fcc7ed1c7fb9b06c090bb4ac95799e079f8ddb6",
+      "status": "unsat",
+      "variables": 25647,
+      "clauses": 204775,
+      "build_seconds": 0.21880500000042957,
+      "solve_seconds": 9.517254700000194,
+      "elapsed_seconds": 9.736061699997663
+    },
+    {
+      "shard": "k9",
+      "driver_class": "component",
+      "ancestor_count": 9,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "driver_slot": 9,
+      "driver_source": 22,
+      "ancestor_user_clause_lengths": [
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "2d3e7447a55dbe583190ab3e7ad19d2233c33a302f345c8d27a132218016e597",
+      "status": "unknown",
+      "variables": 25647,
+      "clauses": 204776,
+      "build_seconds": 0.2591997000017727,
+      "solve_seconds": 30.197851099997933,
+      "elapsed_seconds": 30.45705319999979
+    },
+    {
+      "shard": "k10",
+      "driver_class": "component",
+      "ancestor_count": 10,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "driver_slot": 10,
+      "driver_source": 23,
+      "ancestor_user_clause_lengths": [
+        20,
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ],
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestor components last",
+      "constraint_sha256": "cf1a53b9dd2ce496a5c721a36e5af140f6b3653976e957f6527034958cdefc53",
+      "status": "unknown",
+      "variables": 25647,
+      "clauses": 204777,
+      "build_seconds": 0.2601499000011245,
+      "solve_seconds": 30.12282459999915,
+      "elapsed_seconds": 30.38297640000019
+    }
+  ],
+  "terminal_shards": [
+    "source",
+    "k0",
+    "k1",
+    "k2",
+    "k3",
+    "k4",
+    "k5",
+    "k6",
+    "k7",
+    "k8"
+  ],
+  "unknown_shards": [
+    "k9",
+    "k10"
+  ],
+  "missing_shards": [],
+  "sat_shards": [],
+  "coverage_complete": false,
+  "all_unsat": false
+}
