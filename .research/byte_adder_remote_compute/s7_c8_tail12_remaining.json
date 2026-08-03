@@ -1,0 +1,46 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "s7-c8-tail12-remaining-residual-g6",
+  "script": "search_s7_over_c8_phases.py",
+  "working_directory": ".",
+  "values": [
+    {"name": "n5s1x0_032_048", "components": 5, "switches": 1, "xors": 0, "start": 32, "stop": 48},
+    {"name": "n5s1x0_048_064", "components": 5, "switches": 1, "xors": 0, "start": 48, "stop": 64},
+    {"name": "n5s1x0_064_080", "components": 5, "switches": 1, "xors": 0, "start": 64, "stop": 80},
+    {"name": "n5s1x0_080_096", "components": 5, "switches": 1, "xors": 0, "start": 80, "stop": 96},
+    {"name": "n5s1x0_096_112", "components": 5, "switches": 1, "xors": 0, "start": 96, "stop": 112},
+    {"name": "n5s1x0_112_123", "components": 5, "switches": 1, "xors": 0, "start": 112, "stop": 123},
+
+    {"name": "n6s0x0_000_016", "components": 6, "switches": 0, "xors": 0, "start": 0, "stop": 16},
+    {"name": "n6s0x0_016_032", "components": 6, "switches": 0, "xors": 0, "start": 16, "stop": 32},
+    {"name": "n6s0x0_032_048", "components": 6, "switches": 0, "xors": 0, "start": 32, "stop": 48},
+    {"name": "n6s0x0_048_064", "components": 6, "switches": 0, "xors": 0, "start": 48, "stop": 64},
+    {"name": "n6s0x0_064_080", "components": 6, "switches": 0, "xors": 0, "start": 64, "stop": 80},
+    {"name": "n6s0x0_080_096", "components": 6, "switches": 0, "xors": 0, "start": 80, "stop": 96},
+    {"name": "n6s0x0_096_112", "components": 6, "switches": 0, "xors": 0, "start": 96, "stop": 112},
+    {"name": "n6s0x0_112_123", "components": 6, "switches": 0, "xors": 0, "start": 112, "stop": 123}
+  ],
+  "workers": 8,
+  "timeout_seconds": 1800,
+  "memory_mb_per_process": 1536,
+  "cpu_set": "0-23",
+  "log_directory": "logs",
+  "result_directory": "run-results",
+  "summary": "s7-c8-tail12-remaining-summary.json",
+  "arguments": [
+    "--gate-bound",
+    "6",
+    "--components",
+    "{components}",
+    "--switches",
+    "{switches}",
+    "--xors",
+    "{xors}",
+    "--start",
+    "{start}",
+    "--stop",
+    "{stop}",
+    "--output",
+    "results/{name}.json"
+  ]
+}

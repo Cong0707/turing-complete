@@ -1,0 +1,30 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "q34-c5-c7-residual-g16",
+  "script": "exact_q34_c5_c7_joint_sat.py",
+  "working_directory": ".",
+  "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+  "workers": 8,
+  "timeout_seconds": 7200,
+  "memory_mb_per_process": 2048,
+  "cpu_set": "0-23",
+  "log_directory": "logs",
+  "result_directory": "run-results",
+  "summary": "q34-c5-c7-g16-summary.json",
+  "arguments": [
+    "--interface",
+    "q34_c5_c7",
+    "--gate-bound",
+    "16",
+    "--max-delay",
+    "4",
+    "--components",
+    "{value}",
+    "--solver",
+    "glucose42",
+    "--timeout",
+    "0",
+    "--output",
+    "results/q34_c5_c7_g16_n{value}_glucose42.json"
+  ]
+}
