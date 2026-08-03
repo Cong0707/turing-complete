@@ -1,0 +1,530 @@
+{
+  "schema": "s567c8-o2s8-two-driver-restricted-v2",
+  "status": "unsat_restricted_family",
+  "domain": {
+    "provider": ".research/byte_adder_phase_shortcut_restart/physical_exact.py",
+    "name": "s34567c8_leaf",
+    "rows": 486,
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "paid_sources": [
+      {
+        "name": "nC3",
+        "arrival": 3
+      },
+      {
+        "name": "G3",
+        "arrival": 1
+      },
+      {
+        "name": "Q3",
+        "arrival": 1
+      },
+      {
+        "name": "P3",
+        "arrival": 2
+      },
+      {
+        "name": "N3",
+        "arrival": 1
+      },
+      {
+        "name": "G4",
+        "arrival": 1
+      },
+      {
+        "name": "Q4",
+        "arrival": 1
+      },
+      {
+        "name": "P4",
+        "arrival": 2
+      },
+      {
+        "name": "N4",
+        "arrival": 1
+      },
+      {
+        "name": "G5",
+        "arrival": 1
+      },
+      {
+        "name": "Q5",
+        "arrival": 1
+      },
+      {
+        "name": "P5",
+        "arrival": 2
+      },
+      {
+        "name": "N5",
+        "arrival": 1
+      },
+      {
+        "name": "G6",
+        "arrival": 1
+      },
+      {
+        "name": "Q6",
+        "arrival": 1
+      },
+      {
+        "name": "P6",
+        "arrival": 2
+      },
+      {
+        "name": "N6",
+        "arrival": 1
+      },
+      {
+        "name": "G7",
+        "arrival": 1
+      },
+      {
+        "name": "Q7",
+        "arrival": 1
+      },
+      {
+        "name": "P7",
+        "arrival": 2
+      },
+      {
+        "name": "A34n",
+        "arrival": 2
+      },
+      {
+        "name": "V34n",
+        "arrival": 2
+      },
+      {
+        "name": "A56n",
+        "arrival": 2
+      },
+      {
+        "name": "V56n",
+        "arrival": 2
+      },
+      {
+        "name": "A36n",
+        "arrival": 3
+      },
+      {
+        "name": "V36n",
+        "arrival": 3
+      },
+      {
+        "name": "nC7",
+        "arrival": 4
+      },
+      {
+        "name": "0",
+        "arrival": 0
+      },
+      {
+        "name": "1",
+        "arrival": 0
+      }
+    ]
+  },
+  "family": {
+    "cost": 18,
+    "ordinary_components": 2,
+    "ordinary_cost_each": 1,
+    "ordinary_kinds": [
+      "NOT",
+      "AND",
+      "OR",
+      "NAND",
+      "NOR"
+    ],
+    "ordinary_output_deadline": 4,
+    "second_ordinary_may_read_first": true,
+    "switches": 8,
+    "switch_cost_each": 2,
+    "switch_output_deadline": 5,
+    "switches_per_output": 2,
+    "ordinary_ports_are_single_source": true,
+    "switch_enable_and_data_are_single_source": true,
+    "switch_outputs_are_private_to_one_final_output_bus": true,
+    "ordinary_deadness_enforced": false,
+    "functional_truth_quotient": true
+  },
+  "enumeration": {
+    "raw_first_ordinary_operations_without_equal_binary_inputs": 1540,
+    "unique_first_ordinary_truths": 1008,
+    "first_ordinary_minimal_arrival_distribution": {
+      "1": 2,
+      "2": 294,
+      "3": 484,
+      "4": 228
+    },
+    "legacy_first_witness_stale_arrival_count": 18,
+    "legacy_two_node_count": 1041648,
+    "corrected_two_node_count": 1041696,
+    "networks_added_by_minimal_arrival_fix": 48,
+    "legacy_arrival_examples": [
+      {
+        "truth_sha256": "f9f677fa6f32660f3d9c1ddd1963737ed9e651ff11f566bbd8554673e967e984",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "P3",
+          null
+        ],
+        "minimal_witness": [
+          "OR",
+          "G3",
+          "Q3"
+        ]
+      },
+      {
+        "truth_sha256": "df1783e6a971aed7dfe6cd27667be8d8536738f2e3a53e5ebdf5950aeb9634f0",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "P4",
+          null
+        ],
+        "minimal_witness": [
+          "OR",
+          "G4",
+          "Q4"
+        ]
+      },
+      {
+        "truth_sha256": "f5b21ef5461bc3eb01939e54d8af4810f25411cbd63e6294a09c11b0dd72fa99",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "P5",
+          null
+        ],
+        "minimal_witness": [
+          "OR",
+          "G5",
+          "Q5"
+        ]
+      },
+      {
+        "truth_sha256": "6c77ef0d987fccdfad6e64be42d247de9a2a6f84642bf375c9ad57762a118a6d",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "P6",
+          null
+        ],
+        "minimal_witness": [
+          "OR",
+          "G6",
+          "Q6"
+        ]
+      },
+      {
+        "truth_sha256": "d811236914151ea8e6e5ec3ef56680300e73023290bb0383fc2d924437f254b2",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "P7",
+          null
+        ],
+        "minimal_witness": [
+          "OR",
+          "G7",
+          "Q7"
+        ]
+      },
+      {
+        "truth_sha256": "b23ffff497fdb26a33f0032fe7d27bbc4fb62b2ae331fd871dfd19311064472e",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "A34n",
+          null
+        ],
+        "minimal_witness": [
+          "NOR",
+          "Q3",
+          "Q4"
+        ]
+      },
+      {
+        "truth_sha256": "d4540853e2b7d6fb27ffe577a5c1ba264ab773540818a458ca26c992f5b1f749",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOT",
+          "A56n",
+          null
+        ],
+        "minimal_witness": [
+          "NOR",
+          "Q5",
+          "Q6"
+        ]
+      },
+      {
+        "truth_sha256": "78b2976d6cec9dae3a77de45affe80b9a3b85788e3f366c6adb435f4386f9e79",
+        "legacy_arrival": 4,
+        "minimal_arrival": 3,
+        "legacy_witness": [
+          "NOT",
+          "A36n",
+          null
+        ],
+        "minimal_witness": [
+          "NOR",
+          "A34n",
+          "A56n"
+        ]
+      },
+      {
+        "truth_sha256": "85a6c6ba7c69797daebddf4a7284c35bbd92702a9378760f0cb7f0b2df5f7772",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "G3",
+          "P3"
+        ],
+        "minimal_witness": [
+          "AND",
+          "Q3",
+          "1"
+        ]
+      },
+      {
+        "truth_sha256": "d1d7b75dcc71077d1f9034652bdcfc5123000095acb4f6dbe5f71cbbe0ed5a14",
+        "legacy_arrival": 4,
+        "minimal_arrival": 3,
+        "legacy_witness": [
+          "OR",
+          "Q3",
+          "A36n"
+        ],
+        "minimal_witness": [
+          "OR",
+          "A34n",
+          "A56n"
+        ]
+      },
+      {
+        "truth_sha256": "39438af96357467207fa7f7a339c07c020a096c72496327737d9bd6971b4b856",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "OR",
+          "P3",
+          "A34n"
+        ],
+        "minimal_witness": [
+          "OR",
+          "N3",
+          "Q4"
+        ]
+      },
+      {
+        "truth_sha256": "a3516c5bbb15145fa0fae82a64ce7917f5d49b5a37ef2b5273d4842e182fe6df",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "P3",
+          "A34n"
+        ],
+        "minimal_witness": [
+          "NOR",
+          "N3",
+          "Q4"
+        ]
+      },
+      {
+        "truth_sha256": "b28f057f07b1df394f63185306ba8381b2ca50edff9e60f6473654c3964ea07f",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "G4",
+          "P4"
+        ],
+        "minimal_witness": [
+          "AND",
+          "Q4",
+          "1"
+        ]
+      },
+      {
+        "truth_sha256": "e2f854979c186518b8880b2faa3f4f857002c4e61bb9ca623211b6041d776691",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "G5",
+          "P5"
+        ],
+        "minimal_witness": [
+          "AND",
+          "Q5",
+          "1"
+        ]
+      },
+      {
+        "truth_sha256": "4f5efcd82bb90eff9d0191f4d070146ebc6d59408858ef91af562d7d56461259",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "OR",
+          "P5",
+          "A56n"
+        ],
+        "minimal_witness": [
+          "OR",
+          "N5",
+          "Q6"
+        ]
+      },
+      {
+        "truth_sha256": "f54cf7944309aefc03c15fffe6e8d3f22cacf154a869c76c823427304394ab55",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "P5",
+          "A56n"
+        ],
+        "minimal_witness": [
+          "NOR",
+          "N5",
+          "Q6"
+        ]
+      },
+      {
+        "truth_sha256": "7206170c01a157aa6de4b0e21758eacbdc737b4f3618a217999ed47a71d28ea8",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "G6",
+          "P6"
+        ],
+        "minimal_witness": [
+          "AND",
+          "Q6",
+          "1"
+        ]
+      },
+      {
+        "truth_sha256": "1dbd9984761acf39b928a2af9e4b18b16c8c976a4903b4d4f7e8c59a21c57410",
+        "legacy_arrival": 3,
+        "minimal_arrival": 2,
+        "legacy_witness": [
+          "NOR",
+          "G7",
+          "P7"
+        ],
+        "minimal_witness": [
+          "AND",
+          "Q7",
+          "1"
+        ]
+      }
+    ]
+  },
+  "cover_results": {
+    "paid_only_two_switch_cover": {
+      "S5": false,
+      "S6": false,
+      "S7": false,
+      "C8": false
+    },
+    "paid_only_any_number_switch_cover": {
+      "S5": false,
+      "S6": false,
+      "S7": false,
+      "C8": false
+    },
+    "paid_only_max_coverable_rows": {
+      "S5": 162,
+      "S6": 270,
+      "S7": 324,
+      "C8": 405
+    },
+    "one_ordinary_network_count": 1008,
+    "one_ordinary_target_cover_count": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "one_ordinary_any_number_target_cover_count": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "one_ordinary_max_coverable_rows": {
+      "S5": 360,
+      "S6": 378,
+      "S7": 484,
+      "C8": 485
+    },
+    "one_ordinary_joint_cover_count": 0,
+    "two_ordinary_network_count": 1041696,
+    "two_ordinary_target_cover_count": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "two_ordinary_any_number_target_cover_count": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "two_ordinary_max_coverable_rows": {
+      "S5": 414,
+      "S6": 426,
+      "S7": 484,
+      "C8": 485
+    },
+    "two_ordinary_joint_cover_count": 0,
+    "first_joint_witness": null
+  },
+  "self_check": {
+    "equal_binary_input_candidate_map_matches": true,
+    "legacy_count_reproduced": true,
+    "minimal_arrival_count_recomputed": true,
+    "fixed_one_ordinary_pools": 14,
+    "fixed_and_reservoir_two_ordinary_pools": 272,
+    "fast_vs_naive_driver_pair_cases": 1148,
+    "fast_vs_naive_mismatch_count": 0,
+    "fast_vs_naive_any_number_mismatch_count": 0
+  },
+  "scope_exclusions": [
+    "ordinary gate reads a resolved Switch BUS",
+    "ordinary/Switch interleaving",
+    "asymmetric output driver counts",
+    "ordinary gate directly drives a final output",
+    "multi-source ordinary or Switch input BUS",
+    "XOR components",
+    "more or fewer than two ordinary components"
+  ],
+  "conclusion": "No paid-only, one-ordinary, or corrected two-ordinary source pool can realize even one of S5/S6/S7/C8 with any number of terminal single-source Switch drivers.  The exact two-driver-per-output cost-18 family is therefore UNSAT as a strict corollary.",
+  "source_sha256": {
+    ".research/byte_adder_han_knowles_fused_agent/enumerate_s567c8_o2s8_two_driver_restricted.py": "4f9291b935997fb2d9f12dcf9013d4861f53a993fd08031c5a56ea115340efba",
+    ".research/byte_adder_phase_shortcut_restart/physical_exact.py": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  }
+}
