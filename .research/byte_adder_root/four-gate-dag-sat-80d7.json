@@ -1,0 +1,241 @@
+{
+  "schema": "byte-adder-80d7-four-gate-root-dag-sat-v1",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "full_truth_rows": 131072,
+  "private_gate_cost": 5,
+  "replacement_gate_cost": 4,
+  "ordinary_kinds": [
+    "AND",
+    "NAND",
+    "OR",
+    "NOR",
+    "NOT via tied NAND/NOR"
+  ],
+  "targets": [
+    {
+      "target": 81,
+      "four_gate_audit": {
+        "target": 81,
+        "source_ids": [
+          4,
+          5,
+          6,
+          7,
+          22,
+          23,
+          24,
+          25,
+          45,
+          50,
+          51,
+          52,
+          54,
+          55,
+          56,
+          76,
+          77
+        ],
+        "compressed_truth_rows": 32,
+        "gate_count": 4,
+        "delay_limit": 7,
+        "cnf_variables": 576,
+        "cnf_clauses": 8659,
+        "solver": "cadical195",
+        "status": "unsat"
+      },
+      "five_gate_positive_regression": {
+        "target": 81,
+        "source_ids": [
+          4,
+          5,
+          6,
+          7,
+          22,
+          23,
+          24,
+          25,
+          45,
+          50,
+          51,
+          52,
+          54,
+          55,
+          56,
+          76,
+          77
+        ],
+        "compressed_truth_rows": 32,
+        "gate_count": 5,
+        "delay_limit": 7,
+        "cnf_variables": 725,
+        "cnf_clauses": 11371,
+        "solver": "cadical195",
+        "status": "sat",
+        "witness": [
+          {
+            "gate": 0,
+            "kind": "OR",
+            "inputs": [
+              "n22",
+              "n52"
+            ],
+            "actual_arrival": 4
+          },
+          {
+            "gate": 1,
+            "kind": "NAND",
+            "inputs": [
+              "g0",
+              "n25"
+            ],
+            "actual_arrival": 5
+          },
+          {
+            "gate": 2,
+            "kind": "NOR",
+            "inputs": [
+              "g0",
+              "n51"
+            ],
+            "actual_arrival": 5
+          },
+          {
+            "gate": 3,
+            "kind": "OR",
+            "inputs": [
+              "n56",
+              "g2"
+            ],
+            "actual_arrival": 6
+          },
+          {
+            "gate": 4,
+            "kind": "NAND",
+            "inputs": [
+              "g1",
+              "g3"
+            ],
+            "actual_arrival": 7
+          }
+        ],
+        "full_truth_rows_verified": 131072
+      }
+    },
+    {
+      "target": 86,
+      "four_gate_audit": {
+        "target": 86,
+        "source_ids": [
+          8,
+          9,
+          10,
+          11,
+          28,
+          29,
+          30,
+          31,
+          32,
+          56,
+          57,
+          59,
+          60,
+          61,
+          62,
+          82,
+          83
+        ],
+        "compressed_truth_rows": 32,
+        "gate_count": 4,
+        "delay_limit": 7,
+        "cnf_variables": 576,
+        "cnf_clauses": 8715,
+        "solver": "cadical195",
+        "status": "unsat"
+      },
+      "five_gate_positive_regression": {
+        "target": 86,
+        "source_ids": [
+          8,
+          9,
+          10,
+          11,
+          28,
+          29,
+          30,
+          31,
+          32,
+          56,
+          57,
+          59,
+          60,
+          61,
+          62,
+          82,
+          83
+        ],
+        "compressed_truth_rows": 32,
+        "gate_count": 5,
+        "delay_limit": 7,
+        "cnf_variables": 725,
+        "cnf_clauses": 11441,
+        "solver": "cadical195",
+        "status": "sat",
+        "witness": [
+          {
+            "gate": 0,
+            "kind": "OR",
+            "inputs": [
+              "n57",
+              "n28"
+            ],
+            "actual_arrival": 5
+          },
+          {
+            "gate": 1,
+            "kind": "NOR",
+            "inputs": [
+              "n32",
+              "n31"
+            ],
+            "actual_arrival": 2
+          },
+          {
+            "gate": 2,
+            "kind": "AND",
+            "inputs": [
+              "g0",
+              "g1"
+            ],
+            "actual_arrival": 6
+          },
+          {
+            "gate": 3,
+            "kind": "NOR",
+            "inputs": [
+              "g1",
+              "g0"
+            ],
+            "actual_arrival": 6
+          },
+          {
+            "gate": 4,
+            "kind": "NOR",
+            "inputs": [
+              "g2",
+              "g3"
+            ],
+            "actual_arrival": 7
+          }
+        ],
+        "full_truth_rows_verified": 131072
+      }
+    }
+  ],
+  "status": "unsat-with-positive-regressions",
+  "scope": "all live four-gate ordinary DAGs over each explicit retained local source pool, with internal fanout and delay<=7",
+  "limitations": [
+    "does not include Switch or XOR mixtures",
+    "does not change sources outside the explicit retained local pool",
+    "not a global 79/7 lower bound"
+  ]
+}

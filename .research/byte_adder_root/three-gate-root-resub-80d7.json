@@ -1,0 +1,149 @@
+{
+  "schema": "byte-adder-80d7-three-gate-root-resub-v1",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "full_truth_rows": 131072,
+  "ordinary_kinds": [
+    "NOT",
+    "AND",
+    "NAND",
+    "OR",
+    "NOR"
+  ],
+  "three_gate_dag_targets": [
+    {
+      "target": 49,
+      "target_op": "NOR",
+      "source_ids": [
+        2,
+        3,
+        18,
+        43,
+        44,
+        45
+      ],
+      "compressed_truth_rows": 8,
+      "private_gate_cost": 4,
+      "replacement_gate_cost": 3,
+      "hits": [],
+      "counters": {
+        "unique_first_stage_functions": 35,
+        "chain_second_stage_functions": 568,
+        "final_function_checks": 18852
+      }
+    },
+    {
+      "target": 73,
+      "target_op": "AND",
+      "source_ids": [
+        12,
+        13,
+        14,
+        15,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "compressed_truth_rows": 32,
+      "private_gate_cost": 4,
+      "replacement_gate_cost": 3,
+      "hits": [],
+      "counters": {
+        "unique_first_stage_functions": 434,
+        "chain_second_stage_functions": 25113,
+        "final_function_checks": 1361405
+      }
+    }
+  ],
+  "four_gate_formula_tree_targets": [
+    {
+      "target": 81,
+      "target_op": "AND",
+      "source_ids": [
+        4,
+        5,
+        6,
+        7,
+        22,
+        23,
+        24,
+        25,
+        45,
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        76,
+        77
+      ],
+      "compressed_truth_rows": 32,
+      "private_gate_cost": 5,
+      "replacement_gate_cost": 4,
+      "exact_cost_function_counts": [
+        17,
+        346,
+        5918,
+        59794,
+        514060
+      ],
+      "target_found": false,
+      "target_min_arrival": null,
+      "delay_limit": 7
+    },
+    {
+      "target": 86,
+      "target_op": "NOR",
+      "source_ids": [
+        8,
+        9,
+        10,
+        11,
+        28,
+        29,
+        30,
+        31,
+        32,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        82,
+        83
+      ],
+      "compressed_truth_rows": 32,
+      "private_gate_cost": 5,
+      "replacement_gate_cost": 4,
+      "exact_cost_function_counts": [
+        17,
+        382,
+        6596,
+        66790,
+        568028
+      ],
+      "target_found": false,
+      "target_min_arrival": null,
+      "delay_limit": 7
+    }
+  ],
+  "status": "no-improving-local-root-resub-in-audited-families",
+  "limitations": [
+    "local source pools are explicit and reviewed, not all DAG signals",
+    "covers exactly three cost-one ordinary gates, not Switch or XOR mixtures",
+    "the four-gate S2/S4 closure covers formula trees, not arbitrary internal-fanout DAGs",
+    "not a global 79/7 lower bound"
+  ]
+}
