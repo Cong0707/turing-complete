@@ -4,7 +4,7 @@
   "title": "Adding Bytes",
   "title_zh": "字节加法器",
   "strategy": "移植 Hub79 的纯门级三态前缀加法器；使用 49 个 Bit Switch 和普通逻辑门，不使用原生 com_add。",
-  "validation_status": "已完成 131072 组全真值、三态冲突、全局延迟、v15 往返、连通性和真实精灵几何审计；待游戏内验收。",
+  "validation_status": "已完成 131072 组全真值、三态冲突、全局延迟、v15 往返、连通性和真实精灵几何审计；用户已在 Turing Complete 2.1.290 实机验收 154/4/616 通过。",
   "deployment_target": "schematics/byte_adder/Default/circuit.data",
   "source": "examples/rng/research/archive/rng_public_artifacts/hub-79-adder/main/circuit.data",
   "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
@@ -21,6 +21,9 @@
     616
   ],
   "native_com_add_used": false,
+  "in_game_verified": true,
+  "in_game_verified_version": "2.1.290",
+  "in_game_verified_date": "2026-08-03",
   "v15_round_trip_verified": true,
   "component_kind_counts": {
     "2": 1,
