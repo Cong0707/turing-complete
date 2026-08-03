@@ -3,29 +3,27 @@
   "level": "byte_adder",
   "title": "Adding Bytes",
   "title_zh": "字节加法器",
-  "strategy": "Q 相位 A/V 与 Switch-Z 联合计划；位 0 使用 10 门 S0/C1 宏，bits5:6 取消独立 C6，让 S6 与 C7 直接共享高阻相位网络。",
-  "validation_status": "已完成生成器重放、82 节点物理逐节点重算、131072 组全真值、BUS/Z 冲突、递归延迟、v15 往返、连通性和真实精灵几何审计；等待游戏实机验收。",
+  "strategy": "共享 S5 的 P5&C5 相位项；bits5:6 使用 20 门联合 S5/S6/C7 宏，并以 Switch-Z 表示部分零进位。",
+  "validation_status": "已完成生成器重放、83 节点物理逐节点重算、131072 组全真值、BUS/Z 冲突、递归延迟、v15 往返、连通性和真实精灵几何审计；等待游戏实机验收。",
   "deployment_target": "schematics/byte_adder/Default/circuit.data",
-  "source": ".research/byte_adder_switch_z_agent/byte-adder-hybrid-phasefold-g82-d7.json",
-  "source_sha256": "a62ea79a29d5c2ad59698e03477cdc5475990fe8f8e34c93662d54386972f4fe",
-  "builder": ".research/byte_adder_switch_z_agent/build_hybrid_phasefold_82_d7.py",
-  "builder_sha256": "02490e0e64927f2c09b399236da9e13396923c010bf66bb63ef7b9f1098317f9",
-  "factory_dag_sha256": "536bf32a9f1d4e8c032836d76f597291ba64e476c9e91d0761b6644b6e30246a",
-  "structural_sha256": "8730291086d3ce81808dbb8e28748df8ec78178c242753f09d18d91523957f0e",
-  "macro_certificate": ".research/byte_adder_root/full1z-s4-c2-g10-n8.json",
-  "macro_certificate_sha256": "9a0186d744c3c19c73ba72339c2602f1ccf9d29ef4287d2fd37ffdf8bc5b6d56",
-  "machine_certificate": ".research/byte_adder_builder_layout_agent/materialized/hybrid82_phasefold/machine_certificate.json",
-  "sha256": "bb8e7415752e1a74adefe0d769156b975a6b4d92a9204aa56af25353bf01181d",
+  "source": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g81-d7.json",
+  "source_sha256": "6e608b5e2619a66b897a14f23e4a7e0bac02228e995bb1a9612a02fc50d848f1",
+  "builder": ".research/byte_adder_root/build_hybrid_phasefold_81_d7.py",
+  "builder_sha256": "71156720a9c62a81d05fb46d9397feb328bcc933dc45ca55c4b878f00763bf09",
+  "factory_dag_sha256": "6b38de20ebd926218331ecbb9ce37aa0d8a50cce8a89d9c0d950c188928ffcad",
+  "structural_sha256": "5d6b52620ea5bf5acef823a70560ba31a899a5cfa2fe2f3fee3847ae3a16dedd",
+  "machine_certificate": ".research/byte_adder_root/materialized_g81_d7/machine_certificate.json",
+  "sha256": "a70d5ce1965037971119cd1d7d84f7429b5f42f281a8d01e75ee395fdca1ca7b",
   "format_version": 15,
-  "component_count": 78,
-  "wire_count": 157,
-  "gate": 82,
+  "component_count": 79,
+  "wire_count": 159,
+  "gate": 81,
   "delay": 7,
-  "energy": 574,
+  "energy": 567,
   "leaderboard_tuple": [
-    82,
+    81,
     7,
-    574
+    567
   ],
   "native_com_add_used": false,
   "in_game_verified": false,
@@ -39,11 +37,10 @@
   },
   "v15_round_trip_verified": true,
   "component_kind_counts": {
-    "4": 15,
-    "6": 3,
+    "4": 17,
+    "6": 2,
     "7": 12,
-    "9": 29,
-    "10": 1,
+    "9": 30,
     "12": 10,
     "16": 1,
     "17": 2,
@@ -51,13 +48,12 @@
     "69": 2
   },
   "reviewed_gate_cost_breakdown": {
-    "and": 15,
-    "nand": 3,
+    "and": 17,
+    "nand": 2,
     "or": 12,
-    "nor": 29,
-    "xor": 3,
+    "nor": 30,
     "bit_switch": 20,
-    "total": 82
+    "total": 81
   },
   "connectivity": {
     "unconnected_pin_count": 0,
@@ -70,8 +66,8 @@
     "topology_depth_note": "非 Z 感知图会高估三态网络深度；逐节点三态语义深度 7 为权威值。"
   },
   "resolved_networks": {
-    "physical_network_count": 85,
-    "intended_network_count": 85,
+    "physical_network_count": 86,
+    "intended_network_count": 86,
     "mixed_network_count": 0,
     "fragmented_network_count": 0,
     "tri_state_output_count": 10,
@@ -86,7 +82,7 @@
   },
   "semantic": {
     "exhaustive_truth_table_vector_count": 131072,
-    "physical_node_replay_count": 82,
+    "physical_node_replay_count": 83,
     "physical_node_replay_mismatch_count": 0,
     "bus_node_count": 5,
     "bus_z_assignment_counts": {
@@ -94,7 +90,7 @@
       "55": 24576,
       "56": 36864,
       "62": 36864,
-      "67": 40960
+      "69": 40960
     },
     "packed_conflict_cases": 0,
     "output_arrivals": [

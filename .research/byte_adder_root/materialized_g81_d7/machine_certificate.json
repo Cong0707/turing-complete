@@ -1,0 +1,245 @@
+{
+  "schema": "turing-complete-byte-adder-factory-dag-materialization-v1",
+  "source_review": {
+    "dag_source": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g81-d7.json",
+    "dag_source_sha256": "6e608b5e2619a66b897a14f23e4a7e0bac02228e995bb1a9612a02fc50d848f1",
+    "builder": ".research/byte_adder_root/build_hybrid_phasefold_81_d7.py",
+    "builder_sha256": "71156720a9c62a81d05fb46d9397feb328bcc933dc45ca55c4b878f00763bf09",
+    "generator_replay_equal": true,
+    "factory_dag_sha256": "6b38de20ebd926218331ecbb9ce37aa0d8a50cce8a89d9c0d950c188928ffcad",
+    "structural_sha256": "5d6b52620ea5bf5acef823a70560ba31a899a5cfa2fe2f3fee3847ae3a16dedd",
+    "referenced_certificates": [],
+    "recursive_cost_delay_verified": true,
+    "bus_node_count": 5,
+    "tri_state_output_count": 10
+  },
+  "serialized_score": {
+    "gate": 81,
+    "delay": 7,
+    "energy": 567
+  },
+  "candidate_sha256": "a70d5ce1965037971119cd1d7d84f7429b5f42f281a8d01e75ee395fdca1ca7b",
+  "component_count": 79,
+  "wire_count": 159,
+  "component_kind_counts": {
+    "4": 17,
+    "6": 2,
+    "7": 12,
+    "9": 30,
+    "12": 10,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2
+  },
+  "reviewed_gate": 81,
+  "native_com_add_count": 0,
+  "connectivity": {
+    "unconnected_pin_count": 0,
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0,
+    "topology_only_unit_depth": 9,
+    "topology_depth_note": "non-Z-aware graph depth; packed tri-state depth is authoritative"
+  },
+  "geometry": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": 0,
+    "wire_collisions": 0,
+    "wire_interior_pin_contacts": 0
+  },
+  "resolved_networks": {
+    "physical_resolved_network_count": 86,
+    "intended_resolved_network_count": 86,
+    "mixed_intended_physical_network_count": 0,
+    "fragmented_intended_network_count": 0,
+    "tri_state_output_pin_count": 10,
+    "tri_state_outputs_with_exactly_one_resolved_network": 10,
+    "tri_state_assignments": [
+      {
+        "component_index": 30,
+        "permanent_id": 9135291488658922451,
+        "pin": "out",
+        "position": [
+          1050,
+          -138
+        ],
+        "resolved_network": "signal:45",
+        "incident_wire_count": 5
+      },
+      {
+        "component_index": 31,
+        "permanent_id": 1022584325353749636,
+        "pin": "out",
+        "position": [
+          1090,
+          -126
+        ],
+        "resolved_network": "signal:45",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 41,
+        "permanent_id": 2376712699246352368,
+        "pin": "out",
+        "position": [
+          1490,
+          -6
+        ],
+        "resolved_network": "signal:55",
+        "incident_wire_count": 3
+      },
+      {
+        "component_index": 42,
+        "permanent_id": 949152082510827297,
+        "pin": "out",
+        "position": [
+          1530,
+          6
+        ],
+        "resolved_network": "signal:55",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 43,
+        "permanent_id": 7552554579601856352,
+        "pin": "out",
+        "position": [
+          1570,
+          18
+        ],
+        "resolved_network": "signal:56",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 44,
+        "permanent_id": 5447143497146148006,
+        "pin": "out",
+        "position": [
+          1610,
+          30
+        ],
+        "resolved_network": "signal:56",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 50,
+        "permanent_id": 8764785258066094176,
+        "pin": "out",
+        "position": [
+          1850,
+          102
+        ],
+        "resolved_network": "signal:62",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 51,
+        "permanent_id": 8435079844633303816,
+        "pin": "out",
+        "position": [
+          1890,
+          114
+        ],
+        "resolved_network": "signal:62",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 58,
+        "permanent_id": 4938387848488074233,
+        "pin": "out",
+        "position": [
+          2170,
+          198
+        ],
+        "resolved_network": "signal:69",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 59,
+        "permanent_id": 6154564139057813107,
+        "pin": "out",
+        "position": [
+          2210,
+          210
+        ],
+        "resolved_network": "signal:69",
+        "incident_wire_count": 1
+      }
+    ],
+    "adversarial_foreign_label_rejected": true
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "node_replay_count": 83,
+    "node_replay_mismatch_count": 0,
+    "bus_nodes": [
+      {
+        "node": 45,
+        "driver_count": 2,
+        "arrival": 2,
+        "z_assignment_count": 49152,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 55,
+        "driver_count": 2,
+        "arrival": 2,
+        "z_assignment_count": 24576,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 56,
+        "driver_count": 2,
+        "arrival": 3,
+        "z_assignment_count": 36864,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 62,
+        "driver_count": 2,
+        "arrival": 4,
+        "z_assignment_count": 36864,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 69,
+        "driver_count": 2,
+        "arrival": 5,
+        "z_assignment_count": 40960,
+        "conflict_assignment_count": 0
+      }
+    ],
+    "packed_conflict_cases": 0,
+    "output_arrivals": [
+      4,
+      4,
+      6,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "global_depth": 7,
+    "sum_depth": 7,
+    "carry_depth": 7,
+    "sum_correct": true,
+    "carry_correct": true
+  },
+  "v15_round_trip_verified": true,
+  "research_candidate": "D:/Develop/Other/turing-complete/.research/byte_adder_root/materialized_g81_d7/candidate/circuit.data",
+  "research_candidate_matches": true,
+  "deployment": {
+    "requested": true,
+    "repository_candidate": "D:/Develop/Other/turing-complete/examples/byte_adder/candidate/circuit.data",
+    "repository_candidate_written": true,
+    "formal_save": "C:/Users/cong/AppData/Roaming/Turing Complete/schematics/byte_adder/Default/circuit.data",
+    "formal_save_written": true,
+    "backup_created": false,
+    "game_started": false
+  }
+}
