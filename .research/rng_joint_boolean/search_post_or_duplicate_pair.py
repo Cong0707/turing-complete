@@ -50,11 +50,19 @@ def solve_duplicates(
     bound: int,
     timeout_seconds: float,
     solver_name: str,
+    *,
+    b_fanins_override: dict[int, tuple[int, ...]] | None = None,
+    fixed_xor_override: int | None = None,
 ) -> dict[str, object]:
     if not duplicate_pairs or not duplicate_pairs <= FIRST_LAYER:
         raise ValueError("duplicate pair set is empty or outside the fixed first layer")
     started = time.monotonic()
-    fixed_xor = BASE_XOR + len(duplicate_pairs)
+    fixed_xor = (
+        BASE_XOR + len(duplicate_pairs)
+        if fixed_xor_override is None
+        else fixed_xor_override
+    )
+    b_fanins_override = b_fanins_override or {}
     pool = IDPool()
     clauses: list[list[int]] = []
 
@@ -200,7 +208,31 @@ def solve_duplicates(
 
     for output_index, (target, steady) in enumerate(zip(T, B, strict=True)):
         fanin_labels: list[list[int]] = []
-        if steady in pair_set:
+        override = b_fanins_override.get(steady)
+        if override is not None:
+            if len(override) not in (1, 2):
+                raise AssertionError("override fanin count must be one or two")
+            combined = 0
+            for fanin in override:
+                combined ^= fanin
+                if fanin in pair_set:
+                    fanin_labels.append(
+                        pair_occurrence(
+                            f"B{output_index}-override{len(fanin_labels)}", fanin
+                        )
+                    )
+                else:
+                    state = bits(fanin)
+                    if len(state) != 1:
+                        raise AssertionError("override direct fanin is not a unit")
+                    fanin_labels.append(
+                        unit_occurrence(
+                            f"B{output_index}-override{len(fanin_labels)}", state[0]
+                        )
+                    )
+            if combined != steady:
+                raise AssertionError("override fanins do not realize the B row")
+        elif steady in pair_set:
             fanin_labels.append(pair_occurrence(f"B{output_index}-terminal", steady))
         elif steady.bit_count() == 1:
             fanin_labels.append(

@@ -1,0 +1,940 @@
+{
+  "schema": 1,
+  "scope": "all two-pair physical duplications of the fixed x61 DAG",
+  "or_bound": 47,
+  "target_total_gate": 408,
+  "range": [
+    0,
+    1
+  ],
+  "case_count": 351,
+  "statuses": {
+    "sat": 1,
+    "unsat": 0,
+    "unknown": 0
+  },
+  "cases": [
+    {
+      "index": 0,
+      "duplicate_pairs": [
+        "00000021",
+        "00000042"
+      ],
+      "status": "sat",
+      "elapsed_seconds": 1.4347043000161648,
+      "peak_rss_bytes": 75337728,
+      "clause_sha256": "ca3d922c476cb7109d475d24d6b119f7fbba5a82843d34e32cb4393911250109"
+    }
+  ],
+  "winner": {
+    "schema": 1,
+    "scope": "fixed x61 DAG plus duplicated physical pairs; pre/post OR model",
+    "status": "sat",
+    "duplicate_pairs": [
+      "00000021",
+      "00000042"
+    ],
+    "or_bound": 47,
+    "fixed_xor": 63,
+    "total_gate_bound": 408,
+    "delay": 9,
+    "cycles": 67,
+    "elapsed_seconds": 1.4347043000161648,
+    "variable_count": 24983,
+    "clause_count": 159982,
+    "clause_sha256": "ca3d922c476cb7109d475d24d6b119f7fbba5a82843d34e32cb4393911250109",
+    "solver": "cadical195",
+    "solver_stats": {
+      "restarts": 806,
+      "conflicts": 14549,
+      "decisions": 40470,
+      "propagations": 30527584
+    },
+    "peak_rss_bytes": 75337728,
+    "counts": {
+      "physical_pair_nodes": 29,
+      "B_occurrences": 51,
+      "leaf_atoms": 1024,
+      "post_atoms": 864
+    },
+    "certificate": {
+      "or_count": 47,
+      "logic_gate": 236,
+      "total_gate": 408,
+      "leaf_atoms": [
+        {
+          "seed": 0,
+          "state": 22
+        },
+        {
+          "seed": 1,
+          "state": 23
+        },
+        {
+          "seed": 2,
+          "state": 24
+        },
+        {
+          "seed": 3,
+          "state": 25
+        },
+        {
+          "seed": 4,
+          "state": 26
+        },
+        {
+          "seed": 5,
+          "state": 27
+        },
+        {
+          "seed": 6,
+          "state": 28
+        },
+        {
+          "seed": 7,
+          "state": 29
+        },
+        {
+          "seed": 8,
+          "state": 25
+        },
+        {
+          "seed": 9,
+          "state": 31
+        },
+        {
+          "seed": 10,
+          "state": 15
+        },
+        {
+          "seed": 11,
+          "state": 28
+        },
+        {
+          "seed": 12,
+          "state": 29
+        },
+        {
+          "seed": 13,
+          "state": 30
+        },
+        {
+          "seed": 14,
+          "state": 2
+        },
+        {
+          "seed": 15,
+          "state": 15
+        },
+        {
+          "seed": 16,
+          "state": 16
+        },
+        {
+          "seed": 17,
+          "state": 0
+        },
+        {
+          "seed": 17,
+          "state": 17
+        },
+        {
+          "seed": 18,
+          "state": 1
+        },
+        {
+          "seed": 18,
+          "state": 18
+        },
+        {
+          "seed": 19,
+          "state": 7
+        },
+        {
+          "seed": 19,
+          "state": 19
+        },
+        {
+          "seed": 20,
+          "state": 8
+        },
+        {
+          "seed": 20,
+          "state": 20
+        },
+        {
+          "seed": 21,
+          "state": 4
+        },
+        {
+          "seed": 21,
+          "state": 21
+        },
+        {
+          "seed": 22,
+          "state": 6
+        },
+        {
+          "seed": 22,
+          "state": 10
+        },
+        {
+          "seed": 23,
+          "state": 11
+        },
+        {
+          "seed": 23,
+          "state": 23
+        },
+        {
+          "seed": 24,
+          "state": 12
+        },
+        {
+          "seed": 24,
+          "state": 24
+        },
+        {
+          "seed": 25,
+          "state": 8
+        },
+        {
+          "seed": 25,
+          "state": 30
+        },
+        {
+          "seed": 26,
+          "state": 14
+        },
+        {
+          "seed": 26,
+          "state": 26
+        },
+        {
+          "seed": 27,
+          "state": 10
+        },
+        {
+          "seed": 27,
+          "state": 27
+        },
+        {
+          "seed": 28,
+          "state": 11
+        },
+        {
+          "seed": 28,
+          "state": 16
+        },
+        {
+          "seed": 29,
+          "state": 0
+        },
+        {
+          "seed": 29,
+          "state": 12
+        },
+        {
+          "seed": 30,
+          "state": 1
+        },
+        {
+          "seed": 30,
+          "state": 13
+        },
+        {
+          "seed": 31,
+          "state": 14
+        },
+        {
+          "seed": 31,
+          "state": 31
+        }
+      ],
+      "post_atoms": [],
+      "pair_modes": [
+        {
+          "pair": "00000021",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00020000",
+          "pin_seed_bits": [
+            17,
+            null
+          ]
+        },
+        {
+          "pair": "00000021",
+          "copy": 1,
+          "mode": "pre-xor",
+          "pre_label": "00000000",
+          "pin_seed_bits": [
+            null,
+            null
+          ]
+        },
+        {
+          "pair": "00000042",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00040000",
+          "pin_seed_bits": [
+            18,
+            null
+          ]
+        },
+        {
+          "pair": "00000042",
+          "copy": 1,
+          "mode": "pre-xor",
+          "pre_label": "00440000",
+          "pin_seed_bits": [
+            18,
+            22
+          ]
+        },
+        {
+          "pair": "00000084",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00080000",
+          "pin_seed_bits": [
+            null,
+            19
+          ]
+        },
+        {
+          "pair": "00000108",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00100000",
+          "pin_seed_bits": [
+            null,
+            20
+          ]
+        },
+        {
+          "pair": "00000210",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00200000",
+          "pin_seed_bits": [
+            21,
+            null
+          ]
+        },
+        {
+          "pair": "00000420",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00400000",
+          "pin_seed_bits": [
+            null,
+            22
+          ]
+        },
+        {
+          "pair": "00000840",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00800000",
+          "pin_seed_bits": [
+            null,
+            23
+          ]
+        },
+        {
+          "pair": "00001080",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "01000000",
+          "pin_seed_bits": [
+            null,
+            24
+          ]
+        },
+        {
+          "pair": "00002100",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "02000000",
+          "pin_seed_bits": [
+            25,
+            null
+          ]
+        },
+        {
+          "pair": "00004200",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "04000000",
+          "pin_seed_bits": [
+            null,
+            26
+          ]
+        },
+        {
+          "pair": "00008008",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00008000",
+          "pin_seed_bits": [
+            null,
+            15
+          ]
+        },
+        {
+          "pair": "00010010",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00010000",
+          "pin_seed_bits": [
+            null,
+            16
+          ]
+        },
+        {
+          "pair": "00420000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00020001",
+          "pin_seed_bits": [
+            17,
+            0
+          ]
+        },
+        {
+          "pair": "00840000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00040002",
+          "pin_seed_bits": [
+            18,
+            1
+          ]
+        },
+        {
+          "pair": "01080000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00080004",
+          "pin_seed_bits": [
+            19,
+            2
+          ]
+        },
+        {
+          "pair": "02100000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00100008",
+          "pin_seed_bits": [
+            20,
+            3
+          ]
+        },
+        {
+          "pair": "04200000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00200010",
+          "pin_seed_bits": [
+            21,
+            4
+          ]
+        },
+        {
+          "pair": "08008000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "08000400",
+          "pin_seed_bits": [
+            10,
+            27
+          ]
+        },
+        {
+          "pair": "08400000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00000020",
+          "pin_seed_bits": [
+            null,
+            5
+          ]
+        },
+        {
+          "pair": "10010000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "10000800",
+          "pin_seed_bits": [
+            28,
+            11
+          ]
+        },
+        {
+          "pair": "10800000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "00800040",
+          "pin_seed_bits": [
+            23,
+            6
+          ]
+        },
+        {
+          "pair": "20000001",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "20001000",
+          "pin_seed_bits": [
+            29,
+            12
+          ]
+        },
+        {
+          "pair": "21000000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "01000080",
+          "pin_seed_bits": [
+            24,
+            7
+          ]
+        },
+        {
+          "pair": "40000002",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "40002000",
+          "pin_seed_bits": [
+            30,
+            13
+          ]
+        },
+        {
+          "pair": "42000000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "02000100",
+          "pin_seed_bits": [
+            8,
+            25
+          ]
+        },
+        {
+          "pair": "80000004",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "80004000",
+          "pin_seed_bits": [
+            14,
+            31
+          ]
+        },
+        {
+          "pair": "84000000",
+          "copy": 0,
+          "mode": "pre-xor",
+          "pre_label": "04000200",
+          "pin_seed_bits": [
+            26,
+            9
+          ]
+        }
+      ],
+      "B_occurrences": [
+        {
+          "tag": "B0-side0",
+          "kind": "pair",
+          "steady": "40000002",
+          "effective_label": "40002000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B0-side1",
+          "kind": "pair",
+          "steady": "00420000",
+          "effective_label": "00020001",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B1-side0",
+          "kind": "pair",
+          "steady": "80000004",
+          "effective_label": "80004000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B1-side1",
+          "kind": "pair",
+          "steady": "00840000",
+          "effective_label": "00040002",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B2-side0",
+          "kind": "pair",
+          "steady": "00008008",
+          "effective_label": "00008000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B2-side1",
+          "kind": "pair",
+          "steady": "01080000",
+          "effective_label": "00080004",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B3-side0",
+          "kind": "pair",
+          "steady": "00010010",
+          "effective_label": "00010000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B3-side1",
+          "kind": "pair",
+          "steady": "02100000",
+          "effective_label": "00100008",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B4-side0",
+          "kind": "pair",
+          "steady": "00000021",
+          "effective_label": "00020000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B4-side1",
+          "kind": "pair",
+          "steady": "04200000",
+          "effective_label": "00200010",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B5-side0",
+          "kind": "pair",
+          "steady": "00000042",
+          "effective_label": "00440000",
+          "selected_copy": 1,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B5-side1",
+          "kind": "pair",
+          "steady": "08400000",
+          "effective_label": "00000020",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B6-side0",
+          "kind": "pair",
+          "steady": "00000084",
+          "effective_label": "00080000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B6-side1",
+          "kind": "pair",
+          "steady": "10800000",
+          "effective_label": "00800040",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B7-side0",
+          "kind": "pair",
+          "steady": "00000108",
+          "effective_label": "00100000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B7-side1",
+          "kind": "pair",
+          "steady": "21000000",
+          "effective_label": "01000080",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B8-side0",
+          "kind": "pair",
+          "steady": "00000210",
+          "effective_label": "00200000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B8-side1",
+          "kind": "pair",
+          "steady": "42000000",
+          "effective_label": "02000100",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B9-side0",
+          "kind": "pair",
+          "steady": "00000420",
+          "effective_label": "00400000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B9-side1",
+          "kind": "pair",
+          "steady": "84000000",
+          "effective_label": "04000200",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B10-side0",
+          "kind": "pair",
+          "steady": "00000840",
+          "effective_label": "00800000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B10-side1",
+          "kind": "pair",
+          "steady": "08008000",
+          "effective_label": "08000400",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B11-side0",
+          "kind": "pair",
+          "steady": "00001080",
+          "effective_label": "01000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B11-side1",
+          "kind": "pair",
+          "steady": "10010000",
+          "effective_label": "10000800",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B12-side0",
+          "kind": "pair",
+          "steady": "20000001",
+          "effective_label": "20001000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B12-side1",
+          "kind": "pair",
+          "steady": "00002100",
+          "effective_label": "02000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B13-side0",
+          "kind": "pair",
+          "steady": "40000002",
+          "effective_label": "40002000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B13-side1",
+          "kind": "pair",
+          "steady": "00004200",
+          "effective_label": "04000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B14-side0",
+          "kind": "unit",
+          "steady": "00000400",
+          "effective_label": "08000000"
+        },
+        {
+          "tag": "B14-side1",
+          "kind": "pair",
+          "steady": "80000004",
+          "effective_label": "80004000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B15-side0",
+          "kind": "unit",
+          "steady": "00000800",
+          "effective_label": "10000000"
+        },
+        {
+          "tag": "B15-side1",
+          "kind": "pair",
+          "steady": "00008008",
+          "effective_label": "00008000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B16-side0",
+          "kind": "unit",
+          "steady": "00001000",
+          "effective_label": "20000000"
+        },
+        {
+          "tag": "B16-side1",
+          "kind": "pair",
+          "steady": "00010010",
+          "effective_label": "00010000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B17-side0",
+          "kind": "unit",
+          "steady": "00002000",
+          "effective_label": "40000000"
+        },
+        {
+          "tag": "B17-side1",
+          "kind": "pair",
+          "steady": "00000021",
+          "effective_label": "00020000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B18-side0",
+          "kind": "unit",
+          "steady": "00004000",
+          "effective_label": "80000000"
+        },
+        {
+          "tag": "B18-side1",
+          "kind": "pair",
+          "steady": "00000042",
+          "effective_label": "00040000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B19-terminal",
+          "kind": "pair",
+          "steady": "00000084",
+          "effective_label": "00080000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B20-terminal",
+          "kind": "pair",
+          "steady": "00000108",
+          "effective_label": "00100000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B21-terminal",
+          "kind": "pair",
+          "steady": "00000210",
+          "effective_label": "00200000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B22-terminal",
+          "kind": "pair",
+          "steady": "00000420",
+          "effective_label": "00400000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B23-terminal",
+          "kind": "pair",
+          "steady": "00000840",
+          "effective_label": "00800000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B24-terminal",
+          "kind": "pair",
+          "steady": "00001080",
+          "effective_label": "01000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B25-terminal",
+          "kind": "pair",
+          "steady": "00002100",
+          "effective_label": "02000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B26-terminal",
+          "kind": "pair",
+          "steady": "00004200",
+          "effective_label": "04000000",
+          "selected_copy": 0,
+          "post_seed_bit": null
+        },
+        {
+          "tag": "B27-terminal",
+          "kind": "unit",
+          "steady": "00000400",
+          "effective_label": "08000000"
+        },
+        {
+          "tag": "B28-terminal",
+          "kind": "unit",
+          "steady": "00000800",
+          "effective_label": "10000000"
+        },
+        {
+          "tag": "B29-terminal",
+          "kind": "unit",
+          "steady": "00001000",
+          "effective_label": "20000000"
+        },
+        {
+          "tag": "B30-terminal",
+          "kind": "unit",
+          "steady": "00002000",
+          "effective_label": "40000000"
+        },
+        {
+          "tag": "B31-terminal",
+          "kind": "unit",
+          "steady": "00004000",
+          "effective_label": "80000000"
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 1.4400036000006367
+}
