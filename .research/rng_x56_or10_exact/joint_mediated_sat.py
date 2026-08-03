@@ -1,4 +1,4 @@
-"""Exact no-RAM 10-delay RNG cover/mediation/OR audit.
+"""Exact no-RAM RNG cover/mediation/OR audit.
 
 The model jointly chooses, without cover enumeration or beam search:
 
@@ -8,10 +8,12 @@ The model jointly chooses, without cover enumeration or beam search:
 * the tick-zero seed label and pin orientation of every selected pair;
 * the exact union of physical ``(seed bit, state bit)`` OR leaves.
 
-The fixed shell is 166 gates.  Every XOR2 is charged 3 gates / 2 delay and
-every OR leaf is charged 1 gate / 1 delay.  The SAT bound is therefore
-``3 * XOR + OR <= 221`` for a 387/10/66 target.  There is no RAM, no one-gate
-XOR assumption, no topology limit, and no component/global beam.
+Every XOR2 is charged 3 gates / 2 delay and every OR leaf is charged 1 gate /
+1 delay.  The fixed shell, logic budget, delay and cycle count are explicit
+CLI parameters so the same exact topology model can audit both the original
+166/10/66 experiment and the zero-initialized 172/9/67 experiment.  There is
+no RAM, no one-gate XOR assumption, no topology limit, and no component/global
+beam.
 
 This file is research-only: it has no save writer and never starts the game.
 Long audits can emit one JSON object per completed record and can interrupt a
@@ -215,6 +217,15 @@ def read_records(paths: Sequence[Path]) -> list[dict[str, Any]]:
             copied["source_line"] = line_number
             records.append(copied)
     return records
+
+
+def source_greedy_xor(record: dict[str, Any]) -> int | None:
+    value = record.get("xor")
+    if value is None:
+        cover = record.get("cover")
+        if isinstance(cover, dict):
+            value = cover.get("greedy_xor")
+    return None if value is None else int(value)
 
 
 def all_low_modes(steady: int) -> tuple[StructuralMode, ...]:
@@ -791,6 +802,12 @@ def encode_result(result: SolveResult) -> dict[str, Any]:
 
 def audit(args: argparse.Namespace) -> dict[str, Any]:
     records = read_records(args.inputs)
+    if args.source_xor is not None:
+        records = [
+            record
+            for record in records
+            if source_greedy_xor(record) == args.source_xor
+        ]
     if args.start_index:
         records = records[args.start_index :]
     if args.record_limit:
@@ -824,7 +841,7 @@ def audit(args: argparse.Namespace) -> dict[str, Any]:
             "parent": record.get("parent"),
             "dst": record.get("dst"),
             "src": record.get("src"),
-            "source_greedy_xor": record.get("xor"),
+            "source_greedy_xor": source_greedy_xor(record),
             "T_sha256": hashlib.sha256(
                 "".join(f"{row:08x}" for row in T).encode("ascii")
             ).hexdigest(),
@@ -880,7 +897,7 @@ def audit(args: argparse.Namespace) -> dict[str, Any]:
         "component_limit": None,
         "global_beam": None,
         "cost": {
-            "fixed_shell_gate": FIXED_SHELL_GATE,
+            "fixed_shell_gate": args.fixed_gate,
             "xor2_gate": 3,
             "xor2_delay": 2,
             "or_gate": 1,
@@ -888,11 +905,12 @@ def audit(args: argparse.Namespace) -> dict[str, Any]:
             "logic_budget": args.logic_budget,
         },
         "target": {
-            "gate": FIXED_SHELL_GATE + args.logic_budget,
-            "delay": 10,
-            "cycles": 66,
+            "gate": args.fixed_gate + args.logic_budget,
+            "delay": args.delay,
+            "cycles": args.cycles,
         },
         "input_record_count": len(records),
+        "source_xor_filter": args.source_xor,
         "processed_record_count": len(results),
         "statuses": dict(statuses),
         "solver": args.solver,
@@ -912,6 +930,10 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--certificate", type=Path, default=HERE / "sat-certificate.json")
     parser.add_argument("--logic-budget", type=int, default=DEFAULT_LOGIC_BUDGET)
+    parser.add_argument("--fixed-gate", type=int, default=FIXED_SHELL_GATE)
+    parser.add_argument("--delay", type=int, default=10)
+    parser.add_argument("--cycles", type=int, default=66)
+    parser.add_argument("--source-xor", type=int)
     parser.add_argument("--solver", default="g4")
     parser.add_argument(
         "--budget-encoding",
@@ -926,6 +948,10 @@ def main() -> int:
     args = parser.parse_args()
     if (
         args.logic_budget < 0
+        or args.fixed_gate < 0
+        or args.delay < 0
+        or args.cycles < 0
+        or (args.source_xor is not None and args.source_xor < 0)
         or args.start_index < 0
         or args.record_limit < 0
         or args.timeout_seconds < 0
