@@ -1,0 +1,58 @@
+{
+  "schema": "exact-adder-block-switch-cnf-v1",
+  "status": "unsat",
+  "bits": 1,
+  "inputs": 3,
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "gate_bound": 6,
+  "max_delay": 4,
+  "components": 6,
+  "exact_switches": null,
+  "exact_xors": null,
+  "solver": "cadical195",
+  "timeout_seconds": 60.0,
+  "conflict_budget": null,
+  "variables": 1789,
+  "clauses": 13467,
+  "solve_seconds": 0.41118970001116395,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  }
+}

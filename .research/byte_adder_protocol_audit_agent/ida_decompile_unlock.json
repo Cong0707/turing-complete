@@ -1,0 +1,43 @@
+[
+  {
+    "name": "is_score_unlocked__modelZboardZschematics_u1782",
+    "address": "0x0000000140282924",
+    "callers": [
+      {
+        "reference": "0x0000000140285e8f",
+        "function": "get_budget__modelZboardZschematics_u2168"
+      },
+      {
+        "reference": "0x00000001404ac57a",
+        "function": "preorder__modelZsimulationZcompile95thread_u4293"
+      }
+    ],
+    "pseudocode": "__int64 is_score_unlocked__modelZboardZschematics_u1782()\n{\n  __int64 v0; // rdx\n  __int64 v2[2]; // [rsp+20h] [rbp-C0h] BYREF\n  __int64 v3[4]; // [rsp+30h] [rbp-B0h] BYREF\n  char v4[8]; // [rsp+50h] [rbp-90h] BYREF\n  const char *v5; // [rsp+58h] [rbp-88h]\n  __int64 v6; // [rsp+60h] [rbp-80h]\n  const char *v7; // [rsp+68h] [rbp-78h]\n  __int16 v8; // [rsp+70h] [rbp-70h]\n  char v9[80]; // [rsp+80h] [rbp-60h] BYREF\n  _BYTE *v10; // [rsp+D0h] [rbp-10h]\n  unsigned __int8 v11; // [rsp+DFh] [rbp-1h]\n\n  v5 = \"is_score_unlocked\";\n  v7 = \"D:\\\\TuringComplete_Phu\\\\model\\\\board\\\\schematics.nim\";\n  v6 = 0i64;\n  v8 = 0;\n  nimFrame_75(v4);\n  v10 = (_BYTE *)nimErrorFlag_73();\n  v11 = 0;\n  nimZeroMem_55(v9, 72i64);\n  v7 = \"D:\\\\TuringComplete_Phu\\\\model\\\\board\\\\schematics.nim\";\n  v6 = 161i64;\n  v0 = *((_QWORD *)refptr_level_progress__modelZmodel95types_u825 + 1);\n  v3[0] = *(_QWORD *)refptr_level_progress__modelZmodel95types_u825;\n  v3[1] = v0;\n  v3[2] = *((_QWORD *)refptr_level_progress__modelZmodel95types_u825 + 2);\n  v2[0] = TM__DRGBjVoeyzCuYwSWCgAUCw_80;\n  v2[1] = (__int64)&TM__DRGBjVoeyzCuYwSWCgAUCw_79;\n  getOrDefault__modelZboardZschematics_u1849(v3, v2, v9);\n  if ( !*v10 )\n  {\n    v11 = v9[0];\n    v6 = 419i64;\n    v7 = \"C:\\\\Users\\\\Admin\\\\.choosenim\\\\toolchains\\\\nim-2.2.6\\\\lib\\\\pure\\\\collections\\\\tables.nim\";\n  }\n  eqdestroy___modelZboardZschematics_u2144(v9);\n  popFrame_75();\n  return v11;\n}\n"
+  },
+  {
+    "name": "is_unlocked__modelZcampaigns_u16787",
+    "address": "0x0000000140332f5a",
+    "callers": [
+      {
+        "reference": "0x00000001406ce9b2",
+        "function": "handle_no_action_yet__presenterZuser95inputZboard95ioZactionZnone_u1299"
+      },
+      {
+        "reference": "0x00000001407e61ca",
+        "function": "build_search_corner__presenterZboard95uiZmenu95bar95campaign_u261"
+      }
+    ],
+    "pseudocode": "_BOOL8 __fastcall is_unlocked__modelZcampaigns_u16787(__int64 a1)\n{\n  char v2[8]; // [rsp+20h] [rbp-60h] BYREF\n  const char *v3; // [rsp+28h] [rbp-58h]\n  __int64 v4; // [rsp+30h] [rbp-50h]\n  const char *v5; // [rsp+38h] [rbp-48h]\n  __int16 v6; // [rsp+40h] [rbp-40h]\n  __int64 v7[3]; // [rsp+50h] [rbp-30h] BYREF\n  bool v8; // [rsp+6Eh] [rbp-12h]\n  bool v9; // [rsp+6Fh] [rbp-11h]\n  _BYTE *v10; // [rsp+70h] [rbp-10h]\n  bool v11; // [rsp+7Fh] [rbp-1h]\n\n  v3 = \"is_unlocked\";\n  v5 = \"D:\\\\TuringComplete_Phu\\\\model\\\\campaigns.nim\";\n  v4 = 0i64;\n  v6 = 0;\n  nimFrame_81(v2);\n  v10 = (_BYTE *)nimErrorFlag_79();\n  v11 = 0;\n  v4 = 1334i64;\n  if ( *(_BYTE *)a1 == 59 || *(_BYTE *)a1 == 41 )\n  {\n    v4 = 1337i64;\n    if ( *(__int64 *)(a1 + 168) > 0 )\n    {\n      v9 = *(_QWORD *)(*(_QWORD *)(a1 + 176) + 8i64) != 0i64;\n      v4 = 1338i64;\n      if ( !v9 )\n      {\n        v4 = 1341i64;\n        get_input__modelZsimulationZcontroller_u128(v7, a1, 0i64);\n        if ( !*v10 )\n        {\n          v8 = v7[0] != 0;\n          v4 = 1342i64;\n          v11 = v7[0] != 0;\n        }\n      }\n      else\n      {\n        v4 = 1339i64;\n        v11 = 1;\n      }\n    }\n    else\n    {\n      raiseIndexError2(0i64, *(_QWORD *)(a1 + 168) - 1i64);\n    }\n  }\n  else\n  {\n    v4 = 1335i64;\n    v11 = 0;\n  }\n  popFrame_81();\n  return v11;\n}\n"
+  },
+  {
+    "name": "get_level_unlockable_components__presenterZutilitiesZhelper95functions_u1522",
+    "address": "0x00000001405dd57a",
+    "callers": [
+      {
+        "reference": "0x0000000140818205",
+        "function": "build__presenterZboard95uiZpopupZdialogueZunlock_u986"
+      }
+    ],
+    "pseudocode": "_QWORD *__fastcall get_level_unlockable_components__presenterZutilitiesZhelper95functions_u1522(\n        _QWORD *a1,\n        __int64 *a2)\n{\n  __int64 v2; // rax\n  __int64 v3; // rdx\n  __int64 v4; // rdx\n  __int64 v5; // rdx\n  __int64 v7; // [rsp+0h] [rbp-90h] BYREF\n  __int64 v8; // [rsp+20h] [rbp-70h] BYREF\n  __int64 v9; // [rsp+28h] [rbp-68h]\n  __int64 v10; // [rsp+30h] [rbp-60h]\n  __int64 v11; // [rsp+38h] [rbp-58h]\n  const char *v12; // [rsp+48h] [rbp-48h]\n  __int64 v13; // [rsp+50h] [rbp-40h]\n  const char *v14; // [rsp+58h] [rbp-38h]\n  __int16 v15; // [rsp+60h] [rbp-30h]\n  __int64 v16; // [rsp+70h] [rbp-20h] BYREF\n  __int64 v17; // [rsp+78h] [rbp-18h]\n  __int64 v18; // [rsp+80h] [rbp-10h]\n  _BYTE *v19; // [rsp+88h] [rbp-8h]\n\n  v2 = *a2;\n  v3 = a2[1];\n  v10 = v2;\n  v11 = v3;\n  v12 = \"get_level_unlockable_components\";\n  v14 = \"D:\\\\TuringComplete_Phu\\\\presenter\\\\utilities\\\\helper_functions.nim\";\n  v13 = 0i64;\n  v15 = 0;\n  nimFrame_149(&v7 + 8);\n  v19 = (_BYTE *)nimErrorFlag_144();\n  v16 = 0i64;\n  v17 = 0i64;\n  v13 = 223i64;\n  v14 = \"D:\\\\TuringComplete_Phu\\\\presenter\\\\utilities\\\\helper_functions.nim\";\n  v18 = 0i64;\n  v8 = v10;\n  v9 = v11;\n  v18 = X5BX5D___modelZboardZboard_u17368(refptr_campaign__modelZmodel95types_u817, &v8);\n  if ( !*v19 )\n  {\n    v13 = 635i64;\n    v14 = \"D:\\\\TuringComplete_Phu\\\\model\\\\model_types.nim\";\n    v4 = *(_QWORD *)(v18 + 288);\n    v8 = *(_QWORD *)(v18 + 280);\n    v9 = v4;\n    eqcopy___modelZmodel95types_u2181(&v16, &v8);\n  }\n  popFrame_149();\n  v5 = v17;\n  *a1 = v16;\n  a1[1] = v5;\n  return a1;\n}\n"
+  }
+]

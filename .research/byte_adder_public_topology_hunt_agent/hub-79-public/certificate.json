@@ -1,0 +1,426 @@
+{
+  "schema": "turing-complete-byte-adder-hub79-static-audit-v1",
+  "source": ".research/byte_adder_public_topology_hunt_agent/hub-79-public/circuit.data",
+  "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
+  "serialized_score": {
+    "gate": 154,
+    "delay": 4,
+    "energy": 616
+  },
+  "component_count": 116,
+  "wire_count": 430,
+  "component_kind_counts": {
+    "2": 1,
+    "3": 1,
+    "4": 12,
+    "6": 2,
+    "7": 16,
+    "9": 25,
+    "12": 49,
+    "16": 1,
+    "17": 2,
+    "79": 3,
+    "81": 2,
+    "109": 1,
+    "111": 1
+  },
+  "reviewed_gate_cost_breakdown": {
+    "bit_switch": 98,
+    "and": 12,
+    "nand": 2,
+    "or": 16,
+    "nor": 25,
+    "not": 1
+  },
+  "input_schema": {
+    "A": 8,
+    "B": 8,
+    "Cin": 1
+  },
+  "vectors_checked": 131072,
+  "truth": {
+    "sum_equals_low8_A_plus_B_plus_Cin": true,
+    "cout_equals_bit8_A_plus_B_plus_Cin": true
+  },
+  "output_depths": {
+    "sum_bits": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "cout": 4
+  },
+  "packed_conflict_cases": 0,
+  "multi_driver_network_count": 18,
+  "multi_driver_networks": [
+    {
+      "network": 6,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "network": 22,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 30720,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "network": 24,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 32768,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        8,
+        9,
+        10,
+        11,
+        16
+      ]
+    },
+    {
+      "network": 33,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        16
+      ]
+    },
+    {
+      "network": 43,
+      "driver_count": 4,
+      "switch_driver_count": 4,
+      "sink_count": 2,
+      "depth": 3,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        5,
+        6,
+        7,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "network": 46,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16
+      ]
+    },
+    {
+      "network": 48,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 1,
+      "depth": 4,
+      "z_cases": 32768,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16
+      ]
+    },
+    {
+      "network": 70,
+      "driver_count": 4,
+      "switch_driver_count": 4,
+      "sink_count": 1,
+      "depth": 3,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        5,
+        6,
+        7,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "network": 91,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 2,
+      "depth": 1,
+      "z_cases": 16384,
+      "one_cases": 57344,
+      "conflict_cases": 0,
+      "support": [
+        2,
+        3,
+        10,
+        11
+      ]
+    },
+    {
+      "network": 120,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 1,
+      "depth": 3,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "network": 122,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 2,
+      "depth": 1,
+      "z_cases": 32768,
+      "one_cases": 49152,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        8,
+        16
+      ]
+    },
+    {
+      "network": 156,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 6,
+      "depth": 2,
+      "z_cases": 49152,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        8,
+        9,
+        16
+      ]
+    },
+    {
+      "network": 158,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 3,
+      "depth": 2,
+      "z_cases": 36864,
+      "one_cases": 73728,
+      "conflict_cases": 0,
+      "support": [
+        2,
+        3,
+        4,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "network": 231,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 2,
+      "depth": 3,
+      "z_cases": 36864,
+      "one_cases": 73728,
+      "conflict_cases": 0,
+      "support": [
+        5,
+        6,
+        7,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "network": 238,
+      "driver_count": 3,
+      "switch_driver_count": 3,
+      "sink_count": 2,
+      "depth": 2,
+      "z_cases": 55296,
+      "one_cases": 75776,
+      "conflict_cases": 0,
+      "support": [
+        2,
+        3,
+        4,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "network": 246,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 4,
+      "depth": 3,
+      "z_cases": 27648,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16
+      ]
+    },
+    {
+      "network": 284,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 2,
+      "depth": 3,
+      "z_cases": 0,
+      "one_cases": 65536,
+      "conflict_cases": 0,
+      "support": [
+        5,
+        6,
+        13,
+        14
+      ]
+    },
+    {
+      "network": 308,
+      "driver_count": 2,
+      "switch_driver_count": 2,
+      "sink_count": 2,
+      "depth": 1,
+      "z_cases": 32768,
+      "one_cases": 49152,
+      "conflict_cases": 0,
+      "support": [
+        2,
+        10,
+        11
+      ]
+    }
+  ],
+  "candidate": null,
+  "candidate_reason": "冻结时尚无满足全真值和四延迟约束的严格改进物化网表"
+}

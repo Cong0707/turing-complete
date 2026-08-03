@@ -1,0 +1,834 @@
+{
+  "schema": "hub79-local-switch-network-synthesis-v1",
+  "primitive_library": {
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    }
+  },
+  "raw_vectors": 131072,
+  "network_count": 18,
+  "improvement_count": 0,
+  "results": [
+    {
+      "network": 6,
+      "switch_components": [
+        24,
+        53,
+        83
+      ],
+      "switch_cost": 6,
+      "original_depth": 4,
+      "local_input_count": 5,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 24,
+          "enable": {
+            "label": "c24.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c24.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 53,
+          "enable": {
+            "label": "c53.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c53.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 83,
+          "enable": {
+            "label": "c83.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c53.in",
+            "depth": 3
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 22,
+      "switch_components": [
+        2,
+        108
+      ],
+      "switch_cost": 4,
+      "original_depth": 4,
+      "local_input_count": 3,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 2,
+          "enable": {
+            "label": "c2.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c2.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 108,
+          "enable": {
+            "label": "c108.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c2.in",
+            "depth": 3
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 24,
+      "switch_components": [
+        47,
+        76,
+        90
+      ],
+      "switch_cost": 6,
+      "original_depth": 4,
+      "local_input_count": 5,
+      "reachable_local_patterns": 6,
+      "factors": [
+        {
+          "component_index": 47,
+          "enable": {
+            "label": "c47.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c47.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 76,
+          "enable": {
+            "label": "c76.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c76.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 90,
+          "enable": {
+            "label": "c90.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c76.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 33,
+      "switch_components": [
+        7,
+        50,
+        69
+      ],
+      "switch_cost": 6,
+      "original_depth": 4,
+      "local_input_count": 5,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 7,
+          "enable": {
+            "label": "c7.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c7.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 50,
+          "enable": {
+            "label": "c50.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c7.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 69,
+          "enable": {
+            "label": "c69.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c69.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 43,
+      "switch_components": [
+        17,
+        31,
+        32,
+        41
+      ],
+      "switch_cost": 8,
+      "original_depth": 3,
+      "local_input_count": 6,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 17,
+          "enable": {
+            "label": "c17.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c17.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 31,
+          "enable": {
+            "label": "c31.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c31.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 32,
+          "enable": {
+            "label": "c32.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c17.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 41,
+          "enable": {
+            "label": "c41.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c31.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 46,
+      "switch_components": [
+        78,
+        85,
+        94
+      ],
+      "switch_cost": 6,
+      "original_depth": 4,
+      "local_input_count": 5,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 78,
+          "enable": {
+            "label": "c78.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c78.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 85,
+          "enable": {
+            "label": "c85.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c85.in",
+            "depth": 3
+          }
+        },
+        {
+          "component_index": 94,
+          "enable": {
+            "label": "c94.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c78.in",
+            "depth": 3
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 48,
+      "switch_components": [
+        26,
+        37,
+        93
+      ],
+      "switch_cost": 6,
+      "original_depth": 4,
+      "local_input_count": 5,
+      "reachable_local_patterns": 10,
+      "factors": [
+        {
+          "component_index": 26,
+          "enable": {
+            "label": "c26.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c26.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 37,
+          "enable": {
+            "label": "c37.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c26.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 93,
+          "enable": {
+            "label": "c93.enable",
+            "depth": 3
+          },
+          "in": {
+            "label": "c93.in",
+            "depth": 3
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 70,
+      "switch_components": [
+        65,
+        75,
+        101,
+        104
+      ],
+      "switch_cost": 8,
+      "original_depth": 3,
+      "local_input_count": 6,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 65,
+          "enable": {
+            "label": "c65.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c65.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 75,
+          "enable": {
+            "label": "c75.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c75.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 101,
+          "enable": {
+            "label": "c101.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c75.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 104,
+          "enable": {
+            "label": "c104.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c65.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 91,
+      "switch_components": [
+        1,
+        87,
+        106
+      ],
+      "switch_cost": 6,
+      "original_depth": 1,
+      "local_input_count": 4,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 1,
+          "enable": {
+            "label": "c1.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 87,
+          "enable": {
+            "label": "c87.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 106,
+          "enable": {
+            "label": "c106.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 120,
+      "switch_components": [
+        19,
+        62
+      ],
+      "switch_cost": 4,
+      "original_depth": 3,
+      "local_input_count": 4,
+      "reachable_local_patterns": 4,
+      "factors": [
+        {
+          "component_index": 19,
+          "enable": {
+            "label": "c19.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c19.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 62,
+          "enable": {
+            "label": "c62.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c62.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 122,
+      "switch_components": [
+        86,
+        97
+      ],
+      "switch_cost": 4,
+      "original_depth": 1,
+      "local_input_count": 3,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 86,
+          "enable": {
+            "label": "c86.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c86.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 97,
+          "enable": {
+            "label": "c97.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c86.in",
+            "depth": 0
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 156,
+      "switch_components": [
+        22,
+        103,
+        107
+      ],
+      "switch_cost": 6,
+      "original_depth": 2,
+      "local_input_count": 4,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 22,
+          "enable": {
+            "label": "c22.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1
+          }
+        },
+        {
+          "component_index": 103,
+          "enable": {
+            "label": "c103.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1
+          }
+        },
+        {
+          "component_index": 107,
+          "enable": {
+            "label": "c107.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 158,
+      "switch_components": [
+        49,
+        59,
+        64
+      ],
+      "switch_cost": 6,
+      "original_depth": 2,
+      "local_input_count": 4,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 49,
+          "enable": {
+            "label": "c49.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1
+          }
+        },
+        {
+          "component_index": 59,
+          "enable": {
+            "label": "c59.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1
+          }
+        },
+        {
+          "component_index": 64,
+          "enable": {
+            "label": "c64.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 231,
+      "switch_components": [
+        4,
+        9
+      ],
+      "switch_cost": 4,
+      "original_depth": 3,
+      "local_input_count": 3,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 4,
+          "enable": {
+            "label": "c4.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c4.in",
+            "depth": 1
+          }
+        },
+        {
+          "component_index": 9,
+          "enable": {
+            "label": "c9.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c4.in",
+            "depth": 1
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 238,
+      "switch_components": [
+        51,
+        95,
+        105
+      ],
+      "switch_cost": 6,
+      "original_depth": 2,
+      "local_input_count": 4,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 51,
+          "enable": {
+            "label": "c51.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 95,
+          "enable": {
+            "label": "c95.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 105,
+          "enable": {
+            "label": "c105.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 246,
+      "switch_components": [
+        40,
+        113
+      ],
+      "switch_cost": 4,
+      "original_depth": 3,
+      "local_input_count": 3,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 40,
+          "enable": {
+            "label": "c40.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c40.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 113,
+          "enable": {
+            "label": "c113.enable",
+            "depth": 2
+          },
+          "in": {
+            "label": "c40.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 284,
+      "switch_components": [
+        15,
+        57
+      ],
+      "switch_cost": 4,
+      "original_depth": 3,
+      "local_input_count": 4,
+      "reachable_local_patterns": 4,
+      "factors": [
+        {
+          "component_index": 15,
+          "enable": {
+            "label": "c15.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c15.in",
+            "depth": 2
+          }
+        },
+        {
+          "component_index": 57,
+          "enable": {
+            "label": "c57.enable",
+            "depth": 1
+          },
+          "in": {
+            "label": "c57.in",
+            "depth": 2
+          }
+        }
+      ],
+      "strict_improvement": null
+    },
+    {
+      "network": 308,
+      "switch_components": [
+        29,
+        56
+      ],
+      "switch_cost": 4,
+      "original_depth": 1,
+      "local_input_count": 3,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 29,
+          "enable": {
+            "label": "c29.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c29.in",
+            "depth": 0
+          }
+        },
+        {
+          "component_index": 56,
+          "enable": {
+            "label": "c56.enable",
+            "depth": 0
+          },
+          "in": {
+            "label": "c29.in",
+            "depth": 0
+          }
+        }
+      ],
+      "strict_improvement": null
+    }
+  ]
+}

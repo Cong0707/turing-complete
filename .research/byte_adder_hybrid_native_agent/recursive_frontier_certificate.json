@@ -1,0 +1,588 @@
+{
+  "formula": {
+    "gate": "ceil(base_gate * width / 8)",
+    "delay": "max(min(width, 4), ceil(base_delay * width / 8))"
+  },
+  "legal_widths_before_byte_adder": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "bootstrap_154_4_scaled": {
+    "1": {
+      "gate": 20,
+      "delay": 1
+    },
+    "2": {
+      "gate": 39,
+      "delay": 2
+    },
+    "4": {
+      "gate": 77,
+      "delay": 4
+    },
+    "8": {
+      "gate": 154,
+      "delay": 4
+    }
+  },
+  "bootstrap_serial_partitions": [
+    {
+      "parts": [
+        4,
+        4
+      ],
+      "segment_costs": [
+        {
+          "gate": 77,
+          "delay": 4
+        },
+        {
+          "gate": 77,
+          "delay": 4
+        }
+      ],
+      "serial_gate": 154,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        2,
+        2,
+        4
+      ],
+      "segment_costs": [
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 77,
+          "delay": 4
+        }
+      ],
+      "serial_gate": 155,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 77,
+          "delay": 4
+        }
+      ],
+      "serial_gate": 156,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "segment_costs": [
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        }
+      ],
+      "serial_gate": 156,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 77,
+          "delay": 4
+        }
+      ],
+      "serial_gate": 157,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        2,
+        2,
+        2
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        }
+      ],
+      "serial_gate": 157,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        }
+      ],
+      "serial_gate": 158,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 39,
+          "delay": 2
+        }
+      ],
+      "serial_gate": 159,
+      "serial_delay": 8
+    },
+    {
+      "parts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "segment_costs": [
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        },
+        {
+          "gate": 20,
+          "delay": 1
+        }
+      ],
+      "serial_gate": 160,
+      "serial_delay": 8
+    }
+  ],
+  "best_non_u8_serial_partition": {
+    "parts": [
+      4,
+      4
+    ],
+    "segment_costs": [
+      {
+        "gate": 77,
+        "delay": 4
+      },
+      {
+        "gate": 77,
+        "delay": 4
+      }
+    ],
+    "serial_gate": 154,
+    "serial_delay": 8
+  },
+  "observed_public_chain_u4_residuals": [
+    {
+      "previous_u8": {
+        "gate": 154,
+        "delay": 4
+      },
+      "scaled_u4": {
+        "gate": 77,
+        "delay": 4
+      },
+      "target_u8": {
+        "gate": 103,
+        "delay": 5
+      },
+      "residual_gate": 26,
+      "target_minus_u4_delay": 1,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 103,
+        "delay": 5
+      },
+      "scaled_u4": {
+        "gate": 52,
+        "delay": 4
+      },
+      "target_u8": {
+        "gate": 88,
+        "delay": 6
+      },
+      "residual_gate": 36,
+      "target_minus_u4_delay": 2,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 88,
+        "delay": 6
+      },
+      "scaled_u4": {
+        "gate": 44,
+        "delay": 4
+      },
+      "target_u8": {
+        "gate": 79,
+        "delay": 7
+      },
+      "residual_gate": 35,
+      "target_minus_u4_delay": 3,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 79,
+        "delay": 7
+      },
+      "scaled_u4": {
+        "gate": 40,
+        "delay": 4
+      },
+      "target_u8": {
+        "gate": 74,
+        "delay": 8
+      },
+      "residual_gate": 34,
+      "target_minus_u4_delay": 4,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 74,
+        "delay": 8
+      },
+      "scaled_u4": {
+        "gate": 37,
+        "delay": 4
+      },
+      "target_u8": {
+        "gate": 71,
+        "delay": 9
+      },
+      "residual_gate": 34,
+      "target_minus_u4_delay": 5,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 71,
+        "delay": 9
+      },
+      "scaled_u4": {
+        "gate": 36,
+        "delay": 5
+      },
+      "target_u8": {
+        "gate": 68,
+        "delay": 10
+      },
+      "residual_gate": 32,
+      "target_minus_u4_delay": 5,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 68,
+        "delay": 10
+      },
+      "scaled_u4": {
+        "gate": 34,
+        "delay": 5
+      },
+      "target_u8": {
+        "gate": 67,
+        "delay": 11
+      },
+      "residual_gate": 33,
+      "target_minus_u4_delay": 6,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 67,
+        "delay": 11
+      },
+      "scaled_u4": {
+        "gate": 34,
+        "delay": 6
+      },
+      "target_u8": {
+        "gate": 65,
+        "delay": 12
+      },
+      "residual_gate": 31,
+      "target_minus_u4_delay": 6,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 65,
+        "delay": 12
+      },
+      "scaled_u4": {
+        "gate": 33,
+        "delay": 6
+      },
+      "target_u8": {
+        "gate": 63,
+        "delay": 13
+      },
+      "residual_gate": 30,
+      "target_minus_u4_delay": 7,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 63,
+        "delay": 13
+      },
+      "scaled_u4": {
+        "gate": 32,
+        "delay": 7
+      },
+      "target_u8": {
+        "gate": 62,
+        "delay": 14
+      },
+      "residual_gate": 30,
+      "target_minus_u4_delay": 7,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 62,
+        "delay": 14
+      },
+      "scaled_u4": {
+        "gate": 31,
+        "delay": 7
+      },
+      "target_u8": {
+        "gate": 61,
+        "delay": 15
+      },
+      "residual_gate": 30,
+      "target_minus_u4_delay": 8,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 61,
+        "delay": 15
+      },
+      "scaled_u4": {
+        "gate": 31,
+        "delay": 8
+      },
+      "target_u8": {
+        "gate": 59,
+        "delay": 16
+      },
+      "residual_gate": 28,
+      "target_minus_u4_delay": 8,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 59,
+        "delay": 16
+      },
+      "scaled_u4": {
+        "gate": 30,
+        "delay": 8
+      },
+      "target_u8": {
+        "gate": 57,
+        "delay": 17
+      },
+      "residual_gate": 27,
+      "target_minus_u4_delay": 9,
+      "status": "arithmetic residual only; no DAG implied"
+    },
+    {
+      "previous_u8": {
+        "gate": 57,
+        "delay": 17
+      },
+      "scaled_u4": {
+        "gate": 29,
+        "delay": 9
+      },
+      "target_u8": {
+        "gate": 56,
+        "delay": 18
+      },
+      "residual_gate": 27,
+      "target_minus_u4_delay": 9,
+      "status": "arithmetic residual only; no DAG implied"
+    }
+  ],
+  "scope": [
+    "No U3/U5/U6/U7 materialization is assumed.",
+    "Serial partition delay is the sum along the carry chain.",
+    "Residual gate and delay numbers are not construction certificates.",
+    "A complete DAG, truth-table replay, timing proof, and geometry proof are still required."
+  ]
+}

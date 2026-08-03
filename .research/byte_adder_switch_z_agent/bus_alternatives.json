@@ -1,0 +1,1836 @@
+{
+  "schema": "byte-adder-hub79-bus-alternatives-v1",
+  "source": ".research/rng_public_artifacts/hub-79-adder/main/circuit.data",
+  "vectors": 131072,
+  "serialized_gate": 154,
+  "serialized_delay": 4,
+  "ordinary_gate_baseline": 56,
+  "switch_bus_count": 18,
+  "results": [
+    {
+      "network": 6,
+      "switch_components": [
+        24,
+        53,
+        83
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 24,
+          "enable": {
+            "label": "c24.enable",
+            "depth": 3,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c24.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 53,
+          "enable": {
+            "label": "c53.enable",
+            "depth": 3,
+            "ones": 27648
+          },
+          "in": {
+            "label": "c53.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 83,
+          "enable": {
+            "label": "c83.enable",
+            "depth": 3,
+            "ones": 57344
+          },
+          "in": {
+            "label": "c53.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": null,
+        "6": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c24.enable,c24.in),NOR(c24.enable,NOT(c53.in)))"
+        },
+        "7": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c24.enable,c24.in),NOR(c24.enable,NOT(c53.in)))"
+        }
+      }
+    },
+    {
+      "network": 22,
+      "switch_components": [
+        2,
+        108
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 30720,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 2,
+          "enable": {
+            "label": "c2.enable",
+            "depth": 3,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c2.in",
+            "depth": 3,
+            "ones": 73728
+          }
+        },
+        {
+          "component_index": 108,
+          "enable": {
+            "label": "c108.enable",
+            "depth": 3,
+            "ones": 69632
+          },
+          "in": {
+            "label": "c2.in",
+            "depth": 3,
+            "ones": 73728
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": {
+          "cost": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        }
+      }
+    },
+    {
+      "network": 24,
+      "switch_components": [
+        47,
+        76,
+        90
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 32768,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 6,
+      "factors": [
+        {
+          "component_index": 47,
+          "enable": {
+            "label": "c47.enable",
+            "depth": 3,
+            "ones": 49152
+          },
+          "in": {
+            "label": "c47.in",
+            "depth": 3,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 76,
+          "enable": {
+            "label": "c76.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c76.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 90,
+          "enable": {
+            "label": "c90.enable",
+            "depth": 3,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c76.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": null,
+        "6": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c47.enable,c47.in),AND(c76.in,OR(c76.enable,c90.enable)))"
+        },
+        "7": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c47.enable,c47.in),AND(c76.in,OR(c76.enable,c90.enable)))"
+        }
+      }
+    },
+    {
+      "network": 33,
+      "switch_components": [
+        7,
+        50,
+        69
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 7,
+          "enable": {
+            "label": "c7.enable",
+            "depth": 3,
+            "ones": 57344
+          },
+          "in": {
+            "label": "c7.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 50,
+          "enable": {
+            "label": "c50.enable",
+            "depth": 3,
+            "ones": 27648
+          },
+          "in": {
+            "label": "c7.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 69,
+          "enable": {
+            "label": "c69.enable",
+            "depth": 3,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c69.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": {
+          "cost": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        }
+      }
+    },
+    {
+      "network": 43,
+      "switch_components": [
+        17,
+        31,
+        32,
+        41
+      ],
+      "switch_count": 4,
+      "switch_gate": 8,
+      "switch_depth": 3,
+      "sink_count": 2,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 17,
+          "enable": {
+            "label": "c17.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c17.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 31,
+          "enable": {
+            "label": "c31.enable",
+            "depth": 2,
+            "ones": 73728
+          },
+          "in": {
+            "label": "c31.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 32,
+          "enable": {
+            "label": "c32.enable",
+            "depth": 2,
+            "ones": 24576
+          },
+          "in": {
+            "label": "c17.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 41,
+          "enable": {
+            "label": "c41.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c31.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        },
+        "6": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        },
+        "7": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        }
+      }
+    },
+    {
+      "network": 46,
+      "switch_components": [
+        78,
+        85,
+        94
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 78,
+          "enable": {
+            "label": "c78.enable",
+            "depth": 3,
+            "ones": 27648
+          },
+          "in": {
+            "label": "c78.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 85,
+          "enable": {
+            "label": "c85.enable",
+            "depth": 3,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c85.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 94,
+          "enable": {
+            "label": "c94.enable",
+            "depth": 3,
+            "ones": 57344
+          },
+          "in": {
+            "label": "c78.in",
+            "depth": 3,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": null,
+        "6": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "AND(OR(c78.in,c85.enable),OR(c78.enable,OR(c85.in,c94.enable)))"
+        },
+        "7": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "AND(OR(c78.in,c85.enable),OR(c78.enable,OR(c85.in,c94.enable)))"
+        }
+      }
+    },
+    {
+      "network": 48,
+      "switch_components": [
+        26,
+        37,
+        93
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 4,
+      "sink_count": 1,
+      "z_cases": 32768,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 10,
+      "factors": [
+        {
+          "component_index": 26,
+          "enable": {
+            "label": "c26.enable",
+            "depth": 2,
+            "ones": 49152
+          },
+          "in": {
+            "label": "c26.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 37,
+          "enable": {
+            "label": "c37.enable",
+            "depth": 3,
+            "ones": 27648
+          },
+          "in": {
+            "label": "c26.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 93,
+          "enable": {
+            "label": "c93.enable",
+            "depth": 3,
+            "ones": 40960
+          },
+          "in": {
+            "label": "c93.in",
+            "depth": 3,
+            "ones": 94208
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": null,
+        "6": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c93.enable,c93.in),AND(c26.in,OR(c26.enable,c37.enable)))"
+        },
+        "7": {
+          "cost": 4,
+          "depth": 6,
+          "expression": "OR(AND(c93.enable,c93.in),AND(c26.in,OR(c26.enable,c37.enable)))"
+        }
+      }
+    },
+    {
+      "network": 70,
+      "switch_components": [
+        65,
+        75,
+        101,
+        104
+      ],
+      "switch_count": 4,
+      "switch_gate": 8,
+      "switch_depth": 3,
+      "sink_count": 1,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 65,
+          "enable": {
+            "label": "c65.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c65.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 75,
+          "enable": {
+            "label": "c75.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c75.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 101,
+          "enable": {
+            "label": "c101.enable",
+            "depth": 2,
+            "ones": 24576
+          },
+          "in": {
+            "label": "c75.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 104,
+          "enable": {
+            "label": "c104.enable",
+            "depth": 2,
+            "ones": 73728
+          },
+          "in": {
+            "label": "c65.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": null,
+        "5": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        },
+        "6": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        },
+        "7": {
+          "cost": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        }
+      }
+    },
+    {
+      "network": 91,
+      "switch_components": [
+        1,
+        87,
+        106
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 1,
+      "sink_count": 2,
+      "z_cases": 16384,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 16,
+      "factors": [
+        {
+          "component_index": 1,
+          "enable": {
+            "label": "c1.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 87,
+          "enable": {
+            "label": "c87.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 106,
+          "enable": {
+            "label": "c106.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c1.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        "5": {
+          "cost": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        }
+      }
+    },
+    {
+      "network": 120,
+      "switch_components": [
+        19,
+        62
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 3,
+      "sink_count": 1,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 4,
+      "factors": [
+        {
+          "component_index": 19,
+          "enable": {
+            "label": "c19.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c19.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 62,
+          "enable": {
+            "label": "c62.enable",
+            "depth": 1,
+            "ones": 98304
+          },
+          "in": {
+            "label": "c62.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        "5": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        }
+      }
+    },
+    {
+      "network": 122,
+      "switch_components": [
+        86,
+        97
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 1,
+      "sink_count": 2,
+      "z_cases": 32768,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 86,
+          "enable": {
+            "label": "c86.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c86.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 97,
+          "enable": {
+            "label": "c97.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c86.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        "5": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        }
+      }
+    },
+    {
+      "network": 156,
+      "switch_components": [
+        22,
+        103,
+        107
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 2,
+      "sink_count": 6,
+      "z_cases": 49152,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 22,
+          "enable": {
+            "label": "c22.enable",
+            "depth": 1,
+            "ones": 49152
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 103,
+          "enable": {
+            "label": "c103.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 107,
+          "enable": {
+            "label": "c107.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c22.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        "5": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        }
+      }
+    },
+    {
+      "network": 158,
+      "switch_components": [
+        49,
+        59,
+        64
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 2,
+      "sink_count": 3,
+      "z_cases": 36864,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 12,
+      "factors": [
+        {
+          "component_index": 49,
+          "enable": {
+            "label": "c49.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 59,
+          "enable": {
+            "label": "c59.enable",
+            "depth": 1,
+            "ones": 49152
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 64,
+          "enable": {
+            "label": "c64.enable",
+            "depth": 1,
+            "ones": 57344
+          },
+          "in": {
+            "label": "c49.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        "5": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        }
+      }
+    },
+    {
+      "network": 231,
+      "switch_components": [
+        4,
+        9
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 3,
+      "sink_count": 2,
+      "z_cases": 36864,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 4,
+          "enable": {
+            "label": "c4.enable",
+            "depth": 2,
+            "ones": 73728
+          },
+          "in": {
+            "label": "c4.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        },
+        {
+          "component_index": 9,
+          "enable": {
+            "label": "c9.enable",
+            "depth": 2,
+            "ones": 57344
+          },
+          "in": {
+            "label": "c4.in",
+            "depth": 1,
+            "ones": 98304
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        "5": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        }
+      }
+    },
+    {
+      "network": 238,
+      "switch_components": [
+        51,
+        95,
+        105
+      ],
+      "switch_count": 3,
+      "switch_gate": 6,
+      "switch_depth": 2,
+      "sink_count": 2,
+      "z_cases": 55296,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 51,
+          "enable": {
+            "label": "c51.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0,
+            "ones": 131072
+          }
+        },
+        {
+          "component_index": 95,
+          "enable": {
+            "label": "c95.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0,
+            "ones": 131072
+          }
+        },
+        {
+          "component_index": 105,
+          "enable": {
+            "label": "c105.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c51.in",
+            "depth": 0,
+            "ones": 131072
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        "5": {
+          "cost": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        }
+      }
+    },
+    {
+      "network": 246,
+      "switch_components": [
+        40,
+        113
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 3,
+      "sink_count": 4,
+      "z_cases": 27648,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 40,
+          "enable": {
+            "label": "c40.enable",
+            "depth": 2,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c40.in",
+            "depth": 2,
+            "ones": 73728
+          }
+        },
+        {
+          "component_index": 113,
+          "enable": {
+            "label": "c113.enable",
+            "depth": 2,
+            "ones": 75776
+          },
+          "in": {
+            "label": "c40.in",
+            "depth": 2,
+            "ones": 73728
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        "5": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        }
+      }
+    },
+    {
+      "network": 284,
+      "switch_components": [
+        15,
+        57
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 3,
+      "sink_count": 2,
+      "z_cases": 0,
+      "distinct_data_count": 2,
+      "reachable_local_patterns": 4,
+      "factors": [
+        {
+          "component_index": 15,
+          "enable": {
+            "label": "c15.enable",
+            "depth": 1,
+            "ones": 32768
+          },
+          "in": {
+            "label": "c15.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 57,
+          "enable": {
+            "label": "c57.enable",
+            "depth": 1,
+            "ones": 98304
+          },
+          "in": {
+            "label": "c57.in",
+            "depth": 2,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        "5": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        "6": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        "7": {
+          "cost": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        }
+      }
+    },
+    {
+      "network": 308,
+      "switch_components": [
+        29,
+        56
+      ],
+      "switch_count": 2,
+      "switch_gate": 4,
+      "switch_depth": 1,
+      "sink_count": 2,
+      "z_cases": 32768,
+      "distinct_data_count": 1,
+      "reachable_local_patterns": 8,
+      "factors": [
+        {
+          "component_index": 29,
+          "enable": {
+            "label": "c29.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c29.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        },
+        {
+          "component_index": 56,
+          "enable": {
+            "label": "c56.enable",
+            "depth": 0,
+            "ones": 65536
+          },
+          "in": {
+            "label": "c29.in",
+            "depth": 0,
+            "ones": 65536
+          }
+        }
+      ],
+      "boolean_alternatives": {
+        "4": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        },
+        "5": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        },
+        "6": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        },
+        "7": {
+          "cost": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        }
+      }
+    }
+  ],
+  "independent_totals": {
+    "4": {
+      "feasible_under_frozen_input_arrivals": true,
+      "ordinary_gate_baseline": 56,
+      "bus_gate": 75,
+      "total_gate_before_global_pruning": 131,
+      "choices": [
+        {
+          "network": 6,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 22,
+          "mode": "switch",
+          "gate": 4,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 24,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 33,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 43,
+          "mode": "switch",
+          "gate": 8,
+          "depth": 3,
+          "expression": null
+        },
+        {
+          "network": 46,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 48,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 70,
+          "mode": "switch",
+          "gate": 8,
+          "depth": 3,
+          "expression": null
+        },
+        {
+          "network": 91,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        {
+          "network": 120,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        {
+          "network": 122,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        {
+          "network": 156,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        {
+          "network": 158,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        {
+          "network": 231,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        {
+          "network": 238,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        {
+          "network": 246,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        {
+          "network": 284,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        {
+          "network": 308,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        }
+      ]
+    },
+    "5": {
+      "feasible_under_frozen_input_arrivals": true,
+      "ordinary_gate_baseline": 56,
+      "bus_gate": 64,
+      "total_gate_before_global_pruning": 120,
+      "choices": [
+        {
+          "network": 6,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 22,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        },
+        {
+          "network": 24,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 33,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        },
+        {
+          "network": 43,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        },
+        {
+          "network": 46,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 48,
+          "mode": "switch",
+          "gate": 6,
+          "depth": 4,
+          "expression": null
+        },
+        {
+          "network": 70,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        },
+        {
+          "network": 91,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        {
+          "network": 120,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        {
+          "network": 122,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        {
+          "network": 156,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        {
+          "network": 158,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        {
+          "network": 231,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        {
+          "network": 238,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        {
+          "network": 246,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        {
+          "network": 284,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        {
+          "network": 308,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        }
+      ]
+    },
+    "6": {
+      "feasible_under_frozen_input_arrivals": true,
+      "ordinary_gate_baseline": 56,
+      "bus_gate": 56,
+      "total_gate_before_global_pruning": 112,
+      "choices": [
+        {
+          "network": 6,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c24.enable,c24.in),NOR(c24.enable,NOT(c53.in)))"
+        },
+        {
+          "network": 22,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        },
+        {
+          "network": 24,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c47.enable,c47.in),AND(c76.in,OR(c76.enable,c90.enable)))"
+        },
+        {
+          "network": 33,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        },
+        {
+          "network": 43,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        },
+        {
+          "network": 46,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "AND(OR(c78.in,c85.enable),OR(c78.enable,OR(c85.in,c94.enable)))"
+        },
+        {
+          "network": 48,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c93.enable,c93.in),AND(c26.in,OR(c26.enable,c37.enable)))"
+        },
+        {
+          "network": 70,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        },
+        {
+          "network": 91,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        {
+          "network": 120,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        {
+          "network": 122,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        {
+          "network": 156,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        {
+          "network": 158,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        {
+          "network": 231,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        {
+          "network": 238,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        {
+          "network": 246,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        {
+          "network": 284,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        {
+          "network": 308,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        }
+      ]
+    },
+    "7": {
+      "feasible_under_frozen_input_arrivals": true,
+      "ordinary_gate_baseline": 56,
+      "bus_gate": 56,
+      "total_gate_before_global_pruning": 112,
+      "choices": [
+        {
+          "network": 6,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c24.enable,c24.in),NOR(c24.enable,NOT(c53.in)))"
+        },
+        {
+          "network": 22,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 5,
+          "expression": "AND(c2.in,OR(c2.enable,c108.enable))"
+        },
+        {
+          "network": 24,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c47.enable,c47.in),AND(c76.in,OR(c76.enable,c90.enable)))"
+        },
+        {
+          "network": 33,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 5,
+          "expression": "NOR(AND(c7.in,c69.enable),NOR(c7.in,c69.enable))"
+        },
+        {
+          "network": 43,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c17.enable,OR(c17.in,c32.enable)),NAND(c17.in,OR(c17.enable,c32.enable)))"
+        },
+        {
+          "network": 46,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "AND(OR(c78.in,c85.enable),OR(c78.enable,OR(c85.in,c94.enable)))"
+        },
+        {
+          "network": 48,
+          "mode": "boolean",
+          "gate": 4,
+          "depth": 6,
+          "expression": "OR(AND(c93.enable,c93.in),AND(c26.in,OR(c26.enable,c37.enable)))"
+        },
+        {
+          "network": 70,
+          "mode": "boolean",
+          "gate": 5,
+          "depth": 5,
+          "expression": "NAND(OR(c65.enable,OR(c65.in,c104.enable)),NAND(c65.in,OR(c65.enable,c104.enable)))"
+        },
+        {
+          "network": 91,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 3,
+          "expression": "AND(c1.in,OR(c1.enable,OR(c87.enable,c106.enable)))"
+        },
+        {
+          "network": 120,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c19.enable,c19.in),NOR(c19.enable,c19.in))"
+        },
+        {
+          "network": 122,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c86.in,OR(c86.enable,c97.enable))"
+        },
+        {
+          "network": 156,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "AND(c22.in,OR(c22.enable,OR(c103.enable,c107.enable)))"
+        },
+        {
+          "network": 158,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(c49.enable,AND(c49.in,OR(c59.enable,c64.enable)))"
+        },
+        {
+          "network": 231,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c4.in,OR(c4.enable,c9.enable))"
+        },
+        {
+          "network": 238,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 3,
+          "expression": "OR(c51.enable,OR(c95.enable,c105.enable))"
+        },
+        {
+          "network": 246,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 4,
+          "expression": "AND(c40.in,OR(c40.enable,c113.enable))"
+        },
+        {
+          "network": 284,
+          "mode": "boolean",
+          "gate": 3,
+          "depth": 4,
+          "expression": "OR(AND(c15.enable,c15.in),NOR(c15.enable,c15.in))"
+        },
+        {
+          "network": 308,
+          "mode": "boolean",
+          "gate": 2,
+          "depth": 2,
+          "expression": "AND(c29.in,OR(c29.enable,c56.enable))"
+        }
+      ]
+    }
+  },
+  "warning": "Totals freeze original input arrivals and retain all original ordinary gates; they are a screening bound, not a materialized joint netlist."
+}

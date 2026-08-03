@@ -1,0 +1,8117 @@
+{
+  "schema": 1,
+  "scope": "8-bit A+B+Cin; exact packed truth and TC Z/conflict semantics for retained witnesses; all ordinary/switch cell masks for schedules within max_schedule_cells, uniform-per-level otherwise; locally Pareto all-parenthesization GP transfer DP with exact multi-output node sharing",
+  "cost_model": {
+    "ordinary_gate": [
+      1,
+      1
+    ],
+    "xor_xnor": [
+      3,
+      2
+    ],
+    "bit_switch_driver": [
+      2,
+      1
+    ],
+    "wire_split_make_index_concat": [
+      0,
+      0
+    ],
+    "bus_rule": "ignore Z; simultaneous active drivers must agree; all-Z data plane is zero"
+  },
+  "test_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true
+  },
+  "schedule_audit": [
+    {
+      "topology": "serial",
+      "levels": 8,
+      "cells": 8,
+      "enumeration_mode": "all_cell_masks",
+      "enumerated_masks": 256
+    },
+    {
+      "topology": "sklansky",
+      "levels": 4,
+      "cells": 13,
+      "enumeration_mode": "uniform_per_level",
+      "enumerated_masks": 16
+    },
+    {
+      "topology": "brent-kung",
+      "levels": 5,
+      "cells": 12,
+      "enumeration_mode": "uniform_per_level",
+      "enumerated_masks": 32
+    },
+    {
+      "topology": "kogge-stone",
+      "levels": 4,
+      "cells": 21,
+      "enumeration_mode": "uniform_per_level",
+      "enumerated_masks": 16
+    }
+  ],
+  "transfer_dp": {
+    "generated_transfer_plans": 956,
+    "retained_transfer_plans": 129
+  },
+  "global_dp": {
+    "weighted_union_delay_runs": {
+      "8": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          6,
+          4,
+          2,
+          4,
+          18
+        ],
+        "selected_option_indices": [
+          0,
+          2,
+          4,
+          4,
+          3,
+          1,
+          3,
+          6
+        ],
+        "minimum_union_gate": 133,
+        "actual_delay": 8
+      },
+      "9": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          10,
+          16,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 121,
+        "actual_delay": 9
+      },
+      "10": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "11": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "12": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "13": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "14": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "15": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "16": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "17": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      },
+      "18": {
+        "option_counts": [
+          2,
+          4,
+          6,
+          8,
+          10,
+          14,
+          18,
+          20
+        ],
+        "selected_option_indices": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        "minimum_union_gate": 115,
+        "actual_delay": 10
+      }
+    }
+  },
+  "enumerated_complete_witnesses": 332,
+  "canonical_structural_node_count": 2899,
+  "pareto": [
+    {
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xfff",
+      "gate": 103,
+      "delay": 7,
+      "energy": 721,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        6,
+        7,
+        7,
+        7,
+        7,
+        7
+      ],
+      "reachable_nodes": 69,
+      "structural_sha256": "52e7578290b27dac4cd7be6dbba5e29da71ae65f7807973a663e9db780b86064",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 6,
+        "sum4": 7,
+        "sum5": 7,
+        "sum6": 7,
+        "sum7": 7,
+        "cout": 7
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1206,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1241,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1247,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1242,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1248,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1132,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1243,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1249,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1135,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1244,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1250,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1135,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1244,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1245,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1246,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xff",
+      "gate": 95,
+      "delay": 8,
+      "energy": 760,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        6,
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "reachable_nodes": 73,
+      "structural_sha256": "3e396ec14ec72f4ef0bdf35c70165acc95ed3b11c32f47cf09581bcf7faf401c",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 6,
+        "sum4": 8,
+        "sum5": 8,
+        "sum6": 8,
+        "sum7": 8,
+        "cout": 8
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1206,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1196,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1197,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1207,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 4,
+            "op": "INPUT",
+            "label": "a1",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 22,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 24,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1121,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1193,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1198,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1199,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1208,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1132,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1200,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1201,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1209,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1135,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1202,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1203,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1210,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 8,
+            "op": "INPUT",
+            "label": "a3",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 28,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 30,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 1124,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1135,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1202,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1203,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1204,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1205,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xf",
+      "gate": 87,
+      "delay": 9,
+      "energy": 783,
+      "output_arrivals": [
+        4,
+        5,
+        7,
+        7,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "reachable_nodes": 77,
+      "structural_sha256": "66d496568126799e07e76a9d0c8c4dca91fb5274bb2a08672db19f07e65a876f",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 7,
+        "sum3": 7,
+        "sum4": 9,
+        "sum5": 9,
+        "sum6": 9,
+        "sum7": 9,
+        "cout": 9
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 139,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1170,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1160,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1161,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1171,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1162,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1163,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1172,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1164,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1165,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1173,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1166,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1167,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1174,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 1154,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1155,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1166,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1167,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1168,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1169,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0x0",
+      "gate": 79,
+      "delay": 10,
+      "energy": 790,
+      "output_arrivals": [
+        4,
+        6,
+        8,
+        8,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "reachable_nodes": 80,
+      "structural_sha256": "1368d74773653c53825582c4cb8a38e757ffa4118fce89026423811970c88f0d",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 6,
+        "sum2": 8,
+        "sum3": 8,
+        "sum4": 10,
+        "sum5": 10,
+        "sum6": 10,
+        "sum7": 10,
+        "cout": 10
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 116,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 101,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 102,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 117,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1146,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1136,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1137,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1147,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1138,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1139,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1148,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1140,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1141,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1149,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1142,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1143,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1150,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 99,
+            "op": "AND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 100,
+            "op": "OR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 1128,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 1129,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 1142,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 1143,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 1144,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 1145,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x7f",
+      "gate": 78,
+      "delay": 11,
+      "energy": 858,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        11
+      ],
+      "reachable_nodes": 59,
+      "structural_sha256": "5151ccfdd79034ef4a14d0285fdcd998242cf8e6b960cc19993c0ef60bbc1b2b",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 7,
+        "sum4": 8,
+        "sum5": 9,
+        "sum6": 10,
+        "sum7": 11,
+        "cout": 11
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 242,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 347,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 508,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 733,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 987,
+            "op": "BUS",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 990,
+            "op": "XOR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 987,
+            "op": "BUS",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 988,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 989,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x3f",
+      "gate": 76,
+      "delay": 12,
+      "energy": 912,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        12
+      ],
+      "reachable_nodes": 60,
+      "structural_sha256": "05116f03097252dfe03bdfea613bec5227e0499bd0e5a4bda2e73d9a7a686a50",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 7,
+        "sum4": 8,
+        "sum5": 9,
+        "sum6": 10,
+        "sum7": 12,
+        "cout": 12
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 242,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 347,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 508,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 733,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 729,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 730,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 734,
+            "op": "XOR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 728,
+            "op": "BUS",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 729,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 730,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 731,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 732,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x1f",
+      "gate": 74,
+      "delay": 13,
+      "energy": 962,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        13,
+        13
+      ],
+      "reachable_nodes": 61,
+      "structural_sha256": "7cfab02de4e25d8de95e29b13b0bf1188a1eab3b8ab8938f420165f105b072a5",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 7,
+        "sum4": 8,
+        "sum5": 9,
+        "sum6": 11,
+        "sum7": 13,
+        "cout": 13
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 242,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 347,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 508,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 502,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 503,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 509,
+            "op": "XOR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 502,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 503,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 504,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 505,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 510,
+            "op": "XOR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 501,
+            "op": "BUS",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 502,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 503,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 504,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 505,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 506,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 507,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0xf",
+      "gate": 72,
+      "delay": 14,
+      "energy": 1008,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        14
+      ],
+      "reachable_nodes": 62,
+      "structural_sha256": "fda795cad670391c572da104eced02065de677dde876a15516e2c4a92e3939b8",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 7,
+        "sum4": 8,
+        "sum5": 10,
+        "sum6": 12,
+        "sum7": 14,
+        "cout": 14
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 242,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 347,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 339,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 340,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 348,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 339,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 340,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 341,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 342,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 349,
+            "op": "XOR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 339,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 340,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 341,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 342,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 343,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 344,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 350,
+            "op": "XOR",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 338,
+            "op": "BUS",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 339,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 340,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 341,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 342,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 343,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 344,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 345,
+            "op": "AND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 346,
+            "op": "OR",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "ripple",
+      "detail": "shared seven-gate full-adder chain",
+      "gate": 56,
+      "delay": 18,
+      "energy": 1008,
+      "output_arrivals": [
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        18
+      ],
+      "reachable_nodes": 73,
+      "structural_sha256": "8b53ae1c501fe612c6013a060b2aed34f018c461dbd34f1891ffc195f6e13dea",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 6,
+        "sum2": 8,
+        "sum3": 10,
+        "sum4": 12,
+        "sum5": 14,
+        "sum6": 16,
+        "sum7": 18,
+        "cout": 18
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 49,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 56,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 63,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 70,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 68,
+            "op": "NAND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NAND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 77,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 68,
+            "op": "NAND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NAND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 75,
+            "op": "NAND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 81,
+            "op": "NAND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 84,
+            "op": "AND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 68,
+            "op": "NAND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NAND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 75,
+            "op": "NAND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 81,
+            "op": "NAND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 82,
+            "op": "NAND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 88,
+            "op": "NAND",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 91,
+            "op": "AND",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 1
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 68,
+            "op": "NAND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NAND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 75,
+            "op": "NAND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 81,
+            "op": "NAND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 82,
+            "op": "NAND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 88,
+            "op": "NAND",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 89,
+            "op": "NAND",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 1
+          },
+          {
+            "node": 95,
+            "op": "NAND",
+            "label": "",
+            "arrival": 17,
+            "step_delay": 1
+          },
+          {
+            "node": 98,
+            "op": "AND",
+            "label": "",
+            "arrival": 18,
+            "step_delay": 1
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 43,
+            "op": "NAND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 45,
+            "op": "AND",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 46,
+            "op": "NAND",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 47,
+            "op": "NAND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 53,
+            "op": "NAND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 54,
+            "op": "NAND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 60,
+            "op": "NAND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 61,
+            "op": "NAND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 67,
+            "op": "NAND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 68,
+            "op": "NAND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 74,
+            "op": "NAND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 75,
+            "op": "NAND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 81,
+            "op": "NAND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 82,
+            "op": "NAND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 88,
+            "op": "NAND",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 89,
+            "op": "NAND",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 1
+          },
+          {
+            "node": 95,
+            "op": "NAND",
+            "label": "",
+            "arrival": 17,
+            "step_delay": 1
+          },
+          {
+            "node": 96,
+            "op": "NAND",
+            "label": "",
+            "arrival": 18,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x7",
+      "gate": 70,
+      "delay": 15,
+      "energy": 1050,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        15,
+        15
+      ],
+      "reachable_nodes": 63,
+      "structural_sha256": "05f330104e85e97477ea01d55b49a87d0a25eee07bfb26c07dc0a6b1a576cc04",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 7,
+        "sum4": 9,
+        "sum5": 11,
+        "sum6": 13,
+        "sum7": 15,
+        "cout": 15
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 242,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 232,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 233,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 243,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 232,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 233,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 234,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 235,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 244,
+            "op": "XOR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 232,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 233,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 234,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 235,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 236,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 237,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 245,
+            "op": "XOR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 232,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 233,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 234,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 235,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 236,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 237,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 238,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 239,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 246,
+            "op": "XOR",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 231,
+            "op": "BUS",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 232,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 233,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 234,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 235,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 236,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 237,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 238,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 239,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 240,
+            "op": "AND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 241,
+            "op": "OR",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x3",
+      "gate": 68,
+      "delay": 16,
+      "energy": 1088,
+      "output_arrivals": [
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        16
+      ],
+      "reachable_nodes": 64,
+      "structural_sha256": "b839409ae55f99807a964f4c848486fa8cd74a24708e4872d2c28df2aaf840e2",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 6,
+        "sum3": 8,
+        "sum4": 10,
+        "sum5": 12,
+        "sum6": 14,
+        "sum7": 16,
+        "cout": 16
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 177,
+            "op": "XOR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 178,
+            "op": "XOR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 167,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 168,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 179,
+            "op": "XOR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 167,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 168,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 169,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 170,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 180,
+            "op": "XOR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 167,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 168,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 169,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 170,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 171,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 172,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 181,
+            "op": "XOR",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 167,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 168,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 169,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 170,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 171,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 172,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 173,
+            "op": "AND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 174,
+            "op": "OR",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 182,
+            "op": "XOR",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 164,
+            "op": "BUS",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 165,
+            "op": "AND",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 166,
+            "op": "OR",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 167,
+            "op": "AND",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 168,
+            "op": "OR",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 169,
+            "op": "AND",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 170,
+            "op": "OR",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 171,
+            "op": "AND",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 172,
+            "op": "OR",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 173,
+            "op": "AND",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 174,
+            "op": "OR",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 175,
+            "op": "AND",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 176,
+            "op": "OR",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    },
+    {
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x1",
+      "gate": 66,
+      "delay": 17,
+      "energy": 1122,
+      "output_arrivals": [
+        4,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        17
+      ],
+      "reachable_nodes": 65,
+      "structural_sha256": "f5a146b2a798075abc5ac9a9c4a8081aae5081261887c3bdcccc5e4e2aee7847",
+      "output_arrivals_named": {
+        "sum0": 4,
+        "sum1": 5,
+        "sum2": 7,
+        "sum3": 9,
+        "sum4": 11,
+        "sum5": 13,
+        "sum6": 15,
+        "sum7": 17,
+        "cout": 17
+      },
+      "arrival_paths": {
+        "sum0": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 115,
+            "op": "XOR",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 2
+          }
+        ],
+        "sum1": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 138,
+            "op": "XOR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 2
+          }
+        ],
+        "sum2": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 139,
+            "op": "XOR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 2
+          }
+        ],
+        "sum3": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 140,
+            "op": "XOR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 2
+          }
+        ],
+        "sum4": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 128,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 129,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 141,
+            "op": "XOR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 2
+          }
+        ],
+        "sum5": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 128,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 129,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 130,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 131,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 142,
+            "op": "XOR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 2
+          }
+        ],
+        "sum6": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 128,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 129,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 130,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 131,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 132,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 133,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 143,
+            "op": "XOR",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 2
+          }
+        ],
+        "sum7": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 128,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 129,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 130,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 131,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 132,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 133,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 134,
+            "op": "AND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 135,
+            "op": "OR",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 144,
+            "op": "XOR",
+            "label": "",
+            "arrival": 17,
+            "step_delay": 2
+          }
+        ],
+        "cout": [
+          {
+            "node": 2,
+            "op": "INPUT",
+            "label": "a0",
+            "arrival": 0,
+            "step_delay": 0
+          },
+          {
+            "node": 19,
+            "op": "AND",
+            "label": "",
+            "arrival": 1,
+            "step_delay": 1
+          },
+          {
+            "node": 21,
+            "op": "NOR",
+            "label": "",
+            "arrival": 2,
+            "step_delay": 1
+          },
+          {
+            "node": 123,
+            "op": "BUS",
+            "label": "",
+            "arrival": 3,
+            "step_delay": 1
+          },
+          {
+            "node": 124,
+            "op": "AND",
+            "label": "",
+            "arrival": 4,
+            "step_delay": 1
+          },
+          {
+            "node": 125,
+            "op": "OR",
+            "label": "",
+            "arrival": 5,
+            "step_delay": 1
+          },
+          {
+            "node": 126,
+            "op": "AND",
+            "label": "",
+            "arrival": 6,
+            "step_delay": 1
+          },
+          {
+            "node": 127,
+            "op": "OR",
+            "label": "",
+            "arrival": 7,
+            "step_delay": 1
+          },
+          {
+            "node": 128,
+            "op": "AND",
+            "label": "",
+            "arrival": 8,
+            "step_delay": 1
+          },
+          {
+            "node": 129,
+            "op": "OR",
+            "label": "",
+            "arrival": 9,
+            "step_delay": 1
+          },
+          {
+            "node": 130,
+            "op": "AND",
+            "label": "",
+            "arrival": 10,
+            "step_delay": 1
+          },
+          {
+            "node": 131,
+            "op": "OR",
+            "label": "",
+            "arrival": 11,
+            "step_delay": 1
+          },
+          {
+            "node": 132,
+            "op": "AND",
+            "label": "",
+            "arrival": 12,
+            "step_delay": 1
+          },
+          {
+            "node": 133,
+            "op": "OR",
+            "label": "",
+            "arrival": 13,
+            "step_delay": 1
+          },
+          {
+            "node": 134,
+            "op": "AND",
+            "label": "",
+            "arrival": 14,
+            "step_delay": 1
+          },
+          {
+            "node": 135,
+            "op": "OR",
+            "label": "",
+            "arrival": 15,
+            "step_delay": 1
+          },
+          {
+            "node": 136,
+            "op": "AND",
+            "label": "",
+            "arrival": 16,
+            "step_delay": 1
+          },
+          {
+            "node": 137,
+            "op": "OR",
+            "label": "",
+            "arrival": 17,
+            "step_delay": 1
+          }
+        ]
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      }
+    }
+  ],
+  "best_gate_at_or_below_delay": {
+    "7": {
+      "gate": 103,
+      "delay": 7,
+      "energy": 721,
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xfff",
+      "structural_sha256": "52e7578290b27dac4cd7be6dbba5e29da71ae65f7807973a663e9db780b86064"
+    },
+    "8": {
+      "gate": 95,
+      "delay": 8,
+      "energy": 760,
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xff",
+      "structural_sha256": "3e396ec14ec72f4ef0bdf35c70165acc95ed3b11c32f47cf09581bcf7faf401c"
+    },
+    "9": {
+      "gate": 87,
+      "delay": 9,
+      "energy": 783,
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0xf",
+      "structural_sha256": "66d496568126799e07e76a9d0c8c4dca91fb5274bb2a08672db19f07e65a876f"
+    },
+    "10": {
+      "gate": 79,
+      "delay": 10,
+      "energy": 790,
+      "family": "integrated-prefix/sklansky",
+      "detail": "mode_mask=0x0",
+      "structural_sha256": "1368d74773653c53825582c4cb8a38e757ffa4118fce89026423811970c88f0d"
+    },
+    "11": {
+      "gate": 78,
+      "delay": 11,
+      "energy": 858,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x7f",
+      "structural_sha256": "5151ccfdd79034ef4a14d0285fdcd998242cf8e6b960cc19993c0ef60bbc1b2b"
+    },
+    "12": {
+      "gate": 76,
+      "delay": 12,
+      "energy": 912,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x3f",
+      "structural_sha256": "05116f03097252dfe03bdfea613bec5227e0499bd0e5a4bda2e73d9a7a686a50"
+    },
+    "13": {
+      "gate": 74,
+      "delay": 13,
+      "energy": 962,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x1f",
+      "structural_sha256": "7cfab02de4e25d8de95e29b13b0bf1188a1eab3b8ab8938f420165f105b072a5"
+    },
+    "14": {
+      "gate": 72,
+      "delay": 14,
+      "energy": 1008,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0xf",
+      "structural_sha256": "fda795cad670391c572da104eced02065de677dde876a15516e2c4a92e3939b8"
+    },
+    "15": {
+      "gate": 70,
+      "delay": 15,
+      "energy": 1050,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x7",
+      "structural_sha256": "05f330104e85e97477ea01d55b49a87d0a25eee07bfb26c07dc0a6b1a576cc04"
+    },
+    "16": {
+      "gate": 68,
+      "delay": 16,
+      "energy": 1088,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x3",
+      "structural_sha256": "b839409ae55f99807a964f4c848486fa8cd74a24708e4872d2c28df2aaf840e2"
+    },
+    "17": {
+      "gate": 66,
+      "delay": 17,
+      "energy": 1122,
+      "family": "integrated-prefix/serial",
+      "detail": "mode_mask=0x1",
+      "structural_sha256": "f5a146b2a798075abc5ac9a9c4a8081aae5081261887c3bdcccc5e4e2aee7847"
+    },
+    "18": {
+      "gate": 56,
+      "delay": 18,
+      "energy": 1008,
+      "family": "ripple",
+      "detail": "shared seven-gate full-adder chain",
+      "structural_sha256": "8b53ae1c501fe612c6013a060b2aed34f018c461dbd34f1891ffc195f6e13dea"
+    }
+  },
+  "strict_beat_515_thresholds": {
+    "5": 102,
+    "6": 85,
+    "7": 73
+  },
+  "score_below_515_witnesses": [],
+  "claims": {
+    "global_boolean_lower_bound": false,
+    "structured_family_lower_bound_only": true
+  }
+}

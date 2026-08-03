@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "generated_at": "2026-08-03T15:24:01+08:00",
+  "runtime": {
+    "game_root": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete",
+    "sha256": {
+      "Turing Complete.exe": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c",
+      "campaign/byte_adder/test.si": "0f9d4d118ad66058259d5a2f2fbd08cd3c5886c8a490b636167ac41c7718b941",
+      "campaign/byte_adder/meta.txt": "220f4f950d413f4c35f3057ea0223e5bc4a12c3033fbb7bc9c691243edd3ebad"
+    },
+    "level_kind": "combinational",
+    "tick_initial_value": -1,
+    "get_input_argument": ".tick + 1",
+    "check_output_argument": ".tick + 1",
+    "winning_tick": 131071,
+    "checked_tick_interval_inclusive": [
+      0,
+      131071
+    ],
+    "checked_tick_count": 131072
+  },
+  "input_schedule": {
+    "formula": "y = low17((((tick xor (tick << 6)) xor ((tick xor (tick << 6)) >> 11)) xor (((tick xor (tick << 6)) xor ((tick xor (tick << 6)) >> 11)) << 9)))",
+    "projection": {
+      "a": "y[7:0]",
+      "b": "y[15:8]",
+      "carry_in": "y[16]"
+    },
+    "vector_encoding": "tick 顺序的 131072 个 little-endian U32 low17 值",
+    "vector_sha256": "2fd98014c77e2d2e05cc92dfa85f9a4a155c0644ae9554967f34dffae6328605",
+    "unique_low17_count": 131072,
+    "low17_min": 0,
+    "low17_max": 131071,
+    "gf2_linear_rank": 17,
+    "domain_tuple_count": 131072,
+    "expected_domain_tuple_count": 131072,
+    "complete_u8_u8_u1_domain": true,
+    "untested_domain_tuple_count": 0,
+    "expected_output_encoding": "每拍 9 位 (carry_out << 8) | sum 的 little-endian U16",
+    "expected_output_vector_sha256": "a39a167788e2c5acf49f9ff73b5296c77e50e28d239915e02a978ea0ece3ae87",
+    "expected_output_unique_value_count": 512,
+    "input_independent_autonomous_replay_bound": {
+      "longest_reusable_final_suffix_length": 2,
+      "witness_preperiod": 123800,
+      "witness_period": 7270,
+      "minimum_distinct_trajectory_states": 131070,
+      "minimum_binary_state_bits": 17,
+      "meaning": "忽略全部关卡输入的确定性状态机，其复位后轨迹必为前缀加周期；要产生完整答案前缀，至少需要这些不同轨迹状态。",
+      "scope": "不约束同时读取当前输入的混合状态电路。"
+    },
+    "first_low17_values_hex": [
+      "00000",
+      "08241",
+      "10482",
+      "186c3",
+      "00904",
+      "08b45",
+      "10d86",
+      "18fc7",
+      "01208",
+      "09049",
+      "1168a",
+      "194cb",
+      "01b0c",
+      "0994d",
+      "11f8e",
+      "19dcf"
+    ],
+    "basis_columns_hex": [
+      "08241",
+      "10482",
+      "00904",
+      "01208",
+      "02410",
+      "04a21",
+      "09442",
+      "12884",
+      "05108",
+      "0a210",
+      "14420",
+      "08a41",
+      "11482",
+      "02904",
+      "05208",
+      "0a410",
+      "14820"
+    ]
+  },
+  "specialization_boundary": {
+    "input_subset_specialization": "排除：131072 个 U8 x U8 x U1 三元组全部且仅出现一次。",
+    "fixed_order_specialization": "逻辑上仍可构造依赖复位后 tick 顺序的状态机，但它必须正确重放完整 131072 步；本证书未证明这种状态机在 103/5 前沿下可获利。",
+    "remote_asset_identity": "本机不能读取服务端 test.si；服务端与本地资产逐字节一致不能由此证书证明。"
+  },
+  "leaderboard": {
+    "url": "https://turingcomplete.game/leaderboard/byte_adder",
+    "captured_at": "2026-08-03T15:24:25+08:00",
+    "visible_row_count": 1000,
+    "page_cap_suspected": true,
+    "energy_rank1": {
+      "username": "Patchouli（红魔馆大图书馆大学-七曜魔法学院）",
+      "gate": 103,
+      "delay": 5,
+      "energy": 515
+    },
+    "visible_pareto": [
+      {
+        "username": "Patchouli（红魔馆大图书馆大学-七曜魔法学院）",
+        "gate": 103,
+        "delay": 5,
+        "energy": 515
+      },
+      {
+        "username": "Heistenberg99",
+        "gate": 91,
+        "delay": 6,
+        "energy": 546
+      },
+      {
+        "username": "skyoxZ",
+        "gate": 79,
+        "delay": 7,
+        "energy": 553
+      },
+      {
+        "username": "realomg（听说名字越长越容易被人注意到）",
+        "gate": 154,
+        "delay": 4,
+        "energy": 616
+      },
+      {
+        "username": "Ven519",
+        "gate": 76,
+        "delay": 9,
+        "energy": 684
+      },
+      {
+        "username": "Haq",
+        "gate": 70,
+        "delay": 10,
+        "energy": 700
+      },
+      {
+        "username": "Celforyon",
+        "gate": 67,
+        "delay": 11,
+        "energy": 737
+      },
+      {
+        "username": "ting_zing",
+        "gate": 60,
+        "delay": 16,
+        "energy": 960
+      },
+      {
+        "username": "San Skylak",
+        "gate": 57,
+        "delay": 17,
+        "energy": 969
+      },
+      {
+        "username": "sani/mrkib",
+        "gate": 56,
+        "delay": 18,
+        "energy": 1008
+      }
+    ],
+    "scope": "公开页面只证明已接受成绩，不公开服务端测试资产或重算日志。"
+  }
+}

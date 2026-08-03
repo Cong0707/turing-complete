@@ -1,0 +1,2693 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Turing Complete</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+</head>
+
+<body style="text-align: center; margin: 0; background: #232323;">
+    <div style=" width: 100%;">
+        <div
+            style="width: 1000px; margin: auto; box-shadow: 0px 10px 30px #0c0c0c; border-radius: 18px; margin-top: 10px; margin-bottom: 15px;">
+            <div
+                style="height: 70px; background: #292929; padding: 0px 30px 0px 30px; text-align: left; border-radius: 18px 18px 0px 0px;">
+                <div style="height: 100%; float: left;">
+                    <a href="/">
+                        <img src="/static/logo.png" style="height: 75%; margin-left: -14px; margin-top: 8px;">
+                    </a>
+                </div>
+
+                <div style="float: right;">
+                    
+                    <a href="/leaderboard" class="main_link">Leaderboard</a>
+                    <a href="/contact" class="main_link">Contact</a>
+                </div>
+            </div>
+
+            <div style="text-align: left; background: #3c3939; min-height: calc(100vh - 200px); padding: 30px;"> 
+
+<script>
+    "use strict";
+
+    function compare() {
+        let elements = document.getElementsByClassName("toggle");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = elements[i].style.display == "inline" ? "none" : "inline";
+        }
+    }
+
+    let sort_frontiers = (() => {
+        var criterion, is_ascending;
+        return (key) => {
+            if (criterion === key) {
+                is_ascending = !is_ascending;
+            } else {
+                criterion = key;
+                is_ascending = true;
+            }
+
+            console.log(criterion, is_ascending);
+
+            for (var i = 0; i < 3; i++) {
+                document.getElementById(i + "_asc").style.display = "none";
+                document.getElementById(i + "_dsc").style.display = "none";
+            }
+            document.getElementById(criterion + "_" + (is_ascending ? "asc" : "dsc")).style.display = "inline";
+
+            var cmp_f = (a, b) => a.value - b.value;
+            if (!is_ascending) {
+                cmp_f = (a, b) => b.value - a.value;
+            }
+
+            let table = document.getElementById("frontiers");
+            let num_row = table.rows.length;
+            for (var i = 1; i < num_row; i++) {
+                let stats = table.rows[i].getElementsByTagName("td");
+                let divs = stats[1 + criterion].getElementsByTagName("div");
+                var items = []
+                for (var j = 0; j < divs.length; j++) {
+                    items[j] = {
+                        value: parseInt(divs[j].getElementsByTagName("span")[0].textContent.replace(/[^0-9]/g, "")),
+                        index: j,
+                    };
+                }
+                items.sort(cmp_f);
+
+                for (var j = 1; j < stats.length; j++) {
+                    let divs = stats[j].getElementsByTagName("div");
+                    for (var k = 0; k < divs.length; k++) {
+                        items[k].value = divs[items[k].index];
+                    }
+                    for (var k = items.length - 1; k >= 0; k--) {
+                        stats[j].insertBefore(items[k].value, stats[j].firstElementChild);
+                    }
+                }
+            }
+        }
+    })();
+</script>
+
+<div style="display: inline-block; vertical-align: top; margin: 25px; margin-left: 14px; max-width: 202px;">
+    <table style="overflow: hidden;">
+        <tr>
+            <td colspan="2">
+                <img src="/static/avatars/362.jpg"
+                    style="border-radius: 8px; box-shadow: #1f1d1d 0px 0px 10px; margin-bottom: 10px; width: 184px; height: 184px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="max-width: 60px;">
+                <span style="font-size: 24px; color: white;">
+                    FermiEnergy（复旦大学-集成电路与微纳电子创新学院）
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="profile_left_stats">COMPLETE</td>
+            <td class="profile_right_stats">98%</td>
+        </tr>
+        
+    </table>
+
+    
+
+    <br>
+
+    
+</div>
+<div
+    style="display: inline-block; vertical-align: top; margin: 10px; margin-top: 25px; width: 675px; text-align: center;">
+    <div class="profile_box">
+        
+        
+
+        
+
+        
+        <h2>PROGRAMMING LEVELS</h2>
+        <table class="profile_table">
+            
+            <tr>
+                <th class="profile_th" style="width: 235px;">LEVEL</th>
+                <th class="profile_th" style="width: 100px;">GATE</th>
+                <th class="profile_th" style="width: 100px;">DELAY</th>
+                <th class="profile_th" style="width: 100px;">CYCLE</th>
+                <th class="profile_th" style="width: 100px;">ENERGY</th>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/circumference">Circumference</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    33
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    4
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    1
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    132
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/mod_4">Mod 4</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    0
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    0
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    1
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    0
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/binary_search">Code Breaker</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    92
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    6
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    9
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    4,968
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/maze">The Maze</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    6
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    5
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    373
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    <div class="tooltip">
+                        11.1K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            11,190
+                        </span>
+                    </div>
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/nim">Nim</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    2
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    2
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    3
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    12
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/rng">Random Number Generator</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    401
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    9
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    67
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    <div class="tooltip">
+                        241K
+                        <span class="tooltiptext" style="margin-left: -47px;">
+                            241,803
+                        </span>
+                    </div>
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/sort">Delicious order</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    1,654
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    11
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    32
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    <div class="tooltip">
+                        582K
+                        <span class="tooltiptext" style="margin-left: -47px;">
+                            582,208
+                        </span>
+                    </div>
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/capitalize">Capitalize</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    5
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    4
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    112
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    2,240
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/tower">Tower of Hanoi</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    125
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    7
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    125
+                    
+                </td>
+                <td class="profile_stat">
+                    
+                    <div class="tooltip">
+                        109K
+                        <span class="tooltiptext" style="margin-left: -47px;">
+                            109,375
+                        </span>
+                    </div>
+                    
+                </td>
+            </tr>
+            
+            
+        </table>
+        
+
+        
+        <h2>COMPONENT LEVELS</h2>
+        <table id="frontiers" class="profile_table">
+            
+            <tr>
+                <th class="profile_th" style="width: 335px;">LEVEL</th>
+                <th class="profile_th" style="width: 100px;">
+                    <span>
+                        GATE
+                        <span id="0_asc" style="display: none;"></span>
+                        <span id="0_dsc" style="display: none;"></span>
+                    </span>
+                </th>
+                <th class="profile_th" style="width: 100px;">
+                    <span>
+                        DELAY
+                        <span id="1_asc" style="display: none;"></span>
+                        <span id="1_dsc" style="display: none;"></span>
+                    </span>
+                </th>
+                <th class="profile_th" style="width: 100px;">
+                    <span>
+                        ENERGY
+                        <span id="2_asc" style="display: none;"></span>
+                        <span id="2_dsc" style="display: none;"></span>
+                    </span>
+                </th>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/not_gate">NOT Gate</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/xor_gate">XOR Gate</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/or_gate_3">Bigger OR Gate</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/and_gate_3">Bigger AND Gate</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/xnor">XNOR Gate</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/bit_adder">Half Adder</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/full_adder">Full Adder</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>28</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/bit_inverter">Bit inverter</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_not">Byte NOT</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_nand">Byte NAND</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_adder">Adding Bytes</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>56</span></div>
+                    
+                    
+                    
+                    <div><span>57</span></div>
+                    
+                    
+                    
+                    <div><span>59</span></div>
+                    
+                    
+                    
+                    <div><span>61</span></div>
+                    
+                    
+                    
+                    <div><span>62</span></div>
+                    
+                    
+                    
+                    <div><span>63</span></div>
+                    
+                    
+                    
+                    <div><span>65</span></div>
+                    
+                    
+                    
+                    <div><span>67</span></div>
+                    
+                    
+                    
+                    <div><span>68</span></div>
+                    
+                    
+                    
+                    <div><span>71</span></div>
+                    
+                    
+                    
+                    <div><span>74</span></div>
+                    
+                    
+                    
+                    <div><span>79</span></div>
+                    
+                    
+                    
+                    <div><span>88</span></div>
+                    
+                    
+                    
+                    <div><span>103</span></div>
+                    
+                    
+                    
+                    <div><span>154</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>18</span></div>
+                    
+                    
+                    
+                    <div><span>17</span></div>
+                    
+                    
+                    
+                    <div><span>16</span></div>
+                    
+                    
+                    
+                    <div><span>15</span></div>
+                    
+                    
+                    
+                    <div><span>14</span></div>
+                    
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>12</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1,008</span></div>
+                    
+                    
+                    
+                    <div><span>969</span></div>
+                    
+                    
+                    
+                    <div><span>944</span></div>
+                    
+                    
+                    
+                    <div><span>915</span></div>
+                    
+                    
+                    
+                    <div><span>868</span></div>
+                    
+                    
+                    
+                    <div><span>819</span></div>
+                    
+                    
+                    
+                    <div><span>780</span></div>
+                    
+                    
+                    
+                    <div><span>737</span></div>
+                    
+                    
+                    
+                    <div><span>680</span></div>
+                    
+                    
+                    
+                    <div><span>639</span></div>
+                    
+                    
+                    
+                    <div><span>592</span></div>
+                    
+                    
+                    
+                    <div><span>553</span></div>
+                    
+                    
+                    
+                    <div><span>528</span></div>
+                    
+                    
+                    
+                    <div><span>515</span></div>
+                    
+                    
+                    
+                    <div><span>616</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_mux">Multiplexer</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>25</span></div>
+                    
+                    
+                    
+                    <div><span>33</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>75</span></div>
+                    
+                    
+                    
+                    <div><span>66</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/saving_gracefully">Saving Gracefully</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>54</span></div>
+                    
+                    
+                    
+                    <div><span>50</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/signed_negator">Signed Negator</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>21</span></div>
+                    
+                    
+                    
+                    <div><span>24</span></div>
+                    
+                    
+                    
+                    <div><span>32</span></div>
+                    
+                    
+                    
+                    <div><span>43</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>168</span></div>
+                    
+                    
+                    
+                    <div><span>120</span></div>
+                    
+                    
+                    
+                    <div><span>128</span></div>
+                    
+                    
+                    
+                    <div><span>129</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/saving_bytes">Saving Bytes</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>65</span></div>
+                    
+                    
+                    
+                    <div><span>73</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>390</span></div>
+                    
+                    
+                    
+                    <div><span>365</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/counter">Counter</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>85</span></div>
+                    
+                    
+                    
+                    <div><span>88</span></div>
+                    
+                    
+                    
+                    <div><span>92</span></div>
+                    
+                    
+                    
+                    <div><span>102</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1,105</span></div>
+                    
+                    
+                    
+                    <div><span>880</span></div>
+                    
+                    
+                    
+                    <div><span>828</span></div>
+                    
+                    
+                    
+                    <div><span>816</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/decoder_1">1 Bit Decoder</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/decoder_2">2 Bit Decoder</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/decoder_3">3 Bit Decoder</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>14</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>42</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/ram_component">Little Box</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>352</span></div>
+                    
+                    
+                    
+                    <div><span>368</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2,816</span></div>
+                    
+                    
+                    
+                    <div><span>1,840</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/overture_alu_1">Arithmetic Logic Unit (ALU) 1</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>64</span></div>
+                    
+                    
+                    
+                    <div><span>73</span></div>
+                    
+                    
+                    
+                    <div><span>77</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>320</span></div>
+                    
+                    
+                    
+                    <div><span>292</span></div>
+                    
+                    
+                    
+                    <div><span>231</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/overture_alu_2">Arithmetic Logic Unit (ALU) 2</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>127</span></div>
+                    
+                    
+                    
+                    <div><span>131</span></div>
+                    
+                    
+                    
+                    <div><span>137</span></div>
+                    
+                    
+                    
+                    <div><span>150</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1,397</span></div>
+                    
+                    
+                    
+                    <div><span>1,310</span></div>
+                    
+                    
+                    
+                    <div><span>1,233</span></div>
+                    
+                    
+                    
+                    <div><span>1,200</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/overture_conditions">Conditions</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>14</span></div>
+                    
+                    
+                    
+                    <div><span>16</span></div>
+                    
+                    
+                    
+                    <div><span>19</span></div>
+                    
+                    
+                    
+                    <div><span>28</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>91</span></div>
+                    
+                    
+                    
+                    <div><span>84</span></div>
+                    
+                    
+                    
+                    <div><span>80</span></div>
+                    
+                    
+                    
+                    <div><span>76</span></div>
+                    
+                    
+                    
+                    <div><span>84</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/binary_programming">Punchcard Programming</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        13.3K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            13,321
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        39.9K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            39,963
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/assembly_programming">Assembly Programming</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        13.3K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            13,321
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        39.9K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            39,963
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_constant">Byte Constant</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>0</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>0</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>0</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_xor">Byte XOR</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>24</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>2</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>48</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_equal">Equality</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>31</span></div>
+                    
+                    
+                    
+                    <div><span>38</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>155</span></div>
+                    
+                    
+                    
+                    <div><span>152</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_less_u">Unsigned Less</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>30</span></div>
+                    
+                    
+                    
+                    <div><span>31</span></div>
+                    
+                    
+                    
+                    <div><span>32</span></div>
+                    
+                    
+                    
+                    <div><span>33</span></div>
+                    
+                    
+                    
+                    <div><span>34</span></div>
+                    
+                    
+                    
+                    <div><span>35</span></div>
+                    
+                    
+                    
+                    <div><span>36</span></div>
+                    
+                    
+                    
+                    <div><span>37</span></div>
+                    
+                    
+                    
+                    <div><span>38</span></div>
+                    
+                    
+                    
+                    <div><span>41</span></div>
+                    
+                    
+                    
+                    <div><span>50</span></div>
+                    
+                    
+                    
+                    <div><span>90</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>23</span></div>
+                    
+                    
+                    
+                    <div><span>21</span></div>
+                    
+                    
+                    
+                    <div><span>19</span></div>
+                    
+                    
+                    
+                    <div><span>17</span></div>
+                    
+                    
+                    
+                    <div><span>15</span></div>
+                    
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>690</span></div>
+                    
+                    
+                    
+                    <div><span>651</span></div>
+                    
+                    
+                    
+                    <div><span>608</span></div>
+                    
+                    
+                    
+                    <div><span>561</span></div>
+                    
+                    
+                    
+                    <div><span>510</span></div>
+                    
+                    
+                    
+                    <div><span>455</span></div>
+                    
+                    
+                    
+                    <div><span>396</span></div>
+                    
+                    
+                    
+                    <div><span>333</span></div>
+                    
+                    
+                    
+                    <div><span>266</span></div>
+                    
+                    
+                    
+                    <div><span>246</span></div>
+                    
+                    
+                    
+                    <div><span>250</span></div>
+                    
+                    
+                    
+                    <div><span>360</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_less_s">Signed Less</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>30</span></div>
+                    
+                    
+                    
+                    <div><span>31</span></div>
+                    
+                    
+                    
+                    <div><span>32</span></div>
+                    
+                    
+                    
+                    <div><span>33</span></div>
+                    
+                    
+                    
+                    <div><span>34</span></div>
+                    
+                    
+                    
+                    <div><span>35</span></div>
+                    
+                    
+                    
+                    <div><span>36</span></div>
+                    
+                    
+                    
+                    <div><span>37</span></div>
+                    
+                    
+                    
+                    <div><span>38</span></div>
+                    
+                    
+                    
+                    <div><span>41</span></div>
+                    
+                    
+                    
+                    <div><span>50</span></div>
+                    
+                    
+                    
+                    <div><span>90</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>23</span></div>
+                    
+                    
+                    
+                    <div><span>21</span></div>
+                    
+                    
+                    
+                    <div><span>19</span></div>
+                    
+                    
+                    
+                    <div><span>17</span></div>
+                    
+                    
+                    
+                    <div><span>15</span></div>
+                    
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>9</span></div>
+                    
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                    
+                    <div><span>6</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>690</span></div>
+                    
+                    
+                    
+                    <div><span>651</span></div>
+                    
+                    
+                    
+                    <div><span>608</span></div>
+                    
+                    
+                    
+                    <div><span>561</span></div>
+                    
+                    
+                    
+                    <div><span>510</span></div>
+                    
+                    
+                    
+                    <div><span>455</span></div>
+                    
+                    
+                    
+                    <div><span>396</span></div>
+                    
+                    
+                    
+                    <div><span>333</span></div>
+                    
+                    
+                    
+                    <div><span>266</span></div>
+                    
+                    
+                    
+                    <div><span>246</span></div>
+                    
+                    
+                    
+                    <div><span>250</span></div>
+                    
+                    
+                    
+                    <div><span>360</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_lsr">LSR</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>70</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>210</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/count_leading_zeroes">Count leading zeroes</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>18</span></div>
+                    
+                    
+                    
+                    <div><span>22</span></div>
+                    
+                    
+                    
+                    <div><span>32</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>90</span></div>
+                    
+                    
+                    
+                    <div><span>88</span></div>
+                    
+                    
+                    
+                    <div><span>96</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_asr">ASR</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>76</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>228</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/one_hot_encoding">One hot encoding</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>70</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>210</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/symphony_cmp">Comparison Flags</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>209</span></div>
+                    
+                    
+                    
+                    <div><span>271</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>7</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1,672</span></div>
+                    
+                    
+                    
+                    <div><span>1,897</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/symphony_alu">Symphony ALU</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>1,392</span></div>
+                    
+                    
+                    
+                    <div><span>1,584</span></div>
+                    
+                    
+                    
+                    <div><span>1,678</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>14</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        19.4K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            19,488
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        17.4K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            17,424
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        16.7K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            16,780
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/symphony_condition_test">Condition Match</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                    
+                    <div><span>3</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>40</span></div>
+                    
+                    
+                    
+                    <div><span>44</span></div>
+                    
+                    
+                    
+                    <div><span>39</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/score">Objective beauty</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>22</span></div>
+                    
+                    
+                    
+                    <div><span>25</span></div>
+                    
+                    
+                    
+                    <div><span>33</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>8</span></div>
+                    
+                    
+                    
+                    <div><span>5</span></div>
+                    
+                    
+                    
+                    <div><span>4</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>176</span></div>
+                    
+                    
+                    
+                    <div><span>125</span></div>
+                    
+                    
+                    
+                    <div><span>132</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_divide">Divide</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>358</span></div>
+                    
+                    
+                    
+                    <div><span>363</span></div>
+                    
+                    
+                    
+                    <div><span>370</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>34</span></div>
+                    
+                    
+                    
+                    <div><span>33</span></div>
+                    
+                    
+                    
+                    <div><span>32</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        12.1K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            12,172
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        11.9K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            11,979
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        11.8K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            11,840
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/byte_mod">Modulo</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>409</span></div>
+                    
+                    
+                    
+                    <div><span>413</span></div>
+                    
+                    
+                    
+                    <div><span>420</span></div>
+                    
+                    
+                    
+                    <div><span>428</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>37</span></div>
+                    
+                    
+                    
+                    <div><span>36</span></div>
+                    
+                    
+                    
+                    <div><span>35</span></div>
+                    
+                    
+                    
+                    <div><span>34</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div class="tooltip">
+                        15.1K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            15,133
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        14.8K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            14,868
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        14.7K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            14,700
+                        </span>
+                    </div>
+                    
+                    
+                    
+                    <div class="tooltip">
+                        14.5K
+                        <span class="tooltiptext" style="margin-left: -41px;">
+                            14,552
+                        </span>
+                    </div>
+                    
+                    
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name">
+                    <a href="/leaderboard/multiply">Multiply</a>
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>185</span></div>
+                    
+                    
+                    
+                    <div><span>186</span></div>
+                    
+                    
+                    
+                    <div><span>189</span></div>
+                    
+                    
+                    
+                    <div><span>191</span></div>
+                    
+                    
+                    
+                    <div><span>194</span></div>
+                    
+                    
+                    
+                    <div><span>203</span></div>
+                    
+                    
+                    
+                    <div><span>212</span></div>
+                    
+                    
+                    
+                    <div><span>230</span></div>
+                    
+                    
+                    
+                    <div><span>253</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>19</span></div>
+                    
+                    
+                    
+                    <div><span>17</span></div>
+                    
+                    
+                    
+                    <div><span>16</span></div>
+                    
+                    
+                    
+                    <div><span>15</span></div>
+                    
+                    
+                    
+                    <div><span>14</span></div>
+                    
+                    
+                    
+                    <div><span>13</span></div>
+                    
+                    
+                    
+                    <div><span>12</span></div>
+                    
+                    
+                    
+                    <div><span>11</span></div>
+                    
+                    
+                    
+                    <div><span>10</span></div>
+                    
+                    
+                </td>
+
+                <td class="profile_stat">
+                    
+                    
+                    <div><span>3,515</span></div>
+                    
+                    
+                    
+                    <div><span>3,162</span></div>
+                    
+                    
+                    
+                    <div><span>3,024</span></div>
+                    
+                    
+                    
+                    <div><span>2,865</span></div>
+                    
+                    
+                    
+                    <div><span>2,716</span></div>
+                    
+                    
+                    
+                    <div><span>2,639</span></div>
+                    
+                    
+                    
+                    <div><span>2,544</span></div>
+                    
+                    
+                    
+                    <div><span>2,530</span></div>
+                    
+                    
+                    
+                    <div><span>2,530</span></div>
+                    
+                    
+                </td>
+            </tr>
+            
+            
+        </table>
+        
+
+        
+    </div>
+</div> </div>
+<div style="width: 100%; text-align: center; left: 0; color: #848484; height: 36px; padding-top: 8px;">
+  <a href="https://www.reddit.com/r/turingcomplete" target="_blank"><img src="/static/footer_icons/reddit.png"
+      class="footer_image" title="Reddit"></a>
+  <a href="https://discord.gg/hdrJaMUdrF" target="_blank"><img src="/static/footer_icons/discord.png"
+      class="footer_image" title="Discord"></a>
+  <a href="https://www.youtube.com/@TuringCompleteGame" target="_blank"><img src="/static/footer_icons/youtube.png"
+      class="footer_image" title="Youtube"></a>
+  <a href="https://store.steampowered.com/app/1444480/Turing_Complete/" target="_blank"><img
+      src="/static/footer_icons/steam.png" class="footer_image" title="Steam"></a>
+</div>
+</div>
+</div>
+</body>
+
+</html>

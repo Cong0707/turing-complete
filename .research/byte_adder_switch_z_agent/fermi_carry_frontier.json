@@ -1,0 +1,57 @@
+{
+  "schema": "byte-adder-fermi-shared-carry-search-v1",
+  "model": {
+    "shared_full_adder_baseline": "56/18",
+    "gp_slow_black": "3/2",
+    "gp_fast_black": "5/1",
+    "gp_slow_gray": "2/2",
+    "gp_fast_gray": "4/1"
+  },
+  "plan_limit": 12,
+  "beam": 50000,
+  "results": [
+    {
+      "delay_target": 8,
+      "gate_target": 80,
+      "layer_counts": [
+        {
+          "bit": 0,
+          "generated": 2,
+          "retained": 2
+        },
+        {
+          "bit": 1,
+          "generated": 12,
+          "retained": 12
+        },
+        {
+          "bit": 2,
+          "generated": 134,
+          "retained": 134
+        },
+        {
+          "bit": 3,
+          "generated": 1997,
+          "retained": 1653
+        },
+        {
+          "bit": 4,
+          "generated": 24575,
+          "retained": 1827
+        },
+        {
+          "bit": 5,
+          "generated": 22721,
+          "retained": 84
+        },
+        {
+          "bit": 6,
+          "generated": 1267,
+          "retained": 0
+        }
+      ],
+      "witness_count": 0,
+      "best": []
+    }
+  ]
+}

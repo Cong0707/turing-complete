@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Turing Complete</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+</head>
+
+<body style="text-align: center; margin: 0; background: #232323;">
+    <div style=" width: 100%;">
+        <div
+            style="width: 1000px; margin: auto; box-shadow: 0px 10px 30px #0c0c0c; border-radius: 18px; margin-top: 10px; margin-bottom: 15px;">
+            <div
+                style="height: 70px; background: #292929; padding: 0px 30px 0px 30px; text-align: left; border-radius: 18px 18px 0px 0px;">
+                <div style="height: 100%; float: left;">
+                    <a href="/">
+                        <img src="/static/logo.png" style="height: 75%; margin-left: -14px; margin-top: 8px;">
+                    </a>
+                </div>
+
+                <div style="float: right;">
+                    
+                    <a href="/leaderboard" class="main_link">Leaderboard</a>
+                    <a href="/contact" class="main_link">Contact</a>
+                </div>
+            </div>
+
+            <div style="text-align: left; background: #3c3939; min-height: calc(100vh - 200px); padding: 30px;"> 
+
+<script>
+    "use strict";
+
+    function compare() {
+        let elements = document.getElementsByClassName("toggle");
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].style.display = elements[i].style.display == "inline" ? "none" : "inline";
+        }
+    }
+
+    let sort_frontiers = (() => {
+        var criterion, is_ascending;
+        return (key) => {
+            if (criterion === key) {
+                is_ascending = !is_ascending;
+            } else {
+                criterion = key;
+                is_ascending = true;
+            }
+
+            console.log(criterion, is_ascending);
+
+            for (var i = 0; i < 3; i++) {
+                document.getElementById(i + "_asc").style.display = "none";
+                document.getElementById(i + "_dsc").style.display = "none";
+            }
+            document.getElementById(criterion + "_" + (is_ascending ? "asc" : "dsc")).style.display = "inline";
+
+            var cmp_f = (a, b) => a.value - b.value;
+            if (!is_ascending) {
+                cmp_f = (a, b) => b.value - a.value;
+            }
+
+            let table = document.getElementById("frontiers");
+            let num_row = table.rows.length;
+            for (var i = 1; i < num_row; i++) {
+                let stats = table.rows[i].getElementsByTagName("td");
+                let divs = stats[1 + criterion].getElementsByTagName("div");
+                var items = []
+                for (var j = 0; j < divs.length; j++) {
+                    items[j] = {
+                        value: parseInt(divs[j].getElementsByTagName("span")[0].textContent.replace(/[^0-9]/g, "")),
+                        index: j,
+                    };
+                }
+                items.sort(cmp_f);
+
+                for (var j = 1; j < stats.length; j++) {
+                    let divs = stats[j].getElementsByTagName("div");
+                    for (var k = 0; k < divs.length; k++) {
+                        items[k].value = divs[items[k].index];
+                    }
+                    for (var k = items.length - 1; k >= 0; k--) {
+                        stats[j].insertBefore(items[k].value, stats[j].firstElementChild);
+                    }
+                }
+            }
+        }
+    })();
+</script>
+
+<div style="display: inline-block; vertical-align: top; margin: 25px; margin-left: 14px; max-width: 202px;">
+    <table style="overflow: hidden;">
+        <tr>
+            <td colspan="2">
+                <img src="/static/avatars/681.jpg"
+                    style="border-radius: 8px; box-shadow: #1f1d1d 0px 0px 10px; margin-bottom: 10px; width: 184px; height: 184px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="max-width: 60px;">
+                <span style="font-size: 24px; color: white;">
+                    Heistenberg99
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="profile_left_stats">COMPLETE</td>
+            <td class="profile_right_stats">34%</td>
+        </tr>
+        
+    </table>
+
+    
+
+    <br>
+
+    
+</div>
+<div
+    style="display: inline-block; vertical-align: top; margin: 10px; margin-top: 25px; width: 675px; text-align: center;">
+    <div class="profile_box">
+        
+        
+
+        
+
+        
+
+        
+        <h2>COMPONENT LEVELS</h2>
+        <table id="frontiers" class="profile_table">
+            
+            <tr>
+                <th class="profile_th" style="width: 635px;">LEVEL</th>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> XOR Gate </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Bigger OR Gate </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Bigger AND Gate </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> XNOR Gate </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Half Adder </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Full Adder </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Byte NOT </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Byte NAND </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Adding Bytes </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Multiplexer </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Saving Gracefully </td>
+            </tr>
+            
+            <tr>
+                <td class="profile_level_name"> Saving Bytes </td>
+            </tr>
+            
+            
+        </table>
+        
+
+        
+    </div>
+</div> </div>
+<div style="width: 100%; text-align: center; left: 0; color: #848484; height: 36px; padding-top: 8px;">
+  <a href="https://www.reddit.com/r/turingcomplete" target="_blank"><img src="/static/footer_icons/reddit.png"
+      class="footer_image" title="Reddit"></a>
+  <a href="https://discord.gg/hdrJaMUdrF" target="_blank"><img src="/static/footer_icons/discord.png"
+      class="footer_image" title="Discord"></a>
+  <a href="https://www.youtube.com/@TuringCompleteGame" target="_blank"><img src="/static/footer_icons/youtube.png"
+      class="footer_image" title="Youtube"></a>
+  <a href="https://store.steampowered.com/app/1444480/Turing_Complete/" target="_blank"><img
+      src="/static/footer_icons/steam.png" class="footer_image" title="Steam"></a>
+</div>
+</div>
+</div>
+</body>
+
+</html>

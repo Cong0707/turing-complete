@@ -1,0 +1,2801 @@
+{
+  "schema": "turing-complete-byte-adder-selected-public-hubs-v1",
+  "scope": "public Hub items 19, 55, 59, 88, and 225; read-only offline analysis",
+  "hub_ids": [
+    19,
+    55,
+    59,
+    88,
+    225
+  ],
+  "hubs": [
+    {
+      "hub_id": 19,
+      "public_name": "Utils/adder_8-csa4_32b",
+      "public_description": "使用8位加法器构造的32位进位选择加法器，延迟为8位加法器+8",
+      "author": "缇米娅",
+      "author_id": 511,
+      "response_bytes": 2030,
+      "response_sha256": "318328f1874ca25c5f60f6562ac32a464470b5cb377114a496fef4068f62b991",
+      "package_sha256": "a1d2e2bc118cae849e66d8285b7d4f057bb4809fa50a4c3ed5d81c62c2f233c0",
+      "classification": {
+        "role": "32-bit carry-select wrapper around eight U8 Add primitives",
+        "byte_adder_relevance": "The package contains no embedded U8 gate topology. Its eight kind-30 instances carry serialized 154/4 cost overrides, independently corroborating the public four-delay U8 point."
+      },
+      "duplicate_custom_ids": {},
+      "dependency_cycles": [],
+      "circuit_file_count": 1,
+      "main": {
+        "path": ".research/byte_adder_public/hub-19/main/circuit.data",
+        "bytes": 1900,
+        "sha256": "46413c33e83b1ecd23db6a7eafa2e2c801f04c77069a88f87e0b4883c38b2a29",
+        "format_version": 14,
+        "header_gate": 1380,
+        "header_delay": 12,
+        "header_energy": 16560,
+        "custom_id": 502821355881646527,
+        "declared_dependencies": [],
+        "component_count": 49,
+        "wire_count": 115,
+        "component_kind_counts": {
+          "1": 9,
+          "2": 4,
+          "30": 8,
+          "42": 4,
+          "79": 3,
+          "81": 2,
+          "97": 1,
+          "99": 2,
+          "101": 8,
+          "114": 8
+        },
+        "custom_instance_counts": {},
+        "serialized_cost_overrides": [
+          {
+            "component_index": 11,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 12,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 14,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 27,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 28,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 31,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 38,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 40,
+            "kind": 30,
+            "word_size": 8,
+            "cost_gate": 154,
+            "cost_delay": 4
+          }
+        ],
+        "add_instances": [
+          {
+            "component_index": 11,
+            "word_size": 8,
+            "position": [
+              -4,
+              -36
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 12,
+            "word_size": 8,
+            "position": [
+              -4,
+              -21
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 14,
+            "word_size": 8,
+            "position": [
+              -4,
+              -42
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 27,
+            "word_size": 8,
+            "position": [
+              -4,
+              -26
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 28,
+            "word_size": 8,
+            "position": [
+              -4,
+              -31
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 31,
+            "word_size": 8,
+            "position": [
+              -4,
+              -16
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 38,
+            "word_size": 8,
+            "position": [
+              -4,
+              -11
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          },
+          {
+            "component_index": 40,
+            "word_size": 8,
+            "position": [
+              -4,
+              -6
+            ],
+            "cost_gate": 154,
+            "cost_delay": 4
+          }
+        ],
+        "ports": [
+          {
+            "direction": "input",
+            "label": "A",
+            "word_size": 32,
+            "position": [
+              -20,
+              -28
+            ],
+            "permanent_id": 7835269643811749342
+          },
+          {
+            "direction": "input",
+            "label": "B",
+            "word_size": 32,
+            "position": [
+              -20,
+              -12
+            ],
+            "permanent_id": 125287454888302992
+          },
+          {
+            "direction": "output",
+            "label": "Res",
+            "word_size": 32,
+            "position": [
+              12,
+              -28
+            ],
+            "permanent_id": 6991757130200771942
+          },
+          {
+            "direction": "output",
+            "label": "Carry_out",
+            "word_size": 32,
+            "position": [
+              12,
+              -12
+            ],
+            "permanent_id": 3478301269328410009
+          },
+          {
+            "direction": "input",
+            "label": "Carry_in",
+            "word_size": 1,
+            "position": [
+              4,
+              -45
+            ],
+            "permanent_id": 8769767779048870578
+          }
+        ],
+        "missing_custom_dependencies": [],
+        "direct_child_header_gate": 0,
+        "local_gate_excluding_children": 1380,
+        "recursive_gate": 1380,
+        "recursive_gate_matches_header": true,
+        "recursive_delay": 12,
+        "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+      },
+      "circuits": [
+        {
+          "path": ".research/byte_adder_public/hub-19/main/circuit.data",
+          "bytes": 1900,
+          "sha256": "46413c33e83b1ecd23db6a7eafa2e2c801f04c77069a88f87e0b4883c38b2a29",
+          "format_version": 14,
+          "header_gate": 1380,
+          "header_delay": 12,
+          "header_energy": 16560,
+          "custom_id": 502821355881646527,
+          "declared_dependencies": [],
+          "component_count": 49,
+          "wire_count": 115,
+          "component_kind_counts": {
+            "1": 9,
+            "2": 4,
+            "30": 8,
+            "42": 4,
+            "79": 3,
+            "81": 2,
+            "97": 1,
+            "99": 2,
+            "101": 8,
+            "114": 8
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [
+            {
+              "component_index": 11,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 12,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 14,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 27,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 28,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 31,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 38,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 40,
+              "kind": 30,
+              "word_size": 8,
+              "cost_gate": 154,
+              "cost_delay": 4
+            }
+          ],
+          "add_instances": [
+            {
+              "component_index": 11,
+              "word_size": 8,
+              "position": [
+                -4,
+                -36
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 12,
+              "word_size": 8,
+              "position": [
+                -4,
+                -21
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 14,
+              "word_size": 8,
+              "position": [
+                -4,
+                -42
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 27,
+              "word_size": 8,
+              "position": [
+                -4,
+                -26
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 28,
+              "word_size": 8,
+              "position": [
+                -4,
+                -31
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 31,
+              "word_size": 8,
+              "position": [
+                -4,
+                -16
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 38,
+              "word_size": 8,
+              "position": [
+                -4,
+                -11
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            },
+            {
+              "component_index": 40,
+              "word_size": 8,
+              "position": [
+                -4,
+                -6
+              ],
+              "cost_gate": 154,
+              "cost_delay": 4
+            }
+          ],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 32,
+              "position": [
+                -20,
+                -28
+              ],
+              "permanent_id": 7835269643811749342
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 32,
+              "position": [
+                -20,
+                -12
+              ],
+              "permanent_id": 125287454888302992
+            },
+            {
+              "direction": "output",
+              "label": "Res",
+              "word_size": 32,
+              "position": [
+                12,
+                -28
+              ],
+              "permanent_id": 6991757130200771942
+            },
+            {
+              "direction": "output",
+              "label": "Carry_out",
+              "word_size": 32,
+              "position": [
+                12,
+                -12
+              ],
+              "permanent_id": 3478301269328410009
+            },
+            {
+              "direction": "input",
+              "label": "Carry_in",
+              "word_size": 1,
+              "position": [
+                4,
+                -45
+              ],
+              "permanent_id": 8769767779048870578
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 1380,
+          "recursive_gate": 1380,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 12,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        }
+      ]
+    },
+    {
+      "hub_id": 55,
+      "public_name": "ADD_8B",
+      "public_description": "",
+      "author": "哦吼",
+      "author_id": 4957,
+      "response_bytes": 9531,
+      "response_sha256": "727b32c2c1c9122b541b10b9f6cd72bba88c545648126e56d14b9dd85e4c4656",
+      "package_sha256": "15012ec0a4c8d9366d58b301899694fecc422d1e853abe0c3072ac54cd755293",
+      "classification": {
+        "role": "hierarchical U8 carry-lookahead adder",
+        "byte_adder_relevance": "The main 228/9 circuit consists of one 172/9 CLA carry core and eight 7/4 sum-only full-adder children. It is structurally real but is dominated by the public Byte Adder frontier."
+      },
+      "duplicate_custom_ids": {},
+      "dependency_cycles": [],
+      "circuit_file_count": 16,
+      "main": {
+        "path": ".research/byte_adder_public/hub-55/main/circuit.data",
+        "bytes": 859,
+        "sha256": "61c4fcd2bb5bffcd9f34f874915fe2ed613285831b54f954f18df10ead807191",
+        "format_version": 15,
+        "header_gate": 228,
+        "header_delay": 9,
+        "header_energy": 2052,
+        "custom_id": 4616319331990898949,
+        "declared_dependencies": [
+          6548531709342394228,
+          8091520164913744244
+        ],
+        "component_count": 17,
+        "wire_count": 40,
+        "component_kind_counts": {
+          "16": 1,
+          "17": 2,
+          "78": 9,
+          "79": 3,
+          "81": 2
+        },
+        "custom_instance_counts": {
+          "6548531709342394228": 1,
+          "8091520164913744244": 8
+        },
+        "serialized_cost_overrides": [],
+        "add_instances": [],
+        "ports": [
+          {
+            "direction": "input",
+            "label": "A",
+            "word_size": 8,
+            "position": [
+              -72,
+              -80
+            ],
+            "permanent_id": 8178057916393607231
+          },
+          {
+            "direction": "input",
+            "label": "B",
+            "word_size": 8,
+            "position": [
+              -72,
+              -61
+            ],
+            "permanent_id": 8842859368677642979
+          },
+          {
+            "direction": "input",
+            "label": "Cin",
+            "word_size": 1,
+            "position": [
+              -62,
+              -89
+            ],
+            "permanent_id": 6313319939602751875
+          },
+          {
+            "direction": "output",
+            "label": "S",
+            "word_size": 8,
+            "position": [
+              -44,
+              -75
+            ],
+            "permanent_id": 4993883856285726770
+          },
+          {
+            "direction": "output",
+            "label": "Cout",
+            "word_size": 8,
+            "position": [
+              -55,
+              -52
+            ],
+            "permanent_id": 1868115264167331713
+          }
+        ],
+        "missing_custom_dependencies": [],
+        "direct_child_header_gate": 228,
+        "local_gate_excluding_children": 0,
+        "recursive_gate": 228,
+        "recursive_gate_matches_header": true,
+        "recursive_delay": 9,
+        "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+      },
+      "circuits": [
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/00/UTILS_8B/CLA_GP_8B/circuit.data",
+          "bytes": 301,
+          "sha256": "0f8a2b13ac997de52db86362f5e04c0b9c2ef6a75ccc2b5c350cc6929e45fadd",
+          "format_version": 15,
+          "header_gate": 2,
+          "header_delay": 1,
+          "header_energy": 2,
+          "custom_id": 5519122908699736864,
+          "declared_dependencies": [],
+          "component_count": 6,
+          "wire_count": 6,
+          "component_kind_counts": {
+            "4": 1,
+            "7": 1,
+            "79": 2,
+            "81": 2
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 1,
+              "position": [
+                -19,
+                -25
+              ],
+              "permanent_id": 6839390950795418087
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 1,
+              "position": [
+                -19,
+                -13
+              ],
+              "permanent_id": 8222192755285917645
+            },
+            {
+              "direction": "output",
+              "label": "G",
+              "word_size": 8,
+              "position": [
+                -4,
+                -24
+              ],
+              "permanent_id": 5279777792221431952
+            },
+            {
+              "direction": "output",
+              "label": "P",
+              "word_size": 8,
+              "position": [
+                -3,
+                -13
+              ],
+              "permanent_id": 3863095401472961862
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 2,
+          "recursive_gate": 2,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 1,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/01/UTILS_8B/ORs/OR_5/circuit.data",
+          "bytes": 374,
+          "sha256": "6ec6cbf3f162eaa3353b3d9d02f6e6389fd29492c2ae63c148080c623820ea77",
+          "format_version": 15,
+          "header_gate": 4,
+          "header_delay": 3,
+          "header_energy": 12,
+          "custom_id": 8611436704338079463,
+          "declared_dependencies": [],
+          "component_count": 9,
+          "wire_count": 8,
+          "component_kind_counts": {
+            "7": 2,
+            "8": 1,
+            "79": 5,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -80
+              ],
+              "permanent_id": 5793129827018285241
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -73
+              ],
+              "permanent_id": 8737499185730591366
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -65
+              ],
+              "permanent_id": 4788789425053865395
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -57
+              ],
+              "permanent_id": 1063690191685148446
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -49
+              ],
+              "permanent_id": 5169619994012564160
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -20,
+                -66
+              ],
+              "permanent_id": 6523727801292961913
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 4,
+          "recursive_gate": 4,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/02/UTILS_8B/ORs/OR_6/circuit.data",
+          "bytes": 418,
+          "sha256": "79be769d10f977e5aa01fa458abe5c5ade7d3ec16e4867f1a9b49bc471e17026",
+          "format_version": 15,
+          "header_gate": 5,
+          "header_delay": 3,
+          "header_energy": 15,
+          "custom_id": 6333878653213230378,
+          "declared_dependencies": [],
+          "component_count": 10,
+          "wire_count": 9,
+          "component_kind_counts": {
+            "7": 1,
+            "8": 2,
+            "79": 6,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -58
+              ],
+              "permanent_id": 5318703891301821281
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -50
+              ],
+              "permanent_id": 5557161605273351812
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -66
+              ],
+              "permanent_id": 5896346734928392502
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -74
+              ],
+              "permanent_id": 1596610798238199674
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -30,
+                -71
+              ],
+              "permanent_id": 8503644492004808198
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -90
+              ],
+              "permanent_id": 1003330034177689727
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -83
+              ],
+              "permanent_id": 7828014486184693156
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 5,
+          "recursive_gate": 5,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/03/UTILS_8B/ORs/OR_7/circuit.data",
+          "bytes": 472,
+          "sha256": "063bf37b0a28549f9e985591a4bb3aa10570bd6d2cbd56911b84eef3900b97fe",
+          "format_version": 15,
+          "header_gate": 6,
+          "header_delay": 3,
+          "header_energy": 18,
+          "custom_id": 5958908347738727216,
+          "declared_dependencies": [
+            7411715677597957741
+          ],
+          "component_count": 11,
+          "wire_count": 10,
+          "component_kind_counts": {
+            "7": 1,
+            "8": 1,
+            "78": 1,
+            "79": 7,
+            "81": 1
+          },
+          "custom_instance_counts": {
+            "7411715677597957741": 1
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -96
+              ],
+              "permanent_id": 78542001377368557
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -67
+              ],
+              "permanent_id": 9038295235341394038
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -36,
+                -74
+              ],
+              "permanent_id": 44420568709603950
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -54,
+                -53
+              ],
+              "permanent_id": 6974676528719537539
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -82
+              ],
+              "permanent_id": 5279890406372069404
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -89
+              ],
+              "permanent_id": 3224808744499272910
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -60
+              ],
+              "permanent_id": 4796052200132557251
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -75
+              ],
+              "permanent_id": 7486225398683087423
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 3,
+          "local_gate_excluding_children": 3,
+          "recursive_gate": 6,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/04/UTILS_8B/ORs/OR_4/circuit.data",
+          "bytes": 338,
+          "sha256": "a96a6234f949f12ceb71a6cddb9f1311f6f986a3a0c76039d9bc265ee7d6d1ed",
+          "format_version": 15,
+          "header_gate": 3,
+          "header_delay": 2,
+          "header_energy": 6,
+          "custom_id": 7411715677597957741,
+          "declared_dependencies": [],
+          "component_count": 8,
+          "wire_count": 7,
+          "component_kind_counts": {
+            "7": 3,
+            "79": 4,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -35
+              ],
+              "permanent_id": 533330376858233289
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -28
+              ],
+              "permanent_id": 3874636157241918709
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -21
+              ],
+              "permanent_id": 4352980984446081210
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -14
+              ],
+              "permanent_id": 3548758884839672828
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -7,
+                -26
+              ],
+              "permanent_id": 2334486770231050521
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 3,
+          "recursive_gate": 3,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 2,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/05/UTILS_8B/ORs/OR_8/circuit.data",
+          "bytes": 533,
+          "sha256": "2f2379cc4f9629077e2910bac52074687f6cac396e7b6336bc3e5a08b5725ad5",
+          "format_version": 15,
+          "header_gate": 7,
+          "header_delay": 3,
+          "header_energy": 21,
+          "custom_id": 5162800469403480638,
+          "declared_dependencies": [
+            7411715677597957741
+          ],
+          "component_count": 12,
+          "wire_count": 14,
+          "component_kind_counts": {
+            "7": 1,
+            "78": 2,
+            "79": 8,
+            "81": 1
+          },
+          "custom_instance_counts": {
+            "7411715677597957741": 2
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -31,
+                -70
+              ],
+              "permanent_id": 1419950939459706845
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -49
+              ],
+              "permanent_id": 5171007455987664410
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -72
+              ],
+              "permanent_id": 5452292440076566485
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -73
+              ],
+              "permanent_id": 8303341552163130944
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -64
+              ],
+              "permanent_id": 1622923130165889294
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -88
+              ],
+              "permanent_id": 1440675311563830560
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -56
+              ],
+              "permanent_id": 3026266289838375295
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -51,
+                -81
+              ],
+              "permanent_id": 5364282231139979688
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -65
+              ],
+              "permanent_id": 6947869834983500130
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 6,
+          "local_gate_excluding_children": 1,
+          "recursive_gate": 7,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/06/UTILS_8B/ANDs/AND_9/circuit.data",
+          "bytes": 540,
+          "sha256": "c004c5b5a1a8d192e3f6dfb9419706691a7c3ea3cb4e5b59c901b0ffc4965971",
+          "format_version": 15,
+          "header_gate": 8,
+          "header_delay": 4,
+          "header_energy": 32,
+          "custom_id": 1223912533238290100,
+          "declared_dependencies": [],
+          "component_count": 14,
+          "wire_count": 13,
+          "component_kind_counts": {
+            "5": 4,
+            "79": 9,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -100
+              ],
+              "permanent_id": 7630962939710697571
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -93
+              ],
+              "permanent_id": 2393228376276995598
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -85
+              ],
+              "permanent_id": 5036273728502204411
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -76
+              ],
+              "permanent_id": 6127919706510847739
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -66
+              ],
+              "permanent_id": 857861940673302118
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -64,
+                -58
+              ],
+              "permanent_id": 4352457750348041077
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -84,
+                -76
+              ],
+              "permanent_id": 2943589689820203940
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -82,
+                -100
+              ],
+              "permanent_id": 2035194485181808140
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -74,
+                -57
+              ],
+              "permanent_id": 3960541602973575457
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -79
+              ],
+              "permanent_id": 2938858933526916775
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 8,
+          "recursive_gate": 8,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 4,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/07/UTILS_8B/ANDs/AND_8/circuit.data",
+          "bytes": 533,
+          "sha256": "c93591a6c4dc3084045fc871180c0b94a0fb34666cc4199566d6e08919c3aa90",
+          "format_version": 15,
+          "header_gate": 7,
+          "header_delay": 3,
+          "header_energy": 21,
+          "custom_id": 2871776302770335706,
+          "declared_dependencies": [
+            4820826846442587785
+          ],
+          "component_count": 12,
+          "wire_count": 14,
+          "component_kind_counts": {
+            "4": 1,
+            "78": 2,
+            "79": 8,
+            "81": 1
+          },
+          "custom_instance_counts": {
+            "4820826846442587785": 2
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -31,
+                -70
+              ],
+              "permanent_id": 6532479657569809949
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -49
+              ],
+              "permanent_id": 3509002171691480066
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -72
+              ],
+              "permanent_id": 8368666850678180619
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -73
+              ],
+              "permanent_id": 5710455185866322612
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -64
+              ],
+              "permanent_id": 1061486236686376879
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -88
+              ],
+              "permanent_id": 2715766860306498879
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -50,
+                -56
+              ],
+              "permanent_id": 8793314772026374525
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -51,
+                -81
+              ],
+              "permanent_id": 1172007134383666893
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -65
+              ],
+              "permanent_id": 6384919720129023239
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 6,
+          "local_gate_excluding_children": 1,
+          "recursive_gate": 7,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/08/UTILS_8B/ANDs/AND_7/circuit.data",
+          "bytes": 475,
+          "sha256": "ae6aca0339be8670fdcdc3406827229b2c791ab36844e0b0d4ccc3c8005c82cd",
+          "format_version": 15,
+          "header_gate": 6,
+          "header_delay": 3,
+          "header_energy": 18,
+          "custom_id": 2410580932063256325,
+          "declared_dependencies": [
+            4820826846442587785
+          ],
+          "component_count": 11,
+          "wire_count": 10,
+          "component_kind_counts": {
+            "4": 1,
+            "5": 1,
+            "78": 1,
+            "79": 7,
+            "81": 1
+          },
+          "custom_instance_counts": {
+            "4820826846442587785": 1
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -96
+              ],
+              "permanent_id": 7878052854826920667
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -67
+              ],
+              "permanent_id": 7919770528739666180
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -36,
+                -74
+              ],
+              "permanent_id": 8112940959026217268
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -54,
+                -53
+              ],
+              "permanent_id": 6973064430343268144
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -82
+              ],
+              "permanent_id": 93757348182049303
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -89
+              ],
+              "permanent_id": 7955940669799631655
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -60
+              ],
+              "permanent_id": 8723052272563042472
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -55,
+                -75
+              ],
+              "permanent_id": 2093131722243496734
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 3,
+          "local_gate_excluding_children": 3,
+          "recursive_gate": 6,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/09/UTILS_8B/ANDs/AND_6/circuit.data",
+          "bytes": 422,
+          "sha256": "1fed10ad7e41186e4b083b12eccdd8ab3b25b738e28c28da0b70b48f0a66e3eb",
+          "format_version": 15,
+          "header_gate": 5,
+          "header_delay": 3,
+          "header_energy": 15,
+          "custom_id": 3304607537409537661,
+          "declared_dependencies": [],
+          "component_count": 10,
+          "wire_count": 9,
+          "component_kind_counts": {
+            "4": 1,
+            "5": 2,
+            "79": 6,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -58
+              ],
+              "permanent_id": 6389885459255748797
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -50
+              ],
+              "permanent_id": 9065777660489807669
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -66
+              ],
+              "permanent_id": 1180062491942356442
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -74
+              ],
+              "permanent_id": 1715128520671706304
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -30,
+                -71
+              ],
+              "permanent_id": 1723861430644443209
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -90
+              ],
+              "permanent_id": 9170598206295732333
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -49,
+                -83
+              ],
+              "permanent_id": 1698110176685291354
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 5,
+          "recursive_gate": 5,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/10/UTILS_8B/ANDs/AND_5/circuit.data",
+          "bytes": 375,
+          "sha256": "5e9e8b5670dd3fa6356daf7b35eef22cc803eb0dbf6660f828b366281665dd81",
+          "format_version": 15,
+          "header_gate": 4,
+          "header_delay": 3,
+          "header_energy": 12,
+          "custom_id": 6440875933331289743,
+          "declared_dependencies": [],
+          "component_count": 9,
+          "wire_count": 8,
+          "component_kind_counts": {
+            "4": 2,
+            "5": 1,
+            "79": 5,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -80
+              ],
+              "permanent_id": 7082297962247219197
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -73
+              ],
+              "permanent_id": 4538672200656234782
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -65
+              ],
+              "permanent_id": 7787867369843315998
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -57
+              ],
+              "permanent_id": 7171354285615572252
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -36,
+                -49
+              ],
+              "permanent_id": 772965078416028555
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -20,
+                -66
+              ],
+              "permanent_id": 3294418032885620247
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 4,
+          "recursive_gate": 4,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 3,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/11/UTILS_8B/ANDs/AND_4/circuit.data",
+          "bytes": 339,
+          "sha256": "92ae6d8b6ce242dafe2be871f79eb4330d20880017be74e6fa2eb28317b927e6",
+          "format_version": 15,
+          "header_gate": 3,
+          "header_delay": 2,
+          "header_energy": 6,
+          "custom_id": 4820826846442587785,
+          "declared_dependencies": [],
+          "component_count": 8,
+          "wire_count": 7,
+          "component_kind_counts": {
+            "4": 3,
+            "79": 4,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -35
+              ],
+              "permanent_id": 756523373255048319
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -28
+              ],
+              "permanent_id": 7502782912773393901
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -21
+              ],
+              "permanent_id": 4572840572200254418
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -23,
+                -14
+              ],
+              "permanent_id": 3128380313197922935
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 8,
+              "position": [
+                -7,
+                -26
+              ],
+              "permanent_id": 3259371126177509332
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 3,
+          "recursive_gate": 3,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 2,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/12/UTILS_8B/ORs/OR_9/circuit.data",
+          "bytes": 550,
+          "sha256": "2ba36c777c28c67c5c74028d693e0bda68555e8d887b5003829e677bb1a88a76",
+          "format_version": 15,
+          "header_gate": 8,
+          "header_delay": 4,
+          "header_energy": 32,
+          "custom_id": 7369212075634110630,
+          "declared_dependencies": [],
+          "component_count": 14,
+          "wire_count": 13,
+          "component_kind_counts": {
+            "8": 4,
+            "79": 9,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -100
+              ],
+              "permanent_id": 4063988321415685178
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -93
+              ],
+              "permanent_id": 5316474153747519841
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -85
+              ],
+              "permanent_id": 1010685488671158155
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -76
+              ],
+              "permanent_id": 1890901395354053938
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -72,
+                -66
+              ],
+              "permanent_id": 8380406836538138379
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -64,
+                -57
+              ],
+              "permanent_id": 2949741874989058567
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -83,
+                -76
+              ],
+              "permanent_id": 1037781214017973518
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -83,
+                -100
+              ],
+              "permanent_id": 3313818933472385246
+            },
+            {
+              "direction": "input",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -73,
+                -57
+              ],
+              "permanent_id": 8297757665550808196
+            },
+            {
+              "direction": "output",
+              "label": "",
+              "word_size": 1,
+              "position": [
+                -57,
+                -79
+              ],
+              "permanent_id": 1936916831073306251
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 8,
+          "recursive_gate": 8,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 4,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/13/UTILS_8B/CLA_CORE_8B/circuit.data",
+          "bytes": 4429,
+          "sha256": "d610f7c2d3404c3696c24da1cbf127012a9d21a20a8c09647afc5c90c7c7b404",
+          "format_version": 15,
+          "header_gate": 172,
+          "header_delay": 9,
+          "header_energy": 1548,
+          "custom_id": 6548531709342394228,
+          "declared_dependencies": [
+            5519122908699736864,
+            4820826846442587785,
+            7411715677597957741,
+            6440875933331289743,
+            8611436704338079463,
+            3304607537409537661,
+            6333878653213230378,
+            2410580932063256325,
+            5958908347738727216,
+            2871776302770335706,
+            5162800469403480638,
+            1223912533238290100,
+            7369212075634110630
+          ],
+          "component_count": 65,
+          "wire_count": 227,
+          "component_kind_counts": {
+            "4": 8,
+            "5": 7,
+            "7": 1,
+            "8": 1,
+            "17": 2,
+            "78": 35,
+            "79": 3,
+            "81": 8
+          },
+          "custom_instance_counts": {
+            "1223912533238290100": 1,
+            "2410580932063256325": 3,
+            "2871776302770335706": 2,
+            "3304607537409537661": 4,
+            "4820826846442587785": 6,
+            "5162800469403480638": 1,
+            "5519122908699736864": 8,
+            "5958908347738727216": 1,
+            "6333878653213230378": 1,
+            "6440875933331289743": 5,
+            "7369212075634110630": 1,
+            "7411715677597957741": 1,
+            "8611436704338079463": 1
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 8,
+              "position": [
+                -42,
+                -56
+              ],
+              "permanent_id": 6296019859372869863
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 8,
+              "position": [
+                -42,
+                -41
+              ],
+              "permanent_id": 2382071446612694285
+            },
+            {
+              "direction": "output",
+              "label": "C2",
+              "word_size": 1,
+              "position": [
+                12,
+                -31
+              ],
+              "permanent_id": 7105150069750391973
+            },
+            {
+              "direction": "output",
+              "label": "C3",
+              "word_size": 1,
+              "position": [
+                12,
+                -39
+              ],
+              "permanent_id": 392015919714013747
+            },
+            {
+              "direction": "input",
+              "label": "Cin",
+              "word_size": 1,
+              "position": [
+                -42,
+                -28
+              ],
+              "permanent_id": 2915734719572726064
+            },
+            {
+              "direction": "output",
+              "label": "C4",
+              "word_size": 1,
+              "position": [
+                12,
+                -51
+              ],
+              "permanent_id": 7614468604308550083
+            },
+            {
+              "direction": "output",
+              "label": "C5",
+              "word_size": 1,
+              "position": [
+                12,
+                -60
+              ],
+              "permanent_id": 3514725311513806176
+            },
+            {
+              "direction": "output",
+              "label": "C6",
+              "word_size": 1,
+              "position": [
+                -3,
+                -65
+              ],
+              "permanent_id": 6923875430608534441
+            },
+            {
+              "direction": "output",
+              "label": "C7",
+              "word_size": 1,
+              "position": [
+                -18,
+                -65
+              ],
+              "permanent_id": 7277764395249599619
+            },
+            {
+              "direction": "output",
+              "label": "C1",
+              "word_size": 1,
+              "position": [
+                -3,
+                -19
+              ],
+              "permanent_id": 4112626301174046391
+            },
+            {
+              "direction": "output",
+              "label": "C0",
+              "word_size": 1,
+              "position": [
+                -19,
+                -19
+              ],
+              "permanent_id": 5286745442871628699
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 147,
+          "local_gate_excluding_children": 25,
+          "recursive_gate": 172,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 9,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/dependencies/14/UTILS/FA_NCout/circuit.data",
+          "bytes": 360,
+          "sha256": "c36ac26ab5572db0f337cb7e078925028f3d4bccae0032aa3ec50318053315ec",
+          "format_version": 15,
+          "header_gate": 7,
+          "header_delay": 4,
+          "header_energy": 28,
+          "custom_id": 8091520164913744244,
+          "declared_dependencies": [],
+          "component_count": 7,
+          "wire_count": 7,
+          "component_kind_counts": {
+            "4": 1,
+            "10": 2,
+            "79": 3,
+            "81": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "output",
+              "label": "S",
+              "word_size": 8,
+              "position": [
+                -5,
+                -25
+              ],
+              "permanent_id": 4753790697931501567
+            },
+            {
+              "direction": "input",
+              "label": "Cin",
+              "word_size": 1,
+              "position": [
+                5,
+                -22
+              ],
+              "permanent_id": 939110800641972510
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 1,
+              "position": [
+                -21,
+                -16
+              ],
+              "permanent_id": 8185663980316409914
+            },
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 1,
+              "position": [
+                -22,
+                -24
+              ],
+              "permanent_id": 3930784800839079284
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 7,
+          "recursive_gate": 7,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 4,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        },
+        {
+          "path": ".research/byte_adder_public/hub-55/main/circuit.data",
+          "bytes": 859,
+          "sha256": "61c4fcd2bb5bffcd9f34f874915fe2ed613285831b54f954f18df10ead807191",
+          "format_version": 15,
+          "header_gate": 228,
+          "header_delay": 9,
+          "header_energy": 2052,
+          "custom_id": 4616319331990898949,
+          "declared_dependencies": [
+            6548531709342394228,
+            8091520164913744244
+          ],
+          "component_count": 17,
+          "wire_count": 40,
+          "component_kind_counts": {
+            "16": 1,
+            "17": 2,
+            "78": 9,
+            "79": 3,
+            "81": 2
+          },
+          "custom_instance_counts": {
+            "6548531709342394228": 1,
+            "8091520164913744244": 8
+          },
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 8,
+              "position": [
+                -72,
+                -80
+              ],
+              "permanent_id": 8178057916393607231
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 8,
+              "position": [
+                -72,
+                -61
+              ],
+              "permanent_id": 8842859368677642979
+            },
+            {
+              "direction": "input",
+              "label": "Cin",
+              "word_size": 1,
+              "position": [
+                -62,
+                -89
+              ],
+              "permanent_id": 6313319939602751875
+            },
+            {
+              "direction": "output",
+              "label": "S",
+              "word_size": 8,
+              "position": [
+                -44,
+                -75
+              ],
+              "permanent_id": 4993883856285726770
+            },
+            {
+              "direction": "output",
+              "label": "Cout",
+              "word_size": 8,
+              "position": [
+                -55,
+                -52
+              ],
+              "permanent_id": 1868115264167331713
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 228,
+          "local_gate_excluding_children": 0,
+          "recursive_gate": 228,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 9,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        }
+      ]
+    },
+    {
+      "hub_id": 59,
+      "public_name": "Overture/4BitCLA",
+      "public_description": "4BitCLA ADD",
+      "author": "Hades2001",
+      "author_id": 7897,
+      "response_bytes": 1953,
+      "response_sha256": "3892bb15d7ec72d2821271e447d5e2c1f8d0aa8028450e1abd2b04a7261bbaab",
+      "package_sha256": "a7439b22fcf492c0d2285d8975ded070f46113b0160dac0a06c38eb89be6a765",
+      "classification": {
+        "role": "four-bit carry-lookahead adder",
+        "byte_adder_relevance": "Its input ports are U4, not U8. It is an old Overture-named reference and not a recovered modern eight-bit leaderboard topology."
+      },
+      "duplicate_custom_ids": {},
+      "dependency_cycles": [],
+      "circuit_file_count": 1,
+      "main": {
+        "path": ".research/byte_adder_public/hub-59/main/circuit.data",
+        "bytes": 1984,
+        "sha256": "513b29d5e81af53e783e3292751576fb5de7dd29297484514a20c02d7ceaa2ed",
+        "format_version": 15,
+        "header_gate": 58,
+        "header_delay": 9,
+        "header_energy": 522,
+        "custom_id": 2148284143977080427,
+        "declared_dependencies": [],
+        "component_count": 39,
+        "wire_count": 167,
+        "component_kind_counts": {
+          "4": 10,
+          "5": 7,
+          "7": 2,
+          "8": 4,
+          "10": 8,
+          "79": 3,
+          "81": 2,
+          "110": 2,
+          "112": 1
+        },
+        "custom_instance_counts": {},
+        "serialized_cost_overrides": [],
+        "add_instances": [],
+        "ports": [
+          {
+            "direction": "output",
+            "label": "Co",
+            "word_size": 8,
+            "position": [
+              20,
+              11
+            ],
+            "permanent_id": 6004590372147936127
+          },
+          {
+            "direction": "input",
+            "label": "A",
+            "word_size": 4,
+            "position": [
+              -34,
+              -21
+            ],
+            "permanent_id": 4738233421065175583
+          },
+          {
+            "direction": "input",
+            "label": "B",
+            "word_size": 4,
+            "position": [
+              -34,
+              -12
+            ],
+            "permanent_id": 7250420447445657573
+          },
+          {
+            "direction": "input",
+            "label": "Ci",
+            "word_size": 1,
+            "position": [
+              -34,
+              -38
+            ],
+            "permanent_id": 1501144086303183950
+          },
+          {
+            "direction": "output",
+            "label": "S",
+            "word_size": 8,
+            "position": [
+              20,
+              4
+            ],
+            "permanent_id": 3202107374534997383
+          }
+        ],
+        "missing_custom_dependencies": [],
+        "direct_child_header_gate": 0,
+        "local_gate_excluding_children": 58,
+        "recursive_gate": 58,
+        "recursive_gate_matches_header": true,
+        "recursive_delay": 9,
+        "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+      },
+      "circuits": [
+        {
+          "path": ".research/byte_adder_public/hub-59/main/circuit.data",
+          "bytes": 1984,
+          "sha256": "513b29d5e81af53e783e3292751576fb5de7dd29297484514a20c02d7ceaa2ed",
+          "format_version": 15,
+          "header_gate": 58,
+          "header_delay": 9,
+          "header_energy": 522,
+          "custom_id": 2148284143977080427,
+          "declared_dependencies": [],
+          "component_count": 39,
+          "wire_count": 167,
+          "component_kind_counts": {
+            "4": 10,
+            "5": 7,
+            "7": 2,
+            "8": 4,
+            "10": 8,
+            "79": 3,
+            "81": 2,
+            "110": 2,
+            "112": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "output",
+              "label": "Co",
+              "word_size": 8,
+              "position": [
+                20,
+                11
+              ],
+              "permanent_id": 6004590372147936127
+            },
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 4,
+              "position": [
+                -34,
+                -21
+              ],
+              "permanent_id": 4738233421065175583
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 4,
+              "position": [
+                -34,
+                -12
+              ],
+              "permanent_id": 7250420447445657573
+            },
+            {
+              "direction": "input",
+              "label": "Ci",
+              "word_size": 1,
+              "position": [
+                -34,
+                -38
+              ],
+              "permanent_id": 1501144086303183950
+            },
+            {
+              "direction": "output",
+              "label": "S",
+              "word_size": 8,
+              "position": [
+                20,
+                4
+              ],
+              "permanent_id": 3202107374534997383
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 58,
+          "recursive_gate": 58,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 9,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        }
+      ]
+    },
+    {
+      "hub_id": 88,
+      "public_name": "Adder/56g18d-8bits-adder",
+      "public_description": "",
+      "author": "SYSTEM-PSD",
+      "author_id": 1198,
+      "response_bytes": 2769,
+      "response_sha256": "ed0564bae42a5300176fd2e02859d3e91151f1344d2403f636759d483f1414ce",
+      "package_sha256": "31b846e2a2814f316e50153c4278c41e6fe9eb51bc26d9f0b1f3faca5f9aa64b",
+      "classification": {
+        "role": "direct gate-level U8 ripple adder",
+        "byte_adder_relevance": "This is the complete public 56/18 low-gate baseline: 16 AND, 8 OR, and 32 NOR gates, with no Custom dependencies."
+      },
+      "duplicate_custom_ids": {},
+      "dependency_cycles": [],
+      "circuit_file_count": 1,
+      "main": {
+        "path": ".research/byte_adder_public/hub-88/main/circuit.data",
+        "bytes": 2869,
+        "sha256": "f32c55f157ff00043b35c82511d2a6e5fc5831bd49f3fa1db5804ee9228206e1",
+        "format_version": 15,
+        "header_gate": 56,
+        "header_delay": 18,
+        "header_energy": 1008,
+        "custom_id": 51495480813928546,
+        "declared_dependencies": [],
+        "component_count": 64,
+        "wire_count": 226,
+        "component_kind_counts": {
+          "4": 16,
+          "7": 8,
+          "9": 32,
+          "16": 1,
+          "17": 2,
+          "79": 3,
+          "81": 2
+        },
+        "custom_instance_counts": {},
+        "serialized_cost_overrides": [],
+        "add_instances": [],
+        "ports": [
+          {
+            "direction": "input",
+            "label": "A",
+            "word_size": 8,
+            "position": [
+              -44,
+              -44
+            ],
+            "permanent_id": 9092851746121152620
+          },
+          {
+            "direction": "input",
+            "label": "B",
+            "word_size": 8,
+            "position": [
+              -36,
+              -44
+            ],
+            "permanent_id": 1378962557390272980
+          },
+          {
+            "direction": "input",
+            "label": "Cin",
+            "word_size": 1,
+            "position": [
+              -23,
+              -44
+            ],
+            "permanent_id": 3655409203696671935
+          },
+          {
+            "direction": "output",
+            "label": "Sum",
+            "word_size": 8,
+            "position": [
+              47,
+              -29
+            ],
+            "permanent_id": 2203198713052931904
+          },
+          {
+            "direction": "output",
+            "label": "Cout",
+            "word_size": 8,
+            "position": [
+              45,
+              14
+            ],
+            "permanent_id": 9057087803116146558
+          }
+        ],
+        "missing_custom_dependencies": [],
+        "direct_child_header_gate": 0,
+        "local_gate_excluding_children": 56,
+        "recursive_gate": 56,
+        "recursive_gate_matches_header": true,
+        "recursive_delay": 18,
+        "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+      },
+      "circuits": [
+        {
+          "path": ".research/byte_adder_public/hub-88/main/circuit.data",
+          "bytes": 2869,
+          "sha256": "f32c55f157ff00043b35c82511d2a6e5fc5831bd49f3fa1db5804ee9228206e1",
+          "format_version": 15,
+          "header_gate": 56,
+          "header_delay": 18,
+          "header_energy": 1008,
+          "custom_id": 51495480813928546,
+          "declared_dependencies": [],
+          "component_count": 64,
+          "wire_count": 226,
+          "component_kind_counts": {
+            "4": 16,
+            "7": 8,
+            "9": 32,
+            "16": 1,
+            "17": 2,
+            "79": 3,
+            "81": 2
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "A",
+              "word_size": 8,
+              "position": [
+                -44,
+                -44
+              ],
+              "permanent_id": 9092851746121152620
+            },
+            {
+              "direction": "input",
+              "label": "B",
+              "word_size": 8,
+              "position": [
+                -36,
+                -44
+              ],
+              "permanent_id": 1378962557390272980
+            },
+            {
+              "direction": "input",
+              "label": "Cin",
+              "word_size": 1,
+              "position": [
+                -23,
+                -44
+              ],
+              "permanent_id": 3655409203696671935
+            },
+            {
+              "direction": "output",
+              "label": "Sum",
+              "word_size": 8,
+              "position": [
+                47,
+                -29
+              ],
+              "permanent_id": 2203198713052931904
+            },
+            {
+              "direction": "output",
+              "label": "Cout",
+              "word_size": 8,
+              "position": [
+                45,
+                14
+              ],
+              "permanent_id": 9057087803116146558
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 56,
+          "recursive_gate": 56,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 18,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        }
+      ]
+    },
+    {
+      "hub_id": 225,
+      "public_name": "adds",
+      "public_description": "",
+      "author": "柒夜猫子",
+      "author_id": 7048,
+      "response_bytes": 424,
+      "response_sha256": "c52131a5f27bbe4b2b24d3f4588721c48e7bf2f0f170e796e0f594b302f626f1",
+      "package_sha256": "75d2be05f3ddbcfbfe5c411a66fa50dec874824725a74c1d48282c408749a06e",
+      "classification": {
+        "role": "three-way 32-bit comparator",
+        "byte_adder_relevance": "Despite the name 'adds', it contains Equal, LessU, and LessS and is not an adder."
+      },
+      "duplicate_custom_ids": {},
+      "dependency_cycles": [],
+      "circuit_file_count": 1,
+      "main": {
+        "path": ".research/byte_adder_public/hub-225/main/circuit.data",
+        "bytes": 391,
+        "sha256": "256794a0a5a9cb9c571786201582f89c275cf601b76b32a89a3438798eb365cc",
+        "format_version": 15,
+        "header_gate": 744,
+        "header_delay": 64,
+        "header_energy": 47616,
+        "custom_id": 2961238084325913517,
+        "declared_dependencies": [],
+        "component_count": 7,
+        "wire_count": 10,
+        "component_kind_counts": {
+          "26": 1,
+          "27": 1,
+          "28": 1,
+          "79": 2,
+          "81": 1,
+          "112": 1
+        },
+        "custom_instance_counts": {},
+        "serialized_cost_overrides": [],
+        "add_instances": [],
+        "ports": [
+          {
+            "direction": "input",
+            "label": "Argument A",
+            "word_size": 32,
+            "position": [
+              -11,
+              -20
+            ],
+            "permanent_id": 3735227216217274593
+          },
+          {
+            "direction": "input",
+            "label": "Argument B",
+            "word_size": 32,
+            "position": [
+              -11,
+              -9
+            ],
+            "permanent_id": 6725935571828566620
+          },
+          {
+            "direction": "output",
+            "label": "Result",
+            "word_size": 3,
+            "position": [
+              -3,
+              -20
+            ],
+            "permanent_id": 2429631448669178001
+          }
+        ],
+        "missing_custom_dependencies": [],
+        "direct_child_header_gate": 0,
+        "local_gate_excluding_children": 744,
+        "recursive_gate": 744,
+        "recursive_gate_matches_header": true,
+        "recursive_delay": 64,
+        "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+      },
+      "circuits": [
+        {
+          "path": ".research/byte_adder_public/hub-225/main/circuit.data",
+          "bytes": 391,
+          "sha256": "256794a0a5a9cb9c571786201582f89c275cf601b76b32a89a3438798eb365cc",
+          "format_version": 15,
+          "header_gate": 744,
+          "header_delay": 64,
+          "header_energy": 47616,
+          "custom_id": 2961238084325913517,
+          "declared_dependencies": [],
+          "component_count": 7,
+          "wire_count": 10,
+          "component_kind_counts": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "79": 2,
+            "81": 1,
+            "112": 1
+          },
+          "custom_instance_counts": {},
+          "serialized_cost_overrides": [],
+          "add_instances": [],
+          "ports": [
+            {
+              "direction": "input",
+              "label": "Argument A",
+              "word_size": 32,
+              "position": [
+                -11,
+                -20
+              ],
+              "permanent_id": 3735227216217274593
+            },
+            {
+              "direction": "input",
+              "label": "Argument B",
+              "word_size": 32,
+              "position": [
+                -11,
+                -9
+              ],
+              "permanent_id": 6725935571828566620
+            },
+            {
+              "direction": "output",
+              "label": "Result",
+              "word_size": 3,
+              "position": [
+                -3,
+                -20
+              ],
+              "permanent_id": 2429631448669178001
+            }
+          ],
+          "missing_custom_dependencies": [],
+          "direct_child_header_gate": 0,
+          "local_gate_excluding_children": 744,
+          "recursive_gate": 744,
+          "recursive_gate_matches_header": true,
+          "recursive_delay": 64,
+          "recursive_delay_source": "serialized game score for the complete hierarchy; child delays are not arithmetically summed because output-specific arrival paths matter"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3315 @@
+{
+  "schema": 1,
+  "input_file": "Turing Complete.exe",
+  "input_sha256": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c",
+  "image_base": "0x0000000140000000",
+  "prototype_table": "TM__wUqL1Kpuf69c1ieeyVFJbBQ_3391",
+  "selected_kinds": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    30,
+    47,
+    48,
+    97,
+    98,
+    99,
+    100,
+    109,
+    110,
+    111,
+    112,
+    114,
+    115,
+    116
+  ],
+  "missing_kinds": [],
+  "records": {
+    "99": {
+      "slot": 25,
+      "record_va": "0x00000001409b0a10",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775805,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000fdffffffffffff7f0000000000000000550e1d96502f7d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 4,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "02000100ffff0000ffffffffffffff7f00000000000000001f04dba6dd2d7d2b0600000000000000507e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f0000000000000000e6b4eb78b4317d2b0600000000000000607e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "0200010001000000ffffffffffffff7f00000000000000003ae9a77a84317d2b0600000000000000707e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0200010002000000ffffffffffffff7f00000000000000006d60e96c30327d2b0600000000000000807e9940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "19": {
+      "slot": 31,
+      "record_va": "0x00000001409b2c60",
+      "name": "OR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f00000000000000007b023b8a10327d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f000000000000000045c87345db2d7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f00000000000000007f7bd88276347d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "6": {
+      "slot": 37,
+      "record_va": "0x00000001409b4eb0",
+      "name": "NAND",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000010000000000000000000000000000001889317a996e7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000010000000000000000000000000000009d10d29c98717d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "020002000000000001000000000000000000000000000000c7c0e80b1b5a7d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "47": {
+      "slot": 41,
+      "record_va": "0x00000001409b6590",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775806,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000feffffffffffff7f0000000000000000b3c09cab66357d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "02000100ffff0000ffffffffffffff7f0000000000000000acbe9088f02f7d2b0600000000000000507e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f0000000000000000ea956eb8d52f7d2b0600000000000000607e9940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "12": {
+      "slot": 44,
+      "record_va": "0x00000001409b76b8",
+      "name": "Switch",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                0,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Enable"
+                }
+              ],
+              "raw_hex": "0000000001000000010000000000000000000000000000002de1704fbd687d2b0600000000000000c06f9940010000000100000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000010000000000000000000000000000004c6e7a0778327d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 3,
+              "direction": "other",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0300020000000000010000000000000000000000000000000d8d4a204f347d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "116": {
+      "slot": 47,
+      "record_va": "0x00000001409b87e0",
+      "name": "Concatenator",
+      "pin_sequences": {
+        "inputs": {
+          "length": 8,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "0000fffffdff0000ffffffffffffff7f00000000000000006ea8ec17a82d7d2b0600000000000000507e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0000fffffeff0000ffffffffffffff7f00000000000000003797c770c52e7d2b0600000000000000607e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f000000000000000012ade87ce22d7d2b0600000000000000707e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f00000000000000001e626cf8b62c7d2b0600000000000000807e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 4"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f00000000000000006781a542e1317d2b060000000000000040979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 5"
+                }
+              ],
+              "raw_hex": "0000ffff02000000ffffffffffffff7f0000000000000000dc25788acf2e7d2b060000000000000050979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 6"
+                }
+              ],
+              "raw_hex": "0000ffff03000000ffffffffffffff7f00000000000000007925e8ebed347d2b060000000000000060979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                4
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 7"
+                }
+              ],
+              "raw_hex": "0000ffff04000000ffffffffffffff7f0000000000000000f90773b4d5337d2b060000000000000070979940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f00000000000000009f3db263e52e7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "98": {
+      "slot": 56,
+      "record_va": "0x00000001409bbb58",
+      "name": "Word Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 8,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "0000fffffdff0000ffffffffffffff7f00000000000000004361292680357d2b0600000000000000507e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0000fffffeff0000ffffffffffffff7f00000000000000000ad1a8d6ff2e7d2b0600000000000000607e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f0000000000000000a19f93bfe3347d2b0600000000000000707e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f0000000000000000b42426a0052f7d2b0600000000000000807e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 4"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f000000000000000076b81b9c5a357d2b060000000000000040979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 5"
+                }
+              ],
+              "raw_hex": "0000ffff02000000ffffffffffffff7f0000000000000000170b215689357d2b060000000000000050979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 6"
+                }
+              ],
+              "raw_hex": "0000ffff03000000ffffffffffffff7f0000000000000000b05da2ffb62f7d2b060000000000000060979940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                4
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 7"
+                }
+              ],
+              "raw_hex": "0000ffff04000000ffffffffffffff7f0000000000000000f053310699347d2b060000000000000070979940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f00000000000000000a31aa14df2d7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "110": {
+      "slot": 62,
+      "record_va": "0x00000001409bdda8",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 4,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000040000000000000000000000000000007a7079fa832e7d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 4,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "02000100ffff000001000000000000000000000000000000eb461af2dd307d2b0500000000000000b0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "020001000000000001000000000000000000000000000000ba4670efca337d2b0500000000000000c0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 2"
+                }
+              ],
+              "raw_hex": "020001000100000001000000000000000000000000000000c24dbe58be2c7d2b0500000000000000d0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 3"
+                }
+              ],
+              "raw_hex": "020001000200000001000000000000000000000000000000a0b924c2dd317d2b0500000000000000e0aa9940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "7": {
+      "slot": 70,
+      "record_va": "0x00000001409c0b68",
+      "name": "OR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff00000100000000000000000000000000000013731069eb6a7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff010000000100000000000000000000000000000053c2b2aa852d7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "02000200000000000100000000000000000000000000000016125171a9757d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "17": {
+      "slot": 87,
+      "record_va": "0x00000001409c6ca0",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 8,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000080000000000000000000000000000004df74d1f47327d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 8,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -3
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "02000100fdff000001000000000000000000000000000000197ac2dd0c2e7d2b0500000000000000b0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "02000100feff000001000000000000000000000000000000cc617bb5442d7d2b0500000000000000c0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 2"
+                }
+              ],
+              "raw_hex": "02000100ffff00000100000000000000000000000000000092cd3ee4f92f7d2b0500000000000000d0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 3"
+                }
+              ],
+              "raw_hex": "020001000000000001000000000000000000000000000000fc3f7cdc162d7d2b0500000000000000e0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 4"
+                }
+              ],
+              "raw_hex": "0200010001000000010000000000000000000000000000006a9a5f7e0e337d2b0500000000000000b0c49940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 5"
+                }
+              ],
+              "raw_hex": "0200010002000000010000000000000000000000000000004398a2d79c337d2b0500000000000000c0c49940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                3
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 6"
+                }
+              ],
+              "raw_hex": "02000100030000000100000000000000000000000000000031a2014e28337d2b0500000000000000d0c49940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                4
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 7"
+                }
+              ],
+              "raw_hex": "02000100040000000100000000000000000000000000000067454ac450347d2b0500000000000000e0c49940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "18": {
+      "slot": 89,
+      "record_va": "0x00000001409c7810",
+      "name": "NOT",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f000000000000000022b8047202347d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f00000000000000003cf3b98dc4317d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "97": {
+      "slot": 96,
+      "record_va": "0x00000001409ca018",
+      "name": "Word Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 4,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f00000000000000006f6503f4d1317d2b0600000000000000507e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f00000000000000003a78ce8266317d2b0600000000000000607e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f000000000000000035b305dd952f7d2b0600000000000000707e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0000ffff02000000ffffffffffffff7f000000000000000068482313af337d2b0600000000000000807e9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f00000000000000009b1f4118b32e7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "23": {
+      "slot": 113,
+      "record_va": "0x00000001409d0150",
+      "name": "XOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f00000000000000001a0c993fb6327d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f0000000000000000e9f8b7597b357d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f00000000000000008942fe2be32c7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "21": {
+      "slot": 115,
+      "record_va": "0x00000001409d0cc0",
+      "name": "NAND",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f000000000000000046221454072d7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f0000000000000000159327ea132e7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f0000000000000000664f6cab77347d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "8": {
+      "slot": 118,
+      "record_va": "0x00000001409d1de8",
+      "name": "3 Pin OR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 3,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000a2170552ee3f7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff0000000001000000000000000000000000000000a45c1f2c08517d2b0700000000000000d07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 2"
+                }
+              ],
+              "raw_hex": "0000ffff01000000010000000000000000000000000000009365c431e2507d2b0700000000000000d0ba9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "020002000000000001000000000000000000000000000000b5ff3c3d89537d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "4": {
+      "slot": 131,
+      "record_va": "0x00000001409d6840",
+      "name": "AND",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000010000000000000000000000000000004ae61c37c7687d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000010000000000000000000000000000000befa00b382d7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "0200020000000000010000000000000000000000000000005cc2662ce55e7d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "5": {
+      "slot": 134,
+      "record_va": "0x00000001409d7968",
+      "name": "3 Pin AND",
+      "pin_sequences": {
+        "inputs": {
+          "length": 3,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000b321a564215b7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff00000000010000000000000000000000000000004358a261014d7d2b0700000000000000d07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 2"
+                }
+              ],
+              "raw_hex": "0000ffff0100000001000000000000000000000000000000edd8b18ef6447d2b0700000000000000d0ba9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "020002000000000001000000000000000000000000000000c4fbd0b938567d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "100": {
+      "slot": 135,
+      "record_va": "0x00000001409d7f20",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775804,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff00000000fcffffffffffff7f00000000000000002ca9dfa4f32d7d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 8,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "02000100fdff0000ffffffffffffff7f0000000000000000cfe1200a4e347d2b0600000000000000507e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "02000100feff0000ffffffffffffff7f000000000000000057bf133ca6357d2b0600000000000000607e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "02000100ffff0000ffffffffffffff7f0000000000000000b02d681969347d2b0600000000000000707e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f0000000000000000428ba280f92d7d2b0600000000000000807e9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 4"
+                }
+              ],
+              "raw_hex": "0200010001000000ffffffffffffff7f0000000000000000946d0c6735327d2b060000000000000040979940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 5"
+                }
+              ],
+              "raw_hex": "0200010002000000ffffffffffffff7f00000000000000000f75815909357d2b060000000000000050979940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                3
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 6"
+                }
+              ],
+              "raw_hex": "0200010003000000ffffffffffffff7f000000000000000000c5d94c65337d2b060000000000000060979940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                4
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 7"
+                }
+              ],
+              "raw_hex": "0200010004000000ffffffffffffff7f000000000000000093a16793d1307d2b060000000000000070979940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "11": {
+      "slot": 141,
+      "record_va": "0x00000001409da170",
+      "name": "XNOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000cce060c32d747d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff010000000100000000000000000000000000000049ead94fc8687d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "02000200000000000100000000000000000000000000000036c38253d55e7d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "111": {
+      "slot": 143,
+      "record_va": "0x00000001409dace0",
+      "name": "Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000b27012e409317d2b0500000000000000b0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "0000ffff000000000100000000000000000000000000000039aae84a3c2e7d2b0500000000000000c0aa9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 2,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "020001000000000002000000000000000000000000000000c5701c0af9337d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "3": {
+      "slot": 145,
+      "record_va": "0x00000001409db850",
+      "name": "NOT",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff0000000001000000000000000000000000000000ebea3809ca477d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "0200020000000000010000000000000000000000000000003b1aa8a9ce697d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "22": {
+      "slot": 150,
+      "record_va": "0x00000001409dd4e8",
+      "name": "NOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f00000000000000002a80b4a7572d7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f0000000000000000a948be6826357d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f0000000000000000a3c079a0672e7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "114": {
+      "slot": 153,
+      "record_va": "0x00000001409de610",
+      "name": "Concatenator",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Wire 1"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f0000000000000000fda934954b347d2b060000000000000040119a40010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Wire 2"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f00000000000000001df536abc22e7d2b060000000000000050119a40010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f0000000000000000e757c8a9b2337d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "115": {
+      "slot": 156,
+      "record_va": "0x00000001409df738",
+      "name": "Concatenator",
+      "pin_sequences": {
+        "inputs": {
+          "length": 4,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f0000000000000000931e9510ac2f7d2b0600000000000000507e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f000000000000000071c2ec6dcc2e7d2b0600000000000000607e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 2"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f0000000000000000f44490eccc347d2b0600000000000000707e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 3"
+                }
+              ],
+              "raw_hex": "0000ffff02000000ffffffffffffff7f00000000000000003757e37814357d2b0600000000000000807e9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f000000000000000076c00b4c82327d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "16": {
+      "slot": 161,
+      "record_va": "0x00000001409e13d0",
+      "name": "Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 8,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -3
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "0000fffffdff0000010000000000000000000000000000004fbdad0f7a337d2b0500000000000000b0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "0000fffffeff000001000000000000000000000000000000fd34f93c772f7d2b0500000000000000c0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 2"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000010000000000000000000000000000005b5c72a104357d2b0500000000000000d0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 3"
+                }
+              ],
+              "raw_hex": "0000ffff0000000001000000000000000000000000000000e5f2280ee1337d2b0500000000000000e0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 4"
+                }
+              ],
+              "raw_hex": "0000ffff0100000001000000000000000000000000000000d930f5e0202e7d2b0500000000000000b0c49940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 5"
+                }
+              ],
+              "raw_hex": "0000ffff0200000001000000000000000000000000000000c08e46144b2d7d2b0500000000000000c0c49940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                3
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 6"
+                }
+              ],
+              "raw_hex": "0000ffff0300000001000000000000000000000000000000c6885f28fb307d2b0500000000000000d0c49940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                4
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 7"
+                }
+              ],
+              "raw_hex": "0000ffff0400000001000000000000000000000000000000423a629823317d2b0500000000000000e0c49940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 8,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "02000100000000000800000000000000000000000000000027ed76c416317d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "48": {
+      "slot": 174,
+      "record_va": "0x00000001409e5e28",
+      "name": "Word Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f0000000000000000dd2525fc3f347d2b0600000000000000507e9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Word 1"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f0000000000000000357118f642327d2b0600000000000000607e9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200010000000000ffffffffffffff7f00000000000000002a0c8799d12d7d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "112": {
+      "slot": 175,
+      "record_va": "0x00000001409e63e0",
+      "name": "Maker",
+      "pin_sequences": {
+        "inputs": {
+          "length": 4,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000aa4855007f307d2b0500000000000000b0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "0000ffff00000000010000000000000000000000000000005c4f2418d3337d2b0500000000000000c0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 2"
+                }
+              ],
+              "raw_hex": "0000ffff0100000001000000000000000000000000000000ac1b490b0e317d2b0500000000000000d0aa9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 3"
+                }
+              ],
+              "raw_hex": "0000ffff02000000010000000000000000000000000000003bf46a311f307d2b0500000000000000e0aa9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 4,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "02000100000000000400000000000000000000000000000078a4135c68347d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "30": {
+      "slot": 182,
+      "record_va": "0x00000001409e8be8",
+      "name": "Add",
+      "pin_sequences": {
+        "inputs": {
+          "length": 3,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f000000000000000057ce591ac1337d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f000000000000000094bf9e26ed337d2b0700000000000000d07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                0,
+                -2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 8,
+                  "text": "Carry in"
+                }
+              ],
+              "raw_hex": "00000000feff000001000000000000000000000000000000d85a7303bd337d2b0800000000000000f0359a40010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f00000000000000005acdba949b327d2b060000000000000050769940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 9,
+                  "text": "Carry out"
+                }
+              ],
+              "raw_hex": "020001000200000001000000000000000000000000000000ce75f224622d7d2b0900000000000000e0369a40010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "20": {
+      "slot": 192,
+      "record_va": "0x00000001409ec518",
+      "name": "AND",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f000000000000000057e5d9a3702e7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f00000000000000005cd57dbc0d347d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f000000000000000045e3b022d5327d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "9": {
+      "slot": 195,
+      "record_va": "0x00000001409ed640",
+      "name": "NOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000edbe3e6219417d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff0100000001000000000000000000000000000000b6f39d415f3c7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "020002000000000001000000000000000000000000000000f48e70e5fb567d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "25": {
+      "slot": 217,
+      "record_va": "0x00000001409f5410",
+      "name": "Switch",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                0,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Enable"
+                }
+              ],
+              "raw_hex": "000000000100000001000000000000000000000000000000a7c915a02c2f7d2b0600000000000000c06f9940010000000100000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Value"
+                }
+              ],
+              "raw_hex": "0000ffff00000000ffffffffffffff7f00000000000000003514b517f62e7d2b050000000000000050a59940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 3,
+              "direction": "other",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "0300020000000000ffffffffffffff7f00000000000000003cb848b81e2e7d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "10": {
+      "slot": 230,
+      "record_va": "0x00000001409f9e68",
+      "name": "XOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000bdd0d16aa1587d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff0100000001000000000000000000000000000000a79974da30437d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Output"
+                }
+              ],
+              "raw_hex": "0200020000000000010000000000000000000000000000006ae4793077517d2b0600000000000000a0709940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "24": {
+      "slot": 240,
+      "record_va": "0x00000001409fd798",
+      "name": "XNOR",
+      "pin_sequences": {
+        "inputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff0000ffffffffffffff7f00000000000000000533a68620357d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000ffffffffffffff7f00000000000000000f32e5be5a357d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 9223372036854775807,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "0200020000000000ffffffffffffff7f000000000000000009bb170d17337d2b060000000000000050769940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "15": {
+      "slot": 241,
+      "record_va": "0x00000001409fdd50",
+      "name": "Full Adder",
+      "pin_sequences": {
+        "inputs": {
+          "length": 3,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                0,
+                -2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 8,
+                  "text": "Carry in"
+                }
+              ],
+              "raw_hex": "00000000feff0000010000000000000000000000000000000dce22bb5a347d2b0800000000000000f0359a40010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 0"
+                }
+              ],
+              "raw_hex": "0000ffffffff000001000000000000000000000000000000805107cfca2d7d2b0700000000000000c07a9940010000000200000000000000"
+            },
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 7,
+                  "text": "Input 1"
+                }
+              ],
+              "raw_hex": "0000ffff01000000010000000000000000000000000000006b7904d6d52d7d2b0700000000000000d07a9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                2,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 6,
+                  "text": "Result"
+                }
+              ],
+              "raw_hex": "020002000000000001000000000000000000000000000000eacbb32a7a2d7d2b060000000000000050769940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                2
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 9,
+                  "text": "Carry out"
+                }
+              ],
+              "raw_hex": "02000100020000000100000000000000000000000000000090543f944a347d2b0900000000000000e0369a40010000000000000000000000"
+            }
+          ]
+        }
+      }
+    },
+    "109": {
+      "slot": 253,
+      "record_va": "0x0000000140a021f0",
+      "name": "Splitter",
+      "pin_sequences": {
+        "inputs": {
+          "length": 1,
+          "pins": [
+            {
+              "direction_code": 0,
+              "direction": "input",
+              "offset": [
+                -1,
+                0
+              ],
+              "word_size_token": 2,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Input"
+                }
+              ],
+              "raw_hex": "0000ffff0000000002000000000000000000000000000000a20aeab7802e7d2b0500000000000000f06d9940010000000200000000000000"
+            }
+          ]
+        },
+        "bidirectional": {
+          "length": 0,
+          "pins": []
+        },
+        "outputs": {
+          "length": 2,
+          "pins": [
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                -1
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 0"
+                }
+              ],
+              "raw_hex": "02000100ffff000001000000000000000000000000000000cc5b0ef13c2d7d2b0500000000000000b0aa9940010000000000000000000000"
+            },
+            {
+              "direction_code": 2,
+              "direction": "output",
+              "offset": [
+                1,
+                0
+              ],
+              "word_size_token": 1,
+              "labels": [
+                {
+                  "offset": 32,
+                  "length": 5,
+                  "text": "Bit 1"
+                }
+              ],
+              "raw_hex": "020001000000000001000000000000000000000000000000fed6a98e46337d2b0500000000000000c0aa9940010000000000000000000000"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

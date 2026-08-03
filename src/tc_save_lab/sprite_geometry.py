@@ -101,6 +101,7 @@ SPRITE_NAME_BY_COMPONENT_KIND: dict[int, str] = {
     98: "com_maker_word_8.png",
     99: "com_splitter_word_4.png",
     100: "com_splitter_word_8.png",
+    109: "com_splitter_bit_2.png",
     108: "com_mod.png",
     111: "com_maker_bit_2.png",
     118: "com_ram.png",

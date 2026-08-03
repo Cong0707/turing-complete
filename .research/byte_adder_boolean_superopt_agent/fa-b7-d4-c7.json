@@ -1,0 +1,168 @@
+{
+  "schema": "exact-adder-block-switch-cnf-v1",
+  "status": "sat",
+  "bits": 1,
+  "inputs": 3,
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "gate_bound": 7,
+  "max_delay": 4,
+  "components": 7,
+  "exact_switches": null,
+  "exact_xors": null,
+  "solver": "cadical195",
+  "timeout_seconds": 60.0,
+  "conflict_budget": null,
+  "variables": 2277,
+  "clauses": 17806,
+  "solve_seconds": 0.21207660000072792,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 7,
+  "network": [
+    {
+      "slot": 0,
+      "source": 5,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 6,
+      "kind": "NOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 2,
+      "source": 7,
+      "kind": "OR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 3,
+      "source": 8,
+      "kind": "AND",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 4,
+      "source": 9,
+      "kind": "NOR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 5,
+      "source": 10,
+      "kind": "NOR",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 6,
+      "source": 11,
+      "kind": "OR",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      11
+    ],
+    [
+      10
+    ]
+  ],
+  "verification": {
+    "assignments": 8,
+    "output_checks": 16,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "replayed_max_component_depth": 4
+  }
+}

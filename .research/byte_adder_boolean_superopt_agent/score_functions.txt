@@ -1,0 +1,2622 @@
+========================================================================================
+is_free_component_type__modelZscores_u1938 @ 0x0000000140275d7c
+CALLERS 0x000000014027cfe3 load_schematic_raw__modelZboardZschematics_u34 | 0x000000014027d8da load_schematic_raw__modelZboardZschematics_u34 | 0x0000000140bf0784  | 0x0000000140bf0790 
+__int64 __fastcall is_free_component_type__modelZscores_u1938(unsigned __int8 a1)
+{
+  char v2[8]; // [rsp+20h] [rbp-50h] BYREF
+  const char *v3; // [rsp+28h] [rbp-48h]
+  __int64 v4; // [rsp+30h] [rbp-40h]
+  const char *v5; // [rsp+38h] [rbp-38h]
+  __int16 v6; // [rsp+40h] [rbp-30h]
+  __int64 v7; // [rsp+50h] [rbp-20h]
+  _QWORD *v8; // [rsp+58h] [rbp-18h]
+  _BYTE *v9; // [rsp+60h] [rbp-10h]
+  bool v10; // [rsp+6Eh] [rbp-2h]
+  unsigned __int8 v11; // [rsp+6Fh] [rbp-1h]
+
+  v3 = "is_free_component_type";
+  v5 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v4 = 0i64;
+  v6 = 0;
+  nimFrame_74(v2);
+  v9 = (_BYTE *)nimErrorFlag_72();
+  v11 = 0;
+  v5 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v4 = 279i64;
+  v10 = 0;
+  v8 = 0i64;
+  v8 = (_QWORD *)X5BX5D___modelZscores_u1990(&DEFAULT_COMPONENT_SCORES__modelZscores_u1605, a1);
+  if ( !*v9 )
+  {
+    v10 = *v8 == 0i64;
+    if ( !v10 )
+    {
+LABEL_5:
+      v11 = v10;
+      goto LABEL_6;
+    }
+    v4 = 280i64;
+    v7 = 0i64;
+    v7 = X5BX5D___modelZscores_u1990(&DEFAULT_COMPONENT_SCORES__modelZscores_u1605, a1);
+    if ( !*v9 )
+    {
+      v10 = *(_QWORD *)(v7 + 8) == 0i64;
+      goto LABEL_5;
+    }
+  }
+LABEL_6:
+  popFrame_74();
+  return v11;
+}
+
+========================================================================================
+get_gate_cost__modelZscores_u2232 @ 0x0000000140275f1b
+CALLERS 0x0000000140276e30 get_gate_cost__modelZscores_u2304 | 0x0000000140276e99 get_gate_cost__modelZscores_u2304 | 0x0000000140276eff get_gate_cost__modelZscores_u2304 | 0x0000000140bf07a8  | 0x0000000140bf07b4 
+__int64 __fastcall get_gate_cost__modelZscores_u2232(unsigned __int8 a1, signed __int64 a2, __int64 a3)
+{
+  __int64 v3; // rdx
+  __int64 v5; // [rsp+20h] [rbp-60h] BYREF
+  void *v6; // [rsp+28h] [rbp-58h]
+  unsigned __int64 v7; // [rsp+38h] [rbp-48h]
+  unsigned __int64 v8; // [rsp+40h] [rbp-40h]
+  __int64 v9; // [rsp+48h] [rbp-38h]
+  __int64 v10; // [rsp+50h] [rbp-30h]
+  __int64 v11; // [rsp+58h] [rbp-28h]
+  unsigned __int64 v12; // [rsp+60h] [rbp-20h]
+  unsigned __int64 v13; // [rsp+68h] [rbp-18h]
+  unsigned __int64 v14; // [rsp+70h] [rbp-10h]
+  unsigned __int64 v15; // [rsp+78h] [rbp-8h]
+  _QWORD v16[2]; // [rsp+80h] [rbp+0h] BYREF
+  __int64 v17; // [rsp+90h] [rbp+10h]
+  const char *v18; // [rsp+98h] [rbp+18h]
+  __int16 v19; // [rsp+A0h] [rbp+20h]
+  signed __int64 v20; // [rsp+B8h] [rbp+38h]
+  double v21; // [rsp+C0h] [rbp+40h]
+  double v22; // [rsp+C8h] [rbp+48h]
+  double v23; // [rsp+D0h] [rbp+50h]
+  double v24; // [rsp+D8h] [rbp+58h]
+  double v25; // [rsp+E0h] [rbp+60h]
+  double v26; // [rsp+E8h] [rbp+68h]
+  double v27; // [rsp+F0h] [rbp+70h]
+  double v28; // [rsp+F8h] [rbp+78h]
+  double v29; // [rsp+100h] [rbp+80h]
+  double v30; // [rsp+108h] [rbp+88h]
+  double v31; // [rsp+110h] [rbp+90h]
+  double v32; // [rsp+118h] [rbp+98h]
+  double v33; // [rsp+120h] [rbp+A0h]
+  double v34; // [rsp+128h] [rbp+A8h]
+  double v35; // [rsp+130h] [rbp+B0h]
+  double v36; // [rsp+138h] [rbp+B8h]
+  double v37; // [rsp+140h] [rbp+C0h]
+  double v38; // [rsp+148h] [rbp+C8h]
+  char v39; // [rsp+157h] [rbp+D7h]
+  _BYTE *v40; // [rsp+158h] [rbp+D8h]
+  double v41; // [rsp+160h] [rbp+E0h]
+  __int64 v42; // [rsp+168h] [rbp+E8h]
+
+  v16[1] = "get_gate_cost";
+  v18 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v17 = 0i64;
+  v19 = 0;
+  nimFrame_74(v16);
+  v40 = (_BYTE *)nimErrorFlag_72();
+  v42 = 0i64;
+  v20 = a2;
+  v17 = 378i64;
+  v39 = 0;
+  v39 = eqeq___modelZmodel95types_u853(a2, *(_QWORD *)refptr_AUTO_SIZE__modelZmodel95types_u54);
+  if ( v39 != 1 || (v17 = 379i64, v20 = bits__modelZsave95mongerZcommon_u192(8i64), !*v40) )
+  {
+    v17 = 381i64;
+    if ( a1 > 0x11u
+      && (a1 <= 0x27u || a1 > 0x29u)
+      && (a1 <= 0x2Au || a1 > 0x30u)
+      && (a1 <= 0x32u || a1 > 0x35u)
+      && (a1 <= 0x39u || a1 > 0x67u)
+      && (a1 <= 0x68u || a1 > 0x6Bu)
+      && (a1 <= 0x6Cu || a1 > 0x75u)
+      && (a1 <= 0x77u || a1 > 0x7Cu) )
+    {
+      v17 = 384i64;
+      switch ( a1 )
+      {
+        case 0x12u:
+        case 0x13u:
+        case 0x14u:
+        case 0x15u:
+        case 0x16u:
+        case 0x17u:
+        case 0x18u:
+        case 0x1Au:
+        case 0x27u:
+        case 0x2Au:
+        case 0x32u:
+          v17 = 388i64;
+          if ( a3 % 8 > 3 )
+          {
+            v17 = 391i64;
+            v13 = a3 / 8 + 1;
+            if ( __OFADD__(1i64, a3 / 8) )
+              goto LABEL_42;
+            v12 = v13 * v20;
+            if ( !is_mul_ok(v13, v20) )
+              goto LABEL_42;
+            v11 = a3 % 8 - 8;
+            if ( __OFSUB__(a3 % 8, 8i64) )
+              goto LABEL_42;
+            v10 = v12 + v11;
+            if ( __OFADD__(v12, v11) )
+              goto LABEL_42;
+            v42 = v10;
+          }
+          else
+          {
+            v17 = 389i64;
+            v15 = a3 / 8 * v20;
+            if ( !is_mul_ok(a3 / 8, v20) )
+              goto LABEL_42;
+            v14 = v15 + a3 % 8;
+            if ( __OFADD__(v15, a3 % 8) )
+              goto LABEL_42;
+            v42 = v14;
+          }
+          break;
+        case 0x19u:
+          v17 = 405i64;
+          v8 = 2 * v20;
+          if ( !is_mul_ok(2ui64, v20) )
+            goto LABEL_42;
+          v42 = v8;
+          break;
+        case 0x1Bu:
+        case 0x1Cu:
+        case 0x1Du:
+        case 0x26u:
+        case 0x68u:
+          v23 = 0.0;
+          v22 = 0.0;
+          v17 = 399i64;
+          if ( v20 <= 8 )
+          {
+            v17 = 402i64;
+            v22 = (double)(int)a3 / 8.0;
+            v41 = v22;
+          }
+          else
+          {
+            v17 = 400i64;
+            v23 = (double)(int)a3 / 7.0;
+            v41 = v23;
+          }
+          v17 = 403i64;
+          v21 = 0.0;
+          v21 = ceil(((double)(int)v20 - 8.0) * v41);
+          v3 = (unsigned int)(int)v21;
+          v9 = v3 + a3;
+          if ( __OFADD__(v3, a3) )
+            goto LABEL_42;
+          v42 = v9;
+          break;
+        case 0x1Eu:
+        case 0x31u:
+        case 0x39u:
+          v25 = (double)(int)a3 / 8.0;
+          v17 = 395i64;
+          v24 = 0.0;
+          v24 = ceil((double)(int)v20 * v25);
+          v42 = (unsigned int)(int)v24;
+          break;
+        case 0x1Fu:
+        case 0x20u:
+        case 0x6Cu:
+          v17 = 420i64;
+          if ( v20 <= 8 )
+          {
+            v28 = (double)(int)v20;
+            v27 = (double)(int)a3 / 8.0;
+            v17 = 427i64;
+            v26 = 0.0;
+            v26 = ceil(v27 * (double)(int)v20);
+            v42 = (unsigned int)(int)v26;
+          }
+          else
+          {
+            v31 = (double)(int)v20 * (double)(int)v20;
+            v30 = (double)(int)a3 / 64.0;
+            v17 = 423i64;
+            v29 = 0.0;
+            v29 = ceil(v30 * v31);
+            v42 = (unsigned int)(int)v29;
+          }
+          break;
+        case 0x21u:
+        case 0x22u:
+        case 0x23u:
+        case 0x24u:
+        case 0x25u:
+          v17 = 410i64;
+          if ( v20 <= 8 )
+          {
+            v34 = (double)(int)v20;
+            v33 = (double)(int)a3 / 8.0;
+            v17 = 417i64;
+            v32 = 0.0;
+            v32 = ceil(v33 * (double)(int)v20);
+            v42 = (unsigned int)(int)v32;
+          }
+          else
+          {
+            v17 = 411i64;
+            v38 = 0.0;
+            v38 = log2((double)(int)v20);
+            v37 = (double)(int)v20 * v38;
+            v36 = (double)(int)a3 / 24.0;
+            v17 = 413i64;
+            v35 = 0.0;
+            v35 = ceil(v36 * v37);
+            v42 = (unsigned int)(int)v35;
+          }
+          break;
+        case 0x36u:
+        case 0x38u:
+          v17 = 429i64;
+          v42 = 0i64;
+          break;
+        case 0x37u:
+        case 0x77u:
+          v17 = 407i64;
+          v7 = 5 * v20;
+          if ( is_mul_ok(5ui64, v20) )
+            v42 = v7;
+          else
+LABEL_42:
+            raiseOverflow();
+          break;
+        case 0x76u:
+          v17 = 431i64;
+          v5 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_15;
+          v6 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_14;
+          failedAssertImpl__stdZassertions_u234(&v5);
+          break;
+        default:
+          v17 = 433i64;
+          v5 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_17;
+          v6 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_16;
+          failedAssertImpl__stdZassertions_u234(&v5);
+          break;
+      }
+    }
+    else
+    {
+      v17 = 382i64;
+      v42 = a3;
+    }
+  }
+  popFrame_74();
+  return v42;
+}
+
+========================================================================================
+get_gate_cost__modelZscores_u2304 @ 0x0000000140276993
+CALLERS 0x0000000140277c83 get_cost__modelZscores_u2321 | 0x0000000140277e9a get_cost__modelZscores_u2321 | 0x0000000140278017 get_cost__modelZscores_u2321 | 0x0000000140278281 get_cost__modelZscores_u2321 | 0x0000000140278599 get_cost__modelZscores_u2321 | 0x00000001402787b8 get_cost__modelZscores_u2321 | 0x0000000140278cad get_cost__modelZscores_u2321 | 0x0000000140278e41 get_cost__modelZscores_u2321 | 0x0000000140bf07b4  | 0x0000000140bf07c0 
+__int64 __fastcall get_gate_cost__modelZscores_u2304(unsigned __int8 *a1, __int64 a2)
+{
+  int v2; // eax
+  bool v3; // dl
+  char v5[304]; // [rsp+20h] [rbp-60h] BYREF
+  __int64 v6; // [rsp+150h] [rbp+D0h]
+  signed __int64 v7; // [rsp+5C8h] [rbp+548h]
+  __int64 v8; // [rsp+5D0h] [rbp+550h]
+  __int64 v9; // [rsp+5D8h] [rbp+558h]
+  char v10[8]; // [rsp+5E0h] [rbp+560h] BYREF
+  const char *v11; // [rsp+5E8h] [rbp+568h]
+  __int64 v12; // [rsp+5F0h] [rbp+570h]
+  const char *v13; // [rsp+5F8h] [rbp+578h]
+  __int16 v14; // [rsp+600h] [rbp+580h]
+  char v15; // [rsp+61Dh] [rbp+59Dh]
+  char v16; // [rsp+61Eh] [rbp+59Eh]
+  char v17; // [rsp+61Fh] [rbp+59Fh]
+  _BYTE *v18; // [rsp+620h] [rbp+5A0h]
+  __int64 gate_cost__modelZscores_u2232; // [rsp+628h] [rbp+5A8h]
+
+  v11 = "get_gate_cost";
+  v13 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v12 = 0i64;
+  v14 = 0;
+  nimFrame_74(v10);
+  v18 = (_BYTE *)nimErrorFlag_72();
+  gate_cost__modelZscores_u2232 = 0i64;
+  v12 = 472i64;
+  if ( a1[32] != 1 )
+  {
+    v12 = 474i64;
+    if ( *a1 == 78 )
+    {
+      v12 = 476i64;
+      v17 = 0;
+      v17 = in_custom_prototypes__modelZboardZcustom95prototype95list_u9(*((_QWORD *)a1 + 49));
+      if ( !*v18 && v17 == 1 )
+      {
+        nimZeroMem_54(v5, 1448i64);
+        v12 = 477i64;
+        get_custom_prototype__modelZboardZcustom95prototype95list_u451(*((_QWORD *)a1 + 49), v5);
+        if ( !*v18 )
+        {
+          gate_cost__modelZscores_u2232 = v6;
+          v12 = 170i64;
+          v13 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim";
+        }
+        eqdestroy___modelZboardZprototype95list_u3239(v5);
+      }
+    }
+    else
+    {
+      v12 = 479i64;
+      v13 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      v2 = *a1;
+      if ( v2 == 118 )
+      {
+        v12 = 481i64;
+        if ( *((__int64 *)a1 + 21) > 0 )
+        {
+          if ( *(_QWORD *)(*((_QWORD *)a1 + 22) + 8i64) )
+          {
+            v12 = 484i64;
+            gate_cost__modelZscores_u2232 = *((_QWORD *)a1 + 39);
+          }
+          else
+          {
+            v12 = 482i64;
+            v3 = !is_mul_ok(0x32ui64, *((_QWORD *)a1 + 39));
+            v9 = 50i64 * *((_QWORD *)a1 + 39);
+            if ( v3 )
+              raiseOverflow();
+            else
+              gate_cost__modelZscores_u2232 = v9;
+          }
+        }
+        else
+        {
+          raiseIndexError2(0i64, *((_QWORD *)a1 + 21) - 1i64);
+        }
+      }
+      else if ( *a1 <= 0x76u && (v2 == 54 || v2 == 56) )
+      {
+        v12 = 486i64;
+        gate_cost__modelZscores_u2232 = *((_QWORD *)a1 + 35);
+      }
+      else
+      {
+        v12 = 488i64;
+        v8 = bits__modelZsave95mongerZcommon_u192(0i64);
+        if ( !*v18 )
+        {
+          v16 = 0;
+          v16 = eqeq___modelZmodel95types_u853(*((_QWORD *)a1 + 29), v8);
+          if ( v16 != 1 )
+          {
+            v12 = 492i64;
+            gate_cost__modelZscores_u2232 = get_gate_cost__modelZscores_u2232(*a1, *((_QWORD *)a1 + 29), a2);
+          }
+          else
+          {
+            v12 = 489i64;
+            v15 = 0;
+            v15 = eqeq___modelZmodel95types_u853(
+                    *((_QWORD *)a1 + 28),
+                    *(_QWORD *)refptr_AUTO_SIZE__modelZmodel95types_u54);
+            if ( v15 != 1 )
+            {
+              v12 = 491i64;
+              gate_cost__modelZscores_u2232 = get_gate_cost__modelZscores_u2232(*a1, *((_QWORD *)a1 + 28), a2);
+            }
+            else
+            {
+              v12 = 490i64;
+              v7 = bits__modelZsave95mongerZcommon_u192(8i64);
+              if ( !*v18 )
+                gate_cost__modelZscores_u2232 = get_gate_cost__modelZscores_u2232(*a1, v7, a2);
+            }
+          }
+        }
+      }
+    }
+  }
+  else
+  {
+    v12 = 473i64;
+    gate_cost__modelZscores_u2232 = 0i64;
+  }
+  popFrame_74();
+  return gate_cost__modelZscores_u2232;
+}
+
+========================================================================================
+get_delay_cost__modelZscores_u2270 @ 0x0000000140276fb1
+CALLERS 0x0000000140277ad2 get_delay_cost__modelZscores_u2316 | 0x0000000140bf07cc  | 0x0000000140bf07d8 
+__int64 __fastcall get_delay_cost__modelZscores_u2270(unsigned __int8 a1, __int64 a2, __int64 a3)
+{
+  __int64 v3; // rax
+  __int64 v4; // rax
+  __int64 v5; // rdx
+  __int64 v6; // rax
+  __int64 v8; // [rsp+20h] [rbp-C0h] BYREF
+  void *v9; // [rsp+28h] [rbp-B8h]
+  __int64 v10; // [rsp+38h] [rbp-A8h]
+  char v11[8]; // [rsp+40h] [rbp-A0h] BYREF
+  const char *v12; // [rsp+48h] [rbp-98h]
+  __int64 v13; // [rsp+50h] [rbp-90h]
+  const char *v14; // [rsp+58h] [rbp-88h]
+  __int16 v15; // [rsp+60h] [rbp-80h]
+  __int64 v16; // [rsp+70h] [rbp-70h]
+  double v17; // [rsp+78h] [rbp-68h]
+  double X; // [rsp+80h] [rbp-60h]
+  __int64 v19; // [rsp+88h] [rbp-58h]
+  double v20; // [rsp+90h] [rbp-50h]
+  double v21; // [rsp+98h] [rbp-48h]
+  __int64 v22; // [rsp+A0h] [rbp-40h]
+  __int64 v23; // [rsp+A8h] [rbp-38h]
+  double v24; // [rsp+B0h] [rbp-30h]
+  double v25; // [rsp+B8h] [rbp-28h]
+  double v26; // [rsp+C0h] [rbp-20h]
+  _BYTE *v27; // [rsp+C8h] [rbp-18h]
+  __int64 v28; // [rsp+D0h] [rbp-10h]
+  char v29; // [rsp+DFh] [rbp-1h]
+
+  v12 = "get_delay_cost";
+  v14 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v13 = 0i64;
+  v15 = 0;
+  nimFrame_74(v11);
+  v27 = (_BYTE *)nimErrorFlag_72();
+  v28 = 0i64;
+  v16 = a2;
+  v13 = 437i64;
+  v29 = 0;
+  v29 = eqeq___modelZmodel95types_u853(a2, *(_QWORD *)refptr_AUTO_SIZE__modelZmodel95types_u54);
+  if ( !v29 )
+    v29 = a2 <= 0;
+  if ( v29 == 1 )
+  {
+    v13 = 438i64;
+    v16 = bits__modelZsave95mongerZcommon_u192(8i64);
+    if ( *v27 )
+      goto LABEL_58;
+  }
+  v13 = 440i64;
+  if ( a1 <= 0x11u
+    || a1 > 0x27u && a1 <= 0x29u
+    || a1 > 0x2Au && a1 <= 0x30u
+    || a1 > 0x32u && a1 <= 0x35u
+    || a1 > 0x39u && a1 <= 0x67u
+    || a1 > 0x68u && a1 <= 0x6Bu
+    || a1 > 0x6Cu && a1 <= 0x75u
+    || a1 > 0x77u && a1 <= 0x7Cu )
+  {
+    v13 = 441i64;
+    v28 = a3;
+    goto LABEL_58;
+  }
+  v13 = 443i64;
+  if ( a1 == 119 )
+    goto LABEL_42;
+  if ( a1 > 0x77u )
+    goto LABEL_57;
+  if ( a1 == 118 )
+    goto LABEL_56;
+  if ( a1 > 0x76u )
+    goto LABEL_57;
+  if ( a1 == 108 )
+    goto LABEL_51;
+  if ( a1 > 0x6Cu )
+    goto LABEL_57;
+  if ( a1 == 104 )
+    goto LABEL_51;
+  if ( a1 > 0x68u )
+    goto LABEL_57;
+  if ( a1 == 57 )
+    goto LABEL_51;
+  if ( a1 > 0x39u )
+  {
+LABEL_57:
+    v13 = 469i64;
+    v8 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_25;
+    v9 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_24;
+    failedAssertImpl__stdZassertions_u234(&v8);
+    goto LABEL_58;
+  }
+  if ( a1 >= 0x26u )
+  {
+    v3 = 1i64 << a1;
+    if ( ((1i64 << a1) & 0x84048000000000i64) != 0 )
+      goto LABEL_42;
+    if ( (v3 & 0x140000000000000i64) == 0 )
+    {
+      if ( (v3 & 0x2004000000000i64) == 0 )
+        goto LABEL_57;
+      goto LABEL_51;
+    }
+LABEL_56:
+    v13 = 467i64;
+    v8 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_23;
+    v9 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_22;
+    failedAssertImpl__stdZassertions_u234(&v8);
+    goto LABEL_58;
+  }
+  if ( a1 >= 0x21u )
+  {
+    v13 = 452i64;
+    v26 = log2((double)(int)v16);
+    v25 = (double)(int)a3 / 3.0;
+    v13 = 454i64;
+    v24 = 0.0;
+    v24 = ceil(v25 * v26);
+    v23 = (unsigned int)(int)v24;
+    v13 = 455i64;
+    v4 = a3;
+    if ( a3 > 4 )
+      v4 = 4i64;
+    if ( v23 >= v4 )
+      v4 = v23;
+    v28 = v4;
+    goto LABEL_58;
+  }
+  if ( a1 >= 0x1Bu )
+  {
+LABEL_51:
+    v22 = v16;
+    v21 = (double)(int)a3 / 8.0;
+    v13 = 464i64;
+    v20 = 0.0;
+    v20 = ceil((double)(int)v16 * v21);
+    v19 = (unsigned int)(int)v20;
+    v13 = 465i64;
+    v6 = a3;
+    if ( a3 > 4 )
+      v6 = 4i64;
+    if ( v19 >= v6 )
+      v6 = v19;
+    v28 = v6;
+    goto LABEL_58;
+  }
+  if ( a1 <= 0x19u )
+  {
+    if ( a1 < 0x12u )
+      goto LABEL_57;
+LABEL_42:
+    v13 = 449i64;
+    v28 = a3;
+    goto LABEL_58;
+  }
+  v13 = 458i64;
+  X = 0.0;
+  X = log2((double)(int)v16 / 8.0);
+  v17 = 0.0;
+  v17 = ceil(X);
+  v5 = (unsigned int)(int)v17;
+  v10 = v5 + a3;
+  if ( __OFADD__(v5, a3) )
+    raiseOverflow();
+  else
+    v28 = v10;
+LABEL_58:
+  popFrame_74();
+  return v28;
+}
+
+========================================================================================
+get_delay_cost__modelZscores_u2316 @ 0x000000014027759b
+CALLERS 0x0000000140277cc0 get_cost__modelZscores_u2321 | 0x0000000140277ed7 get_cost__modelZscores_u2321 | 0x0000000140278054 get_cost__modelZscores_u2321 | 0x00000001402782be get_cost__modelZscores_u2321 | 0x00000001402785d6 get_cost__modelZscores_u2321 | 0x00000001402787f5 get_cost__modelZscores_u2321 | 0x0000000140278ce6 get_cost__modelZscores_u2321 | 0x0000000140278e7e get_cost__modelZscores_u2321 | 0x0000000140bf07d8  | 0x0000000140bf07e4 
+__int64 __fastcall get_delay_cost__modelZscores_u2316(unsigned __int8 *a1, __int64 a2)
+{
+  int v2; // eax
+  __int64 v3; // rax
+  char v4; // dl
+  bool v5; // of
+  __int64 v6; // rax
+  char v8[312]; // [rsp+20h] [rbp-60h] BYREF
+  __int64 v9; // [rsp+158h] [rbp+D8h]
+  __int64 v10; // [rsp+5C8h] [rbp+548h] BYREF
+  __int64 v11; // [rsp+5D0h] [rbp+550h]
+  __int64 v12; // [rsp+5D8h] [rbp+558h]
+  char v13[8]; // [rsp+5E0h] [rbp+560h] BYREF
+  const char *v14; // [rsp+5E8h] [rbp+568h]
+  __int64 v15; // [rsp+5F0h] [rbp+570h]
+  const char *v16; // [rsp+5F8h] [rbp+578h]
+  __int16 v17; // [rsp+600h] [rbp+580h]
+  char v18; // [rsp+61Fh] [rbp+59Fh]
+  __int64 v19; // [rsp+620h] [rbp+5A0h]
+  double v20; // [rsp+628h] [rbp+5A8h]
+  double v21; // [rsp+630h] [rbp+5B0h]
+  double X; // [rsp+638h] [rbp+5B8h]
+  _BYTE *v23; // [rsp+640h] [rbp+5C0h]
+  __int64 delay_cost__modelZscores_u2270; // [rsp+648h] [rbp+5C8h]
+
+  v14 = "get_delay_cost";
+  v16 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v15 = 0i64;
+  v17 = 0;
+  nimFrame_74(v13);
+  v23 = (_BYTE *)nimErrorFlag_72();
+  delay_cost__modelZscores_u2270 = 0i64;
+  v15 = 495i64;
+  v2 = *a1;
+  if ( v2 == 118 )
+  {
+    v15 = 504i64;
+    if ( *((__int64 *)a1 + 21) > 0 )
+    {
+      if ( *(_QWORD *)(*((_QWORD *)a1 + 22) + 8i64) )
+      {
+        v15 = 508i64;
+        if ( *((__int64 *)a1 + 21) <= 1 )
+        {
+          raiseIndexError2(1i64, *((_QWORD *)a1 + 21) - 1i64);
+          goto LABEL_36;
+        }
+        if ( *(__int64 *)(*((_QWORD *)a1 + 22) + 16i64) < 0 )
+        {
+          raiseRangeErrorNoArgs();
+          goto LABEL_36;
+        }
+        v3 = *(_QWORD *)(*((_QWORD *)a1 + 22) + 16i64);
+        v4 = 0;
+        v5 = __OFADD__(1i64, v3);
+        v6 = v3 + 1;
+        if ( v5 )
+          v4 = 1;
+        v11 = v6;
+        if ( (v4 & 1) == 0 )
+        {
+          if ( !v11 )
+          {
+            raiseDivByZero();
+            goto LABEL_36;
+          }
+          if ( !(unsigned __int8)nimDivInt_1(512i64, v11, &v10) )
+          {
+            delay_cost__modelZscores_u2270 = v10;
+            goto LABEL_36;
+          }
+        }
+      }
+      else
+      {
+        v15 = 505i64;
+        X = 0.0;
+        X = log2((double)(int)*((_QWORD *)a1 + 39));
+        v21 = 0.0;
+        v21 = log2(X);
+        v20 = 0.0;
+        v20 = ceil(v21);
+        v19 = (unsigned int)(int)v20;
+        v15 = 506i64;
+        v12 = v19 + 6;
+        if ( !__OFADD__(6i64, v19) )
+        {
+          delay_cost__modelZscores_u2270 = v12;
+          goto LABEL_36;
+        }
+      }
+      raiseOverflow();
+      goto LABEL_36;
+    }
+    raiseIndexError2(0i64, *((_QWORD *)a1 + 21) - 1i64);
+  }
+  else
+  {
+    if ( *a1 > 0x76u )
+      goto LABEL_35;
+    if ( v2 == 79 )
+    {
+      v16 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      v15 = 500i64;
+      delay_cost__modelZscores_u2270 = *((_QWORD *)a1 + 38);
+      goto LABEL_36;
+    }
+    if ( *a1 > 0x4Fu )
+    {
+LABEL_35:
+      v15 = 510i64;
+      delay_cost__modelZscores_u2270 = get_delay_cost__modelZscores_u2270(*a1, *((_QWORD *)a1 + 29), a2);
+      goto LABEL_36;
+    }
+    if ( v2 == 78 )
+    {
+      v15 = 497i64;
+      v18 = 0;
+      v18 = in_custom_prototypes__modelZboardZcustom95prototype95list_u9(*((_QWORD *)a1 + 49));
+      if ( !*v23 && v18 == 1 )
+      {
+        nimZeroMem_54(v8, 1448i64);
+        v15 = 498i64;
+        get_custom_prototype__modelZboardZcustom95prototype95list_u451(*((_QWORD *)a1 + 49), v8);
+        if ( !*v23 )
+        {
+          delay_cost__modelZscores_u2270 = v9;
+          v15 = 170i64;
+          v16 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim";
+        }
+        eqdestroy___modelZboardZprototype95list_u3239(v8);
+      }
+    }
+    else
+    {
+      if ( v2 != 54 && v2 != 56 )
+        goto LABEL_35;
+      v15 = 502i64;
+      delay_cost__modelZscores_u2270 = *((_QWORD *)a1 + 36);
+    }
+  }
+LABEL_36:
+  popFrame_74();
+  return delay_cost__modelZscores_u2270;
+}
+
+========================================================================================
+get_cost__modelZscores_u2321 @ 0x0000000140277b05
+CALLERS 0x000000014027927d get_gate_cost__modelZscores_u2556 | 0x000000014027be5d get_all_costs__modelZscores_u2580 | 0x00000001402b723f reload_custom_prototype__modelZboardZcustom95prototype_u1142 | 0x00000001402cfc21 preorder__modelZsimulationZpreorder_u8738 | 0x00000001402d67dc preorder__modelZsimulationZpreorder_u8738 | 0x00000001405dbf05 get_component_cost__presenterZutilitiesZhelper95functions_u5874 | 0x0000000140736711 get_stat_text__presenterZboard95uiZcommon_u453 | 0x00000001407368ac get_stat_text__presenterZboard95uiZcommon_u453 | 0x0000000140bf07e4  | 0x0000000140bf07f0 
+_QWORD *__fastcall get_cost__modelZscores_u2321(_QWORD *a1, __int64 a2)
+{
+  __int64 v2; // rdx
+  unsigned __int64 *v3; // rdx
+  unsigned __int64 v4; // rax
+  __int64 v5; // rdx
+  __int64 v6; // rdx
+  __int64 v7; // rdx
+  __int64 *v8; // rdx
+  __int64 v9; // rax
+  __int64 v10; // rdx
+  __int64 *v11; // rdx
+  __int64 v12; // rax
+  __int64 v13; // rdx
+  __int64 *v14; // rdx
+  __int64 v15; // rax
+  __int64 v16; // rdx
+  __int64 *v17; // rdx
+  __int64 v18; // rax
+  __int64 v19; // rdx
+  __int64 *v20; // rdx
+  __int64 v21; // rax
+  __int64 v22; // rdx
+  __int64 *v23; // rdx
+  __int64 v24; // rax
+  __int64 v25; // rdx
+  __int64 v26; // rdx
+  __int64 v28; // [rsp+20h] [rbp-60h] BYREF
+  __int64 v29; // [rsp+28h] [rbp-58h]
+  __int64 v30; // [rsp+30h] [rbp-50h] BYREF
+  void *v31; // [rsp+38h] [rbp-48h]
+  char v32[1456]; // [rsp+40h] [rbp-40h] BYREF
+  __int64 v33; // [rsp+5F0h] [rbp+570h]
+  __int64 v34; // [rsp+5F8h] [rbp+578h]
+  unsigned __int64 v35; // [rsp+608h] [rbp+588h]
+  __int64 v36; // [rsp+610h] [rbp+590h]
+  __int64 v37; // [rsp+618h] [rbp+598h]
+  __int64 v38; // [rsp+628h] [rbp+5A8h]
+  __int64 v39; // [rsp+630h] [rbp+5B0h]
+  __int64 v40; // [rsp+638h] [rbp+5B8h]
+  __int64 v41; // [rsp+640h] [rbp+5C0h]
+  __int64 v42; // [rsp+648h] [rbp+5C8h]
+  unsigned __int64 v43; // [rsp+658h] [rbp+5D8h]
+  __int64 v44; // [rsp+660h] [rbp+5E0h]
+  __int64 v45; // [rsp+668h] [rbp+5E8h]
+  __int64 v46; // [rsp+670h] [rbp+5F0h]
+  __int64 v47; // [rsp+678h] [rbp+5F8h]
+  __int64 v48; // [rsp+680h] [rbp+600h]
+  __int64 v49; // [rsp+688h] [rbp+608h]
+  unsigned __int64 v50; // [rsp+690h] [rbp+610h]
+  __int64 v51; // [rsp+698h] [rbp+618h]
+  __int64 v52; // [rsp+6A0h] [rbp+620h]
+  __int64 v53; // [rsp+6A8h] [rbp+628h]
+  unsigned __int64 v54; // [rsp+6B0h] [rbp+630h]
+  __int64 v55; // [rsp+6B8h] [rbp+638h]
+  __int64 v56; // [rsp+6C0h] [rbp+640h]
+  __int64 v57; // [rsp+6C8h] [rbp+648h]
+  unsigned __int64 v58; // [rsp+6D8h] [rbp+658h]
+  __int64 v59; // [rsp+6E0h] [rbp+660h]
+  __int64 v60; // [rsp+6E8h] [rbp+668h]
+  __int64 v61; // [rsp+6F0h] [rbp+670h]
+  __int64 v62; // [rsp+6F8h] [rbp+678h]
+  __int64 v63; // [rsp+700h] [rbp+680h]
+  __int64 v64; // [rsp+708h] [rbp+688h]
+  __int64 v65; // [rsp+710h] [rbp+690h]
+  unsigned __int64 v66; // [rsp+718h] [rbp+698h]
+  __int64 v67; // [rsp+720h] [rbp+6A0h]
+  __int64 v68; // [rsp+728h] [rbp+6A8h]
+  __int64 v69; // [rsp+730h] [rbp+6B0h]
+  __int64 v70; // [rsp+738h] [rbp+6B8h]
+  __int64 v71; // [rsp+740h] [rbp+6C0h]
+  __int64 v72; // [rsp+748h] [rbp+6C8h]
+  __int64 v73; // [rsp+750h] [rbp+6D0h]
+  __int64 v74; // [rsp+758h] [rbp+6D8h]
+  __int64 gate_cost__modelZscores_u2304; // [rsp+760h] [rbp+6E0h]
+  __int64 delay_cost__modelZscores_u2316; // [rsp+768h] [rbp+6E8h]
+  __int64 v77; // [rsp+770h] [rbp+6F0h]
+  __int64 v78; // [rsp+778h] [rbp+6F8h]
+  char v79[8]; // [rsp+780h] [rbp+700h] BYREF
+  const char *v80; // [rsp+788h] [rbp+708h]
+  __int64 v81; // [rsp+790h] [rbp+710h]
+  const char *v82; // [rsp+798h] [rbp+718h]
+  __int16 v83; // [rsp+7A0h] [rbp+720h]
+  __int64 v84; // [rsp+7B0h] [rbp+730h]
+  __int64 v85; // [rsp+7B8h] [rbp+738h]
+  __int64 v86; // [rsp+7C0h] [rbp+740h]
+  unsigned __int64 v87; // [rsp+7D0h] [rbp+750h]
+  __int64 v88; // [rsp+7D8h] [rbp+758h]
+  __int64 v89; // [rsp+7E0h] [rbp+760h] BYREF
+  __int64 v90; // [rsp+7E8h] [rbp+768h]
+  __int64 v91[2]; // [rsp+7F0h] [rbp+770h] BYREF
+  __int64 v92[2]; // [rsp+800h] [rbp+780h] BYREF
+  __int64 v93; // [rsp+810h] [rbp+790h]
+  unsigned __int64 v94; // [rsp+818h] [rbp+798h]
+  unsigned __int64 v95; // [rsp+820h] [rbp+7A0h]
+  unsigned __int64 v96; // [rsp+828h] [rbp+7A8h]
+  unsigned __int64 v97; // [rsp+830h] [rbp+7B0h]
+  __int64 v98; // [rsp+838h] [rbp+7B8h]
+  unsigned __int64 v99; // [rsp+840h] [rbp+7C0h]
+  __int64 *v100; // [rsp+848h] [rbp+7C8h]
+  const void *v101; // [rsp+850h] [rbp+7D0h]
+  __int64 *v102; // [rsp+858h] [rbp+7D8h]
+  unsigned __int8 v103; // [rsp+867h] [rbp+7E7h]
+  _BYTE *v104; // [rsp+868h] [rbp+7E8h]
+  bool v105; // [rsp+877h] [rbp+7F7h]
+  unsigned __int64 v106; // [rsp+878h] [rbp+7F8h]
+  unsigned __int64 v107; // [rsp+880h] [rbp+800h]
+  unsigned __int64 v108; // [rsp+888h] [rbp+808h]
+
+  v80 = "get_cost";
+  v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v81 = 0i64;
+  v83 = 0;
+  nimFrame_74(v79);
+  v104 = (_BYTE *)nimErrorFlag_72();
+  nimZeroMem_54(&v89, 16i64);
+  v81 = 513i64;
+  v103 = *(_BYTE *)a2;
+  v81 = 515i64;
+  if ( ((TM__cWnRfAoMBYzrX9aW9aZjMzkg_3[v103 >> 3] >> (v103 & 7)) & 1) != 0 )
+  {
+    v81 = 516i64;
+    v102 = 0i64;
+    v102 = (__int64 *)X5BX5D___modelZscores_u1990(&DEFAULT_COMPONENT_SCORES__modelZscores_u1605, v103);
+    if ( !*v104 )
+    {
+      v2 = v102[1];
+      v77 = *v102;
+      v78 = v2;
+      v81 = 518i64;
+      gate_cost__modelZscores_u2304 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v77);
+      if ( !*v104 )
+      {
+        v81 = 519i64;
+        delay_cost__modelZscores_u2316 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v78);
+        if ( !*v104 )
+        {
+          v89 = gate_cost__modelZscores_u2304;
+          v90 = delay_cost__modelZscores_u2316;
+        }
+      }
+    }
+    goto LABEL_87;
+  }
+  v81 = 522i64;
+  v3 = (unsigned __int64 *)((char *)&component_costs__modelZscores_u10 + 16 * v103);
+  v4 = *v3;
+  v5 = v3[1];
+  v87 = v4;
+  v88 = v5;
+  v81 = 523i64;
+  if ( !v5 )
+  {
+    nimZeroMem_54(v32, 1448i64);
+    v81 = 524i64;
+    v101 = 0i64;
+    v101 = (const void *)X5BX5D___modelZboardZprototype95list_u4239(
+                           refptr_PROTOTYPES__modelZboardZprototype95list_u3752,
+                           v103);
+    if ( !*v104 )
+    {
+      qmemcpy(v32, v101, 0x5A8ui64);
+      v81 = 525i64;
+      if ( v32[0] == 5 )
+      {
+        v81 = 526i64;
+      }
+      else
+      {
+        v81 = 527i64;
+        v100 = 0i64;
+        v100 = (__int64 *)X5BX5D___modelZscores_u1990(&DEFAULT_COMPONENT_SCORES__modelZscores_u1605, v103);
+        if ( !*v104 )
+        {
+          v6 = v100[1];
+          v73 = *v100;
+          v74 = v6;
+          v81 = 529i64;
+          v71 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v73);
+          if ( !*v104 )
+          {
+            v81 = 530i64;
+            v72 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v74);
+            if ( !*v104 )
+            {
+              v89 = v71;
+              v90 = v72;
+            }
+          }
+        }
+      }
+    }
+    goto LABEL_87;
+  }
+  v81 = 533i64;
+  v7 = *(_QWORD *)(a2 + 488);
+  v84 = *(_QWORD *)(a2 + 480);
+  v85 = v7;
+  v86 = *(_QWORD *)(a2 + 496);
+  v81 = 534i64;
+  if ( (unsigned __int8)v84 == 2 )
+  {
+    v99 = 0i64;
+    v98 = 0i64;
+    v81 = 577i64;
+    v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+    v38 = v87 + v88;
+    if ( __OFADD__(v87, v88) )
+    {
+LABEL_81:
+      raiseOverflow();
+      goto LABEL_87;
+    }
+    v98 = v38;
+    v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+    v106 = v87;
+    v81 = 129i64;
+    while ( (__int64)v106 < v98 )
+    {
+      v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      v99 = v106;
+      v81 = 578i64;
+      if ( v106 > 0x270F )
+      {
+        raiseIndexError2(v99, 9999i64);
+        goto LABEL_87;
+      }
+      v20 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v99);
+      v21 = *v20;
+      v22 = v20[1];
+      v36 = v21;
+      v37 = v22;
+      v81 = 579i64;
+      v105 = 0;
+      if ( (v84 & 7) != 2 )
+      {
+        dollar___modelZsave95mongerZcommon_u3503(v91, (unsigned __int8)v84);
+        v30 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_40;
+        v31 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_39;
+        v28 = v91[0];
+        v29 = v91[1];
+        raiseFieldErrorStr(&v30, &v28);
+        goto LABEL_87;
+      }
+      v105 = v36 <= v85;
+      if ( v36 <= v85 )
+      {
+        if ( (v84 & 7) != 2 )
+        {
+          dollar___modelZsave95mongerZcommon_u3503(v92, (unsigned __int8)v84);
+          v30 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_41;
+          v31 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_39;
+          v28 = v92[0];
+          v29 = v92[1];
+          raiseFieldErrorStr(&v30, &v28);
+          goto LABEL_87;
+        }
+        v105 = v37 <= v86;
+      }
+      if ( v105 )
+      {
+        v81 = 581i64;
+        v33 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v36);
+        if ( !*v104 )
+        {
+          v81 = 582i64;
+          v34 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v37);
+          if ( !*v104 )
+          {
+            v89 = v33;
+            v90 = v34;
+          }
+        }
+        goto LABEL_87;
+      }
+      v81 = 131i64;
+      v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+      v35 = v106 + 1;
+      if ( __OFADD__(1i64, v106) )
+        goto LABEL_81;
+      v106 = v35;
+    }
+    v81 = 585i64;
+    v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+    if ( v87 > 0x270F )
+      goto LABEL_20;
+    v23 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v87);
+    v24 = *v23;
+    v25 = v23[1];
+    v41 = v24;
+    v42 = v25;
+    v81 = 587i64;
+    v39 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v24);
+    if ( !*v104 )
+    {
+      v81 = 588i64;
+      v40 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v42);
+      if ( !*v104 )
+      {
+        v89 = v39;
+        v90 = v40;
+      }
+    }
+  }
+  else
+  {
+    if ( (unsigned __int8)v84 > 2u )
+      goto LABEL_87;
+    if ( (_BYTE)v84 )
+    {
+      if ( (unsigned __int8)v84 != 1 )
+        goto LABEL_87;
+      v81 = 556i64;
+      v55 = v87 + v88;
+      if ( __OFADD__(v87, v88) )
+        goto LABEL_81;
+      v54 = v55 - 1;
+      if ( __OFSUB__(v55, 1i64) )
+        goto LABEL_81;
+      if ( v54 > 0x270F )
+      {
+        raiseIndexError2(v54, 9999i64);
+        goto LABEL_87;
+      }
+      v14 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v54);
+      v15 = *v14;
+      v16 = v14[1];
+      v56 = v15;
+      v57 = v16;
+      v81 = 558i64;
+      v52 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v15);
+      if ( !*v104 )
+      {
+        v81 = 559i64;
+        v53 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v57);
+        if ( !*v104 )
+        {
+          v97 = 0i64;
+          v96 = 0i64;
+          v81 = 562i64;
+          v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v51 = v87 + v88;
+          if ( __OFADD__(v87, v88) )
+            goto LABEL_81;
+          v50 = v51 - 2;
+          if ( __OFSUB__(v51, 2i64) )
+            goto LABEL_81;
+          v96 = v50;
+          v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+          v107 = v50;
+          v81 = 34i64;
+          while ( (__int64)v107 >= (__int64)v87 )
+          {
+            v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+            v97 = v107;
+            v81 = 564i64;
+            if ( v107 > 0x270F )
+            {
+              raiseIndexError2(v97, 9999i64);
+              goto LABEL_87;
+            }
+            v17 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v97);
+            v18 = *v17;
+            v19 = v17[1];
+            v48 = v18;
+            v49 = v19;
+            v81 = 566i64;
+            v44 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v18);
+            if ( *v104 )
+              goto LABEL_87;
+            v81 = 567i64;
+            v45 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v49);
+            if ( *v104 )
+              goto LABEL_87;
+            v46 = v44;
+            v47 = v45;
+            v81 = 569i64;
+            if ( v53 < v45 )
+            {
+              v81 = 570i64;
+              v89 = v52;
+              v90 = v53;
+              goto LABEL_87;
+            }
+            v81 = 573i64;
+            if ( v47 != v53 )
+            {
+              v30 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_36;
+              v31 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_35;
+              failedAssertImpl__stdZassertions_u234(&v30);
+              if ( *v104 )
+                goto LABEL_87;
+            }
+            v52 = v46;
+            v53 = v47;
+            v81 = 39i64;
+            v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+            v43 = v107 - 1;
+            if ( __OFSUB__(v107, 1i64) )
+              goto LABEL_37;
+            v107 = v43;
+          }
+          v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v81 = 575i64;
+          v89 = v52;
+          v90 = v53;
+        }
+      }
+    }
+    else
+    {
+      v81 = 536i64;
+      if ( v87 > 0x270F )
+      {
+LABEL_20:
+        raiseIndexError2(v87, 9999i64);
+        goto LABEL_87;
+      }
+      v8 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v87);
+      v9 = *v8;
+      v10 = v8[1];
+      v69 = v9;
+      v70 = v10;
+      v81 = 538i64;
+      v67 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v9);
+      if ( !*v104 )
+      {
+        v81 = 539i64;
+        v68 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v70);
+        if ( !*v104 )
+        {
+          v95 = 0i64;
+          v94 = 0i64;
+          v93 = 0i64;
+          v81 = 541i64;
+          v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v66 = v87 + 1;
+          if ( __OFADD__(1i64, v87) )
+            goto LABEL_81;
+          v94 = v66;
+          v81 = 541i64;
+          v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v65 = v87 + v88;
+          if ( __OFADD__(v87, v88) )
+            goto LABEL_81;
+          v93 = v65;
+          v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+          v108 = v94;
+          v81 = 129i64;
+          while ( (__int64)v108 < v93 )
+          {
+            v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+            v95 = v108;
+            v81 = 542i64;
+            if ( v108 > 0x270F )
+            {
+              raiseIndexError2(v95, 9999i64);
+              goto LABEL_87;
+            }
+            v11 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v95);
+            v12 = *v11;
+            v13 = v11[1];
+            v63 = v12;
+            v64 = v13;
+            v81 = 544i64;
+            v59 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v12);
+            if ( *v104 )
+              goto LABEL_87;
+            v81 = 545i64;
+            v60 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v64);
+            if ( *v104 )
+              goto LABEL_87;
+            v61 = v59;
+            v62 = v60;
+            v81 = 547i64;
+            if ( v67 < v59 )
+            {
+              v81 = 548i64;
+              v89 = v67;
+              v90 = v68;
+              goto LABEL_87;
+            }
+            v81 = 551i64;
+            if ( v61 != v67 )
+            {
+              v30 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_29;
+              v31 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_28;
+              failedAssertImpl__stdZassertions_u234(&v30);
+              if ( *v104 )
+                goto LABEL_87;
+            }
+            v67 = v61;
+            v68 = v62;
+            v81 = 131i64;
+            v82 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+            v58 = v108 + 1;
+            if ( __OFADD__(1i64, v108) )
+            {
+LABEL_37:
+              raiseOverflow();
+              goto LABEL_87;
+            }
+            v108 = v58;
+          }
+          v82 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v81 = 553i64;
+          v89 = v67;
+          v90 = v68;
+        }
+      }
+    }
+  }
+LABEL_87:
+  popFrame_74();
+  v26 = v90;
+  *a1 = v89;
+  a1[1] = v26;
+  return a1;
+}
+
+========================================================================================
+get_gate_cost__modelZscores_u2556 @ 0x0000000140278f23
+CALLERS 0x00000001402791a7 get_gate_cost__modelZscores_u2556 | 0x00000001402ddaa2 preorder__modelZsimulationZpreorder_u8738 | 0x0000000140bf07f0  | 0x0000000140bf07fc 
+__int64 __fastcall get_gate_cost__modelZscores_u2556(__int64 *a1, char a2)
+{
+  __int64 v2; // rbx
+  __int64 v4; // [rsp+20h] [rbp-60h] BYREF
+  void *v5; // [rsp+28h] [rbp-58h]
+  __int64 v6; // [rsp+30h] [rbp-50h]
+  __int64 v7; // [rsp+38h] [rbp-48h]
+  __int64 v8[70]; // [rsp+40h] [rbp-40h] BYREF
+  char v9[224]; // [rsp+270h] [rbp+1F0h] BYREF
+  __int64 v10; // [rsp+350h] [rbp+2D0h]
+  void *v11; // [rsp+358h] [rbp+2D8h]
+  __int64 v12; // [rsp+818h] [rbp+798h]
+  __int64 v13[3]; // [rsp+820h] [rbp+7A0h] BYREF
+  __int64 v14; // [rsp+838h] [rbp+7B8h]
+  char v15[8]; // [rsp+840h] [rbp+7C0h] BYREF
+  const char *v16; // [rsp+848h] [rbp+7C8h]
+  __int64 v17; // [rsp+850h] [rbp+7D0h]
+  const char *v18; // [rsp+858h] [rbp+7D8h]
+  __int16 v19; // [rsp+860h] [rbp+7E0h]
+  __int64 v20; // [rsp+870h] [rbp+7F0h]
+  __int64 gate_cost__modelZscores_u2556; // [rsp+878h] [rbp+7F8h]
+  __int64 v22; // [rsp+880h] [rbp+800h]
+  __int64 v23; // [rsp+888h] [rbp+808h]
+  __int64 v24; // [rsp+890h] [rbp+810h]
+  _BYTE *v25; // [rsp+898h] [rbp+818h]
+  __int64 v26; // [rsp+8A0h] [rbp+820h]
+  __int64 v27; // [rsp+8A8h] [rbp+828h]
+
+  v2 = a1[1];
+  v6 = *a1;
+  v7 = v2;
+  v16 = "get_gate_cost";
+  v18 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v17 = 0i64;
+  v19 = 0;
+  nimFrame_74(v15);
+  v25 = (_BYTE *)nimErrorFlag_72();
+  v27 = 0i64;
+  nimZeroMem_54(v8, 560i64);
+  v24 = 0i64;
+  v18 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim";
+  v26 = 0i64;
+  v23 = v6;
+  v22 = v6;
+  v17 = 184i64;
+  while ( v26 < v22 )
+  {
+    v17 = 592i64;
+    v18 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+    v24 = v26;
+    if ( v26 < 0 || v26 >= v6 )
+    {
+      raiseIndexError2(v26, v6 - 1);
+      break;
+    }
+    qmemcpy(v8, (const void *)(560 * v26 + v7 + 8), sizeof(v8));
+    v17 = 593i64;
+    if ( LOBYTE(v8[0]) == 78 )
+    {
+      nimZeroMem_54(v9, 1448i64);
+      v17 = 594i64;
+      if ( a2 != 1 )
+      {
+        v17 = 596i64;
+        get_custom_prototype__modelZboardZcustom95prototype95list_u451(v8[49], v9);
+        if ( !*v25 )
+        {
+          v17 = 597i64;
+          gate_cost__modelZscores_u2556 = 0i64;
+          v4 = v10;
+          v5 = v11;
+          gate_cost__modelZscores_u2556 = get_gate_cost__modelZscores_u2556(&v4, 0i64);
+          if ( !*v25 )
+          {
+            v14 = v27 + gate_cost__modelZscores_u2556;
+            if ( __OFADD__(v27, gate_cost__modelZscores_u2556) )
+              raiseOverflow();
+            else
+              v27 = v14;
+          }
+        }
+        v17 = 170i64;
+        v18 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim";
+        eqdestroy___modelZboardZprototype95list_u3239(v9);
+        if ( *v25 )
+          break;
+      }
+      else
+      {
+        v17 = 170i64;
+        v18 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system.nim";
+        eqdestroy___modelZboardZprototype95list_u3239(v9);
+        v17 = 595i64;
+        v18 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      }
+    }
+    else
+    {
+      v17 = 599i64;
+      v18 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      get_cost__modelZscores_u2321(v13, (__int64)v8);
+      if ( *v25 )
+        break;
+      v12 = v13[0] + v27;
+      if ( __OFADD__(v13[0], v27) )
+      {
+        raiseOverflow();
+        break;
+      }
+      v27 = v12;
+    }
+    v18 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim";
+    ++v26;
+    v17 = 187i64;
+    v20 = v6;
+    if ( v6 != v22 )
+    {
+      v4 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_46;
+      v5 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_45;
+      failedAssertImpl__stdZassertions_u234(&v4);
+      if ( *v25 )
+        break;
+    }
+  }
+  popFrame_74();
+  return v27;
+}
+
+========================================================================================
+insert_cost__modelZscores_u13 @ 0x0000000140279387
+CALLERS 0x000000014027a1b5 insert_cost__modelZscores_u49 | 0x0000000140bf07fc  | 0x0000000140bf0808 
+__int64 __fastcall insert_cost__modelZscores_u13(unsigned __int64 *a1, __int64 *a2)
+{
+  unsigned __int64 v2; // rax
+  char v3; // cl
+  bool v4; // of
+  __int64 v5; // rax
+  char v6; // dl
+  unsigned __int64 v7; // rax
+  char v8; // cl
+  unsigned __int64 v9; // rax
+  unsigned __int64 v10; // rax
+  char v11; // dl
+  unsigned __int64 v12; // rax
+  unsigned __int64 v13; // rax
+  char v14; // dl
+  __int64 v15; // rax
+  __int64 v16; // r8
+  unsigned __int64 v17; // rax
+  char v18; // cl
+  __int64 v19; // rax
+  unsigned __int64 v20; // rax
+  char v21; // cl
+  __int64 v22; // rax
+  __int64 v23; // r8
+  __int64 *v24; // rdx
+  __int64 v25; // rax
+  __int64 v26; // rdx
+  unsigned __int64 v27; // rax
+  char v28; // cl
+  unsigned __int64 v29; // rax
+  unsigned __int64 v30; // rax
+  char v31; // cl
+  unsigned __int64 v32; // rax
+  unsigned __int64 v33; // rax
+  char v34; // cl
+  unsigned __int64 v35; // rax
+  unsigned __int64 v36; // rax
+  char v37; // dl
+  __int64 v38; // rax
+  bool v39; // cl
+  __int64 v41; // [rsp+20h] [rbp-60h]
+  __int64 v42; // [rsp+28h] [rbp-58h]
+  unsigned __int64 v43; // [rsp+38h] [rbp-48h]
+  __int64 v44; // [rsp+40h] [rbp-40h]
+  __int64 v45; // [rsp+48h] [rbp-38h]
+  unsigned __int64 v46; // [rsp+68h] [rbp-18h]
+  unsigned __int64 v47; // [rsp+70h] [rbp-10h]
+  unsigned __int64 v48; // [rsp+98h] [rbp+18h]
+  unsigned __int64 v49; // [rsp+A0h] [rbp+20h]
+  unsigned __int64 v50; // [rsp+C0h] [rbp+40h]
+  char v51[8]; // [rsp+E0h] [rbp+60h] BYREF
+  const char *v52; // [rsp+E8h] [rbp+68h]
+  __int64 v53; // [rsp+F0h] [rbp+70h]
+  const char *v54; // [rsp+F8h] [rbp+78h]
+  __int16 v55; // [rsp+100h] [rbp+80h]
+  unsigned __int64 v56; // [rsp+118h] [rbp+98h]
+  __int64 v57; // [rsp+120h] [rbp+A0h]
+  __int64 v58; // [rsp+128h] [rbp+A8h]
+  unsigned __int64 v59; // [rsp+130h] [rbp+B0h]
+  __int64 v60; // [rsp+138h] [rbp+B8h]
+  unsigned __int64 v61; // [rsp+140h] [rbp+C0h]
+  unsigned __int64 v62; // [rsp+148h] [rbp+C8h]
+  __int64 v63; // [rsp+150h] [rbp+D0h]
+  unsigned __int64 v64; // [rsp+158h] [rbp+D8h]
+  __int64 v65; // [rsp+160h] [rbp+E0h]
+  unsigned __int64 v66; // [rsp+168h] [rbp+E8h]
+  bool v67; // [rsp+177h] [rbp+F7h]
+  unsigned __int64 v68; // [rsp+178h] [rbp+F8h]
+  unsigned __int64 v69; // [rsp+180h] [rbp+100h]
+  unsigned __int64 v70; // [rsp+188h] [rbp+108h]
+
+  v41 = *a2;
+  v42 = a2[1];
+  v52 = "insert_cost";
+  v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v53 = 0i64;
+  v55 = 0;
+  nimFrame_74(v51);
+  v70 = 0i64;
+  v69 = -1i64;
+  v64 = 0i64;
+  v63 = 0i64;
+  v53 = 18i64;
+  v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v2 = a1[1];
+  v3 = 0;
+  v4 = __OFADD__(*a1, v2);
+  v5 = *a1 + v2;
+  if ( v4 )
+    v3 = 1;
+  if ( (v3 & 1) != 0 )
+    goto LABEL_77;
+  v63 = v5;
+  v53 = 128i64;
+  v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+  v68 = *a1;
+  v53 = 129i64;
+  while ( (__int64)v68 < v63 )
+  {
+    v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+    v64 = v68;
+    v53 = 19i64;
+    if ( v68 > 0x270F )
+    {
+      raiseIndexError2(v64, 9999i64);
+      goto LABEL_98;
+    }
+    if ( *((_QWORD *)&component_cost_buffer__modelZscores_u12 + 2 * v64) >= v41 )
+    {
+      v69 = v64;
+      v53 = 23i64;
+      break;
+    }
+    v53 = 131i64;
+    v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+    v6 = 0;
+    if ( __OFADD__(1i64, v68) )
+      v6 = 1;
+    if ( (v6 & 1) != 0 )
+      goto LABEL_77;
+    ++v68;
+  }
+  v53 = 25i64;
+  v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  if ( v69 == -1i64 )
+  {
+    v53 = 27i64;
+    v67 = 0;
+    v67 = a1[1] == 0;
+    if ( !v67 )
+    {
+      v53 = 29i64;
+      v7 = a1[1];
+      v8 = 0;
+      v4 = __OFADD__(*a1, v7);
+      v9 = *a1 + v7;
+      if ( v4 )
+        v8 = 1;
+      if ( (v8 & 1) != 0 )
+        goto LABEL_77;
+      v50 = v9 - 1;
+      if ( __OFSUB__(v9, 1i64) )
+        goto LABEL_77;
+      if ( v50 > 0x270F )
+      {
+        raiseIndexError2(v50, 9999i64);
+        goto LABEL_98;
+      }
+      v67 = v42 < qword_146766C88[2 * v50];
+    }
+    if ( !v67 )
+    {
+      v53 = 32i64;
+      v70 = -1i64;
+    }
+    else
+    {
+      v53 = 30i64;
+      v10 = a1[1];
+      v11 = 0;
+      v4 = __OFADD__(1i64, v10);
+      v12 = v10 + 1;
+      if ( v4 )
+        v11 = 1;
+      if ( (v11 & 1) != 0 )
+        goto LABEL_77;
+      a1[1] = v12;
+      v53 = 31i64;
+      v13 = a1[1];
+      v14 = 0;
+      v4 = __OFSUB__(v13, 1i64);
+      v15 = v13 - 1;
+      if ( v4 )
+        v14 = 1;
+      if ( (v14 & 1) != 0 )
+      {
+LABEL_77:
+        raiseOverflow();
+        goto LABEL_98;
+      }
+      v70 = v15;
+    }
+  }
+  else
+  {
+    v53 = 35i64;
+    if ( v69 <= 0x270F )
+    {
+      if ( v42 > qword_146766C88[2 * v69] )
+      {
+        v53 = 57i64;
+        if ( v41 == *((_QWORD *)&component_cost_buffer__modelZscores_u12 + 2 * v69) )
+        {
+          v53 = 59i64;
+          v70 = -1i64;
+          goto LABEL_98;
+        }
+        v53 = 64i64;
+        v36 = a1[1];
+        v37 = 0;
+        v4 = __OFADD__(1i64, v36);
+        v38 = v36 + 1;
+        if ( v4 )
+          v37 = 1;
+        v57 = v38;
+        if ( (v37 & 1) == 0 )
+        {
+          a1[1] = v57;
+          v53 = 65i64;
+          v39 = __OFSUB__(v69, *a1);
+          v56 = v69 - *a1;
+          if ( !v39 )
+          {
+            v70 = v56;
+            goto LABEL_98;
+          }
+        }
+      }
+      else
+      {
+        v16 = 16 * v69;
+        *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v16) = v41;
+        *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v16 + 8) = v42;
+        v62 = 0i64;
+        v61 = 0i64;
+        v60 = 0i64;
+        v53 = 39i64;
+        v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        if ( !__OFADD__(1i64, v69) )
+        {
+          v61 = v69 + 1;
+          v53 = 39i64;
+          v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v17 = a1[1];
+          v18 = 0;
+          v4 = __OFADD__(*a1, v17);
+          v19 = *a1 + v17;
+          if ( v4 )
+            v18 = 1;
+          if ( (v18 & 1) == 0 )
+          {
+            v60 = v19;
+            v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+            v66 = v61;
+            v53 = 129i64;
+            while ( (__int64)v66 < v60 )
+            {
+              v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+              v62 = v66;
+              v53 = 40i64;
+              if ( v66 > 0x270F )
+              {
+                raiseIndexError2(v62, 9999i64);
+                goto LABEL_98;
+              }
+              if ( qword_146766C88[2 * v62] < v42 )
+              {
+                v53 = 42i64;
+                if ( __OFADD__(1i64, v69) )
+                  goto LABEL_77;
+                if ( v62 == v69 + 1 )
+                {
+                  v53 = 43i64;
+                  v70 = -1i64;
+                  goto LABEL_98;
+                }
+                v59 = 0i64;
+                v58 = 0i64;
+                v53 = 46i64;
+                v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+                v20 = a1[1];
+                v21 = 0;
+                v4 = __OFADD__(*a1, v20);
+                v22 = *a1 + v20;
+                if ( v4 )
+                  v21 = 1;
+                if ( (v21 & 1) == 0 )
+                {
+                  v58 = v22;
+                  v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+                  v65 = v62;
+                  v53 = 129i64;
+                  while ( v65 < v58 )
+                  {
+                    v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+                    v59 = v65;
+                    v53 = 47i64;
+                    v45 = v65 - v62;
+                    if ( __OFSUB__(v65, v62) )
+                      goto LABEL_77;
+                    v44 = v45 + v69;
+                    if ( __OFADD__(v45, v69) )
+                      goto LABEL_77;
+                    v43 = v44 + 1;
+                    if ( __OFADD__(1i64, v44) )
+                      goto LABEL_77;
+                    if ( v43 > 0x270F )
+                    {
+                      raiseIndexError2(v43, 9999i64);
+                      goto LABEL_98;
+                    }
+                    v53 = 48i64;
+                    if ( v59 > 0x270F )
+                    {
+                      raiseIndexError2(v59, 9999i64);
+                      goto LABEL_98;
+                    }
+                    v23 = 16 * v43;
+                    v24 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v59);
+                    v25 = *v24;
+                    v26 = v24[1];
+                    *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v23) = v25;
+                    *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v23 + 8) = v26;
+                    v53 = 131i64;
+                    v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+                    if ( __OFADD__(1i64, v65) )
+                      goto LABEL_77;
+                    ++v65;
+                  }
+                  v53 = 49i64;
+                  v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+                  v47 = v62 - v69;
+                  if ( !__OFSUB__(v62, v69) )
+                  {
+                    v46 = v47 - 1;
+                    if ( !__OFSUB__(v47, 1i64) )
+                    {
+                      v27 = a1[1];
+                      v28 = 0;
+                      v4 = __OFSUB__(v27, v46);
+                      v29 = v27 - v46;
+                      if ( v4 )
+                        v28 = 1;
+                      if ( (v28 & 1) == 0 )
+                      {
+                        a1[1] = v29;
+                        v53 = 50i64;
+                        v70 = -1i64;
+                        goto LABEL_98;
+                      }
+                    }
+                  }
+                }
+                goto LABEL_77;
+              }
+              v53 = 131i64;
+              v54 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+              if ( __OFADD__(1i64, v66) )
+                goto LABEL_77;
+              ++v66;
+            }
+            v53 = 52i64;
+            v54 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+            v30 = a1[1];
+            v31 = 0;
+            v4 = __OFADD__(*a1, v30);
+            v32 = *a1 + v30;
+            if ( v4 )
+              v31 = 1;
+            if ( (v31 & 1) == 0 )
+            {
+              v49 = v32 - v69;
+              if ( !__OFSUB__(v32, v69) )
+              {
+                v48 = v49 - 1;
+                if ( !__OFSUB__(v49, 1i64) )
+                {
+                  v33 = a1[1];
+                  v34 = 0;
+                  v4 = __OFSUB__(v33, v48);
+                  v35 = v33 - v48;
+                  if ( v4 )
+                    v34 = 1;
+                  if ( (v34 & 1) == 0 )
+                  {
+                    a1[1] = v35;
+                    v53 = 53i64;
+                    v70 = -1i64;
+                    goto LABEL_98;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      goto LABEL_77;
+    }
+    raiseIndexError2(v69, 9999i64);
+  }
+LABEL_98:
+  popFrame_74();
+  return v70;
+}
+
+========================================================================================
+insert_cost__modelZscores_u49 @ 0x000000014027a0e7
+CALLERS 0x000000014027aeb9 add_cost__modelZscores_u2110 | 0x000000014027af5f add_cost__modelZscores_u2110 | 0x000000014027af99 add_cost__modelZscores_u2110 | 0x000000014027afd3 add_cost__modelZscores_u2110 | 0x000000014027b00d add_cost__modelZscores_u2110 | 0x000000014027b047 add_cost__modelZscores_u2110 | 0x000000014027b07e add_cost__modelZscores_u2110 | 0x000000014027b0b5 add_cost__modelZscores_u2110 | 0x000000014027b34e import_costs__modelZscores_u2127 | 0x000000014027b857 import_costs__modelZscores_u2127 | 0x0000000140bf0808  | 0x0000000140bf0814 
+__int64 __fastcall insert_cost__modelZscores_u49(unsigned __int8 a1, __int64 *a2)
+{
+  __int64 v2; // rax
+  __int64 v3; // rdx
+  __int64 v4; // rdx
+  __int64 v5; // r8
+  __int64 *v6; // rdx
+  __int64 v7; // rax
+  __int64 v8; // rdx
+  __int64 v9; // rax
+  char v10; // dl
+  bool v11; // of
+  __int64 v12; // rax
+  __int64 v13; // rdx
+  __int64 v14; // r8
+  __int64 *v15; // rdx
+  __int64 v16; // rax
+  __int64 v17; // rdx
+  __int64 v18; // rdx
+  __int64 v19; // r8
+  void *v20; // rdx
+  __int64 v21; // rax
+  char v22; // dl
+  __int64 v23; // rax
+  __int64 v25; // [rsp+20h] [rbp-60h] BYREF
+  void *v26; // [rsp+28h] [rbp-58h]
+  __int64 v27; // [rsp+30h] [rbp-50h]
+  void *v28; // [rsp+38h] [rbp-48h]
+  __int64 v29; // [rsp+48h] [rbp-38h]
+  __int64 v30; // [rsp+50h] [rbp-30h]
+  unsigned __int64 v31; // [rsp+58h] [rbp-28h]
+  __int64 v32; // [rsp+60h] [rbp-20h]
+  unsigned __int64 v33; // [rsp+68h] [rbp-18h]
+  __int64 v34; // [rsp+70h] [rbp-10h]
+  __int64 v35; // [rsp+78h] [rbp-8h]
+  __int64 v36; // [rsp+80h] [rbp+0h]
+  __int64 v37; // [rsp+88h] [rbp+8h]
+  unsigned __int64 v38; // [rsp+90h] [rbp+10h]
+  __int64 v39; // [rsp+98h] [rbp+18h]
+  __int64 v40; // [rsp+A0h] [rbp+20h]
+  unsigned __int64 v41; // [rsp+A8h] [rbp+28h]
+  __int64 v42; // [rsp+B0h] [rbp+30h]
+  unsigned __int64 v43; // [rsp+B8h] [rbp+38h]
+  __int64 v44; // [rsp+C0h] [rbp+40h]
+  __int64 v45; // [rsp+C8h] [rbp+48h]
+  __int64 v46; // [rsp+D0h] [rbp+50h]
+  __int64 v47; // [rsp+D8h] [rbp+58h]
+  char v48[8]; // [rsp+E0h] [rbp+60h] BYREF
+  const char *v49; // [rsp+E8h] [rbp+68h]
+  __int64 v50; // [rsp+F0h] [rbp+70h]
+  const char *v51; // [rsp+F8h] [rbp+78h]
+  __int16 v52; // [rsp+100h] [rbp+80h]
+  char v53; // [rsp+116h] [rbp+96h]
+  unsigned __int8 v54; // [rsp+117h] [rbp+97h]
+  __int64 v55; // [rsp+118h] [rbp+98h]
+  __int64 v56; // [rsp+120h] [rbp+A0h]
+  unsigned __int64 v57; // [rsp+128h] [rbp+A8h]
+  char v58; // [rsp+136h] [rbp+B6h]
+  unsigned __int8 v59; // [rsp+137h] [rbp+B7h]
+  __int64 v60; // [rsp+138h] [rbp+B8h]
+  unsigned __int64 v61; // [rsp+140h] [rbp+C0h]
+  __int64 v62; // [rsp+148h] [rbp+C8h]
+  __int64 v63; // [rsp+150h] [rbp+D0h]
+  __int64 inserted; // [rsp+158h] [rbp+D8h]
+  __int64 v65; // [rsp+160h] [rbp+E0h]
+  _BYTE *v66; // [rsp+168h] [rbp+E8h]
+  __int64 v67; // [rsp+170h] [rbp+F0h]
+  __int64 v68; // [rsp+178h] [rbp+F8h]
+  __int64 v69; // [rsp+180h] [rbp+100h]
+  __int64 v70; // [rsp+188h] [rbp+108h]
+
+  v2 = *a2;
+  v3 = a2[1];
+  v27 = v2;
+  v28 = (void *)v3;
+  v49 = "insert_cost";
+  v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v50 = 0i64;
+  v52 = 0;
+  nimFrame_74(v48);
+  v66 = (_BYTE *)nimErrorFlag_72();
+  v50 = 68i64;
+  v65 = qword_1467664A8[2 * a1];
+  v50 = 69i64;
+  v25 = v27;
+  v26 = v28;
+  inserted = insert_cost__modelZscores_u13((unsigned __int64 *)&component_costs__modelZscores_u10 + 2 * a1, &v25);
+  if ( !*v66 )
+  {
+    v50 = 70i64;
+    v63 = qword_1467664A8[2 * a1];
+    v50 = 72i64;
+    if ( inserted == -1 )
+      goto LABEL_7;
+    v50 = 73i64;
+    v47 = v65 + 1;
+    if ( __OFADD__(1i64, v65) )
+    {
+LABEL_49:
+      raiseOverflow();
+      return popFrame_74();
+    }
+    if ( v63 == v47
+      || (v25 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_74,
+          v26 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_73,
+          failedAssertImpl__stdZassertions_u234(&v25),
+          !*v66) )
+    {
+LABEL_7:
+      v50 = 76i64;
+      if ( v63 >= v65 )
+      {
+        v50 = 84i64;
+        v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        if ( v65 < v63 )
+        {
+          v50 = 85i64;
+          v36 = v63 - 1;
+          if ( __OFSUB__(v63, 1i64) )
+            goto LABEL_49;
+          if ( v65 == v36
+            || (v25 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_85,
+                v26 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_84,
+                failedAssertImpl__stdZassertions_u234(&v25),
+                !*v66) )
+          {
+            v50 = 87i64;
+            if ( inserted != -1
+              || (v25 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_87,
+                  v26 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_86,
+                  failedAssertImpl__stdZassertions_u234(&v25),
+                  !*v66) )
+            {
+              v57 = 0i64;
+              v56 = 0i64;
+              v55 = 0i64;
+              v50 = 90i64;
+              v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+              v35 = component_cost_buffer_len__modelZscores_u11 - 1;
+              if ( __OFSUB__(component_cost_buffer_len__modelZscores_u11, 1i64) )
+                goto LABEL_49;
+              v56 = v35;
+              v50 = 90i64;
+              v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+              v13 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * a1);
+              v34 = v13 + inserted;
+              if ( __OFADD__(v13, inserted) )
+                goto LABEL_49;
+              v55 = v34;
+              v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+              v68 = v56;
+              v50 = 34i64;
+              while ( v55 <= v68 )
+              {
+                v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+                v57 = v68;
+                v50 = 92i64;
+                v33 = v68 + 1;
+                if ( __OFADD__(1i64, v68) )
+                  goto LABEL_49;
+                if ( v33 > 0x270F )
+                {
+                  raiseIndexError2(v33, 9999i64);
+                  return popFrame_74();
+                }
+                if ( v57 > 0x270F )
+                {
+                  raiseIndexError2(v57, 9999i64);
+                  return popFrame_74();
+                }
+                v14 = 16 * v33;
+                v15 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v57);
+                v16 = *v15;
+                v17 = v15[1];
+                *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v14) = v16;
+                *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v14 + 8) = v17;
+                v50 = 39i64;
+                v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+                v32 = v68 - 1;
+                if ( __OFSUB__(v68, 1i64) )
+                  goto LABEL_49;
+                v68 = v32;
+              }
+              v50 = 93i64;
+              v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+              v18 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * a1);
+              v38 = v18 + inserted;
+              if ( __OFADD__(v18, inserted) )
+                goto LABEL_49;
+              if ( v38 > 0x270F )
+              {
+                raiseIndexError2(v38, 9999i64);
+                return popFrame_74();
+              }
+              v19 = 16 * v38;
+              v20 = v28;
+              *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v19) = v27;
+              *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v19 + 8) = v20;
+              v50 = 94i64;
+              v37 = component_cost_buffer_len__modelZscores_u11 + 1;
+              if ( __OFADD__(1i64, component_cost_buffer_len__modelZscores_u11) )
+                goto LABEL_49;
+              component_cost_buffer_len__modelZscores_u11 = v37;
+              v54 = 0;
+              v53 = 0;
+              v50 = 95i64;
+              v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+              v31 = a1 + 1i64;
+              if ( v31 >= 0x7D )
+                goto LABEL_49;
+              v53 = v31;
+              v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+              v67 = (unsigned __int8)v31;
+              v50 = 97i64;
+              while ( v67 <= 124 )
+              {
+                v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+                v54 = v67;
+                v50 = 96i64;
+                v21 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * (unsigned __int8)v67);
+                v22 = 0;
+                v11 = __OFADD__(1i64, v21);
+                v23 = v21 + 1;
+                if ( v11 )
+                  v22 = 1;
+                v30 = v23;
+                if ( (v22 & 1) != 0 )
+                  goto LABEL_49;
+                *((_QWORD *)&component_costs__modelZscores_u10 + 2 * v54) = v30;
+                v50 = 102i64;
+                v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+                v29 = v67 + 1;
+                if ( __OFADD__(1i64, v67) )
+                  goto LABEL_49;
+                v67 = v29;
+              }
+            }
+          }
+        }
+      }
+      else
+      {
+        v50 = 77i64;
+        v46 = v65 - v63;
+        if ( __OFSUB__(v65, v63) )
+          goto LABEL_49;
+        v62 = v46;
+        v61 = 0i64;
+        v60 = 0i64;
+        v50 = 78i64;
+        v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        v4 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * a1);
+        v44 = v4 + v65;
+        if ( __OFADD__(v4, v65) )
+          goto LABEL_49;
+        v60 = v44;
+        v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+        v70 = v44;
+        v50 = 129i64;
+        while ( v70 < component_cost_buffer_len__modelZscores_u11 )
+        {
+          v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v61 = v70;
+          v50 = 80i64;
+          v43 = v70 - v62;
+          if ( __OFSUB__(v70, v62) )
+            goto LABEL_49;
+          if ( v43 > 0x270F )
+          {
+            raiseIndexError2(v43, 9999i64);
+            return popFrame_74();
+          }
+          if ( v61 > 0x270F )
+          {
+            raiseIndexError2(v61, 9999i64);
+            return popFrame_74();
+          }
+          v5 = 16 * v43;
+          v6 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v61);
+          v7 = *v6;
+          v8 = v6[1];
+          *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v5) = v7;
+          *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v5 + 8) = v8;
+          v50 = 131i64;
+          v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+          v42 = v70 + 1;
+          if ( __OFADD__(1i64, v70) )
+            goto LABEL_49;
+          v70 = v42;
+        }
+        v50 = 81i64;
+        v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        v45 = component_cost_buffer_len__modelZscores_u11 - v62;
+        if ( __OFSUB__(component_cost_buffer_len__modelZscores_u11, v62) )
+          goto LABEL_49;
+        component_cost_buffer_len__modelZscores_u11 = v45;
+        v59 = 0;
+        v58 = 0;
+        v50 = 82i64;
+        v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        v41 = a1 + 1i64;
+        if ( v41 >= 0x7D )
+          goto LABEL_49;
+        v58 = v41;
+        v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+        v69 = (unsigned __int8)v41;
+        v50 = 97i64;
+        while ( v69 <= 124 )
+        {
+          v51 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v59 = v69;
+          v50 = 83i64;
+          v9 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * (unsigned __int8)v69);
+          v10 = 0;
+          v11 = __OFSUB__(v9, v62);
+          v12 = v9 - v62;
+          if ( v11 )
+            v10 = 1;
+          v40 = v12;
+          if ( (v10 & 1) != 0 )
+            goto LABEL_49;
+          *((_QWORD *)&component_costs__modelZscores_u10 + 2 * v59) = v40;
+          v50 = 102i64;
+          v51 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+          v39 = v69 + 1;
+          if ( __OFADD__(1i64, v69) )
+            goto LABEL_49;
+          v69 = v39;
+        }
+      }
+    }
+  }
+  return popFrame_74();
+}
+
+========================================================================================
+add_cost__modelZscores_u2110 @ 0x000000014027ade8
+CALLERS 0x00000001404ca8ea game_initialize__modelZinitialize_u17 | 0x00000001405a5996 complete_level__modelZutilities_u8913 | 0x0000000140bf0820  | 0x0000000140bf082c 
+__int64 __fastcall add_cost__modelZscores_u2110(unsigned __int8 a1, __int64 *a2)
+{
+  __int64 v2; // rax
+  __int64 v3; // rdx
+  __int64 v5; // [rsp+0h] [rbp-90h] BYREF
+  __int64 v6; // [rsp+20h] [rbp-70h] BYREF
+  __int64 v7; // [rsp+28h] [rbp-68h]
+  __int64 v8; // [rsp+30h] [rbp-60h]
+  __int64 v9; // [rsp+38h] [rbp-58h]
+  const char *v10; // [rsp+48h] [rbp-48h]
+  __int64 v11; // [rsp+50h] [rbp-40h]
+  const char *v12; // [rsp+58h] [rbp-38h]
+  __int16 v13; // [rsp+60h] [rbp-30h]
+  __int64 v14; // [rsp+70h] [rbp-20h] BYREF
+  __int64 v15; // [rsp+78h] [rbp-18h]
+  _BYTE *v16; // [rsp+88h] [rbp-8h]
+
+  v2 = *a2;
+  v3 = a2[1];
+  v8 = v2;
+  v9 = v3;
+  v10 = "add_cost";
+  v12 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v11 = 0i64;
+  v13 = 0;
+  nimFrame_74(&v5 + 8);
+  v16 = (_BYTE *)nimErrorFlag_72();
+  v11 = 283i64;
+  v12 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  if ( ((TM__cWnRfAoMBYzrX9aW9aZjMzkg_47[a1 >> 3] >> (a1 & 7)) & 1) != 0 )
+  {
+    v11 = 284i64;
+  }
+  else
+  {
+    v11 = 286i64;
+    v6 = v8;
+    v7 = v9;
+    insert_cost__modelZscores_u49(a1, &v6);
+    if ( !*v16 )
+    {
+      v14 = v8;
+      v15 = v9;
+      v11 = 289i64;
+      stareq___pureZtimes_u3584_1(&v14, 8i64);
+      v11 = 291i64;
+      switch ( a1 )
+      {
+        case 4u:
+          v11 = 295i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x14u, &v6);
+          break;
+        case 7u:
+          v11 = 293i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x13u, &v6);
+          break;
+        case 9u:
+          v11 = 297i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x16u, &v6);
+          break;
+        case 0xAu:
+          v11 = 299i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x17u, &v6);
+          break;
+        case 0xBu:
+          v11 = 301i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x18u, &v6);
+          break;
+        case 0x27u:
+          v11 = 303i64;
+          v6 = v8;
+          v7 = v9;
+          insert_cost__modelZscores_u49(0x32u, &v6);
+          break;
+        case 0x37u:
+          v11 = 305i64;
+          v6 = v14;
+          v7 = v15;
+          insert_cost__modelZscores_u49(0x77u, &v6);
+          break;
+        default:
+          return popFrame_74();
+      }
+    }
+  }
+  return popFrame_74();
+}
+
+========================================================================================
+import_costs__modelZscores_u2127 @ 0x000000014027b277
+CALLERS 0x000000014027b95b import_costs__modelZscores_u2127 | 0x000000014027b988 import_costs__modelZscores_u2127 | 0x000000014027b9b5 import_costs__modelZscores_u2127 | 0x000000014027b9e2 import_costs__modelZscores_u2127 | 0x000000014027ba0f import_costs__modelZscores_u2127 | 0x000000014027ba39 import_costs__modelZscores_u2127 | 0x000000014027ba63 import_costs__modelZscores_u2127 | 0x000000014065b3cd process_network_responses__presenterZutilities_u38439 | 0x0000000140bf0844  | 0x0000000140bf0850 
+__int64 __fastcall import_costs__modelZscores_u2127(unsigned __int8 a1, __int64 *a2)
+{
+  __int64 v2; // rax
+  char v3; // dl
+  bool v4; // of
+  __int64 v5; // rax
+  __int64 v6; // r8
+  __int64 *v7; // rdx
+  __int64 v8; // rax
+  __int64 v9; // rdx
+  __int64 v10; // rax
+  char v11; // dl
+  __int64 v12; // rax
+  void *v13; // rdx
+  __int64 v15; // [rsp+0h] [rbp-80h] BYREF
+  __int64 v16; // [rsp+20h] [rbp-60h] BYREF
+  void *v17; // [rsp+28h] [rbp-58h]
+  __int64 v18; // [rsp+30h] [rbp-50h]
+  __int64 v19; // [rsp+38h] [rbp-48h]
+  unsigned __int64 v20; // [rsp+40h] [rbp-40h]
+  __int64 v21; // [rsp+48h] [rbp-38h]
+  unsigned __int64 v22; // [rsp+50h] [rbp-30h]
+  __int64 v23; // [rsp+58h] [rbp-28h]
+  const char *v24; // [rsp+68h] [rbp-18h]
+  __int64 v25; // [rsp+70h] [rbp-10h]
+  const char *v26; // [rsp+78h] [rbp-8h]
+  __int16 v27; // [rsp+80h] [rbp+0h]
+  __int64 v28; // [rsp+98h] [rbp+18h]
+  __int64 v29[3]; // [rsp+A0h] [rbp+20h] BYREF
+  __int64 v30; // [rsp+B8h] [rbp+38h]
+  __int64 v31; // [rsp+C0h] [rbp+40h]
+  __int64 v32; // [rsp+C8h] [rbp+48h]
+  __int64 *v33; // [rsp+D0h] [rbp+50h]
+  char v34; // [rsp+DEh] [rbp+5Eh]
+  unsigned __int8 v35; // [rsp+DFh] [rbp+5Fh]
+  __int64 v36; // [rsp+E0h] [rbp+60h]
+  unsigned __int64 v37; // [rsp+E8h] [rbp+68h]
+  _BYTE *v38; // [rsp+F0h] [rbp+70h]
+  __int64 v39; // [rsp+F8h] [rbp+78h]
+  __int64 v40; // [rsp+100h] [rbp+80h]
+  __int64 v41; // [rsp+108h] [rbp+88h]
+
+  v24 = "import_costs";
+  v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v25 = 0i64;
+  v27 = 0;
+  nimFrame_74(&v15 + 12);
+  v38 = (_BYTE *)nimErrorFlag_72();
+  v25 = 310i64;
+  if ( ((TM__cWnRfAoMBYzrX9aW9aZjMzkg_47[a1 >> 3] >> (a1 & 7)) & 1) != 0 )
+  {
+    v25 = 311i64;
+  }
+  else
+  {
+    v25 = 314i64;
+    nimZeroMem_54(v29, 16i64);
+    v16 = v29[0];
+    v17 = (void *)v29[1];
+    insert_cost__modelZscores_u49(a1, &v16);
+    if ( !*v38 )
+    {
+      v37 = 0i64;
+      v36 = 0i64;
+      v25 = 317i64;
+      v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      v2 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * a1);
+      v3 = 0;
+      v4 = __OFADD__(1i64, v2);
+      v5 = v2 + 1;
+      if ( v4 )
+        v3 = 1;
+      v23 = v5;
+      if ( (v3 & 1) != 0 )
+        goto LABEL_16;
+      v36 = v23;
+      v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+      v41 = v23;
+      v25 = 129i64;
+      while ( v41 < component_cost_buffer_len__modelZscores_u11 )
+      {
+        v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        v37 = v41;
+        v25 = 318i64;
+        v22 = v41 - 1;
+        if ( __OFSUB__(v41, 1i64) )
+          goto LABEL_16;
+        if ( v22 > 0x270F )
+        {
+          raiseIndexError2(v22, 9999i64);
+          return popFrame_74();
+        }
+        if ( v37 > 0x270F )
+        {
+          raiseIndexError2(v37, 9999i64);
+          return popFrame_74();
+        }
+        v6 = 16 * v22;
+        v7 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v37);
+        v8 = *v7;
+        v9 = v7[1];
+        *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v6) = v8;
+        *(_QWORD *)((char *)&component_cost_buffer__modelZscores_u12 + v6 + 8) = v9;
+        v25 = 131i64;
+        v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+        v21 = v41 + 1;
+        if ( __OFADD__(1i64, v41) )
+          goto LABEL_16;
+        v41 = v21;
+      }
+      v25 = 319i64;
+      v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      v28 = component_cost_buffer_len__modelZscores_u11 - 1;
+      if ( __OFSUB__(component_cost_buffer_len__modelZscores_u11, 1i64)
+        || (component_cost_buffer_len__modelZscores_u11 = v28,
+            v35 = 0,
+            v34 = 0,
+            v25 = 320i64,
+            v26 = "D:\\TuringComplete_Phu\\model\\scores.nim",
+            v20 = a1 + 1i64,
+            v20 >= 0x7D) )
+      {
+LABEL_16:
+        raiseOverflow();
+      }
+      else
+      {
+        v34 = v20;
+        v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+        v40 = (unsigned __int8)v20;
+        v25 = 97i64;
+        while ( v40 <= 124 )
+        {
+          v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          v35 = v40;
+          v25 = 321i64;
+          v10 = *((_QWORD *)&component_costs__modelZscores_u10 + 2 * (unsigned __int8)v40);
+          v11 = 0;
+          v4 = __OFSUB__(v10, 1i64);
+          v12 = v10 - 1;
+          if ( v4 )
+            v11 = 1;
+          v19 = v12;
+          if ( (v11 & 1) != 0 )
+            goto LABEL_16;
+          *((_QWORD *)&component_costs__modelZscores_u10 + 2 * v35) = v19;
+          v25 = 102i64;
+          v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+          v18 = v40 + 1;
+          if ( __OFADD__(1i64, v40) )
+            goto LABEL_16;
+          v40 = v18;
+        }
+        qword_1467664A8[2 * a1] = 0i64;
+        v33 = 0i64;
+        v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim";
+        v39 = 0i64;
+        v25 = 259i64;
+        v32 = *a2;
+        v31 = v32;
+        v25 = 260i64;
+        while ( v39 < v31 )
+        {
+          v25 = 324i64;
+          v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+          if ( v39 < 0 || v39 >= *a2 )
+          {
+            raiseIndexError2(v39, *a2 - 1);
+            return popFrame_74();
+          }
+          v33 = (__int64 *)(a2[1] + 16 * v39 + 8);
+          v25 = 325i64;
+          v13 = (void *)v33[1];
+          v16 = *v33;
+          v17 = v13;
+          insert_cost__modelZscores_u49(a1, &v16);
+          if ( !*v38 )
+          {
+            v25 = 326i64;
+            stareq___pureZtimes_u3584_1(v33, 8i64);
+            v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators.nim";
+            ++v39;
+            v25 = 263i64;
+            v30 = *a2;
+            if ( v30 == v31 )
+              continue;
+            v16 = TM__cWnRfAoMBYzrX9aW9aZjMzkg_108;
+            v17 = &TM__cWnRfAoMBYzrX9aW9aZjMzkg_107;
+            failedAssertImpl__stdZassertions_u234(&v16);
+            if ( !*v38 )
+              continue;
+          }
+          return popFrame_74();
+        }
+        v25 = 328i64;
+        v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+        switch ( a1 )
+        {
+          case 4u:
+            v25 = 332i64;
+            import_costs__modelZscores_u2127(20i64, a2);
+            break;
+          case 7u:
+            v25 = 330i64;
+            import_costs__modelZscores_u2127(19i64, a2);
+            break;
+          case 9u:
+            v25 = 334i64;
+            import_costs__modelZscores_u2127(22i64, a2);
+            break;
+          case 0xAu:
+            v25 = 336i64;
+            import_costs__modelZscores_u2127(23i64, a2);
+            break;
+          case 0xBu:
+            v25 = 338i64;
+            import_costs__modelZscores_u2127(24i64, a2);
+            break;
+          case 0x27u:
+            v25 = 340i64;
+            import_costs__modelZscores_u2127(50i64, a2);
+            break;
+          case 0x37u:
+            v25 = 342i64;
+            import_costs__modelZscores_u2127(119i64, a2);
+            break;
+          default:
+            return popFrame_74();
+        }
+      }
+    }
+  }
+  return popFrame_74();
+}
+
+========================================================================================
+get_all_costs__modelZscores_u2580 @ 0x000000014027bae1
+CALLERS 0x000000014077fb14 build_component_description_panel__presenterZboard95uiZbottom95panelZcomponent95description_u231 | 0x0000000140bf085c  | 0x0000000140bf0868 
+__int64 __fastcall get_all_costs__modelZscores_u2580(unsigned __int8 *a1, __int64 a2)
+{
+  __int64 v2; // rax
+  __int64 v3; // rdx
+  __int64 *v4; // rdx
+  __int64 v5; // rax
+  __int64 v6; // rdx
+  __int64 *v7; // rdx
+  __int64 v8; // rax
+  __int64 v9; // rdx
+  __int64 v11; // [rsp+20h] [rbp-60h] BYREF
+  __int64 v12; // [rsp+28h] [rbp-58h]
+  __int64 v13; // [rsp+30h] [rbp-50h] BYREF
+  __int64 v14; // [rsp+38h] [rbp-48h]
+  unsigned __int64 v15; // [rsp+48h] [rbp-38h]
+  __int64 v16[2]; // [rsp+50h] [rbp-30h] BYREF
+  __int64 v17; // [rsp+60h] [rbp-20h]
+  __int64 v18; // [rsp+68h] [rbp-18h]
+  __int64 v19; // [rsp+70h] [rbp-10h]
+  __int64 v20[2]; // [rsp+80h] [rbp+0h] BYREF
+  __int64 v21[3]; // [rsp+90h] [rbp+10h] BYREF
+  __int64 v22; // [rsp+A8h] [rbp+28h]
+  char v23[8]; // [rsp+B0h] [rbp+30h] BYREF
+  const char *v24; // [rsp+B8h] [rbp+38h]
+  __int64 v25; // [rsp+C0h] [rbp+40h]
+  const char *v26; // [rsp+C8h] [rbp+48h]
+  __int16 v27; // [rsp+D0h] [rbp+50h]
+  unsigned __int64 v28; // [rsp+E0h] [rbp+60h]
+  __int64 v29; // [rsp+E8h] [rbp+68h]
+  char v30[480]; // [rsp+F0h] [rbp+70h] BYREF
+  __int64 v31; // [rsp+2D0h] [rbp+250h]
+  __int64 v32; // [rsp+2D8h] [rbp+258h]
+  __int64 v33; // [rsp+2E0h] [rbp+260h]
+  __int64 v34; // [rsp+320h] [rbp+2A0h]
+  unsigned __int64 v35; // [rsp+328h] [rbp+2A8h]
+  _BYTE *v36; // [rsp+330h] [rbp+2B0h]
+  unsigned __int64 v37; // [rsp+338h] [rbp+2B8h]
+
+  v24 = "get_all_costs";
+  v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v25 = 0i64;
+  v27 = 0;
+  nimFrame_74(v23);
+  v36 = (_BYTE *)nimErrorFlag_72();
+  nimZeroMem_54(a2, 32i64);
+  nimZeroMem_54(v30, 560i64);
+  v25 = 604i64;
+  v2 = 16i64 * *a1;
+  v3 = *(_QWORD *)((char *)&component_costs__modelZscores_u10 + v2 + 8);
+  v28 = *(_QWORD *)((char *)&component_costs__modelZscores_u10 + v2);
+  v29 = v3;
+  v25 = 34i64;
+  v26 = "D:\\TuringComplete_Phu\\model\\save_monger\\versions\\v0.nim";
+  eqcopy___modelZsave95mongerZversionsZv0_u148(v30, a1);
+  v35 = 0i64;
+  v34 = 0i64;
+  v25 = 606i64;
+  v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+  v22 = v28 + v29;
+  if ( __OFADD__(v28, v29) )
+  {
+    raiseOverflow();
+  }
+  else
+  {
+    v34 = v22;
+    v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+    v37 = v28;
+    v25 = 129i64;
+    while ( (__int64)v37 < v34 )
+    {
+      nimZeroMem_54(v21, 16i64);
+      nimZeroMem_54(v20, 16i64);
+      v35 = v37;
+      LOBYTE(v17) = 2;
+      v25 = 38i64;
+      v26 = "D:\\TuringComplete_Phu\\model\\save_monger\\versions\\v14.nim";
+      if ( v37 > 0x270F )
+        goto LABEL_6;
+      v4 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v35);
+      v5 = *v4;
+      v6 = v4[1];
+      v11 = v5;
+      v12 = v6;
+      eqdup___modelZsave95mongerZversionsZv14_u295(&v13, &v11);
+      v21[0] = v13;
+      v21[1] = v14;
+      v18 = v13;
+      v19 = v14;
+      v31 = v17;
+      v32 = v13;
+      v33 = v14;
+      v25 = 38i64;
+      v26 = "D:\\TuringComplete_Phu\\model\\save_monger\\versions\\v14.nim";
+      if ( v35 > 0x270F )
+      {
+LABEL_6:
+        raiseIndexError2(v35, 9999i64);
+        break;
+      }
+      v7 = (__int64 *)((char *)&component_cost_buffer__modelZscores_u12 + 16 * v35);
+      v8 = *v7;
+      v9 = v7[1];
+      v11 = v8;
+      v12 = v9;
+      eqdup___modelZsave95mongerZversionsZv14_u295(&v13, &v11);
+      v20[0] = v13;
+      v20[1] = v14;
+      v25 = 609i64;
+      v26 = "D:\\TuringComplete_Phu\\model\\scores.nim";
+      add__modelZscores_u2592(a2, &v13);
+      v25 = 610i64;
+      get_cost__modelZscores_u2321(v16, (__int64)v30);
+      if ( *v36 )
+        break;
+      v13 = v16[0];
+      v14 = v16[1];
+      add__modelZscores_u2592(a2 + 16, &v13);
+      v25 = 131i64;
+      v26 = "C:\\Users\\Admin\\.choosenim\\toolchains\\nim-2.2.6\\lib\\system\\iterators_1.nim";
+      v15 = v37 + 1;
+      if ( __OFADD__(1i64, v37) )
+      {
+        raiseOverflow();
+        break;
+      }
+      v37 = v15;
+    }
+  }
+  v25 = 34i64;
+  v26 = "D:\\TuringComplete_Phu\\model\\save_monger\\versions\\v0.nim";
+  eqdestroy___modelZsave95mongerZversionsZv0_u145(v30);
+  return popFrame_74();
+}
+

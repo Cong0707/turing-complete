@@ -1,0 +1,50 @@
+{
+  "schema": "turing-complete-byte-adder-hub88-static-audit-v1",
+  "source": ".research/byte_adder_public/hub-88/main/circuit.data",
+  "source_sha256": "f32c55f157ff00043b35c82511d2a6e5fc5831bd49f3fa1db5804ee9228206e1",
+  "serialized_score": {
+    "gate": 56,
+    "delay": 18,
+    "energy": 1008
+  },
+  "component_count": 64,
+  "wire_count": 226,
+  "component_kind_counts": {
+    "4": 16,
+    "7": 8,
+    "9": 32,
+    "16": 1,
+    "17": 2,
+    "79": 3,
+    "81": 2
+  },
+  "reviewed_gate_cost_breakdown": {
+    "and": 16,
+    "or": 8,
+    "nor": 32
+  },
+  "ripple_slice_average": {
+    "bit_count": 8,
+    "gate_per_bit": 7,
+    "and_per_bit": 2,
+    "or_per_bit": 1,
+    "nor_per_bit": 4
+  },
+  "input_schema": {
+    "A": 8,
+    "B": 8,
+    "Cin": 1
+  },
+  "vectors_checked": 131072,
+  "truth": {
+    "sum_equals_low8_A_plus_B_plus_Cin": true,
+    "cout_equals_bit8_A_plus_B_plus_Cin": true
+  },
+  "output_depths": {
+    "sum_word": 18,
+    "cout": 18
+  },
+  "packed_conflict_cases": 0,
+  "custom_dependency_count": 0,
+  "author_note": "Hub list attributes item 88 to SYSTEM-PSD, not FermiEnergy."
+}

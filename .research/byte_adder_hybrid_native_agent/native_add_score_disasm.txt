@@ -1,0 +1,949 @@
+LOOKUP get_gate_cost__modelZscores_u2232 = 0x140275f1b
+FUNCTION get_gate_cost__modelZscores_u2232 0x140275f1b..0x140276993
+0x0000000140275f1b: push    rbp
+0x0000000140275f1c: sub     rsp, 170h
+0x0000000140275f23: lea     rbp, [rsp+80h]
+0x0000000140275f2b: mov     eax, ecx
+0x0000000140275f2d: mov     [rbp+0F0h+arg_8], rdx
+0x0000000140275f34: mov     [rbp+0F0h+arg_10], r8
+0x0000000140275f3b: mov     [rbp+0F0h+arg_0], al
+0x0000000140275f41: lea     rax, aGetGateCost; "get_gate_cost"
+0x0000000140275f48: mov     [rbp+0F0h+var_E8], rax
+0x0000000140275f4c: lea     rax, aDTuringcomplet_145; "D:\\TuringComplete_Phu\\model\\scores.n"...
+0x0000000140275f53: mov     [rbp+0F0h+var_D8], rax
+0x0000000140275f57: mov     [rbp+0F0h+var_E0], 0
+0x0000000140275f5f: mov     [rbp+0F0h+var_D0], 0
+0x0000000140275f65: mov     rax, rbp
+0x0000000140275f68: mov     rcx, rax
+0x0000000140275f6b: call    nimFrame_74
+0x0000000140275f70: call    nimErrorFlag_72
+0x0000000140275f75: mov     [rbp+0F0h+var_18], rax
+0x0000000140275f7c: mov     [rbp+0F0h+var_8], 0
+0x0000000140275f87: mov     [rbp+0F0h+var_E0], 179h
+0x0000000140275f8f: mov     rax, [rbp+0F0h+arg_8]
+0x0000000140275f96: mov     [rbp+0F0h+var_B8], rax
+0x0000000140275f9a: mov     [rbp+0F0h+var_E0], 17Ah
+0x0000000140275fa2: mov     [rbp+0F0h+var_19], 0
+0x0000000140275fa9: mov     rdx, cs:_refptr_AUTO_SIZE__modelZmodel95types_u54
+0x0000000140275fb0: mov     rax, [rbp+0F0h+arg_8]
+0x0000000140275fb7: mov     rdx, [rdx]
+0x0000000140275fba: mov     rcx, rax
+0x0000000140275fbd: call    eqeq___modelZmodel95types_u853
+0x0000000140275fc2: mov     [rbp+0F0h+var_19], al
+0x0000000140275fc8: movzx   eax, [rbp+0F0h+var_19]
+0x0000000140275fcf: xor     eax, 1
+0x0000000140275fd2: test    al, al
+0x0000000140275fd4: jnz     short loc_140276003
+0x0000000140275fd6: mov     [rbp+0F0h+var_E0], 17Bh
+0x0000000140275fde: mov     ecx, 8
+0x0000000140275fe3: call    bits__modelZsave95mongerZcommon_u192
+0x0000000140275fe8: mov     [rbp+0F0h+var_B8], rax
+0x0000000140275fec: mov     rax, [rbp+0F0h+var_18]
+0x0000000140275ff3: movzx   eax, byte ptr [rax]
+0x0000000140275ff6: movzx   eax, al
+0x0000000140275ff9: test    eax, eax
+0x0000000140275ffb: jnz     loc_140276977
+0x0000000140276001: jmp     short loc_140276004
+0x0000000140276003: nop
+0x0000000140276004: mov     [rbp+0F0h+var_E0], 17Dh
+0x000000014027600c: cmp     [rbp+0F0h+arg_0], 11h
+0x0000000140276013: jbe     short loc_140276093
+0x0000000140276015: cmp     [rbp+0F0h+arg_0], 27h ; '''
+0x000000014027601c: jbe     short loc_140276027
+0x000000014027601e: cmp     [rbp+0F0h+arg_0], 29h ; ')'
+0x0000000140276025: jbe     short loc_140276093
+0x0000000140276027: cmp     [rbp+0F0h+arg_0], 2Ah ; '*'
+0x000000014027602e: jbe     short loc_140276039
+0x0000000140276030: cmp     [rbp+0F0h+arg_0], 30h ; '0'
+0x0000000140276037: jbe     short loc_140276093
+0x0000000140276039: cmp     [rbp+0F0h+arg_0], 32h ; '2'
+0x0000000140276040: jbe     short loc_14027604B
+0x0000000140276042: cmp     [rbp+0F0h+arg_0], 35h ; '5'
+0x0000000140276049: jbe     short loc_140276093
+0x000000014027604b: cmp     [rbp+0F0h+arg_0], 39h ; '9'
+0x0000000140276052: jbe     short loc_14027605D
+0x0000000140276054: cmp     [rbp+0F0h+arg_0], 67h ; 'g'
+0x000000014027605b: jbe     short loc_140276093
+0x000000014027605d: cmp     [rbp+0F0h+arg_0], 68h ; 'h'
+0x0000000140276064: jbe     short loc_14027606F
+0x0000000140276066: cmp     [rbp+0F0h+arg_0], 6Bh ; 'k'
+0x000000014027606d: jbe     short loc_140276093
+0x000000014027606f: cmp     [rbp+0F0h+arg_0], 6Ch ; 'l'
+0x0000000140276076: jbe     short loc_140276081
+0x0000000140276078: cmp     [rbp+0F0h+arg_0], 75h ; 'u'
+0x000000014027607f: jbe     short loc_140276093
+0x0000000140276081: cmp     [rbp+0F0h+arg_0], 77h ; 'w'
+0x0000000140276088: jbe     short loc_1402760BE
+0x000000014027608a: cmp     [rbp+0F0h+arg_0], 7Ch ; '|'
+0x0000000140276091: ja      short loc_1402760BE
+0x0000000140276093: mov     [rbp+0F0h+var_E0], 17Eh
+0x000000014027609b: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402760a3: mov     [rbp+0F0h+var_E0], 17Eh
+0x00000001402760ab: mov     rax, [rbp+0F0h+arg_10]
+0x00000001402760b2: mov     [rbp+0F0h+var_8], rax
+0x00000001402760b9: jmp     loc_14027697E
+0x00000001402760be: nop
+0x00000001402760bf: mov     [rbp+0F0h+var_E0], 180h
+0x00000001402760c7: movzx   eax, [rbp+0F0h+arg_0]
+0x00000001402760ce: sub     eax, 12h; switch 102 cases
+0x00000001402760d1: cmp     eax, 65h
+0x00000001402760d4: ja      def_1402760FA; jumptable 00000001402760FA default case, cases 40,41,43-48,51-53,58-103,105-107,109-117
+0x00000001402760da: mov     eax, eax
+0x00000001402760dc: lea     rdx, ds:0[rax*4]
+0x00000001402760e4: lea     rax, jpt_1402760FA
+0x00000001402760eb: mov     eax, ds:(jpt_1402760FA - 140A093D8h)[rdx+rax]
+0x00000001402760ee: cdqe
+0x00000001402760f0: lea     rdx, jpt_1402760FA
+0x00000001402760f7: add     rax, rdx
+0x00000001402760fa: jmp     rax; switch jump
+0x00000001402760fc: mov     [rbp+0F0h+var_E0], 184h; jumptable 00000001402760FA cases 18-24,26,39,42,50
+0x0000000140276104: mov     rax, [rbp+0F0h+arg_10]
+0x000000014027610b: cqo
+0x000000014027610d: shr     rdx, 3Dh
+0x0000000140276111: add     rax, rdx
+0x0000000140276114: and     eax, 7
+0x0000000140276117: sub     rax, rdx
+0x000000014027611a: cmp     rax, 3
+0x000000014027611e: jg      loc_1402761E3
+0x0000000140276124: mov     [rbp+0F0h+var_E0], 185h
+0x000000014027612c: mov     [rbp+0F0h+var_E0], 176h
+0x0000000140276134: mov     [rbp+0F0h+var_E0], 185h
+0x000000014027613c: mov     rax, [rbp+0F0h+arg_10]
+0x0000000140276143: lea     rdx, [rax+7]
+0x0000000140276147: test    rax, rax
+0x000000014027614a: cmovs   rax, rdx
+0x000000014027614e: sar     rax, 3
+0x0000000140276152: mov     rdx, rax
+0x0000000140276155: mov     rax, [rbp+0F0h+var_B8]
+0x0000000140276159: mov     ecx, 0
+0x000000014027615e: imul    rax, rdx
+0x0000000140276162: jno     short loc_140276169
+0x0000000140276164: mov     ecx, 1
+0x0000000140276169: mov     rdx, rax
+0x000000014027616c: lea     rax, [rbp+0F0h+var_F8]
+0x0000000140276170: mov     [rax], rdx
+0x0000000140276173: mov     rax, rcx
+0x0000000140276176: and     eax, 1
+0x0000000140276179: test    al, al
+0x000000014027617b: jz      short loc_140276187
+0x000000014027617d: call    raiseOverflow
+0x0000000140276182: jmp     loc_14027697E
+0x0000000140276187: mov     rdx, [rbp+0F0h+var_F8]
+0x000000014027618b: mov     rax, [rbp+0F0h+arg_10]
+0x0000000140276192: mov     rcx, rax
+0x0000000140276195: sar     rcx, 3Fh
+0x0000000140276199: shr     rcx, 3Dh
+0x000000014027619d: add     rax, rcx
+0x00000001402761a0: and     eax, 7
+0x00000001402761a3: sub     rax, rcx
+0x00000001402761a6: mov     ecx, 0
+0x00000001402761ab: add     rax, rdx
+0x00000001402761ae: jno     short loc_1402761B5
+0x00000001402761b0: mov     ecx, 1
+0x00000001402761b5: mov     rdx, rax
+0x00000001402761b8: lea     rax, [rbp+0F0h+var_100]
+0x00000001402761bc: mov     [rax], rdx
+0x00000001402761bf: mov     rax, rcx
+0x00000001402761c2: and     eax, 1
+0x00000001402761c5: test    al, al
+0x00000001402761c7: jz      short loc_1402761D3
+0x00000001402761c9: call    raiseOverflow
+0x00000001402761ce: jmp     loc_14027697E
+0x00000001402761d3: mov     rax, [rbp+0F0h+var_100]
+0x00000001402761d7: mov     [rbp+0F0h+var_8], rax
+0x00000001402761de: jmp     loc_14027697E
+0x00000001402761e3: nop
+0x00000001402761e4: mov     [rbp+0F0h+var_E0], 187h
+0x00000001402761ec: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402761f4: mov     [rbp+0F0h+var_E0], 187h
+0x00000001402761fc: mov     rax, [rbp+0F0h+arg_10]
+0x0000000140276203: lea     rdx, [rax+7]
+0x0000000140276207: test    rax, rax
+0x000000014027620a: cmovs   rax, rdx
+0x000000014027620e: sar     rax, 3
+0x0000000140276212: mov     edx, 0
+0x0000000140276217: add     rax, 1
+0x000000014027621b: jno     short loc_140276222
+0x000000014027621d: mov     edx, 1
+0x0000000140276222: mov     rcx, rax
+0x0000000140276225: lea     rax, [rbp+0F0h+var_108]
+0x0000000140276229: mov     [rax], rcx
+0x000000014027622c: mov     rax, rdx
+0x000000014027622f: and     eax, 1
+0x0000000140276232: test    al, al
+0x0000000140276234: jz      short loc_140276240
+0x0000000140276236: call    raiseOverflow
+0x000000014027623b: jmp     loc_14027697E
+0x0000000140276240: mov     rdx, [rbp+0F0h+var_108]
+0x0000000140276244: mov     rax, [rbp+0F0h+var_B8]
+0x0000000140276248: mov     ecx, 0
+0x000000014027624d: imul    rax, rdx
+0x0000000140276251: jno     short loc_140276258
+0x0000000140276253: mov     ecx, 1
+0x0000000140276258: mov     rdx, rax
+0x000000014027625b: lea     rax, [rbp+0F0h+var_110]
+0x000000014027625f: mov     [rax], rdx
+0x0000000140276262: mov     rax, rcx
+0x0000000140276265: and     eax, 1
+0x0000000140276268: test    al, al
+0x000000014027626a: jz      short loc_140276276
+0x000000014027626c: call    raiseOverflow
+0x0000000140276271: jmp     loc_14027697E
+0x0000000140276276: mov     rax, [rbp+0F0h+arg_10]
+0x000000014027627d: cqo
+0x000000014027627f: shr     rdx, 3Dh
+0x0000000140276283: add     rax, rdx
+0x0000000140276286: and     eax, 7
+0x0000000140276289: sub     rax, rdx
+0x000000014027628c: mov     edx, 0
+0x0000000140276291: sub     rax, 8
+0x0000000140276295: jno     short loc_14027629C
+0x0000000140276297: mov     edx, 1
+0x000000014027629c: mov     rcx, rax
+0x000000014027629f: lea     rax, [rbp+0F0h+var_118]
+0x00000001402762a3: mov     [rax], rcx
+0x00000001402762a6: mov     rax, rdx
+0x00000001402762a9: and     eax, 1
+0x00000001402762ac: test    al, al
+0x00000001402762ae: jz      short loc_1402762BA
+0x00000001402762b0: call    raiseOverflow
+0x00000001402762b5: jmp     loc_14027697E
+0x00000001402762ba: mov     rdx, [rbp+0F0h+var_110]
+0x00000001402762be: mov     rax, [rbp+0F0h+var_118]
+0x00000001402762c2: mov     ecx, 0
+0x00000001402762c7: add     rax, rdx
+0x00000001402762ca: jno     short loc_1402762D1
+0x00000001402762cc: mov     ecx, 1
+0x00000001402762d1: mov     rdx, rax
+0x00000001402762d4: lea     rax, [rbp+0F0h+var_120]
+0x00000001402762d8: mov     [rax], rdx
+0x00000001402762db: mov     rax, rcx
+0x00000001402762de: and     eax, 1
+0x00000001402762e1: test    al, al
+0x00000001402762e3: jz      short loc_1402762EF
+0x00000001402762e5: call    raiseOverflow
+0x00000001402762ea: jmp     loc_14027697E
+0x00000001402762ef: mov     rax, [rbp+0F0h+var_120]
+0x00000001402762f3: mov     [rbp+0F0h+var_8], rax
+0x00000001402762fa: jmp     loc_14027697E
+0x00000001402762ff: mov     [rbp+0F0h+var_E0], 18Ah; jumptable 00000001402760FA cases 30,49,57
+0x0000000140276307: pxor    xmm0, xmm0
+0x000000014027630b: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x0000000140276314: movsd   xmm1, cs:qword_140A09910
+0x000000014027631c: divsd   xmm0, xmm1
+0x0000000140276320: movsd   [rbp+0F0h+var_90], xmm0
+0x0000000140276325: mov     [rbp+0F0h+var_E0], 18Bh
+0x000000014027632d: mov     [rbp+0F0h+var_E0], 176h
+0x0000000140276335: mov     [rbp+0F0h+var_E0], 18Bh
+0x000000014027633d: pxor    xmm0, xmm0
+0x0000000140276341: movsd   [rbp+0F0h+var_98], xmm0
+0x0000000140276346: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027634a: pxor    xmm0, xmm0
+0x000000014027634e: cvtsi2sd xmm0, rax
+0x0000000140276353: mulsd   xmm0, [rbp+0F0h+var_90]
+0x0000000140276358: movq    rax, xmm0
+0x000000014027635d: movq    xmm0, rax; X
+0x0000000140276362: call    ceil
+0x0000000140276367: movq    rax, xmm0
+0x000000014027636c: mov     [rbp+0F0h+var_98], rax
+0x0000000140276370: movsd   xmm0, [rbp+0F0h+var_98]
+0x0000000140276375: cvttsd2si rax, xmm0
+0x000000014027637a: mov     [rbp+0F0h+var_8], rax
+0x0000000140276381: jmp     loc_14027697E
+0x0000000140276386: pxor    xmm0, xmm0; jumptable 00000001402760FA cases 27-29,38,104
+0x000000014027638a: movsd   [rbp+0F0h+var_A0], xmm0
+0x000000014027638f: pxor    xmm0, xmm0
+0x0000000140276393: movsd   [rbp+0F0h+var_A8], xmm0
+0x0000000140276398: mov     [rbp+0F0h+var_E0], 18Eh
+0x00000001402763a0: mov     [rbp+0F0h+var_E0], 18Fh
+0x00000001402763a8: mov     rax, [rbp+0F0h+var_B8]
+0x00000001402763ac: cmp     rax, 8
+0x00000001402763b0: jle     short loc_1402763E7
+0x00000001402763b2: mov     [rbp+0F0h+var_E0], 190h
+0x00000001402763ba: pxor    xmm0, xmm0
+0x00000001402763be: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402763c7: movsd   xmm1, cs:qword_140A09918
+0x00000001402763cf: divsd   xmm0, xmm1
+0x00000001402763d3: movsd   [rbp+0F0h+var_A0], xmm0
+0x00000001402763d8: movsd   xmm0, [rbp+0F0h+var_A0]
+0x00000001402763dd: movsd   [rbp+0F0h+var_10], xmm0
+0x00000001402763e5: jmp     short loc_14027641B
+0x00000001402763e7: nop
+0x00000001402763e8: mov     [rbp+0F0h+var_E0], 192h
+0x00000001402763f0: pxor    xmm0, xmm0
+0x00000001402763f4: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402763fd: movsd   xmm1, cs:qword_140A09910
+0x0000000140276405: divsd   xmm0, xmm1
+0x0000000140276409: movsd   [rbp+0F0h+var_A8], xmm0
+0x000000014027640e: movsd   xmm0, [rbp+0F0h+var_A8]
+0x0000000140276413: movsd   [rbp+0F0h+var_10], xmm0
+0x000000014027641b: mov     [rbp+0F0h+var_E0], 193h
+0x0000000140276423: mov     [rbp+0F0h+var_E0], 176h
+0x000000014027642b: mov     [rbp+0F0h+var_E0], 193h
+0x0000000140276433: pxor    xmm0, xmm0
+0x0000000140276437: movsd   [rbp+0F0h+var_B0], xmm0
+0x000000014027643c: mov     rax, [rbp+0F0h+var_B8]
+0x0000000140276440: pxor    xmm0, xmm0
+0x0000000140276444: cvtsi2sd xmm0, rax
+0x0000000140276449: movsd   xmm1, cs:qword_140A09910
+0x0000000140276451: subsd   xmm0, xmm1
+0x0000000140276455: mulsd   xmm0, [rbp+0F0h+var_10]
+0x000000014027645d: movq    rax, xmm0
+0x0000000140276462: movq    xmm0, rax; X
+0x0000000140276467: call    ceil
+0x000000014027646c: movq    rax, xmm0
+0x0000000140276471: mov     [rbp+0F0h+var_B0], rax
+0x0000000140276475: movsd   xmm0, [rbp+0F0h+var_B0]
+0x000000014027647a: cvttsd2si rdx, xmm0
+0x000000014027647f: mov     ecx, 0
+0x0000000140276484: mov     rax, [rbp+0F0h+arg_10]
+0x000000014027648b: add     rax, rdx
+0x000000014027648e: jno     short loc_140276495
+0x0000000140276490: mov     ecx, 1
+0x0000000140276495: mov     rdx, rax
+0x0000000140276498: lea     rax, [rbp+0F0h+var_128]
+0x000000014027649c: mov     [rax], rdx
+0x000000014027649f: mov     rax, rcx
+0x00000001402764a2: and     eax, 1
+0x00000001402764a5: test    al, al
+0x00000001402764a7: jz      short loc_1402764B3
+0x00000001402764a9: call    raiseOverflow
+0x00000001402764ae: jmp     loc_14027697E
+0x00000001402764b3: mov     rax, [rbp+0F0h+var_128]
+0x00000001402764b7: mov     [rbp+0F0h+var_8], rax
+0x00000001402764be: jmp     loc_14027697E
+0x00000001402764c3: mov     [rbp+0F0h+var_E0], 195h; jumptable 00000001402760FA case 25
+0x00000001402764cb: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402764d3: mov     [rbp+0F0h+var_E0], 195h
+0x00000001402764db: mov     rax, [rbp+0F0h+var_B8]
+0x00000001402764df: mov     ecx, 0
+0x00000001402764e4: mov     edx, 2
+0x00000001402764e9: imul    rax, rdx
+0x00000001402764ed: jno     short loc_1402764F4
+0x00000001402764ef: mov     ecx, 1
+0x00000001402764f4: mov     rdx, rax
+0x00000001402764f7: lea     rax, [rbp+0F0h+var_130]
+0x00000001402764fb: mov     [rax], rdx
+0x00000001402764fe: mov     rax, rcx
+0x0000000140276501: and     eax, 1
+0x0000000140276504: test    al, al
+0x0000000140276506: jz      short loc_140276512
+0x0000000140276508: call    raiseOverflow
+0x000000014027650d: jmp     loc_14027697E
+0x0000000140276512: mov     rax, [rbp+0F0h+var_130]
+0x0000000140276516: mov     [rbp+0F0h+var_8], rax
+0x000000014027651d: jmp     loc_14027697E
+0x0000000140276522: mov     [rbp+0F0h+var_E0], 197h; jumptable 00000001402760FA cases 55,119
+0x000000014027652a: mov     [rbp+0F0h+var_E0], 176h
+0x0000000140276532: mov     [rbp+0F0h+var_E0], 197h
+0x000000014027653a: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027653e: mov     ecx, 0
+0x0000000140276543: mov     edx, 5
+0x0000000140276548: imul    rax, rdx
+0x000000014027654c: jno     short loc_140276553
+0x000000014027654e: mov     ecx, 1
+0x0000000140276553: mov     rdx, rax
+0x0000000140276556: lea     rax, [rbp+0F0h+var_138]
+0x000000014027655a: mov     [rax], rdx
+0x000000014027655d: mov     rax, rcx
+0x0000000140276560: and     eax, 1
+0x0000000140276563: test    al, al
+0x0000000140276565: jz      short loc_140276571
+0x0000000140276567: call    raiseOverflow
+0x000000014027656c: jmp     loc_14027697E
+0x0000000140276571: mov     rax, [rbp+0F0h+var_138]
+0x0000000140276575: mov     [rbp+0F0h+var_8], rax
+0x000000014027657c: jmp     loc_14027697E
+0x0000000140276581: mov     [rbp+0F0h+var_E0], 19Ah; jumptable 00000001402760FA cases 33-37
+0x0000000140276589: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027658d: cmp     rax, 8
+0x0000000140276591: jle     loc_140276691
+0x0000000140276597: mov     [rbp+0F0h+var_E0], 19Bh
+0x000000014027659f: pxor    xmm0, xmm0
+0x00000001402765a3: movsd   [rbp+0F0h+var_28], xmm0
+0x00000001402765ab: mov     rax, [rbp+0F0h+var_B8]
+0x00000001402765af: pxor    xmm2, xmm2
+0x00000001402765b3: cvtsi2sd xmm2, rax
+0x00000001402765b8: movq    rax, xmm2
+0x00000001402765bd: movq    xmm0, rax; X
+0x00000001402765c2: call    log2
+0x00000001402765c7: movq    rax, xmm0
+0x00000001402765cc: mov     [rbp+0F0h+var_28], rax
+0x00000001402765d3: mov     rax, [rbp+0F0h+var_B8]
+0x00000001402765d7: pxor    xmm0, xmm0
+0x00000001402765db: cvtsi2sd xmm0, rax
+0x00000001402765e0: movsd   xmm1, [rbp+0F0h+var_28]
+0x00000001402765e8: mulsd   xmm0, xmm1
+0x00000001402765ec: movsd   [rbp+0F0h+var_30], xmm0
+0x00000001402765f4: mov     [rbp+0F0h+var_E0], 19Ch
+0x00000001402765fc: pxor    xmm0, xmm0
+0x0000000140276600: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x0000000140276609: movsd   xmm1, cs:qword_140A09920
+0x0000000140276611: divsd   xmm0, xmm1
+0x0000000140276615: movsd   [rbp+0F0h+var_38], xmm0
+0x000000014027661d: mov     [rbp+0F0h+var_E0], 19Dh
+0x0000000140276625: mov     [rbp+0F0h+var_E0], 176h
+0x000000014027662d: mov     [rbp+0F0h+var_E0], 19Dh
+0x0000000140276635: pxor    xmm0, xmm0
+0x0000000140276639: movsd   [rbp+0F0h+var_40], xmm0
+0x0000000140276641: movsd   xmm0, [rbp+0F0h+var_38]
+0x0000000140276649: mulsd   xmm0, [rbp+0F0h+var_30]
+0x0000000140276651: movq    rax, xmm0
+0x0000000140276656: movq    xmm0, rax; X
+0x000000014027665b: call    ceil
+0x0000000140276660: movq    rax, xmm0
+0x0000000140276665: mov     [rbp+0F0h+var_40], rax
+0x000000014027666c: movsd   xmm0, [rbp+0F0h+var_40]
+0x0000000140276674: cvttsd2si rax, xmm0
+0x0000000140276679: mov     edx, 0
+0x000000014027667e: test    rax, rax
+0x0000000140276681: cmovs   rax, rdx
+0x0000000140276685: mov     [rbp+0F0h+var_8], rax
+0x000000014027668c: jmp     loc_14027697E
+0x0000000140276691: nop
+0x0000000140276692: mov     [rbp+0F0h+var_E0], 19Fh
+0x000000014027669a: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027669e: pxor    xmm0, xmm0
+0x00000001402766a2: cvtsi2sd xmm0, rax
+0x00000001402766a7: movsd   [rbp+0F0h+var_48], xmm0
+0x00000001402766af: mov     [rbp+0F0h+var_E0], 1A0h
+0x00000001402766b7: pxor    xmm0, xmm0
+0x00000001402766bb: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402766c4: movsd   xmm1, cs:qword_140A09910
+0x00000001402766cc: divsd   xmm0, xmm1
+0x00000001402766d0: movsd   [rbp+0F0h+var_50], xmm0
+0x00000001402766d8: mov     [rbp+0F0h+var_E0], 1A1h
+0x00000001402766e0: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402766e8: mov     [rbp+0F0h+var_E0], 1A1h
+0x00000001402766f0: pxor    xmm0, xmm0
+0x00000001402766f4: movsd   [rbp+0F0h+var_58], xmm0
+0x00000001402766fc: movsd   xmm0, [rbp+0F0h+var_50]
+0x0000000140276704: mulsd   xmm0, [rbp+0F0h+var_48]
+0x000000014027670c: movq    rax, xmm0
+0x0000000140276711: movq    xmm0, rax; X
+0x0000000140276716: call    ceil
+0x000000014027671b: movq    rax, xmm0
+0x0000000140276720: mov     [rbp+0F0h+var_58], rax
+0x0000000140276727: movsd   xmm0, [rbp+0F0h+var_58]
+0x000000014027672f: cvttsd2si rax, xmm0
+0x0000000140276734: mov     edx, 0
+0x0000000140276739: test    rax, rax
+0x000000014027673c: cmovs   rax, rdx
+0x0000000140276740: mov     [rbp+0F0h+var_8], rax
+0x0000000140276747: jmp     loc_14027697E
+0x000000014027674c: mov     [rbp+0F0h+var_E0], 1A4h; jumptable 00000001402760FA cases 31,32,108
+0x0000000140276754: mov     rax, [rbp+0F0h+var_B8]
+0x0000000140276758: cmp     rax, 8
+0x000000014027675c: jle     loc_14027682D
+0x0000000140276762: mov     [rbp+0F0h+var_E0], 1A5h
+0x000000014027676a: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027676e: pxor    xmm1, xmm1
+0x0000000140276772: cvtsi2sd xmm1, rax
+0x0000000140276777: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027677b: pxor    xmm0, xmm0
+0x000000014027677f: cvtsi2sd xmm0, rax
+0x0000000140276784: mulsd   xmm0, xmm1
+0x0000000140276788: movsd   [rbp+0F0h+var_60], xmm0
+0x0000000140276790: mov     [rbp+0F0h+var_E0], 1A6h
+0x0000000140276798: pxor    xmm0, xmm0
+0x000000014027679c: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402767a5: movsd   xmm1, cs:qword_140A09928
+0x00000001402767ad: divsd   xmm0, xmm1
+0x00000001402767b1: movsd   [rbp+0F0h+var_68], xmm0
+0x00000001402767b9: mov     [rbp+0F0h+var_E0], 1A7h
+0x00000001402767c1: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402767c9: mov     [rbp+0F0h+var_E0], 1A7h
+0x00000001402767d1: pxor    xmm0, xmm0
+0x00000001402767d5: movsd   [rbp+0F0h+var_70], xmm0
+0x00000001402767dd: movsd   xmm0, [rbp+0F0h+var_68]
+0x00000001402767e5: mulsd   xmm0, [rbp+0F0h+var_60]
+0x00000001402767ed: movq    rax, xmm0
+0x00000001402767f2: movq    xmm0, rax; X
+0x00000001402767f7: call    ceil
+0x00000001402767fc: movq    rax, xmm0
+0x0000000140276801: mov     [rbp+0F0h+var_70], rax
+0x0000000140276808: movsd   xmm0, [rbp+0F0h+var_70]
+0x0000000140276810: cvttsd2si rax, xmm0
+0x0000000140276815: mov     edx, 0
+0x000000014027681a: test    rax, rax
+0x000000014027681d: cmovs   rax, rdx
+0x0000000140276821: mov     [rbp+0F0h+var_8], rax
+0x0000000140276828: jmp     loc_14027697E
+0x000000014027682d: nop
+0x000000014027682e: mov     [rbp+0F0h+var_E0], 1A9h
+0x0000000140276836: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027683a: pxor    xmm0, xmm0
+0x000000014027683e: cvtsi2sd xmm0, rax
+0x0000000140276843: movsd   [rbp+0F0h+var_78], xmm0
+0x0000000140276848: mov     [rbp+0F0h+var_E0], 1AAh
+0x0000000140276850: pxor    xmm0, xmm0
+0x0000000140276854: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x000000014027685d: movsd   xmm1, cs:qword_140A09910
+0x0000000140276865: divsd   xmm0, xmm1
+0x0000000140276869: movsd   [rbp+0F0h+var_80], xmm0
+0x000000014027686e: mov     [rbp+0F0h+var_E0], 1ABh
+0x0000000140276876: mov     [rbp+0F0h+var_E0], 176h
+0x000000014027687e: mov     [rbp+0F0h+var_E0], 1ABh
+0x0000000140276886: pxor    xmm0, xmm0
+0x000000014027688a: movsd   [rbp+0F0h+var_88], xmm0
+0x000000014027688f: movsd   xmm0, [rbp+0F0h+var_80]
+0x0000000140276894: mulsd   xmm0, [rbp+0F0h+var_78]
+0x0000000140276899: movq    rax, xmm0
+0x000000014027689e: movq    xmm0, rax; X
+0x00000001402768a3: call    ceil
+0x00000001402768a8: movq    rax, xmm0
+0x00000001402768ad: mov     [rbp+0F0h+var_88], rax
+0x00000001402768b1: movsd   xmm0, [rbp+0F0h+var_88]
+0x00000001402768b6: cvttsd2si rax, xmm0
+0x00000001402768bb: mov     edx, 0
+0x00000001402768c0: test    rax, rax
+0x00000001402768c3: cmovs   rax, rdx
+0x00000001402768c7: mov     [rbp+0F0h+var_8], rax
+0x00000001402768ce: jmp     loc_14027697E
+0x00000001402768d3: mov     [rbp+0F0h+var_E0], 1ADh; jumptable 00000001402760FA cases 54,56
+0x00000001402768db: mov     [rbp+0F0h+var_E0], 176h
+0x00000001402768e3: mov     [rbp+0F0h+var_E0], 1ADh
+0x00000001402768eb: mov     [rbp+0F0h+var_8], 0
+0x00000001402768f6: jmp     loc_14027697E
+0x00000001402768fb: mov     [rbp+0F0h+var_E0], 1AFh; jumptable 00000001402760FA case 118
+0x0000000140276903: mov     rax, cs:TM__cWnRfAoMBYzrX9aW9aZjMzkg_15
+0x000000014027690a: mov     rdx, cs:off_140A08D68
+0x0000000140276911: mov     [rbp+0F0h+var_150], rax
+0x0000000140276915: mov     [rbp+0F0h+var_148], rdx
+0x0000000140276919: lea     rax, [rbp+0F0h+var_150]
+0x000000014027691d: mov     rcx, rax
+0x0000000140276920: call    failedAssertImpl__stdZassertions_u234
+0x0000000140276925: mov     rax, [rbp+0F0h+var_18]
+0x000000014027692c: movzx   eax, byte ptr [rax]
+0x000000014027692f: movzx   eax, al
+0x0000000140276932: test    eax, eax
+0x0000000140276934: jnz     short loc_14027697A
+0x0000000140276936: nop
+0x0000000140276937: jmp     short loc_14027697E
+0x0000000140276939: mov     [rbp+0F0h+var_E0], 1B1h; jumptable 00000001402760FA default case, cases 40,41,43-48,51-53,58-103,105-107,109-117
+0x0000000140276941: mov     rax, cs:TM__cWnRfAoMBYzrX9aW9aZjMzkg_17
+0x0000000140276948: mov     rdx, cs:off_140A08DC8
+0x000000014027694f: mov     [rbp+0F0h+var_150], rax
+0x0000000140276953: mov     [rbp+0F0h+var_148], rdx
+0x0000000140276957: lea     rax, [rbp+0F0h+var_150]
+0x000000014027695b: mov     rcx, rax
+0x000000014027695e: call    failedAssertImpl__stdZassertions_u234
+0x0000000140276963: mov     rax, [rbp+0F0h+var_18]
+0x000000014027696a: movzx   eax, byte ptr [rax]
+0x000000014027696d: movzx   eax, al
+0x0000000140276970: test    eax, eax
+0x0000000140276972: jnz     short loc_14027697D
+0x0000000140276974: nop
+0x0000000140276975: jmp     short loc_14027697E
+0x0000000140276977: nop
+0x0000000140276978: jmp     short loc_14027697E
+0x000000014027697a: nop
+0x000000014027697b: jmp     short loc_14027697E
+0x000000014027697d: nop
+0x000000014027697e: call    popFrame_74
+0x0000000140276983: mov     rax, [rbp+0F0h+var_8]
+0x000000014027698a: add     rsp, 170h
+0x0000000140276991: pop     rbp
+0x0000000140276992: retn
+LOOKUP get_delay_cost__modelZscores_u2270 = 0x140276fb1
+FUNCTION get_delay_cost__modelZscores_u2270 0x140276fb1..0x14027759b
+0x0000000140276fb1: push    rbp
+0x0000000140276fb2: mov     rbp, rsp
+0x0000000140276fb5: sub     rsp, 0E0h
+0x0000000140276fbc: mov     eax, ecx
+0x0000000140276fbe: mov     [rbp+arg_8], rdx
+0x0000000140276fc2: mov     [rbp+arg_10], r8
+0x0000000140276fc6: mov     [rbp+arg_0], al
+0x0000000140276fc9: lea     rax, aGetDelayCost; "get_delay_cost"
+0x0000000140276fd0: mov     [rbp+var_98], rax
+0x0000000140276fd7: lea     rax, aDTuringcomplet_145; "D:\\TuringComplete_Phu\\model\\scores.n"...
+0x0000000140276fde: mov     [rbp+var_88], rax
+0x0000000140276fe5: mov     [rbp+var_90], 0
+0x0000000140276ff0: mov     [rbp+var_80], 0
+0x0000000140276ff6: lea     rax, [rbp+var_A0]
+0x0000000140276ffd: mov     rcx, rax
+0x0000000140277000: call    nimFrame_74
+0x0000000140277005: call    nimErrorFlag_72
+0x000000014027700a: mov     [rbp+var_18], rax
+0x000000014027700e: mov     [rbp+var_10], 0
+0x0000000140277016: mov     [rbp+var_90], 1B4h
+0x0000000140277021: mov     rax, [rbp+arg_8]
+0x0000000140277025: mov     [rbp+var_70], rax
+0x0000000140277029: mov     [rbp+var_90], 1B5h
+0x0000000140277034: mov     [rbp+var_1], 0
+0x0000000140277038: mov     rdx, cs:_refptr_AUTO_SIZE__modelZmodel95types_u54
+0x000000014027703f: mov     rax, [rbp+arg_8]
+0x0000000140277043: mov     rdx, [rdx]
+0x0000000140277046: mov     rcx, rax
+0x0000000140277049: call    eqeq___modelZmodel95types_u853
+0x000000014027704e: mov     [rbp+var_1], al
+0x0000000140277051: cmp     [rbp+var_1], 0
+0x0000000140277055: jnz     short loc_140277066
+0x0000000140277057: mov     rax, [rbp+arg_8]
+0x000000014027705b: test    rax, rax
+0x000000014027705e: setle   al
+0x0000000140277061: mov     [rbp+var_1], al
+0x0000000140277064: jmp     short loc_140277067
+0x0000000140277066: nop
+0x0000000140277067: movzx   eax, [rbp+var_1]
+0x000000014027706b: xor     eax, 1
+0x000000014027706e: test    al, al
+0x0000000140277070: jnz     short loc_14027709F
+0x0000000140277072: mov     [rbp+var_90], 1B6h
+0x000000014027707d: mov     ecx, 8
+0x0000000140277082: call    bits__modelZsave95mongerZcommon_u192
+0x0000000140277087: mov     [rbp+var_70], rax
+0x000000014027708b: mov     rax, [rbp+var_18]
+0x000000014027708f: movzx   eax, byte ptr [rax]
+0x0000000140277092: movzx   eax, al
+0x0000000140277095: test    eax, eax
+0x0000000140277097: jnz     loc_140277582
+0x000000014027709d: jmp     short loc_1402770A0
+0x000000014027709f: nop
+0x00000001402770a0: mov     [rbp+var_90], 1B8h
+0x00000001402770ab: cmp     [rbp+arg_0], 11h
+0x00000001402770af: jbe     short loc_140277105
+0x00000001402770b1: cmp     [rbp+arg_0], 27h ; '''
+0x00000001402770b5: jbe     short loc_1402770BD
+0x00000001402770b7: cmp     [rbp+arg_0], 29h ; ')'
+0x00000001402770bb: jbe     short loc_140277105
+0x00000001402770bd: cmp     [rbp+arg_0], 2Ah ; '*'
+0x00000001402770c1: jbe     short loc_1402770C9
+0x00000001402770c3: cmp     [rbp+arg_0], 30h ; '0'
+0x00000001402770c7: jbe     short loc_140277105
+0x00000001402770c9: cmp     [rbp+arg_0], 32h ; '2'
+0x00000001402770cd: jbe     short loc_1402770D5
+0x00000001402770cf: cmp     [rbp+arg_0], 35h ; '5'
+0x00000001402770d3: jbe     short loc_140277105
+0x00000001402770d5: cmp     [rbp+arg_0], 39h ; '9'
+0x00000001402770d9: jbe     short loc_1402770E1
+0x00000001402770db: cmp     [rbp+arg_0], 67h ; 'g'
+0x00000001402770df: jbe     short loc_140277105
+0x00000001402770e1: cmp     [rbp+arg_0], 68h ; 'h'
+0x00000001402770e5: jbe     short loc_1402770ED
+0x00000001402770e7: cmp     [rbp+arg_0], 6Bh ; 'k'
+0x00000001402770eb: jbe     short loc_140277105
+0x00000001402770ed: cmp     [rbp+arg_0], 6Ch ; 'l'
+0x00000001402770f1: jbe     short loc_1402770F9
+0x00000001402770f3: cmp     [rbp+arg_0], 75h ; 'u'
+0x00000001402770f7: jbe     short loc_140277105
+0x00000001402770f9: cmp     [rbp+arg_0], 77h ; 'w'
+0x00000001402770fd: jbe     short loc_140277133
+0x00000001402770ff: cmp     [rbp+arg_0], 7Ch ; '|'
+0x0000000140277103: ja      short loc_140277133
+0x0000000140277105: mov     [rbp+var_90], 1B9h
+0x0000000140277110: mov     [rbp+var_90], 1B3h
+0x000000014027711b: mov     [rbp+var_90], 1B9h
+0x0000000140277126: mov     rax, [rbp+arg_10]
+0x000000014027712a: mov     [rbp+var_10], rax
+0x000000014027712e: jmp     loc_140277589
+0x0000000140277133: nop
+0x0000000140277134: mov     [rbp+var_90], 1BBh
+0x000000014027713f: movzx   eax, [rbp+arg_0]
+0x0000000140277143: cmp     eax, 77h ; 'w'
+0x0000000140277146: jz      loc_14027724B
+0x000000014027714c: cmp     eax, 77h ; 'w'
+0x000000014027714f: jg      loc_14027753B
+0x0000000140277155: cmp     eax, 76h ; 'v'
+0x0000000140277158: jz      loc_1402774F4
+0x000000014027715e: cmp     eax, 76h ; 'v'
+0x0000000140277161: jg      loc_14027753B
+0x0000000140277167: cmp     eax, 6Ch ; 'l'
+0x000000014027716a: jz      loc_14027742D
+0x0000000140277170: cmp     eax, 6Ch ; 'l'
+0x0000000140277173: jg      loc_14027753B
+0x0000000140277179: cmp     eax, 68h ; 'h'
+0x000000014027717c: jz      loc_14027742D
+0x0000000140277182: cmp     eax, 68h ; 'h'
+0x0000000140277185: jg      loc_14027753B
+0x000000014027718b: cmp     eax, 39h ; '9'
+0x000000014027718e: jz      loc_14027742D
+0x0000000140277194: cmp     eax, 39h ; '9'
+0x0000000140277197: jg      loc_14027753B
+0x000000014027719d: cmp     eax, 38h ; '8'
+0x00000001402771a0: jg      loc_14027753B
+0x00000001402771a6: cmp     eax, 26h ; '&'
+0x00000001402771a9: jge     short loc_1402771DE
+0x00000001402771ab: cmp     eax, 25h ; '%'
+0x00000001402771ae: jg      loc_14027753B
+0x00000001402771b4: cmp     eax, 21h ; '!'
+0x00000001402771b7: jge     loc_140277279
+0x00000001402771bd: cmp     eax, 20h ; ' '
+0x00000001402771c0: jg      loc_14027753B
+0x00000001402771c6: cmp     eax, 1Bh
+0x00000001402771c9: jge     loc_14027742D
+0x00000001402771cf: cmp     eax, 19h
+0x00000001402771d2: jg      short loc_14027723D
+0x00000001402771d4: cmp     eax, 12h
+0x00000001402771d7: jge     short loc_14027724B
+0x00000001402771d9: jmp     loc_14027753B
+0x00000001402771de: mov     edx, 1
+0x00000001402771e3: mov     ecx, eax
+0x00000001402771e5: shl     rdx, cl
+0x00000001402771e8: mov     rax, rdx
+0x00000001402771eb: mov     rdx, 84048000000000h
+0x00000001402771f5: and     rdx, rax
+0x00000001402771f8: test    rdx, rdx
+0x00000001402771fb: setnz   dl
+0x00000001402771fe: test    dl, dl
+0x0000000140277200: jnz     short loc_14027724B
+0x0000000140277202: mov     rdx, 140000000000000h
+0x000000014027720c: and     rdx, rax
+0x000000014027720f: test    rdx, rdx
+0x0000000140277212: setnz   dl
+0x0000000140277215: test    dl, dl
+0x0000000140277217: jnz     loc_1402774F4
+0x000000014027721d: mov     rdx, 2004000000000h
+0x0000000140277227: and     rax, rdx
+0x000000014027722a: test    rax, rax
+0x000000014027722d: setnz   al
+0x0000000140277230: test    al, al
+0x0000000140277232: jnz     loc_14027742D
+0x0000000140277238: jmp     loc_14027753B
+0x000000014027723d: cmp     eax, 1Ah
+0x0000000140277240: jz      loc_140277358
+0x0000000140277246: jmp     loc_14027753B
+0x000000014027724b: mov     [rbp+var_90], 1C1h
+0x0000000140277256: mov     [rbp+var_90], 1B3h
+0x0000000140277261: mov     [rbp+var_90], 1C1h
+0x000000014027726c: mov     rax, [rbp+arg_10]
+0x0000000140277270: mov     [rbp+var_10], rax
+0x0000000140277274: jmp     loc_140277589
+0x0000000140277279: mov     [rbp+var_90], 1C4h
+0x0000000140277284: mov     rax, [rbp+var_70]
+0x0000000140277288: pxor    xmm2, xmm2
+0x000000014027728c: cvtsi2sd xmm2, rax
+0x0000000140277291: movq    rax, xmm2
+0x0000000140277296: movq    xmm0, rax; X
+0x000000014027729b: call    log2
+0x00000001402772a0: movq    rax, xmm0
+0x00000001402772a5: mov     [rbp+var_20], rax
+0x00000001402772a9: mov     [rbp+var_90], 1C5h
+0x00000001402772b4: pxor    xmm0, xmm0
+0x00000001402772b8: cvtsi2sd xmm0, [rbp+arg_10]
+0x00000001402772be: movsd   xmm1, cs:qword_140A09930
+0x00000001402772c6: divsd   xmm0, xmm1
+0x00000001402772ca: movsd   [rbp+var_28], xmm0
+0x00000001402772cf: mov     [rbp+var_90], 1C6h
+0x00000001402772da: pxor    xmm0, xmm0
+0x00000001402772de: movsd   [rbp+var_30], xmm0
+0x00000001402772e3: movsd   xmm0, [rbp+var_28]
+0x00000001402772e8: mulsd   xmm0, [rbp+var_20]
+0x00000001402772ed: movq    rax, xmm0
+0x00000001402772f2: movq    xmm0, rax; X
+0x00000001402772f7: call    ceil
+0x00000001402772fc: movq    rax, xmm0
+0x0000000140277301: mov     [rbp+var_30], rax
+0x0000000140277305: movsd   xmm0, [rbp+var_30]
+0x000000014027730a: cvttsd2si rax, xmm0
+0x000000014027730f: mov     [rbp+var_38], rax
+0x0000000140277313: mov     [rbp+var_90], 1C7h
+0x000000014027731e: mov     [rbp+var_90], 1B3h
+0x0000000140277329: mov     [rbp+var_90], 1C7h
+0x0000000140277334: mov     rax, [rbp+arg_10]
+0x0000000140277338: mov     edx, 4
+0x000000014027733d: cmp     rax, rdx
+0x0000000140277340: cmovg   rax, rdx
+0x0000000140277344: mov     rdx, [rbp+var_38]
+0x0000000140277348: cmp     rdx, rax
+0x000000014027734b: cmovge  rax, rdx
+0x000000014027734f: mov     [rbp+var_10], rax
+0x0000000140277353: jmp     loc_140277589
+0x0000000140277358: mov     [rbp+var_90], 1CAh
+0x0000000140277363: mov     [rbp+var_90], 1B3h
+0x000000014027736e: mov     [rbp+var_90], 1CAh
+0x0000000140277379: pxor    xmm0, xmm0
+0x000000014027737d: movsd   [rbp+X], xmm0
+0x0000000140277382: mov     rax, [rbp+var_70]
+0x0000000140277386: pxor    xmm0, xmm0
+0x000000014027738a: cvtsi2sd xmm0, rax
+0x000000014027738f: movsd   xmm1, cs:qword_140A09910
+0x0000000140277397: divsd   xmm0, xmm1
+0x000000014027739b: movq    rax, xmm0
+0x00000001402773a0: movq    xmm0, rax; X
+0x00000001402773a5: call    log2
+0x00000001402773aa: movq    rax, xmm0
+0x00000001402773af: mov     [rbp+X], rax
+0x00000001402773b3: pxor    xmm0, xmm0
+0x00000001402773b7: movsd   [rbp+var_68], xmm0
+0x00000001402773bc: mov     rax, [rbp+X]
+0x00000001402773c0: movq    xmm0, rax; X
+0x00000001402773c5: call    ceil
+0x00000001402773ca: movq    rax, xmm0
+0x00000001402773cf: mov     [rbp+var_68], rax
+0x00000001402773d3: movsd   xmm0, [rbp+var_68]
+0x00000001402773d8: cvttsd2si rax, xmm0
+0x00000001402773dd: mov     edx, 0
+0x00000001402773e2: test    rax, rax
+0x00000001402773e5: cmovns  rdx, rax
+0x00000001402773e9: mov     ecx, 0
+0x00000001402773ee: mov     rax, [rbp+arg_10]
+0x00000001402773f2: add     rax, rdx
+0x00000001402773f5: jno     short loc_1402773FC
+0x00000001402773f7: mov     ecx, 1
+0x00000001402773fc: mov     rdx, rax
+0x00000001402773ff: lea     rax, [rbp+var_A8]
+0x0000000140277406: mov     [rax], rdx
+0x0000000140277409: mov     rax, rcx
+0x000000014027740c: and     eax, 1
+0x000000014027740f: test    al, al
+0x0000000140277411: jz      short loc_14027741D
+0x0000000140277413: call    raiseOverflow
+0x0000000140277418: jmp     loc_140277589
+0x000000014027741d: mov     rax, [rbp+var_A8]
+0x0000000140277424: mov     [rbp+var_10], rax
+0x0000000140277428: jmp     loc_140277589
+0x000000014027742d: mov     [rbp+var_90], 1CEh
+0x0000000140277438: mov     rax, [rbp+var_70]
+0x000000014027743c: mov     [rbp+var_40], rax
+0x0000000140277440: mov     [rbp+var_90], 1CFh
+0x000000014027744b: pxor    xmm0, xmm0
+0x000000014027744f: cvtsi2sd xmm0, [rbp+arg_10]
+0x0000000140277455: movsd   xmm1, cs:qword_140A09910
+0x000000014027745d: divsd   xmm0, xmm1
+0x0000000140277461: movsd   [rbp+var_48], xmm0
+0x0000000140277466: mov     [rbp+var_90], 1D0h
+0x0000000140277471: pxor    xmm0, xmm0
+0x0000000140277475: movsd   [rbp+var_50], xmm0
+0x000000014027747a: pxor    xmm0, xmm0
+0x000000014027747e: cvtsi2sd xmm0, [rbp+var_40]
+0x0000000140277484: mulsd   xmm0, [rbp+var_48]
+0x0000000140277489: movq    rax, xmm0
+0x000000014027748e: movq    xmm0, rax; X
+0x0000000140277493: call    ceil
+0x0000000140277498: movq    rax, xmm0
+0x000000014027749d: mov     [rbp+var_50], rax
+0x00000001402774a1: movsd   xmm0, [rbp+var_50]
+0x00000001402774a6: cvttsd2si rax, xmm0
+0x00000001402774ab: mov     [rbp+var_58], rax
+0x00000001402774af: mov     [rbp+var_90], 1D1h
+0x00000001402774ba: mov     [rbp+var_90], 1B3h
+0x00000001402774c5: mov     [rbp+var_90], 1D1h
+0x00000001402774d0: mov     rax, [rbp+arg_10]
+0x00000001402774d4: mov     edx, 4
+0x00000001402774d9: cmp     rax, rdx
+0x00000001402774dc: cmovg   rax, rdx
+0x00000001402774e0: mov     rdx, [rbp+var_58]
+0x00000001402774e4: cmp     rdx, rax
+0x00000001402774e7: cmovge  rax, rdx
+0x00000001402774eb: mov     [rbp+var_10], rax
+0x00000001402774ef: jmp     loc_140277589
+0x00000001402774f4: mov     [rbp+var_90], 1D3h
+0x00000001402774ff: mov     rax, cs:TM__cWnRfAoMBYzrX9aW9aZjMzkg_23
+0x0000000140277506: mov     rdx, cs:off_140A08E28
+0x000000014027750d: mov     [rbp+var_C0], rax
+0x0000000140277514: mov     [rbp+var_B8], rdx
+0x000000014027751b: lea     rax, [rbp+var_C0]
+0x0000000140277522: mov     rcx, rax
+0x0000000140277525: call    failedAssertImpl__stdZassertions_u234
+0x000000014027752a: mov     rax, [rbp+var_18]
+0x000000014027752e: movzx   eax, byte ptr [rax]
+0x0000000140277531: movzx   eax, al
+0x0000000140277534: test    eax, eax
+0x0000000140277536: jnz     short loc_140277585
+0x0000000140277538: nop
+0x0000000140277539: jmp     short loc_140277589
+0x000000014027753b: mov     [rbp+var_90], 1D5h
+0x0000000140277546: mov     rax, cs:TM__cWnRfAoMBYzrX9aW9aZjMzkg_25
+0x000000014027754d: mov     rdx, cs:off_140A08E88
+0x0000000140277554: mov     [rbp+var_C0], rax
+0x000000014027755b: mov     [rbp+var_B8], rdx
+0x0000000140277562: lea     rax, [rbp+var_C0]
+0x0000000140277569: mov     rcx, rax
+0x000000014027756c: call    failedAssertImpl__stdZassertions_u234
+0x0000000140277571: mov     rax, [rbp+var_18]
+0x0000000140277575: movzx   eax, byte ptr [rax]
+0x0000000140277578: movzx   eax, al
+0x000000014027757b: test    eax, eax
+0x000000014027757d: jnz     short loc_140277588
+0x000000014027757f: nop
+0x0000000140277580: jmp     short loc_140277589
+0x0000000140277582: nop
+0x0000000140277583: jmp     short loc_140277589
+0x0000000140277585: nop
+0x0000000140277586: jmp     short loc_140277589
+0x0000000140277588: nop
+0x0000000140277589: call    popFrame_74
+0x000000014027758e: mov     rax, [rbp+var_10]
+0x0000000140277592: add     rsp, 0E0h
+0x0000000140277599: pop     rbp
+0x000000014027759a: retn
+NEIGHBORHOOD 0x1402762ff
+0x000000014027629f: lea     rax, [rbp+0F0h+var_118]
+0x00000001402762a3: mov     [rax], rcx
+0x00000001402762a6: mov     rax, rdx
+0x00000001402762a9: and     eax, 1
+0x00000001402762ac: test    al, al
+0x00000001402762ae: jz      short loc_1402762BA
+0x00000001402762b0: call    raiseOverflow
+0x00000001402762b5: jmp     loc_14027697E
+0x00000001402762ba: mov     rdx, [rbp+0F0h+var_110]
+0x00000001402762be: mov     rax, [rbp+0F0h+var_118]
+0x00000001402762c2: mov     ecx, 0
+0x00000001402762c7: add     rax, rdx
+0x00000001402762ca: jno     short loc_1402762D1
+0x00000001402762cc: mov     ecx, 1
+0x00000001402762d1: mov     rdx, rax
+0x00000001402762d4: lea     rax, [rbp+0F0h+var_120]
+0x00000001402762d8: mov     [rax], rdx
+0x00000001402762db: mov     rax, rcx
+0x00000001402762de: and     eax, 1
+0x00000001402762e1: test    al, al
+0x00000001402762e3: jz      short loc_1402762EF
+0x00000001402762e5: call    raiseOverflow
+0x00000001402762ea: jmp     loc_14027697E
+0x00000001402762ef: mov     rax, [rbp+0F0h+var_120]
+0x00000001402762f3: mov     [rbp+0F0h+var_8], rax
+0x00000001402762fa: jmp     loc_14027697E
+0x00000001402762ff: mov     [rbp+0F0h+var_E0], 18Ah; jumptable 00000001402760FA cases 30,49,57
+0x0000000140276307: pxor    xmm0, xmm0
+0x000000014027630b: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x0000000140276314: movsd   xmm1, cs:qword_140A09910
+0x000000014027631c: divsd   xmm0, xmm1
+0x0000000140276320: movsd   [rbp+0F0h+var_90], xmm0
+0x0000000140276325: mov     [rbp+0F0h+var_E0], 18Bh
+0x000000014027632d: mov     [rbp+0F0h+var_E0], 176h
+0x0000000140276335: mov     [rbp+0F0h+var_E0], 18Bh
+0x000000014027633d: pxor    xmm0, xmm0
+0x0000000140276341: movsd   [rbp+0F0h+var_98], xmm0
+0x0000000140276346: mov     rax, [rbp+0F0h+var_B8]
+0x000000014027634a: pxor    xmm0, xmm0
+0x000000014027634e: cvtsi2sd xmm0, rax
+0x0000000140276353: mulsd   xmm0, [rbp+0F0h+var_90]
+0x0000000140276358: movq    rax, xmm0
+0x000000014027635d: movq    xmm0, rax; X
+0x0000000140276362: call    ceil
+0x0000000140276367: movq    rax, xmm0
+0x000000014027636c: mov     [rbp+0F0h+var_98], rax
+0x0000000140276370: movsd   xmm0, [rbp+0F0h+var_98]
+0x0000000140276375: cvttsd2si rax, xmm0
+0x000000014027637a: mov     [rbp+0F0h+var_8], rax
+0x0000000140276381: jmp     loc_14027697E
+0x0000000140276386: pxor    xmm0, xmm0; jumptable 00000001402760FA cases 27-29,38,104
+0x000000014027638a: movsd   [rbp+0F0h+var_A0], xmm0
+0x000000014027638f: pxor    xmm0, xmm0
+0x0000000140276393: movsd   [rbp+0F0h+var_A8], xmm0
+0x0000000140276398: mov     [rbp+0F0h+var_E0], 18Eh
+0x00000001402763a0: mov     [rbp+0F0h+var_E0], 18Fh
+0x00000001402763a8: mov     rax, [rbp+0F0h+var_B8]
+0x00000001402763ac: cmp     rax, 8
+0x00000001402763b0: jle     short loc_1402763E7
+0x00000001402763b2: mov     [rbp+0F0h+var_E0], 190h
+0x00000001402763ba: pxor    xmm0, xmm0
+0x00000001402763be: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402763c7: movsd   xmm1, cs:qword_140A09918
+0x00000001402763cf: divsd   xmm0, xmm1
+0x00000001402763d3: movsd   [rbp+0F0h+var_A0], xmm0
+0x00000001402763d8: movsd   xmm0, [rbp+0F0h+var_A0]
+0x00000001402763dd: movsd   [rbp+0F0h+var_10], xmm0
+0x00000001402763e5: jmp     short loc_14027641B
+0x00000001402763e7: nop
+0x00000001402763e8: mov     [rbp+0F0h+var_E0], 192h
+0x00000001402763f0: pxor    xmm0, xmm0
+0x00000001402763f4: cvtsi2sd xmm0, [rbp+0F0h+arg_10]
+0x00000001402763fd: movsd   xmm1, cs:qword_140A09910
+0x0000000140276405: divsd   xmm0, xmm1
+0x0000000140276409: movsd   [rbp+0F0h+var_A8], xmm0
+0x000000014027640e: movsd   xmm0, [rbp+0F0h+var_A8]
+0x0000000140276413: movsd   [rbp+0F0h+var_10], xmm0
+0x000000014027641b: mov     [rbp+0F0h+var_E0], 193h

@@ -1,0 +1,190 @@
+{
+  "schema": "byte-adder-transition-encoding-frontier-v1",
+  "encoding_count": 2,
+  "records": [
+    {
+      "encoding": {
+        "K": [
+          0,
+          0
+        ],
+        "P": [
+          0,
+          1
+        ],
+        "G": [
+          1,
+          1
+        ]
+      },
+      "initial": [
+        {
+          "values": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "gate": 1,
+          "text": "AND(a,b)",
+          "kind": "AND"
+        },
+        {
+          "values": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "gate": 1,
+          "text": "OR(a,b)",
+          "kind": "OR"
+        }
+      ],
+      "combine": [
+        {
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "gate": 4,
+          "text": "BUS(SW(h0,1),SW(l0,h1))",
+          "kind": "switch2"
+        },
+        {
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "gate": 4,
+          "text": "BUS(SW(h0,1),SW(l1,h1))",
+          "kind": "switch2"
+        }
+      ],
+      "carry": {
+        "values": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gate": 4,
+        "text": "BUS(SW(x0,1),SW(cin,x1))",
+        "kind": "switch2"
+      },
+      "cost": {
+        "initial": 2,
+        "combine": 8,
+        "carry": 4
+      }
+    },
+    {
+      "encoding": {
+        "K": [
+          0,
+          0
+        ],
+        "P": [
+          1,
+          0
+        ],
+        "G": [
+          1,
+          1
+        ]
+      },
+      "initial": [
+        {
+          "values": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "gate": 1,
+          "text": "OR(a,b)",
+          "kind": "OR"
+        },
+        {
+          "values": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "gate": 1,
+          "text": "AND(a,b)",
+          "kind": "AND"
+        }
+      ],
+      "combine": [
+        {
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "gate": 4,
+          "text": "BUS(SW(h1,1),SW(l0,h0))",
+          "kind": "switch2"
+        },
+        {
+          "values": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "gate": 4,
+          "text": "BUS(SW(h1,1),SW(l1,h0))",
+          "kind": "switch2"
+        }
+      ],
+      "carry": {
+        "values": [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        "gate": 4,
+        "text": "BUS(SW(x1,1),SW(cin,x0))",
+        "kind": "switch2"
+      },
+      "cost": {
+        "initial": 2,
+        "combine": 8,
+        "carry": 4
+      }
+    }
+  ]
+}
