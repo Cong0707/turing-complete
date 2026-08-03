@@ -1,0 +1,144 @@
+{
+  "schema": "tc-byte-adder-bit34-broad-c5-normal-form-shard-v1",
+  "status": "unsat",
+  "profile": "d7_80",
+  "gate_bound": 13,
+  "max_delay": 7,
+  "components": 12,
+  "shard": "single_k9",
+  "exact_switches": null,
+  "exact_xors": null,
+  "forced_slot_kinds": {},
+  "output_deadlines": [
+    5,
+    7,
+    4
+  ],
+  "assignments": 48,
+  "scope": {
+    "profile": "d7_80",
+    "gate_bound": 13,
+    "components": 12,
+    "switches": null,
+    "xors": null,
+    "maximum_switches_by_weight": 1,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "physical_nets": true,
+    "boundary_rows": 48
+  },
+  "shard_domain": [
+    "source",
+    "single_k0",
+    "single_k1",
+    "single_k2",
+    "single_k3",
+    "single_k4",
+    "single_k5",
+    "single_k6",
+    "single_k7",
+    "single_k8",
+    "single_k9",
+    "single_k10",
+    "single_k11"
+  ],
+  "constraint": {
+    "identity": {
+      "schema": "tc-byte-adder-bit34-broad-c5-constraint-v1",
+      "profile": "d7_80",
+      "gate_bound": 13,
+      "components": 12,
+      "maximum_switches_by_weight": 1,
+      "shard": "single_k9",
+      "output": "C5",
+      "driver_class": "single_component",
+      "driver_count": 1,
+      "allowed_driver_kind": "any_component_kind",
+      "ancestor_count": 9,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "driver_slots": [
+        9
+      ],
+      "ancestor_user_terminal_exclusive": 10,
+      "normal_form": "all component ancestors first; the singleton C5 driver next; all non-ancestors last"
+    },
+    "constraint_sha256": "0953ddd38611e174aedc4695c29e8fd7c62a4d059ebd5c293e49f49fb6ac38cb",
+    "encoding_evidence": {
+      "driver_slot": 9,
+      "driver_source": 22,
+      "ancestor_user_clause_lengths": [
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2
+      ]
+    }
+  },
+  "constraint_sha256": "0953ddd38611e174aedc4695c29e8fd7c62a4d059ebd5c293e49f49fb6ac38cb",
+  "solver": "cadical195",
+  "timeout_seconds": 0.0,
+  "variables": 29640,
+  "clauses": 238026,
+  "build_seconds": 0.39177529799053445,
+  "solve_seconds": 7.604494141007308,
+  "elapsed_seconds": 7.996272564982064,
+  "runtime": {
+    "python": "3.12.3",
+    "pysat": "1.8.dev24"
+  },
+  "script_sha256": "229987d3f8b2c7422aec777377642c61b777c9e6563a2c47fa8e17a521d20c9a",
+  "dependencies": [
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_conditional_sum_restart/bit34_broad_c5_normal_form.py",
+      "sha256": "9101c36f75779a94b7fa71416d71d98dcbf615d0a240f5c9351e53f0be0fdbbe"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_conditional_sum_restart/exact_bit34_joint_sat.py",
+      "sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_search_core.py",
+      "sha256": "5cfd8d5121620393201f51a3db0f7328229253502cf6831ce32f8ea935b5108a"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_core.py",
+      "sha256": "9c671db251d1070b647094833c616501f72f6f6b542b6da35f0856b4f0c29dd6"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_cnf.py",
+      "sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    }
+  ],
+  "accounting": {
+    "current_complete_gate": 80,
+    "current_complete_delay": 7,
+    "current_region_gate_with_paid_leaves": 20,
+    "paid_leaf_gate": 6,
+    "current_residual_gate": 14,
+    "current_residual_components": 12,
+    "fixed_shell_with_paid_leaves": 66,
+    "projected_complete_gate_at_bound": 79,
+    "projected_complete_delay": 7,
+    "target_complete_gate": 73,
+    "gate_gap_at_bound_to_target": 6
+  },
+  "coverage_argument": "C5 is non-empty. A paid-source or constant driver excludes every other driver; a singleton component has one ancestor count. A multi-driver C5 bus contains only Switch outputs. For d selected Switch drivers, physical-net partition makes them mutually independent, so all component ancestors can be ordered first, the d drivers next, and every non-ancestor last. The weighted bound implies d <= min(components, gate_bound-components)."
+}

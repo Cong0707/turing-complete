@@ -124,7 +124,17 @@ def terminate_process_group(process: subprocess.Popen[bytes]) -> None:
         except ProcessLookupError:
             return
     else:
-        process.terminate()
+        # The Windows venv launcher may leave the real solver as a child
+        # process.  Terminate the complete tree so a first-SAT stop or hard
+        # timeout cannot leak a CaDiCaL worker.
+        completed = subprocess.run(
+            ["taskkill", "/PID", str(process.pid), "/T", "/F"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        if completed.returncode and process.poll() is None:
+            process.terminate()
     try:
         process.wait(timeout=30)
         return
@@ -160,6 +170,8 @@ class Sweep:
         if not -20 <= self.nice <= 19:
             raise ValueError("nice must be between -20 and 19")
         self.dry_run = dry_run
+        self.stop_on_first_sat = bool(self.spec.get("stop_on_first_sat", False))
+        self.stop_event = threading.Event()
 
         script = Path(str(self.spec["script"]))
         self.script = script if script.is_absolute() else self.root / script
@@ -215,6 +227,8 @@ class Sweep:
             "memory_mb_per_process": self.memory_mb,
             "nice": self.nice,
             "cpu_set": sorted(self.cpu_set) if self.cpu_set else None,
+            "stop_on_first_sat": self.stop_on_first_sat,
+            "stop_event_set": self.stop_event.is_set(),
             "updated_at": utc_now(),
             "finished": finished,
             "results": [
@@ -235,6 +249,12 @@ class Sweep:
                 "state": "reused",
                 "output": str(output),
                 "output_sha256": sha256(output) if output else None,
+                "finished_at": utc_now(),
+            }
+        if self.stop_event.is_set():
+            return {
+                "value": value,
+                "state": "skipped-after-sat",
                 "finished_at": utc_now(),
             }
 
@@ -261,6 +281,7 @@ class Sweep:
             return record
 
         timed_out = False
+        stopped_after_sat = False
         return_code: int | None = None
         with log_path.open("wb") as log_handle:
             process = subprocess.Popen(
@@ -272,17 +293,33 @@ class Sweep:
             )
             record["pid"] = process.pid
             atomic_json(record_path, record)
-            try:
-                return_code = process.wait(timeout=self.timeout)
-            except subprocess.TimeoutExpired:
-                timed_out = True
-                terminate_process_group(process)
-                return_code = process.returncode
+            deadline = time.monotonic() + self.timeout
+            while process.poll() is None:
+                if self.stop_event.is_set():
+                    stopped_after_sat = True
+                    terminate_process_group(process)
+                    break
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    timed_out = True
+                    terminate_process_group(process)
+                    break
+                try:
+                    process.wait(timeout=min(1.0, remaining))
+                except subprocess.TimeoutExpired:
+                    pass
+            return_code = process.returncode
 
         status = read_status(output)
         record.update(
             {
-                "state": "timeout" if timed_out else "completed",
+                "state": (
+                    "timeout"
+                    if timed_out
+                    else "stopped-after-sat"
+                    if stopped_after_sat
+                    else "completed"
+                ),
                 "status": status,
                 "return_code": return_code,
                 "elapsed_seconds": time.monotonic() - started,
@@ -311,14 +348,27 @@ class Sweep:
                     }
                 with self.lock:
                     self.results[str(value)] = result
+                    if self.stop_on_first_sat and result.get("status") == "sat":
+                        self.stop_event.set()
                     self.write_summary()
                 print(json.dumps(result, ensure_ascii=False), flush=True)
         self.write_summary(finished=True)
+        sat_found = any(
+            result.get("status") == "sat" for result in self.results.values()
+        )
+        early_stop_states = (
+            {"skipped-after-sat", "stopped-after-sat"}
+            if self.stop_on_first_sat and sat_found
+            else set()
+        )
         failed = [
             result
             for result in self.results.values()
-            if result.get("state") in {"runner-error", "timeout"}
-            or result.get("status") not in TERMINAL_STATUSES
+            if result.get("state") not in early_stop_states
+            and (
+                result.get("state") in {"runner-error", "timeout"}
+                or result.get("status") not in TERMINAL_STATUSES
+            )
         ]
         return 1 if failed else 0
 

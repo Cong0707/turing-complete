@@ -1,0 +1,168 @@
+{
+  "schema": "tc-byte-adder-bit34-broad-c5-completion-manifest-v1",
+  "status": "complete-all-unsat",
+  "scope": {
+    "profile": "d7_80",
+    "weighted_gate_bound": 13,
+    "component_domain": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "switches": null,
+    "xors": null,
+    "output_deadlines": [
+      5,
+      7,
+      4
+    ],
+    "boundary_rows": 48,
+    "physical_nets": true
+  },
+  "remote": {
+    "host": "root@new.xem8k5.top",
+    "working_directory": "/root/congProjects/turing-complete-works/.research/byte_adder_conditional_sum_restart",
+    "runner_pid_observed": 3997065,
+    "workers": 3,
+    "memory_mb_per_process": 4096,
+    "nice": 10,
+    "started_at": "2026-08-03T21:10:58.360129+00:00",
+    "finished_at": "2026-08-03T21:15:09.845196+00:00",
+    "wall_seconds": 251.485067,
+    "finished": true,
+    "stopped_on_sat": false
+  },
+  "domain": {
+    "shards": 230,
+    "component_shard_counts": {
+      "0": 1,
+      "1": 2,
+      "2": 4,
+      "3": 7,
+      "4": 11,
+      "5": 16,
+      "6": 22,
+      "7": 28,
+      "8": 31,
+      "9": 31,
+      "10": 28,
+      "11": 22,
+      "12": 13,
+      "13": 14
+    },
+    "result_set_sha256": "500f9a7f14db04c2f355ff174dc078fbeaae92080755a4755cc7075fe696e85d"
+  },
+  "solver_statistics": {
+    "solver": "cadical195",
+    "terminal_unsat": 230,
+    "terminal_sat": 0,
+    "unknown": 0,
+    "solve_seconds_sum": 571.8492149363738,
+    "solve_seconds_min": 0.0016564659890718758,
+    "solve_seconds_median": 0.4809942915162537,
+    "solve_seconds_max": 50.1358326250338
+  },
+  "assertions": {
+    "remote_validate_ok": true,
+    "remote_validate_230": true,
+    "remote_summary_finished": true,
+    "remote_summary_not_stopped_on_sat": true,
+    "remote_summary_terminal_230": true,
+    "remote_summary_total_230": true,
+    "remote_summary_all_unsat": true,
+    "complete_coverage": true,
+    "complete_all_unsat": true,
+    "complete_no_unknown": true,
+    "complete_no_errors": true,
+    "transport_ok": true,
+    "transport_230": true,
+    "positive_g14_passed": true,
+    "positive_g14_gate_14": true,
+    "positive_independent_ok": true,
+    "smoke_complete": true,
+    "smoke_all_unsat": true,
+    "spec_sha_matches_summary": true,
+    "summary_sha_matches_transport": true
+  },
+  "failed_assertions": [],
+  "evidence": {
+    "spec": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_broad_c5_normal_form_workers3.json",
+      "bytes": 48230,
+      "sha256": "175443593a1883a505de78a30945bd0a81bb332c14c1dc2c5455645643d65dba"
+    },
+    "prepared_manifest": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_broad_c5_normal_form_workers3_manifest.json",
+      "bytes": 70082,
+      "sha256": "5d49e7c907581eacde96c62904c70ef5c03219e3570be54d7876ba24037b5507"
+    },
+    "remote_validate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_broad_c5_remote_validate.json",
+      "bytes": 4532,
+      "sha256": "2f4d2e5be9cbf54a97d0975eb303a770f9782b648714d749231e0a9ac9058005"
+    },
+    "remote_summary": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34-d7-g13-broad-c5-normal-form-workers3-summary.json",
+      "bytes": 425961,
+      "sha256": "8fb955bdb4ba28f5c61b9fa3433be1be624a48acb4e341e0c1f688787ec49a1d"
+    },
+    "complete_ledger": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_broad_c5_normal_form_complete.json",
+      "bytes": 255660,
+      "sha256": "690401468dc5e707d3f5c75ecbdb354c62c5115244250d6d60f6a50b7425f596"
+    },
+    "transport_verify": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_d7_g13_broad_c5_remote_transport_verify.json",
+      "bytes": 80936,
+      "sha256": "9510ba5529debb5e87989062fb37061476e889235aba28f53e439d267cb67e5d"
+    },
+    "positive_g14": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_broad_c5_positive_g14.json",
+      "bytes": 5826,
+      "sha256": "99e7e025046a5821dda7894183d10064fc4b2135c44d17b9f3f87af62cfb5553"
+    },
+    "positive_g14_independent": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_broad_c5_positive_g14_independent_verify.json",
+      "bytes": 1482,
+      "sha256": "3f1d65e72ba057fbb41a68b51d28ba97d09f94971b51f33fdf3948245668d185"
+    },
+    "smoke": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\bit34_broad_c5_smoke_n00_n02_complete.json",
+      "bytes": 9485,
+      "sha256": "f797d745cfcd37f443f9eb4fb3b4b655b0453cdffcf9dd447302ae3b01620437"
+    },
+    "coverage_audit": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\2026-08-04-bit34-broad-C5正常形独立静态覆盖审计.md",
+      "bytes": 7852,
+      "sha256": "c428ca6ecd4ed5806a78c9aa0956c749943249c5a665db1578d0d98c98ad83fb"
+    },
+    "terminal_audit": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\2026-08-04-bit34-broad-C5远端230片终态独立审计.md",
+      "bytes": 6349,
+      "sha256": "23020ad2fc4c753a2cb3fd65d30e711d29219aea4f676ba4475a617620f2ba42"
+    },
+    "generator": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\generate_bit34_broad_c5_completion.py",
+      "bytes": 9464,
+      "sha256": "ddc08354f1b28dca2f4469a90ec6ca5609dedc0620da1b1aadbccbfbec0557a8"
+    }
+  },
+  "conclusion": {
+    "weighted_gate_le_13": "unsat",
+    "known_weighted_gate_14": "sat and independently replayed",
+    "strict_c3_bit34_residual_optimum": 14,
+    "projected_79_7_by_replacing_only_this_residual": "impossible",
+    "scope_limit": "This is a local paid-source bit3:4 residual optimum, not a global lower bound over every Byte Adder architecture."
+  }
+}

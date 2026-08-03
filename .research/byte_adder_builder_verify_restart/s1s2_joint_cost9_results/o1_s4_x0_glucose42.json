@@ -1,0 +1,108 @@
+{
+  "schema": "byte-adder-80d7-s1-s2-joint-strict-physical-v1",
+  "status": "unsat",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "source_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+  "script_sha256": "7417c004c21bb45d66741a9a99291b0119eaf840b509f56edc7dc063a988768c",
+  "script_sha256_dependencies": {
+    "materializer": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+    "exact_adapter": "08ba4041b3e01ee5a48c9736a72767c6a4e90a105e75a2634f2fd13c9f7a4f56"
+  },
+  "cut_node_ids": [
+    23,
+    24,
+    52,
+    53,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+  ],
+  "full_truth_rows": 131072,
+  "source_ids": [
+    4,
+    5,
+    22,
+    25,
+    51,
+    45,
+    56
+  ],
+  "source_names": [
+    "a1",
+    "b1",
+    "G1",
+    "G2",
+    "V2",
+    "C1",
+    "C3"
+  ],
+  "source_arrivals": {
+    "a1": 0,
+    "b1": 0,
+    "G1": 1,
+    "G2": 1,
+    "V2": 1,
+    "C1": 2,
+    "C3": 3
+  },
+  "source_driven_one_counts": {
+    "a1": 131072,
+    "b1": 131072,
+    "G1": 131072,
+    "G2": 131072,
+    "V2": 131072,
+    "C1": 81920,
+    "C3": 94208
+  },
+  "source_conflict_one_counts": {
+    "a1": 0,
+    "b1": 0,
+    "G1": 0,
+    "G2": 0,
+    "V2": 0,
+    "C1": 0,
+    "C3": 0
+  },
+  "target_ids": [
+    77,
+    81
+  ],
+  "target_names": [
+    "S1",
+    "S2"
+  ],
+  "target_one_counts": {
+    "S1": 65536,
+    "S2": 65536
+  },
+  "target_driven_one_counts": {
+    "S1": 131072,
+    "S2": 131072
+  },
+  "compressed_truth_rows": 36,
+  "output_deadlines": [
+    4,
+    7
+  ],
+  "gate_bound": 9,
+  "components": 5,
+  "exact_ordinary": 1,
+  "exact_switches": 4,
+  "exact_xors": 0,
+  "weighted_gate": 9,
+  "seed_current": false,
+  "physical_nets": true,
+  "all_components_live": true,
+  "final_outputs_fully_driven": true,
+  "solver": "glucose42",
+  "timeout_seconds": 900.0,
+  "pysat_version": "1.9.dev7",
+  "variables": 5127,
+  "clauses": 37974,
+  "build_seconds": 0.051548499999626074,
+  "solve_seconds": 0.11363360000177636,
+  "elapsed_seconds": 0.1670601000005263
+}

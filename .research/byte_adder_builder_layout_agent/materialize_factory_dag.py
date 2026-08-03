@@ -137,6 +137,7 @@ def review_dag(
     dag_source: Path,
     *,
     builder_path: Path | None = None,
+    builder_witness: Path | None = None,
 ) -> tuple[dict[str, Any], dict[int, dict[str, Any]], dict[str, Any]]:
     dag_source = _rooted(dag_source)
     persisted = json.loads(dag_source.read_text(encoding="utf-8"))
@@ -145,12 +146,22 @@ def review_dag(
 
     generator_replay_equal: bool | None = None
     builder_hash: str | None = None
+    builder_witness_hash: str | None = None
+    if builder_witness is not None and builder_path is None:
+        raise RuntimeError("--builder-witness requires --builder")
     if builder_path is not None:
         builder_path = _rooted(builder_path)
         module = _load_module(builder_path, "byte_adder_factory_builder")
         if not hasattr(module, "build"):
             raise RuntimeError(f"builder {builder_path} has no build() function")
-        generated = module.build()
+        if builder_witness is None:
+            generated = module.build()
+        else:
+            builder_witness = _rooted(builder_witness)
+            if not builder_witness.is_file():
+                raise RuntimeError(f"builder witness is missing: {builder_witness}")
+            generated = module.build(builder_witness)
+            builder_witness_hash = sha256(builder_witness.read_bytes()).hexdigest()
         generator_replay_equal = generated == persisted
         if not generator_replay_equal:
             raise RuntimeError("persisted Factory DAG differs from its current generator")
@@ -197,6 +208,7 @@ def review_dag(
     arrivals: dict[int, int] = {}
     reviewed_cost = 0
     bus_ids = []
+    bus_resolved_name_forms: Counter[str] = Counter()
     tri_state_output_count = 0
     for node in nodes:
         node_id = int(node["id"])
@@ -228,8 +240,18 @@ def review_dag(
             expected_arrival = max(arrivals[argument] for argument in args) + 1
             bus_ids.append(node_id)
             tri_state_output_count += driver_count
-            resolved_name = f"bus_node_{node_id}"
-            if node.get("resolved_network") not in {None, resolved_name}:
+            serialized_resolved_name = node.get("resolved_network")
+            allowed_resolved_names = {
+                f"bus_node_{node_id}": "bus-node",
+                f"bus_{node_id}": "bus-short",
+            }
+            if serialized_resolved_name is None:
+                resolved_name = f"bus_node_{node_id}"
+                bus_resolved_name_forms["implicit-bus-node"] += 1
+            elif serialized_resolved_name in allowed_resolved_names:
+                resolved_name = str(serialized_resolved_name)
+                bus_resolved_name_forms[allowed_resolved_names[resolved_name]] += 1
+            else:
                 raise RuntimeError(f"BUS {node_id} resolved-network label changed")
             drivers = node.get("drivers")
             if drivers is not None:
@@ -275,11 +297,47 @@ def review_dag(
         "nodes": nodes,
         "live_node_count": factory_dag["live_node_count"],
     }
-    factory_hash = sha256(
-        json.dumps(hash_payload, ensure_ascii=True, separators=(",", ":")).encode()
-    ).hexdigest()
-    if factory_hash != factory_dag.get("sha256"):
-        raise RuntimeError("Factory DAG structural serialization hash mismatch")
+    # Several Factory lineages are currently in use.  Prefix builders hash a
+    # compact insertion-order serialization, Boolean-superopt builders use a
+    # sorted human-spaced serialization, and newer forward builders use sorted
+    # compact JSON.  Accept only these reviewed canonical forms rather than
+    # silently dropping the structural hash check.
+    factory_hash_candidates = {
+        "compact-ascii": sha256(
+            json.dumps(
+                hash_payload,
+                ensure_ascii=True,
+                separators=(",", ":"),
+            ).encode()
+        ).hexdigest(),
+        "sorted-unicode": sha256(
+            json.dumps(
+                hash_payload,
+                ensure_ascii=False,
+                sort_keys=True,
+            ).encode()
+        ).hexdigest(),
+        "sorted-compact": sha256(
+            json.dumps(
+                hash_payload,
+                sort_keys=True,
+                separators=(",", ":"),
+            ).encode()
+        ).hexdigest(),
+    }
+    serialized_factory_hash = str(factory_dag.get("sha256", "")).lower()
+    matching_hash_forms = [
+        name
+        for name, digest in factory_hash_candidates.items()
+        if digest == serialized_factory_hash
+    ]
+    if not matching_hash_forms:
+        raise RuntimeError(
+            "Factory DAG structural serialization hash mismatch: "
+            f"serialized={serialized_factory_hash!r}, "
+            f"reviewed={factory_hash_candidates!r}"
+        )
+    factory_hash = serialized_factory_hash
 
     certificate_results = []
     for reference, expected_hash in _certificate_references(persisted):
@@ -305,12 +363,20 @@ def review_dag(
             else None
         ),
         "builder_sha256": builder_hash,
+        "builder_witness": (
+            str(builder_witness.relative_to(ROOT)).replace("\\", "/")
+            if builder_witness is not None
+            else None
+        ),
+        "builder_witness_sha256": builder_witness_hash,
         "generator_replay_equal": generator_replay_equal,
         "factory_dag_sha256": factory_hash,
+        "factory_dag_hash_form": matching_hash_forms[0],
         "structural_sha256": metrics.get("structural_sha256"),
         "referenced_certificates": certificate_results,
         "recursive_cost_delay_verified": True,
         "bus_node_count": len(bus_ids),
+        "bus_resolved_name_forms": dict(sorted(bus_resolved_name_forms.items())),
         "tri_state_output_count": tri_state_output_count,
     }
     return persisted, by_id, review
@@ -893,6 +959,7 @@ def materialize(
     dag_source: Path,
     *,
     builder_path: Path | None = None,
+    builder_witness: Path | None = None,
     output_dir: Path | None = None,
     deploy: bool = False,
     repository_candidate: Path = DEFAULT_REPOSITORY_CANDIDATE,
@@ -901,6 +968,8 @@ def materialize(
     dag_source = _rooted(dag_source)
     if builder_path is not None:
         builder_path = _rooted(builder_path)
+    if builder_witness is not None:
+        builder_witness = _rooted(builder_witness)
     if output_dir is None:
         source_tag = sha256(dag_source.read_bytes()).hexdigest()[:8]
         output_dir = HERE / "materialized" / f"{dag_source.stem}-{source_tag}"
@@ -909,7 +978,11 @@ def materialize(
     repository_candidate = _rooted(repository_candidate)
     formal_save = _rooted(formal_save)
 
-    payload, by_id, source_review = review_dag(dag_source, builder_path=builder_path)
+    payload, by_id, source_review = review_dag(
+        dag_source,
+        builder_path=builder_path,
+        builder_witness=builder_witness,
+    )
     candidate, connections, mapping = build_physical(payload, by_id)
     proxy_path = output_dir / "semantic_proxy.circuit.data"
     audit = audit_candidate(
@@ -979,6 +1052,11 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("dag_json", type=Path, help="包含 factory_dag 的完整 JSON")
     parser.add_argument("--builder", type=Path, help="可选 build() 生成器，用于逐对象重放核对")
+    parser.add_argument(
+        "--builder-witness",
+        type=Path,
+        help="可选 witness 路径；传入时调用 build(witness_path)，且必须同时使用 --builder",
+    )
     parser.add_argument("--output-dir", type=Path, help="研究输出目录；默认按源文件名和哈希生成")
     parser.add_argument(
         "--deploy",
@@ -1005,6 +1083,7 @@ def main(argv: list[str] | None = None) -> int:
     materialize(
         args.dag_json,
         builder_path=args.builder,
+        builder_witness=args.builder_witness,
         output_dir=args.output_dir,
         deploy=args.deploy,
         repository_candidate=args.repository_candidate,

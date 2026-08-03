@@ -1,0 +1,299 @@
+{
+  "schema": "tc-byte-adder-bit34-broad-c5-positive-regression-v1",
+  "status": "sat",
+  "profile": "d7_80",
+  "gate_bound": 14,
+  "max_delay": 7,
+  "components": 12,
+  "exact_switches": null,
+  "exact_xors": null,
+  "forced_slot_kinds": {},
+  "output_deadlines": [
+    5,
+    7,
+    4
+  ],
+  "assignments": 48,
+  "shard": "multi_d2_k3",
+  "shard_domain": [
+    "source",
+    "single_k0",
+    "single_k1",
+    "single_k2",
+    "single_k3",
+    "single_k4",
+    "single_k5",
+    "single_k6",
+    "single_k7",
+    "single_k8",
+    "single_k9",
+    "single_k10",
+    "single_k11",
+    "multi_d2_k0",
+    "multi_d2_k1",
+    "multi_d2_k2",
+    "multi_d2_k3",
+    "multi_d2_k4",
+    "multi_d2_k5",
+    "multi_d2_k6",
+    "multi_d2_k7",
+    "multi_d2_k8",
+    "multi_d2_k9",
+    "multi_d2_k10"
+  ],
+  "constraint": {
+    "identity": {
+      "schema": "tc-byte-adder-bit34-broad-c5-constraint-v1",
+      "profile": "d7_80",
+      "gate_bound": 14,
+      "components": 12,
+      "maximum_switches_by_weight": 2,
+      "shard": "multi_d2_k3",
+      "output": "C5",
+      "driver_class": "multi_switch",
+      "driver_count": 2,
+      "allowed_driver_kind": "SWITCH",
+      "ancestor_count": 3,
+      "ancestor_slots": [
+        0,
+        1,
+        2
+      ],
+      "driver_slots": [
+        3,
+        4
+      ],
+      "ancestor_user_terminal_exclusive": 5,
+      "normal_form": "all component ancestors first; the mutually independent C5 Switch drivers next; all non-ancestors last"
+    },
+    "constraint_sha256": "1e0e0715de75bba888c9a3f87617e2a7cff60c56cded6a34c4764b9f6d7ef682",
+    "encoding_evidence": {
+      "driver_slots": [
+        3,
+        4
+      ],
+      "driver_sources": [
+        16,
+        17
+      ],
+      "ancestor_user_clause_lengths": [
+        8,
+        6,
+        4
+      ]
+    }
+  },
+  "constraint_sha256": "1e0e0715de75bba888c9a3f87617e2a7cff60c56cded6a34c4764b9f6d7ef682",
+  "solver": "glucose42",
+  "variables": 29733,
+  "clauses": 238893,
+  "solve_seconds": 0.14673949999996694,
+  "accounting": {
+    "current_complete_gate": 80,
+    "current_complete_delay": 7,
+    "current_region_gate_with_paid_leaves": 20,
+    "paid_leaf_gate": 6,
+    "current_residual_gate": 14,
+    "current_residual_components": 12,
+    "fixed_shell_with_paid_leaves": 66,
+    "projected_complete_gate_at_bound": 80,
+    "projected_complete_delay": 7,
+    "target_complete_gate": 73,
+    "gate_gap_at_bound_to_target": 7,
+    "projected_complete_gate_actual": 80,
+    "gate_gap_actual_to_target": 7
+  },
+  "script_sha256": "7145938947cfb09508c4402f396b0842b2c7f4d4a20eed74a110ab77772e7316",
+  "broad_search_sha256": "229987d3f8b2c7422aec777377642c61b777c9e6563a2c47fa8e17a521d20c9a",
+  "normal_form_sha256": "9101c36f75779a94b7fa71416d71d98dcbf615d0a240f5c9351e53f0be0fdbbe",
+  "exact_search_sha256": "a453c4da570a31ff0210789688ac61a9123eb8be52d5f9a3a8121bc34bcc7ab3",
+  "actual_gate": 14,
+  "network": [
+    {
+      "slot": 0,
+      "source": 13,
+      "kind": "OR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 1,
+      "source": 14,
+      "kind": "NOR",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 2,
+      "source": 15,
+      "kind": "OR",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        14
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 3,
+      "source": 16,
+      "kind": "SWITCH",
+      "left_bus": [
+        13
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 2,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 4,
+      "source": 17,
+      "kind": "SWITCH",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 2,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 5,
+      "source": 18,
+      "kind": "AND",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 6,
+      "source": 19,
+      "kind": "OR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        18
+      ],
+      "cost": 1,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 7,
+      "source": 20,
+      "kind": "NOR",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 8,
+      "source": 21,
+      "kind": "NOR",
+      "left_bus": [
+        18
+      ],
+      "right_bus": [
+        20
+      ],
+      "cost": 1,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 9,
+      "source": 22,
+      "kind": "AND",
+      "left_bus": [
+        10
+      ],
+      "right_bus": [
+        19
+      ],
+      "cost": 1,
+      "depth_upper_bound": 6
+    },
+    {
+      "slot": 10,
+      "source": 23,
+      "kind": "NOR",
+      "left_bus": [
+        10
+      ],
+      "right_bus": [
+        19
+      ],
+      "cost": 1,
+      "depth_upper_bound": 6
+    },
+    {
+      "slot": 11,
+      "source": 24,
+      "kind": "NOR",
+      "left_bus": [
+        22
+      ],
+      "right_bus": [
+        23
+      ],
+      "cost": 1,
+      "depth_upper_bound": 7
+    }
+  ],
+  "output_buses": [
+    [
+      21
+    ],
+    [
+      24
+    ],
+    [
+      16,
+      17
+    ]
+  ],
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0
+  },
+  "actual_switches": 2,
+  "actual_xors": 0,
+  "checks": {
+    "sat": true,
+    "actual_gate_14": true,
+    "boundary_rows_48": true,
+    "actual_switches_2": true,
+    "actual_xors_0": true,
+    "strict_replay_clean": true,
+    "constraint_digest_matches": true
+  },
+  "passed": true
+}

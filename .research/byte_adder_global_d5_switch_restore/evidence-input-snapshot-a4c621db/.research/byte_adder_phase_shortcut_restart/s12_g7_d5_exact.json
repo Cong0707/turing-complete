@@ -1,0 +1,194 @@
+{
+  "schema": "exact-fast-negative-physical-shard-v2",
+  "status": "sat",
+  "domain": "s12_leaf",
+  "rows": 18,
+  "output_names": [
+    "S1",
+    "S2"
+  ],
+  "free_sources": [
+    "nC1",
+    "G1",
+    "Q1",
+    "P1",
+    "N1",
+    "G2",
+    "Q2",
+    "P2",
+    "N2",
+    "A12n",
+    "V12n",
+    "nC3",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "nC1": 2,
+    "G1": 1,
+    "Q1": 1,
+    "P1": 2,
+    "N1": 1,
+    "G2": 1,
+    "Q2": 1,
+    "P2": 2,
+    "N2": 1,
+    "A12n": 2,
+    "V12n": 2,
+    "nC3": 3,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 7,
+  "max_delay": 5,
+  "components": 7,
+  "ordinary": 7,
+  "exact_switches": 0,
+  "exact_xors": 0,
+  "solver": "glucose42",
+  "variables": 6407,
+  "clauses": 59440,
+  "solve_seconds": 0.5258753000016441,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 5,
+    "suffix_universe_sha256": "96afcc1a70e6f1fa24cd15c5198da63cb3c31439bf6a635567ee2f78f54e74fb",
+    "assigned_suffix_signatures": [
+      [
+        "NOT"
+      ],
+      [
+        "AND"
+      ],
+      [
+        "OR"
+      ],
+      [
+        "NAND"
+      ],
+      [
+        "NOR"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "actual_gate": 7,
+  "network": [
+    {
+      "slot": 0,
+      "source": 14,
+      "kind": "NOR",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 1,
+      "source": 15,
+      "kind": "AND",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 2,
+      "source": 16,
+      "kind": "NAND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 3,
+      "source": 17,
+      "kind": "AND",
+      "left_bus": [
+        14
+      ],
+      "right_bus": [
+        16
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 4,
+      "source": 18,
+      "kind": "OR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 5,
+      "source": 19,
+      "kind": "NAND",
+      "left_bus": [
+        16
+      ],
+      "right_bus": [
+        18
+      ],
+      "cost": 1,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 6,
+      "source": 20,
+      "kind": "OR",
+      "left_bus": [
+        15
+      ],
+      "right_bus": [
+        17
+      ],
+      "cost": 1,
+      "depth_upper_bound": 5
+    }
+  ],
+  "output_buses": [
+    [
+      19
+    ],
+    [
+      20
+    ]
+  ],
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "actual_output_arrivals": [
+      4,
+      5
+    ],
+    "actual_max_delay": 5,
+    "depth_upper_bound_violation_count": 0,
+    "output_deadline_violation_count": 0
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "schema": "exact-fast-negative-physical-shard-v2",
+  "status": "sat",
+  "domain": "s3456_leaf",
+  "rows": 162,
+  "output_names": [
+    "S3",
+    "S4"
+  ],
+  "free_sources": [
+    "nC3",
+    "G3",
+    "Q3",
+    "P3",
+    "N3",
+    "G4",
+    "Q4",
+    "P4",
+    "N4",
+    "G5",
+    "Q5",
+    "P5",
+    "N5",
+    "G6",
+    "Q6",
+    "P6",
+    "N6",
+    "A34n",
+    "V34n",
+    "A56n",
+    "V56n",
+    "A36n",
+    "V36n",
+    "nC7",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "nC3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "N3": 1,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "N4": 1,
+    "G5": 1,
+    "Q5": 1,
+    "P5": 2,
+    "N5": 1,
+    "G6": 1,
+    "Q6": 1,
+    "P6": 2,
+    "N6": 1,
+    "A34n": 2,
+    "V34n": 2,
+    "A56n": 2,
+    "V56n": 2,
+    "A36n": 3,
+    "V36n": 3,
+    "nC7": 4,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 11,
+  "max_delay": 5,
+  "components": 9,
+  "ordinary": 7,
+  "exact_switches": 2,
+  "exact_xors": 0,
+  "fixed_kinds": [
+    "NOR",
+    "NAND",
+    "AND",
+    "AND",
+    "OR",
+    "OR",
+    "NAND",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "solver": "cadical195",
+  "variables": 47596,
+  "clauses": 407704,
+  "solve_seconds": 5.653521100000944,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 6,
+    "suffix_universe_sha256": "0b0c7c64fd44259c23762e70b87484cbb06caad9125d2fd944ecc16ac01666c7",
+    "assigned_suffix_signatures": [
+      [
+        "NOT"
+      ],
+      [
+        "AND"
+      ],
+      [
+        "OR"
+      ],
+      [
+        "NAND"
+      ],
+      [
+        "NOR"
+      ],
+      [
+        "SWITCH"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "dependency_sha256": {
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  },
+  "actual_gate": 11,
+  "network": [
+    {
+      "slot": 0,
+      "source": 26,
+      "kind": "NOR",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 1,
+      "source": 27,
+      "kind": "NAND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 2,
+      "source": 28,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 3,
+      "source": 29,
+      "kind": "AND",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        17
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 4,
+      "source": 30,
+      "kind": "OR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 5,
+      "source": 31,
+      "kind": "OR",
+      "left_bus": [
+        26
+      ],
+      "right_bus": [
+        29
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 6,
+      "source": 32,
+      "kind": "NAND",
+      "left_bus": [
+        27
+      ],
+      "right_bus": [
+        30
+      ],
+      "cost": 1,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 7,
+      "source": 33,
+      "kind": "SWITCH",
+      "left_bus": [
+        28
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 2,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 8,
+      "source": 34,
+      "kind": "SWITCH",
+      "left_bus": [
+        27
+      ],
+      "right_bus": [
+        31
+      ],
+      "cost": 2,
+      "depth_upper_bound": 5
+    }
+  ],
+  "output_buses": [
+    [
+      32
+    ],
+    [
+      33,
+      34
+    ]
+  ],
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "actual_output_arrivals": [
+      5,
+      5
+    ],
+    "actual_max_delay": 5,
+    "depth_upper_bound_violation_count": 0,
+    "output_deadline_violation_count": 0
+  }
+}

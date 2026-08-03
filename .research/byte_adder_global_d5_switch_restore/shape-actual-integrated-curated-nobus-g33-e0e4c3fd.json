@@ -1,0 +1,137 @@
+{
+  "schema": "phase-high-global-function-map-v1",
+  "status": "unsat",
+  "mode": "integrated-nc7",
+  "delay_bound": 5,
+  "high_window_gate_bound": 33,
+  "fixed_paid_gate": 69,
+  "complete_gate_bound": 102,
+  "vectors": 131072,
+  "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
+  "hub79_circuit_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
+  "mapper_script_sha256": "e0e4c3fd12b58eaf2f0a392e40407c6d3c560ce0e1384269298e1e63b7078fd5",
+  "global_core_script_sha256": "ae1ee830c145be12f41c723b7d7c25422cfbddde9a5d0d1ec5a899eebbf66fd2",
+  "hub33_library_script_sha256": "c967312c05285b8e121b1f5702d1715d07ffc89251f8c346b205d866fcfbde8e",
+  "s12_witness_sha256": "ce961b00057aa1949cd8e702e04d02fc455d70c2eb9c095cbf0fe7e9fa8534a1",
+  "candidate_witness_sha256": {
+    "probe_s4_g9_n7_s2_x0_d5.json": "34db309e17f13fa0f48514126359ef65575d5957a3dbff65f739061798a88e00",
+    "s34_g11_d5_joint_exact.json": "69b0e3f1b6300da157de50f3b256f487211e9a141a0502cc71d476a895d48a36",
+    "tail_s7c8_g16_fixed_kinds_d5.json": "bad7c9b909be8faf572c1577632b4f1f39143a92c2763ff7fee96ab2b911db29"
+  },
+  "hub33_function_library": {
+    "parent_sha256": "0f339a82fbacd7f80e7191685237e14e793818af8a5de4ca2f0d05e7f9d707f5",
+    "child_sha256": "14fd0ee074231e41df02839551f51fe73603cb4da1f976fd010267d426e65575",
+    "embeddings": {
+      "low5": {
+        "component_scalar_functions": 257,
+        "resolved_networks": 88,
+        "switch_input_labels": 48,
+        "distinct_switch_input_functions": 27,
+        "conflict_rows": 0,
+        "sum_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "exact_outputs": [
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ]
+      },
+      "high5": {
+        "component_scalar_functions": 257,
+        "resolved_networks": 88,
+        "switch_input_labels": 48,
+        "distinct_switch_input_functions": 30,
+        "conflict_rows": 0,
+        "sum_indices": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "exact_outputs": [
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ]
+      }
+    },
+    "labeled_function_count": 1132,
+    "distinct_function_count": 84
+  },
+  "universe_functions": 270,
+  "base_universe_functions": 270,
+  "universe_expansion": "curated",
+  "bus_driver_universe": "base",
+  "mixed_bus2_scope": "disabled",
+  "mixed_bus2_target_profile": "none",
+  "mixed_bus2_target_count": 0,
+  "mixed_bus2_target_labels": [],
+  "mixed_bus2_retained_recipes": 0,
+  "mixed_bus2_enumeration_complete": true,
+  "source1_function_count": 0,
+  "new_source1_function_count": 0,
+  "source1_producer_recipe_count": 0,
+  "source1_residual_recipe_count": 0,
+  "paid_source_functions": 63,
+  "ordinary_recipe_count": 10710,
+  "original_bus_recipe_count": 18,
+  "targets_with_bus2": 0,
+  "raw_dependency_sets": 0,
+  "retained_bus2_recipes": 0,
+  "bus2_coverage_count": 0,
+  "max_driver_forms_in_any_coverage": 0,
+  "truncated_bus2_coverage_count": 0,
+  "bus2_enumeration_complete": true,
+  "recipe_count": 10728,
+  "candidate_count": 9062,
+  "enumerate_only": false,
+  "cnf_shape_estimate": {
+    "exact_for_producer_tiered_seqcounter": true,
+    "active_recipe_variables": 9062,
+    "arrival_variables": 907,
+    "auxiliary_variables": 19772,
+    "producer_cardinality_auxiliary_variables": 9377,
+    "cost_cardinality_auxiliary_variables": 10395,
+    "cost_group_variables": 348,
+    "cost_literal_count": 348,
+    "dependency_clause_count": 53744,
+    "cost_link_clause_count": 1335,
+    "cnf_variables": 30089,
+    "cnf_clauses": 113856
+  },
+  "seconds": 2.426010099999985,
+  "backend": "pysat-cadical195-cardinality",
+  "solver": "cadical195",
+  "cost_encoding": "producer-tiered",
+  "cardinality_encoding": "seqcounter",
+  "cost_literal_count": 348,
+  "cnf_variables": 30089,
+  "cnf_clauses": 113856,
+  "solver_stats": {
+    "restarts": 5,
+    "conflicts": 35,
+    "decisions": 2444,
+    "propagations": 32818
+  },
+  "outputs": [
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "C8"
+  ],
+  "proof_limit": "UNSAT applies only to the stated function universe, base BUS-driver universe, and any explicitly named mixed_bus2_scope/target profile; SAT is a constructive complete 2^17-row upper bound."
+}

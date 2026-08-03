@@ -1,0 +1,205 @@
+{
+  "schema": "s567c8-interleave-ss-tail-phase-3x3-audit-v1",
+  "status": "unsat-covered",
+  "topology": [
+    "SWITCH",
+    "SWITCH",
+    "K1",
+    "K2",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "kind_alphabet": [
+    "NOT",
+    "NOR",
+    "OR"
+  ],
+  "ordered_pair_count": 9,
+  "selected_evidence_count": 9,
+  "missing": [],
+  "invalid": [],
+  "non_unsat": [],
+  "duplicate_pair": [],
+  "model": {
+    "domain": "s34567c8_leaf",
+    "rows": 486,
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate_bound": 18,
+    "max_delay": 5,
+    "components": 10,
+    "ordinary": 2,
+    "switches": 8,
+    "xors": 0,
+    "unrestricted_input_bus_selection": true,
+    "switch_z_and_conflict_semantics": true,
+    "physical_net_partition": true,
+    "public_outputs_must_be_driven": true,
+    "dead_component_clauses": true
+  },
+  "line_endings": {
+    "on_disk": "CRLF",
+    "worker_stdout_sha_basis": "LF JSON before Path.write_text",
+    "both_hashes_verified": true
+  },
+  "records": [
+    {
+      "pair": [
+        "NOT",
+        "NOT"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_not_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 197.6703054999998,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "d34e1823d739e2936de071f91ca77ba4a80470a0d44958d22e9595ab4c362b4e",
+      "normalized_lf_sha256": "3d7307dc7b285b914ddc16715d6ee05dacd04fdc9b25e66846fac45985c8fd49",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "NOT",
+        "NOR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_nor_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 255.1764375999992,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "7fa4f2c1963851b14fd58d5047ad9c38601e1bf1063009106154bb338a980b3a",
+      "normalized_lf_sha256": "5579cdeb03503a2ac44b528b3371b531af159d72798600f784a6a821cadad68a",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "NOT",
+        "OR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_or_s6_cadical195.json",
+      "status": "unsat",
+      "solver": "cadical195",
+      "solve_seconds": 570.6911785000011,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "11309d924b475f9a148c44faa831767d6e0f102a843c5354f60fe43451f3bc4d",
+      "normalized_lf_sha256": "51fbbb8f65b3e40b9ef9ed6cc74042c40dbc229ab0fa58f0191660a1dfeb1eb8",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "NOR",
+        "NOT"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_not_s6_cadical195.json",
+      "status": "unsat",
+      "solver": "cadical195",
+      "solve_seconds": 291.0377413000024,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "b55686105313473a0c64be060b298f31248f2383408f53453d6a831deec594f8",
+      "normalized_lf_sha256": "7def5f4898b85c20e7889a74119323d667af17d0266f622519c7207c7edaabe2",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "NOR",
+        "NOR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_nor_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 251.0954645999991,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "57d4faf3b2560e583f0f3561d4c0a692a2472a98313d0710866c1db2f41dad0c",
+      "normalized_lf_sha256": "675008a1c44d63e28d60c46ca3eb5d07cefbaa72603429673330f0997f4b685d",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "NOR",
+        "OR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_or_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 201.4159295999998,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "4d6488b5854dea30a347e7c56845eee4399c26affc5f0e785dd7052848e69081",
+      "normalized_lf_sha256": "d2c56a2d54b317a12b5783e954c2df1f4f743492e39e32edc9fe4e8862c77c50",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "OR",
+        "NOT"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_not_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 237.16208059999917,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "7a81845cd688f8701de67b9cc0cfa4090a42c1843769b4966ee7752c7eb67a9f",
+      "normalized_lf_sha256": "ef0ed5572d2c5a3560522cc26bf667aca57dc9d42a1ac21c8a14d350485cb7dc",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "OR",
+        "NOR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_nor_s6_glucose300.json",
+      "status": "unsat",
+      "solver": "glucose42",
+      "solve_seconds": 148.78630089999933,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "b606f475d997c38dcfbee62cd4d76b782218d93b75dc98f9fa85a4cef1d9a85e",
+      "normalized_lf_sha256": "575cd8e45411d9915647c81becf9c20157e30941f0e6680447bc1cdc9c4bae75",
+      "checks_ok": true
+    },
+    {
+      "pair": [
+        "OR",
+        "OR"
+      ],
+      "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_or_s6_cadical195.json",
+      "status": "unsat",
+      "solver": "cadical195",
+      "solve_seconds": 431.1498035000004,
+      "variables": 174812,
+      "clauses": 1340422,
+      "on_disk_sha256": "e64eca536cfb5a38a4b7516a5ca6919ed2f07da212136afed6604dd02d693a8d",
+      "normalized_lf_sha256": "08925e7f28617137763e4cdafb95030d96a7baec17fb92ec5d0f239dffe7fe19",
+      "checks_ok": true
+    }
+  ],
+  "dependency_sha256": {
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  },
+  "physical_exact_sha256": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+  "auditor_sha256": "c43e389bbd23974cf0ce4f590dff3ac94ad7f6a5f1bac918374bde23935bb42b",
+  "scope_exclusions": [
+    "K1 or K2 is AND or NAND",
+    "ordinary components occupy positions other than slots 2 and 3",
+    "ordinary/Switch decompositions other than o2/s8",
+    "XOR components",
+    "gate cost below or above exact 18"
+  ],
+  "conclusion": "For topology SWITCH,SWITCH,K1,K2,SWITCHx6, every ordered pair K1,K2 in {NOT,NOR,OR} is strictly UNSAT in the full physical 486-row D5 model.  This is a 3x3 restricted kind-matrix result, not a complete interleaved-o2/s8 lower bound."
+}

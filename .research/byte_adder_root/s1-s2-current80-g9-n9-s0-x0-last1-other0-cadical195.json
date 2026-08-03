@@ -1,0 +1,43 @@
+{
+  "schema": "exact-80d7-s1-s2-joint-v1",
+  "status": "unsat",
+  "interface": "s1_s2_current80",
+  "free_sources": [
+    "a1",
+    "b1",
+    "G1",
+    "G2",
+    "V2",
+    "C1",
+    "C3",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "a1": 0,
+    "b1": 0,
+    "G1": 1,
+    "G2": 1,
+    "V2": 1,
+    "C1": 2,
+    "C3": 3,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 9,
+  "max_delay": 7,
+  "components": 9,
+  "exact_switches": 0,
+  "exact_xors": 0,
+  "solver": "cadical195",
+  "variables": 11923,
+  "clauses": 95707,
+  "solve_seconds": 0.149250899998151,
+  "physical_nets": true,
+  "last_output_shard": 1,
+  "other_output_gate_shard": 0,
+  "output_deadlines": [
+    4,
+    7
+  ]
+}

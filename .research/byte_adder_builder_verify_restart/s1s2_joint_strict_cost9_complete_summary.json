@@ -1,0 +1,1150 @@
+{
+  "schema": "byte-adder-80d7-s1-s2-joint-exact-cost9-complete-summary-v1",
+  "scope": {
+    "authoritative_frontier": {
+      "gate": 80,
+      "delay": 7,
+      "nand": 560
+    },
+    "cut_node_ids": [
+      23,
+      24,
+      52,
+      53,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81
+    ],
+    "source_ids": [
+      4,
+      5,
+      22,
+      25,
+      51,
+      45,
+      56
+    ],
+    "source_names": [
+      "a1",
+      "b1",
+      "G1",
+      "G2",
+      "V2",
+      "C1",
+      "C3"
+    ],
+    "source_arrivals": {
+      "a1": 0,
+      "b1": 0,
+      "G1": 1,
+      "G2": 1,
+      "V2": 1,
+      "C1": 2,
+      "C3": 3
+    },
+    "target_ids": [
+      77,
+      81
+    ],
+    "target_names": [
+      "S1",
+      "S2"
+    ],
+    "output_deadlines": [
+      4,
+      7
+    ],
+    "full_truth_rows": 131072,
+    "strict_compressed_signature_rows": 36,
+    "fixed_retained_source_pool": true,
+    "co_synthesizes_retained_boundary": false
+  },
+  "library_costs": {
+    "ordinary": 1,
+    "switch": 2,
+    "xor": 3
+  },
+  "cost_equation": "ordinary + 2*switches + 3*xors = 9",
+  "all_nonnegative_integer_decompositions": [
+    {
+      "name": "o9_s0_x0",
+      "ordinary": 9,
+      "switches": 0,
+      "xors": 0,
+      "components": 9,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o7_s1_x0",
+      "ordinary": 7,
+      "switches": 1,
+      "xors": 0,
+      "components": 8,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o5_s2_x0",
+      "ordinary": 5,
+      "switches": 2,
+      "xors": 0,
+      "components": 7,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o3_s3_x0",
+      "ordinary": 3,
+      "switches": 3,
+      "xors": 0,
+      "components": 6,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o1_s4_x0",
+      "ordinary": 1,
+      "switches": 4,
+      "xors": 0,
+      "components": 5,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o6_s0_x1",
+      "ordinary": 6,
+      "switches": 0,
+      "xors": 1,
+      "components": 7,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o4_s1_x1",
+      "ordinary": 4,
+      "switches": 1,
+      "xors": 1,
+      "components": 6,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o2_s2_x1",
+      "ordinary": 2,
+      "switches": 2,
+      "xors": 1,
+      "components": 5,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o0_s3_x1",
+      "ordinary": 0,
+      "switches": 3,
+      "xors": 1,
+      "components": 4,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o3_s0_x2",
+      "ordinary": 3,
+      "switches": 0,
+      "xors": 2,
+      "components": 5,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o1_s1_x2",
+      "ordinary": 1,
+      "switches": 1,
+      "xors": 2,
+      "components": 4,
+      "weighted_gate": 9
+    },
+    {
+      "name": "o0_s0_x3",
+      "ordinary": 0,
+      "switches": 0,
+      "xors": 3,
+      "components": 3,
+      "weighted_gate": 9
+    }
+  ],
+  "decomposition_count": 12,
+  "partition": {
+    "all_ordinary": {
+      "decomposition": {
+        "name": "o9_s0_x0",
+        "ordinary": 9,
+        "switches": 0,
+        "xors": 0,
+        "components": 9,
+        "weighted_gate": 9
+      },
+      "evidence_family": "root Boolean ordinary-only physical-net model",
+      "status": "unsat",
+      "solver_runs": 1
+    },
+    "mixed": {
+      "decompositions": [
+        {
+          "name": "o7_s1_x0",
+          "ordinary": 7,
+          "switches": 1,
+          "xors": 0,
+          "components": 8,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o5_s2_x0",
+          "ordinary": 5,
+          "switches": 2,
+          "xors": 0,
+          "components": 7,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o3_s3_x0",
+          "ordinary": 3,
+          "switches": 3,
+          "xors": 0,
+          "components": 6,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o1_s4_x0",
+          "ordinary": 1,
+          "switches": 4,
+          "xors": 0,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o6_s0_x1",
+          "ordinary": 6,
+          "switches": 0,
+          "xors": 1,
+          "components": 7,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o4_s1_x1",
+          "ordinary": 4,
+          "switches": 1,
+          "xors": 1,
+          "components": 6,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o2_s2_x1",
+          "ordinary": 2,
+          "switches": 2,
+          "xors": 1,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o0_s3_x1",
+          "ordinary": 0,
+          "switches": 3,
+          "xors": 1,
+          "components": 4,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o3_s0_x2",
+          "ordinary": 3,
+          "switches": 0,
+          "xors": 2,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o1_s1_x2",
+          "ordinary": 1,
+          "switches": 1,
+          "xors": 2,
+          "components": 4,
+          "weighted_gate": 9
+        },
+        {
+          "name": "o0_s0_x3",
+          "ordinary": 0,
+          "switches": 0,
+          "xors": 3,
+          "components": 3,
+          "weighted_gate": 9
+        }
+      ],
+      "evidence_family": "strict value/driven physical-net model",
+      "status": "all-mixed-cost9-unsat",
+      "solver_runs": 22
+    },
+    "covered_decomposition_count": 12,
+    "complete": true
+  },
+  "ordinary_projection_equivalence": {
+    "authoritative_source": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+      "sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884"
+    },
+    "full_truth_rows": 131072,
+    "strict_value_driven_signature_count": 36,
+    "boolean_assignment_count_in_n9_model": 32,
+    "boolean_unique_boundary_signature_count": 24,
+    "root_unique_boundary_signature_count": 24,
+    "driven_variants_per_boolean_signature_histogram": {
+      "1": 12,
+      "2": 12
+    },
+    "z_stats": {
+      "C1": {
+        "driven_rows": 81920,
+        "z_rows": 49152,
+        "one_while_z_rows": 0
+      },
+      "C3": {
+        "driven_rows": 94208,
+        "z_rows": 36864,
+        "one_while_z_rows": 0
+      }
+    },
+    "checks": {
+      "strict_signature_count_36": true,
+      "boolean_unique_signature_count_24": true,
+      "root_assignment_count_32": true,
+      "root_unique_signature_count_24": true,
+      "strict_targets_determined": true,
+      "boolean_targets_determined": true,
+      "authoritative_boolean_map_equals_root_map": true,
+      "driven_variant_histogram_is_12x1_plus_12x2": true,
+      "undriven_C1_C3_bits_are_zero": true
+    },
+    "equivalence_scope": {
+      "decomposition": {
+        "ordinary": 9,
+        "switches": 0,
+        "xors": 0
+      },
+      "reason": [
+        "active-bus normalization makes every selected ordinary input/output bus singleton",
+        "ordinary component outputs are always driven",
+        "authoritative C1/C3 undriven rows carry value bit zero, so Z0 and driven zero have the same ordinary Boolean input value",
+        "authoritative value-only boundary-to-target map exactly equals the 32-assignment root truth-table map"
+      ],
+      "not_extended_to_switch_cases": true
+    }
+  },
+  "all_ordinary_evidence": {
+    "main_unsharded_result": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0.json",
+      "sha256": "7a56e59ff89237efedbd0e45641fbfe1c1cca307cd966ba26b4905170e5586e9",
+      "status": "unsat",
+      "solver": "cadical195",
+      "variables": 11923,
+      "clauses": 95705,
+      "solve_seconds": 2025.5379888000025,
+      "decomposition": {
+        "ordinary": 9,
+        "switches": 0,
+        "xors": 0,
+        "components": 9,
+        "weighted_gate": 9
+      },
+      "decisive": true
+    },
+    "auxiliary_last_output_shards": {
+      "decisive": false,
+      "role": "diagnostic mutually exclusive selector subcases; the unsharded result is decisive",
+      "last_output": 1,
+      "other_output_gate_values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "pairwise_disjoint_under_singleton_output_bus": true,
+      "all_unsat": true,
+      "results": [
+        {
+          "other_output_gate": 0,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other0-cadical195.json",
+          "sha256": "c0b8d01edb3ce9bd7f42e5b0fc09c8df62145dfd4ce3b3c54135893f3aa2ec4d",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 0.149250899998151
+        },
+        {
+          "other_output_gate": 1,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other1-cadical195.json",
+          "sha256": "7bbdafcb0863123577bb3fa6709d3cff70a8166ac118bc5008429e8996c6f445",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 0.15591979999953764
+        },
+        {
+          "other_output_gate": 2,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other2-cadical195.json",
+          "sha256": "eb9a4189bb9f3befc35aafe7c049530bb786a441ffbe21c3e96ae16d43011080",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 0.18337369999790099
+        },
+        {
+          "other_output_gate": 3,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other3-cadical195.json",
+          "sha256": "4d3e8ab218aabf22a55178f2b393da6a4dea0cf053b9ebbd48e4b7718ee3e4fa",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 0.26301600000078906
+        },
+        {
+          "other_output_gate": 4,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other4-cadical195.json",
+          "sha256": "534eacea0770bd312ffbfdcecf4022d9dbb8844b49390d935db04833551c3e2b",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 1.5503486999987217
+        },
+        {
+          "other_output_gate": 5,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other5-cadical195.json",
+          "sha256": "3a873e4c5ba9484502a288552b46852092a03cf2f920a6b9ffad27f27684ffab",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 9.666247600001952
+        },
+        {
+          "other_output_gate": 6,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other6-cadical195.json",
+          "sha256": "1aec4d283cdf2ade66a2545697fdc9b7d6b89aae7c8a91d22fa11bcedbcbfa1f",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 42.906098700001166
+        },
+        {
+          "other_output_gate": 7,
+          "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0-last1-other7-cadical195.json",
+          "sha256": "cc7d54f979ed13607d68fcfda0a22b5296f21b1d425030e9e7c7de1b25216ece",
+          "status": "unsat",
+          "variables": 11923,
+          "clauses": 95707,
+          "solve_seconds": 64.94963219999772
+        }
+      ]
+    },
+    "replay_entrypoint": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\exact_80d7_s1_s2_joint_sat.py",
+      "sha256": "854dc6888090442dc64e33e2878177885dc6f9157cffa52cf0edf446726651f2"
+    },
+    "dynamic_dependencies": [
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_ling_theory_agent\\exact_free_ling_pair_sat.py",
+        "sha256": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_boolean_superopt_agent\\exact_adder_block_sat.py",
+        "sha256": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_468_joint_macro\\joint_parity_cnf.py",
+        "sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+      }
+    ],
+    "provenance_note": "The root artifact has no embedded script digest. Its own SHA-256 is therefore the primary immutable evidence; the pinned wrapper and dependencies are the reviewed replay entrypoint."
+  },
+  "mixed_evidence": {
+    "summary": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_cost9_mixed_summary.json",
+      "sha256": "9016d882f208bada6ee0c84cfbc1bccbf593f4d9d41071fe4ef6053446a349a9"
+    },
+    "status": "all-mixed-cost9-unsat",
+    "case_count": 11,
+    "solver_run_count": 22,
+    "cases": [
+      {
+        "name": "o7_s1_x0",
+        "decomposition": {
+          "ordinary": 7,
+          "switches": 1,
+          "xors": 0,
+          "components": 8,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o7_s1_x0_cadical195.json",
+            "sha256": "2e20f8101d8f02a3256a49c73ae4eb164aeb4720eef3020b530560847723b8db",
+            "status": "unsat",
+            "variables": 10618,
+            "clauses": 82118,
+            "build_seconds": 0.07733259999804432,
+            "solve_seconds": 126.98286310000185
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o7_s1_x0_glucose42.json",
+            "sha256": "2501326e494ee8ae811104640925a339366e05efe49108d07806ba826e250115",
+            "status": "unsat",
+            "variables": 10618,
+            "clauses": 82118,
+            "build_seconds": 0.06890890000067884,
+            "solve_seconds": 84.09624229999827
+          }
+        ]
+      },
+      {
+        "name": "o5_s2_x0",
+        "decomposition": {
+          "ordinary": 5,
+          "switches": 2,
+          "xors": 0,
+          "components": 7,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o5_s2_x0_cadical195.json",
+            "sha256": "d8ac660e2824f358e444b4faf1442fd6608c4f3d859cb68762acc172f2788221",
+            "status": "unsat",
+            "variables": 8583,
+            "clauses": 65441,
+            "build_seconds": 0.07072960000004969,
+            "solve_seconds": 20.931760700001178
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o5_s2_x0_glucose42.json",
+            "sha256": "b1214a4ec80596fc0ce5ea8a59b055c11fc8a6cb746b11a2c415bbd2b5340570",
+            "status": "unsat",
+            "variables": 8583,
+            "clauses": 65441,
+            "build_seconds": 0.05727649999971618,
+            "solve_seconds": 12.068537900002411
+          }
+        ]
+      },
+      {
+        "name": "o3_s3_x0",
+        "decomposition": {
+          "ordinary": 3,
+          "switches": 3,
+          "xors": 0,
+          "components": 6,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s3_x0_cadical195.json",
+            "sha256": "b8a32bae61fb1f066f1c1fc3101c61883f3cccef6a68566149824d74736be870",
+            "status": "unsat",
+            "variables": 6753,
+            "clauses": 50746,
+            "build_seconds": 0.05343709999942803,
+            "solve_seconds": 2.378556799998478
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s3_x0_glucose42.json",
+            "sha256": "014646c9c01cc8b8c219c1a26143f36adbe06b44847adffe413004c0d084f016",
+            "status": "unsat",
+            "variables": 6753,
+            "clauses": 50746,
+            "build_seconds": 0.045460800000000745,
+            "solve_seconds": 1.3061314999977185
+          }
+        ]
+      },
+      {
+        "name": "o1_s4_x0",
+        "decomposition": {
+          "ordinary": 1,
+          "switches": 4,
+          "xors": 0,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s4_x0_cadical195.json",
+            "sha256": "c9813787a22e7bb36d02a85a7eab3fca08f898947b491c27621bc170e78eb910",
+            "status": "unsat",
+            "variables": 5127,
+            "clauses": 37974,
+            "build_seconds": 0.03361869999935152,
+            "solve_seconds": 0.21225589999812655
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s4_x0_glucose42.json",
+            "sha256": "e8af54dcef8877240b2fff79103f72f9db5393efed4f43a0cddd87422d1c8e21",
+            "status": "unsat",
+            "variables": 5127,
+            "clauses": 37974,
+            "build_seconds": 0.051548499999626074,
+            "solve_seconds": 0.11363360000177636
+          }
+        ]
+      },
+      {
+        "name": "o6_s0_x1",
+        "decomposition": {
+          "ordinary": 6,
+          "switches": 0,
+          "xors": 1,
+          "components": 7,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o6_s0_x1_cadical195.json",
+            "sha256": "05d860b9b5a2b02caf136349ae7720cd048f12fe806c1678c7bb6cab656f419d",
+            "status": "unsat",
+            "variables": 8569,
+            "clauses": 65419,
+            "build_seconds": 0.05763370000204304,
+            "solve_seconds": 35.48184939999919
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o6_s0_x1_glucose42.json",
+            "sha256": "4e6016dc1cddada2d9790b2fa2b61b8c6f0e65de8de4f440a981d3642ac6b267",
+            "status": "unsat",
+            "variables": 8569,
+            "clauses": 65419,
+            "build_seconds": 0.06127579999883892,
+            "solve_seconds": 34.30720160000055
+          }
+        ]
+      },
+      {
+        "name": "o4_s1_x1",
+        "decomposition": {
+          "ordinary": 4,
+          "switches": 1,
+          "xors": 1,
+          "components": 6,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o4_s1_x1_cadical195.json",
+            "sha256": "fe337fb7420fa52538f3f09f261a7f792d40886bb278c26703e507fe188f10b3",
+            "status": "unsat",
+            "variables": 6745,
+            "clauses": 50734,
+            "build_seconds": 0.04603539999880013,
+            "solve_seconds": 4.844334599998547
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o4_s1_x1_glucose42.json",
+            "sha256": "4b10b44d13e036147fffbeb93c36fefa66b92e83ae6e6263d9e5b98adad70b9f",
+            "status": "unsat",
+            "variables": 6745,
+            "clauses": 50734,
+            "build_seconds": 0.05160219999743276,
+            "solve_seconds": 3.4780643000012788
+          }
+        ]
+      },
+      {
+        "name": "o2_s2_x1",
+        "decomposition": {
+          "ordinary": 2,
+          "switches": 2,
+          "xors": 1,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o2_s2_x1_cadical195.json",
+            "sha256": "1c6d709fe05cfd03fe37c6bcf350191769ea5234234aba9e886691b872b17932",
+            "status": "unsat",
+            "variables": 5139,
+            "clauses": 37993,
+            "build_seconds": 0.03485000000000582,
+            "solve_seconds": 0.889268599999923
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o2_s2_x1_glucose42.json",
+            "sha256": "327bcb01af0d2ac716c436b27029afa7fbe4d17897c7ec78ca0004a701ea9d7a",
+            "status": "unsat",
+            "variables": 5139,
+            "clauses": 37993,
+            "build_seconds": 0.04975109999941196,
+            "solve_seconds": 0.6012289999998757
+          }
+        ]
+      },
+      {
+        "name": "o0_s3_x1",
+        "decomposition": {
+          "ordinary": 0,
+          "switches": 3,
+          "xors": 1,
+          "components": 4,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s3_x1_cadical195.json",
+            "sha256": "d02f2eaf59fa6c122ede135c6fb68bedcabc2853677ffa896c1810165fe51e76",
+            "status": "unsat",
+            "variables": 3729,
+            "clauses": 27109,
+            "build_seconds": 0.023685500000283355,
+            "solve_seconds": 0.0439278000012564
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s3_x1_glucose42.json",
+            "sha256": "a24df657394e47ff3a05c39dc238a488cc4fbcfd72cb4a4852d46783c41651a6",
+            "status": "unsat",
+            "variables": 3729,
+            "clauses": 27109,
+            "build_seconds": 0.0239356999991287,
+            "solve_seconds": 0.026024799997685477
+          }
+        ]
+      },
+      {
+        "name": "o3_s0_x2",
+        "decomposition": {
+          "ordinary": 3,
+          "switches": 0,
+          "xors": 2,
+          "components": 5,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s0_x2_cadical195.json",
+            "sha256": "e91bb2d952f5168be3e4b475d7c1fc1985404c3b6b4f3857e28d304b51804d8a",
+            "status": "unsat",
+            "variables": 5135,
+            "clauses": 37986,
+            "build_seconds": 0.033322499999485444,
+            "solve_seconds": 0.5669656999998551
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s0_x2_glucose42.json",
+            "sha256": "05b5704fef9af8410cae39bbe70c7b56abe7f93062854c4dc2840cf6227d0e04",
+            "status": "unsat",
+            "variables": 5135,
+            "clauses": 37986,
+            "build_seconds": 0.04053779999958351,
+            "solve_seconds": 0.5804587999991782
+          }
+        ]
+      },
+      {
+        "name": "o1_s1_x2",
+        "decomposition": {
+          "ordinary": 1,
+          "switches": 1,
+          "xors": 2,
+          "components": 4,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s1_x2_cadical195.json",
+            "sha256": "0a66e4f9cc26e63137f4304343121f3b3c862154839cd02a4ba4bfd8ce2a1dad",
+            "status": "unsat",
+            "variables": 3734,
+            "clauses": 27116,
+            "build_seconds": 0.02993409999908181,
+            "solve_seconds": 0.1103421999978309
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s1_x2_glucose42.json",
+            "sha256": "77e6e689dc649d3f1bbe7ffa86cb8781869cd5077e5652d71cda26f068ad8f55",
+            "status": "unsat",
+            "variables": 3734,
+            "clauses": 27116,
+            "build_seconds": 0.025095400000282098,
+            "solve_seconds": 0.06408139999984996
+          }
+        ]
+      },
+      {
+        "name": "o0_s0_x3",
+        "decomposition": {
+          "ordinary": 0,
+          "switches": 0,
+          "xors": 3,
+          "components": 3,
+          "weighted_gate": 9
+        },
+        "status": "unsat",
+        "solver_runs": [
+          {
+            "solver": "cadical195",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s0_x3_cadical195.json",
+            "sha256": "988051e79d397799ed0025e192e055866ad0ab82b9b36be22203c072c666af99",
+            "status": "unsat",
+            "variables": 2531,
+            "clauses": 18050,
+            "build_seconds": 0.017966000003070803,
+            "solve_seconds": 0.016120200001751073
+          },
+          {
+            "solver": "glucose42",
+            "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s0_x3_glucose42.json",
+            "sha256": "1c13f454092464bebd539643f6f8b58e64456d40ac931eeaf79fcfa1936fafc8",
+            "status": "unsat",
+            "variables": 2531,
+            "clauses": 18050,
+            "build_seconds": 0.02090390000012121,
+            "solve_seconds": 0.013129999999364372
+          }
+        ]
+      }
+    ],
+    "raw_result_files": [
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o7_s1_x0_cadical195.json",
+        "sha256": "2e20f8101d8f02a3256a49c73ae4eb164aeb4720eef3020b530560847723b8db"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o7_s1_x0_glucose42.json",
+        "sha256": "2501326e494ee8ae811104640925a339366e05efe49108d07806ba826e250115"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o5_s2_x0_cadical195.json",
+        "sha256": "d8ac660e2824f358e444b4faf1442fd6608c4f3d859cb68762acc172f2788221"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o5_s2_x0_glucose42.json",
+        "sha256": "b1214a4ec80596fc0ce5ea8a59b055c11fc8a6cb746b11a2c415bbd2b5340570"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s3_x0_cadical195.json",
+        "sha256": "b8a32bae61fb1f066f1c1fc3101c61883f3cccef6a68566149824d74736be870"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s3_x0_glucose42.json",
+        "sha256": "014646c9c01cc8b8c219c1a26143f36adbe06b44847adffe413004c0d084f016"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s4_x0_cadical195.json",
+        "sha256": "c9813787a22e7bb36d02a85a7eab3fca08f898947b491c27621bc170e78eb910"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s4_x0_glucose42.json",
+        "sha256": "e8af54dcef8877240b2fff79103f72f9db5393efed4f43a0cddd87422d1c8e21"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o6_s0_x1_cadical195.json",
+        "sha256": "05d860b9b5a2b02caf136349ae7720cd048f12fe806c1678c7bb6cab656f419d"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o6_s0_x1_glucose42.json",
+        "sha256": "4e6016dc1cddada2d9790b2fa2b61b8c6f0e65de8de4f440a981d3642ac6b267"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o4_s1_x1_cadical195.json",
+        "sha256": "fe337fb7420fa52538f3f09f261a7f792d40886bb278c26703e507fe188f10b3"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o4_s1_x1_glucose42.json",
+        "sha256": "4b10b44d13e036147fffbeb93c36fefa66b92e83ae6e6263d9e5b98adad70b9f"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o2_s2_x1_cadical195.json",
+        "sha256": "1c6d709fe05cfd03fe37c6bcf350191769ea5234234aba9e886691b872b17932"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o2_s2_x1_glucose42.json",
+        "sha256": "327bcb01af0d2ac716c436b27029afa7fbe4d17897c7ec78ca0004a701ea9d7a"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s3_x1_cadical195.json",
+        "sha256": "d02f2eaf59fa6c122ede135c6fb68bedcabc2853677ffa896c1810165fe51e76"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s3_x1_glucose42.json",
+        "sha256": "a24df657394e47ff3a05c39dc238a488cc4fbcfd72cb4a4852d46783c41651a6"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s0_x2_cadical195.json",
+        "sha256": "e91bb2d952f5168be3e4b475d7c1fc1985404c3b6b4f3857e28d304b51804d8a"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o3_s0_x2_glucose42.json",
+        "sha256": "05b5704fef9af8410cae39bbe70c7b56abe7f93062854c4dc2840cf6227d0e04"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s1_x2_cadical195.json",
+        "sha256": "0a66e4f9cc26e63137f4304343121f3b3c862154839cd02a4ba4bfd8ce2a1dad"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o1_s1_x2_glucose42.json",
+        "sha256": "77e6e689dc649d3f1bbe7ffa86cb8781869cd5077e5652d71cda26f068ad8f55"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s0_x3_cadical195.json",
+        "sha256": "988051e79d397799ed0025e192e055866ad0ab82b9b36be22203c072c666af99"
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_cost9_results\\o0_s0_x3_glucose42.json",
+        "sha256": "1c13f454092464bebd539643f6f8b58e64456d40ac931eeaf79fcfa1936fafc8"
+      }
+    ],
+    "positive_regressions": [
+      {
+        "solver": "cadical195",
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_g10_regression_cadical195.json",
+        "sha256": "8093cccae2bebc5acac2aa3420f5b02ece621019b3aa8f1a635168d8dcca34a2",
+        "status": "sat",
+        "variables": 15464,
+        "clauses": 122370,
+        "solve_seconds": 0.09831380000105128,
+        "full_verification": {
+          "full_truth_rows": 131072,
+          "target_ids": [
+            77,
+            81
+          ],
+          "target_names": [
+            "S1",
+            "S2"
+          ],
+          "mismatch_counts": [
+            0,
+            0
+          ],
+          "mismatch_count": 0,
+          "bus_conflict_count": 0,
+          "undriven_output_counts": [
+            0,
+            0
+          ],
+          "undriven_output_count": 0,
+          "physical_net_partition_violation_count": 0,
+          "physical_net_partition_violations": [],
+          "dead_component_count": 0,
+          "dead_components": [],
+          "actual_gate": 10,
+          "kind_counts": {
+            "NOT": 0,
+            "AND": 2,
+            "OR": 2,
+            "NAND": 2,
+            "NOR": 4,
+            "XOR": 0,
+            "SWITCH": 0
+          },
+          "actual_component_arrivals": [
+            1,
+            2,
+            3,
+            4,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7
+          ],
+          "output_arrivals": [
+            4,
+            7
+          ],
+          "output_deadlines": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "solver": "glucose42",
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_g10_regression_glucose42.json",
+        "sha256": "c5b84a7eeffb76363f74ee7a0f2eb6bff75254abd81be203bb9819722a210015",
+        "status": "sat",
+        "variables": 15464,
+        "clauses": 122370,
+        "solve_seconds": 0.05590930000107619,
+        "full_verification": {
+          "full_truth_rows": 131072,
+          "target_ids": [
+            77,
+            81
+          ],
+          "target_names": [
+            "S1",
+            "S2"
+          ],
+          "mismatch_counts": [
+            0,
+            0
+          ],
+          "mismatch_count": 0,
+          "bus_conflict_count": 0,
+          "undriven_output_counts": [
+            0,
+            0
+          ],
+          "undriven_output_count": 0,
+          "physical_net_partition_violation_count": 0,
+          "physical_net_partition_violations": [],
+          "dead_component_count": 0,
+          "dead_components": [],
+          "actual_gate": 10,
+          "kind_counts": {
+            "NOT": 0,
+            "AND": 2,
+            "OR": 2,
+            "NAND": 2,
+            "NOR": 4,
+            "XOR": 0,
+            "SWITCH": 0
+          },
+          "actual_component_arrivals": [
+            1,
+            2,
+            3,
+            4,
+            3,
+            4,
+            5,
+            5,
+            6,
+            7
+          ],
+          "output_arrivals": [
+            4,
+            7
+          ],
+          "output_deadlines": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  "pinned_files": [
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_cost9_mixed_summary.json",
+      "sha256": "9016d882f208bada6ee0c84cfbc1bccbf593f4d9d41071fe4ef6053446a349a9",
+      "expected_sha256": "9016d882f208bada6ee0c84cfbc1bccbf593f4d9d41071fe4ef6053446a349a9",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\summarize_80d7_s1_s2_joint_strict_mixed.py",
+      "sha256": "8d7b7f5cd17dc1b96c83701e27515773a99386f01186c57ad990fdeef9a2aa03",
+      "expected_sha256": "8d7b7f5cd17dc1b96c83701e27515773a99386f01186c57ad990fdeef9a2aa03",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\exact_80d7_s1_s2_joint_strict_sat.py",
+      "sha256": "7417c004c21bb45d66741a9a99291b0119eaf840b509f56edc7dc063a988768c",
+      "expected_sha256": "7417c004c21bb45d66741a9a99291b0119eaf840b509f56edc7dc063a988768c",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_g10_regression_cadical195.json",
+      "sha256": "8093cccae2bebc5acac2aa3420f5b02ece621019b3aa8f1a635168d8dcca34a2",
+      "expected_sha256": "8093cccae2bebc5acac2aa3420f5b02ece621019b3aa8f1a635168d8dcca34a2",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\s1s2_joint_strict_g10_regression_glucose42.json",
+      "sha256": "c5b84a7eeffb76363f74ee7a0f2eb6bff75254abd81be203bb9819722a210015",
+      "expected_sha256": "c5b84a7eeffb76363f74ee7a0f2eb6bff75254abd81be203bb9819722a210015",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\exact_80d7_s1_s2_joint_sat.py",
+      "sha256": "854dc6888090442dc64e33e2878177885dc6f9157cffa52cf0edf446726651f2",
+      "expected_sha256": "854dc6888090442dc64e33e2878177885dc6f9157cffa52cf0edf446726651f2",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\s1-s2-current80-g9-n9-s0-x0.json",
+      "sha256": "7a56e59ff89237efedbd0e45641fbfe1c1cca307cd966ba26b4905170e5586e9",
+      "expected_sha256": "7a56e59ff89237efedbd0e45641fbfe1c1cca307cd966ba26b4905170e5586e9",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_ling_theory_agent\\exact_free_ling_pair_sat.py",
+      "sha256": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      "expected_sha256": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_boolean_superopt_agent\\exact_adder_block_sat.py",
+      "sha256": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      "expected_sha256": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_468_joint_macro\\joint_parity_cnf.py",
+      "sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4",
+      "expected_sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+      "sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+      "expected_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_layout_agent\\materialize_factory_dag.py",
+      "sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+      "expected_sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+      "match": true
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\search_av97_local_suffix.py",
+      "sha256": "08ba4041b3e01ee5a48c9736a72767c6a4e90a105e75a2634f2fd13c9f7a4f56",
+      "expected_sha256": "08ba4041b3e01ee5a48c9736a72767c6a4e90a105e75a2634f2fd13c9f7a4f56",
+      "match": true
+    }
+  ],
+  "errors": [],
+  "coverage_complete": true,
+  "all_exact_cost9_unsat": true,
+  "status": "all-exact-cost9-unsat",
+  "limitations": [
+    "fixed retained source pool only",
+    "does not co-synthesize the retained boundary",
+    "does not cover alternate cross-output cuts",
+    "is not a global 79/7 lower bound"
+  ],
+  "summarizer_sha256": "ede23e92435aefca3af5f70f304898f053d212440cdc1f177ddd6bfa465bdf8d"
+}

@@ -1,0 +1,217 @@
+{
+  "schema": "exact-fast-negative-physical-shard-v2",
+  "status": "sat",
+  "domain": "s3456_leaf",
+  "rows": 162,
+  "output_names": [
+    "S4"
+  ],
+  "free_sources": [
+    "nC3",
+    "G3",
+    "Q3",
+    "P3",
+    "N3",
+    "G4",
+    "Q4",
+    "P4",
+    "N4",
+    "G5",
+    "Q5",
+    "P5",
+    "N5",
+    "G6",
+    "Q6",
+    "P6",
+    "N6",
+    "A34n",
+    "V34n",
+    "A56n",
+    "V56n",
+    "A36n",
+    "V36n",
+    "nC7",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "nC3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "N3": 1,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "N4": 1,
+    "G5": 1,
+    "Q5": 1,
+    "P5": 2,
+    "N5": 1,
+    "G6": 1,
+    "Q6": 1,
+    "P6": 2,
+    "N6": 1,
+    "A34n": 2,
+    "V34n": 2,
+    "A56n": 2,
+    "V56n": 2,
+    "A36n": 3,
+    "V36n": 3,
+    "nC7": 4,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 9,
+  "max_delay": 5,
+  "components": 7,
+  "ordinary": 5,
+  "exact_switches": 2,
+  "exact_xors": 0,
+  "solver": "glucose42",
+  "variables": 28387,
+  "clauses": 262520,
+  "solve_seconds": 7.076080500000899,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 6,
+    "suffix_universe_sha256": "0b0c7c64fd44259c23762e70b87484cbb06caad9125d2fd944ecc16ac01666c7",
+    "assigned_suffix_signatures": [
+      [
+        "NOT"
+      ],
+      [
+        "AND"
+      ],
+      [
+        "OR"
+      ],
+      [
+        "NAND"
+      ],
+      [
+        "NOR"
+      ],
+      [
+        "SWITCH"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "actual_gate": 9,
+  "network": [
+    {
+      "slot": 0,
+      "source": 26,
+      "kind": "NOR",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 1,
+      "source": 27,
+      "kind": "NAND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 2,
+      "source": 28,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 3,
+      "source": 29,
+      "kind": "AND",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 4,
+      "source": 30,
+      "kind": "OR",
+      "left_bus": [
+        26
+      ],
+      "right_bus": [
+        29
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 5,
+      "source": 31,
+      "kind": "SWITCH",
+      "left_bus": [
+        27
+      ],
+      "right_bus": [
+        30
+      ],
+      "cost": 2,
+      "depth_upper_bound": 5
+    },
+    {
+      "slot": 6,
+      "source": 32,
+      "kind": "SWITCH",
+      "left_bus": [
+        28
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 2,
+      "depth_upper_bound": 5
+    }
+  ],
+  "output_buses": [
+    [
+      31,
+      32
+    ]
+  ],
+  "verification": {
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "actual_output_arrivals": [
+      5
+    ],
+    "actual_max_delay": 5,
+    "depth_upper_bound_violation_count": 0,
+    "output_deadline_violation_count": 0
+  }
+}

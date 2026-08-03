@@ -1,0 +1,1287 @@
+{
+  "schema": "hub79-global-function-map-v1",
+  "status": "sat",
+  "scope": "Hub79 scalar functions plus complements; ordinary gates, original BUS, optional new BUS2",
+  "delay_bound": 5,
+  "gate_bound": 144,
+  "include_new_bus2": false,
+  "max_driver_forms_per_coverage": 8,
+  "seconds": 1.3703514000008,
+  "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
+  "vectors": 131072,
+  "universe_functions": 164,
+  "source_functions": 19,
+  "ordinary_recipe_count": 3596,
+  "original_bus_recipe_count": 18,
+  "targets_with_bus2": 0,
+  "raw_dependency_sets": 0,
+  "retained_bus2_recipes": 0,
+  "bus2_coverage_count": 0,
+  "max_driver_forms_in_any_coverage": 0,
+  "truncated_bus2_coverage_count": 0,
+  "bus2_enumeration_complete": true,
+  "recipe_count": 3614,
+  "candidate_count": 3532,
+  "backend": "pysat-cadical195-cardinality",
+  "solver": "cadical195",
+  "cost_encoding": "producer-tiered",
+  "cardinality_encoding": "seqcounter",
+  "cost_literal_count": 244,
+  "cnf_variables": 22650,
+  "cnf_clauses": 70538,
+  "solver_stats": {
+    "restarts": 122,
+    "conflicts": 716,
+    "decisions": 105266,
+    "propagations": 1573391
+  },
+  "output_functions": [
+    "sum0",
+    "sum1",
+    "sum2",
+    "sum3",
+    "sum4",
+    "sum5",
+    "sum6",
+    "sum7",
+    "cout"
+  ],
+  "proof_limit": "UNSAT only applies to the finite Hub79-function universe and enumerated recipes; SAT is a constructive full truth-table upper bound.",
+  "actual_gate": 144,
+  "actual_delay": 5,
+  "energy": 720,
+  "selected_node_count": 75,
+  "selected_op_histogram": {
+    "AND": 13,
+    "NAND": 7,
+    "NOR": 21,
+    "NOT": 3,
+    "OR": 16,
+    "ORIGINAL_BUS": 15
+  },
+  "replay": {
+    "all_selected_functions_exact": true,
+    "all_bus_drivers_conflict_free": true,
+    "all_outputs_present": true,
+    "complete_truth_rows": 131072
+  },
+  "outputs": [
+    {
+      "name": "sum0",
+      "function_sha256": "31361610fb49bf747a00cc108c2c3cbf9c5c8dce5e97593998b43e5b32143b1a",
+      "arrival": 5,
+      "producer_index": 1850
+    },
+    {
+      "name": "sum1",
+      "function_sha256": "fc231dbe1f11c207933db22231ba202caa3824605494b520fdd52e74c92bd415",
+      "arrival": 5,
+      "producer_index": 1868
+    },
+    {
+      "name": "sum2",
+      "function_sha256": "179086bbaef39d1f7d02ef3f858a35352aeda20d053a73b2a631320275c0c0d0",
+      "arrival": 5,
+      "producer_index": 1945
+    },
+    {
+      "name": "sum3",
+      "function_sha256": "305042da7ed6c69bafd65a205e38c082435feb1cfd794e6ee7c4cb0e362cb71a",
+      "arrival": 5,
+      "producer_index": 2020
+    },
+    {
+      "name": "sum4",
+      "function_sha256": "aa7132ec12519729d20ec9de1aca0cabbc11e0797d194b8ef59fc7977ee2636e",
+      "arrival": 5,
+      "producer_index": 2115
+    },
+    {
+      "name": "sum5",
+      "function_sha256": "64c2869f6c42902242640c16e04e9c7210e93cb19829e4c852572ce1bb15ae9c",
+      "arrival": 5,
+      "producer_index": 2192
+    },
+    {
+      "name": "sum6",
+      "function_sha256": "b6c5c31c9168b72ee2b04d863ffa699f2ea34e1b4209d059d367763df9c0b2ad",
+      "arrival": 5,
+      "producer_index": 2259
+    },
+    {
+      "name": "sum7",
+      "function_sha256": "55f1587c425fafce9acc17a3246bc96e3566ada66ffc2f1d5690a94b578995e8",
+      "arrival": 5,
+      "producer_index": 2325
+    },
+    {
+      "name": "cout",
+      "function_sha256": "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb",
+      "arrival": 5,
+      "producer_index": 2591
+    }
+  ],
+  "selected_nodes": [
+    {
+      "function_sha256": "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf",
+      "op": "OR",
+      "dependency_sha256": [
+        "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3",
+        "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144",
+      "op": "NOR",
+      "dependency_sha256": [
+        "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+        "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "030340d8372c9101a95fb641bf8eddb2d70e53032913a2f278110a19488ac812",
+      "op": "OR",
+      "dependency_sha256": [
+        "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af",
+        "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+      "op": "AND",
+      "dependency_sha256": [
+        "ad11987750914a2c0911b020905c8140f8105e134796071fe3338be52dba5304",
+        "622a24c7221ae020f137fe7e02197d3636f866ebd04f0b7ac4c6d35b227337e8"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "24327420584ffb4e26713876a081ef16cd6f628988f23024f3e55e1e56466406",
+      "op": "NOR",
+      "dependency_sha256": [
+        "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3",
+        "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "3ea95031dd3885e9628de15a0567e96377b9afc05d609af1bcc15cabd4605c15",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+        "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368",
+        "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147",
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27"
+      ],
+      "cost": 6,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": {
+        "network": 91,
+        "drivers": [
+          [
+            "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27",
+            "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368"
+          ],
+          [
+            "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+            "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368"
+          ],
+          [
+            "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147",
+            "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8",
+      "op": "OR",
+      "dependency_sha256": [
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863",
+      "op": "AND",
+      "dependency_sha256": [
+        "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3",
+        "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89",
+      "op": "NOR",
+      "dependency_sha256": [
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "6717ae2af6adfd28dea40927cb77d570dfc715d882387e947a3aab2889802da5",
+      "op": "NOR",
+      "dependency_sha256": [
+        "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af",
+        "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "6b55a18028998dcc24768ed93d01a4786d22262375b067d7a73aea7ad721612c",
+      "op": "NOR",
+      "dependency_sha256": [
+        "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368",
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "6bd7aa58f6938c523df248ed711b810b7647f507b5dfaaed05f488598b70f008",
+      "op": "NAND",
+      "dependency_sha256": [
+        "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd",
+        "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b",
+      "op": "OR",
+      "dependency_sha256": [
+        "fb06eba7d90aa7e938e072722adf84f3d3289ab8dfb22ca50c10477dff961657",
+        "2d826e6429ab88d6fa2d681ee3c84bb8faf8be109b15ac3603970c9f8c557115"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16",
+      "op": "AND",
+      "dependency_sha256": [
+        "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+        "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1",
+      "op": "OR",
+      "dependency_sha256": [
+        "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd",
+        "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923",
+      "op": "AND",
+      "dependency_sha256": [
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "8d15116201ddd325abc3f098d413079303cd5024f0b447eece42e69f2f6c7563",
+      "op": "AND",
+      "dependency_sha256": [
+        "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368",
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad",
+      "op": "AND",
+      "dependency_sha256": [
+        "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af",
+        "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "b1401ff7cc1c7dd572f9907b500f4c293c611819821aa52b5713a5b2f2e30fe2",
+      "op": "NAND",
+      "dependency_sha256": [
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "d629a8850d4ea72bf2cdb6c09cf550facfee166bd90a7ae284fc675f0cfd234d",
+      "op": "AND",
+      "dependency_sha256": [
+        "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd",
+        "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "eb5866e3afb37d5d9d3e6ef47c9ad3a2c2dd33799bf6e75788bf78823ae8ff4b",
+      "op": "NOT",
+      "dependency_sha256": [
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+      "op": "AND",
+      "dependency_sha256": [
+        "fb06eba7d90aa7e938e072722adf84f3d3289ab8dfb22ca50c10477dff961657",
+        "2d826e6429ab88d6fa2d681ee3c84bb8faf8be109b15ac3603970c9f8c557115"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+      "op": "NOR",
+      "dependency_sha256": [
+        "ad11987750914a2c0911b020905c8140f8105e134796071fe3338be52dba5304",
+        "622a24c7221ae020f137fe7e02197d3636f866ebd04f0b7ac4c6d35b227337e8"
+      ],
+      "cost": 1,
+      "declared_arrival": 1,
+      "actual_arrival": 1,
+      "detail": null
+    },
+    {
+      "function_sha256": "163ee8b1bb41db138b80fbbf01b2458487668fd1680a382ec28a3a57715eab98",
+      "op": "OR",
+      "dependency_sha256": [
+        "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b",
+        "0e04cabccb38842bccbd0d8ec90acd1c1ff1fcb06abe2424e75064f2892f03b1"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664",
+      "op": "NOR",
+      "dependency_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7",
+      "op": "NOR",
+      "dependency_sha256": [
+        "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144",
+        "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "23734eb8dc972d363245c1704d147c34acbb9198e13570bd14a97ee25ecb69f2",
+      "op": "OR",
+      "dependency_sha256": [
+        "24327420584ffb4e26713876a081ef16cd6f628988f23024f3e55e1e56466406",
+        "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "255cb7e027101cbf49cb494fe4466356ddf2068f19acf601bc331f4c705e11b6",
+      "op": "NOR",
+      "dependency_sha256": [
+        "eb5866e3afb37d5d9d3e6ef47c9ad3a2c2dd33799bf6e75788bf78823ae8ff4b",
+        "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "31fac446441c1ef27ca7523d984a113d841ee9681980904b19dbd9aa3a063a22",
+      "op": "NOR",
+      "dependency_sha256": [
+        "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923",
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf",
+      "op": "AND",
+      "dependency_sha256": [
+        "6bd7aa58f6938c523df248ed711b810b7647f507b5dfaaed05f488598b70f008",
+        "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83",
+      "op": "NOR",
+      "dependency_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+        "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566",
+      "op": "OR",
+      "dependency_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0",
+      "op": "OR",
+      "dependency_sha256": [
+        "6b55a18028998dcc24768ed93d01a4786d22262375b067d7a73aea7ad721612c",
+        "8d15116201ddd325abc3f098d413079303cd5024f0b447eece42e69f2f6c7563"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f",
+      "op": "OR",
+      "dependency_sha256": [
+        "6717ae2af6adfd28dea40927cb77d570dfc715d882387e947a3aab2889802da5",
+        "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "9a1e4ddbe6e4a76cc555312df7aa667bd8be22bc93bcb6ec5c468b4a5499bf11",
+      "op": "OR",
+      "dependency_sha256": [
+        "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16",
+        "8d15116201ddd325abc3f098d413079303cd5024f0b447eece42e69f2f6c7563"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780",
+      "op": "AND",
+      "dependency_sha256": [
+        "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b",
+        "0e04cabccb38842bccbd0d8ec90acd1c1ff1fcb06abe2424e75064f2892f03b1"
+      ],
+      "cost": 1,
+      "declared_arrival": 2,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181",
+      "op": "NOR",
+      "dependency_sha256": [
+        "6717ae2af6adfd28dea40927cb77d570dfc715d882387e947a3aab2889802da5",
+        "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e",
+      "op": "NOR",
+      "dependency_sha256": [
+        "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89",
+        "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "e9cb39d7086d3b8b78076324f6175cdb0710f8b4c5df397cbe06abd110c5fae6",
+      "op": "OR",
+      "dependency_sha256": [
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+        "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "f4af616911d4ac5945745273440b2437d2b28457a53f149d491caad6dd73822c",
+      "op": "NOR",
+      "dependency_sha256": [
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+        "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 2,
+      "detail": null
+    },
+    {
+      "function_sha256": "07394c3aadfc7d340a383232416d8a87802f5aceab9a2bfce2fb98584e733f2d",
+      "op": "NAND",
+      "dependency_sha256": [
+        "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+        "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "1e8a3ac3066cc954e8f14566089a68bd3e9fed015b963b6c76a76e65dd15c891",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664",
+        "b1401ff7cc1c7dd572f9907b500f4c293c611819821aa52b5713a5b2f2e30fe2",
+        "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923",
+        "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566"
+      ],
+      "cost": 4,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 284,
+        "drivers": [
+          [
+            "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923",
+            "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566"
+          ],
+          [
+            "b1401ff7cc1c7dd572f9907b500f4c293c611819821aa52b5713a5b2f2e30fe2",
+            "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "2fec8b3c813a909edd726242ffca43b5c127afd0260b985e036d6967498a27e2",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+        "f4af616911d4ac5945745273440b2437d2b28457a53f149d491caad6dd73822c",
+        "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181",
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+        "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f",
+        "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83"
+      ],
+      "cost": 8,
+      "declared_arrival": 4,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 70,
+        "drivers": [
+          [
+            "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+            "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+          ],
+          [
+            "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+            "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+          ],
+          [
+            "f4af616911d4ac5945745273440b2437d2b28457a53f149d491caad6dd73822c",
+            "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+          ],
+          [
+            "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83",
+            "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "39865a6baf456c3d48145c12d235310ea187d00f6146d04f34d5a9f47386adff",
+      "op": "OR",
+      "dependency_sha256": [
+        "9a1e4ddbe6e4a76cc555312df7aa667bd8be22bc93bcb6ec5c468b4a5499bf11",
+        "d629a8850d4ea72bf2cdb6c09cf550facfee166bd90a7ae284fc675f0cfd234d"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "3ea95031dd3885e9628de15a0567e96377b9afc05d609af1bcc15cabd4605c15",
+        "d629a8850d4ea72bf2cdb6c09cf550facfee166bd90a7ae284fc675f0cfd234d",
+        "255cb7e027101cbf49cb494fe4466356ddf2068f19acf601bc331f4c705e11b6",
+        "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+      ],
+      "cost": 6,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 158,
+        "drivers": [
+          [
+            "d629a8850d4ea72bf2cdb6c09cf550facfee166bd90a7ae284fc675f0cfd234d",
+            "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+          ],
+          [
+            "255cb7e027101cbf49cb494fe4466356ddf2068f19acf601bc331f4c705e11b6",
+            "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+          ],
+          [
+            "3ea95031dd3885e9628de15a0567e96377b9afc05d609af1bcc15cabd4605c15",
+            "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "7a6f4faec2c6024341c96095e30fdfabae3ace63a61ad005e37832931d7c50c9",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89",
+        "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664",
+        "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566",
+        "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8"
+      ],
+      "cost": 4,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 120,
+        "drivers": [
+          [
+            "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89",
+            "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664"
+          ],
+          [
+            "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8",
+            "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "a27b272eaa3d832cb6c9d04b5746ed80673ce11b1c85a7aaf8cb4a7573f98eef",
+      "op": "NOR",
+      "dependency_sha256": [
+        "6b55a18028998dcc24768ed93d01a4786d22262375b067d7a73aea7ad721612c",
+        "9a1e4ddbe6e4a76cc555312df7aa667bd8be22bc93bcb6ec5c468b4a5499bf11"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+        "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863",
+        "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780",
+        "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf"
+      ],
+      "cost": 6,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 156,
+        "drivers": [
+          [
+            "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780",
+            "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf"
+          ],
+          [
+            "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+            "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf"
+          ],
+          [
+            "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863",
+            "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "aed263c05fed750da40969f55fbf73277d110a00a13089bb1e6e8895815c2d18",
+      "op": "NOT",
+      "dependency_sha256": [
+        "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "bb8fb81857c0231687055cc4f49c35d6160bb1c1ee9fd5581e8184dfb911c0e8",
+      "op": "NOR",
+      "dependency_sha256": [
+        "3ea95031dd3885e9628de15a0567e96377b9afc05d609af1bcc15cabd4605c15",
+        "255cb7e027101cbf49cb494fe4466356ddf2068f19acf601bc331f4c705e11b6"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "dd9c2b089cb3215495947d897dcf34fb4670429f35f12f2f5185d9aa3ab87d83",
+      "op": "AND",
+      "dependency_sha256": [
+        "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923",
+        "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "ec1dde97fd445c81fb90cdba708f31691f85a27391932b453abf8b9ccc625f70",
+      "op": "NOR",
+      "dependency_sha256": [
+        "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+        "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780"
+      ],
+      "cost": 1,
+      "declared_arrival": 3,
+      "actual_arrival": 3,
+      "detail": null
+    },
+    {
+      "function_sha256": "ed5fc0d31f9254ffb769ae649cbf1b4d3182d8555300b291bab87c4516dce6b4",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "e9cb39d7086d3b8b78076324f6175cdb0710f8b4c5df397cbe06abd110c5fae6",
+        "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83",
+        "030340d8372c9101a95fb641bf8eddb2d70e53032913a2f278110a19488ac812"
+      ],
+      "cost": 4,
+      "declared_arrival": 4,
+      "actual_arrival": 3,
+      "detail": {
+        "network": 231,
+        "drivers": [
+          [
+            "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83",
+            "030340d8372c9101a95fb641bf8eddb2d70e53032913a2f278110a19488ac812"
+          ],
+          [
+            "e9cb39d7086d3b8b78076324f6175cdb0710f8b4c5df397cbe06abd110c5fae6",
+            "030340d8372c9101a95fb641bf8eddb2d70e53032913a2f278110a19488ac812"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+      "op": "NOT",
+      "dependency_sha256": [
+        "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+      "op": "NOR",
+      "dependency_sha256": [
+        "39865a6baf456c3d48145c12d235310ea187d00f6146d04f34d5a9f47386adff",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf",
+      "op": "AND",
+      "dependency_sha256": [
+        "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "1e20b22692d8de238f95014a87900e4cd34dcd3b0d5ecb9f950f96480b595ecc",
+      "op": "OR",
+      "dependency_sha256": [
+        "9a1e4ddbe6e4a76cc555312df7aa667bd8be22bc93bcb6ec5c468b4a5499bf11",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "21ae58c9f3cba7890249c4258d96e8c7e22a4d8c6fddafb35fc44ca0f7dd73c8",
+      "op": "OR",
+      "dependency_sha256": [
+        "ec1dde97fd445c81fb90cdba708f31691f85a27391932b453abf8b9ccc625f70",
+        "23734eb8dc972d363245c1704d147c34acbb9198e13570bd14a97ee25ecb69f2"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "52630936946626197dca1faae514122b6d86ac2e9e92a9333a3e7a321f76537b",
+      "op": "NOR",
+      "dependency_sha256": [
+        "bb8fb81857c0231687055cc4f49c35d6160bb1c1ee9fd5581e8184dfb911c0e8",
+        "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "5cf9eaa68ab202485c751156f0d0f09598e574c3083c6aa0550791f92e2e8675",
+      "op": "NAND",
+      "dependency_sha256": [
+        "ec1dde97fd445c81fb90cdba708f31691f85a27391932b453abf8b9ccc625f70",
+        "23734eb8dc972d363245c1704d147c34acbb9198e13570bd14a97ee25ecb69f2"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "6eb5a63f52f0e50976c295f9714348a144d583e2f158693595d66ee977daafb2",
+      "op": "OR",
+      "dependency_sha256": [
+        "dd9c2b089cb3215495947d897dcf34fb4670429f35f12f2f5185d9aa3ab87d83",
+        "e9cb39d7086d3b8b78076324f6175cdb0710f8b4c5df397cbe06abd110c5fae6"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "c7e56091e83dca332efde7bb0fec6de2f8a8abb0fe24575208931b7d16899ec5",
+      "op": "NOR",
+      "dependency_sha256": [
+        "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "39865a6baf456c3d48145c12d235310ea187d00f6146d04f34d5a9f47386adff",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7",
+        "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c"
+      ],
+      "cost": 4,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": {
+        "network": 246,
+        "drivers": [
+          [
+            "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7",
+            "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c"
+          ],
+          [
+            "39865a6baf456c3d48145c12d235310ea187d00f6146d04f34d5a9f47386adff",
+            "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "d479da9fad8e61d0754137ec7d355f73a447bc88ab6ec36680d16d4ac532d7b2",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+        "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181",
+        "31fac446441c1ef27ca7523d984a113d841ee9681980904b19dbd9aa3a063a22",
+        "dd9c2b089cb3215495947d897dcf34fb4670429f35f12f2f5185d9aa3ab87d83",
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+        "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+      ],
+      "cost": 8,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": {
+        "network": 43,
+        "drivers": [
+          [
+            "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750",
+            "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+          ],
+          [
+            "31fac446441c1ef27ca7523d984a113d841ee9681980904b19dbd9aa3a063a22",
+            "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+          ],
+          [
+            "dd9c2b089cb3215495947d897dcf34fb4670429f35f12f2f5185d9aa3ab87d83",
+            "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+          ],
+          [
+            "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499",
+            "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "e42a78515606bbf3b53b0e1cd01fbbf9de2f90784de7af1940712dbfbadc020f",
+      "op": "NAND",
+      "dependency_sha256": [
+        "ec1dde97fd445c81fb90cdba708f31691f85a27391932b453abf8b9ccc625f70",
+        "163ee8b1bb41db138b80fbbf01b2458487668fd1680a382ec28a3a57715eab98"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "f088c35a35b67bcf80b08cb7d768a5e53c6ee1f85bbbcd8c5bfbd2fc524ef4db",
+      "op": "NAND",
+      "dependency_sha256": [
+        "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7",
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "cost": 1,
+      "declared_arrival": 4,
+      "actual_arrival": 4,
+      "detail": null
+    },
+    {
+      "function_sha256": "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "6eb5a63f52f0e50976c295f9714348a144d583e2f158693595d66ee977daafb2",
+        "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+        "ed5fc0d31f9254ffb769ae649cbf1b4d3182d8555300b291bab87c4516dce6b4"
+      ],
+      "cost": 4,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 22,
+        "drivers": [
+          [
+            "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+            "ed5fc0d31f9254ffb769ae649cbf1b4d3182d8555300b291bab87c4516dce6b4"
+          ],
+          [
+            "6eb5a63f52f0e50976c295f9714348a144d583e2f158693595d66ee977daafb2",
+            "ed5fc0d31f9254ffb769ae649cbf1b4d3182d8555300b291bab87c4516dce6b4"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "179086bbaef39d1f7d02ef3f858a35352aeda20d053a73b2a631320275c0c0d0",
+      "op": "NOR",
+      "dependency_sha256": [
+        "c7e56091e83dca332efde7bb0fec6de2f8a8abb0fe24575208931b7d16899ec5",
+        "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf"
+      ],
+      "cost": 1,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": null
+    },
+    {
+      "function_sha256": "305042da7ed6c69bafd65a205e38c082435feb1cfd794e6ee7c4cb0e362cb71a",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "a27b272eaa3d832cb6c9d04b5746ed80673ce11b1c85a7aaf8cb4a7573f98eef",
+        "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf",
+        "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16",
+        "f088c35a35b67bcf80b08cb7d768a5e53c6ee1f85bbbcd8c5bfbd2fc524ef4db",
+        "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0"
+      ],
+      "cost": 6,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 24,
+        "drivers": [
+          [
+            "a27b272eaa3d832cb6c9d04b5746ed80673ce11b1c85a7aaf8cb4a7573f98eef",
+            "f088c35a35b67bcf80b08cb7d768a5e53c6ee1f85bbbcd8c5bfbd2fc524ef4db"
+          ],
+          [
+            "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16",
+            "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0"
+          ],
+          [
+            "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf",
+            "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "31361610fb49bf747a00cc108c2c3cbf9c5c8dce5e97593998b43e5b32143b1a",
+      "op": "NAND",
+      "dependency_sha256": [
+        "07394c3aadfc7d340a383232416d8a87802f5aceab9a2bfce2fb98584e733f2d",
+        "e42a78515606bbf3b53b0e1cd01fbbf9de2f90784de7af1940712dbfbadc020f"
+      ],
+      "cost": 1,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": null
+    },
+    {
+      "function_sha256": "55f1587c425fafce9acc17a3246bc96e3566ada66ffc2f1d5690a94b578995e8",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+        "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+        "d479da9fad8e61d0754137ec7d355f73a447bc88ab6ec36680d16d4ac532d7b2",
+        "2fec8b3c813a909edd726242ffca43b5c127afd0260b985e036d6967498a27e2",
+        "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329"
+      ],
+      "cost": 6,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 6,
+        "drivers": [
+          [
+            "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+            "2fec8b3c813a909edd726242ffca43b5c127afd0260b985e036d6967498a27e2"
+          ],
+          [
+            "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+            "d479da9fad8e61d0754137ec7d355f73a447bc88ab6ec36680d16d4ac532d7b2"
+          ],
+          [
+            "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+            "d479da9fad8e61d0754137ec7d355f73a447bc88ab6ec36680d16d4ac532d7b2"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "64c2869f6c42902242640c16e04e9c7210e93cb19829e4c852572ce1bb15ae9c",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+        "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+        "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e",
+        "aed263c05fed750da40969f55fbf73277d110a00a13089bb1e6e8895815c2d18",
+        "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329"
+      ],
+      "cost": 6,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 33,
+        "drivers": [
+          [
+            "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+            "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e"
+          ],
+          [
+            "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+            "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e"
+          ],
+          [
+            "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+            "aed263c05fed750da40969f55fbf73277d110a00a13089bb1e6e8895815c2d18"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "aa7132ec12519729d20ec9de1aca0cabbc11e0797d194b8ef59fc7977ee2636e",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "bb8fb81857c0231687055cc4f49c35d6160bb1c1ee9fd5581e8184dfb911c0e8",
+        "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+        "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf",
+        "52630936946626197dca1faae514122b6d86ac2e9e92a9333a3e7a321f76537b",
+        "1e20b22692d8de238f95014a87900e4cd34dcd3b0d5ecb9f950f96480b595ecc"
+      ],
+      "cost": 6,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 48,
+        "drivers": [
+          [
+            "bb8fb81857c0231687055cc4f49c35d6160bb1c1ee9fd5581e8184dfb911c0e8",
+            "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf"
+          ],
+          [
+            "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+            "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf"
+          ],
+          [
+            "52630936946626197dca1faae514122b6d86ac2e9e92a9333a3e7a321f76537b",
+            "1e20b22692d8de238f95014a87900e4cd34dcd3b0d5ecb9f950f96480b595ecc"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "b6c5c31c9168b72ee2b04d863ffa699f2ea34e1b4209d059d367763df9c0b2ad",
+      "op": "ORIGINAL_BUS",
+      "dependency_sha256": [
+        "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+        "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+        "1e8a3ac3066cc954e8f14566089a68bd3e9fed015b963b6c76a76e65dd15c891",
+        "7a6f4faec2c6024341c96095e30fdfabae3ace63a61ad005e37832931d7c50c9",
+        "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329"
+      ],
+      "cost": 6,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": {
+        "network": 46,
+        "drivers": [
+          [
+            "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a",
+            "1e8a3ac3066cc954e8f14566089a68bd3e9fed015b963b6c76a76e65dd15c891"
+          ],
+          [
+            "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329",
+            "7a6f4faec2c6024341c96095e30fdfabae3ace63a61ad005e37832931d7c50c9"
+          ],
+          [
+            "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132",
+            "1e8a3ac3066cc954e8f14566089a68bd3e9fed015b963b6c76a76e65dd15c891"
+          ]
+        ]
+      }
+    },
+    {
+      "function_sha256": "fc231dbe1f11c207933db22231ba202caa3824605494b520fdd52e74c92bd415",
+      "op": "AND",
+      "dependency_sha256": [
+        "21ae58c9f3cba7890249c4258d96e8c7e22a4d8c6fddafb35fc44ca0f7dd73c8",
+        "5cf9eaa68ab202485c751156f0d0f09598e574c3083c6aa0550791f92e2e8675"
+      ],
+      "cost": 1,
+      "declared_arrival": 5,
+      "actual_arrival": 5,
+      "detail": null
+    }
+  ]
+}

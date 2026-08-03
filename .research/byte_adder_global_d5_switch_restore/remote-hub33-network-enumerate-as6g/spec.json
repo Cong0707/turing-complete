@@ -1,0 +1,38 @@
+{
+  "schema": "phase-high-global-remote-enumeration-v1",
+  "scope": "integrated-nc7 high33/D5; source1-residual; complete independent base BUS2 plus exact targeted mixed BUS2 hub33-network-functions profile",
+  "remote_root": "/root/congProjects/turing-complete-works",
+  "work_directory": ".research/byte_adder_global_d5_switch_restore_hub33net_e0e4c3fd",
+  "run_directory": ".research/byte_adder_global_d5_switch_restore_hub33net_e0e4c3fd/remote-hub33-network-enumerate-as6g",
+  "result": ".research/byte_adder_global_d5_switch_restore_hub33net_e0e4c3fd/remote-hub33-network-enumerate-as6g/result.json",
+  "enumerate_only": true,
+  "solver": "not-run",
+  "outer_timeout_seconds": 5400,
+  "kill_after_seconds": 30,
+  "virtual_memory_limit_bytes": 6442450944,
+  "nice": 5,
+  "cost_encoding": "producer-tiered",
+  "cardinality_encoding": "seqcounter",
+  "max_per_coverage": 128,
+  "target_profile": {
+    "name": "hub33-network-functions",
+    "definition": "deduplicated union of all Hub33 resolved-network and semantic Switch enable/data functions with S3..S7/C8, C5..C8/nC5..nC8, and available witness controls",
+    "hub33_distinct_function_count": 84,
+    "deduplicated_target_count": 94
+  },
+  "expected_fixed_counts": {
+    "universe_functions": 6500,
+    "base_universe_functions": 270,
+    "source1_function_count": 6394,
+    "ordinary_recipes": 35700,
+    "original_bus_recipes": 18,
+    "base_bus_target_count": 268,
+    "base_bus_retained_recipes": 11768,
+    "base_bus_complete": true
+  },
+  "mapper_script_sha256": "e0e4c3fd12b58eaf2f0a392e40407c6d3c560ce0e1384269298e1e63b7078fd5",
+  "global_core_script_sha256": "ae1ee830c145be12f41c723b7d7c25422cfbddde9a5d0d1ec5a899eebbf66fd2",
+  "hub33_library_script_sha256": "c967312c05285b8e121b1f5702d1715d07ffc89251f8c346b205d866fcfbde8e",
+  "input_bundle_sha256": "a4c621dbaaca525de604f931fd7cfff902480d415cd67fe69736367b740ca015",
+  "interpretation_limit": "Enumeration reports recipe coverage, truncation, active-candidate counts, and predicted producer-tiered seqcounter CNF shape only. It proves neither SAT nor UNSAT. A timeout, memory-limit exit, truncation, or missing complete JSON is unknown."
+}

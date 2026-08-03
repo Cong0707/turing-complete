@@ -1,0 +1,37 @@
+{
+  "schema": "phase-high-global-remote-run-v1",
+  "scope": "integrated-nc7 high33/D5; source1-residual; complete independent base BUS2 plus exact targeted mixed BUS2 witness-controls profile",
+  "remote_root": "/root/congProjects/turing-complete-works",
+  "run_directory": ".research/byte_adder_global_d5_switch_restore/remote-integrated-g33-mixed-plus-basebus-tiered-as6g",
+  "result": ".research/byte_adder_global_d5_switch_restore/remote-integrated-g33-mixed-plus-basebus-tiered-as6g/result.json",
+  "solver": "cadical195",
+  "solver_timeout_ms": 900000,
+  "outer_timeout_seconds": 2400,
+  "kill_after_seconds": 30,
+  "virtual_memory_limit_bytes": 6442450944,
+  "nice": 5,
+  "cost_encoding": "producer-tiered",
+  "max_per_coverage": 128,
+  "expected_fixed_counts": {
+    "universe_functions": 6500,
+    "base_universe_functions": 270,
+    "source1_function_count": 6394,
+    "ordinary_recipes": 35700,
+    "original_bus_recipes": 18,
+    "mixed_target_count": 23,
+    "mixed_retained_recipes": 63718,
+    "mixed_max_forms_in_any_coverage": 99,
+    "mixed_complete": true
+  },
+  "estimated_joint_counts": {
+    "recipe_count_lower_bound": 110000,
+    "recipe_count_upper_bound": 120000,
+    "basis": "99436 recipes in the verified mixed-only run plus approximately 11k-20k independent base BUS2 recipes; exact counts must come from the result JSON"
+  },
+  "input_bundle_sha256": "a4c621dbaaca525de604f931fd7cfff902480d415cd67fe69736367b740ca015",
+  "mapper_script_sha256": "8bce5bb41d8844610bfbcd3e4abb03aae6b500bc193c9e4f4df96c35b1840ca9",
+  "global_core_script_sha256": "ae1ee830c145be12f41c723b7d7c25422cfbddde9a5d0d1ec5a899eebbf66fd2",
+  "hub33_library_script_sha256": "c967312c05285b8e121b1f5702d1715d07ffc89251f8c346b205d866fcfbde8e",
+  "mixed_only_result_sha256": "377abb1fb113b76950c799e1aa55ba7a0df5c09f2cb73f545801cdd8bc4a2c13",
+  "proof_limit": "UNSAT is limited to the declared source1-residual universe, complete base BUS2 class, and explicit mixed BUS target/driver class. A timeout, memory-limit exit, truncation, or missing complete JSON is unknown."
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "phase-high-global-remote-run-v1",
+  "scope": "integrated-nc7 high33/D5; source1-residual; no independent new base BUS2; exact targeted mixed BUS2 witness-controls profile",
+  "remote_root": "/root/congProjects/turing-complete-works",
+  "run_directory": ".research/byte_adder_global_d5_switch_restore/remote-integrated-g33-mixed-tiered",
+  "result": ".research/byte_adder_global_d5_switch_restore/remote-integrated-g33-mixed-tiered/result.json",
+  "solver": "cadical195",
+  "solver_timeout_ms": 600000,
+  "outer_timeout_seconds": 1800,
+  "kill_after_seconds": 30,
+  "virtual_memory_limit_bytes": 1610612736,
+  "nice": 5,
+  "cost_encoding": "producer-tiered",
+  "expected_mixed_enumeration": {
+    "target_count": 23,
+    "expanded_enable_universe_count": 5450,
+    "retained_recipes": 59118,
+    "max_expanded_forms_in_any_coverage": 99,
+    "max_per_coverage": 128,
+    "complete": true
+  },
+  "input_bundle_sha256": "a4c621dbaaca525de604f931fd7cfff902480d415cd67fe69736367b740ca015",
+  "mapper_script_sha256": "8bce5bb41d8844610bfbcd3e4abb03aae6b500bc193c9e4f4df96c35b1840ca9",
+  "global_core_script_sha256": "ae1ee830c145be12f41c723b7d7c25422cfbddde9a5d0d1ec5a899eebbf66fd2",
+  "hub33_library_script_sha256": "c967312c05285b8e121b1f5702d1715d07ffc89251f8c346b205d866fcfbde8e",
+  "proof_limit": "UNSAT is limited to the declared function universe and mixed BUS target/driver class. A timeout, memory-limit exit, or missing complete JSON is unknown."
+}
