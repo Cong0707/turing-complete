@@ -1,0 +1,29 @@
+GATE ZERO 0 Y=CONST0;
+GATE ONE 0 Y=CONST1;
+GATE BUF 0 Y=A;
+PIN * NONINV 1 9999 0 0 0 0
+GATE NOT 1 Y=!A;
+PIN * INV 1 9999 1 1 1 1
+GATE AND 1 Y=(A*B);
+PIN * NONINV 1 9999 1 1 1 1
+GATE NAND 1 Y=!(A*B);
+PIN * INV 1 9999 1 1 1 1
+GATE OR 1 Y=(A+B);
+PIN * NONINV 1 9999 1 1 1 1
+GATE NOR 1 Y=!(A+B);
+PIN * INV 1 9999 1 1 1 1
+GATE XOR 3 Y=((A*!B)+(!A*B));
+PIN * UNKNOWN 1 9999 2 2 2 2
+GATE XNOR 3 Y=((A*B)+(!A*!B));
+PIN * UNKNOWN 1 9999 2 2 2 2
+
+# Safe high-impedance bus macros.  SWORk(D,E...) expands to k Bit Switches,
+# all driving the same data D.  Overlapping enables therefore cannot conflict.
+# Boolean false may be represented by all-Z and must be normalized before a
+# primary output; internal ordinary gates read that data plane as zero.
+GATE SWOR2 4 Y=(D*(A+B));
+PIN * UNKNOWN 1 9999 1 1 1 1
+GATE SWOR3 6 Y=(D*(A+B+C));
+PIN * UNKNOWN 1 9999 1 1 1 1
+GATE SWOR4 8 Y=(D*(A+B+C+E));
+PIN * UNKNOWN 1 9999 1 1 1 1

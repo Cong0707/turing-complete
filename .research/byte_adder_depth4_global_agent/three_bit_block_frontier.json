@@ -1,0 +1,5843 @@
+{
+  "schema": "byte-adder-three-bit-depth2-joint-v1",
+  "raw_variables": [
+    "a0",
+    "b0",
+    "a1",
+    "b1",
+    "a2",
+    "b2",
+    "0",
+    "1"
+  ],
+  "layer_one_unique_truths": 214,
+  "targets": {
+    "Lblock": "fffffee0fee00000",
+    "AnyG": "fffff888f888f888",
+    "Gblock": "fffff880f8800000"
+  },
+  "independent_frontiers": {
+    "Lblock": [
+      {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ccc0ccc0ccc0ccc0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ee00ee00ee00ee00",
+          "f0c0f0c0f0c0f0c0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "e0e0e0e0e0e0e0e0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "cc00cc00cc00cc00",
+          "e0e0e0e0e0e0e0e0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "c0c0c0c0c0c0c0c0",
+          "ee00ee00ee00ee00",
+          "f0a0f0a0f0a0f0a0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ccc0ccc0ccc0ccc0",
+          "f0a0f0a0f0a0f0a0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(a1,b0)",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "c0c0c0c0c0c0c0c0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(b0,b1)",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "cc00cc00cc00cc00",
+          "f0c0f0c0f0c0f0c0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 20,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "f0e0f0e0f0e0f0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ccc0ccc0ccc0ccc0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "f0c0f0c0f0c0f0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(NOR(a1,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000f000f000f000f",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ccc0ccc0ccc0ccc0",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "f0e0f0e0f0e0f0e0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(NOR(a1,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000f000f000f000f",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a1,b0)",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "c0c0c0c0c0c0c0c0",
+          "f0a0f0a0f0a0f0a0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      {
+        "cost": 22,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),BUS(S(a2,a0),S(b2,a0))),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a2,a0),S(b2,a0))",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "aaaaaaaaaaaa0000",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      }
+    ],
+    "AnyG": [
+      {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),BUS(S(a0,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a0,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000aaaa0000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),BUS(S(a0,b2),S(a2,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a0,b2),S(a2,b2))"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffaaaa00000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),BUS(S(a1,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a1,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000f0f00000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),BUS(S(a1,b2),S(a2,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a1,b2),S(a2,b2))"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "fffff0f000000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),BUS(S(a0,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a0,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000aaaa0000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),BUS(S(a0,b2),S(a2,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a0,b2),S(a2,b2))"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffaaaa00000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),BUS(S(a2,b2),S(b1,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a2,b2),S(b1,b2))"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffff0000000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),BUS(S(b1,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(b1,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000ff000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),BUS(S(a1,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a1,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000f0f00000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),BUS(S(a1,b2),S(a2,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a1,b2),S(a2,b2))"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "fffff0f000000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),BUS(S(a2,b2),S(b0,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a2,b2),S(b0,b2))"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffcccc00000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),BUS(S(b0,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(b0,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000cccc0000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),BUS(S(a2,b2),S(b0,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a2,b2),S(b0,b2))"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffcccc00000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),BUS(S(a2,b2),S(b1,b2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(a2,b2),S(b1,b2))"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffff0000000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),BUS(S(b0,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(b0,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000cccc0000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),BUS(S(b1,a2),S(b2,a2))),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "BUS(S(b1,a2),S(b2,a2))"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffff0000ff000000"
+        ]
+      },
+      {
+        "cost": 16,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),BUS(S(a0,a1),S(b1,a1))),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "f0a0f0a0f0a0f0a0",
+          "ffff000000000000"
+        ]
+      }
+    ],
+    "Gblock": []
+  },
+  "joint_Lblock_AnyG": [
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 26,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ccc0ccc0ccc0ccc0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ee00ee00ee00ee00",
+          "f0c0f0c0f0c0f0c0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "e0e0e0e0e0e0e0e0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "cc00cc00cc00cc00",
+          "e0e0e0e0e0e0e0e0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(b0,b1)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "c0c0c0c0c0c0c0c0",
+          "ee00ee00ee00ee00",
+          "f0a0f0a0f0a0f0a0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a1,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ccc0ccc0ccc0ccc0",
+          "f0a0f0a0f0a0f0a0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(a1,b0)",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "c0c0c0c0c0c0c0c0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 27,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(b0,b1)",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "cc00cc00cc00cc00",
+          "f0c0f0c0f0c0f0c0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 28,
+      "Lblock": {
+        "cost": 20,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "f0e0f0e0f0e0f0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b1,b2)",
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "ccc0ccc0ccc0ccc0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,a1),OR(a2,b2)),S(BUS(S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,a1)",
+          "BUS(S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "a0a0a0a0a0a0a0a0",
+          "f0c0f0c0f0c0f0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,a1)",
+        "AND(a1,b1)",
+        "BUS(S(b0,a1),S(b1,a1))",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(NOR(a1,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b1)",
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000f000f000f000f",
+          "e0e0e0e0e0e0e0e0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,a1),S(b0,a1))",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "e0e0e0e0e0e0e0e0",
+          "ee00ee00ee00ee00",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,a1),S(b0,a1))",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b1,b2)",
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "ccc0ccc0ccc0ccc0",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a0,b1),OR(a2,b2)),S(BUS(S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aa00aa00aa00aa00",
+          "f0e0f0e0f0e0f0e0",
+          "fc00fc00fc00fc00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "BUS(S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "fa00fa00fa00fa00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "BUS(S(a0,b1),S(a1,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 18,
+        "switches": 3,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(b1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000000ff00ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a0,b1),S(b0,b1)),OR(a2,b2)),S(NOR(a1,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b1)",
+          "BUS(S(a0,b1),S(b0,b1))",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000f000f000f000f",
+          "ee00ee00ee00ee00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a0,b1),S(b0,b1))",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b0,a1),S(b1,a1)),OR(a2,b2)),S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(b0,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(b0,b1)",
+          "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "cc00cc00cc00cc00",
+          "f0e0f0e0f0e0f0e0",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "AND(b0,b1)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b0,a1),S(b1,a1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a0,a1),S(b1,a1)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a1,b0)",
+          "BUS(S(a0,a1),S(b1,a1))",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "c0c0c0c0c0c0c0c0",
+          "f0a0f0a0f0a0f0a0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,a1),S(b1,a1))",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 21,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(AND(a1,b0),OR(a2,b2)),S(BUS(S(a0,b1),S(a1,b1),S(b0,b1)),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "AND(a1,b0)",
+          "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "c0c0c0c0c0c0c0c0",
+          "fe00fe00fe00fe00",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 9,
+        "switches": 3,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "AND(a1,b0)",
+        "AND(a1,b1)",
+        "BUS(S(a0,b1),S(a1,b1),S(b0,b1))",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,a1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0505050505050505",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a1)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0055005500550055",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(a1,b0),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0303030303030303",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(AND(a1,b1),1),S(NOR(b0,b1),AND(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0033003300330033",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,a2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000555500005555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000055555555",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(a2,b0),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b0)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000333300003333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b0)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(AND(a0,b0),1),S(NOR(b0,b2),AND(a1,b1)),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(b0,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "0000000033333333",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(b0,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,a2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,a2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "00000f0f00000f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,a2)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a1,b2),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a1,b2)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000000f0f0f0f",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a1,b2)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    },
+    {
+      "cost": 29,
+      "Lblock": {
+        "cost": 19,
+        "switches": 4,
+        "top": "BUS(S(BUS(S(a1,a0),S(b1,a0)),OR(a2,b2)),S(BUS(S(a1,b0),S(b1,b0)),OR(a2,b2)),S(AND(a1,b1),OR(a2,b2)),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "BUS(S(a1,a0),S(b1,a0))",
+          "BUS(S(a1,b0),S(b1,b0))",
+          "AND(a1,b1)",
+          "AND(a2,b2)",
+          "OR(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "aaa0aaa0aaa0aaa0",
+          "ccc0ccc0ccc0ccc0",
+          "f000f000f000f000",
+          "ffff000000000000",
+          "ffffffffffff0000"
+        ]
+      },
+      "AnyG": {
+        "cost": 12,
+        "switches": 4,
+        "top": "BUS(S(NOR(a2,b1),AND(a0,b0)),S(AND(a0,b0),1),S(AND(a1,b1),1),S(AND(a2,b2),1))",
+        "prerequisites": [
+          "NOR(a2,b1)",
+          "AND(a0,b0)",
+          "AND(a1,b1)",
+          "AND(a2,b2)"
+        ],
+        "prerequisite_truths": [
+          "000000ff000000ff",
+          "8888888888888888",
+          "f000f000f000f000",
+          "ffff000000000000"
+        ]
+      },
+      "shared_prerequisites": [
+        "NOR(a2,b1)",
+        "AND(a0,b0)",
+        "BUS(S(a1,a0),S(b1,a0))",
+        "BUS(S(a1,b0),S(b1,b0))",
+        "AND(a1,b1)",
+        "AND(a2,b2)",
+        "OR(a2,b2)"
+      ]
+    }
+  ]
+}

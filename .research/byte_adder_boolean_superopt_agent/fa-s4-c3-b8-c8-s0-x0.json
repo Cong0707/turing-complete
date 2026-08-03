@@ -1,0 +1,195 @@
+{
+  "schema": "exact-adder-block-switch-cnf-v1",
+  "status": "sat",
+  "bits": 1,
+  "inputs": 3,
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "gate_bound": 8,
+  "max_delay": 4,
+  "components": 8,
+  "exact_switches": 0,
+  "exact_xors": 0,
+  "single_driver": false,
+  "cin_arrival": 0,
+  "sum_deadline": 4,
+  "carry_deadline": 3,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": false,
+  "allow_z_false_outputs": null,
+  "physical_nets": true,
+  "solver": "cadical195",
+  "timeout_seconds": 25.0,
+  "conflict_budget": null,
+  "variables": 4112,
+  "clauses": 30405,
+  "solve_seconds": 0.31597169997985475,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": false,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 8,
+  "network": [
+    {
+      "slot": 0,
+      "source": 5,
+      "kind": "AND",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 6,
+      "kind": "NOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        5
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 2,
+      "source": 7,
+      "kind": "NOR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 3,
+      "source": 8,
+      "kind": "OR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 4,
+      "source": 9,
+      "kind": "NOR",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 5,
+      "source": 10,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 6,
+      "source": 11,
+      "kind": "NOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 7,
+      "source": 12,
+      "kind": "OR",
+      "left_bus": [
+        10
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      12
+    ],
+    [
+      9
+    ]
+  ],
+  "verification": {
+    "assignments": 8,
+    "output_checks": 16,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 4
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "exact-carry-transfer-switch-cnf-v1",
+  "status": "sat",
+  "bits": 2,
+  "inputs": 4,
+  "target_truth_tables_hex": [
+    "ec80",
+    "fec8"
+  ],
+  "gate_bound": 12,
+  "max_delay": 2,
+  "components": 8,
+  "exact_switches": 4,
+  "exact_xors": 0,
+  "single_driver": false,
+  "cin_arrival": 0,
+  "sum_deadline": null,
+  "carry_deadline": null,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": true,
+  "solver": "cadical195",
+  "timeout_seconds": 30.0,
+  "conflict_budget": null,
+  "variables": 3756,
+  "clauses": 24703,
+  "solve_seconds": 0.6242315000272356,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": true,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 12,
+  "network": [
+    {
+      "slot": 0,
+      "source": 6,
+      "kind": "AND",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 7,
+      "kind": "SWITCH",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        5
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 2,
+      "source": 8,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 3,
+      "source": 9,
+      "kind": "OR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 4,
+      "source": 10,
+      "kind": "OR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 5,
+      "source": 11,
+      "kind": "SWITCH",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 6,
+      "source": 12,
+      "kind": "SWITCH",
+      "left_bus": [
+        10
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 7,
+      "source": 13,
+      "kind": "SWITCH",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        5
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    }
+  ],
+  "output_buses": [
+    [
+      7,
+      11
+    ],
+    [
+      13,
+      12
+    ]
+  ],
+  "verification": {
+    "assignments": 16,
+    "output_checks": 32,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 12,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 2
+  },
+  "interface": {
+    "inputs": "a[0..n-1], b[0..n-1]",
+    "outputs": [
+      "U=f(0)",
+      "V=f(1)"
+    ],
+    "invariant": "U <= V",
+    "false_rail": "driven 0 or Z"
+  },
+  "physical_bus_isolation": {
+    "status": "repaired",
+    "rule": "no source belongs to more than one output bus",
+    "change": "duplicate source 7; remove redundant source 11 from V"
+  }
+}

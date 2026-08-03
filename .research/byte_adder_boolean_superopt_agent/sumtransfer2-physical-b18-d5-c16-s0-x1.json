@@ -1,0 +1,88 @@
+{
+  "schema": "exact-sum-carry-transfer-switch-cnf-v1",
+  "status": "unknown",
+  "bits": 2,
+  "inputs": 5,
+  "target_truth_tables_hex": [
+    "a5a55a5a",
+    "c936936c",
+    "ec80ec80",
+    "fec8fec8"
+  ],
+  "gate_bound": 18,
+  "max_delay": 5,
+  "components": 16,
+  "exact_switches": 0,
+  "exact_xors": 1,
+  "single_driver": true,
+  "cin_arrival": 0,
+  "sum_deadline": null,
+  "carry_deadline": null,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": false,
+  "allow_z_false_outputs": [
+    false,
+    false,
+    true,
+    true
+  ],
+  "physical_nets": true,
+  "solver": "glucose42",
+  "timeout_seconds": 60.0,
+  "conflict_budget": null,
+  "variables": 36527,
+  "clauses": 265003,
+  "solve_seconds": 60.28576790000079,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": false,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "reason_unknown": "timeout-or-conflict-budget",
+  "interface": {
+    "inputs": "a[0..n-1], b[0..n-1], cin",
+    "outputs": [
+      "sum0",
+      "sum1",
+      "U=f(0)",
+      "V=f(1)"
+    ],
+    "drive_policy": "Sum always driven; false U/V may be Z",
+    "physical_nets": "overlap implies identical complete driver set"
+  }
+}

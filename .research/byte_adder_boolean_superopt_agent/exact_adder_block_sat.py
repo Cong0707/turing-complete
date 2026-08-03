@@ -42,7 +42,7 @@ def load_generic():
 G = load_generic()
 
 
-def adder_targets(bits: int) -> tuple[int, tuple[int, ...]]:
+def adder_targets(bits: int, dual_cout: bool = False) -> tuple[int, tuple[int, ...]]:
     """Return input count and packed Sum/Cout truth tables.
 
     Input order is ``a[0..bits-1], b[0..bits-1], cin``.  Outputs are
@@ -60,6 +60,8 @@ def adder_targets(bits: int) -> tuple[int, tuple[int, ...]]:
         total = a + b + cin
         for output in range(bits + 1):
             targets[output] |= ((total >> output) & 1) << case
+    if dual_cout:
+        targets.append(((1 << assignments) - 1) ^ targets[-1])
     return inputs, tuple(targets)
 
 
@@ -111,6 +113,44 @@ def _at_most_weighted(enc, kinds: list[list[int]], gate_bound: int) -> None:
     )
 
 
+def _enforce_physical_net_partition(
+    enc,
+    buses: list[tuple[str, list[int]]],
+) -> None:
+    """Require abstract resolved buses to form physical wire-net partitions.
+
+    A component output pin may fan out to several sinks, so identical driver
+    sets are allowed.  Two different physical nets cannot partially share a
+    driver pin: if any source occurs in both buses, all their selected sources
+    must be identical.  Without this rule, one Switch output can incorrectly
+    be reused as an isolating driver in two independently resolved buses.
+    """
+
+    for left_index, (left_name, left) in enumerate(buses):
+        for right_name, right in buses[left_index + 1 :]:
+            common = min(len(left), len(right))
+            overlap_terms = [
+                enc.and_term(
+                    f"physical_overlap_{left_name}_{right_name}_{source}",
+                    (left[source], right[source]),
+                )
+                for source in range(common)
+            ]
+            overlap = enc.var(f"physical_overlap_{left_name}_{right_name}")
+            enc.equiv_or(overlap, overlap_terms)
+            union = max(len(left), len(right))
+            for source in range(union):
+                left_use = left[source] if source < len(left) else None
+                right_use = right[source] if source < len(right) else None
+                if left_use is None:
+                    enc.clause((-overlap, -right_use))
+                elif right_use is None:
+                    enc.clause((-overlap, -left_use))
+                else:
+                    enc.clause((-overlap, -left_use, right_use))
+                    enc.clause((-overlap, left_use, -right_use))
+
+
 def build(
     bits: int,
     gate_bound: int,
@@ -120,8 +160,15 @@ def build(
     exact_switches: int | None = None,
     exact_xors: int | None = None,
     single_driver: bool = False,
+    cin_arrival: int = 0,
+    output_deadlines: tuple[int, ...] | None = None,
+    dual_cin: bool = False,
+    dual_cout: bool = False,
+    allow_z_false: bool = False,
+    allow_z_false_outputs: tuple[bool, ...] | None = None,
+    physical_nets: bool = True,
 ) -> tuple[object, dict[str, object]]:
-    inputs, targets = adder_targets(bits)
+    inputs, targets = adder_targets(bits, dual_cout)
     assignments = 1 << inputs
     enc = G.Encoder()
 
@@ -130,8 +177,16 @@ def build(
         [bool((case >> bit) & 1) for case in range(assignments)]
         for bit in range(inputs)
     ]
+    if dual_cin:
+        source_values.append(
+            [not bool((case >> (2 * bits)) & 1) for case in range(assignments)]
+        )
     source_values.extend(([False] * assignments, [True] * assignments))
     source_count = len(source_values)
+    source_arrivals = [0] * source_count
+    source_arrivals[2 * bits] = cin_arrival
+    if dual_cin:
+        source_arrivals[inputs] = cin_arrival
     values: list[list[object]] = list(source_values)
     drivens: list[list[object]] = [[True] * assignments for _ in values]
 
@@ -200,6 +255,23 @@ def build(
                                     -slot_levels[result_depth - 1],
                                 )
                             )
+            for source, source_arrival in enumerate(source_arrivals):
+                for result_depth in range(1, max_delay + 1):
+                    if result_depth < source_arrival + delay:
+                        enc.clause(
+                            (
+                                -slot_kinds[candidate],
+                                -left[source],
+                                -slot_levels[result_depth - 1],
+                            )
+                        )
+                        enc.clause(
+                            (
+                                -slot_kinds[candidate],
+                                -right[source],
+                                -slot_levels[result_depth - 1],
+                            )
+                        )
 
         slot_values = []
         slot_drivens = []
@@ -256,7 +328,16 @@ def build(
         )
 
     output_uses: list[list[int]] = []
+    if allow_z_false_outputs is None:
+        allow_z_false_outputs = tuple([allow_z_false] * len(targets))
+    if len(allow_z_false_outputs) != len(targets):
+        raise ValueError("allow_z_false_outputs must match target count")
     for output_index, target in enumerate(targets):
+        deadline = (
+            output_deadlines[output_index]
+            if output_deadlines is not None
+            else max_delay
+        )
         uses = [
             enc.var(f"output_{output_index}_{source}")
             for source in range(source_count + components)
@@ -266,6 +347,14 @@ def build(
         else:
             enc.clause(uses)
         G._restrict_active_bus_to_switches(enc, uses, source_count, kinds)
+        for source, source_arrival in enumerate(source_arrivals):
+            if source_arrival > deadline:
+                enc.clause((-uses[source],))
+        for slot, slot_levels in enumerate(levels):
+            source = source_count + slot
+            for depth, level_literal in enumerate(slot_levels, start=1):
+                if depth > deadline:
+                    enc.clause((-uses[source], -level_literal))
         for case in range(assignments):
             value, driven = output_bus(
                 enc,
@@ -275,8 +364,20 @@ def build(
                 [row[case] for row in drivens],
             )
             enc.force(value, bool((target >> case) & 1))
-            enc.force(driven, True)
+            if not allow_z_false_outputs[output_index] or ((target >> case) & 1):
+                enc.force(driven, True)
         output_uses.append(uses)
+
+    if physical_nets:
+        resolved_buses: list[tuple[str, list[int]]] = []
+        for slot, (left, right) in enumerate(zip(left_uses, right_uses, strict=True)):
+            resolved_buses.append((f"slot{slot}_left", left))
+            resolved_buses.append((f"slot{slot}_right", right))
+        resolved_buses.extend(
+            (f"output{output}", uses)
+            for output, uses in enumerate(output_uses)
+        )
+        _enforce_physical_net_partition(enc, resolved_buses)
 
     # Every component must affect a later component or a primary output.
     for slot in range(components):
@@ -296,6 +397,13 @@ def build(
         "right_uses": right_uses,
         "output_uses": output_uses,
         "single_driver": single_driver,
+        "source_arrivals": source_arrivals,
+        "output_deadlines": output_deadlines,
+        "dual_cin": dual_cin,
+        "dual_cout": dual_cout,
+        "allow_z_false": allow_z_false,
+        "allow_z_false_outputs": allow_z_false_outputs,
+        "physical_nets": physical_nets,
     }
 
 
@@ -342,20 +450,33 @@ def verify_payload(payload: dict[str, object]) -> dict[str, object]:
     """Independently replay a decoded SAT witness with value/Z semantics."""
 
     bits = int(payload["bits"])
-    inputs, targets = adder_targets(bits)
+    dual_cin = bool(payload.get("dual_cin", False))
+    dual_cout = bool(payload.get("dual_cout", False))
+    inputs, targets = adder_targets(bits, dual_cout)
     assignments = 1 << inputs
-    source_count = inputs + 2
+    source_count = inputs + 2 + int(dual_cin)
     network = payload["network"]
     output_buses = payload["output_buses"]
     max_seen_depth = 0
     mismatch_count = 0
     conflict_count = 0
     undriven_count = 0
+    allowed_z_zero_count = 0
+    allow_z_false = bool(payload.get("allow_z_false", False))
+    allow_z_false_outputs = payload.get("allow_z_false_outputs")
+    if allow_z_false_outputs is None:
+        allow_z_false_outputs = [allow_z_false] * len(targets)
 
     for case in range(assignments):
-        values = [bool((case >> bit) & 1) for bit in range(inputs)] + [False, True]
+        values = [bool((case >> bit) & 1) for bit in range(inputs)]
+        if dual_cin:
+            values.append(not values[2 * bits])
+        values.extend([False, True])
         drivens = [True] * source_count
         depths = [0] * source_count
+        depths[2 * bits] = int(payload.get("cin_arrival", 0))
+        if dual_cin:
+            depths[inputs] = int(payload.get("cin_arrival", 0))
 
         def resolve(bus: list[int]) -> tuple[bool, bool]:
             nonlocal conflict_count
@@ -399,18 +520,47 @@ def verify_payload(payload: dict[str, object]) -> dict[str, object]:
 
         for output, bus in enumerate(output_buses):
             value, driven = resolve(bus)
-            if not driven:
-                undriven_count += 1
             wanted = bool((targets[output] >> case) & 1)
-            if not driven or value != wanted:
+            output_allows_z = bool(allow_z_false_outputs[output])
+            if not driven and (wanted or not output_allows_z):
+                undriven_count += 1
+            elif not driven:
+                allowed_z_zero_count += 1
+            if (not driven and (wanted or not output_allows_z)) or value != wanted:
                 mismatch_count += 1
+
+    resolved_buses: list[tuple[str, frozenset[int]]] = []
+    for index, item in enumerate(network):
+        resolved_buses.append((f"slot{index}_left", frozenset(item["left_bus"])))
+        resolved_buses.append((f"slot{index}_right", frozenset(item["right_bus"])))
+    resolved_buses.extend(
+        (f"output{index}", frozenset(bus))
+        for index, bus in enumerate(output_buses)
+    )
+    physical_violations = []
+    for left_index, (left_name, left_bus) in enumerate(resolved_buses):
+        for right_name, right_bus in resolved_buses[left_index + 1 :]:
+            shared = left_bus & right_bus
+            if shared and left_bus != right_bus:
+                physical_violations.append(
+                    {
+                        "left": left_name,
+                        "right": right_name,
+                        "shared_sources": sorted(shared),
+                        "left_only": sorted(left_bus - right_bus),
+                        "right_only": sorted(right_bus - left_bus),
+                    }
+                )
 
     return {
         "assignments": assignments,
-        "output_checks": assignments * (bits + 1),
+        "output_checks": assignments * len(targets),
         "mismatch_count": mismatch_count,
         "bus_conflict_count": conflict_count,
         "undriven_output_count": undriven_count,
+        "allowed_z_zero_count": allowed_z_zero_count,
+        "physical_net_partition_violation_count": len(physical_violations),
+        "physical_net_partition_violations": physical_violations,
         "replayed_max_component_depth": max_seen_depth,
     }
 
@@ -425,6 +575,21 @@ def solve(args: argparse.Namespace) -> dict[str, object]:
         exact_switches=args.switches,
         exact_xors=args.xors,
         single_driver=args.single_driver,
+        cin_arrival=args.cin_arrival,
+        output_deadlines=(
+            tuple(
+                [args.sum_deadline] * args.bits
+                + [args.carry_deadline]
+                + ([args.carry_bar_deadline] if args.dual_cout else [])
+            )
+            if args.sum_deadline is not None and args.carry_deadline is not None
+            else None
+        ),
+        dual_cin=args.dual_cin,
+        dual_cout=args.dual_cout,
+        allow_z_false=args.allow_z_false,
+        allow_z_false_outputs=getattr(args, "allow_z_false_outputs", None),
+        physical_nets=not getattr(args, "abstract_buses", False),
     )
     timer = None
     model = None
@@ -446,7 +611,7 @@ def solve(args: argparse.Namespace) -> dict[str, object]:
         elif result is False:
             status = "unsat"
 
-    inputs, targets = adder_targets(args.bits)
+    inputs, targets = adder_targets(args.bits, args.dual_cout)
     payload: dict[str, object] = {
         "schema": "exact-adder-block-switch-cnf-v1",
         "status": status,
@@ -461,6 +626,15 @@ def solve(args: argparse.Namespace) -> dict[str, object]:
         "exact_switches": args.switches,
         "exact_xors": args.xors,
         "single_driver": args.single_driver,
+        "cin_arrival": args.cin_arrival,
+        "sum_deadline": args.sum_deadline,
+        "carry_deadline": args.carry_deadline,
+        "carry_bar_deadline": args.carry_bar_deadline,
+        "dual_cin": args.dual_cin,
+        "dual_cout": args.dual_cout,
+        "allow_z_false": args.allow_z_false,
+        "allow_z_false_outputs": getattr(args, "allow_z_false_outputs", None),
+        "physical_nets": not getattr(args, "abstract_buses", False),
         "solver": args.solver,
         "timeout_seconds": args.timeout,
         "conflict_budget": args.conflicts,
@@ -475,7 +649,8 @@ def solve(args: argparse.Namespace) -> dict[str, object]:
             "switch": "enable=0 -> Z; enable=1 -> data",
             "ordinary_gate_reads_z_as_zero": True,
             "multi_driver_conflict_forbidden": True,
-            "primary_outputs_must_be_driven": True,
+            "primary_outputs_must_be_driven": not args.allow_z_false,
+            "internal_transfer_outputs_may_use_z_for_zero": args.allow_z_false,
             "free_sources": "raw inputs plus constants 0 and 1; no free complements",
         },
     }
@@ -484,7 +659,12 @@ def solve(args: argparse.Namespace) -> dict[str, object]:
         payload["verification"] = verify_payload(payload)
         if any(
             payload["verification"][key]
-            for key in ("mismatch_count", "bus_conflict_count", "undriven_output_count")
+            for key in (
+                "mismatch_count",
+                "bus_conflict_count",
+                "undriven_output_count",
+                "physical_net_partition_violation_count",
+            )
         ):
             raise RuntimeError("decoded witness failed independent replay")
     elif status == "unknown":
@@ -501,11 +681,30 @@ def main() -> int:
     parser.add_argument("--switches", type=int)
     parser.add_argument("--xors", type=int)
     parser.add_argument("--single-driver", action="store_true")
+    parser.add_argument("--cin-arrival", type=int, default=0)
+    parser.add_argument("--sum-deadline", type=int)
+    parser.add_argument("--carry-deadline", type=int)
+    parser.add_argument("--carry-bar-deadline", type=int)
+    parser.add_argument("--dual-cin", action="store_true")
+    parser.add_argument("--dual-cout", action="store_true")
+    parser.add_argument("--allow-z-false", action="store_true")
+    parser.add_argument("--abstract-buses", action="store_true")
     parser.add_argument("--solver", default="cadical195")
     parser.add_argument("--timeout", type=float, default=120.0)
     parser.add_argument("--conflicts", type=int)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if (args.sum_deadline is None) != (args.carry_deadline is None):
+        parser.error("--sum-deadline and --carry-deadline must be used together")
+    if args.dual_cout != (args.carry_bar_deadline is not None):
+        parser.error("--dual-cout and --carry-bar-deadline must be used together")
+    deadlines = [
+        value
+        for value in (args.sum_deadline, args.carry_deadline, args.carry_bar_deadline)
+        if value is not None
+    ]
+    if deadlines and max(deadlines) > args.max_delay:
+        parser.error("output deadlines must not exceed --max-delay")
     payload = solve(args)
     encoded = (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode()
     args.output.parent.mkdir(parents=True, exist_ok=True)

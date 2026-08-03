@@ -1,0 +1,155 @@
+{
+  "schema": "exact-carry-block-switch-cnf-v1",
+  "status": "sat",
+  "bits": 2,
+  "mode": "dual-transfer",
+  "free_gp": true,
+  "source_names": [
+    "a0",
+    "a1",
+    "b0",
+    "b1",
+    "cin",
+    "g0",
+    "q0",
+    "p0",
+    "g1",
+    "q1",
+    "p1",
+    "0",
+    "1"
+  ],
+  "source_arrivals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    0,
+    0
+  ],
+  "target_names": [
+    "u",
+    "v",
+    "nu",
+    "nv"
+  ],
+  "gate_bound": 6,
+  "max_delay": 3,
+  "components": 6,
+  "physical_nets": true,
+  "variables": 8082,
+  "clauses": 62483,
+  "solve_seconds": 0.12681719998363405,
+  "actual_gate": 6,
+  "network": [
+    {
+      "slot": 0,
+      "source": 13,
+      "kind": "NOR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 1,
+      "source": 14,
+      "kind": "NOR",
+      "left_bus": [
+        9
+      ],
+      "right_bus": [
+        13
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 2,
+      "source": 15,
+      "kind": "OR",
+      "left_bus": [
+        9
+      ],
+      "right_bus": [
+        13
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 3,
+      "source": 16,
+      "kind": "NOR",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        9
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 4,
+      "source": 17,
+      "kind": "OR",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        16
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 5,
+      "source": 18,
+      "kind": "NOR",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        16
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    }
+  ],
+  "output_buses": [
+    [
+      14
+    ],
+    [
+      17
+    ],
+    [
+      15
+    ],
+    [
+      18
+    ]
+  ],
+  "verification": {
+    "assignments": 32,
+    "output_checks": 128,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 3
+  }
+}

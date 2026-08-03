@@ -1,0 +1,79 @@
+{
+  "schema": "字节加法器四延迟全局构造冻结清单-v1",
+  "date": "2026-08-03",
+  "complete_candidate": false,
+  "best_complete_candidate": null,
+  "verified_local_macros": [
+    {
+      "name": "2-bit transfer",
+      "gate": 12,
+      "delay": 2,
+      "vectors": 16,
+      "physical_net_partition_violations": 0
+    },
+    {
+      "name": "3-bit transfer",
+      "gate": 20,
+      "delay": 3,
+      "vectors": 64,
+      "physical_net_partition_violations": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "2026-08-03-字节加法器四延迟全局构造阶段冻结.md",
+      "bytes": 8460,
+      "sha256": "c184265896660a61a14bbb16291b8d6c443b7f32bdd8244579484ffbb79460b1"
+    },
+    {
+      "path": "search_three_bit_block.py",
+      "bytes": 12630,
+      "sha256": "a6c796fcac1f2f6b09765d18ec773b0b4911961e44aa0c376219db0c50ba1f3a"
+    },
+    {
+      "path": "three_bit_block_frontier.json",
+      "bytes": 163409,
+      "sha256": "eb596e503e60d5e3477f1e187b49f866e8e4dd59b052d6ffc5117ec0f1a7b806"
+    },
+    {
+      "path": "search_shared_phase.py",
+      "bytes": 5846,
+      "sha256": "96dd56e5ae46a7e72d3368c1a75647fa9d2f1f517670559ade2a96ffb9f5d82e"
+    },
+    {
+      "path": "shared_phase_frontier.json",
+      "bytes": 627,
+      "sha256": "4e2db8a68efd1595dbdea7e7d8ebd0c6e8479b0e7887df899371716aa2f86264"
+    },
+    {
+      "path": "audit_cross_bus_driver_reuse.py",
+      "bytes": 3565,
+      "sha256": "d12c2d22e9e9816f2e46277e64df4030efda0f718399464fa000520d1dbd81c6"
+    },
+    {
+      "path": "cross_bus_driver_reuse_audit.json",
+      "bytes": 3515,
+      "sha256": "48f4c86a80c6b09c819773e574c3f94be6fd19351c5e2a4aaab98660516179b6"
+    },
+    {
+      "path": "repair_transfer_bus_isolation.py",
+      "bytes": 4416,
+      "sha256": "7a40a8369291dfbf9f975fac06dc0cc334fe638f5f182f00293c0994975bd10d"
+    },
+    {
+      "path": "transfer2-physical-b12-d2.json",
+      "bytes": 3952,
+      "sha256": "6d5667ef3020b6cff7204524409bbd934416ea4b4ee665f6513c7941d63bb659"
+    },
+    {
+      "path": "transfer3-physical-b20-d3.json",
+      "bytes": 5060,
+      "sha256": "437e030f798026e23950a87f8a9405c0a20857a388f8fb24a7650a710be86366"
+    }
+  ],
+  "excluded": [
+    "__pycache__/",
+    "shared_gate_switch_stdout.tmp",
+    "hub79-netlist.txt"
+  ]
+}

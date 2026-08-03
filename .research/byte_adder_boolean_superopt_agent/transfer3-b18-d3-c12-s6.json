@@ -1,0 +1,255 @@
+{
+  "schema": "exact-carry-transfer-switch-cnf-v1",
+  "status": "sat",
+  "bits": 3,
+  "inputs": 6,
+  "target_truth_tables_hex": [
+    "fefcf8f0e0c08000",
+    "fffefcf8f0e0c080"
+  ],
+  "gate_bound": 18,
+  "max_delay": 3,
+  "components": 12,
+  "exact_switches": 6,
+  "exact_xors": 0,
+  "single_driver": false,
+  "cin_arrival": 0,
+  "sum_deadline": null,
+  "carry_deadline": null,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": true,
+  "solver": "cadical195",
+  "timeout_seconds": 60.0,
+  "conflict_budget": null,
+  "variables": 28258,
+  "clauses": 180980,
+  "solve_seconds": 17.683368800004246,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": true,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 18,
+  "network": [
+    {
+      "slot": 0,
+      "source": 8,
+      "kind": "OR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 9,
+      "kind": "SWITCH",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 2,
+      "source": 10,
+      "kind": "SWITCH",
+      "left_bus": [
+        3
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 3,
+      "source": 11,
+      "kind": "OR",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        5
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 4,
+      "source": 12,
+      "kind": "AND",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 5,
+      "source": 13,
+      "kind": "SWITCH",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        5
+      ],
+      "cost": 2,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 6,
+      "source": 14,
+      "kind": "OR",
+      "left_bus": [
+        12
+      ],
+      "right_bus": [
+        13
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 7,
+      "source": 15,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 8,
+      "source": 16,
+      "kind": "AND",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        15
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 9,
+      "source": 17,
+      "kind": "SWITCH",
+      "left_bus": [
+        16
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 10,
+      "source": 18,
+      "kind": "SWITCH",
+      "left_bus": [
+        9,
+        10
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 11,
+      "source": 19,
+      "kind": "SWITCH",
+      "left_bus": [
+        14
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 2,
+      "depth_upper_bound": 3
+    }
+  ],
+  "output_buses": [
+    [
+      17,
+      19
+    ],
+    [
+      18,
+      19
+    ]
+  ],
+  "verification": {
+    "assignments": 64,
+    "output_checks": 128,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 48,
+    "replayed_max_component_depth": 3
+  },
+  "interface": {
+    "inputs": "a[0..n-1], b[0..n-1]",
+    "outputs": [
+      "U=f(0)",
+      "V=f(1)"
+    ],
+    "invariant": "U <= V",
+    "false_rail": "driven 0 or Z"
+  }
+}

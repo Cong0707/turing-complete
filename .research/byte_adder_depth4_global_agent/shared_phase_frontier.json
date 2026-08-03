@@ -1,0 +1,26 @@
+{
+  "schema": "byte-adder-hub79-shared-carry-zero-phase-v1",
+  "target": "~C5",
+  "target_network": 246,
+  "target_support": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    8,
+    9,
+    10,
+    11,
+    12,
+    16
+  ],
+  "source_signal_count": 93,
+  "filtered_signal_count": 57,
+  "depth1_source_count": 28,
+  "depth2_source_count": 40,
+  "first_gate_unique_truths": 1156,
+  "hit_count": 0,
+  "hits": [],
+  "interpretation": "A <=2-gate depth<=3 hit would merge the two C5=0 drivers on each of S5/S6/S7. No hit means that specific shared-phase rewrite is unavailable from the current public signal basis."
+}

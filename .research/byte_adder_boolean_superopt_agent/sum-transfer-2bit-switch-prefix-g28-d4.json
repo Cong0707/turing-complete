@@ -1,0 +1,243 @@
+{
+  "schema": "exact-sum-carry-transfer-switch-dag-v1",
+  "status": "sat",
+  "family": "sum-transfer-2bit-switch-prefix",
+  "bits": 2,
+  "inputs": 5,
+  "target_truth_tables_hex": [
+    "a5a55a5a",
+    "c936936c",
+    "ec80ec80",
+    "fec8fec8"
+  ],
+  "allow_z_false": false,
+  "allow_z_false_outputs": [
+    false,
+    false,
+    true,
+    true
+  ],
+  "physical_nets": true,
+  "actual_gate": 28,
+  "network": [
+    {
+      "slot": 0,
+      "source": 7,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 8,
+      "kind": "OR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 2,
+      "source": 9,
+      "kind": "AND",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 3,
+      "source": 10,
+      "kind": "OR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 4,
+      "source": 11,
+      "kind": "XOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 3,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 5,
+      "source": 12,
+      "kind": "XOR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        3
+      ],
+      "cost": 3,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 6,
+      "source": 13,
+      "kind": "SWITCH",
+      "left_bus": [
+        9
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 7,
+      "source": 14,
+      "kind": "SWITCH",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        10
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 8,
+      "source": 15,
+      "kind": "SWITCH",
+      "left_bus": [
+        9
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 9,
+      "source": 16,
+      "kind": "SWITCH",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        10
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 10,
+      "source": 17,
+      "kind": "SWITCH",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 11,
+      "source": 18,
+      "kind": "SWITCH",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        8
+      ],
+      "cost": 2,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 12,
+      "source": 19,
+      "kind": "XOR",
+      "left_bus": [
+        11
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 3,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 13,
+      "source": 20,
+      "kind": "XOR",
+      "left_bus": [
+        12
+      ],
+      "right_bus": [
+        17,
+        18
+      ],
+      "cost": 3,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      19
+    ],
+    [
+      20
+    ],
+    [
+      13,
+      14
+    ],
+    [
+      15,
+      16
+    ]
+  ],
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "sum_outputs_must_be_driven": true,
+    "false_transfer_rails_may_be_z": true,
+    "physical_net_partition": "overlap implies identical driver set"
+  },
+  "verification": {
+    "assignments": 32,
+    "output_checks": 128,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 24,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 4
+  },
+  "actual_delay": 4
+}

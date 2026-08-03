@@ -1,0 +1,161 @@
+{
+  "schema": "tc-cross-bus-tristate-driver-audit-v1",
+  "rule": "All wires sharing one output pin are one electrical network. A tri-state source cannot be a driver of two nonidentical resolved buses without duplicating the source component.",
+  "results": [
+    {
+      "path": ".research/byte_adder_boolean_superopt_agent/transfer2-b10-d2-c7-s3.json",
+      "claimed_gate": 10,
+      "claimed_delay": 2,
+      "output_buses": [
+        [
+          7,
+          11
+        ],
+        [
+          7,
+          11,
+          12
+        ]
+      ],
+      "reused_sources": [
+        {
+          "source": 7,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "source": 11,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11,
+              12
+            ]
+          ]
+        }
+      ],
+      "nonidentical_bus_reuse": [
+        {
+          "source": 7,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11,
+              12
+            ]
+          ]
+        },
+        {
+          "source": 11,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              7,
+              11
+            ],
+            [
+              7,
+              11,
+              12
+            ]
+          ]
+        }
+      ],
+      "materializable_as_independent_buses": false
+    },
+    {
+      "path": ".research/byte_adder_boolean_superopt_agent/transfer3-b18-d3-c12-s6.json",
+      "claimed_gate": 18,
+      "claimed_delay": 3,
+      "output_buses": [
+        [
+          17,
+          19
+        ],
+        [
+          18,
+          19
+        ]
+      ],
+      "reused_sources": [
+        {
+          "source": 19,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              17,
+              19
+            ],
+            [
+              18,
+              19
+            ]
+          ]
+        }
+      ],
+      "nonidentical_bus_reuse": [
+        {
+          "source": 19,
+          "kind": "SWITCH",
+          "bus_indices": [
+            0,
+            1
+          ],
+          "bus_members": [
+            [
+              17,
+              19
+            ],
+            [
+              18,
+              19
+            ]
+          ]
+        }
+      ],
+      "materializable_as_independent_buses": false
+    }
+  ],
+  "all_materializable": false,
+  "conclusion": "The claimed 10/2 and 18/3 transfer macros reuse Switch sources across nonidentical U/V buses. Their Boolean replay is valid only in the abstract resolver; the networks cannot be wired as two independent TC buses. The shared driver must be duplicated, restoring the G/L combine cost from 6/1 to 8/1."
+}

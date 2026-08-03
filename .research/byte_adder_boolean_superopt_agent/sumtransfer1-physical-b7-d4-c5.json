@@ -1,0 +1,174 @@
+{
+  "schema": "exact-sum-carry-transfer-switch-cnf-v1",
+  "status": "sat",
+  "bits": 1,
+  "inputs": 3,
+  "target_truth_tables_hex": [
+    "96",
+    "88",
+    "ee"
+  ],
+  "gate_bound": 7,
+  "max_delay": 4,
+  "components": 5,
+  "exact_switches": 0,
+  "exact_xors": 1,
+  "single_driver": false,
+  "cin_arrival": 0,
+  "sum_deadline": null,
+  "carry_deadline": null,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": false,
+  "allow_z_false_outputs": [
+    false,
+    true,
+    true
+  ],
+  "physical_nets": true,
+  "solver": "cadical195",
+  "timeout_seconds": 30.0,
+  "conflict_budget": null,
+  "variables": 2145,
+  "clauses": 14160,
+  "solve_seconds": 0.13970319999498315,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": false,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 7,
+  "network": [
+    {
+      "slot": 0,
+      "source": 5,
+      "kind": "AND",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        1
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 1,
+      "source": 6,
+      "kind": "NOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        1
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 2,
+      "source": 7,
+      "kind": "NOR",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 3,
+      "source": 8,
+      "kind": "XOR",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 3,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 4,
+      "source": 9,
+      "kind": "NAND",
+      "left_bus": [
+        4
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      8
+    ],
+    [
+      5
+    ],
+    [
+      9
+    ]
+  ],
+  "verification": {
+    "assignments": 8,
+    "output_checks": 24,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 4
+  },
+  "interface": {
+    "inputs": "a[0..n-1], b[0..n-1], cin",
+    "outputs": [
+      "sum0",
+      "U=f(0)",
+      "V=f(1)"
+    ],
+    "drive_policy": "Sum always driven; false U/V may be Z",
+    "physical_nets": "overlap implies identical complete driver set"
+  }
+}

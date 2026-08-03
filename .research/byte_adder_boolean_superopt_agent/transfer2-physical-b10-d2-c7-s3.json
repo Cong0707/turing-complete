@@ -1,0 +1,77 @@
+{
+  "schema": "exact-carry-transfer-switch-cnf-v1",
+  "status": "unsat",
+  "bits": 2,
+  "inputs": 4,
+  "target_truth_tables_hex": [
+    "ec80",
+    "fec8"
+  ],
+  "gate_bound": 10,
+  "max_delay": 2,
+  "components": 7,
+  "exact_switches": 3,
+  "exact_xors": 0,
+  "single_driver": false,
+  "cin_arrival": 0,
+  "sum_deadline": null,
+  "carry_deadline": null,
+  "carry_bar_deadline": null,
+  "dual_cin": false,
+  "dual_cout": false,
+  "allow_z_false": true,
+  "physical_nets": true,
+  "solver": "cadical195",
+  "timeout_seconds": 30.0,
+  "conflict_budget": null,
+  "variables": 4848,
+  "clauses": 30991,
+  "solve_seconds": 1.0280500999942888,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": false,
+    "internal_transfer_outputs_may_use_z_for_zero": true,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "interface": {
+    "inputs": "a[0..n-1], b[0..n-1]",
+    "outputs": [
+      "U=f(0)",
+      "V=f(1)"
+    ],
+    "invariant": "U <= V",
+    "false_rail": "driven 0 or Z"
+  }
+}

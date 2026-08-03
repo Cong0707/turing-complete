@@ -1,0 +1,183 @@
+{
+  "schema": "exact-carry-block-switch-cnf-v1",
+  "status": "sat",
+  "bits": 3,
+  "mode": "transfer",
+  "free_gp": true,
+  "source_names": [
+    "a0",
+    "a1",
+    "a2",
+    "b0",
+    "b1",
+    "b2",
+    "cin",
+    "g0",
+    "q0",
+    "p0",
+    "g1",
+    "q1",
+    "p1",
+    "g2",
+    "q2",
+    "p2",
+    "0",
+    "1"
+  ],
+  "source_arrivals": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    0,
+    0
+  ],
+  "target_names": [
+    "u",
+    "v"
+  ],
+  "gate_bound": 8,
+  "max_delay": 4,
+  "components": 8,
+  "physical_nets": true,
+  "variables": 30615,
+  "clauses": 234463,
+  "solve_seconds": 12.233828900003573,
+  "actual_gate": 8,
+  "network": [
+    {
+      "slot": 0,
+      "source": 18,
+      "kind": "OR",
+      "left_bus": [
+        10
+      ],
+      "right_bus": [
+        13
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 1,
+      "source": 19,
+      "kind": "NOR",
+      "left_bus": [
+        8
+      ],
+      "right_bus": [
+        11
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 2,
+      "source": 20,
+      "kind": "NOR",
+      "left_bus": [
+        18
+      ],
+      "right_bus": [
+        19
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 3,
+      "source": 21,
+      "kind": "NOR",
+      "left_bus": [
+        14
+      ],
+      "right_bus": [
+        20
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 4,
+      "source": 22,
+      "kind": "OR",
+      "left_bus": [
+        1
+      ],
+      "right_bus": [
+        4
+      ],
+      "cost": 1,
+      "depth_upper_bound": 1
+    },
+    {
+      "slot": 5,
+      "source": 23,
+      "kind": "AND",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        22
+      ],
+      "cost": 1,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 6,
+      "source": 24,
+      "kind": "NOR",
+      "left_bus": [
+        18
+      ],
+      "right_bus": [
+        23
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 7,
+      "source": 25,
+      "kind": "NOR",
+      "left_bus": [
+        14
+      ],
+      "right_bus": [
+        24
+      ],
+      "cost": 1,
+      "depth_upper_bound": 4
+    }
+  ],
+  "output_buses": [
+    [
+      25
+    ],
+    [
+      21
+    ]
+  ],
+  "verification": {
+    "assignments": 128,
+    "output_checks": 256,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 4
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "exact-adder-block-switch-cnf-v1",
+  "status": "sat",
+  "bits": 1,
+  "inputs": 3,
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "gate_bound": 12,
+  "max_delay": 6,
+  "components": 6,
+  "exact_switches": null,
+  "exact_xors": null,
+  "single_driver": false,
+  "cin_arrival": 5,
+  "sum_deadline": 6,
+  "carry_deadline": 6,
+  "carry_bar_deadline": null,
+  "dual_cin": true,
+  "dual_cout": false,
+  "allow_z_false": false,
+  "allow_z_false_outputs": null,
+  "physical_nets": true,
+  "solver": "cadical195",
+  "timeout_seconds": 180.0,
+  "conflict_budget": null,
+  "variables": 2907,
+  "clauses": 22896,
+  "solve_seconds": 0.1490879000048153,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    }
+  },
+  "semantics": {
+    "switch": "enable=0 -> Z; enable=1 -> data",
+    "ordinary_gate_reads_z_as_zero": true,
+    "multi_driver_conflict_forbidden": true,
+    "primary_outputs_must_be_driven": true,
+    "internal_transfer_outputs_may_use_z_for_zero": false,
+    "free_sources": "raw inputs plus constants 0 and 1; no free complements"
+  },
+  "actual_gate": 12,
+  "network": [
+    {
+      "slot": 0,
+      "source": 6,
+      "kind": "XOR",
+      "left_bus": [
+        0
+      ],
+      "right_bus": [
+        1
+      ],
+      "cost": 3,
+      "depth_upper_bound": 2
+    },
+    {
+      "slot": 1,
+      "source": 7,
+      "kind": "NAND",
+      "left_bus": [
+        5
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 1,
+      "depth_upper_bound": 3
+    },
+    {
+      "slot": 2,
+      "source": 8,
+      "kind": "SWITCH",
+      "left_bus": [
+        7
+      ],
+      "right_bus": [
+        0
+      ],
+      "cost": 2,
+      "depth_upper_bound": 4
+    },
+    {
+      "slot": 3,
+      "source": 9,
+      "kind": "SWITCH",
+      "left_bus": [
+        3
+      ],
+      "right_bus": [
+        6
+      ],
+      "cost": 2,
+      "depth_upper_bound": 6
+    },
+    {
+      "slot": 4,
+      "source": 10,
+      "kind": "SWITCH",
+      "left_bus": [
+        6
+      ],
+      "right_bus": [
+        2
+      ],
+      "cost": 2,
+      "depth_upper_bound": 6
+    },
+    {
+      "slot": 5,
+      "source": 11,
+      "kind": "SWITCH",
+      "left_bus": [
+        2
+      ],
+      "right_bus": [
+        7
+      ],
+      "cost": 2,
+      "depth_upper_bound": 6
+    }
+  ],
+  "output_buses": [
+    [
+      9,
+      11
+    ],
+    [
+      8,
+      10
+    ]
+  ],
+  "verification": {
+    "assignments": 8,
+    "output_checks": 16,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "allowed_z_zero_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "physical_net_partition_violations": [],
+    "replayed_max_component_depth": 6
+  }
+}
