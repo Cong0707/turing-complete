@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "status": "verified zero-cost constant I/O controls and 65/66-cycle shells",
+  "game_started": false,
+  "live_save_read_or_written": false,
+  "evidence": {
+    "executable": {
+      "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\Turing Complete.exe",
+      "sha256": "c93f5e8e826050c3f92e2b3891d26fcdfc933658614185cb9b2eb6a34c5b8d1c"
+    },
+    "rng_test": {
+      "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\campaign\\rng\\test.si",
+      "sha256": "b396a9d5bba76bec2ceb123478dadc4616b6057894f17775982ed097c62fd50c"
+    },
+    "rng_meta": {
+      "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\campaign\\rng\\meta.txt",
+      "sha256": "b75269554e75007582f0f4b7a2d022767e618faca18e6c5337a93a953ff32141"
+    },
+    "score_table": {
+      "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_score_table\\component_scores.json",
+      "sha256": "afecec5bdb685c6b7fb91010522deeb2de08a94f3e7333efec1ee2aff0133e07"
+    },
+    "preorder_decompile": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_score_bypass\\ida\\ram\\preorder.c",
+      "sha256": "df80327cc2c27d670426ecbbda038b9d21c079dbd6789f894097f99b891a7047"
+    }
+  },
+  "score_table_executable_hash_matches": true,
+  "native_costs": {
+    "com_on": {
+      "kind": 2,
+      "gate": 0,
+      "delay": 0,
+      "score_source": "default_table"
+    },
+    "com_not_bit": {
+      "kind": 3,
+      "gate": 1,
+      "delay": 1,
+      "score_source": "level_override_allowed"
+    },
+    "com_switch_bit": {
+      "kind": 12,
+      "gate": 2,
+      "delay": 1,
+      "score_source": "default_table"
+    },
+    "com_delay_line_bit": {
+      "kind": 13,
+      "gate": 5,
+      "delay": 4,
+      "score_source": "default_table"
+    },
+    "com_level_input_switched": {
+      "kind": 62,
+      "gate": 0,
+      "delay": 0,
+      "score_source": "default_table"
+    },
+    "com_level_output_switched": {
+      "kind": 70,
+      "gate": 0,
+      "delay": 0,
+      "score_source": "default_table"
+    }
+  },
+  "timing_rule": {
+    "component": "max(all input network arrivals) + component delay -> every output network",
+    "architecture_input": "control arrival propagates to value, adding 0",
+    "architecture_output": "terminal arrival is max(control,value), adding 0",
+    "constant_on": "source arrival 0 with unlimited legal fanout"
+  },
+  "affine_replay": {
+    "identities": {
+      "B*T=T*A": true,
+      "C65*T=A": true,
+      "C66*T=I": true,
+      "D=T*(A+I)": true
+    },
+    "seed_count": 293,
+    "callbacks_65": 19045,
+    "callbacks_66": 19045,
+    "state_initial_value": 0,
+    "cycle65": {
+      "state_recurrence": "q_next=B*q XOR T*(A+I)*seed",
+      "output": "C65*q XOR A*seed",
+      "C65": "A*T^-1",
+      "invariant": "q_t=T*(A^t+I)*seed",
+      "output_sequence": "A^(t+1)*seed for t=0..64"
+    },
+    "cycle66_persistent": {
+      "state_recurrence": "q_next=B*q XOR T*(A+I)*seed",
+      "output": "T^-1*q XOR seed",
+      "invariant": "q_t=T*(A^t+I)*seed",
+      "output_sequence": "suppressed at t=0; A^t*seed for t=1..65"
+    }
+  },
+  "reference": {
+    "front": [
+      401,
+      9,
+      67
+    ],
+    "energy": 241803,
+    "strict_comparison_numerator": 241802
+  },
+  "cycle65_always_on": {
+    "control_trace": "Input=1 and Output=1 on ticks 0..64",
+    "control_components": [
+      "one shared Constant On -> Architecture Input.control",
+      "the same Constant On -> Architecture Output.control"
+    ],
+    "control_gate": 0,
+    "control_delay": 0,
+    "architecture_input_value_arrival": 0,
+    "fixed_32_state_delay_gate": 160,
+    "maximum_total_gate_at_delay8": 465,
+    "maximum_logic_gate_at_delay8": 305,
+    "maximum_total_gate_at_delay9": 413,
+    "maximum_logic_gate_at_delay9": 253,
+    "timing_limits": {
+      "state_to_state_or_output_logic_delay_at_total8": 4,
+      "seed_to_state_or_output_logic_delay_at_total8": 8,
+      "state_to_state_or_output_logic_delay_at_total9": 5,
+      "seed_to_state_or_output_logic_delay_at_total9": 9
+    }
+  },
+  "cycle66_persistent_seed_delay8": {
+    "control_trace": "Input=1 on ticks 0..65; Output=0 at tick0 and 1 on ticks 1..65",
+    "control_components": [
+      "Constant On -> Architecture Input.control",
+      "Constant On -> ready Delay Bit.in",
+      "ready Delay Bit.out -> Architecture Output.control"
+    ],
+    "control_gate": 5,
+    "control_delay": 4,
+    "architecture_input_value_arrival": 0,
+    "architecture_output_control_arrival": 4,
+    "fixed_32_state_plus_ready_gate": 165,
+    "maximum_total_gate_at_delay8": 457,
+    "maximum_logic_gate_at_delay8": 292,
+    "state_path_logic_delay_budget": 4,
+    "seed_path_logic_delay_budget": 8
+  },
+  "cycle66_one_shot_delay8_comparison": {
+    "control_trace": "Input=NOT ready, Output=ready",
+    "control_components": [
+      "Constant On -> ready Delay Bit.in",
+      "ready Delay Bit.out -> Architecture Output.control",
+      "NOT ready -> Architecture Input.control"
+    ],
+    "control_gate": 6,
+    "input_control_and_value_arrival": 5,
+    "fixed_32_state_plus_control_gate": 166,
+    "maximum_total_gate_at_delay8": 457,
+    "maximum_logic_gate_at_delay8": 291,
+    "load_data_logic_delay_budget": 3,
+    "state_path_logic_delay_budget": 4,
+    "comparison": "persistent seed saves one gate and five arrival units on the seed path"
+  },
+  "conclusions": [
+    "65-cycle constant input/output control is exactly 0 gate / 0 delay",
+    "66-cycle persistent-seed control shell is exactly one zero-init Delay Bit: 5 gate / 4 delay",
+    "for 66/8/66 to beat 401/9/67, total gate <=457",
+    "persistent 66-cycle leaves <=292 logic gates after 32 state delays and ready",
+    "classic one-shot 66-cycle leaves <=293 logic gates and only 3 delay after gated input"
+  ]
+}

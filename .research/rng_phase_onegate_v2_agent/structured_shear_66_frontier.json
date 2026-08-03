@@ -1,0 +1,516 @@
+{
+  "schema": 1,
+  "status": "verified mixed-Kraft frontier; not a physical DAG candidate",
+  "model": "66-cycle persistent seed: q'=Bq xor Dseed; y=Cq xor seed",
+  "construction": {
+    "C_start": "I",
+    "left_shears": [
+      "L22",
+      "R27",
+      "L27",
+      "R27",
+      "R17"
+    ],
+    "right_transvections_destination_source": [
+      [
+        14,
+        19
+      ],
+      [
+        13,
+        18
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        20,
+        25
+      ],
+      [
+        16,
+        1
+      ],
+      [
+        31,
+        9
+      ],
+      [
+        21,
+        26
+      ],
+      [
+        12,
+        3
+      ]
+    ],
+    "multiplication_order": "shears use C<-S*C in listed order; transvections use C<-C*E(dst,src) in listed order; E has row dst=e_dst xor e_src"
+  },
+  "score_history": [
+    {
+      "step": "identity",
+      "score": {
+        "over": 27,
+        "excess": 226,
+        "maximum": 34,
+        "B_plus_D_weight": 272,
+        "C_weight": 32,
+        "C_maximum_row_weight": 1
+      }
+    },
+    {
+      "step": "left shear L22",
+      "score": {
+        "over": 27,
+        "excess": 305,
+        "maximum": 37,
+        "B_plus_D_weight": 279,
+        "C_weight": 42,
+        "C_maximum_row_weight": 2
+      }
+    },
+    {
+      "step": "left shear R27",
+      "score": {
+        "over": 27,
+        "excess": 345,
+        "maximum": 45,
+        "B_plus_D_weight": 289,
+        "C_weight": 52,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "left shear L27",
+      "score": {
+        "over": 23,
+        "excess": 196,
+        "maximum": 33,
+        "B_plus_D_weight": 252,
+        "C_weight": 47,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "left shear R27",
+      "score": {
+        "over": 28,
+        "excess": 252,
+        "maximum": 34,
+        "B_plus_D_weight": 276,
+        "C_weight": 42,
+        "C_maximum_row_weight": 2
+      }
+    },
+    {
+      "step": "left shear R17",
+      "score": {
+        "over": 12,
+        "excess": 43,
+        "maximum": 24,
+        "B_plus_D_weight": 198,
+        "C_weight": 62,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(14,19)",
+      "score": {
+        "over": 11,
+        "excess": 42,
+        "maximum": 25,
+        "B_plus_D_weight": 199,
+        "C_weight": 63,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(13,18)",
+      "score": {
+        "over": 11,
+        "excess": 38,
+        "maximum": 25,
+        "B_plus_D_weight": 198,
+        "C_weight": 64,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(30,8)",
+      "score": {
+        "over": 11,
+        "excess": 38,
+        "maximum": 25,
+        "B_plus_D_weight": 197,
+        "C_weight": 63,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(20,25)",
+      "score": {
+        "over": 10,
+        "excess": 41,
+        "maximum": 25,
+        "B_plus_D_weight": 196,
+        "C_weight": 65,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(16,1)",
+      "score": {
+        "over": 9,
+        "excess": 47,
+        "maximum": 34,
+        "B_plus_D_weight": 199,
+        "C_weight": 66,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(31,9)",
+      "score": {
+        "over": 9,
+        "excess": 47,
+        "maximum": 30,
+        "B_plus_D_weight": 198,
+        "C_weight": 65,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(21,26)",
+      "score": {
+        "over": 8,
+        "excess": 38,
+        "maximum": 30,
+        "B_plus_D_weight": 194,
+        "C_weight": 67,
+        "C_maximum_row_weight": 3
+      }
+    },
+    {
+      "step": "right transvection E(12,3)",
+      "score": {
+        "over": 8,
+        "excess": 38,
+        "maximum": 30,
+        "B_plus_D_weight": 193,
+        "C_weight": 68,
+        "C_maximum_row_weight": 3
+      }
+    }
+  ],
+  "final_score": {
+    "over": 8,
+    "excess": 38,
+    "maximum": 30,
+    "B_plus_D_weight": 193,
+    "C_weight": 68,
+    "C_maximum_row_weight": 3
+  },
+  "metric_histogram": {
+    "6": 5,
+    "10": 3,
+    "11": 3,
+    "12": 2,
+    "14": 5,
+    "15": 4,
+    "16": 2,
+    "17": 3,
+    "18": 1,
+    "21": 2,
+    "25": 1,
+    "30": 1
+  },
+  "violating_rows": [
+    {
+      "row": 3,
+      "B": "04042010",
+      "D": "04002000",
+      "B_weight": 4,
+      "D_weight": 2,
+      "metric": 18,
+      "excess": 2
+    },
+    {
+      "row": 12,
+      "B": "0c000034",
+      "D": "44021001",
+      "B_weight": 5,
+      "D_weight": 5,
+      "metric": 25,
+      "excess": 9
+    },
+    {
+      "row": 13,
+      "B": "00080048",
+      "D": "008c2040",
+      "B_weight": 3,
+      "D_weight": 5,
+      "metric": 17,
+      "excess": 1
+    },
+    {
+      "row": 14,
+      "B": "02100090",
+      "D": "01184080",
+      "B_weight": 4,
+      "D_weight": 5,
+      "metric": 21,
+      "excess": 5
+    },
+    {
+      "row": 16,
+      "B": "81030802",
+      "D": "21220810",
+      "B_weight": 6,
+      "D_weight": 6,
+      "metric": 30,
+      "excess": 14
+    },
+    {
+      "row": 19,
+      "B": "22108000",
+      "D": "01108084",
+      "B_weight": 4,
+      "D_weight": 5,
+      "metric": 21,
+      "excess": 5
+    },
+    {
+      "row": 27,
+      "B": "00020009",
+      "D": "48400021",
+      "B_weight": 3,
+      "D_weight": 5,
+      "metric": 17,
+      "excess": 1
+    },
+    {
+      "row": 28,
+      "B": "00040012",
+      "D": "90800042",
+      "B_weight": 3,
+      "D_weight": 5,
+      "metric": 17,
+      "excess": 1
+    }
+  ],
+  "matrices": {
+    "C_output": [
+      "08020020",
+      "10040040",
+      "20080080",
+      "42100000",
+      "84200000",
+      "00400021",
+      "00800042",
+      "01000084",
+      "02000108",
+      "04000210",
+      "00000401",
+      "00000802",
+      "0000100c",
+      "00042008",
+      "00084010",
+      "00008000",
+      "00010002",
+      "00020000",
+      "00040000",
+      "00080000",
+      "02100000",
+      "04200000",
+      "00400001",
+      "00800002",
+      "01000004",
+      "02000008",
+      "04000010",
+      "00000001",
+      "00000002",
+      "00000004",
+      "00000008",
+      "00000010"
+    ],
+    "encoding_T0": [
+      "08000000",
+      "10000000",
+      "20000000",
+      "40000000",
+      "80000000",
+      "00400020",
+      "00800040",
+      "01000080",
+      "02000100",
+      "04000200",
+      "08000400",
+      "10000800",
+      "60001000",
+      "40042000",
+      "80084000",
+      "00008000",
+      "10010000",
+      "00020000",
+      "00040000",
+      "00080000",
+      "42100000",
+      "84200000",
+      "08400000",
+      "10800000",
+      "21000000",
+      "42000000",
+      "84000000",
+      "00420021",
+      "00840042",
+      "01080084",
+      "00100008",
+      "00200010"
+    ],
+    "B_feedback_state": [
+      "00800402",
+      "01000804",
+      "02001000",
+      "04042010",
+      "00084001",
+      "00400000",
+      "00800000",
+      "01000000",
+      "02000000",
+      "04000000",
+      "00008003",
+      "00010004",
+      "0c000034",
+      "00080048",
+      "02100090",
+      "40018000",
+      "81030802",
+      "08002000",
+      "10004000",
+      "22108000",
+      "40010002",
+      "80020000",
+      "00040020",
+      "00080040",
+      "02100080",
+      "04200100",
+      "00400201",
+      "00020009",
+      "00040012",
+      "00080004",
+      "00100008",
+      "00200010"
+    ],
+    "D_seed_injection": [
+      "00800400",
+      "01000800",
+      "02001000",
+      "04002000",
+      "08004000",
+      "08000020",
+      "10000040",
+      "20000080",
+      "40000100",
+      "80000200",
+      "10008400",
+      "20010800",
+      "44021001",
+      "008c2040",
+      "01184080",
+      "10110008",
+      "21220810",
+      "40442021",
+      "80884042",
+      "01108084",
+      "42010008",
+      "84020010",
+      "08040020",
+      "10080040",
+      "20100080",
+      "40200100",
+      "80400200",
+      "48400021",
+      "90800042",
+      "21000084",
+      "02000008",
+      "04000010"
+    ],
+    "alternate_solver_parameter_T_equals_D": [
+      "00800400",
+      "01000800",
+      "02001000",
+      "04002000",
+      "08004000",
+      "08000020",
+      "10000040",
+      "20000080",
+      "40000100",
+      "80000200",
+      "10008400",
+      "20010800",
+      "44021001",
+      "008c2040",
+      "01184080",
+      "10110008",
+      "21220810",
+      "40442021",
+      "80884042",
+      "01108084",
+      "42010008",
+      "84020010",
+      "08040020",
+      "10080040",
+      "20100080",
+      "40200100",
+      "80400200",
+      "48400021",
+      "90800042",
+      "21000084",
+      "02000008",
+      "04000010"
+    ]
+  },
+  "identities": [
+    "C*T0=I",
+    "T0*C=I",
+    "B*T0=T0*A",
+    "D=T0*(A+I)"
+  ],
+  "timing": {
+    "state_arrival": 4,
+    "seed_arrival": 0,
+    "xor_delay": 2,
+    "feedback_ordinary_xor2_necessary": "4*wt(B_i)+wt(D_i)<=16",
+    "output_ordinary_xor2_necessary": "4*wt(C_i)+1<=16",
+    "output_rows_satisfying": 32,
+    "feedback_rows_satisfying": 24,
+    "feedback_rows_needing_switch_or_recode": 8
+  },
+  "protocol_replay": {
+    "seed_count": 344,
+    "outputs_per_seed": 65,
+    "checked_outputs": 22360,
+    "all_nonzero_game_seed_domain_sampled": true,
+    "passed": true
+  },
+  "score_budget": {
+    "normal_frontier": [
+      401,
+      9,
+      67
+    ],
+    "normal_frontier_energy": 241803,
+    "target": [
+      457,
+      8,
+      66
+    ],
+    "state_and_ready_gate": 165,
+    "maximum_logic_gate_for_strict_improvement": 292,
+    "warning": "matrix support score is not a physical logic gate count"
+  },
+  "scope_limit": "Eight feedback rows still violate ordinary-XOR2 timing.  A real candidate requires a conflict-free undirected Switch/Z or new recoding repair plus a <=292-gate shared DAG.",
+  "game_started": false,
+  "live_save_read_or_written": false
+}

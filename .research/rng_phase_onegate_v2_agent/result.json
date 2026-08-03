@@ -1,0 +1,601 @@
+{
+  "schema": 1,
+  "scope": "fixed 402/9/67 encoded data plane and exact 47 mode-pair functions",
+  "status": "UNSAT for any net gate saving; current 402 shell is gate-minimal in scope",
+  "game_started": false,
+  "live_save_read_or_written": false,
+  "costs": [
+    {
+      "kind": "Constant / wire / Maker / Splitter",
+      "gate": 0,
+      "delay": 0,
+      "outputs": "rewiring",
+      "relevance": "no state or predicate"
+    },
+    {
+      "kind": "NOT / AND / NAND / OR / NOR Bit",
+      "gate": 1,
+      "delay": 1,
+      "outputs": "one Boolean",
+      "relevance": "unit-gate universe"
+    },
+    {
+      "kind": "Decoder 1",
+      "gate": 1,
+      "delay": 1,
+      "outputs": "x and NOT x",
+      "relevance": "its restricted dual output is enumerated exactly"
+    },
+    {
+      "kind": "Bit Switch",
+      "gate": 2,
+      "delay": 1,
+      "outputs": "one tristate",
+      "relevance": "already exceeds the <=11 residual budget"
+    },
+    {
+      "kind": "AND3 / OR3",
+      "gate": 2,
+      "delay": 2,
+      "outputs": "one Boolean",
+      "relevance": "already exceeds the <=11 residual budget"
+    },
+    {
+      "kind": "XOR / U1 Word XOR",
+      "gate": 3,
+      "delay": 2,
+      "outputs": "one Boolean",
+      "relevance": "user-verified current cost"
+    },
+    {
+      "kind": "Delay Bit",
+      "gate": 5,
+      "delay": 4,
+      "outputs": "one stored bit",
+      "relevance": "all-zero initial state"
+    },
+    {
+      "kind": "Delay Word U<w>",
+      "gate": "5*w",
+      "delay": 4,
+      "outputs": "w stored bits",
+      "relevance": "packing gives no memory discount"
+    },
+    {
+      "kind": "Decoder 2",
+      "gate": 11,
+      "delay": 2,
+      "outputs": "four one-hot",
+      "relevance": "current profile frontier"
+    },
+    {
+      "kind": "Decoder 3",
+      "gate": 79,
+      "delay": 12,
+      "outputs": "eight one-hot",
+      "relevance": "current profile frontier"
+    }
+  ],
+  "protocol": {
+    "controls": [
+      "00",
+      "10",
+      "01",
+      "01",
+      "..."
+    ],
+    "all_delay_initial_values": 0,
+    "cycles": 67,
+    "static_delay_limit": 9
+  },
+  "state_count_lower_bound": {
+    "required_observable_phases": 3,
+    "minimum_stored_bits": 2,
+    "minimum_delay_gate": 10,
+    "reason": "a deterministic one-bit machine has at most two states but the three control pairs are distinct"
+  },
+  "two_bit_fixed_zero_phase_encodings": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      0,
+      2,
+      1
+    ],
+    [
+      0,
+      2,
+      3
+    ],
+    [
+      0,
+      3,
+      1
+    ],
+    [
+      0,
+      3,
+      2
+    ]
+  ],
+  "encoding_coverage_note": "the exact circuit enumeration is stronger than checking the six single-steady encodings: it also permits the fourth code and any steady-state cycle whose controls remain 01",
+  "two_bit_unit_native_enumeration": {
+    "status": "UNSAT",
+    "topology_count": 49,
+    "trials": 32940,
+    "trials_by_family": {
+      "AND": 6250,
+      "Decoder1": 5184,
+      "NAND": 6250,
+      "NOR": 6250,
+      "NOT": 2500,
+      "OR": 6250,
+      "no-gate": 256
+    },
+    "covered": [
+      "no gate",
+      "NOT Bit and equivalent U1 Word NOT",
+      "AND/NAND/OR/NOR Bit and equivalent U1 Word gates",
+      "Decoder 1 including both outputs"
+    ]
+  },
+  "non_native_arbitrary_single_output_probe": {
+    "status": "SAT_IN_NON_NATIVE_IDEAL_MODEL",
+    "predicate_mask": 2,
+    "trials": 1449,
+    "assignment": {
+      "next_q0": "1",
+      "next_q1": "q0",
+      "input_enable": "f",
+      "output_enable": "q1"
+    },
+    "state_trace": [
+      0,
+      1,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "encodings_seen_before_sat": 6,
+    "native_exclusion": "the predicate q0 AND NOT q1 needs two basic gates or a Decoder-2 minterm; no legal one-gate LUT exists"
+  },
+  "non_native_dual_polarity_probe": {
+    "status": "SAT_IN_NON_NATIVE_IDEAL_MODEL",
+    "predicate_mask": 1,
+    "predicate_truth_by_state_00_01_10_11": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "interpretation": "f=NOR(q0,q1), NOT f=OR(q0,q1)",
+    "trials": 2356,
+    "assignment": {
+      "next_q0": "f",
+      "next_q1": "NOT f",
+      "input_enable": "q0",
+      "output_enable": "q1"
+    },
+    "state_trace": [
+      0,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "native_exclusion": "Decoder 1 emits x/NOT x only for one raw select input; no legal one-gate component emits OR and NOR together"
+  },
+  "three_bit_encodings": {
+    "stored_bits": 3,
+    "fixed_zero_idle_encoding_count": 42,
+    "memory_gate_floor": 15,
+    "target_gate": 11,
+    "status": "PRUNED_BY_STRICT_COST_LOWER_BOUND",
+    "note": "42 ordered choices of distinct load/steady codes with idle fixed at 000"
+  },
+  "minimum_controller": {
+    "status": "SAT",
+    "memory_gate": 10,
+    "logic_gate": 2,
+    "total_gate": 12,
+    "maximum_control_delay": 6,
+    "netlist": [
+      "a = OR(load_delay.out, output_delay.out)",
+      "load_delay.in = NOT(a)",
+      "output_delay.in = a",
+      "ArchitectureInput.control = load_delay.out",
+      "ArchitectureOutput.control = output_delay.out"
+    ],
+    "trace": [
+      {
+        "tick": 0,
+        "state": "00",
+        "input_enable": 0,
+        "output_enable": 0,
+        "phase_or": 0,
+        "next_state": "10"
+      },
+      {
+        "tick": 1,
+        "state": "10",
+        "input_enable": 1,
+        "output_enable": 0,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 2,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 3,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 4,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 5,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 6,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 7,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 8,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      },
+      {
+        "tick": 9,
+        "state": "01",
+        "input_enable": 0,
+        "output_enable": 1,
+        "phase_or": 1,
+        "next_state": "01"
+      }
+    ]
+  },
+  "mode_bank": {
+    "pair_count": 47,
+    "unique_pair_count": 47,
+    "encoded_transform_rank": 32,
+    "all_zero_seed_trace": "all seed, encoded-state, mode-OR, and XOR data signals are numeric zero forever",
+    "distinctness_proof": [
+      "during load, M(i,j)=seed_i, so different i are distinguished by a basis seed",
+      "during steady state, M(i,j)=q_j; invertible T makes different q coordinates independent",
+      "therefore M(i,j)=M(k,l) iff (i,j)=(k,l)"
+    ],
+    "decoder1_exclusion": "at the all-zero data point every M is 0, so no two M outputs are complements",
+    "seed_fanout": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 1,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 2,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 2,
+      "28": 2,
+      "29": 2,
+      "30": 2,
+      "31": 2
+    },
+    "state_fanout": {
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 1,
+      "4": 1,
+      "6": 1,
+      "10": 2,
+      "11": 1,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2,
+      "16": 2,
+      "17": 1,
+      "18": 1,
+      "19": 1,
+      "20": 1,
+      "21": 1,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2,
+      "26": 2,
+      "27": 2,
+      "28": 2,
+      "29": 2,
+      "30": 2,
+      "31": 2
+    },
+    "pairs": [
+      [
+        0,
+        22
+      ],
+      [
+        1,
+        23
+      ],
+      [
+        2,
+        24
+      ],
+      [
+        3,
+        25
+      ],
+      [
+        4,
+        26
+      ],
+      [
+        5,
+        27
+      ],
+      [
+        6,
+        28
+      ],
+      [
+        7,
+        29
+      ],
+      [
+        8,
+        30
+      ],
+      [
+        9,
+        31
+      ],
+      [
+        10,
+        27
+      ],
+      [
+        11,
+        28
+      ],
+      [
+        12,
+        29
+      ],
+      [
+        13,
+        30
+      ],
+      [
+        14,
+        31
+      ],
+      [
+        15,
+        15
+      ],
+      [
+        16,
+        16
+      ],
+      [
+        17,
+        0
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        18,
+        1
+      ],
+      [
+        18,
+        18
+      ],
+      [
+        19,
+        2
+      ],
+      [
+        19,
+        19
+      ],
+      [
+        20,
+        3
+      ],
+      [
+        20,
+        20
+      ],
+      [
+        21,
+        4
+      ],
+      [
+        21,
+        21
+      ],
+      [
+        22,
+        10
+      ],
+      [
+        22,
+        22
+      ],
+      [
+        23,
+        6
+      ],
+      [
+        23,
+        23
+      ],
+      [
+        24,
+        12
+      ],
+      [
+        24,
+        24
+      ],
+      [
+        25,
+        13
+      ],
+      [
+        25,
+        25
+      ],
+      [
+        26,
+        14
+      ],
+      [
+        26,
+        26
+      ],
+      [
+        27,
+        10
+      ],
+      [
+        27,
+        15
+      ],
+      [
+        28,
+        11
+      ],
+      [
+        28,
+        16
+      ],
+      [
+        29,
+        0
+      ],
+      [
+        29,
+        12
+      ],
+      [
+        30,
+        1
+      ],
+      [
+        30,
+        13
+      ],
+      [
+        31,
+        2
+      ],
+      [
+        31,
+        14
+      ]
+    ]
+  },
+  "joint_sharing_lower_bound": {
+    "zero_seed_reduction": [
+      "seed=0 keeps every fixed data-plane signal numeric zero forever",
+      "Architecture Input Z and active zero are indistinguishable to ordinary gates; only illegal conflict can distinguish driver presence",
+      "therefore any borrowed mode output is only constant zero on this required test",
+      "a 47-mode bank plus <=1 private unit gate reduces to the exact native unit-gate enumeration, which is UNSAT"
+    ],
+    "mode_gate_floor": 47,
+    "additional_controller_logic_floor": 2,
+    "phase_delay_floor": 10,
+    "mode_plus_phase_floor": 59,
+    "current_mode_plus_phase": 59,
+    "maximum_net_saving": 0
+  },
+  "fixed_402_lower_bound": {
+    "32_state_delay": 160,
+    "61_xor": 183,
+    "47_mode_functions": 47,
+    "2_phase_delay": 10,
+    "phase_logic": 2,
+    "total_gate": 402,
+    "delay_witness": "state/phase Delay 4 + mode OR 1 + XOR 2 + XOR 2 = 9",
+    "conclusion": "no <=401/9/67 candidate exists without changing the fixed data plane or protocol"
+  },
+  "excluded_as_non_saving": {
+    "one_Bit_Switch": "2 gates; at best ties OR+NOT and has only one tristate output",
+    "U2_Delay_Word": "10 gates, exactly the same memory cost as two Delay Bits",
+    "U2_bitwise_gate": "at least 2 gates for two independent lanes, so packing creates no discount",
+    "Decoder_2": "11 gates in the current profile before the 10-gate state memory",
+    "Decoder_3": "79 gates / 12 delay in the current profile"
+  }
+}
