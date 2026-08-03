@@ -1,0 +1,42 @@
+{
+  "schema": "cost19-unsat-terminal-audit-v1",
+  "结论": "严格终态 UNSAT；不是外层 timeout",
+  "exact_artifact": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_av_reduced_forward\\remote-cost19-terminal\\c19-n13-s3-x0.json",
+    "sha256": "ae6c282387d67d291eb705eadc91d83f846370a66d9bfe0eeb98512939d86bf0",
+    "status": "unsat",
+    "case_count": 540,
+    "variables": 381818,
+    "clauses": 2175892,
+    "solve_seconds": 2156.52474024595
+  },
+  "runner": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_av_reduced_forward\\remote-cost19-terminal\\c19-n13-s3-x0.run.json",
+    "sha256": "30fc14ed9cd5096d055c4d828c5e0f01fb8c070d12d91c6cec3daa2e1b143db7",
+    "state": "completed",
+    "status": "unsat",
+    "return_code": 0,
+    "elapsed_seconds": 2156.938354953949,
+    "child_timeout": 0
+  },
+  "decomposition": {
+    "ordinary": 13,
+    "switches": 3,
+    "xors": 0,
+    "components": 16,
+    "weighted_cost": 19,
+    "max_delay": 4
+  },
+  "solver_script": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_av_reduced_forward\\exact_q12_q34_carry_retime_sat.py",
+    "sha256": "9eee8fc79add503e0d4e32e0be8d3083d862a20cebaac85e2e8bbf8114064eac"
+  },
+  "checks": {
+    "complete_540_cases": true,
+    "physical_nets": true,
+    "runner_completed": true,
+    "runner_output_hash_matches": true,
+    "nonzero_or_timeout_promoted_to_unsat": false
+  },
+  "limitation": "终态审计验证参数、覆盖范围和 provenance；求解器未输出 DRAT proof。"
+}
