@@ -351,6 +351,8 @@ def _audit_resolved_networks(
     components: tuple[Component, ...],
     wires: tuple,
     connections: tuple[Connection, ...],
+    *,
+    expected_tri_state_output_count: int = 49,
 ) -> dict[str, object]:
     """Prove intended tri-state nets and physical endpoint nets are isomorphic.
 
@@ -458,10 +460,10 @@ def _audit_resolved_networks(
                 }
             )
 
-    if len(tri_state_assignments) != 49:
+    if len(tri_state_assignments) != expected_tri_state_output_count:
         raise RuntimeError(
-            f"published Hub79 tri-state output population changed: "
-            f"{len(tri_state_assignments)} != 49"
+            "tri-state output population changed: "
+            f"{len(tri_state_assignments)} != {expected_tri_state_output_count}"
         )
     return {
         "physical_resolved_network_count": len(labels_by_root),
@@ -480,6 +482,8 @@ def _self_test_resolved_network_guard(
     components: tuple[Component, ...],
     wires: tuple,
     connections: tuple[Connection, ...],
+    *,
+    expected_tri_state_output_count: int = 49,
 ) -> bool:
     """Inject one foreign label and require the physical-net guard to reject it."""
 
@@ -510,7 +514,12 @@ def _self_test_resolved_network_guard(
         network="adversarial:foreign-resolved-network",
     )
     try:
-        _audit_resolved_networks(components, wires, tuple(mutated))
+        _audit_resolved_networks(
+            components,
+            wires,
+            tuple(mutated),
+            expected_tri_state_output_count=expected_tri_state_output_count,
+        )
     except RuntimeError:
         return True
     raise RuntimeError("resolved-network guard accepted an injected foreign label")

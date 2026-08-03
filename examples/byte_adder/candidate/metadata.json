@@ -3,64 +3,79 @@
   "level": "byte_adder",
   "title": "Adding Bytes",
   "title_zh": "字节加法器",
-  "strategy": "移植 Hub79 的纯门级三态前缀加法器；使用 49 个 Bit Switch 和普通逻辑门，不使用原生 com_add。",
-  "validation_status": "已完成 131072 组全真值、三态冲突、全局延迟、v15 往返、连通性和真实精灵几何审计；用户已在 Turing Complete 2.1.290 实机验收 154/4/616 通过。",
+  "strategy": "Q 相位 A/V 进位计划；位 0 使用允许假值为 Z 的 10 门联合 S0/C1 宏，6 条 BUS 均由独占的两只 Bit Switch 驱动。",
+  "validation_status": "已完成生成器重放、84 节点物理逐节点重算、131072 组全真值、BUS/Z 冲突、递归延迟、v15 往返、连通性和真实精灵几何审计；等待游戏实机验收。",
   "deployment_target": "schematics/byte_adder/Default/circuit.data",
-  "source": "examples/rng/research/archive/rng_public_artifacts/hub-79-adder/main/circuit.data",
-  "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
-  "sha256": "cd56a9245cbd12e83673eaf51665807583871bb61337dc4c186331919c22211a",
+  "source": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g84-d7.json",
+  "source_sha256": "ba168fc2dfd53052fe261f41cca595e7329ea2fec257cb5d212bd837f2238d03",
+  "builder": ".research/byte_adder_root/build_hybrid_phasefold_84_d7.py",
+  "builder_sha256": "6e6cf4be6e8a0d3db75453df2e6b29c77f4a56dc88b4b36d39088546080af36e",
+  "factory_dag_sha256": "eaf9de392bfa2cf70b0cee334566adc53b522f92dc48b48d1394156efe59ede4",
+  "structural_sha256": "cbfc40857b75344ec36fc7ed09f9445445952bacc8a5ec6d0eb2dceb33a2605c",
+  "macro_certificate": ".research/byte_adder_root/full1z-s4-c2-g10-n8.json",
+  "macro_certificate_sha256": "9a0186d744c3c19c73ba72339c2602f1ccf9d29ef4287d2fd37ffdf8bc5b6d56",
+  "machine_certificate": ".research/byte_adder_builder_layout_agent/hybrid84_phasefold/machine_certificate.json",
+  "sha256": "4aa3097e60d0c2ee1a08b12bc18f8e763d23aaf0a1401be13ecac9e38f8fdd3a",
   "format_version": 15,
-  "component_count": 116,
-  "wire_count": 254,
-  "gate": 154,
-  "delay": 4,
-  "energy": 616,
+  "component_count": 81,
+  "wire_count": 162,
+  "gate": 84,
+  "delay": 7,
+  "energy": 588,
   "leaderboard_tuple": [
-    154,
-    4,
-    616
+    84,
+    7,
+    588
   ],
   "native_com_add_used": false,
-  "in_game_verified": true,
-  "in_game_verified_version": "2.1.290",
-  "in_game_verified_date": "2026-08-03",
+  "in_game_verified": false,
+  "previous_in_game_verified_frontier": {
+    "gate": 154,
+    "delay": 4,
+    "energy": 616,
+    "sha256": "cd56a9245cbd12e83673eaf51665807583871bb61337dc4c186331919c22211a",
+    "game_version": "2.1.290",
+    "date": "2026-08-03"
+  },
   "v15_round_trip_verified": true,
   "component_kind_counts": {
     "2": 1,
-    "3": 1,
-    "4": 12,
-    "6": 2,
-    "7": 16,
-    "9": 25,
-    "12": 49,
+    "4": 18,
+    "6": 1,
+    "7": 10,
+    "9": 31,
+    "12": 12,
     "16": 1,
     "17": 2,
     "61": 3,
-    "69": 2,
-    "109": 1,
-    "111": 1
+    "69": 2
   },
   "reviewed_gate_cost_breakdown": {
-    "bit_switch": 98,
-    "and": 12,
-    "nand": 2,
-    "or": 16,
-    "nor": 25,
-    "not": 1
+    "and": 18,
+    "nand": 1,
+    "or": 10,
+    "nor": 31,
+    "bit_switch": 24,
+    "total": 84
   },
   "connectivity": {
-    "unsupported_component_kind_counts": {},
-    "unconnected_pin_count": 2,
-    "intentional_unconnected_ports": [
-      "kind111.in0",
-      "kind109.out0"
-    ],
+    "unconnected_pin_count": 0,
     "unsafe_multi_driver_network_count": 0,
     "undriven_network_count": 0,
     "sinkless_network_count": 0,
     "width_mismatch_network_count": 0,
     "cycle_component_count": 0,
-    "switch_enable_connected_count": 49
+    "topology_only_unit_depth": 9,
+    "topology_depth_note": "非 Z 感知图会高估三态网络深度；逐节点三态语义深度 7 为权威值。"
+  },
+  "resolved_networks": {
+    "physical_network_count": 87,
+    "intended_network_count": 87,
+    "mixed_network_count": 0,
+    "fragmented_network_count": 0,
+    "tri_state_output_count": 12,
+    "tri_state_outputs_with_exactly_one_network": 12,
+    "adversarial_foreign_label_rejected": true
   },
   "layout": {
     "unsupported_component_kinds": [],
@@ -70,12 +85,39 @@
   },
   "semantic": {
     "exhaustive_truth_table_vector_count": 131072,
-    "sum_correct": true,
-    "carry_correct": true,
-    "multi_driver_network_count": 18,
+    "physical_node_replay_count": 84,
+    "physical_node_replay_mismatch_count": 0,
+    "bus_node_count": 6,
+    "bus_z_assignment_counts": {
+      "45": 49152,
+      "55": 24576,
+      "56": 36864,
+      "62": 36864,
+      "63": 32768,
+      "67": 49152
+    },
     "packed_conflict_cases": 0,
-    "global_depth": 4,
-    "sum_depth": 4,
-    "cout_depth": 4
+    "output_arrivals": [
+      4,
+      4,
+      6,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "global_depth": 7,
+    "sum_depth": 7,
+    "carry_depth": 7,
+    "sum_correct": true,
+    "carry_correct": true
+  },
+  "deployment": {
+    "repository_candidate_matches": true,
+    "formal_save_matches": true,
+    "backup_created": false,
+    "game_started": false
   }
 }
