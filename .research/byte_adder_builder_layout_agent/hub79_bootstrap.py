@@ -21,7 +21,7 @@ from tc_save_lab.builder import wire_from_vertices
 from tc_save_lab.analysis import wire_points
 from tc_save_lab.codec import decode_v15, encode_v15
 from tc_save_lab.model import Circuit, Component, Point
-from tc_save_lab.pins import I, O, T, PositionedPin, positioned_pins
+from tc_save_lab.pins import I, O, T, PositionedPin, analyze_connectivity, positioned_pins
 from tc_save_lab.sprite_geometry import (
     DEFAULT_COMPONENT_SPRITE_ROOT,
     SPRITE_NAME_BY_COMPONENT_KIND,
@@ -292,6 +292,15 @@ def _channel_route(
     """Route each logical network on a unique lane above all components."""
 
     trunks = _pin_trunks(components)
+    escapes = {
+        pin.position: (
+            (pin.position[0], pin.position[1] + 1)
+            if pin.position[0] == components[pin.component_index].position[0]
+            else pin.position
+        )
+        for index, component in enumerate(components)
+        for pin in positioned_pins(component, index)
+    }
     network_names = sorted({connection.network for connection in connections})
     minimum_y = min(
         pin.position[1]
@@ -307,13 +316,17 @@ def _channel_route(
         source_x = trunks[connection.source]
         sink_x = trunks[connection.sink]
         lane = lanes[connection.network]
+        source_escape = escapes[connection.source]
+        sink_escape = escapes[connection.sink]
         vertices = _compress_vertices(
             [
                 connection.source,
-                (source_x, connection.source[1]),
+                source_escape,
+                (source_x, source_escape[1]),
                 (source_x, lane),
                 (sink_x, lane),
-                (sink_x, connection.sink[1]),
+                (sink_x, sink_escape[1]),
+                sink_escape,
                 connection.sink,
             ]
         )
@@ -377,11 +390,11 @@ def _proxy_for_semantics(candidate: Circuit) -> Circuit:
     """Swap campaign I/O to evaluator-compatible Foundry ports in memory."""
 
     port_map = {
-        "A": (79, 8),
-        "B": (79, 8),
-        "Carry in": (79, 8),
-        "Output": (81, 8),
-        "Carry out": (81, 8),
+        "A": (79, 8, "A"),
+        "B": (79, 8, "B"),
+        "Carry in": (79, 8, "Cin"),
+        "Output": (81, 8, "sum"),
+        "Carry out": (81, 8, "Cout"),
     }
     components = []
     for component in candidate.components:
@@ -389,9 +402,15 @@ def _proxy_for_semantics(candidate: Circuit) -> Circuit:
         if spec is None:
             components.append(component)
             continue
-        kind, word_size = spec
+        kind, word_size, proxy_label = spec
         components.append(
-            replace(component, kind=kind, word_size=word_size, immutable=False)
+            replace(
+                component,
+                kind=kind,
+                word_size=word_size,
+                user_label=proxy_label,
+                immutable=False,
+            )
         )
     return replace(candidate, components=tuple(components))
 
@@ -411,8 +430,8 @@ def _audit_semantics(candidate: Circuit) -> dict[str, object]:
         expected_sum.append(propagate ^ carry)
         carry = (left & right) | (propagate & carry)
 
-    sum_index = next(i for i, c in enumerate(proxy.components) if c.user_label == "Output")
-    cout_index = next(i for i, c in enumerate(proxy.components) if c.user_label == "Carry out")
+    sum_index = next(i for i, c in enumerate(proxy.components) if c.user_label == "sum")
+    cout_index = next(i for i, c in enumerate(proxy.components) if c.user_label == "Cout")
     sum_signal = networks[compiled.pin_network[(sum_index, "out")]]
     cout_signal = networks[compiled.pin_network[(cout_index, "out")]]
     if sum_signal.bits[:8] != tuple(expected_sum):
@@ -475,6 +494,31 @@ def build() -> dict[str, object]:
     ):
         raise RuntimeError(f"candidate geometry failure: {geometry!r}")
     semantic = _audit_semantics(candidate)
+    connectivity = analyze_connectivity(candidate)
+    expected_unconnected = {(111, "in0", "input"), (109, "out0", "output")}
+    actual_unconnected = {
+        (item["kind"], item["name"], item["direction"])
+        for item in connectivity["unconnected_pins"]
+    }
+    if actual_unconnected != expected_unconnected:
+        raise RuntimeError(
+            f"unexpected disconnected candidate pins: {connectivity['unconnected_pins']!r}"
+        )
+    for field in (
+        "unsupported_component_kind_counts",
+        "multi_driver_network_count",
+        "undriven_network_count",
+        "sinkless_network_count",
+        "width_mismatch_network_count",
+        "cycle_component_count",
+    ):
+        if connectivity[field]:
+            raise RuntimeError(f"candidate connectivity failure {field}: {connectivity[field]!r}")
+    # The only disconnected receiver is Maker2.in0's published implicit zero;
+    # therefore all 49 Switch enable/data pins are necessarily connected.
+    switch_enable_connected = sum(component.kind == 12 for component in candidate.components)
+    if switch_enable_connected != 49:
+        raise RuntimeError("published Hub79 Switch population changed")
     OUT_CIRCUIT.parent.mkdir(parents=True, exist_ok=True)
     OUT_CIRCUIT.write_bytes(payload)
     kind_counts = Counter(component.kind for component in candidate.components)
@@ -500,6 +544,25 @@ def build() -> dict[str, object]:
         "component_kind_counts": {str(k): v for k, v in sorted(kind_counts.items())},
         "reviewed_gate_cost_breakdown": reviewed_cost,
         "semantic": semantic,
+        "connectivity": {
+            "unsupported_component_kind_counts": connectivity[
+                "unsupported_component_kind_counts"
+            ],
+            "unconnected_pin_count": connectivity["unconnected_pin_count"],
+            "intentional_unconnected_pins": connectivity["unconnected_pins"],
+            "unsafe_multi_driver_network_count": connectivity[
+                "multi_driver_network_count"
+            ],
+            "undriven_network_count": connectivity["undriven_network_count"],
+            "sinkless_network_count": connectivity["sinkless_network_count"],
+            "width_mismatch_network_count": connectivity[
+                "width_mismatch_network_count"
+            ],
+            "cycle_component_count": connectivity["cycle_component_count"],
+            "switch_enable_connected_count": switch_enable_connected,
+            "topology_only_unit_depth": connectivity["unit_logic_depth"],
+            "topology_depth_note": "non-Z-aware graph depth; semantic tri-state depth is authoritative",
+        },
         "geometry": {
             "unsupported_component_kinds": list(geometry.unsupported_component_kinds),
             "component_overlap_cells": len(geometry.component_overlap_cells),

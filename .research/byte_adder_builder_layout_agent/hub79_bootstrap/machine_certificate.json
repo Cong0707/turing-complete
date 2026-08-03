@@ -1,0 +1,95 @@
+{
+  "schema": "turing-complete-byte-adder-hub79-campaign-bootstrap-v1",
+  "source": "examples/rng/research/archive/rng_public_artifacts/hub-79-adder/main/circuit.data",
+  "source_sha256": "79615b3a78e4824f8b4c4973c69cc76d972745cd5283183d698b1a14206e422d",
+  "candidate": ".research/byte_adder_builder_layout_agent/hub79_bootstrap/candidate/circuit.data",
+  "candidate_sha256": "cd56a9245cbd12e83673eaf51665807583871bb61337dc4c186331919c22211a",
+  "serialized_score": {
+    "gate": 154,
+    "delay": 4,
+    "energy": 616
+  },
+  "component_count": 116,
+  "wire_count": 254,
+  "component_kind_counts": {
+    "2": 1,
+    "3": 1,
+    "4": 12,
+    "6": 2,
+    "7": 16,
+    "9": 25,
+    "12": 49,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2,
+    "109": 1,
+    "111": 1
+  },
+  "reviewed_gate_cost_breakdown": {
+    "bit_switch": 98,
+    "and": 12,
+    "nand": 2,
+    "or": 16,
+    "nor": 25,
+    "not": 1
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "sum_correct": true,
+    "carry_correct": true,
+    "packed_conflict_cases": 0,
+    "global_depth": 4,
+    "sum_depth": 4,
+    "cout_depth": 4,
+    "multi_driver_network_count": 18
+  },
+  "connectivity": {
+    "unsupported_component_kind_counts": {},
+    "unconnected_pin_count": 2,
+    "intentional_unconnected_pins": [
+      {
+        "permanent_id": 5630511914517212059,
+        "kind": 111,
+        "name": "in0",
+        "direction": "input",
+        "width": 1,
+        "position": [
+          3807,
+          467
+        ]
+      },
+      {
+        "permanent_id": 75285822192325194,
+        "kind": 109,
+        "name": "out0",
+        "direction": "output",
+        "width": 1,
+        "position": [
+          4129,
+          563
+        ]
+      }
+    ],
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0,
+    "switch_enable_connected_count": 49,
+    "topology_only_unit_depth": 6,
+    "topology_depth_note": "non-Z-aware graph depth; semantic tri-state depth is authoritative"
+  },
+  "geometry": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": 0,
+    "wire_collisions": 0,
+    "wire_interior_pin_contacts": 0
+  },
+  "v15_round_trip_verified": true,
+  "intentional_unconnected_ports": [
+    "kind111.in0",
+    "kind109.out0"
+  ],
+  "formal_save_untouched": true
+}

@@ -55,3 +55,25 @@ C:\Users\cong\AppData\Roaming\Turing Complete\schematics\byte_adder\Default\circ
 ```
 
 只有候选通过上面全部离线审计后，父任务才应按用户指令直接覆盖该文件。
+
+## Hub79 主线 bootstrap
+
+公开 Hub79 `154/4` Switch/Z 加法器已由 `hub79_bootstrap.py` 替换为当前
+byte_adder campaign immutable 接口，并重新放置、走线。复现命令：
+
+```powershell
+.\.venv\Scripts\python.exe `
+  .\.research\byte_adder_builder_layout_agent\hub79_bootstrap.py
+```
+
+可部署候选及证书：
+
+```text
+hub79_bootstrap/candidate/circuit.data
+hub79_bootstrap/machine_certificate.json
+```
+
+候选 SHA-256 为
+`cd56a9245cbd12e83673eaf51665807583871bb61337dc4c186331919c22211a`；
+131072 个输入、18 条 Z 多驱动总线、全局四延迟、成本、v15 和当前精灵几何均已
+通过机器审计。
