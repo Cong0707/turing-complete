@@ -1,0 +1,51 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "suffix567-g9-priority-slot01-kind-shards",
+  "script": "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/exact_suffix567_kind_shard.py",
+  "working_directory": "D:/Develop/Other/turing-complete",
+  "workers": 3,
+  "timeout_seconds": 300,
+  "memory_mb_per_process": 280,
+  "stop_on_first_sat": true,
+  "log_directory": "suffix567_g9_slot01_priority_logs",
+  "result_directory": "suffix567_g9_slot01_priority_records",
+  "summary": "suffix567_g9_priority_slot01_summary.json",
+  "values": [
+    {"name": "slot01_and_nor", "kind0": "AND", "kind1": "NOR"},
+    {"name": "slot01_nor_and", "kind0": "NOR", "kind1": "AND"},
+    {"name": "slot01_nor_nor", "kind0": "NOR", "kind1": "NOR"},
+    {"name": "slot01_and_and", "kind0": "AND", "kind1": "AND"}
+  ],
+  "arguments": [
+    "--interface", "s6",
+    "--gate-bound", "9",
+    "--max-delay", "7",
+    "--components", "9",
+    "--switches", "0",
+    "--xors", "0",
+    "--slot-kind", "0:{kind0}",
+    "--slot-kind", "1:{kind1}",
+    "--output-deadlines", "6,7,7,7",
+    "--solver", "cadical195",
+    "--timeout", "0",
+    "--output", "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/suffix567_g9_slot01_priority_outputs/{name}.json"
+  ],
+  "selection_rationale": {
+    "known_g10_prefix": ["AND", "NOR"],
+    "priority_pairs": [
+      ["AND", "NOR"],
+      ["NOR", "AND"],
+      ["NOR", "NOR"],
+      ["AND", "AND"]
+    ],
+    "claim": "priority shards only; this manifest is not a complete two-slot partition"
+  },
+  "resource_preflight": {
+    "observed_free_ram_gib": 4.55,
+    "currently_running_suffix_workers": 1,
+    "new_workers": 3,
+    "projected_suffix_rss_gib": 0.622,
+    "maximum_suffix_workers": 4,
+    "passed": true
+  }
+}

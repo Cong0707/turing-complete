@@ -1,0 +1,206 @@
+{
+  "schema": "tc-byte-adder-bit35-joint-phase-driver-shard-v1",
+  "status": "unsat",
+  "profile": "d7_80_bit35_joint",
+  "gate_bound": 16,
+  "max_delay": 7,
+  "components": 14,
+  "c5_shard": "multi_d2_k10",
+  "t5_drivers": 1,
+  "s5_drivers": 1,
+  "target_names": [
+    "S3",
+    "S4",
+    "C5",
+    "T5",
+    "S5"
+  ],
+  "output_deadlines": [
+    5,
+    7,
+    4,
+    5,
+    6
+  ],
+  "assignments": 96,
+  "truth_domain_sha256": "1c9768429735b2f87bca12bb62dad82624f45a419b80ea6b5470655764c34b60",
+  "c5_constraint": {
+    "identity": {
+      "schema": "tc-byte-adder-bit35-joint-c5-constraint-v1",
+      "profile": "d7_80_bit35_joint",
+      "gate_bound": 16,
+      "components": 14,
+      "maximum_switches_by_weight": 2,
+      "shard": "multi_d2_k10",
+      "output": "C5",
+      "output_index": 2,
+      "joint_outputs": [
+        "S3",
+        "S4",
+        "C5",
+        "T5",
+        "S5"
+      ],
+      "driver_class": "multi_switch",
+      "driver_count": 2,
+      "allowed_driver_kind": "SWITCH",
+      "ancestor_count": 10,
+      "ancestor_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "driver_slots": [
+        10,
+        11
+      ],
+      "ancestor_user_terminal_exclusive": 12,
+      "normal_form": "all strict component ancestors of the physical C5 driver set first; the mutually independent Switch drivers next; every C5 non-ancestor last"
+    },
+    "constraint_sha256": "2696b50add9e256d844ac7c86793e24c3ddad5568726d389be1b96ff2ed29069",
+    "encoding_evidence": {
+      "driver_slots": [
+        10,
+        11
+      ],
+      "driver_sources": [
+        24,
+        25
+      ],
+      "ancestor_user_clause_lengths": [
+        22,
+        20,
+        18,
+        16,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4
+      ]
+    }
+  },
+  "c5_constraint_sha256": "2696b50add9e256d844ac7c86793e24c3ddad5568726d389be1b96ff2ed29069",
+  "phase_constraint": {
+    "identity": {
+      "schema": "tc-byte-adder-bit35-joint-phase-driver-constraint-v1",
+      "gate_bound": 16,
+      "components": 14,
+      "maximum_switches_by_weight": 2,
+      "direct_paid_source_equivalence": {
+        "T5": [],
+        "S5": []
+      },
+      "outputs": {
+        "T5": {
+          "output_index": 3,
+          "driver_count": 1,
+          "driver_kind": "any_component"
+        },
+        "S5": {
+          "output_index": 4,
+          "driver_count": 1,
+          "driver_kind": "any_component"
+        }
+      }
+    },
+    "constraint_sha256": "ae82272885b9a21e97d87c5e6fe2be2e6dfbcc5165a6a98a77f5082b13e1b607",
+    "encoding_evidence": {
+      "T5": {
+        "output_index": 3,
+        "forbidden_paid_source_selectors": 14,
+        "component_selector_count": 14,
+        "exact_driver_count": 1,
+        "required_kind_if_selected": "any"
+      },
+      "S5": {
+        "output_index": 4,
+        "forbidden_paid_source_selectors": 14,
+        "component_selector_count": 14,
+        "exact_driver_count": 1,
+        "required_kind_if_selected": "any"
+      }
+    }
+  },
+  "phase_constraint_sha256": "ae82272885b9a21e97d87c5e6fe2be2e6dfbcc5165a6a98a77f5082b13e1b607",
+  "phase_pair_domain": [
+    {
+      "t5_drivers": 1,
+      "s5_drivers": 1
+    },
+    {
+      "t5_drivers": 1,
+      "s5_drivers": 2
+    },
+    {
+      "t5_drivers": 2,
+      "s5_drivers": 1
+    },
+    {
+      "t5_drivers": 2,
+      "s5_drivers": 2
+    }
+  ],
+  "solver": "cadical195",
+  "timeout_seconds": 0.0,
+  "variables": 72928,
+  "clauses": 521224,
+  "build_seconds": 0.6653595389798284,
+  "solve_seconds": 29.607518723001704,
+  "elapsed_seconds": 30.27288022497669,
+  "runtime": {
+    "python": "3.12.3",
+    "pysat": "1.8.dev24"
+  },
+  "script_sha256": "a64634e6c160114b8bdb06c893a8e26e4f8c9c6e9eb208ca410fe538313f770d",
+  "dependencies": [
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_cross_boundary_joint_restart/bit35_joint_c5_normal_form.py",
+      "sha256": "583036983d44c9f90bb1d8fbd694f34b3de8932e6a722511a2f88b0ff3a63c83"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_cross_boundary_joint_restart/bit35_joint_phase_driver_classes.py",
+      "sha256": "babbf4bb118cbcda9638f2d76cd3082a996a15c7225dd5ef49f12ae8be25a3d9"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_cross_boundary_joint_restart/exact_bit35_joint_c5_normal_form_shard.py",
+      "sha256": "949b0e922710db86afa3a7f7881da47005319db147bf2be77b0527e0d0c97276"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_cross_boundary_joint_restart/exact_bit35_joint_sat.py",
+      "sha256": "83e3d79130ce2f8844041ad2d1b55363a8a00297836c81b98eab69e607c75aef"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_search_core.py",
+      "sha256": "5cfd8d5121620393201f51a3db0f7328229253502cf6831ce32f8ea935b5108a"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_core.py",
+      "sha256": "9c671db251d1070b647094833c616501f72f6f6b542b6da35f0856b4f0c29dd6"
+    },
+    {
+      "path": "/root/congProjects/turing-complete-works/.research/byte_adder_pair_macro_exact/exact_paid_physical_cnf.py",
+      "sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    }
+  ],
+  "accounting": {
+    "current_complete_gate": 80,
+    "current_complete_delay": 7,
+    "current_complete_energy": 560,
+    "current_joint_gate": 17,
+    "current_joint_components": 15,
+    "fixed_shell_with_paid_sources": 63,
+    "projected_complete_gate_at_bound": 79,
+    "projected_complete_delay": 7,
+    "projected_complete_energy_at_bound": 553
+  },
+  "coverage_argument": "On all 96 correlated rows neither T5 nor S5 equals a paid source or constant. Each therefore selects component outputs only. A singleton has driver count one; every multi-driver physical bus contains only Switch outputs. Enumerating the canonical count-pair domain refines, without weakening, the complete C5 normal-form shard."
+}

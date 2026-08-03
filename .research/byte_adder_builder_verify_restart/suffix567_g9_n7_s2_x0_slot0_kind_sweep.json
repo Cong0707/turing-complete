@@ -1,0 +1,55 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "suffix567-g9-n7-s2-x0-slot0-kind-partition",
+  "script": "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/exact_suffix567_kind_shard.py",
+  "working_directory": "D:/Develop/Other/turing-complete",
+  "workers": 4,
+  "timeout_seconds": 300,
+  "memory_mb_per_process": 320,
+  "stop_on_first_sat": true,
+  "log_directory": "suffix567_g9_n7_s2_slot0_logs",
+  "result_directory": "suffix567_g9_n7_s2_slot0_records",
+  "summary": "suffix567_g9_n7_s2_x0_slot0_kind_summary.json",
+  "values": [
+    {"name": "slot0_switch", "kind": "SWITCH"},
+    {"name": "slot0_and", "kind": "AND"},
+    {"name": "slot0_nor", "kind": "NOR"},
+    {"name": "slot0_or", "kind": "OR"},
+    {"name": "slot0_nand", "kind": "NAND"},
+    {"name": "slot0_not", "kind": "NOT"},
+    {"name": "slot0_xor", "kind": "XOR"}
+  ],
+  "arguments": [
+    "--interface", "s6",
+    "--gate-bound", "9",
+    "--max-delay", "7",
+    "--components", "7",
+    "--switches", "2",
+    "--xors", "0",
+    "--slot-kind", "0:{kind}",
+    "--output-deadlines", "6,7,7,7",
+    "--solver", "cadical195",
+    "--timeout", "0",
+    "--output", "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/suffix567_g9_n7_s2_slot0_outputs/{name}.json"
+  ],
+  "partition": {
+    "field": "slot0.kind",
+    "kinds": ["NOT", "AND", "OR", "NAND", "NOR", "XOR", "SWITCH"],
+    "mutually_exclusive": true,
+    "complete": true,
+    "weighted_decomposition": {
+      "components": 7,
+      "exact_switches": 2,
+      "exact_xors": 0,
+      "ordinary": 5,
+      "gate": 9
+    }
+  },
+  "resource_preflight": {
+    "observed_free_ram_gib": 5.32,
+    "estimated_four_worker_rss_gib": 0.65,
+    "required_free_ram_gib": 3.0,
+    "maximum_estimated_total_rss_gib": 1.2,
+    "passed": true
+  }
+}

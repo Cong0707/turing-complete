@@ -1,0 +1,64 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "suffix567-g9-n9-remaining-slot01-kind-shards",
+  "script": "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/exact_suffix567_kind_shard.py",
+  "working_directory": "D:/Develop/Other/turing-complete",
+  "workers": 4,
+  "timeout_seconds": 300,
+  "memory_mb_per_process": 300,
+  "stop_on_first_sat": true,
+  "log_directory": "suffix567_g9_n9_remaining_slot01_logs",
+  "result_directory": "suffix567_g9_n9_remaining_slot01_records",
+  "summary": "suffix567_g9_n9_remaining_slot01_kind_summary.json",
+  "values": [
+    {"name": "and_or", "kind0": "AND", "kind1": "OR"},
+    {"name": "and_nand", "kind0": "AND", "kind1": "NAND"},
+    {"name": "and_not", "kind0": "AND", "kind1": "NOT"},
+    {"name": "nor_or", "kind0": "NOR", "kind1": "OR"},
+    {"name": "nor_nand", "kind0": "NOR", "kind1": "NAND"},
+    {"name": "nor_not", "kind0": "NOR", "kind1": "NOT"},
+    {"name": "or_not", "kind0": "OR", "kind1": "NOT"},
+    {"name": "or_and", "kind0": "OR", "kind1": "AND"},
+    {"name": "or_or", "kind0": "OR", "kind1": "OR"},
+    {"name": "or_nand", "kind0": "OR", "kind1": "NAND"},
+    {"name": "or_nor", "kind0": "OR", "kind1": "NOR"},
+    {"name": "nand_not", "kind0": "NAND", "kind1": "NOT"},
+    {"name": "nand_and", "kind0": "NAND", "kind1": "AND"},
+    {"name": "nand_or", "kind0": "NAND", "kind1": "OR"},
+    {"name": "nand_nand", "kind0": "NAND", "kind1": "NAND"},
+    {"name": "nand_nor", "kind0": "NAND", "kind1": "NOR"}
+  ],
+  "arguments": [
+    "--interface", "s6",
+    "--gate-bound", "9",
+    "--max-delay", "7",
+    "--components", "9",
+    "--switches", "0",
+    "--xors", "0",
+    "--slot-kind", "0:{kind0}",
+    "--slot-kind", "1:{kind1}",
+    "--output-deadlines", "6,7,7,7",
+    "--solver", "cadical195",
+    "--timeout", "0",
+    "--output", "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/suffix567_g9_n9_remaining_slot01_outputs/{name}.json"
+  ],
+  "coverage": {
+    "first_slot_kinds": ["AND", "OR", "NOR", "NAND"],
+    "second_slot_ordinary_kinds": ["NOT", "AND", "OR", "NAND", "NOR"],
+    "already_terminal_pairs": [
+      ["AND", "AND"],
+      ["AND", "NOR"],
+      ["NOR", "AND"]
+    ],
+    "already_unknown_pair": ["NOR", "NOR"],
+    "this_manifest_pairs": 16,
+    "second_slot_xor_switch_excluded_by": "exact_xors=0 and exact_switches=0"
+  },
+  "resource_preflight": {
+    "observed_free_ram_gib": 5.32,
+    "estimated_four_worker_rss_gib": 0.6,
+    "required_free_ram_gib": 3.0,
+    "maximum_estimated_total_rss_gib": 1.2,
+    "passed": true
+  }
+}

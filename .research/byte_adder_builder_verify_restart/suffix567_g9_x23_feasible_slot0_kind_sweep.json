@@ -1,0 +1,62 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "suffix567-g9-feasible-xor2-xor3-slot0-kind-partitions",
+  "script": "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/exact_suffix567_kind_shard.py",
+  "working_directory": "D:/Develop/Other/turing-complete",
+  "workers": 4,
+  "timeout_seconds": 300,
+  "memory_mb_per_process": 340,
+  "stop_on_first_sat": true,
+  "log_directory": "suffix567_g9_x23_feasible_slot0_logs",
+  "result_directory": "suffix567_g9_x23_feasible_slot0_records",
+  "summary": "suffix567_g9_x23_feasible_slot0_kind_summary.json",
+  "values": [
+    {"name": "n5_s0_x2_slot0_xor", "components": 5, "switches": 0, "xors": 2, "kind": "XOR"},
+    {"name": "n5_s0_x2_slot0_and", "components": 5, "switches": 0, "xors": 2, "kind": "AND"},
+    {"name": "n5_s0_x2_slot0_nor", "components": 5, "switches": 0, "xors": 2, "kind": "NOR"},
+    {"name": "n5_s0_x2_slot0_or", "components": 5, "switches": 0, "xors": 2, "kind": "OR"},
+    {"name": "n5_s0_x2_slot0_nand", "components": 5, "switches": 0, "xors": 2, "kind": "NAND"},
+    {"name": "n5_s0_x2_slot0_not", "components": 5, "switches": 0, "xors": 2, "kind": "NOT"},
+    {"name": "n5_s0_x2_slot0_switch", "components": 5, "switches": 0, "xors": 2, "kind": "SWITCH"},
+    {"name": "n4_s1_x2_slot0_xor", "components": 4, "switches": 1, "xors": 2, "kind": "XOR"},
+    {"name": "n4_s1_x2_slot0_switch", "components": 4, "switches": 1, "xors": 2, "kind": "SWITCH"},
+    {"name": "n4_s1_x2_slot0_and", "components": 4, "switches": 1, "xors": 2, "kind": "AND"},
+    {"name": "n4_s1_x2_slot0_nor", "components": 4, "switches": 1, "xors": 2, "kind": "NOR"},
+    {"name": "n4_s1_x2_slot0_or", "components": 4, "switches": 1, "xors": 2, "kind": "OR"},
+    {"name": "n4_s1_x2_slot0_nand", "components": 4, "switches": 1, "xors": 2, "kind": "NAND"},
+    {"name": "n4_s1_x2_slot0_not", "components": 4, "switches": 1, "xors": 2, "kind": "NOT"},
+    {"name": "n3_s0_x3_slot0_xor", "components": 3, "switches": 0, "xors": 3, "kind": "XOR"},
+    {"name": "n3_s0_x3_slot0_and", "components": 3, "switches": 0, "xors": 3, "kind": "AND"},
+    {"name": "n3_s0_x3_slot0_nor", "components": 3, "switches": 0, "xors": 3, "kind": "NOR"},
+    {"name": "n3_s0_x3_slot0_or", "components": 3, "switches": 0, "xors": 3, "kind": "OR"},
+    {"name": "n3_s0_x3_slot0_nand", "components": 3, "switches": 0, "xors": 3, "kind": "NAND"},
+    {"name": "n3_s0_x3_slot0_not", "components": 3, "switches": 0, "xors": 3, "kind": "NOT"},
+    {"name": "n3_s0_x3_slot0_switch", "components": 3, "switches": 0, "xors": 3, "kind": "SWITCH"}
+  ],
+  "arguments": [
+    "--interface", "s6",
+    "--gate-bound", "9",
+    "--max-delay", "7",
+    "--components", "{components}",
+    "--switches", "{switches}",
+    "--xors", "{xors}",
+    "--slot-kind", "0:{kind}",
+    "--output-deadlines", "6,7,7,7",
+    "--solver", "cadical195",
+    "--timeout", "0",
+    "--output", "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/suffix567_g9_x23_feasible_slot0_outputs/{name}.json"
+  ],
+  "partitions": [
+    {"components": 5, "exact_switches": 0, "exact_xors": 2, "ordinary": 3, "gate": 9, "complete_slot0_kinds": true},
+    {"components": 4, "exact_switches": 1, "exact_xors": 2, "ordinary": 1, "gate": 9, "complete_slot0_kinds": true},
+    {"components": 3, "exact_switches": 0, "exact_xors": 3, "ordinary": 0, "gate": 9, "complete_slot0_kinds": true}
+  ],
+  "slot0_kinds": ["NOT", "AND", "OR", "NAND", "NOR", "XOR", "SWITCH"],
+  "resource_preflight": {
+    "observed_free_ram_gib": 5.32,
+    "estimated_four_worker_rss_gib": 0.7,
+    "required_free_ram_gib": 3.0,
+    "maximum_estimated_total_rss_gib": 1.2,
+    "passed": true
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "schema": "tc-byte-adder-bit35-joint-full-dag-independent-verify-v1",
+  "status": "pass",
+  "artifacts": {
+    "grafted": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_g17_grafted_full_dag.json",
+      "sha256": "c5134186e0da67d6982b2cef2cfa3427fcef083992630f6841ac6f70e4db34d9"
+    },
+    "certificate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_phase_driver_positive_g17_n15_c5d2k3_t1_s1.json",
+      "sha256": "80b3939f2b7554eb7b4cacdafbb25e6f631bdf91c94f54d3c5bfc85dceac48da"
+    },
+    "independent_96_verification": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_phase_driver_positive_g17_independent_verify.json",
+      "sha256": "fec47be915449c9d2ae75b80253ec21ea30fe1522d01afbf91dfc355836ccdec"
+    },
+    "authoritative_dag": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+      "sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884"
+    },
+    "cut_audit": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_cut_audit.json",
+      "sha256": "4edbfc5cb3faa412a8c1eaf93925b30a99895b000c83101d63905a2ef9830df7"
+    }
+  },
+  "verifier": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\verify_grafted_bit35_joint_dag.py",
+    "sha256": "a646951e9a2697786e092cbf709b72895a6fcc1727be338af8efb3741b57756d",
+    "independent_of_graft_builder_and_replay_support": true
+  },
+  "full_domain": {
+    "variables": 17,
+    "rows": 131072,
+    "complete_u8_u8_u1": true,
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+  },
+  "checks": {
+    "metadata_error_count": 0,
+    "source_hash_error_count": 0,
+    "authority_replay_error_count": 0,
+    "factory_hash_error_count": 0,
+    "shell_preservation_violation_count": 0,
+    "translation_violation_count": 0,
+    "structural_invalid_count": 0,
+    "weighted_gate": 80,
+    "fixed_shell_gate": 63,
+    "certificate_joint_gate": 17,
+    "generated_joint_gate": 17,
+    "expected_complete_gate": 80,
+    "gate_accounting_violation_count": 0,
+    "delay": 7,
+    "delay_limit": 7,
+    "delay_violation_count": 0,
+    "energy": 560,
+    "energy_limit": 560,
+    "energy_violation_count": 0,
+    "mismatch_count_by_output": {
+      "S0": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "S4": 0,
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_count_by_output": {
+      "S0": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "S4": 0,
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "dead_reachable_node_count": 0,
+    "bus_ownership_violation_count": 0,
+    "full_replay_metadata_error_count": 0
+  },
+  "evidence": {
+    "shell": {
+      "shell_node_count": 68,
+      "shell_gate": 63,
+      "patch_counts": {
+        "62": 1,
+        "63": 1
+      },
+      "expected_outputs": [
+        49,
+        77,
+        81,
+        98,
+        99,
+        102,
+        73,
+        88,
+        75
+      ],
+      "retained_authoritative_bus_node_ids": [
+        45,
+        55,
+        56,
+        69
+      ]
+    },
+    "translation": {
+      "generated_node_ids": [
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "ordinary_source_node_ids": {
+        "14": 89,
+        "15": 90,
+        "16": 91,
+        "19": 92,
+        "20": 93,
+        "21": 94,
+        "22": 96,
+        "23": 97,
+        "24": 98,
+        "25": 99,
+        "26": 100,
+        "27": 101,
+        "28": 102
+      },
+      "switch_groups": [
+        {
+          "certificate_sources": [
+            17,
+            18
+          ],
+          "factory_bus_node_id": 95
+        }
+      ],
+      "target_node_ids": {
+        "S3": 98,
+        "S4": 99,
+        "C5": 95,
+        "T5": 100,
+        "S5": 102
+      },
+      "target_arrivals": {
+        "S3": 5,
+        "S4": 6,
+        "C5": 4,
+        "T5": 5,
+        "S5": 6
+      }
+    },
+    "factory_dag_sha256": "dcff56b190217e9010f592cdbf56883289506599f6e015c9b526dbced16e83ad",
+    "structural_sha256": "13f5846db8213780cb1cf08668e9092353830d511dc0bc7094cb737f993232d7",
+    "bus_node_ids": [
+      45,
+      55,
+      56,
+      95,
+      69
+    ]
+  },
+  "errors": {
+    "metadata": [],
+    "source_hashes": [],
+    "authority": [],
+    "factory_hash": [],
+    "shell": [],
+    "translation": []
+  }
+}

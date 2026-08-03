@@ -1,0 +1,54 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "suffix567-g9-n9-nor-prefix-slot2-kind-shards",
+  "script": "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/exact_suffix567_kind_shard.py",
+  "working_directory": "D:/Develop/Other/turing-complete",
+  "workers": 4,
+  "timeout_seconds": 300,
+  "memory_mb_per_process": 300,
+  "stop_on_first_sat": true,
+  "log_directory": "suffix567_g9_n9_nor_prefix_slot2_logs",
+  "result_directory": "suffix567_g9_n9_nor_prefix_slot2_records",
+  "summary": "suffix567_g9_n9_nor_prefix_slot2_kind_summary.json",
+  "values": [
+    {"name": "nor_nor_not", "kind1": "NOR", "kind2": "NOT"},
+    {"name": "nor_nor_and", "kind1": "NOR", "kind2": "AND"},
+    {"name": "nor_nor_or", "kind1": "NOR", "kind2": "OR"},
+    {"name": "nor_nor_nand", "kind1": "NOR", "kind2": "NAND"},
+    {"name": "nor_nor_nor", "kind1": "NOR", "kind2": "NOR"},
+    {"name": "nor_or_not", "kind1": "OR", "kind2": "NOT"},
+    {"name": "nor_or_and", "kind1": "OR", "kind2": "AND"},
+    {"name": "nor_or_or", "kind1": "OR", "kind2": "OR"},
+    {"name": "nor_or_nand", "kind1": "OR", "kind2": "NAND"},
+    {"name": "nor_or_nor", "kind1": "OR", "kind2": "NOR"}
+  ],
+  "arguments": [
+    "--interface", "s6",
+    "--gate-bound", "9",
+    "--max-delay", "7",
+    "--components", "9",
+    "--switches", "0",
+    "--xors", "0",
+    "--slot-kind", "0:NOR",
+    "--slot-kind", "1:{kind1}",
+    "--slot-kind", "2:{kind2}",
+    "--output-deadlines", "6,7,7,7",
+    "--solver", "cadical195",
+    "--timeout", "0",
+    "--output", "D:/Develop/Other/turing-complete/.research/byte_adder_builder_verify_restart/suffix567_g9_n9_nor_prefix_slot2_outputs/{name}.json"
+  ],
+  "coverage": {
+    "parent_unknown_prefixes": [["NOR", "NOR"], ["NOR", "OR"]],
+    "slot2_ordinary_kinds": ["NOT", "AND", "OR", "NAND", "NOR"],
+    "shard_count": 10,
+    "complete_within_parent_unknowns": true,
+    "slot2_xor_switch_excluded_by": "exact_xors=0 and exact_switches=0"
+  },
+  "resource_preflight": {
+    "observed_free_ram_gib": 5.32,
+    "estimated_four_worker_rss_gib": 0.6,
+    "required_free_ram_gib": 3.0,
+    "maximum_estimated_total_rss_gib": 1.2,
+    "passed": true
+  }
+}
