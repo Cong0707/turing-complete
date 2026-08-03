@@ -1,0 +1,132 @@
+{
+  "schema": "exact-fast-negative-physical-shard-v2",
+  "status": "unsat",
+  "domain": "s34567c8_leaf",
+  "rows": 486,
+  "output_names": [
+    "S5",
+    "S6",
+    "S7",
+    "C8"
+  ],
+  "free_sources": [
+    "nC3",
+    "G3",
+    "Q3",
+    "P3",
+    "N3",
+    "G4",
+    "Q4",
+    "P4",
+    "N4",
+    "G5",
+    "Q5",
+    "P5",
+    "N5",
+    "G6",
+    "Q6",
+    "P6",
+    "N6",
+    "G7",
+    "Q7",
+    "P7",
+    "A34n",
+    "V34n",
+    "A56n",
+    "V56n",
+    "A36n",
+    "V36n",
+    "nC7",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "nC3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "N3": 1,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "N4": 1,
+    "G5": 1,
+    "Q5": 1,
+    "P5": 2,
+    "N5": 1,
+    "G6": 1,
+    "Q6": 1,
+    "P6": 2,
+    "N6": 1,
+    "G7": 1,
+    "Q7": 1,
+    "P7": 2,
+    "A34n": 2,
+    "V34n": 2,
+    "A56n": 2,
+    "V56n": 2,
+    "A36n": 3,
+    "V36n": 3,
+    "nC7": 4,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 18,
+  "max_delay": 5,
+  "components": 11,
+  "ordinary": 4,
+  "exact_switches": 7,
+  "exact_xors": 0,
+  "fixed_kinds": [
+    "NAND",
+    "OR",
+    "NOR",
+    "NOT",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "solver": "cadical195",
+  "variables": 203305,
+  "clauses": 1532021,
+  "solve_seconds": 118.84805839999899,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 6,
+    "suffix_universe_sha256": "0b0c7c64fd44259c23762e70b87484cbb06caad9125d2fd944ecc16ac01666c7",
+    "assigned_suffix_signatures": [
+      [
+        "NOT"
+      ],
+      [
+        "AND"
+      ],
+      [
+        "OR"
+      ],
+      [
+        "NAND"
+      ],
+      [
+        "NOR"
+      ],
+      [
+        "SWITCH"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "dependency_sha256": {
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  }
+}
