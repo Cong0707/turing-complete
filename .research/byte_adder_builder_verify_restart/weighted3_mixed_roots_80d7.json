@@ -1,0 +1,788 @@
+{
+  "schema": "byte-adder-80d7-weighted3-mixed-root-audit-v1",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "source_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+  "reviewed_all_ordinary_audit": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\three-gate-root-resub-80d7.json",
+  "reviewed_all_ordinary_audit_sha256": "db96fcf6c192aeaa4d775c399bfa2ae57e445b94b11238f74a527a578c645eda",
+  "shared_replay_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\audit_80d7_weighted4_mixed_roots.py",
+  "shared_replay_sha256": "f8cd62d62753621f25592d1296702493c558430089147c5f5a01153abc2f64ea",
+  "script_sha256_dependencies": {
+    "materializer": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+    "exact_adapter": "08ba4041b3e01ee5a48c9736a72767c6a4e90a105e75a2634f2fd13c9f7a4f56"
+  },
+  "full_truth_rows": 131072,
+  "solvers": [
+    "cadical195",
+    "glucose42"
+  ],
+  "library_costs": {
+    "ordinary": 1,
+    "switch": 2,
+    "xor": 3
+  },
+  "covered_remaining_exact_cost3_decompositions": [
+    {
+      "name": "o1_s1",
+      "components": 2,
+      "switches": 1,
+      "xors": 0
+    },
+    {
+      "name": "x1",
+      "components": 1,
+      "switches": 0,
+      "xors": 1
+    }
+  ],
+  "all_ordinary_cost3": "covered separately by reviewed root enumerator",
+  "targets": [
+    {
+      "target": 49,
+      "target_label": "S0",
+      "source_ids": [
+        2,
+        3,
+        18,
+        43,
+        44,
+        45
+      ],
+      "source_names": [
+        "n2",
+        "n3",
+        "n18",
+        "n43",
+        "n44",
+        "n45"
+      ],
+      "source_arrivals": {
+        "n2": 0,
+        "n3": 0,
+        "n18": 0,
+        "n43": 1,
+        "n44": 1,
+        "n45": 2
+      },
+      "source_driven_one_counts": {
+        "n2": 131072,
+        "n3": 131072,
+        "n18": 131072,
+        "n43": 131072,
+        "n44": 131072,
+        "n45": 81920
+      },
+      "source_conflict_one_counts": {
+        "n2": 0,
+        "n3": 0,
+        "n18": 0,
+        "n43": 0,
+        "n44": 0,
+        "n45": 0
+      },
+      "compressed_truth_rows": 8,
+      "target_one_count": 65536,
+      "deadline": 7,
+      "private_gate_cost": 4,
+      "replacement_weighted_gate": 3,
+      "four_gate_positive_regressions": [
+        {
+          "status": "sat",
+          "solver": "cadical195",
+          "components": 4,
+          "exact_switches": 0,
+          "exact_xors": 0,
+          "variables": 1356,
+          "clauses": 11888,
+          "solve_seconds": 0.032405100002506515,
+          "witness": {
+            "actual_gate": 4,
+            "network": [
+              {
+                "slot": 0,
+                "source": 8,
+                "kind": "NAND",
+                "left_bus": [
+                  0
+                ],
+                "right_bus": [
+                  4
+                ],
+                "cost": 1,
+                "depth_upper_bound": 2
+              },
+              {
+                "slot": 1,
+                "source": 9,
+                "kind": "NOR",
+                "left_bus": [
+                  0
+                ],
+                "right_bus": [
+                  3
+                ],
+                "cost": 1,
+                "depth_upper_bound": 2
+              },
+              {
+                "slot": 2,
+                "source": 10,
+                "kind": "OR",
+                "left_bus": [
+                  5
+                ],
+                "right_bus": [
+                  9
+                ],
+                "cost": 1,
+                "depth_upper_bound": 3
+              },
+              {
+                "slot": 3,
+                "source": 11,
+                "kind": "NAND",
+                "left_bus": [
+                  8
+                ],
+                "right_bus": [
+                  10
+                ],
+                "cost": 1,
+                "depth_upper_bound": 4
+              }
+            ],
+            "output_buses": [
+              [
+                11
+              ]
+            ]
+          },
+          "compressed_verification": {
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0
+          },
+          "full_verification": {
+            "full_truth_rows": 131072,
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0,
+            "physical_net_partition_violations": [],
+            "dead_component_count": 0,
+            "dead_components": [],
+            "actual_gate": 4,
+            "kind_counts": {
+              "NOT": 0,
+              "AND": 0,
+              "OR": 1,
+              "NAND": 2,
+              "NOR": 1,
+              "XOR": 0,
+              "SWITCH": 0
+            },
+            "actual_component_arrivals": [
+              2,
+              2,
+              3,
+              4
+            ],
+            "output_arrival": 4,
+            "deadline": 7
+          }
+        },
+        {
+          "status": "sat",
+          "solver": "glucose42",
+          "components": 4,
+          "exact_switches": 0,
+          "exact_xors": 0,
+          "variables": 1356,
+          "clauses": 11888,
+          "solve_seconds": 0.01955380000072182,
+          "witness": {
+            "actual_gate": 4,
+            "network": [
+              {
+                "slot": 0,
+                "source": 8,
+                "kind": "OR",
+                "left_bus": [
+                  0
+                ],
+                "right_bus": [
+                  3
+                ],
+                "cost": 1,
+                "depth_upper_bound": 5
+              },
+              {
+                "slot": 1,
+                "source": 9,
+                "kind": "NAND",
+                "left_bus": [
+                  0
+                ],
+                "right_bus": [
+                  4
+                ],
+                "cost": 1,
+                "depth_upper_bound": 2
+              },
+              {
+                "slot": 2,
+                "source": 10,
+                "kind": "NAND",
+                "left_bus": [
+                  5
+                ],
+                "right_bus": [
+                  9
+                ],
+                "cost": 1,
+                "depth_upper_bound": 3
+              },
+              {
+                "slot": 3,
+                "source": 11,
+                "kind": "AND",
+                "left_bus": [
+                  8
+                ],
+                "right_bus": [
+                  10
+                ],
+                "cost": 1,
+                "depth_upper_bound": 6
+              }
+            ],
+            "output_buses": [
+              [
+                11
+              ]
+            ]
+          },
+          "compressed_verification": {
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0
+          },
+          "full_verification": {
+            "full_truth_rows": 131072,
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0,
+            "physical_net_partition_violations": [],
+            "dead_component_count": 0,
+            "dead_components": [],
+            "actual_gate": 4,
+            "kind_counts": {
+              "NOT": 0,
+              "AND": 1,
+              "OR": 1,
+              "NAND": 2,
+              "NOR": 0,
+              "XOR": 0,
+              "SWITCH": 0
+            },
+            "actual_component_arrivals": [
+              2,
+              2,
+              3,
+              4
+            ],
+            "output_arrival": 4,
+            "deadline": 7
+          }
+        }
+      ],
+      "mixed_cost3_runs": [
+        {
+          "decomposition": {
+            "name": "o1_s1",
+            "components": 2,
+            "switches": 1,
+            "xors": 0
+          },
+          "status": "unsat",
+          "solver_runs": [
+            {
+              "name": "o1_s1",
+              "components": 2,
+              "switches": 1,
+              "xors": 0,
+              "ordinary": 1,
+              "weighted_gate": 3,
+              "solver": "cadical195",
+              "status": "unsat",
+              "variables": 509,
+              "clauses": 3869,
+              "solve_seconds": 0.00601230000029318
+            },
+            {
+              "name": "o1_s1",
+              "components": 2,
+              "switches": 1,
+              "xors": 0,
+              "ordinary": 1,
+              "weighted_gate": 3,
+              "solver": "glucose42",
+              "status": "unsat",
+              "variables": 509,
+              "clauses": 3869,
+              "solve_seconds": 0.004891000000498025
+            }
+          ]
+        },
+        {
+          "decomposition": {
+            "name": "x1",
+            "components": 1,
+            "switches": 0,
+            "xors": 1
+          },
+          "status": "unsat",
+          "solver_runs": [
+            {
+              "name": "x1",
+              "components": 1,
+              "switches": 0,
+              "xors": 1,
+              "ordinary": 0,
+              "weighted_gate": 3,
+              "solver": "cadical195",
+              "status": "unsat",
+              "variables": 227,
+              "clauses": 1514,
+              "solve_seconds": 0.00243649999902118
+            },
+            {
+              "name": "x1",
+              "components": 1,
+              "switches": 0,
+              "xors": 1,
+              "ordinary": 0,
+              "weighted_gate": 3,
+              "solver": "glucose42",
+              "status": "unsat",
+              "variables": 227,
+              "clauses": 1514,
+              "solve_seconds": 0.0020557000025291927
+            }
+          ]
+        }
+      ],
+      "status": "unsat"
+    },
+    {
+      "target": 73,
+      "target_label": "S6",
+      "source_ids": [
+        12,
+        13,
+        14,
+        15,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "source_names": [
+        "n12",
+        "n13",
+        "n14",
+        "n15",
+        "n34",
+        "n35",
+        "n36",
+        "n37",
+        "n38",
+        "n39",
+        "n62",
+        "n63",
+        "n64",
+        "n65",
+        "n66",
+        "n67",
+        "n68",
+        "n69"
+      ],
+      "source_arrivals": {
+        "n12": 0,
+        "n13": 0,
+        "n14": 0,
+        "n15": 0,
+        "n34": 1,
+        "n35": 1,
+        "n36": 2,
+        "n37": 1,
+        "n38": 1,
+        "n39": 2,
+        "n62": 4,
+        "n63": 5,
+        "n64": 5,
+        "n65": 6,
+        "n66": 3,
+        "n67": 4,
+        "n68": 2,
+        "n69": 5
+      },
+      "source_driven_one_counts": {
+        "n12": 131072,
+        "n13": 131072,
+        "n14": 131072,
+        "n15": 131072,
+        "n34": 131072,
+        "n35": 131072,
+        "n36": 131072,
+        "n37": 131072,
+        "n38": 131072,
+        "n39": 131072,
+        "n62": 94208,
+        "n63": 131072,
+        "n64": 131072,
+        "n65": 131072,
+        "n66": 131072,
+        "n67": 131072,
+        "n68": 131072,
+        "n69": 90112
+      },
+      "source_conflict_one_counts": {
+        "n12": 0,
+        "n13": 0,
+        "n14": 0,
+        "n15": 0,
+        "n34": 0,
+        "n35": 0,
+        "n36": 0,
+        "n37": 0,
+        "n38": 0,
+        "n39": 0,
+        "n62": 0,
+        "n63": 0,
+        "n64": 0,
+        "n65": 0,
+        "n66": 0,
+        "n67": 0,
+        "n68": 0,
+        "n69": 0
+      },
+      "compressed_truth_rows": 48,
+      "target_one_count": 65536,
+      "deadline": 7,
+      "private_gate_cost": 4,
+      "replacement_weighted_gate": 3,
+      "four_gate_positive_regressions": [
+        {
+          "status": "sat",
+          "solver": "cadical195",
+          "components": 4,
+          "exact_switches": 0,
+          "exact_xors": 0,
+          "variables": 4496,
+          "clauses": 48824,
+          "solve_seconds": 0.1804121999994095,
+          "witness": {
+            "actual_gate": 4,
+            "network": [
+              {
+                "slot": 0,
+                "source": 20,
+                "kind": "OR",
+                "left_bus": [
+                  4
+                ],
+                "right_bus": [
+                  9
+                ],
+                "cost": 1,
+                "depth_upper_bound": 5
+              },
+              {
+                "slot": 1,
+                "source": 21,
+                "kind": "OR",
+                "left_bus": [
+                  11
+                ],
+                "right_bus": [
+                  20
+                ],
+                "cost": 1,
+                "depth_upper_bound": 6
+              },
+              {
+                "slot": 2,
+                "source": 22,
+                "kind": "NAND",
+                "left_bus": [
+                  9
+                ],
+                "right_bus": [
+                  17
+                ],
+                "cost": 1,
+                "depth_upper_bound": 6
+              },
+              {
+                "slot": 3,
+                "source": 23,
+                "kind": "AND",
+                "left_bus": [
+                  21
+                ],
+                "right_bus": [
+                  22
+                ],
+                "cost": 1,
+                "depth_upper_bound": 7
+              }
+            ],
+            "output_buses": [
+              [
+                23
+              ]
+            ]
+          },
+          "compressed_verification": {
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0
+          },
+          "full_verification": {
+            "full_truth_rows": 131072,
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0,
+            "physical_net_partition_violations": [],
+            "dead_component_count": 0,
+            "dead_components": [],
+            "actual_gate": 4,
+            "kind_counts": {
+              "NOT": 0,
+              "AND": 1,
+              "OR": 2,
+              "NAND": 1,
+              "NOR": 0,
+              "XOR": 0,
+              "SWITCH": 0
+            },
+            "actual_component_arrivals": [
+              3,
+              6,
+              6,
+              7
+            ],
+            "output_arrival": 7,
+            "deadline": 7
+          }
+        },
+        {
+          "status": "sat",
+          "solver": "glucose42",
+          "components": 4,
+          "exact_switches": 0,
+          "exact_xors": 0,
+          "variables": 4496,
+          "clauses": 48824,
+          "solve_seconds": 0.10320540000248002,
+          "witness": {
+            "actual_gate": 4,
+            "network": [
+              {
+                "slot": 0,
+                "source": 20,
+                "kind": "OR",
+                "left_bus": [
+                  4
+                ],
+                "right_bus": [
+                  9
+                ],
+                "cost": 1,
+                "depth_upper_bound": 5
+              },
+              {
+                "slot": 1,
+                "source": 21,
+                "kind": "NOR",
+                "left_bus": [
+                  11
+                ],
+                "right_bus": [
+                  20
+                ],
+                "cost": 1,
+                "depth_upper_bound": 6
+              },
+              {
+                "slot": 2,
+                "source": 22,
+                "kind": "AND",
+                "left_bus": [
+                  9
+                ],
+                "right_bus": [
+                  17
+                ],
+                "cost": 1,
+                "depth_upper_bound": 6
+              },
+              {
+                "slot": 3,
+                "source": 23,
+                "kind": "NOR",
+                "left_bus": [
+                  21
+                ],
+                "right_bus": [
+                  22
+                ],
+                "cost": 1,
+                "depth_upper_bound": 7
+              }
+            ],
+            "output_buses": [
+              [
+                23
+              ]
+            ]
+          },
+          "compressed_verification": {
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0
+          },
+          "full_verification": {
+            "full_truth_rows": 131072,
+            "mismatch_count": 0,
+            "bus_conflict_count": 0,
+            "undriven_output_count": 0,
+            "physical_net_partition_violation_count": 0,
+            "physical_net_partition_violations": [],
+            "dead_component_count": 0,
+            "dead_components": [],
+            "actual_gate": 4,
+            "kind_counts": {
+              "NOT": 0,
+              "AND": 1,
+              "OR": 1,
+              "NAND": 0,
+              "NOR": 2,
+              "XOR": 0,
+              "SWITCH": 0
+            },
+            "actual_component_arrivals": [
+              3,
+              6,
+              6,
+              7
+            ],
+            "output_arrival": 7,
+            "deadline": 7
+          }
+        }
+      ],
+      "mixed_cost3_runs": [
+        {
+          "decomposition": {
+            "name": "o1_s1",
+            "components": 2,
+            "switches": 1,
+            "xors": 0
+          },
+          "status": "unsat",
+          "solver_runs": [
+            {
+              "name": "o1_s1",
+              "components": 2,
+              "switches": 1,
+              "xors": 0,
+              "ordinary": 1,
+              "weighted_gate": 3,
+              "solver": "cadical195",
+              "status": "unsat",
+              "variables": 1729,
+              "clauses": 20341,
+              "solve_seconds": 0.03605009999955655
+            },
+            {
+              "name": "o1_s1",
+              "components": 2,
+              "switches": 1,
+              "xors": 0,
+              "ordinary": 1,
+              "weighted_gate": 3,
+              "solver": "glucose42",
+              "status": "unsat",
+              "variables": 1729,
+              "clauses": 20341,
+              "solve_seconds": 0.027614000002358807
+            }
+          ]
+        },
+        {
+          "decomposition": {
+            "name": "x1",
+            "components": 1,
+            "switches": 0,
+            "xors": 1
+          },
+          "status": "unsat",
+          "solver_runs": [
+            {
+              "name": "x1",
+              "components": 1,
+              "switches": 0,
+              "xors": 1,
+              "ordinary": 0,
+              "weighted_gate": 3,
+              "solver": "cadical195",
+              "status": "unsat",
+              "variables": 799,
+              "clauses": 9818,
+              "solve_seconds": 0.01522820000172942
+            },
+            {
+              "name": "x1",
+              "components": 1,
+              "switches": 0,
+              "xors": 1,
+              "ordinary": 0,
+              "weighted_gate": 3,
+              "solver": "glucose42",
+              "status": "unsat",
+              "variables": 799,
+              "clauses": 9818,
+              "solve_seconds": 0.012383200002659578
+            }
+          ]
+        }
+      ],
+      "status": "unsat"
+    }
+  ],
+  "status": "all-mixed-cost3-unsat",
+  "scope": "all live mixed-primitive weighted-cost3 DAGs over each explicit retained source pool, exact source value/driven masks, physical BUS partition, and final driven Sum at delay<=7",
+  "limitations": [
+    "fixed retained source pools only",
+    "does not co-synthesize upstream retained nodes",
+    "not a global 79/7 lower bound"
+  ],
+  "elapsed_seconds": 7.865273700001126
+}
