@@ -101,6 +101,32 @@ class FanoutRoutingTests(unittest.TestCase):
             9,
         )
 
+    def test_growth_comb_uses_inline_terminal_as_real_spine_endpoint(self) -> None:
+        edges = _growth_fanout_edges(
+            "inline-growth",
+            (0, 0),
+            ((8, 0), (12, 4)),
+            routing_source=(1, 0),
+            routing_sinks=((7, 0), (11, 4)),
+            forbidden=frozenset({(7, 0)}),
+            forbidden_edges=frozenset(),
+            reserved=set(),
+            track_intervals={},
+            horizontal_intervals={},
+        )
+
+        self.assertFalse(any(edge.role == "stem" for edge in edges))
+        inline_tap = next(
+            edge for edge in edges if edge.role == "tap" and edge.sink == (8, 0)
+        )
+        self.assertEqual(inline_tap.source, (7, 0))
+        self.assertTrue(
+            any(
+                edge.role == "spine" and (7, 0) in {edge.source, edge.sink}
+                for edge in edges
+            )
+        )
+
     def test_growth_comb_may_branch_from_its_source_stem(self) -> None:
         edges = _growth_fanout_edges(
             "stem-growth",
@@ -114,6 +140,7 @@ class FanoutRoutingTests(unittest.TestCase):
             track_intervals={
                 1: [(-8, 8, "foreign-1")],
                 2: [(-8, 8, "foreign-2")],
+                3: [(-8, 8, "foreign-3")],
             },
             horizontal_intervals={0: [(1, 8, "foreign-row")]},
         )

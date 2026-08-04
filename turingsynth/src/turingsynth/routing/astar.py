@@ -1511,7 +1511,10 @@ def _growth_fanout_edges(
     staged_intervals: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_horizontal: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_hubs: set[Point] = set()
-    predicted_right = max(sink[0] - 1 for sink in routing_sinks)
+    # A sink access point may be an actual endpoint on the conductor spine.
+    # Keep the preview long enough to include those inline junctions instead
+    # of forcing every branch to stop one cell before its terminal.
+    predicted_right = max(sink[0] for sink in routing_sinks)
     source_y = routing_source[1]
     spine_y: int | None = None
     for delta in (0, *range(1, 17), *range(-1, -17, -1)):
@@ -1544,8 +1547,15 @@ def _growth_fanout_edges(
             for left, right in zip(preview, preview[1:])
         ):
             continue
+        inline_terminals = {
+            terminal
+            for terminal in routing_sinks
+            if terminal[1] == candidate_y
+        }
         if any(
-            point in forbidden and point != origin
+            point in forbidden
+            and point != origin
+            and point not in inline_terminals
             for point in preview
         ):
             continue
@@ -1576,7 +1586,11 @@ def _growth_fanout_edges(
     for sink, terminal in ordered:
         chosen: tuple[int, Point, Point] | None = None
         rejected: dict[str, int] = defaultdict(int)
-        first = terminal[0] - 1
+        # Prefer a zero-length branch when the terminal already lies on the
+        # spine.  The adjacent spine pieces and terminal lead then share a
+        # real endpoint, which is electrically valid; an endpoint merely
+        # touching another wire's interior would not be.
+        first = terminal[0]
         last = routing_source[0]
         for branch_x in range(first, last - 1, -1):
             top = (
@@ -1697,7 +1711,9 @@ def _growth_fanout_edges(
         ):
             raise RuntimeError(f"local spine for {network} overlaps pin access")
         if any(
-            point in forbidden and point != spine_origin
+            point in forbidden
+            and point != spine_origin
+            and point not in staged_hubs
             for point in spine
         ):
             raise RuntimeError(f"local spine for {network} crosses a component")
