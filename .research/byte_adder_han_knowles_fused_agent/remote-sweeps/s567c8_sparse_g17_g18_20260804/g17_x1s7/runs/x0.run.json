@@ -1,0 +1,67 @@
+{
+  "schema": "s567c8-sparse-position-run-v1",
+  "start_utc": "2026-08-04T01:25:11Z",
+  "end_utc": "2026-08-04T01:27:10Z",
+  "wall_seconds": 118.43665497394977,
+  "pid": 309920,
+  "exit_code": 0,
+  "classification": "solver_exit",
+  "timed_out": false,
+  "killed_after_timeout": false,
+  "target_class": "g17_x1s7",
+  "key": "x0",
+  "status": "unsat",
+  "raw_status": "unsat",
+  "validation_errors": [],
+  "xor_slot": 0,
+  "ordinary_slot": null,
+  "fixed_kinds": [
+    "XOR",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "allowed_ordinary_kinds": [],
+  "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x0.json",
+  "result_sha256": "7a990f7cbe160921582b4db68fc09174cc5a1ac6a71040d38c4b7756625fbe44",
+  "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x0.log",
+  "log_sha256": "ea27e759a4dbd458995278cdb044ffec82b2b64792a5eb6299124ecd35d098f4",
+  "replay": null,
+  "resource_limits": {
+    "watchdog_seconds": 180.0,
+    "as_limit_kib": 1310720,
+    "nice": 5
+  },
+  "expected": {
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate_bound": 17,
+    "components": 8,
+    "ordinary": 0,
+    "switches": 7,
+    "xors": 1,
+    "fixed_kinds": [
+      "XOR",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH"
+    ],
+    "dependency_sha256": {
+      ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    }
+  }
+}

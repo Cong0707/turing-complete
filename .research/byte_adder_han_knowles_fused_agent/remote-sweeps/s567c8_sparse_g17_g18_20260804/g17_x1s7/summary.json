@@ -1,0 +1,569 @@
+{
+  "schema": "s567c8-sparse-position-class-summary-v1",
+  "target_class": "g17_x1s7",
+  "scope": {
+    "domain": "s34567c8_leaf",
+    "rows": 486,
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate_bound": 17,
+    "max_delay": 5,
+    "components": 8,
+    "ordinary": 0,
+    "switches": 7,
+    "xors": 1,
+    "position_patterns": 8,
+    "concrete_kind_assignments": 8
+  },
+  "expected_position_patterns": 8,
+  "attempted_position_patterns": 8,
+  "status_counts": {
+    "unsat": 8
+  },
+  "raw_sat": [],
+  "verified_sat": [],
+  "unknown_is_not_unsat": true,
+  "stopped_on_sat": false,
+  "records": [
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:25:11Z",
+      "end_utc": "2026-08-04T01:27:10Z",
+      "wall_seconds": 118.43665497394977,
+      "pid": 309920,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x0",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 0,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "XOR",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x0.json",
+      "result_sha256": "7a990f7cbe160921582b4db68fc09174cc5a1ac6a71040d38c4b7756625fbe44",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x0.log",
+      "log_sha256": "ea27e759a4dbd458995278cdb044ffec82b2b64792a5eb6299124ecd35d098f4",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "XOR",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:25:11Z",
+      "end_utc": "2026-08-04T01:26:29Z",
+      "wall_seconds": 77.41708416602341,
+      "pid": 309921,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x1",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 1,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "XOR",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x1.json",
+      "result_sha256": "e662fc2625def9a5eeeb4447ef0622b5cd176abb26062c3d9d622d0274df8722",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x1.log",
+      "log_sha256": "b96c0fcf68c61c65abaf93af0d9e4d8dd905a34d6f6931c05c9603417b7446dc",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "XOR",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:26:29Z",
+      "end_utc": "2026-08-04T01:27:42Z",
+      "wall_seconds": 73.43462516600266,
+      "pid": 312839,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x2",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 2,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "XOR",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x2.json",
+      "result_sha256": "7614940ce0fcfa49f59da6f2d26eb28621c2f35fc2da2d725f6683496b8dea05",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x2.log",
+      "log_sha256": "d8e92d976b62379806c6b991216e85e68ee8a44928be38392db0bbd713fec8e9",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "XOR",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:27:10Z",
+      "end_utc": "2026-08-04T01:27:59Z",
+      "wall_seconds": 49.04134439898189,
+      "pid": 314398,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x3",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 3,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "XOR",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x3.json",
+      "result_sha256": "e30ce9799df5d17bb51298d969f0ffdab4df9054686c0dd3de6ea9f17f2bf2e9",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x3.log",
+      "log_sha256": "335085fd0fbdae515cc60f5ed071cb52dd65948691222ea69713e5d8aa5e2eb7",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "XOR",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:27:42Z",
+      "end_utc": "2026-08-04T01:28:33Z",
+      "wall_seconds": 50.94253122503869,
+      "pid": 315533,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x4",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 4,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "XOR",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x4.json",
+      "result_sha256": "a08ad80d866d8a7096b9d16d84f4faeb629449d2dd19d3e811b2cfb5102f8cfd",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x4.log",
+      "log_sha256": "600470f26edcdff77f510133a406848c7924d267928002f69f91b3a809a5afbf",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "XOR",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:27:59Z",
+      "end_utc": "2026-08-04T01:28:41Z",
+      "wall_seconds": 41.67731866199756,
+      "pid": 316158,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x5",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 5,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "XOR",
+        "SWITCH",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x5.json",
+      "result_sha256": "9e1d04aae55a03279843d1d4bf803f3717a4eb0e1e59908b3d9ea8f75643bf9f",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x5.log",
+      "log_sha256": "cc7f0ee65f296bc54d64b1466e591376b3a33bf374a3a09b288ca691d9a90092",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "XOR",
+          "SWITCH",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:28:33Z",
+      "end_utc": "2026-08-04T01:29:28Z",
+      "wall_seconds": 54.59057942702202,
+      "pid": 317673,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x6",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 6,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "XOR",
+        "SWITCH"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x6.json",
+      "result_sha256": "92375014ab54650ed8ca0d0c5d8524ca0de89f4ec20389ac0f9172cae2ce2f50",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x6.log",
+      "log_sha256": "ca29dc5c74ace47ff9ce03b6bfa1073b720c3946cf071269747c27d60ed0df76",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "XOR",
+          "SWITCH"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    },
+    {
+      "schema": "s567c8-sparse-position-run-v1",
+      "start_utc": "2026-08-04T01:28:41Z",
+      "end_utc": "2026-08-04T01:29:05Z",
+      "wall_seconds": 24.49865228094859,
+      "pid": 317832,
+      "exit_code": 0,
+      "classification": "solver_exit",
+      "timed_out": false,
+      "killed_after_timeout": false,
+      "target_class": "g17_x1s7",
+      "key": "x7",
+      "status": "unsat",
+      "raw_status": "unsat",
+      "validation_errors": [],
+      "xor_slot": 7,
+      "ordinary_slot": null,
+      "fixed_kinds": [
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "SWITCH",
+        "XOR"
+      ],
+      "allowed_ordinary_kinds": [],
+      "result": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/results/x7.json",
+      "result_sha256": "cf807cd5f04e8ee20c72b2019874eb5e9ed93e0a7efe17f67f13a46a7b74155c",
+      "log": "/root/congProjects/turing-complete-works/.research/byte_adder_han_knowles_fused_agent/remote-sweeps/s567c8_sparse_g17_g18_20260804/g17_x1s7/logs/x7.log",
+      "log_sha256": "9418747e7137017fae3ae50d347b73929d91e295d073cdbf6756f8dada7b7949",
+      "replay": null,
+      "resource_limits": {
+        "watchdog_seconds": 180.0,
+        "as_limit_kib": 1310720,
+        "nice": 5
+      },
+      "expected": {
+        "outputs": [
+          "S5",
+          "S6",
+          "S7",
+          "C8"
+        ],
+        "gate_bound": 17,
+        "components": 8,
+        "ordinary": 0,
+        "switches": 7,
+        "xors": 1,
+        "fixed_kinds": [
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "SWITCH",
+          "XOR"
+        ],
+        "dependency_sha256": {
+          ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+          ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+          ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+        }
+      }
+    }
+  ]
+}
