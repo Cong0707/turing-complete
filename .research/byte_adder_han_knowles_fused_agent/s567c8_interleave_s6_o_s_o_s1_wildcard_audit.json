@@ -1,0 +1,72 @@
+{
+  "schema": "s567c8-interleave-s6-o-s-o-s1-wildcard-audit-v1",
+  "status": "unsat-covered",
+  "missing": [],
+  "invalid": [],
+  "ordered_pair_count": 25,
+  "unique_assignment_count": 25,
+  "evidence_sha256": "5ec01ba249868845942b4c01693195fc4d676a241ae1841e208c37bc046616a8",
+  "log_sha256": "ea5ee72b19ece3040bc0173f2faa5550e9e94699340c8d3d4a9c03b50338dd76",
+  "run_record_sha256": "d9c49c815e4d2028c679266471289018fe65a1f99cfea7e7d6f3b9c8e01ee4f4",
+  "physical_exact_sha256": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+  "suffix_universe_sha256": "0b0c7c64fd44259c23762e70b87484cbb06caad9125d2fd944ecc16ac01666c7",
+  "manifest": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s6_o_s_o_s1_wildcard_manifest.json",
+  "manifest_sha256": "d057056a0dd9b5810b6b7a8ca3ab79da422e06d7197b547bede45d7f2fe7c73c",
+  "auditor_sha256": "297e30e82fe5d359c8b08d4a7ad8fc4276f4205c0f41e5bb6970097cc983170b",
+  "checks": {
+    "evidence_fields": {
+      "schema": true,
+      "status": true,
+      "domain": true,
+      "rows": true,
+      "outputs": true,
+      "free_source_count": true,
+      "gate_bound": true,
+      "max_delay": true,
+      "components": true,
+      "ordinary": true,
+      "switches": true,
+      "xors": true,
+      "fixed_kinds": true,
+      "solver": true,
+      "variables": true,
+      "clauses": true,
+      "physical_nets": true,
+      "public_outputs_must_be_driven": true,
+      "timer_errors": true,
+      "dependencies": true,
+      "no_sat_network": true
+    },
+    "run_record": {
+      "pid": true,
+      "exit_code": true,
+      "classification": true,
+      "not_watchdog": true,
+      "watchdog_seconds": true,
+      "as_limit_kib": true,
+      "nice": true,
+      "wall_seconds": true,
+      "solve_wall_agreement": true
+    },
+    "shard": {
+      "split_slots": true,
+      "shard_count": true,
+      "shard_index": true,
+      "suffix_universe_count": true,
+      "suffix_universe_sha256": true,
+      "all_signatures_assigned": true
+    },
+    "wildcard_assignments": {
+      "ordered_pairs": true,
+      "unique_pairs": true,
+      "unique_assignments": true,
+      "wildcard_slots": true,
+      "fixed_slots": true,
+      "switch_count": true,
+      "xor_count": true,
+      "gate_cost": true,
+      "split_slot9_fixed_switch": true,
+      "switch_signature_assigned": true
+    }
+  }
+}
