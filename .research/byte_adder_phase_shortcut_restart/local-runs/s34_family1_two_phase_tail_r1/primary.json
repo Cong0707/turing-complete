@@ -1,0 +1,294 @@
+{
+  "schema": "exact-s34-family1-two-phase-free-tail-v1",
+  "status": "unsat",
+  "domain": "s567c8_s34_family1_two_phase_primary_free",
+  "rows": 486,
+  "output_names": [
+    "S5",
+    "S6",
+    "S7",
+    "C8"
+  ],
+  "free_sources": [
+    "nC3",
+    "G3",
+    "Q3",
+    "P3",
+    "N3",
+    "G4",
+    "Q4",
+    "P4",
+    "N4",
+    "G5",
+    "Q5",
+    "P5",
+    "N5",
+    "G6",
+    "Q6",
+    "P6",
+    "N6",
+    "G7",
+    "Q7",
+    "P7",
+    "A34n",
+    "V34n",
+    "A56n",
+    "V56n",
+    "A36n",
+    "V36n",
+    "nC7",
+    "s34_family1_u0",
+    "s34_family1_u1",
+    "s34_family1_u2",
+    "s34_family1_u3",
+    "s34_family1_u4",
+    "s34_family1_u7",
+    "phase_nor_q6_p7",
+    "phase_nor_n4_p5",
+    "0",
+    "1"
+  ],
+  "source_arrivals": {
+    "nC3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "N3": 1,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "N4": 1,
+    "G5": 1,
+    "Q5": 1,
+    "P5": 2,
+    "N5": 1,
+    "G6": 1,
+    "Q6": 1,
+    "P6": 2,
+    "N6": 1,
+    "G7": 1,
+    "Q7": 1,
+    "P7": 2,
+    "A34n": 2,
+    "V34n": 2,
+    "A56n": 2,
+    "V56n": 2,
+    "A36n": 3,
+    "V36n": 3,
+    "nC7": 4,
+    "s34_family1_u0": 3,
+    "s34_family1_u1": 4,
+    "s34_family1_u2": 3,
+    "s34_family1_u3": 4,
+    "s34_family1_u4": 4,
+    "s34_family1_u7": 4,
+    "phase_nor_q6_p7": 3,
+    "phase_nor_n4_p5": 3,
+    "0": 0,
+    "1": 0
+  },
+  "gate_bound": 16,
+  "max_delay": 5,
+  "components": 8,
+  "ordinary": 0,
+  "exact_switches": 8,
+  "exact_xors": 0,
+  "fixed_kinds": [
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "solver": "glucose42",
+  "variables": 126089,
+  "clauses": 1122284,
+  "solve_seconds": 34.51368209999782,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 1,
+    "suffix_universe_sha256": "f1763a7fc45f07b64a60231bb370032eeca21b5c9d28380725838d0ca93a120c",
+    "assigned_suffix_signatures": [
+      [
+        "SWITCH"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "dependency_sha256": {
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  },
+  "base_schema": "exact-fast-negative-physical-shard-v2",
+  "free_source_projection": {
+    "schema": "s34-family1-two-phase-free-source-projection-v1",
+    "profile": "primary",
+    "rows": 486,
+    "tail_outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "family": {
+      "path": ".research/byte_adder_paper_synthesis_root/s34-internal-phase-family-r1.json",
+      "sha256": "54d4170d1ab9795c11e94bc06bf119da1728b04034a24d940ea082d89a81717f",
+      "model_index": 1,
+      "phase_family_sha256": "8538e303d5c4b79cbc06010cc79b90d2679720b581a2469851625d449b2fbe0d",
+      "paid_gate": 11,
+      "paid_components": 9,
+      "output_buses": [
+        [
+          31
+        ],
+        [
+          32,
+          34
+        ]
+      ],
+      "s3_s4_replayed_over_486_rows": true
+    },
+    "exported_family_nodes": [
+      {
+        "name": "s34_family1_u0",
+        "source_slot": 0,
+        "kind": "AND",
+        "left_bus": [
+          "Q3"
+        ],
+        "right_bus": [
+          "P4"
+        ],
+        "arrival": 3,
+        "always_driven": true,
+        "truth_sha256": "3bd3835f2c41b9fcf1121bb45b7b980cd3e4e35b4242aa8851ef3fe4a0933c60"
+      },
+      {
+        "name": "s34_family1_u1",
+        "source_slot": 1,
+        "kind": "NAND",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "truth_sha256": "ce6840328177b8796784ebd772c6a22065c81e3040c86f4aa4a44885ae0fd719"
+      },
+      {
+        "name": "s34_family1_u2",
+        "source_slot": 2,
+        "kind": "NOR",
+        "left_bus": [
+          "Q3"
+        ],
+        "right_bus": [
+          "P4"
+        ],
+        "arrival": 3,
+        "always_driven": true,
+        "truth_sha256": "b9301fd653d55c805685905642fbc6831c142d287aa6d3d826913a4126e09f14"
+      },
+      {
+        "name": "s34_family1_u3",
+        "source_slot": 3,
+        "kind": "OR",
+        "left_bus": [
+          "s34_family1_u0"
+        ],
+        "right_bus": [
+          "s34_family1_u2"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "truth_sha256": "731ce4b07a965414c741a5fc8293478d85677600f4092e11bf9ce2041276e1e5"
+      },
+      {
+        "name": "s34_family1_u4",
+        "source_slot": 4,
+        "kind": "OR",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "truth_sha256": "796af01b5d174416238a269254ca1d58bf01cc5c92444dce2f2bc1545dc95918"
+      },
+      {
+        "name": "s34_family1_u7",
+        "source_slot": 7,
+        "kind": "AND",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "truth_sha256": "8120a403af0d765a32ce4461253a222b611065966dc1934fd3e07cf22bbee88e"
+      }
+    ],
+    "fixed_paid_phases": [
+      {
+        "name": "phase_nor_q6_p7",
+        "kind": "NOR",
+        "left": "Q6",
+        "right": "P7",
+        "arrival": 3,
+        "always_driven": true,
+        "truth_sha256": "b454fa50c893d3b9e88934f0534ff3a4e1124dbb7c51921642b8002ab27fb667"
+      },
+      {
+        "name": "phase_nor_n4_p5",
+        "kind": "NOR",
+        "left": "N4",
+        "right": "P5",
+        "arrival": 3,
+        "always_driven": true,
+        "truth_sha256": "e2f7325061bec7a8c97cd0147b86f4e88f6e0713bac44335594a27cb4191cf8a"
+      }
+    ],
+    "excluded_family_nodes": [
+      {
+        "source_slot": 5,
+        "reason": "arrival D5 cannot feed an incremental D5 Switch"
+      },
+      {
+        "source_slot": 6,
+        "reason": "individual Switch output may be high impedance"
+      },
+      {
+        "source_slot": 8,
+        "reason": "individual Switch output may be high impedance"
+      }
+    ],
+    "accounting": {
+      "paid_s34_gate": 11,
+      "paid_phase_gate": 2,
+      "tail_gate_bound": 16,
+      "combined_high_window_gate": 29,
+      "combined_components": 19,
+      "combined_switches": 10,
+      "max_delay": 5
+    }
+  },
+  "extended_dependency_sha256": {
+    ".research/byte_adder_phase_shortcut_restart/exact_tail_with_s34_family1_two_phase_free.py": "6019bd963137b7c9d10cdc09625e7a48a8efdbb5db8c840f5e70a222dad259ae",
+    ".research/byte_adder_phase_shortcut_restart/physical_exact.py": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    ".research/byte_adder_paper_synthesis_root/s34-internal-phase-family-r1.json": "54d4170d1ab9795c11e94bc06bf119da1728b04034a24d940ea082d89a81717f"
+  }
+}

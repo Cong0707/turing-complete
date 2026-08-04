@@ -1,4 +1,4 @@
-"""Score one-extra-gate extensions of exact S3/S4 paid phase families.
+"""Score one- and two-gate extensions of exact S3/S4 paid phase families.
 
 The full high29 SAT search is expensive and most unconstrained kind layouts
 time out.  This utility is a deterministic filter for the exact S3/S4 phase
@@ -199,7 +199,12 @@ def _metrics(
 
 
 def _family_score(
-    domain, s34_domain, record: dict[str, object], top: int
+    domain,
+    s34_domain,
+    record: dict[str, object],
+    top: int,
+    pair_pool_limit: int,
+    pair_top: int,
 ) -> dict[str, object]:
     mask = (1 << domain.rows) - 1
     values, drivens, arrivals = _replay_family(domain, s34_domain, record)
@@ -250,32 +255,128 @@ def _family_score(
     for name in ("P3", "P4", "P5", "P6", "P7"):
         final_rare &= by_name[name]
 
-    scored: list[dict[str, object]] = []
+    scored_with_truth: list[tuple[dict[str, object], int]] = []
     for expression, truth in extensions:
         metrics = _metrics((*terminal_truths, truth), targets, mask)
-        scored.append(
-            {
-                "expression": expression,
-                "truth_sha256": sha256(truth.to_bytes(61, "little")).hexdigest(),
-                **metrics,
-                "improvement": int(baseline["sum_two_switch_uncovered"])
-                - int(metrics["sum_two_switch_uncovered"]),
-                "rare_hamming_distance": (truth ^ rare).bit_count(),
-                "not_rare_hamming_distance": (truth ^ (mask ^ rare)).bit_count(),
-                "final_rare_hamming_distance": (truth ^ final_rare).bit_count(),
-                "equals_rare": truth == rare,
-                "equals_not_rare": truth == (mask ^ rare),
-                "equals_nC7": truth == by_name["nC7"],
-                "equals_C7": truth == (mask ^ by_name["nC7"]),
-            }
-        )
-    scored.sort(
-        key=lambda item: (
+        item = {
+            "expression": expression,
+            "truth_sha256": sha256(truth.to_bytes(61, "little")).hexdigest(),
+            **metrics,
+            "improvement": int(baseline["sum_two_switch_uncovered"])
+            - int(metrics["sum_two_switch_uncovered"]),
+            "rare_hamming_distance": (truth ^ rare).bit_count(),
+            "not_rare_hamming_distance": (truth ^ (mask ^ rare)).bit_count(),
+            "final_rare_hamming_distance": (truth ^ final_rare).bit_count(),
+            "equals_rare": truth == rare,
+            "equals_not_rare": truth == (mask ^ rare),
+            "equals_nC7": truth == by_name["nC7"],
+            "equals_C7": truth == (mask ^ by_name["nC7"]),
+        }
+        scored_with_truth.append((item, truth))
+
+    def single_key(entry: tuple[dict[str, object], int]):
+        item, _truth = entry
+        return (
             item["sum_two_switch_uncovered"],
             item["max_two_switch_uncovered"],
             -item["fully_covered_output_count"],
             item["rare_hamming_distance"],
             item["expression"],
+        )
+
+    scored_with_truth.sort(key=single_key)
+    scored = [item for item, _truth in scored_with_truth]
+
+    # Two independent D4 ordinary gates are the exact paid shape of o2/s8.
+    # Full 1118^2 enumeration is unnecessary for a directional filter, so the
+    # pool combines globally strong functions, output-specialists, and phases
+    # closest to rare/not-rare.  Every selected pair is still scored exactly.
+    selected: dict[int, dict[str, object]] = {}
+
+    def take(entries: Iterable[tuple[dict[str, object], int]], count: int) -> None:
+        for item, truth in itertools.islice(entries, count):
+            if len(selected) >= pair_pool_limit:
+                break
+            selected.setdefault(truth, item)
+
+    global_quota = max(1, pair_pool_limit * 3 // 8)
+    output_quota = max(1, pair_pool_limit * 3 // (8 * len(TARGET_NAMES)))
+    rare_quota = max(1, pair_pool_limit // 10)
+    not_rare_quota = max(1, pair_pool_limit // 16)
+    final_rare_quota = max(
+        1,
+        pair_pool_limit
+        - global_quota
+        - output_quota * len(TARGET_NAMES)
+        - rare_quota
+        - not_rare_quota,
+    )
+
+    take(scored_with_truth, global_quota)
+    for output in TARGET_NAMES:
+        take(
+            sorted(
+                scored_with_truth,
+                key=lambda entry: (
+                    entry[0]["two_switch_uncovered"][output],
+                    entry[0]["sum_two_switch_uncovered"],
+                    entry[0]["expression"],
+                ),
+            ),
+            output_quota,
+        )
+    take(
+        sorted(scored_with_truth, key=lambda entry: entry[0]["rare_hamming_distance"]),
+        rare_quota,
+    )
+    take(
+        sorted(scored_with_truth, key=lambda entry: entry[0]["not_rare_hamming_distance"]),
+        not_rare_quota,
+    )
+    take(
+        sorted(scored_with_truth, key=lambda entry: entry[0]["final_rare_hamming_distance"]),
+        final_rare_quota,
+    )
+    for item, truth in scored_with_truth:
+        if len(selected) >= pair_pool_limit:
+            break
+        selected.setdefault(truth, item)
+    pair_pool = tuple((item, truth) for truth, item in selected.items())[:pair_pool_limit]
+
+    pair_scores: list[dict[str, object]] = []
+    for (left_item, left_truth), (right_item, right_truth) in itertools.combinations(
+        pair_pool, 2
+    ):
+        metrics = _metrics(
+            (*terminal_truths, left_truth, right_truth), targets, mask
+        )
+        pair_scores.append(
+            {
+                "expressions": [left_item["expression"], right_item["expression"]],
+                "truth_sha256": [
+                    left_item["truth_sha256"],
+                    right_item["truth_sha256"],
+                ],
+                **metrics,
+                "improvement": int(baseline["sum_two_switch_uncovered"])
+                - int(metrics["sum_two_switch_uncovered"]),
+                "contains_rare": bool(left_item["equals_rare"] or right_item["equals_rare"]),
+                "contains_not_rare": bool(
+                    left_item["equals_not_rare"] or right_item["equals_not_rare"]
+                ),
+                "best_rare_hamming_distance": min(
+                    int(left_item["rare_hamming_distance"]),
+                    int(right_item["rare_hamming_distance"]),
+                ),
+            }
+        )
+    pair_scores.sort(
+        key=lambda item: (
+            item["sum_two_switch_uncovered"],
+            item["max_two_switch_uncovered"],
+            -item["fully_covered_output_count"],
+            item["best_rare_hamming_distance"],
+            item["expressions"],
         )
     )
     return {
@@ -284,10 +385,13 @@ def _family_score(
         "terminal_signal_count": len(terminal),
         "d3_source_count": len(d3_sources),
         "distinct_one_gate_extensions": len(extensions),
+        "pair_pool_count": len(pair_pool),
+        "exact_scored_pair_count": len(pair_scores),
         "rare_row_count": rare.bit_count(),
         "final_rare_row_count": final_rare.bit_count(),
         "baseline": baseline,
         "top_extensions": scored[:top],
+        "top_extension_pairs": pair_scores[:pair_top],
     }
 
 
@@ -298,7 +402,14 @@ def score(args: argparse.Namespace) -> dict[str, object]:
     domain = physical.domain_s34567c8_leaf()
     s34_domain = physical.domain_s3456_leaf()
     families = [
-        _family_score(domain, s34_domain, record, args.top)
+        _family_score(
+            domain,
+            s34_domain,
+            record,
+            args.top,
+            args.pair_pool,
+            args.pair_top,
+        )
         for record in source["records"]
     ]
     global_top = sorted(
@@ -316,8 +427,23 @@ def score(args: argparse.Namespace) -> dict[str, object]:
             item["expression"],
         ),
     )[: args.top]
+    global_top_pairs = sorted(
+        (
+            {"model_index": family["model_index"], **candidate}
+            for family in families
+            for candidate in family["top_extension_pairs"]
+        ),
+        key=lambda item: (
+            item["sum_two_switch_uncovered"],
+            item["max_two_switch_uncovered"],
+            -item["fully_covered_output_count"],
+            item["best_rare_hamming_distance"],
+            item["model_index"],
+            item["expressions"],
+        ),
+    )[: args.pair_top]
     result = {
-        "schema": "s34-internal-phase-one-gate-score-v1",
+        "schema": "s34-internal-phase-extension-score-v2",
         "status": "complete",
         "scope": {
             "rows": domain.rows,
@@ -325,6 +451,7 @@ def score(args: argparse.Namespace) -> dict[str, object]:
             "candidate_gate_arrival": 4,
             "terminal_switch_arrival": 5,
             "per_output_switch_limit": 2,
+            "pair_pool_limit": args.pair_pool,
             "physical_tail_sat_claimed": False,
             "score_is_topology_heuristic": True,
         },
@@ -335,6 +462,7 @@ def score(args: argparse.Namespace) -> dict[str, object]:
         },
         "families": families,
         "global_top_extensions": global_top,
+        "global_top_extension_pairs": global_top_pairs,
     }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -345,6 +473,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--families", type=Path, default=DEFAULT_FAMILIES)
     parser.add_argument("--top", type=int, default=32)
+    parser.add_argument("--pair-pool", type=int, default=64)
+    parser.add_argument("--pair-top", type=int, default=32)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     result = score(args)
@@ -354,6 +484,7 @@ def main() -> int:
                 "status": result["status"],
                 "families": len(result["families"]),
                 "global_top_extensions": result["global_top_extensions"][:5],
+                "global_top_extension_pairs": result["global_top_extension_pairs"][:5],
             },
             ensure_ascii=False,
             indent=2,
