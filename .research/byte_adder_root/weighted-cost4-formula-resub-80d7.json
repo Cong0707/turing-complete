@@ -1,0 +1,425 @@
+{
+  "schema": "byte-adder-80d7-weighted-cost4-formula-closure-v1",
+  "source": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+  "baseline": {
+    "gate": 80,
+    "delay": 7,
+    "energy": 560,
+    "output_arrivals": [
+      4,
+      4,
+      7,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ],
+    "reachable_nodes": 82,
+    "structural_sha256": "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f"
+  },
+  "component_costs": {
+    "ordinary": {
+      "gate": 1,
+      "delay": 1
+    },
+    "switch_driver": {
+      "gate": 2,
+      "delay": 1
+    },
+    "xor_xnor": {
+      "gate": 3,
+      "delay": 2
+    }
+  },
+  "full_truth_rows": 131072,
+  "targets": [
+    {
+      "target": 49,
+      "output": "S0",
+      "source_ids": [
+        2,
+        3,
+        18,
+        43,
+        44,
+        45
+      ],
+      "private_cost": 4,
+      "replacement_cost": 3,
+      "compact_truth_rows": 8,
+      "delay_limit": 7,
+      "search_seconds": 0.006116099997598212,
+      "levels": [
+        {
+          "cost": 0,
+          "deadline_feasible_states": 6,
+          "fully_driven_states": 5,
+          "attempts": {
+            "SOURCE": 6
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 1,
+          "deadline_feasible_states": 36,
+          "fully_driven_states": 36,
+          "attempts": {
+            "NOT": 6,
+            "AND": 21,
+            "NAND": 21,
+            "OR": 21,
+            "NOR": 21
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 2,
+          "deadline_feasible_states": 138,
+          "fully_driven_states": 112,
+          "attempts": {
+            "NOT": 36,
+            "AND": 216,
+            "NAND": 216,
+            "OR": 216,
+            "NOR": 216,
+            "BUS1": 36
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 3,
+          "deadline_feasible_states": 428,
+          "fully_driven_states": 226,
+          "attempts": {
+            "NOT": 138,
+            "AND": 1494,
+            "NAND": 1494,
+            "OR": 1494,
+            "NOR": 1494,
+            "BUS1": 432,
+            "XOR": 21,
+            "XNOR": 21
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        }
+      ],
+      "status": "unsat",
+      "witness": null
+    },
+    {
+      "target": 73,
+      "output": "S6",
+      "source_ids": [
+        12,
+        13,
+        14,
+        15,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "private_cost": 4,
+      "replacement_cost": 3,
+      "compact_truth_rows": 48,
+      "delay_limit": 7,
+      "search_seconds": 0.9545715999993263,
+      "levels": [
+        {
+          "cost": 0,
+          "deadline_feasible_states": 18,
+          "fully_driven_states": 16,
+          "attempts": {
+            "SOURCE": 18
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 1,
+          "deadline_feasible_states": 434,
+          "fully_driven_states": 434,
+          "attempts": {
+            "NOT": 18,
+            "AND": 171,
+            "NAND": 171,
+            "OR": 171,
+            "NOR": 171
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 2,
+          "deadline_feasible_states": 7391,
+          "fully_driven_states": 7140,
+          "attempts": {
+            "NOT": 434,
+            "AND": 7812,
+            "NAND": 7812,
+            "OR": 7812,
+            "NOR": 7812,
+            "BUS1": 324
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 3504
+        },
+        {
+          "cost": 3,
+          "deadline_feasible_states": 70416,
+          "fully_driven_states": 62710,
+          "attempts": {
+            "NOT": 7391,
+            "AND": 227433,
+            "NAND": 227433,
+            "OR": 227433,
+            "NOR": 227433,
+            "BUS1": 15624,
+            "XOR": 171,
+            "XNOR": 171
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 268482
+        }
+      ],
+      "status": "unsat",
+      "witness": null
+    },
+    {
+      "target": 81,
+      "output": "S2",
+      "source_ids": [
+        4,
+        5,
+        6,
+        7,
+        22,
+        23,
+        24,
+        25,
+        45,
+        50,
+        51,
+        52,
+        54,
+        55,
+        56,
+        76,
+        77
+      ],
+      "private_cost": 5,
+      "replacement_cost": 4,
+      "compact_truth_rows": 48,
+      "delay_limit": 7,
+      "search_seconds": 15.93966139999975,
+      "levels": [
+        {
+          "cost": 0,
+          "deadline_feasible_states": 17,
+          "fully_driven_states": 14,
+          "attempts": {
+            "SOURCE": 17
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 1,
+          "deadline_feasible_states": 346,
+          "fully_driven_states": 346,
+          "attempts": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 2,
+          "deadline_feasible_states": 6142,
+          "fully_driven_states": 5918,
+          "attempts": {
+            "NOT": 346,
+            "AND": 5882,
+            "NAND": 5882,
+            "OR": 5882,
+            "NOR": 5882,
+            "BUS1": 289
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 3,
+          "deadline_feasible_states": 66625,
+          "fully_driven_states": 59794,
+          "attempts": {
+            "NOT": 6142,
+            "AND": 164445,
+            "NAND": 164445,
+            "OR": 164445,
+            "NOR": 164445,
+            "BUS1": 11764,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 4,
+          "deadline_feasible_states": 666373,
+          "fully_driven_states": 509384,
+          "attempts": {
+            "NOT": 66625,
+            "AND": 3257757,
+            "NAND": 3257757,
+            "OR": 3257757,
+            "NOR": 3257757,
+            "BUS1": 328544,
+            "XOR": 5882,
+            "XNOR": 5882,
+            "BUS2": 41905
+          },
+          "conflict_pruned": 31141,
+          "late_pruned": 204240
+        }
+      ],
+      "status": "unsat",
+      "witness": null
+    },
+    {
+      "target": 86,
+      "output": "S4",
+      "source_ids": [
+        8,
+        9,
+        10,
+        11,
+        28,
+        29,
+        30,
+        31,
+        32,
+        56,
+        57,
+        59,
+        60,
+        61,
+        62,
+        82,
+        83
+      ],
+      "private_cost": 5,
+      "replacement_cost": 4,
+      "compact_truth_rows": 48,
+      "delay_limit": 7,
+      "search_seconds": 17.959054499995545,
+      "levels": [
+        {
+          "cost": 0,
+          "deadline_feasible_states": 17,
+          "fully_driven_states": 15,
+          "attempts": {
+            "SOURCE": 17
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 1,
+          "deadline_feasible_states": 382,
+          "fully_driven_states": 382,
+          "attempts": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 2,
+          "deadline_feasible_states": 6825,
+          "fully_driven_states": 6596,
+          "attempts": {
+            "NOT": 382,
+            "AND": 6494,
+            "NAND": 6494,
+            "OR": 6494,
+            "NOR": 6494,
+            "BUS1": 289
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 0
+        },
+        {
+          "cost": 3,
+          "deadline_feasible_states": 71076,
+          "fully_driven_states": 63786,
+          "attempts": {
+            "NOT": 6825,
+            "AND": 189178,
+            "NAND": 189178,
+            "OR": 189178,
+            "NOR": 189178,
+            "BUS1": 12988,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "conflict_pruned": 0,
+          "late_pruned": 44712
+        },
+        {
+          "cost": 4,
+          "deadline_feasible_states": 679765,
+          "fully_driven_states": 513866,
+          "attempts": {
+            "NOT": 71076,
+            "AND": 3815442,
+            "NAND": 3815442,
+            "OR": 3815442,
+            "NOR": 3815442,
+            "BUS1": 377974,
+            "XOR": 6494,
+            "XNOR": 6494,
+            "BUS2": 41905
+          },
+          "conflict_pruned": 29440,
+          "late_pruned": 2056746
+        }
+      ],
+      "status": "unsat",
+      "witness": null
+    }
+  ],
+  "status": "unsat",
+  "scope": "complete exact-cost mixed formula-tree closure over each explicit reviewed local source pool, with packed bits/driven/conflict and deadline<=7",
+  "limitations": [
+    "not an arbitrary internal-fanout DAG closure",
+    "does not change any retained source or cross output boundaries",
+    "not a global 79/7 lower bound"
+  ],
+  "deterministic_payload_sha256": "4eab8130f48372e3f79005d9a33751c9051c9ac47d71895ce3d4ebeea6b1aeba"
+}

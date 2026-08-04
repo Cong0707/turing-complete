@@ -1,0 +1,407 @@
+{
+  "schema": "byte-adder-weighted-cost4-formula-result-audit-v1",
+  "status": "pass",
+  "input": {
+    "dag": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+    "dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "result": ".research/byte_adder_root/weighted-cost4-formula-resub-80d7.json",
+    "result_sha256": "1bb261faa014158475ea6ed2516ea20fa2cdf1f9838622ead5c0c6c9e4cd4c7f"
+  },
+  "full_truth_rows_repartitioned": 131072,
+  "deterministic_payload_sha256": {
+    "recorded": "4eab8130f48372e3f79005d9a33751c9051c9ac47d71895ce3d4ebeea6b1aeba",
+    "recomputed": "4eab8130f48372e3f79005d9a33751c9051c9ac47d71895ce3d4ebeea6b1aeba",
+    "matches": true
+  },
+  "targets": [
+    {
+      "target": 49,
+      "output": "S0",
+      "compact_truth_rows_recomputed": 8,
+      "inconsistent_partition_rows": 0,
+      "public_target_fully_driven_conflict_free": true,
+      "replacement_cost": 3,
+      "final_deadline_feasible_states": 428,
+      "attempt_checks": [
+        {
+          "cost": 0,
+          "expected": {
+            "SOURCE": 6
+          },
+          "observed": {
+            "SOURCE": 6
+          },
+          "matches": true
+        },
+        {
+          "cost": 1,
+          "expected": {
+            "NOT": 6,
+            "AND": 21,
+            "NAND": 21,
+            "OR": 21,
+            "NOR": 21
+          },
+          "observed": {
+            "NOT": 6,
+            "AND": 21,
+            "NAND": 21,
+            "OR": 21,
+            "NOR": 21
+          },
+          "matches": true
+        },
+        {
+          "cost": 2,
+          "expected": {
+            "NOT": 36,
+            "AND": 216,
+            "NAND": 216,
+            "OR": 216,
+            "NOR": 216,
+            "BUS1": 36
+          },
+          "observed": {
+            "NOT": 36,
+            "AND": 216,
+            "NAND": 216,
+            "OR": 216,
+            "NOR": 216,
+            "BUS1": 36
+          },
+          "matches": true
+        },
+        {
+          "cost": 3,
+          "expected": {
+            "NOT": 138,
+            "AND": 1494,
+            "NAND": 1494,
+            "OR": 1494,
+            "NOR": 1494,
+            "BUS1": 432,
+            "XOR": 21,
+            "XNOR": 21
+          },
+          "observed": {
+            "NOT": 138,
+            "AND": 1494,
+            "NAND": 1494,
+            "OR": 1494,
+            "NOR": 1494,
+            "BUS1": 432,
+            "XOR": 21,
+            "XNOR": 21
+          },
+          "matches": true
+        }
+      ],
+      "audit_pass": true
+    },
+    {
+      "target": 73,
+      "output": "S6",
+      "compact_truth_rows_recomputed": 48,
+      "inconsistent_partition_rows": 0,
+      "public_target_fully_driven_conflict_free": true,
+      "replacement_cost": 3,
+      "final_deadline_feasible_states": 70416,
+      "attempt_checks": [
+        {
+          "cost": 0,
+          "expected": {
+            "SOURCE": 18
+          },
+          "observed": {
+            "SOURCE": 18
+          },
+          "matches": true
+        },
+        {
+          "cost": 1,
+          "expected": {
+            "NOT": 18,
+            "AND": 171,
+            "NAND": 171,
+            "OR": 171,
+            "NOR": 171
+          },
+          "observed": {
+            "NOT": 18,
+            "AND": 171,
+            "NAND": 171,
+            "OR": 171,
+            "NOR": 171
+          },
+          "matches": true
+        },
+        {
+          "cost": 2,
+          "expected": {
+            "NOT": 434,
+            "AND": 7812,
+            "NAND": 7812,
+            "OR": 7812,
+            "NOR": 7812,
+            "BUS1": 324
+          },
+          "observed": {
+            "NOT": 434,
+            "AND": 7812,
+            "NAND": 7812,
+            "OR": 7812,
+            "NOR": 7812,
+            "BUS1": 324
+          },
+          "matches": true
+        },
+        {
+          "cost": 3,
+          "expected": {
+            "NOT": 7391,
+            "AND": 227433,
+            "NAND": 227433,
+            "OR": 227433,
+            "NOR": 227433,
+            "BUS1": 15624,
+            "XOR": 171,
+            "XNOR": 171
+          },
+          "observed": {
+            "NOT": 7391,
+            "AND": 227433,
+            "NAND": 227433,
+            "OR": 227433,
+            "NOR": 227433,
+            "BUS1": 15624,
+            "XOR": 171,
+            "XNOR": 171
+          },
+          "matches": true
+        }
+      ],
+      "audit_pass": true
+    },
+    {
+      "target": 81,
+      "output": "S2",
+      "compact_truth_rows_recomputed": 48,
+      "inconsistent_partition_rows": 0,
+      "public_target_fully_driven_conflict_free": true,
+      "replacement_cost": 4,
+      "final_deadline_feasible_states": 666373,
+      "attempt_checks": [
+        {
+          "cost": 0,
+          "expected": {
+            "SOURCE": 17
+          },
+          "observed": {
+            "SOURCE": 17
+          },
+          "matches": true
+        },
+        {
+          "cost": 1,
+          "expected": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "observed": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "matches": true
+        },
+        {
+          "cost": 2,
+          "expected": {
+            "NOT": 346,
+            "AND": 5882,
+            "NAND": 5882,
+            "OR": 5882,
+            "NOR": 5882,
+            "BUS1": 289
+          },
+          "observed": {
+            "NOT": 346,
+            "AND": 5882,
+            "NAND": 5882,
+            "OR": 5882,
+            "NOR": 5882,
+            "BUS1": 289
+          },
+          "matches": true
+        },
+        {
+          "cost": 3,
+          "expected": {
+            "NOT": 6142,
+            "AND": 164445,
+            "NAND": 164445,
+            "OR": 164445,
+            "NOR": 164445,
+            "BUS1": 11764,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "observed": {
+            "NOT": 6142,
+            "AND": 164445,
+            "NAND": 164445,
+            "OR": 164445,
+            "NOR": 164445,
+            "BUS1": 11764,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "matches": true
+        },
+        {
+          "cost": 4,
+          "expected": {
+            "NOT": 66625,
+            "AND": 3257757,
+            "NAND": 3257757,
+            "OR": 3257757,
+            "NOR": 3257757,
+            "BUS1": 328544,
+            "XOR": 5882,
+            "XNOR": 5882,
+            "BUS2": 41905
+          },
+          "observed": {
+            "NOT": 66625,
+            "AND": 3257757,
+            "NAND": 3257757,
+            "OR": 3257757,
+            "NOR": 3257757,
+            "BUS1": 328544,
+            "XOR": 5882,
+            "XNOR": 5882,
+            "BUS2": 41905
+          },
+          "matches": true
+        }
+      ],
+      "audit_pass": true
+    },
+    {
+      "target": 86,
+      "output": "S4",
+      "compact_truth_rows_recomputed": 48,
+      "inconsistent_partition_rows": 0,
+      "public_target_fully_driven_conflict_free": true,
+      "replacement_cost": 4,
+      "final_deadline_feasible_states": 679765,
+      "attempt_checks": [
+        {
+          "cost": 0,
+          "expected": {
+            "SOURCE": 17
+          },
+          "observed": {
+            "SOURCE": 17
+          },
+          "matches": true
+        },
+        {
+          "cost": 1,
+          "expected": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "observed": {
+            "NOT": 17,
+            "AND": 153,
+            "NAND": 153,
+            "OR": 153,
+            "NOR": 153
+          },
+          "matches": true
+        },
+        {
+          "cost": 2,
+          "expected": {
+            "NOT": 382,
+            "AND": 6494,
+            "NAND": 6494,
+            "OR": 6494,
+            "NOR": 6494,
+            "BUS1": 289
+          },
+          "observed": {
+            "NOT": 382,
+            "AND": 6494,
+            "NAND": 6494,
+            "OR": 6494,
+            "NOR": 6494,
+            "BUS1": 289
+          },
+          "matches": true
+        },
+        {
+          "cost": 3,
+          "expected": {
+            "NOT": 6825,
+            "AND": 189178,
+            "NAND": 189178,
+            "OR": 189178,
+            "NOR": 189178,
+            "BUS1": 12988,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "observed": {
+            "NOT": 6825,
+            "AND": 189178,
+            "NAND": 189178,
+            "OR": 189178,
+            "NOR": 189178,
+            "BUS1": 12988,
+            "XOR": 153,
+            "XNOR": 153
+          },
+          "matches": true
+        },
+        {
+          "cost": 4,
+          "expected": {
+            "NOT": 71076,
+            "AND": 3815442,
+            "NAND": 3815442,
+            "OR": 3815442,
+            "NOR": 3815442,
+            "BUS1": 377974,
+            "XOR": 6494,
+            "XNOR": 6494,
+            "BUS2": 41905
+          },
+          "observed": {
+            "NOT": 71076,
+            "AND": 3815442,
+            "NAND": 3815442,
+            "OR": 3815442,
+            "NOR": 3815442,
+            "BUS1": 377974,
+            "XOR": 6494,
+            "XNOR": 6494,
+            "BUS2": 41905
+          },
+          "matches": true
+        }
+      ],
+      "audit_pass": true
+    }
+  ],
+  "errors": []
+}
