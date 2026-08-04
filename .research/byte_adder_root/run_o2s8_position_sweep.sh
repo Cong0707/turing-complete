@@ -16,7 +16,7 @@ AS_KIB=${AS_KIB:-6291456}
 NICE=${NICE:-5}
 
 mkdir -p "$OUT/results" "$OUT/logs" "$OUT/runs"
-: > "$OUT/progress.tsv"
+touch "$OUT/progress.tsv"
 
 declare -A SKIP=(
   [0,1]=1
@@ -116,6 +116,8 @@ running=0
 for pair in "${PAIRS[@]}"; do
   if [[ -f $OUT/SAT_FOUND ]]; then break; fi
   read -r first second <<< "$pair"
+  key="p${first}_${second}"
+  if [[ -f $OUT/runs/${key}.run.json ]]; then continue; fi
   run_one "$first" "$second" &
   running=$((running + 1))
   if [[ $running -ge $MAX_JOBS ]]; then
