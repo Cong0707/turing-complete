@@ -140,7 +140,117 @@ def z_normalized_interleaved_s3_payload() -> dict[str, object]:
     return payload
 
 
+def high30_z_normalized_s3_payload() -> dict[str, object]:
+    payload = z_normalized_interleaved_s3_payload()
+    source_index = {
+        name: index for index, name in enumerate(verifier.SOURCE_NAMES)
+    }
+    source_count = len(verifier.SOURCE_NAMES)
+    network = [
+        {
+            "slot": 0,
+            "source": source_count,
+            "kind": "OR",
+            "left_bus": [source_index["0"]],
+            "right_bus": [source_index["1"]],
+            "cost": 1,
+            "depth_upper_bound": 1,
+        }
+    ]
+    switch_sources = []
+    for index in range(13):
+        slot = index + 1
+        source = source_count + slot
+        enable = "Q3" if index % 2 == 0 else "G3"
+        data_source = source_count if index == 0 else source_index["1"]
+        network.append(
+            {
+                "slot": slot,
+                "source": source,
+                "kind": "SWITCH",
+                "left_bus": [source_index[enable]],
+                "right_bus": [data_source],
+                "cost": 2,
+                "depth_upper_bound": 2,
+            }
+        )
+        switch_sources.append(source)
+    output_source = source_count + len(network)
+    network.append(
+        {
+            "slot": len(network),
+            "source": output_source,
+            "kind": "XOR",
+            "left_bus": switch_sources,
+            "right_bus": [source_index["nC3"]],
+            "cost": 3,
+            "depth_upper_bound": 5,
+        }
+    )
+    payload.update(
+        {
+            "components": len(network),
+            "exact_switches": 13,
+            "exact_xors": 1,
+            "ordinary": 1,
+            "gate_bound": 30,
+            "actual_gate": 30,
+            "fixed_kinds": ["OR", *(["SWITCH"] * 13), "XOR"],
+            "network": network,
+            "output_buses": [[output_source]],
+        }
+    )
+    return payload
+
+
 class InterleavedHigh29ContractTests(unittest.TestCase):
+    def test_high30_d5_fixture_replays_and_strict29_rejects(self):
+        payload = high30_z_normalized_s3_payload()
+        with tempfile.TemporaryDirectory(prefix="high30_contract_", dir=HERE) as tmp:
+            witness = Path(tmp) / "fixture.json"
+            witness.write_text(
+                json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            report = verifier.verify_witness(witness, fixture=True)
+            with self.assertRaisesRegex(RuntimeError, "29-gate budget"):
+                verifier.verify_witness(
+                    witness,
+                    fixture=True,
+                    max_residual_gate=verifier.STRICT_RESIDUAL_GATE_LIMIT,
+                )
+
+        self.assertEqual(report["structure"]["gate"], 30)
+        self.assertEqual(report["structure"]["max_delay"], 5)
+        self.assertEqual(report["fixed_interface"]["residual_gate_budget"], 30)
+        self.assertEqual(report["fixed_interface"]["complete_gate_budget"], 103)
+        self.assertEqual(report["fixed_interface"]["complete_energy_budget"], 515)
+        for replay, rows in (
+            (report["reduced_replay"], 486),
+            (report["full_replay"], 1 << 17),
+        ):
+            self.assertEqual(replay["rows"], rows)
+            self.assertEqual(replay["mismatch_union_count"], 0)
+            self.assertEqual(replay["bus_conflict_count"], 0)
+            self.assertEqual(replay["z_assignment_count_by_output"], [0])
+
+    def test_complete_score_contract_accepts_103_d5_tie(self):
+        for metrics in (
+            {"gate": 102, "delay": 5, "energy": 510},
+            {"gate": 103, "delay": 5, "energy": 515},
+            {"gate": 103, "delay": 4, "energy": 412},
+        ):
+            with self.subTest(metrics=metrics):
+                self.assertTrue(verifier.complete_score_within_contract(metrics))
+        for metrics in (
+            {"gate": 104, "delay": 5, "energy": 520},
+            {"gate": 103, "delay": 6, "energy": 618},
+            {"gate": 103, "delay": 5, "energy": 516},
+            {"gate": 103, "delay": 5, "energy": 514},
+        ):
+            with self.subTest(metrics=metrics):
+                self.assertFalse(verifier.complete_score_within_contract(metrics))
+
     def test_combiner_remaps_interleaved_tail_bus_after_s34(self):
         payload = interleaved_s3_payload()
         free_map = {

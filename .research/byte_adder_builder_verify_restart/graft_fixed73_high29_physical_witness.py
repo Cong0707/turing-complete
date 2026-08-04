@@ -2,14 +2,14 @@
 
 ``build(witness_path)`` is the production entry point consumed by the generic
 Factory-DAG materializer.  It accepts only a complete independently verified
-S3..S7/C8 witness of cost at most 29 and emits a complete Byte Adder DAG only
+S3..S7/C8 witness of cost at most 30 and emits a complete Byte Adder DAG only
 after all 131072 rows, BUS conflicts, public-output Z masks, recursive cost,
 and the five-step deadline pass.
 
 ``build_fixture`` is deliberately separate.  It combines the local S3/S4 and
 S7/C8 SAT fixtures with a known slower S5/S6 formula so that parser, physical
 BUS materialization, v15 generation, and geometry can be regression-tested
-before a complete high29 witness exists.  Fixture output is never eligible as
+before a complete high-residual witness exists.  Fixture output is never eligible as
 a competitive candidate.
 """
 
@@ -518,8 +518,11 @@ def _finalize(
         raise RuntimeError(
             f"complete gate cost {metrics['gate']} exceeds {expected_gate_upper_bound}"
         )
-    if not fixture and (metrics["gate"] > 102 or metrics["delay"] > 5):
-        raise RuntimeError(f"production candidate misses 102/5: {metrics!r}")
+    if not fixture and not verifier.complete_score_within_contract(metrics):
+        raise RuntimeError(
+            "production candidate misses the <=103/5/515 contract: "
+            f"{metrics!r}"
+        )
     if semantic["mismatch_union_count"]:
         raise RuntimeError(f"complete truth mismatch: {semantic!r}")
     if semantic["conflict_assignment_count"]:
@@ -536,7 +539,7 @@ def _finalize(
     ]
     payload = {
         "schema": (
-            "byte-adder-fixed73-high29-physical-graft-dag-v1"
+            "byte-adder-fixed73-high-residual-physical-graft-dag-v2"
             if not fixture
             else "byte-adder-fixed73-physical-graft-regression-fixture-dag-v1"
         ),
@@ -548,6 +551,12 @@ def _finalize(
         ),
         "competitive_contract": not fixture,
         "fixture_only": fixture,
+        "competitive_score_contract": {
+            "max_gate": verifier.MAX_COMPLETE_GATE,
+            "max_delay": verifier.MAX_COMPLETE_DELAY,
+            "max_energy": verifier.MAX_COMPLETE_ENERGY,
+            "energy_equals_gate_times_delay": True,
+        },
         "source_witness": {
             "path": _portable(witness_path),
             "sha256": sha256(witness_bytes).hexdigest(),
@@ -561,9 +570,9 @@ def _finalize(
         "fixed_shell": {
             "low_prefix_metrics": shell.low_metrics,
             "fixed_total_metrics": shell.fixed_metrics,
-            "fixed_low_prefix_gate": 35,
-            "fixed_high_paid_state_gate": 38,
-            "fixed_total_gate": 73,
+            "fixed_low_prefix_gate": verifier.FIXED_LOW_PREFIX_GATE,
+            "fixed_high_paid_state_gate": verifier.FIXED_HIGH_PAID_STATE_GATE,
+            "fixed_total_gate": verifier.FIXED_TOTAL_GATE,
             "boundary_arrivals": shell.boundary_arrivals,
         },
         "ledger": {
@@ -598,7 +607,7 @@ def _finalize(
 
 
 def build(witness_path: Path) -> dict[str, Any]:
-    """Production materializer entry point: complete six-output <=29/D5 only."""
+    """Production materializer entry point: complete six-output <=30/D5 only."""
 
     witness_path = witness_path.resolve()
     review = verifier.verify_witness(witness_path, fixture=False)
@@ -621,10 +630,10 @@ def build(witness_path: Path) -> dict[str, Any]:
         fixture=False,
         extra_certificates=[],
         ledger={
-            "fixed_shell": 73,
+            "fixed_shell": verifier.FIXED_TOTAL_GATE,
             "high_exact_residual": residual_gate,
         },
-        expected_gate_upper_bound=73 + residual_gate,
+        expected_gate_upper_bound=verifier.FIXED_TOTAL_GATE + residual_gate,
     )
 
 

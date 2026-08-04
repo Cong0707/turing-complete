@@ -1,0 +1,168 @@
+{
+  "schema": "fixed73-high-residual-nondeployment-pipeline-v2",
+  "status": "verified",
+  "mode": "fixture",
+  "competitive_contract": false,
+  "competitive_score_contract": {
+    "max_gate": 103,
+    "max_delay": 5,
+    "max_energy": 515,
+    "energy_equals_gate_times_delay": true
+  },
+  "witness": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\tail_s7c8_g16_fixed_kinds_d5.json",
+    "sha256": "bad7c9b909be8faf572c1577632b4f1f39143a92c2763ff7fee96ab2b911db29",
+    "verification": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\witness_verification.json",
+    "verification_sha256": "016971f5f768eda7726918cd2b87dc6a75a2e5f78759c5554a76c0143701d8fe"
+  },
+  "factory_dag": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\complete_factory_dag.json",
+    "sha256": "c32205888260179f06e43fa605a5c26c15dc620641dcb907003cf58769482fa3",
+    "factory_dag_sha256": "509f936c16a64ef2e4de9465b108db33259c3dc755729029324e417d2a36e391",
+    "metrics": {
+      "gate": 113,
+      "delay": 7,
+      "energy": 791,
+      "output_arrivals": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        7,
+        5,
+        5
+      ],
+      "reachable_nodes": 93,
+      "structural_sha256": "24ffc634e32529c60fd584202eb50f7e8b5b102d9c3673b174cf868a99685743"
+    },
+    "semantic": {
+      "truth_table_rows": 131072,
+      "mismatch_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_union_count": 0,
+      "conflict_assignment_count": 0,
+      "z_assignment_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+    },
+    "two_in_process_replays_equal": true
+  },
+  "materialization": {
+    "candidate": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\materialized\\candidate\\circuit.data",
+    "candidate_sha256": "94b79c9424cf8a2e6cd3ea4ca1ccace1962357613eb015691c7ce3926242bb7f",
+    "certificate": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\materialized\\machine_certificate.json",
+    "certificate_sha256": "530577f99a8bc88ca6e9b8be381b14428d00e3c1588226a6abcc2aba2db61db1",
+    "generator_replay_equal": null,
+    "v15_round_trip_verified": true,
+    "deployment": {
+      "requested": false,
+      "repository_candidate": "D:/Develop/Other/turing-complete/examples/byte_adder/candidate/circuit.data",
+      "repository_candidate_written": false,
+      "formal_save": "C:/Users/cong/AppData/Roaming/Turing Complete/schematics/byte_adder/Default/circuit.data",
+      "formal_save_written": false,
+      "backup_created": false,
+      "game_started": false
+    }
+  },
+  "independent_audit": {
+    "report": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\independent_audit.json",
+    "report_sha256": "e5f85931cea859db5c7f704d9eab57337241a2d92607ed616e531115fb45ae04",
+    "proxy": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\independent_semantic_proxy.circuit.data",
+    "proxy_sha256": "777a4591ad260c1c49a51aba82fe3f5eb2cdaa7e67a10b03d4a274971f2f2331",
+    "v15_round_trip_byte_identical": true,
+    "deterministic_rebuild_byte_identical": true,
+    "native_com_add_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "geometry": {
+      "unsupported_component_kind_count": 0,
+      "component_overlap_cell_count": 0,
+      "wire_collision_count": 0,
+      "wire_interior_pin_contact_count": 0,
+      "pin_position_collision_count": 0,
+      "pin_without_wire_endpoint_count": 0,
+      "wire_endpoint_without_pin_count": 0,
+      "wire_self_intersection_count": 0,
+      "wire_zero_length_step_count": 0,
+      "foreign_network_edge_overlap_count": 0
+    },
+    "connectivity": {
+      "unconnected_pin_count": 0,
+      "unsafe_multi_driver_network_count": 0,
+      "undriven_network_count": 0,
+      "sinkless_network_count": 0,
+      "width_mismatch_network_count": 0,
+      "cycle_component_count": 0
+    },
+    "semantic": {
+      "vectors_checked": 131072,
+      "node_replay_count": 93,
+      "node_replay_mismatch_count": 0,
+      "packed_conflict_cases": 0,
+      "sum_correct": true,
+      "carry_correct": true,
+      "primary_output_z_count": 0,
+      "output_arrivals": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        6,
+        7,
+        5,
+        5
+      ],
+      "global_recursive_delay": 7
+    }
+  },
+  "commands": {
+    "materializer": [
+      "D:\\Develop\\Other\\turing-complete\\.venv\\Scripts\\python.exe",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_layout_agent\\materialize_factory_dag.py",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\complete_factory_dag.json",
+      "--output-dir",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\materialized"
+    ],
+    "independent_auditor": [
+      "D:\\Develop\\Other\\turing-complete\\.venv\\Scripts\\python.exe",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\audit_factory_candidate.py",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\complete_factory_dag.json",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\materialized\\candidate\\circuit.data",
+      "--certificate",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\materialized\\machine_certificate.json",
+      "--output",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\independent_audit.json",
+      "--proxy",
+      "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\high30_parameterization_fixture_pipeline\\independent_semantic_proxy.circuit.data"
+    ],
+    "deploy_flag_present": false
+  },
+  "safety": {
+    "research_output_only": true,
+    "repository_candidate_written": false,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "game_started": false,
+    "backup_created": false
+  }
+}
