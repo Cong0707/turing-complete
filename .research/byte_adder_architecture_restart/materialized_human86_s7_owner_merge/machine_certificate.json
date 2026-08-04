@@ -1,0 +1,1551 @@
+{
+  "schema": "turing-complete-byte-adder-factory-dag-materialization-v1",
+  "source_review": {
+    "dag_source": ".research/byte_adder_architecture_restart/byte-adder-human86-s7-owner-merge-full.json",
+    "dag_source_sha256": "f56c0f93055ac76beab9b3f15ed70da792d8eaeda26e196598cf7556de025b4d",
+    "builder": null,
+    "builder_sha256": null,
+    "builder_witness": null,
+    "builder_witness_sha256": null,
+    "generator_replay_equal": null,
+    "factory_dag_sha256": "70c803144d7a0f832569403697d8822ca33b6ac2f9d958149f3c4e0882bb75fa",
+    "factory_dag_hash_form": "sorted-compact",
+    "structural_sha256": "4058b453d2f50f4495392f2bc725d310fb710a234731950c24e9bc637e12ff85",
+    "referenced_certificates": [],
+    "recursive_cost_delay_verified": true,
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+    "z_assignment_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      32768,
+      0,
+      45056,
+      0
+    ],
+    "bus_node_count": 6,
+    "bus_resolved_name_forms": {
+      "bus-short": 6
+    },
+    "tri_state_output_count": 13,
+    "explicit_switch_node_count": 0,
+    "explicit_resolved_bus_count": 0,
+    "delay_node_count": 0,
+    "sequence_domain": null,
+    "full_adder_component_count": 0,
+    "full_adder_tuple_lane_count": 0,
+    "fixed_io_contract": {
+      "game_version": "2.1.292",
+      "scaffold_sha256": "68ac1705305887e1b0bee1012f0f01075e1bd7f970216f37cfe42e7f0a7580e4",
+      "test_si_sha256": "a7829f918476b0bfa7ac3cb16f7610a6fa3734da5c1fb12ab89843a0dbd70c92",
+      "input_ports": [
+        {
+          "label": "Carry in",
+          "kind": 61,
+          "width": 1,
+          "dynamic_enable": false
+        },
+        {
+          "label": "A",
+          "kind": 61,
+          "width": 8,
+          "dynamic_enable": false
+        },
+        {
+          "label": "B",
+          "kind": 61,
+          "width": 8,
+          "dynamic_enable": false
+        }
+      ],
+      "output_ports": [
+        {
+          "label": "Output",
+          "kind": 69,
+          "width": 8,
+          "dynamic_enable": false
+        },
+        {
+          "label": "Carry out",
+          "kind": 69,
+          "width": 1,
+          "dynamic_enable": false
+        }
+      ],
+      "active_scalar_inputs": 17,
+      "required_fully_driven_scalar_outputs": 8,
+      "sum_u8_must_be_active": true,
+      "sum_scalar_inputs_to_maker8_may_be_z": true,
+      "carry_out_is_z_read": false,
+      "carry_out_z_value": 0,
+      "carry_out_expected_one_must_be_active_one": true,
+      "carry_out_expected_zero_accepts_active_zero_or_z": true,
+      "carry_out_conflict_forbidden": true,
+      "output_z_is_hard_failure": true,
+      "carry_out_z_is_hard_failure": false,
+      "output_contract_certificate": {
+        "path": ".research/byte_adder_builder_verify_restart/byte_adder_output_contract_2_1_292.json",
+        "sha256": "c666099b5f41fd1f1dc3832267a7e65f88d5ee053c38ef013bcc83598f7d7ebc",
+        "artifact_sha256": "8a7a69dd5683cc321030ecfd1b1ee55111230c84e8383792c6bd8b1aac2d278f"
+      }
+    },
+    "maker_node_count": 0,
+    "splitter_lane_node_count": 0,
+    "splitter_component_count": 0,
+    "splitter_owners": {}
+  },
+  "serialized_score": {
+    "gate": 86,
+    "delay": 6,
+    "energy": 516
+  },
+  "candidate_sha256": "5ef71e14bdf803390c3a98bf1317e00f6d0c13f87b8fc87d6e0b950fd7eda36b",
+  "component_count": 79,
+  "wire_count": 161,
+  "component_kind_counts": {
+    "4": 10,
+    "6": 16,
+    "7": 14,
+    "9": 17,
+    "10": 1,
+    "12": 13,
+    "16": 1,
+    "17": 2,
+    "61": 3,
+    "69": 2
+  },
+  "reviewed_gate": 86,
+  "native_com_add_count": 0,
+  "connectivity": {
+    "unconnected_pin_count": 0,
+    "intentional_unused_multi_output_pin_count": 0,
+    "reusable_unrepresented_output_count": 0,
+    "reusable_unrepresented_outputs": [],
+    "intentional_unused_splitter_pin_count": 0,
+    "intentional_unused_full_adder_pin_count": 0,
+    "unexpected_unconnected_pin_count": 0,
+    "unsafe_multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "cycle_component_count": 0,
+    "topology_only_unit_depth": 8,
+    "topology_depth_note": "non-Z-aware graph depth; packed tri-state depth is authoritative"
+  },
+  "geometry": {
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": 0,
+    "wire_collisions": 0,
+    "reviewed_kind15_output_lead_contacts": 0,
+    "wire_interior_pin_contacts": 0
+  },
+  "resolved_networks": {
+    "physical_resolved_network_count": 84,
+    "intended_resolved_network_count": 84,
+    "mixed_intended_physical_network_count": 0,
+    "fragmented_intended_network_count": 0,
+    "tri_state_output_pin_count": 13,
+    "tri_state_outputs_with_exactly_one_resolved_network": 13,
+    "tri_state_assignments": [
+      {
+        "component_index": 7,
+        "permanent_id": 7520651805807098628,
+        "pin": "out",
+        "position": [
+          130,
+          -414
+        ],
+        "resolved_network": "signal:18",
+        "incident_wire_count": 3
+      },
+      {
+        "component_index": 8,
+        "permanent_id": 5509890172156556446,
+        "pin": "out",
+        "position": [
+          170,
+          -402
+        ],
+        "resolved_network": "signal:18",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 16,
+        "permanent_id": 3766343279918173223,
+        "pin": "out",
+        "position": [
+          490,
+          -306
+        ],
+        "resolved_network": "signal:26",
+        "incident_wire_count": 6
+      },
+      {
+        "component_index": 17,
+        "permanent_id": 2088478715831332581,
+        "pin": "out",
+        "position": [
+          530,
+          -294
+        ],
+        "resolved_network": "signal:26",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 18,
+        "permanent_id": 4686997988908633323,
+        "pin": "out",
+        "position": [
+          570,
+          -282
+        ],
+        "resolved_network": "signal:26",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 23,
+        "permanent_id": 8704810861875451837,
+        "pin": "out",
+        "position": [
+          770,
+          -222
+        ],
+        "resolved_network": "signal:31",
+        "incident_wire_count": 3
+      },
+      {
+        "component_index": 24,
+        "permanent_id": 7924391599561813430,
+        "pin": "out",
+        "position": [
+          810,
+          -210
+        ],
+        "resolved_network": "signal:31",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 63,
+        "permanent_id": 1738390540985058053,
+        "pin": "out",
+        "position": [
+          2370,
+          258
+        ],
+        "resolved_network": "signal:70",
+        "incident_wire_count": 2
+      },
+      {
+        "component_index": 64,
+        "permanent_id": 4601938464093052044,
+        "pin": "out",
+        "position": [
+          2410,
+          270
+        ],
+        "resolved_network": "signal:70",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 65,
+        "permanent_id": 4499515393599063309,
+        "pin": "out",
+        "position": [
+          2450,
+          282
+        ],
+        "resolved_network": "signal:71",
+        "incident_wire_count": 4
+      },
+      {
+        "component_index": 66,
+        "permanent_id": 2219953394869957245,
+        "pin": "out",
+        "position": [
+          2490,
+          294
+        ],
+        "resolved_network": "signal:71",
+        "incident_wire_count": 1
+      },
+      {
+        "component_index": 76,
+        "permanent_id": 6951391097477828225,
+        "pin": "out",
+        "position": [
+          2890,
+          414
+        ],
+        "resolved_network": "signal:81",
+        "incident_wire_count": 2
+      },
+      {
+        "component_index": 77,
+        "permanent_id": 3816080279632125307,
+        "pin": "out",
+        "position": [
+          2930,
+          426
+        ],
+        "resolved_network": "signal:81",
+        "incident_wire_count": 1
+      }
+    ],
+    "adversarial_foreign_label_rejected": true
+  },
+  "explicit_partial_drivers": {
+    "count": 0,
+    "word_shared_enable_violation_count": 0,
+    "drivers": []
+  },
+  "fixed_io_contract": {
+    "game_version": "2.1.292",
+    "scaffold_sha256": "68ac1705305887e1b0bee1012f0f01075e1bd7f970216f37cfe42e7f0a7580e4",
+    "test_si_sha256": "a7829f918476b0bfa7ac3cb16f7610a6fa3734da5c1fb12ab89843a0dbd70c92",
+    "input_ports": [
+      {
+        "label": "Carry in",
+        "kind": 61,
+        "width": 1,
+        "dynamic_enable": false
+      },
+      {
+        "label": "A",
+        "kind": 61,
+        "width": 8,
+        "dynamic_enable": false
+      },
+      {
+        "label": "B",
+        "kind": 61,
+        "width": 8,
+        "dynamic_enable": false
+      }
+    ],
+    "output_ports": [
+      {
+        "label": "Output",
+        "kind": 69,
+        "width": 8,
+        "dynamic_enable": false
+      },
+      {
+        "label": "Carry out",
+        "kind": 69,
+        "width": 1,
+        "dynamic_enable": false
+      }
+    ],
+    "active_scalar_inputs": 17,
+    "required_fully_driven_scalar_outputs": 8,
+    "sum_u8_must_be_active": true,
+    "sum_scalar_inputs_to_maker8_may_be_z": true,
+    "carry_out_is_z_read": false,
+    "carry_out_z_value": 0,
+    "carry_out_expected_one_must_be_active_one": true,
+    "carry_out_expected_zero_accepts_active_zero_or_z": true,
+    "carry_out_conflict_forbidden": true,
+    "output_z_is_hard_failure": true,
+    "carry_out_z_is_hard_failure": false,
+    "output_contract_certificate": {
+      "path": ".research/byte_adder_builder_verify_restart/byte_adder_output_contract_2_1_292.json",
+      "sha256": "c666099b5f41fd1f1dc3832267a7e65f88d5ee053c38ef013bcc83598f7d7ebc",
+      "artifact_sha256": "8a7a69dd5683cc321030ecfd1b1ee55111230c84e8383792c6bd8b1aac2d278f"
+    },
+    "candidate_wrappers_byte_identical_to_scaffold": true,
+    "input_scalar_lanes_active_at_arrival_zero": 17,
+    "sum_output_z_assignment_count": 0,
+    "carry_output_z_assignment_count": 0,
+    "carry_output_z_as_zero_verified": true
+  },
+  "primitive_input_arcs": {
+    "count": 152,
+    "missing_count": 0,
+    "arcs": [
+      {
+        "component_index": 5,
+        "kind": 17,
+        "pin": "in",
+        "width": 8,
+        "network": 0
+      },
+      {
+        "component_index": 6,
+        "kind": 17,
+        "pin": "in",
+        "width": 8,
+        "network": 1
+      },
+      {
+        "component_index": 7,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 158
+      },
+      {
+        "component_index": 7,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 20
+      },
+      {
+        "component_index": 8,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 3
+      },
+      {
+        "component_index": 8,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 20
+      },
+      {
+        "component_index": 9,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 6
+      },
+      {
+        "component_index": 9,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 28
+      },
+      {
+        "component_index": 10,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 6
+      },
+      {
+        "component_index": 10,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 28
+      },
+      {
+        "component_index": 11,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 158
+      },
+      {
+        "component_index": 11,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 3
+      },
+      {
+        "component_index": 12,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 158
+      },
+      {
+        "component_index": 12,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 3
+      },
+      {
+        "component_index": 13,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 37
+      },
+      {
+        "component_index": 13,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 34
+      },
+      {
+        "component_index": 14,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 8
+      },
+      {
+        "component_index": 14,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 55
+      },
+      {
+        "component_index": 15,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 8
+      },
+      {
+        "component_index": 15,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 55
+      },
+      {
+        "component_index": 16,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 23
+      },
+      {
+        "component_index": 16,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 30
+      },
+      {
+        "component_index": 17,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 26
+      },
+      {
+        "component_index": 17,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 30
+      },
+      {
+        "component_index": 18,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 34
+      },
+      {
+        "component_index": 18,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 30
+      },
+      {
+        "component_index": 19,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 39
+      },
+      {
+        "component_index": 19,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 41
+      },
+      {
+        "component_index": 20,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 44
+      },
+      {
+        "component_index": 20,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 50
+      },
+      {
+        "component_index": 21,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 10
+      },
+      {
+        "component_index": 21,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 79
+      },
+      {
+        "component_index": 22,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 39
+      },
+      {
+        "component_index": 22,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 53
+      },
+      {
+        "component_index": 23,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 44
+      },
+      {
+        "component_index": 23,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 57
+      },
+      {
+        "component_index": 24,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 41
+      },
+      {
+        "component_index": 24,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 57
+      },
+      {
+        "component_index": 25,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 14
+      },
+      {
+        "component_index": 25,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 120
+      },
+      {
+        "component_index": 26,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 16
+      },
+      {
+        "component_index": 26,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 135
+      },
+      {
+        "component_index": 27,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 18
+      },
+      {
+        "component_index": 27,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 153
+      },
+      {
+        "component_index": 28,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 14
+      },
+      {
+        "component_index": 28,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 120
+      },
+      {
+        "component_index": 29,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 69
+      },
+      {
+        "component_index": 29,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 62
+      },
+      {
+        "component_index": 30,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 12
+      },
+      {
+        "component_index": 30,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 99
+      },
+      {
+        "component_index": 31,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 44
+      },
+      {
+        "component_index": 31,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 50
+      },
+      {
+        "component_index": 32,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 18
+      },
+      {
+        "component_index": 32,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 153
+      },
+      {
+        "component_index": 33,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 34
+      },
+      {
+        "component_index": 33,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 23
+      },
+      {
+        "component_index": 34,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 26
+      },
+      {
+        "component_index": 34,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 81
+      },
+      {
+        "component_index": 35,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 83
+      },
+      {
+        "component_index": 35,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 44
+      },
+      {
+        "component_index": 36,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 81
+      },
+      {
+        "component_index": 36,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 30
+      },
+      {
+        "component_index": 37,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 67
+      },
+      {
+        "component_index": 37,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 65
+      },
+      {
+        "component_index": 38,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 16
+      },
+      {
+        "component_index": 38,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 135
+      },
+      {
+        "component_index": 39,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 77
+      },
+      {
+        "component_index": 39,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 67
+      },
+      {
+        "component_index": 40,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 87
+      },
+      {
+        "component_index": 40,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 90
+      },
+      {
+        "component_index": 41,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 10
+      },
+      {
+        "component_index": 41,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 79
+      },
+      {
+        "component_index": 42,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 73
+      },
+      {
+        "component_index": 42,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 62
+      },
+      {
+        "component_index": 43,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 12
+      },
+      {
+        "component_index": 43,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 99
+      },
+      {
+        "component_index": 44,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 69
+      },
+      {
+        "component_index": 44,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 101
+      },
+      {
+        "component_index": 45,
+        "kind": 10,
+        "pin": "in0",
+        "width": 1,
+        "network": 20
+      },
+      {
+        "component_index": 45,
+        "kind": 10,
+        "pin": "in1",
+        "width": 1,
+        "network": 38
+      },
+      {
+        "component_index": 46,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 85
+      },
+      {
+        "component_index": 46,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 84
+      },
+      {
+        "component_index": 47,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 52
+      },
+      {
+        "component_index": 47,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 75
+      },
+      {
+        "component_index": 48,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 53
+      },
+      {
+        "component_index": 48,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 94
+      },
+      {
+        "component_index": 49,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 101
+      },
+      {
+        "component_index": 49,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 73
+      },
+      {
+        "component_index": 50,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 94
+      },
+      {
+        "component_index": 50,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 59
+      },
+      {
+        "component_index": 51,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 87
+      },
+      {
+        "component_index": 51,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 65
+      },
+      {
+        "component_index": 52,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 113
+      },
+      {
+        "component_index": 52,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 111
+      },
+      {
+        "component_index": 53,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 97
+      },
+      {
+        "component_index": 53,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 71
+      },
+      {
+        "component_index": 54,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 71
+      },
+      {
+        "component_index": 54,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 101
+      },
+      {
+        "component_index": 55,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 75
+      },
+      {
+        "component_index": 55,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 41
+      },
+      {
+        "component_index": 56,
+        "kind": 4,
+        "pin": "in0",
+        "width": 1,
+        "network": 87
+      },
+      {
+        "component_index": 56,
+        "kind": 4,
+        "pin": "in1",
+        "width": 1,
+        "network": 90
+      },
+      {
+        "component_index": 57,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 126
+      },
+      {
+        "component_index": 57,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 77
+      },
+      {
+        "component_index": 58,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 113
+      },
+      {
+        "component_index": 58,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 101
+      },
+      {
+        "component_index": 59,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 62
+      },
+      {
+        "component_index": 59,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 105
+      },
+      {
+        "component_index": 60,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 97
+      },
+      {
+        "component_index": 60,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 94
+      },
+      {
+        "component_index": 61,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 111
+      },
+      {
+        "component_index": 61,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 113
+      },
+      {
+        "component_index": 62,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 118
+      },
+      {
+        "component_index": 62,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 133
+      },
+      {
+        "component_index": 63,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 122
+      },
+      {
+        "component_index": 63,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 129
+      },
+      {
+        "component_index": 64,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 123
+      },
+      {
+        "component_index": 64,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 118
+      },
+      {
+        "component_index": 65,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 59
+      },
+      {
+        "component_index": 65,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 130
+      },
+      {
+        "component_index": 66,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 132
+      },
+      {
+        "component_index": 66,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 130
+      },
+      {
+        "component_index": 67,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 139
+      },
+      {
+        "component_index": 67,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 116
+      },
+      {
+        "component_index": 68,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 116
+      },
+      {
+        "component_index": 68,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 139
+      },
+      {
+        "component_index": 69,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 109
+      },
+      {
+        "component_index": 69,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 124
+      },
+      {
+        "component_index": 70,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 124
+      },
+      {
+        "component_index": 70,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 109
+      },
+      {
+        "component_index": 71,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 139
+      },
+      {
+        "component_index": 71,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 86
+      },
+      {
+        "component_index": 72,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 147
+      },
+      {
+        "component_index": 72,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 146
+      },
+      {
+        "component_index": 73,
+        "kind": 6,
+        "pin": "in0",
+        "width": 1,
+        "network": 143
+      },
+      {
+        "component_index": 73,
+        "kind": 6,
+        "pin": "in1",
+        "width": 1,
+        "network": 145
+      },
+      {
+        "component_index": 74,
+        "kind": 9,
+        "pin": "in0",
+        "width": 1,
+        "network": 148
+      },
+      {
+        "component_index": 74,
+        "kind": 9,
+        "pin": "in1",
+        "width": 1,
+        "network": 128
+      },
+      {
+        "component_index": 75,
+        "kind": 7,
+        "pin": "in0",
+        "width": 1,
+        "network": 93
+      },
+      {
+        "component_index": 75,
+        "kind": 7,
+        "pin": "in1",
+        "width": 1,
+        "network": 126
+      },
+      {
+        "component_index": 76,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 155
+      },
+      {
+        "component_index": 76,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 143
+      },
+      {
+        "component_index": 77,
+        "kind": 12,
+        "pin": "enable",
+        "width": 1,
+        "network": 148
+      },
+      {
+        "component_index": 77,
+        "kind": 12,
+        "pin": "in",
+        "width": 1,
+        "network": 90
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in0",
+        "width": 1,
+        "network": 106
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in1",
+        "width": 1,
+        "network": 107
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in2",
+        "width": 1,
+        "network": 108
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in3",
+        "width": 1,
+        "network": 150
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in4",
+        "width": 1,
+        "network": 134
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in5",
+        "width": 1,
+        "network": 137
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in6",
+        "width": 1,
+        "network": 151
+      },
+      {
+        "component_index": 78,
+        "kind": 16,
+        "pin": "in7",
+        "width": 1,
+        "network": 156
+      }
+    ]
+  },
+  "full_adder_tuple_owners": {
+    "component_count": 0,
+    "mixed_frontier_row_count": 0,
+    "owners": []
+  },
+  "splitter_owner_barriers": {
+    "component_count": 0,
+    "represented_lane_count": 0,
+    "distinct_lane_network_count": 0,
+    "alias_violation_count": 0,
+    "owners": []
+  },
+  "maker_normalizers": {
+    "active_clone_count": 0,
+    "raw_and_clone_networks_distinct": true,
+    "clones": []
+  },
+  "semantic": {
+    "vectors_checked": 131072,
+    "node_replay_count": 81,
+    "node_replay_mismatch_count": 0,
+    "bus_nodes": [
+      {
+        "node": 18,
+        "op": "BUS",
+        "owner": "bus_18",
+        "width": 1,
+        "driver_count": 2,
+        "arrival": 1,
+        "z_assignment_count": 32768,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 26,
+        "op": "BUS",
+        "owner": "bus_26",
+        "width": 1,
+        "driver_count": 3,
+        "arrival": 2,
+        "z_assignment_count": 49152,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 31,
+        "op": "BUS",
+        "owner": "bus_31",
+        "width": 1,
+        "driver_count": 2,
+        "arrival": 3,
+        "z_assignment_count": 49152,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 70,
+        "op": "BUS",
+        "owner": "bus_70",
+        "width": 1,
+        "driver_count": 2,
+        "arrival": 6,
+        "z_assignment_count": 32768,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 71,
+        "op": "BUS",
+        "owner": "bus_71",
+        "width": 1,
+        "driver_count": 2,
+        "arrival": 4,
+        "z_assignment_count": 36864,
+        "conflict_assignment_count": 0
+      },
+      {
+        "node": 81,
+        "op": "BUS",
+        "owner": "bus_81",
+        "width": 1,
+        "driver_count": 2,
+        "arrival": 6,
+        "z_assignment_count": 45056,
+        "conflict_assignment_count": 0
+      }
+    ],
+    "sequence_domain": null,
+    "delay_nodes": [],
+    "packed_conflict_cases": 0,
+    "output_arrivals": [
+      4,
+      5,
+      4,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "global_depth": 6,
+    "sum_depth": 6,
+    "carry_depth": 6,
+    "sum_output_z_assignment_count": 0,
+    "carry_output_z_assignment_count": 0,
+    "carry_output_z_as_zero_verified": true,
+    "sum_correct": true,
+    "carry_correct": true
+  },
+  "v15_round_trip_verified": true,
+  "research_candidate": "D:/Develop/Other/turing-complete/.research/byte_adder_architecture_restart/materialized_human86_s7_owner_merge/candidate/circuit.data",
+  "research_candidate_matches": true,
+  "deployment": {
+    "requested": false,
+    "repository_candidate": "D:/Develop/Other/turing-complete/examples/byte_adder/candidate/circuit.data",
+    "repository_candidate_written": false,
+    "formal_save": "C:/Users/cong/AppData/Roaming/Turing Complete/schematics/byte_adder/Default/circuit.data",
+    "formal_save_written": false,
+    "backup_created": false,
+    "game_started": false
+  }
+}

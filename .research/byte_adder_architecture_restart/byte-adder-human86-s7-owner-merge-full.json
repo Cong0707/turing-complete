@@ -1,0 +1,1177 @@
+{
+  "schema": "byte-adder-human86-s7-owner-merge-v1",
+  "status": "sat",
+  "source": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_architecture_restart\\source_human87\\circuit.data",
+    "sha256": "a0d2928aa5fe5a747637c3a6955345bb18dfccc88c7824bb8514ee2f5c54f29c"
+  },
+  "rewrite": {
+    "removed": "one S7 Bit Switch",
+    "added": "OR(n278, AND(Q6,P7))",
+    "old_s7_owner_cost": 6,
+    "new_s7_owner_plus_merge_cost": 5
+  },
+  "metrics": {
+    "gate": 86,
+    "delay": 6,
+    "energy": 516,
+    "output_arrivals": [
+      4,
+      5,
+      4,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "reachable_nodes": 81,
+    "structural_sha256": "4058b453d2f50f4495392f2bc725d310fb710a234731950c24e9bc637e12ff85"
+  },
+  "semantic": {
+    "truth_table_rows": 131072,
+    "mismatch_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mismatch_union_count": 0,
+    "conflict_assignment_count": 0,
+    "z_assignment_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      32768,
+      0,
+      45056,
+      0
+    ],
+    "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+    "sequence_domain": null
+  },
+  "factory_dag": {
+    "outputs": [
+      52,
+      53,
+      54,
+      77,
+      69,
+      70,
+      78,
+      81,
+      79
+    ],
+    "nodes": [
+      {
+        "id": 1,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a0"
+      },
+      {
+        "id": 2,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a1"
+      },
+      {
+        "id": 3,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a2"
+      },
+      {
+        "id": 4,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a3"
+      },
+      {
+        "id": 5,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a4"
+      },
+      {
+        "id": 6,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a5"
+      },
+      {
+        "id": 7,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a6"
+      },
+      {
+        "id": 8,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "a7"
+      },
+      {
+        "id": 9,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b0"
+      },
+      {
+        "id": 10,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b1"
+      },
+      {
+        "id": 11,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b2"
+      },
+      {
+        "id": 12,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b3"
+      },
+      {
+        "id": 13,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b4"
+      },
+      {
+        "id": 14,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b5"
+      },
+      {
+        "id": 15,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b6"
+      },
+      {
+        "id": 16,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "b7"
+      },
+      {
+        "id": 17,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "cin"
+      },
+      {
+        "id": 18,
+        "op": "BUS",
+        "args": [
+          9,
+          17,
+          1,
+          17
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_18",
+        "drivers": [
+          {
+            "enable": 9,
+            "data": 17,
+            "owner": "bus_18"
+          },
+          {
+            "enable": 1,
+            "data": 17,
+            "owner": "bus_18"
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "op": "AND",
+        "args": [
+          10,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 20,
+        "op": "OR",
+        "args": [
+          10,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 21,
+        "op": "AND",
+        "args": [
+          9,
+          1
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 22,
+        "op": "NOR",
+        "args": [
+          9,
+          1
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 23,
+        "op": "NOR",
+        "args": [
+          22,
+          21
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 24,
+        "op": "NOR",
+        "args": [
+          11,
+          3
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 25,
+        "op": "AND",
+        "args": [
+          11,
+          3
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 26,
+        "op": "BUS",
+        "args": [
+          18,
+          20,
+          19,
+          20,
+          21,
+          20
+        ],
+        "cost": 6,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_26",
+        "drivers": [
+          {
+            "enable": 18,
+            "data": 20,
+            "owner": "bus_26"
+          },
+          {
+            "enable": 19,
+            "data": 20,
+            "owner": "bus_26"
+          },
+          {
+            "enable": 21,
+            "data": 20,
+            "owner": "bus_26"
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "op": "NOR",
+        "args": [
+          24,
+          25
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 28,
+        "op": "NOR",
+        "args": [
+          26,
+          27
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 29,
+        "op": "NOR",
+        "args": [
+          12,
+          4
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 30,
+        "op": "NOR",
+        "args": [
+          24,
+          29
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 31,
+        "op": "BUS",
+        "args": [
+          26,
+          30,
+          25,
+          30
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_31",
+        "drivers": [
+          {
+            "enable": 26,
+            "data": 30,
+            "owner": "bus_31"
+          },
+          {
+            "enable": 25,
+            "data": 30,
+            "owner": "bus_31"
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "op": "NAND",
+        "args": [
+          14,
+          6
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 33,
+        "op": "AND",
+        "args": [
+          15,
+          7
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 34,
+        "op": "AND",
+        "args": [
+          16,
+          8
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 35,
+        "op": "OR",
+        "args": [
+          14,
+          6
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 36,
+        "op": "NAND",
+        "args": [
+          35,
+          32
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 37,
+        "op": "NAND",
+        "args": [
+          13,
+          5
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 38,
+        "op": "AND",
+        "args": [
+          26,
+          27
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 39,
+        "op": "NOR",
+        "args": [
+          16,
+          8
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 40,
+        "op": "OR",
+        "args": [
+          21,
+          18
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 41,
+        "op": "NAND",
+        "args": [
+          19,
+          40
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 42,
+        "op": "NAND",
+        "args": [
+          41,
+          26
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 43,
+        "op": "OR",
+        "args": [
+          40,
+          20
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 44,
+        "op": "OR",
+        "args": [
+          34,
+          33
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 45,
+        "op": "NOR",
+        "args": [
+          15,
+          7
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 46,
+        "op": "NOR",
+        "args": [
+          39,
+          34
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 47,
+        "op": "NOR",
+        "args": [
+          45,
+          46
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 48,
+        "op": "AND",
+        "args": [
+          12,
+          4
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 49,
+        "op": "NAND",
+        "args": [
+          37,
+          32
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 50,
+        "op": "OR",
+        "args": [
+          13,
+          5
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 51,
+        "op": "NAND",
+        "args": [
+          35,
+          50
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 52,
+        "op": "XOR",
+        "args": [
+          17,
+          23
+        ],
+        "cost": 3,
+        "step_delay": 2,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 53,
+        "op": "AND",
+        "args": [
+          43,
+          42
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 54,
+        "op": "NOR",
+        "args": [
+          28,
+          38
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 55,
+        "op": "NOR",
+        "args": [
+          29,
+          48
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 56,
+        "op": "NAND",
+        "args": [
+          50,
+          37
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 57,
+        "op": "OR",
+        "args": [
+          48,
+          31
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 58,
+        "op": "OR",
+        "args": [
+          45,
+          33
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 59,
+        "op": "OR",
+        "args": [
+          57,
+          56
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 60,
+        "op": "NOR",
+        "args": [
+          49,
+          36
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 61,
+        "op": "AND",
+        "args": [
+          36,
+          50
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 62,
+        "op": "NOR",
+        "args": [
+          38,
+          25
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 63,
+        "op": "AND",
+        "args": [
+          45,
+          46
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 64,
+        "op": "OR",
+        "args": [
+          63,
+          39
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 65,
+        "op": "NAND",
+        "args": [
+          57,
+          50
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 66,
+        "op": "NAND",
+        "args": [
+          32,
+          51
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 67,
+        "op": "OR",
+        "args": [
+          49,
+          48
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 68,
+        "op": "NAND",
+        "args": [
+          56,
+          57
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 69,
+        "op": "NAND",
+        "args": [
+          59,
+          68
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 70,
+        "op": "BUS",
+        "args": [
+          60,
+          65,
+          61,
+          59
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_70",
+        "drivers": [
+          {
+            "enable": 60,
+            "data": 65,
+            "owner": "bus_70"
+          },
+          {
+            "enable": 61,
+            "data": 59,
+            "owner": "bus_70"
+          }
+        ]
+      },
+      {
+        "id": 71,
+        "op": "BUS",
+        "args": [
+          31,
+          66,
+          67,
+          66
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": true,
+        "label": "",
+        "resolved_network": "bus_71",
+        "drivers": [
+          {
+            "enable": 31,
+            "data": 66,
+            "owner": "bus_71"
+          },
+          {
+            "enable": 67,
+            "data": 66,
+            "owner": "bus_71"
+          }
+        ]
+      },
+      {
+        "id": 72,
+        "op": "OR",
+        "args": [
+          71,
+          58
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 73,
+        "op": "NAND",
+        "args": [
+          58,
+          71
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 74,
+        "op": "NAND",
+        "args": [
+          55,
+          62
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 75,
+        "op": "OR",
+        "args": [
+          62,
+          55
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 76,
+        "op": "NOR",
+        "args": [
+          71,
+          44
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 5,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 77,
+        "op": "NAND",
+        "args": [
+          75,
+          74
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 78,
+        "op": "NAND",
+        "args": [
+          72,
+          73
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 79,
+        "op": "NOR",
+        "args": [
+          76,
+          64
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": false,
+        "label": ""
+      },
+      {
+        "id": 80,
+        "op": "OR",
+        "args": [
+          47,
+          63
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 4,
+        "may_z": false,
+        "label": "human86.s7_merged_enable"
+      },
+      {
+        "id": 81,
+        "op": "BUS",
+        "args": [
+          80,
+          72,
+          76,
+          46
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 6,
+        "may_z": true,
+        "label": "S7",
+        "resolved_network": "bus_81",
+        "drivers": [
+          {
+            "enable": 80,
+            "data": 72,
+            "owner": "bus_81"
+          },
+          {
+            "enable": 76,
+            "data": 46,
+            "owner": "bus_81"
+          }
+        ]
+      }
+    ],
+    "live_node_count": 81,
+    "sha256": "70c803144d7a0f832569403697d8822ca33b6ac2f9d958149f3c4e0882bb75fa"
+  }
+}

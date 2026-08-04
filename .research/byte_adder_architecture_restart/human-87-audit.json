@@ -1,0 +1,6348 @@
+{
+  "schema": "byte-adder-human-architecture-audit-v1",
+  "source": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_architecture_restart\\source_human87\\circuit.data",
+    "bytes": 4190,
+    "sha256": "A0D2928AA5FE5A747637C3A6955345BB18DFCCC88C7824BB8514EE2F5C54F29C"
+  },
+  "declared": {
+    "gate": 87,
+    "delay": 6,
+    "energy": 522
+  },
+  "recomputed": {
+    "gate": 87,
+    "delay": 6,
+    "conflict_rows": 0
+  },
+  "component_count": 81,
+  "wire_count": 336,
+  "outputs": [
+    {
+      "label": "Output",
+      "pin": "value",
+      "network": 74,
+      "arrival": 6,
+      "drivers": [
+        {
+          "component": 13,
+          "kind": "MAKER8",
+          "pin": "out"
+        }
+      ]
+    },
+    {
+      "label": "Carry out",
+      "pin": "value",
+      "network": 239,
+      "arrival": 6,
+      "drivers": [
+        {
+          "component": 75,
+          "kind": "NOR",
+          "pin": "out"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "index": 5,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        23,
+        -39
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 36,
+          "labels": [
+            "G0"
+          ],
+          "drivers": [
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 3,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 15,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 22,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 245,
+          "labels": [
+            "C1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 11,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 12,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 6,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "position": [
+        -50,
+        -46
+      ],
+      "cost": 0,
+      "arrival": 0,
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 4,
+          "labels": [
+            "A0"
+          ],
+          "drivers": [
+            {
+              "component": 2,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 2,
+          "labels": [
+            "A0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 22,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 8,
+          "labels": [
+            "A1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 33,
+          "labels": [
+            "A2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out3",
+          "network": 42,
+          "labels": [
+            "A3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out4",
+          "network": 1,
+          "labels": [
+            "A4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out5",
+          "network": 9,
+          "labels": [
+            "A5"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out6",
+          "network": 27,
+          "labels": [
+            "A6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out7",
+          "network": 50,
+          "labels": [
+            "A7"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ],
+          "sinks": []
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 7,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        -32,
+        -40
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 31,
+          "labels": [
+            "B1"
+          ],
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 8,
+          "labels": [
+            "A1"
+          ],
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 19,
+          "labels": [
+            "V1"
+          ],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 11,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 8,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "position": [
+        -39,
+        -46
+      ],
+      "cost": 0,
+      "arrival": 0,
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 75,
+          "labels": [
+            "B0"
+          ],
+          "drivers": [
+            {
+              "component": 3,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 44,
+          "labels": [
+            "B0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 15,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 31,
+          "labels": [
+            "B1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 28,
+          "labels": [
+            "B2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out3",
+          "network": 0,
+          "labels": [
+            "B3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out4",
+          "network": 21,
+          "labels": [
+            "B4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out5",
+          "network": 17,
+          "labels": [
+            "B5"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out6",
+          "network": 48,
+          "labels": [
+            "B6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ],
+          "sinks": []
+        },
+        {
+          "pin": "out7",
+          "network": 35,
+          "labels": [
+            "B7"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ],
+          "sinks": []
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 9,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        12,
+        -44
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 13,
+          "labels": [
+            "B0"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 14,
+          "labels": [
+            "A0"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 40,
+          "labels": [
+            "Q0"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 9,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 10,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 10,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        22,
+        -43
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 40,
+          "labels": [
+            "Q0"
+          ],
+          "drivers": [
+            {
+              "component": 9,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 36,
+          "labels": [
+            "G0"
+          ],
+          "drivers": [
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 72,
+          "labels": [
+            "P0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 10,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 19,
+              "kind": "XOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 11,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        32,
+        -36
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 245,
+          "labels": [
+            "C1"
+          ],
+          "drivers": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 19,
+          "labels": [
+            "V1"
+          ],
+          "drivers": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 257,
+          "labels": [],
+          "value_one": 114688,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 11,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 80,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 12,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        32,
+        -33
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 16,
+          "labels": [
+            "G1"
+          ],
+          "drivers": [
+            {
+              "component": 16,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 245,
+          "labels": [
+            "C1"
+          ],
+          "drivers": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 252,
+          "labels": [],
+          "value_one": 114688,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 12,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 13,
+      "kind": 16,
+      "kind_name": "MAKER8",
+      "position": [
+        48,
+        -47
+      ],
+      "cost": 0,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 22,
+          "labels": [
+            "S0"
+          ],
+          "drivers": [
+            {
+              "component": 19,
+              "kind": "XOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 63,
+          "labels": [
+            "S1"
+          ],
+          "drivers": [
+            {
+              "component": 80,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in2",
+          "network": 113,
+          "labels": [
+            "S2"
+          ],
+          "drivers": [
+            {
+              "component": 28,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in3",
+          "network": 131,
+          "labels": [
+            "S3"
+          ],
+          "drivers": [
+            {
+              "component": 36,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in4",
+          "network": 151,
+          "labels": [
+            "S4"
+          ],
+          "drivers": [
+            {
+              "component": 45,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in5",
+          "network": 165,
+          "labels": [
+            "S5"
+          ],
+          "drivers": [
+            {
+              "component": 43,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 48,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in6",
+          "network": 184,
+          "labels": [
+            "S6"
+          ],
+          "drivers": [
+            {
+              "component": 65,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in7",
+          "network": 281,
+          "labels": [
+            "S7"
+          ],
+          "drivers": [
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 74,
+          "labels": [
+            "S0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 0,
+              "kind": "OUTPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 14,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "position": [
+        6,
+        -46
+      ],
+      "cost": 0,
+      "arrival": 0,
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 75,
+          "labels": [
+            "B0"
+          ],
+          "drivers": [
+            {
+              "component": 3,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 13,
+          "labels": [
+            "B0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 9,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 47,
+          "labels": [
+            "B1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 16,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 6,
+          "labels": [
+            "B2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 24,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out3",
+          "network": 122,
+          "labels": [
+            "B3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 33,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out4",
+          "network": 139,
+          "labels": [
+            "B4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 44,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out5",
+          "network": 37,
+          "labels": [
+            "B5"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 50,
+              "kind": "OR",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out6",
+          "network": 175,
+          "labels": [
+            "B6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 62,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        },
+        {
+          "pin": "out7",
+          "network": 186,
+          "labels": [
+            "B7"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 39,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 68,
+              "kind": "AND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 15,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -23,
+        -40
+      ],
+      "cost": 2,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 44,
+          "labels": [
+            "B0"
+          ],
+          "drivers": [
+            {
+              "component": 8,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 11,
+          "labels": [
+            "Cin",
+            "C0"
+          ],
+          "drivers": [
+            {
+              "component": 1,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 3,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 15,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 22,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 65536,
+        "data_one": 65536,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 16,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        12,
+        -30
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 47,
+          "labels": [
+            "B1"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 30,
+          "labels": [
+            "A1"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 16,
+          "labels": [
+            "G1"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 16,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 12,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 17,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        12,
+        -40
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 13,
+          "labels": [
+            "B0"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 14,
+          "labels": [
+            "A0"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 36,
+          "labels": [
+            "G0"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 10,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 18,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -27,
+        -35
+      ],
+      "cost": 2,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 3,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 15,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 22,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 19,
+          "labels": [
+            "V1"
+          ],
+          "drivers": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "value_one": 65536,
+          "driven": 81920,
+          "z": 49152,
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "enable"
+            },
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 49152,
+        "data_one": 98304,
+        "active_one": 36864
+      }
+    },
+    {
+      "index": 19,
+      "kind": 10,
+      "kind_name": "XOR",
+      "position": [
+        37,
+        -44
+      ],
+      "cost": 3,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 11,
+          "labels": [
+            "Cin",
+            "C0"
+          ],
+          "drivers": [
+            {
+              "component": 1,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 72,
+          "labels": [
+            "P0"
+          ],
+          "drivers": [
+            {
+              "component": 10,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 22,
+          "labels": [
+            "S0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 19,
+              "kind": "XOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 20,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -22,
+        -35
+      ],
+      "cost": 2,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 16,
+          "labels": [
+            "G1"
+          ],
+          "drivers": [
+            {
+              "component": 16,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 19,
+          "labels": [
+            "V1"
+          ],
+          "drivers": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "value_one": 65536,
+          "driven": 81920,
+          "z": 49152,
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "enable"
+            },
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 32768,
+        "data_one": 98304,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 21,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "position": [
+        -5,
+        -46
+      ],
+      "cost": 0,
+      "arrival": 0,
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 4,
+          "labels": [
+            "A0"
+          ],
+          "drivers": [
+            {
+              "component": 2,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 14,
+          "labels": [
+            "A0"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 9,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 30,
+          "labels": [
+            "A1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out1"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 16,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 101,
+          "labels": [
+            "A2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 24,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out3",
+          "network": 124,
+          "labels": [
+            "A3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "in1"
+            },
+            {
+              "component": 33,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out4",
+          "network": 140,
+          "labels": [
+            "A4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 44,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out5",
+          "network": 53,
+          "labels": [
+            "A5"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 50,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out6",
+          "network": 177,
+          "labels": [
+            "A6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 62,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        },
+        {
+          "pin": "out7",
+          "network": 187,
+          "labels": [
+            "A7"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 39,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 68,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 22,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -28,
+        -40
+      ],
+      "cost": 2,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 2,
+          "labels": [
+            "A0"
+          ],
+          "drivers": [
+            {
+              "component": 6,
+              "kind": "SPLITTER8",
+              "pin": "out0"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 11,
+          "labels": [
+            "Cin",
+            "C0"
+          ],
+          "drivers": [
+            {
+              "component": 1,
+              "kind": "INPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 3,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 15,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 22,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 5,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 65536,
+        "data_one": 65536,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 23,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -18,
+        -35
+      ],
+      "cost": 2,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 36,
+          "labels": [
+            "G0"
+          ],
+          "drivers": [
+            {
+              "component": 17,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 19,
+          "labels": [
+            "V1"
+          ],
+          "drivers": [
+            {
+              "component": 7,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "value_one": 65536,
+          "driven": 81920,
+          "z": 49152,
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "enable"
+            },
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 32768,
+        "data_one": 98304,
+        "active_one": 24576
+      }
+    },
+    {
+      "index": 24,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        12,
+        -23
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 6,
+          "labels": [
+            "B2"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 101,
+          "labels": [
+            "A2"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 107,
+          "labels": [
+            "Q2"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 24,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 26,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 37,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 25,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        12,
+        -17
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 6,
+          "labels": [
+            "B2"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 101,
+          "labels": [
+            "A2"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out2"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 108,
+          "labels": [
+            "G2"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 26,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 32,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 26,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        19,
+        -22
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 107,
+          "labels": [
+            "Q2"
+          ],
+          "drivers": [
+            {
+              "component": 24,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 108,
+          "labels": [
+            "G2"
+          ],
+          "drivers": [
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 110,
+          "labels": [
+            "P2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 26,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 27,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        34,
+        -22
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 110,
+          "labels": [
+            "P2"
+          ],
+          "drivers": [
+            {
+              "component": 26,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 117,
+          "labels": [],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 28,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 28,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        41,
+        -21
+      ],
+      "cost": 1,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 117,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 27,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 229,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 113,
+          "labels": [
+            "S2"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 28,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in2"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 29,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        34,
+        -19
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 110,
+          "labels": [
+            "P2"
+          ],
+          "drivers": [
+            {
+              "component": 26,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 229,
+          "labels": [],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 28,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 32,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 30,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        37,
+        -12
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 228,
+          "labels": [
+            "nC3"
+          ],
+          "drivers": [
+            {
+              "component": 32,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 132,
+          "labels": [
+            "P3"
+          ],
+          "drivers": [
+            {
+              "component": 34,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 225,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 30,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 36,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 31,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        12,
+        -8
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 122,
+          "labels": [
+            "B3"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 124,
+          "labels": [
+            "A3"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 314,
+          "labels": [
+            "G3"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 34,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 77,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 32,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        32,
+        -16
+      ],
+      "cost": 1,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 229,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 29,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 108,
+          "labels": [
+            "G2"
+          ],
+          "drivers": [
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 228,
+          "labels": [
+            "nC3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 32,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 30,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 35,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 33,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        12,
+        -12
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 122,
+          "labels": [
+            "B3"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 124,
+          "labels": [
+            "A3"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out3"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 121,
+          "labels": [
+            "Q3"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 33,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 34,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 37,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 34,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        19,
+        -11
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 121,
+          "labels": [
+            "Q3"
+          ],
+          "drivers": [
+            {
+              "component": 33,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 314,
+          "labels": [
+            "G3"
+          ],
+          "drivers": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 132,
+          "labels": [
+            "P3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 34,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 30,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 35,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 35,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        37,
+        -8
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 132,
+          "labels": [
+            "P3"
+          ],
+          "drivers": [
+            {
+              "component": 34,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 228,
+          "labels": [
+            "nC3"
+          ],
+          "drivers": [
+            {
+              "component": 32,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 224,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 35,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 36,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 36,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        44,
+        -11
+      ],
+      "cost": 1,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 225,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 30,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 224,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 35,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 131,
+          "labels": [
+            "S3"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 36,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in3"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 37,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        -30,
+        -11
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 107,
+          "labels": [
+            "Q2"
+          ],
+          "drivers": [
+            {
+              "component": 24,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 121,
+          "labels": [
+            "Q3"
+          ],
+          "drivers": [
+            {
+              "component": 33,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 133,
+          "labels": [],
+          "value_one": 73728,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 37,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 38,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -24,
+        -3
+      ],
+      "cost": 2,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 133,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 37,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 137,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 81920,
+          "z": 49152,
+          "drivers": [
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 65536,
+        "data_one": 73728,
+        "active_one": 36864
+      }
+    },
+    {
+      "index": 39,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        11,
+        47
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 186,
+          "labels": [
+            "B7"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 187,
+          "labels": [
+            "A7"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 237,
+          "labels": [
+            "Q7"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 39,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 69,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 40,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -30,
+        -3
+      ],
+      "cost": 2,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 108,
+          "labels": [
+            "G2"
+          ],
+          "drivers": [
+            {
+              "component": 25,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 133,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 37,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 137,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 81920,
+          "z": 49152,
+          "drivers": [
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 32768,
+        "data_one": 73728,
+        "active_one": 24576
+      }
+    },
+    {
+      "index": 41,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        12,
+        5
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 139,
+          "labels": [
+            "B4"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 140,
+          "labels": [
+            "A4"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 331,
+          "labels": [
+            "V4"
+          ],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 52,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 53,
+              "kind": "AND",
+              "pin": "in1"
+            },
+            {
+              "component": 55,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 59,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 42,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        15,
+        -2
+      ],
+      "cost": 1,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 314,
+          "labels": [
+            "G3"
+          ],
+          "drivers": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 137,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 148,
+          "labels": [
+            "C4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 46,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 47,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 59,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 43,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        42,
+        12
+      ],
+      "cost": 2,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 215,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 54,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 296,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 59,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 165,
+          "labels": [
+            "S5"
+          ],
+          "value_one": 65536,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 43,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 48,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in5"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 49152,
+        "data_one": 81920,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 44,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        12,
+        8
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 139,
+          "labels": [
+            "B4"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 140,
+          "labels": [
+            "A4"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out4"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 223,
+          "labels": [
+            "N4"
+          ],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 44,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 52,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 56,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 45,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        44,
+        3
+      ],
+      "cost": 1,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 214,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 46,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 143,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 47,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 151,
+          "labels": [
+            "S4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 45,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in4"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 46,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        37,
+        2
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 148,
+          "labels": [
+            "C4"
+          ],
+          "drivers": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 146,
+          "labels": [
+            "nP4"
+          ],
+          "drivers": [
+            {
+              "component": 52,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 214,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 46,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 45,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 48,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 47,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        37,
+        5
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 146,
+          "labels": [
+            "nP4"
+          ],
+          "drivers": [
+            {
+              "component": 52,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 148,
+          "labels": [
+            "C4"
+          ],
+          "drivers": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 143,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 47,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 45,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 48,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        42,
+        15
+      ],
+      "cost": 2,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 216,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 53,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 214,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 46,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 165,
+          "labels": [
+            "S5"
+          ],
+          "value_one": 65536,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 43,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 48,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in5"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 49152,
+        "data_one": 98304,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 49,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        12,
+        15
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 37,
+          "labels": [
+            "B5"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 53,
+          "labels": [
+            "A5"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 154,
+          "labels": [
+            "N5"
+          ],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 51,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 56,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 57,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 50,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        12,
+        12
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 37,
+          "labels": [
+            "B5"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 53,
+          "labels": [
+            "A5"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out5"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 191,
+          "labels": [
+            "V5"
+          ],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 50,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 51,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 55,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 51,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        19,
+        13
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 191,
+          "labels": [
+            "V5"
+          ],
+          "drivers": [
+            {
+              "component": 50,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 154,
+          "labels": [
+            "N5"
+          ],
+          "drivers": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 213,
+          "labels": [
+            "nP5"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 51,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 53,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 54,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 52,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        18,
+        6
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 331,
+          "labels": [
+            "V4"
+          ],
+          "drivers": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 223,
+          "labels": [
+            "N4"
+          ],
+          "drivers": [
+            {
+              "component": 44,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 146,
+          "labels": [
+            "nP4"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 52,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 46,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 47,
+              "kind": "NAND",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 53,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        32,
+        16
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 213,
+          "labels": [
+            "nP5"
+          ],
+          "drivers": [
+            {
+              "component": 51,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 331,
+          "labels": [
+            "V4"
+          ],
+          "drivers": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 216,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 53,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 48,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 54,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        32,
+        13
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 322,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 56,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 213,
+          "labels": [
+            "nP5"
+          ],
+          "drivers": [
+            {
+              "component": 51,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 215,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 54,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 43,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 55,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        -18,
+        9
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 191,
+          "labels": [
+            "V5"
+          ],
+          "drivers": [
+            {
+              "component": 50,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 331,
+          "labels": [
+            "V4"
+          ],
+          "drivers": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 334,
+          "labels": [],
+          "value_one": 57344,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 55,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 57,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 56,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        16,
+        17
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 223,
+          "labels": [
+            "N4"
+          ],
+          "drivers": [
+            {
+              "component": 44,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 154,
+          "labels": [
+            "N5"
+          ],
+          "drivers": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 322,
+          "labels": [],
+          "value_one": 57344,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 56,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 54,
+              "kind": "NOR",
+              "pin": "in0"
+            },
+            {
+              "component": 77,
+              "kind": "OR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 57,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        -21,
+        20
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 154,
+          "labels": [
+            "N5"
+          ],
+          "drivers": [
+            {
+              "component": 49,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 334,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 55,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 311,
+          "labels": [],
+          "value_one": 81920,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 57,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 58,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -29,
+        21
+      ],
+      "cost": 2,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 137,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 38,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 40,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 311,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 57,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 204,
+          "labels": [
+            "C6"
+          ],
+          "value_one": 65536,
+          "driven": 94208,
+          "z": 36864,
+          "drivers": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 63,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 49152,
+        "data_one": 81920,
+        "active_one": 30720
+      }
+    },
+    {
+      "index": 59,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        34,
+        9
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 148,
+          "labels": [
+            "C4"
+          ],
+          "drivers": [
+            {
+              "component": 42,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 331,
+          "labels": [
+            "V4"
+          ],
+          "drivers": [
+            {
+              "component": 41,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 296,
+          "labels": [],
+          "value_one": 81920,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 59,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 43,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 60,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        18,
+        30
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 270,
+          "labels": [
+            "Q6"
+          ],
+          "drivers": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 172,
+          "labels": [
+            "G6"
+          ],
+          "drivers": [
+            {
+              "component": 62,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 202,
+          "labels": [
+            "nP6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 60,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 63,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 61,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        11,
+        29
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 175,
+          "labels": [
+            "B6"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 177,
+          "labels": [
+            "A6"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 270,
+          "labels": [
+            "Q6"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 60,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 70,
+              "kind": "AND",
+              "pin": "in0"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "enable"
+            },
+            {
+              "component": 73,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 62,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        11,
+        32
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 175,
+          "labels": [
+            "B6"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 177,
+          "labels": [
+            "A6"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out6"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 172,
+          "labels": [
+            "G6"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 62,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 60,
+              "kind": "OR",
+              "pin": "in1"
+            },
+            {
+              "component": 76,
+              "kind": "OR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 63,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        38,
+        31
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 202,
+          "labels": [
+            "nP6"
+          ],
+          "drivers": [
+            {
+              "component": 60,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 204,
+          "labels": [
+            "C6"
+          ],
+          "drivers": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 208,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 63,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 65,
+              "kind": "NAND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 64,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        38,
+        28
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 204,
+          "labels": [
+            "C6"
+          ],
+          "drivers": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 202,
+          "labels": [
+            "nP6"
+          ],
+          "drivers": [
+            {
+              "component": 60,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 207,
+          "labels": [],
+          "value_one": 98304,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 65,
+              "kind": "NAND",
+              "pin": "in0"
+            },
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "in"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 65,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        43,
+        29
+      ],
+      "cost": 1,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 207,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 208,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 63,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 184,
+          "labels": [
+            "S6"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 65,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in6"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 66,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        43,
+        34
+      ],
+      "cost": 2,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 278,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 73,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 207,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 281,
+          "labels": [
+            "S7"
+          ],
+          "value_one": 65536,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in7"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 49152,
+        "data_one": 98304,
+        "active_one": 32768
+      }
+    },
+    {
+      "index": 67,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        18,
+        41
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 237,
+          "labels": [
+            "Q7"
+          ],
+          "drivers": [
+            {
+              "component": 39,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 185,
+          "labels": [
+            "G7"
+          ],
+          "drivers": [
+            {
+              "component": 68,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 271,
+          "labels": [
+            "P7"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 70,
+              "kind": "AND",
+              "pin": "in1"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "in"
+            },
+            {
+              "component": 73,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 68,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        11,
+        44
+      ],
+      "cost": 1,
+      "arrival": 1,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 186,
+          "labels": [
+            "B7"
+          ],
+          "drivers": [
+            {
+              "component": 14,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 187,
+          "labels": [
+            "A7"
+          ],
+          "drivers": [
+            {
+              "component": 21,
+              "kind": "SPLITTER8",
+              "pin": "out7"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 185,
+          "labels": [
+            "G7"
+          ],
+          "value_one": 32768,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 68,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "in1"
+            },
+            {
+              "component": 76,
+              "kind": "OR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 69,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        25,
+        48
+      ],
+      "cost": 1,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 258,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 70,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 237,
+          "labels": [
+            "Q7"
+          ],
+          "drivers": [
+            {
+              "component": 39,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 263,
+          "labels": [
+            "K76"
+          ],
+          "value_one": 49152,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 69,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 75,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 70,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        23,
+        45
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 270,
+          "labels": [
+            "Q6"
+          ],
+          "drivers": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 271,
+          "labels": [
+            "P7"
+          ],
+          "drivers": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 258,
+          "labels": [],
+          "value_one": 16384,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 70,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 69,
+              "kind": "OR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 71,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        43,
+        36
+      ],
+      "cost": 2,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 270,
+          "labels": [
+            "Q6"
+          ],
+          "drivers": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 271,
+          "labels": [
+            "P7"
+          ],
+          "drivers": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 281,
+          "labels": [
+            "S7"
+          ],
+          "value_one": 65536,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in7"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 32768,
+        "data_one": 65536,
+        "active_one": 16384
+      }
+    },
+    {
+      "index": 72,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        43,
+        39
+      ],
+      "cost": 2,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 285,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 271,
+          "labels": [
+            "P7"
+          ],
+          "drivers": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 281,
+          "labels": [
+            "S7"
+          ],
+          "value_one": 65536,
+          "driven": 98304,
+          "z": 32768,
+          "drivers": [
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 71,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in7"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 36864,
+        "data_one": 65536,
+        "active_one": 24576
+      }
+    },
+    {
+      "index": 73,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        26,
+        39
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 270,
+          "labels": [
+            "Q6"
+          ],
+          "drivers": [
+            {
+              "component": 61,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 271,
+          "labels": [
+            "P7"
+          ],
+          "drivers": [
+            {
+              "component": 67,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 278,
+          "labels": [],
+          "value_one": 49152,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 73,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 66,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 74,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        41,
+        49
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 204,
+          "labels": [
+            "C6"
+          ],
+          "drivers": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 261,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 76,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 285,
+          "labels": [],
+          "value_one": 36864,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 72,
+              "kind": "SWITCH",
+              "pin": "enable"
+            },
+            {
+              "component": 75,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 75,
+      "kind": 9,
+      "kind_name": "NOR",
+      "position": [
+        44,
+        51
+      ],
+      "cost": 1,
+      "arrival": 6,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 285,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 263,
+          "labels": [
+            "K76"
+          ],
+          "drivers": [
+            {
+              "component": 69,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 239,
+          "labels": [
+            "C8"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 75,
+              "kind": "NOR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 4,
+              "kind": "OUTPUT",
+              "pin": "value"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 76,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        16,
+        49
+      ],
+      "cost": 1,
+      "arrival": 2,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 185,
+          "labels": [
+            "G7"
+          ],
+          "drivers": [
+            {
+              "component": 68,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 172,
+          "labels": [
+            "G6"
+          ],
+          "drivers": [
+            {
+              "component": 62,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 261,
+          "labels": [],
+          "value_one": 57344,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 76,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 77,
+      "kind": 7,
+      "kind_name": "OR",
+      "position": [
+        -12,
+        25
+      ],
+      "cost": 1,
+      "arrival": 3,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 322,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 56,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 314,
+          "labels": [
+            "G3"
+          ],
+          "drivers": [
+            {
+              "component": 31,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 315,
+          "labels": [],
+          "value_one": 75776,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 77,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "enable"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 78,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "position": [
+        -24,
+        21
+      ],
+      "cost": 2,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 315,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 77,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 311,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 57,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 204,
+          "labels": [
+            "C6"
+          ],
+          "value_one": 65536,
+          "driven": 94208,
+          "z": 36864,
+          "drivers": [
+            {
+              "component": 58,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 78,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 63,
+              "kind": "NAND",
+              "pin": "in1"
+            },
+            {
+              "component": 64,
+              "kind": "OR",
+              "pin": "in0"
+            },
+            {
+              "component": 74,
+              "kind": "NOR",
+              "pin": "in0"
+            }
+          ]
+        }
+      ],
+      "switch_rows": {
+        "enable_one": 75776,
+        "data_one": 81920,
+        "active_one": 57344
+      }
+    },
+    {
+      "index": 79,
+      "kind": 6,
+      "kind_name": "NAND",
+      "position": [
+        36,
+        -32
+      ],
+      "cost": 1,
+      "arrival": 4,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 252,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 12,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 109,
+          "labels": [
+            "C2"
+          ],
+          "drivers": [
+            {
+              "component": 18,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 20,
+              "kind": "SWITCH",
+              "pin": "out"
+            },
+            {
+              "component": 23,
+              "kind": "SWITCH",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 255,
+          "labels": [],
+          "value_one": 81920,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 80,
+              "kind": "AND",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    },
+    {
+      "index": 80,
+      "kind": 4,
+      "kind_name": "AND",
+      "position": [
+        40,
+        -35
+      ],
+      "cost": 1,
+      "arrival": 5,
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 257,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 11,
+              "kind": "OR",
+              "pin": "out"
+            }
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 255,
+          "labels": [],
+          "drivers": [
+            {
+              "component": 79,
+              "kind": "NAND",
+              "pin": "out"
+            }
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 63,
+          "labels": [
+            "S1"
+          ],
+          "value_one": 65536,
+          "driven": 131072,
+          "z": 0,
+          "drivers": [
+            {
+              "component": 80,
+              "kind": "AND",
+              "pin": "out"
+            }
+          ],
+          "sinks": [
+            {
+              "component": 13,
+              "kind": "MAKER8",
+              "pin": "in1"
+            }
+          ]
+        }
+      ],
+      "switch_rows": null
+    }
+  ]
+}
