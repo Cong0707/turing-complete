@@ -1,0 +1,83 @@
+.model reachable_phase_086
+.inputs n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69
+.outputs out0 out1 out2 out3 out4 out5 out6 out7 out8
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out0
+1--------------1----- 1
+1---------------0---- 1
+--------------1-0---- 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 phase_out1
+-00-------------0---- 1
+-1---0----------1---- 1
+--1--0----------1---- 1
+-----1----------0---- 1
+.names phase_out1 out1
+0 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 phase_out2
+-00---1-------------- 1
+-00--------------0--- 1
+-----01---------0---- 1
+-----0----------00--- 1
+------0-----------1-- 1
+.names phase_out2 out2
+0 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out3
+-------00---------0-- 1
+-------1----------1-- 1
+--------1---------1-- 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out4
+-------1-1----------- 1
+-------1--1---------- 1
+--------01--------1-- 1
+--------0-1-------1-- 1
+----------0--------0- 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out5
+------------0------1- 1
+------------1------0- 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out6
+-----------1-0------- 1
+------------10-----1- 1
+-------------1------0 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 phase_out7
+---00---------------0 1
+---01---------------1 1
+---10---------------1 1
+---11---------------0 1
+.names phase_out7 out7
+0 1
+.names n2 n4 n5 n16 n17 n22 n25 n28 n29 n31 n32 n34 n36 n39 n43 n44 n45 n51 n56 n62 n69 out8
+---01---------------1 1
+---10---------------1 1
+---11---------------- 1
+.default_input_arrival 0 0
+.default_output_required 6 6
+.input_arrival n2 0 0
+.input_arrival n4 0 0
+.input_arrival n5 0 0
+.input_arrival n16 0 0
+.input_arrival n17 0 0
+.input_arrival n22 1 1
+.input_arrival n25 1 1
+.input_arrival n28 1 1
+.input_arrival n29 1 1
+.input_arrival n31 1 1
+.input_arrival n32 1 1
+.input_arrival n34 1 1
+.input_arrival n36 2 2
+.input_arrival n39 2 2
+.input_arrival n43 1 1
+.input_arrival n44 1 1
+.input_arrival n45 2 2
+.input_arrival n51 1 1
+.input_arrival n56 3 3
+.input_arrival n62 4 4
+.input_arrival n69 5 5
+.output_required out0 6 6
+.output_required out1 6 6
+.output_required out2 6 6
+.output_required out3 6 6
+.output_required out4 6 6
+.output_required out5 6 6
+.output_required out6 6 6
+.output_required out7 6 6
+.output_required out8 6 6
+.end

@@ -1,0 +1,536 @@
+{
+  "schema": "byte-adder-reachable-input-permutation-independent-audit-v1",
+  "status": "accepted",
+  "care_relation": {
+    "path": ".research/byte_adder_root/abc_residual_current80/care_pla/reachable_relation_fr.pla",
+    "sha256": "1e84f6a3d9d28393cbce99b0eb5fb0f33fb65c39e15ec48a8ecdb798928f0566",
+    "rows": 23328,
+    "input_count": 21,
+    "output_count": 9,
+    "duplicate_identical_rows": 0,
+    "functional_conflicts": 0,
+    "input_labels_exact": true,
+    "output_labels_exact": true
+  },
+  "contract": {
+    "permutation_start": 576,
+    "permutation_stop": 704,
+    "expected_permutations": 128,
+    "masks": [
+      134,
+      135,
+      158,
+      159,
+      166,
+      167,
+      182,
+      183,
+      190,
+      191,
+      199,
+      222,
+      223
+    ],
+    "expected_search_tasks": 1664,
+    "expected_timing_results": 6656,
+    "required": 6,
+    "boundary_arrivals": {
+      "n2": 0,
+      "n4": 0,
+      "n5": 0,
+      "n16": 0,
+      "n17": 0,
+      "n22": 1,
+      "n25": 1,
+      "n28": 1,
+      "n29": 1,
+      "n31": 1,
+      "n32": 1,
+      "n34": 1,
+      "n36": 2,
+      "n39": 2,
+      "n43": 1,
+      "n44": 1,
+      "n45": 2,
+      "n51": 1,
+      "n56": 3,
+      "n62": 4,
+      "n69": 5
+    },
+    "old_parser_command": "read_blif -n"
+  },
+  "summaries": {
+    "search": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/summary.json",
+      "sha256": "38af89e4b0ddaa09c0656d76f7cf0bcd49e021fb5650bb1721d816c2b9425d3c",
+      "record_count": 1664,
+      "complete": true,
+      "local_candidate_count": 1,
+      "local_function_reviews": [
+        {
+          "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/input.blif",
+          "sha256": "53acd85edd309361e19f8d24e7ce1e71e2e4b0cd50d4bc1af6f549a0d397dc35",
+          "mask": 134,
+          "inverted_output_count": 3,
+          "function_cube_count": 32,
+          "polarity_restoration_verified": true,
+          "care_rows_checked": 23328,
+          "care_mismatches": 0,
+          "phase_function_and_restoration_verified": true
+        }
+      ]
+    },
+    "timing": {
+      "path": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/timing_d6_summary.json",
+      "sha256": "76b6ea3bba08fb0d534cc05ea036c33d7a8585264868e2b23f61842e4364c724",
+      "record_count": 6656,
+      "complete": true,
+      "local_recipe_count": 4,
+      "abc_reported_unmet_count": 6656,
+      "abc_reported_met_count": 0
+    },
+    "best_metrics": {
+      "gate": 85,
+      "delay": 7,
+      "energy": 595
+    },
+    "energy_strictly_below": 560,
+    "hit_count": 0
+  },
+  "artifact_set": {
+    "verified_file_count": 28,
+    "path_sha256_set_sha256": "9932c222c277a44447acedf6a5c2c8cfa9676371af816d4a5192b48ca6aee659"
+  },
+  "selection": {
+    "selected_count": 5,
+    "accepted_count": 5,
+    "rejected_count": 0,
+    "energy_strictly_below": 560,
+    "hit_count": 0,
+    "hits": []
+  },
+  "results": [
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": null,
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped.blif",
+      "source_mapped_blif_sha256": "5a197b4fd08630bf66fb41d306c36bcdff5b5a1d10a3a901c385b3eda81cc09e",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped.blif",
+      "import_blif_sha256": "5a197b4fd08630bf66fb41d306c36bcdff5b5a1d10a3a901c385b3eda81cc09e",
+      "normalization": null,
+      "discovery_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595,
+        "output_arrivals": [
+          4,
+          5,
+          6,
+          5,
+          7,
+          6,
+          7,
+          7,
+          7
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "e958d0fe15acc98086ac39de50b3a3c35e6efa6c5143c1d8c8facdb7e60ef02b"
+      },
+      "mapped_residual": {
+        "cell_count": 38,
+        "materialized_new_node_count": 38,
+        "kind_counts": {
+          "AND": 11,
+          "NAND": 2,
+          "NOR": 10,
+          "NOT": 3,
+          "OR": 10,
+          "XOR": 2
+        },
+        "residual_gate": 42
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "2746455ac49829ba21fc8c04b6c4e0451870962d270cb94188ae3841db4f5dcb",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "permutation_index": 606
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "dch_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_dch_d6.blif",
+      "source_mapped_blif_sha256": "9c8c8443229e99d25dcc4a0d1fe6a9ab4e635b0afb6450047cc9b9bed076a69e",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_dch_d6.blif",
+      "import_blif_sha256": "d3e7a118c5f7d578a66f5bfa7c12b1419e97b751d05555ed5fb0e2a822a8886a",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_dch_d6.blif",
+        "source_sha256": "9c8c8443229e99d25dcc4a0d1fe6a9ab4e635b0afb6450047cc9b9bed076a69e",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_dch_d6.blif",
+        "normalized_sha256": "d3e7a118c5f7d578a66f5bfa7c12b1419e97b751d05555ed5fb0e2a822a8886a",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          7,
+          7,
+          7
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "7722f0b853ae4e3929d9bad513962a4026b05192b5884e7e9f255b0de6341ab0"
+      },
+      "mapped_residual": {
+        "cell_count": 38,
+        "materialized_new_node_count": 38,
+        "kind_counts": {
+          "AND": 9,
+          "NAND": 5,
+          "NOR": 10,
+          "NOT": 3,
+          "OR": 9,
+          "XOR": 2
+        },
+        "residual_gate": 42
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "702bf2786db35a2004f0daf3b42fec4a88dd2257dbaa393de11a3b4e1cb4b4cb",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "permutation_index": 606
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "resub8_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_resub8_d6.blif",
+      "source_mapped_blif_sha256": "c8b97f2a80b0878697fbc26314b72a53076796756058c6a6d3176c4abd346230",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_resub8_d6.blif",
+      "import_blif_sha256": "95fd62e53439bbb2f40fd96ee588f80a3b4f93d7d69c627beb7d74b8af4fb292",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_resub8_d6.blif",
+        "source_sha256": "c8b97f2a80b0878697fbc26314b72a53076796756058c6a6d3176c4abd346230",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_resub8_d6.blif",
+        "normalized_sha256": "95fd62e53439bbb2f40fd96ee588f80a3b4f93d7d69c627beb7d74b8af4fb292",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 85,
+        "delay": 7,
+        "energy": 595,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          7,
+          7,
+          7
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "997a3954d84d1c19496cf24a0b055211d371e409334fff2e2eb97eb09a23b068"
+      },
+      "mapped_residual": {
+        "cell_count": 38,
+        "materialized_new_node_count": 38,
+        "kind_counts": {
+          "AND": 9,
+          "NAND": 5,
+          "NOR": 10,
+          "NOT": 3,
+          "OR": 9,
+          "XOR": 2
+        },
+        "residual_gate": 42
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "34ce794b9ae44d49e4ec3073c79682b3ce02bfbb762705f67618d023b2db08ee",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "permutation_index": 606
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "dc2_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_dc2_d6.blif",
+      "source_mapped_blif_sha256": "28d5f6e38366dc270fcec82709d696f3b78392a9e524191b233832afc1e678d4",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_dc2_d6.blif",
+      "import_blif_sha256": "099d95b0a82b81154fef63b4b4798a770f6568fda84ac59b14798a4ba827d4b9",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_dc2_d6.blif",
+        "source_sha256": "28d5f6e38366dc270fcec82709d696f3b78392a9e524191b233832afc1e678d4",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_dc2_d6.blif",
+        "normalized_sha256": "099d95b0a82b81154fef63b4b4798a770f6568fda84ac59b14798a4ba827d4b9",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 87,
+        "delay": 7,
+        "energy": 609
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 87,
+        "delay": 7,
+        "energy": 609,
+        "output_arrivals": [
+          5,
+          4,
+          6,
+          7,
+          7,
+          6,
+          7,
+          7,
+          7
+        ],
+        "reachable_nodes": 87,
+        "structural_sha256": "edf5e26ba492dba756e2af78e004a399abde1f25dce09850ba2d1a0e44527b9e"
+      },
+      "mapped_residual": {
+        "cell_count": 42,
+        "materialized_new_node_count": 42,
+        "kind_counts": {
+          "AND": 10,
+          "NAND": 4,
+          "NOR": 12,
+          "NOT": 5,
+          "OR": 10,
+          "XOR": 1
+        },
+        "residual_gate": 44
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "679c94160a587ae406d37be0de74d0df3f32df6ff730205a2a8de9dde6e7af2b",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "permutation_index": 606
+    },
+    {
+      "mask": 134,
+      "mask_hex": "0x086",
+      "recipe": "plain_d6",
+      "source_mapped_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_plain_d6.blif",
+      "source_mapped_blif_sha256": "4c07925549bf621621fc8954ec39f7deea38b543eb6abd578a80ef86d67b4526",
+      "import_blif": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_plain_d6.blif",
+      "import_blif_sha256": "9be94459498a94817e0f86e14d6945fe918ab797916eaa7a550d661fdfb25f35",
+      "normalization": {
+        "source": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/perm_606_phase_086/mapped_plain_d6.blif",
+        "source_sha256": "4c07925549bf621621fc8954ec39f7deea38b543eb6abd578a80ef86d67b4526",
+        "normalized": ".research/byte_adder_root/abc_residual_current80/care_pla/input_permutation_576_703x13/normalized_for_import/perm_606_phase_086/mapped_plain_d6.blif",
+        "normalized_sha256": "9be94459498a94817e0f86e14d6945fe918ab797916eaa7a550d661fdfb25f35",
+        "removed_timing_directives": [
+          ".and_gate_delay 1",
+          ".default_input_arrival 0 0",
+          ".default_output_required 6 6",
+          ".input_arrival n22 1 1",
+          ".input_arrival n25 1 1",
+          ".input_arrival n28 1 1",
+          ".input_arrival n29 1 1",
+          ".input_arrival n31 1 1",
+          ".input_arrival n32 1 1",
+          ".input_arrival n34 1 1",
+          ".input_arrival n36 2 2",
+          ".input_arrival n39 2 2",
+          ".input_arrival n43 1 1",
+          ".input_arrival n44 1 1",
+          ".input_arrival n45 2 2",
+          ".input_arrival n51 1 1",
+          ".input_arrival n56 3 3",
+          ".input_arrival n62 4 4",
+          ".input_arrival n69 5 5"
+        ],
+        "timing_directives_exact": true
+      },
+      "discovery_metrics": {
+        "gate": 87,
+        "delay": 8,
+        "energy": 696
+      },
+      "status": "accepted",
+      "actual_metrics": {
+        "gate": 87,
+        "delay": 8,
+        "energy": 696,
+        "output_arrivals": [
+          4,
+          4,
+          6,
+          5,
+          7,
+          6,
+          8,
+          7,
+          7
+        ],
+        "reachable_nodes": 83,
+        "structural_sha256": "8f126e6570ad2a868244b4a9cf79cadeef3cb19b880301677399746c55ca767d"
+      },
+      "mapped_residual": {
+        "cell_count": 38,
+        "materialized_new_node_count": 38,
+        "kind_counts": {
+          "AND": 9,
+          "NAND": 2,
+          "NOR": 11,
+          "NOT": 4,
+          "OR": 9,
+          "XOR": 3
+        },
+        "residual_gate": 44
+      },
+      "checks": {
+        "same_process_json_byte_identical": true,
+        "discovery_metrics_match": true,
+        "fixed_bus_slice_byte_identical": true,
+        "full_131072_rows": true,
+        "mismatch_union_zero": true,
+        "bus_conflict_zero": true,
+        "primary_output_z_zero": true,
+        "physical_net_partition_zero": true,
+        "dead_node_zero": true
+      },
+      "factory_dag_sha256": "4e99215a5400c34b8ae7543412a2dfe1dd1eb5d52a8c616137574e3f84bb147b",
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "permutation_index": 606
+    }
+  ],
+  "safety": {
+    "espresso_enumeration_run": false,
+    "abc_mapping_run": false,
+    "timing_annotations_validated_before_normalization": true,
+    "formal_save_read": false,
+    "formal_save_written": false,
+    "repository_candidate_written": false,
+    "game_started": false
+  }
+}

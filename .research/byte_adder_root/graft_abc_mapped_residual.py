@@ -302,7 +302,10 @@ def validate_metadata(
 ) -> None:
     if metadata.get("schema") != "byte-adder-80d7-abc-residual-export-v1":
         raise RuntimeError(f"unexpected residual metadata schema: {metadata.get('schema')!r}")
-    source_name = Path(str(metadata.get("source", ""))).name
+    # The authoritative DAG was produced on Windows but may be audited on
+    # Linux.  pathlib.Path only recognizes the current platform's separator,
+    # so normalize both path styles before comparing the source basename.
+    source_name = str(metadata.get("source", "")).replace("\\", "/").rsplit("/", 1)[-1]
     if source_name != dag_path.name:
         raise RuntimeError(
             f"metadata source basename {source_name!r} does not match {dag_path.name!r}"
