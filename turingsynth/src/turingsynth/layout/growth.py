@@ -370,6 +370,9 @@ def place_growth(
     ]:
         blocked = 0
         plans = []
+        staged_vertical: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
+        staged_horizontal: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
+        staged_hubs: dict[Point, str] = {}
         for sink_ref, net in incoming[key]:
             if net.name not in structured_nets or net.additional_sources:
                 continue
@@ -433,14 +436,18 @@ def place_growth(
                 if any(
                     owner != net.name
                     and min(vertical_high, high) >= max(vertical_low, low)
-                    for low, high, owner in conductor_vertical.get(spine_x, ())
+                    for low, high, owner in (
+                        *conductor_vertical.get(spine_x, ()),
+                        *staged_vertical.get(spine_x, ()),
+                    )
                 ):
                     continue
                 if branch_low != branch_high and any(
                     owner != net.name
                     and min(branch_high, high) >= max(branch_low, low)
-                    for low, high, owner in conductor_horizontal.get(
-                        sink_access[1], ()
+                    for low, high, owner in (
+                        *conductor_horizontal.get(sink_access[1], ()),
+                        *staged_horizontal.get(sink_access[1], ()),
                     )
                 ):
                     continue
@@ -452,13 +459,24 @@ def place_growth(
                     for x in range(branch_low, branch_high + 1)
                 }
                 if any(
-                    point in conductor_hubs
-                    and conductor_hubs[point] != net.name
+                    (
+                        point in conductor_hubs
+                        and conductor_hubs[point] != net.name
+                    )
+                    or (point in staged_hubs and staged_hubs[point] != net.name)
                     for point in points
                 ):
                     continue
                 if any(
                     point_on_foreign_corridor(point, net.name)
+                    or any(
+                        owner != net.name and low <= point[1] <= high
+                        for low, high, owner in staged_vertical.get(point[0], ())
+                    )
+                    or any(
+                        owner != net.name and low <= point[0] <= high
+                        for low, high, owner in staged_horizontal.get(point[1], ())
+                    )
                     for point in (source_hub, sink_hub)
                 ):
                     continue
@@ -476,6 +494,28 @@ def place_growth(
                 blocked += 1
             else:
                 plans.append(selected)
+                (
+                    selected_network,
+                    selected_x,
+                    selected_low_y,
+                    selected_high_y,
+                    selected_branch_y,
+                    selected_low_x,
+                    selected_high_x,
+                ) = selected
+                staged_vertical[selected_x].append(
+                    (selected_low_y, selected_high_y, selected_network)
+                )
+                if selected_low_x != selected_high_x:
+                    staged_horizontal[selected_branch_y].append(
+                        (selected_low_x, selected_high_x, selected_network)
+                    )
+                staged_hubs.setdefault(
+                    (selected_x, selected_low_y), selected_network
+                )
+                staged_hubs.setdefault(
+                    (selected_x, selected_high_y), selected_network
+                )
         return blocked, tuple(plans)
 
     def commit_corridor_plans(

@@ -152,6 +152,72 @@ class GrowthLayoutTests(unittest.TestCase):
         self.assertEqual(report["input_frontier_networks"], ["source"])
         self.assertEqual(report["ordinary_global_trunk_count"], 0)
 
+    def test_overlapping_conductor_plans_are_staged_atomically(self) -> None:
+        design = PhysicalDesign(
+            name="atomic-corridors",
+            components=(
+                PhysicalComponent(
+                    "input-a",
+                    61,
+                    1,
+                    "input_port",
+                    0.0,
+                    0,
+                    immutable=True,
+                    position=(-20, 0),
+                ),
+                PhysicalComponent(
+                    "input-b",
+                    61,
+                    1,
+                    "input_port",
+                    1.0,
+                    0,
+                    immutable=True,
+                    position=(-10, 0),
+                ),
+                PhysicalComponent("producer-a", 4, 1, "gate", 0.0, 1, 1, 1),
+                PhysicalComponent("producer-b", 4, 1, "gate", 1.0, 1, 1, 1),
+                PhysicalComponent("shared", 4, 1, "gate", 2.0, 2, 1, 1),
+                PhysicalComponent("leaf-a", 7, 1, "gate", 3.0, 2, 1, 1),
+                PhysicalComponent("leaf-b", 7, 1, "gate", 4.0, 2, 1, 1),
+            ),
+            nets=(
+                PhysicalNet(
+                    "source-a",
+                    1,
+                    PinRef("input-a", "value"),
+                    (PinRef("producer-a", "in0"),),
+                ),
+                PhysicalNet(
+                    "source-b",
+                    1,
+                    PinRef("input-b", "value"),
+                    (PinRef("producer-b", "in0"),),
+                ),
+                PhysicalNet(
+                    "fanout-a",
+                    1,
+                    PinRef("producer-a", "out"),
+                    (PinRef("shared", "in0"), PinRef("leaf-a", "in0")),
+                ),
+                PhysicalNet(
+                    "fanout-b",
+                    1,
+                    PinRef("producer-b", "out"),
+                    (PinRef("shared", "in1"), PinRef("leaf-b", "in0")),
+                ),
+            ),
+            gate=5,
+            delay=2,
+            target_kind="level",
+        )
+
+        _placed, report = place_growth(design, _config())
+        spines = report["planned_conductor_spines"]
+
+        self.assertNotEqual(spines["fanout-a"], spines["fanout-b"])
+
 
 if __name__ == "__main__":
     unittest.main()

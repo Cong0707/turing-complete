@@ -79,6 +79,54 @@ class FanoutRoutingTests(unittest.TestCase):
             )
         )
 
+    def test_growth_comb_accepts_a_compact_adjacent_stage(self) -> None:
+        edges = _growth_fanout_edges(
+            "compact-growth",
+            (0, 0),
+            ((3, -2), (9, 2)),
+            routing_source=(0, 0),
+            routing_sinks=((3, -2), (9, 2)),
+            forbidden=frozenset(),
+            forbidden_edges=frozenset(),
+            reserved=set(),
+            track_intervals={},
+            horizontal_intervals={},
+        )
+
+        self.assertEqual(edges[0].role, "feeder")
+        terminals = [edge for edge in edges if edge.role in {"feeder", "tap"}]
+        self.assertTrue(all(edge.planned_path is not None for edge in terminals))
+        self.assertLessEqual(
+            max(point[0] for edge in edges for point in edge.planned_path or ()),
+            9,
+        )
+
+    def test_growth_comb_may_branch_from_its_source_stem(self) -> None:
+        edges = _growth_fanout_edges(
+            "stem-growth",
+            (0, 0),
+            ((3, -2), (9, 2)),
+            routing_source=(0, 0),
+            routing_sinks=((3, -2), (9, 2)),
+            forbidden=frozenset(),
+            forbidden_edges=frozenset(),
+            reserved=set(),
+            track_intervals={
+                1: [(-8, 8, "foreign-1")],
+                2: [(-8, 8, "foreign-2")],
+            },
+            horizontal_intervals={0: [(1, 8, "foreign-row")]},
+        )
+
+        stem = next(edge for edge in edges if edge.role == "stem")
+        branch = next(
+            edge
+            for edge in edges
+            if edge.role == "branch" and edge.source == stem.source
+        )
+        self.assertEqual(stem.sink[0], 0)
+        self.assertEqual(branch.source, stem.source)
+
     def test_local_collector_commits_prevalidated_terminal_paths(self) -> None:
         edges = _collector_edges(
             "collector",

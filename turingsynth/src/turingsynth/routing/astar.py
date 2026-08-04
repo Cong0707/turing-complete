@@ -1504,14 +1504,14 @@ def _growth_fanout_edges(
     if len(sinks) != len(routing_sinks):
         raise ValueError("physical and routing sink populations differ")
     direction_values = [sink[0] - routing_source[0] for sink in routing_sinks]
-    if not all(value > 4 for value in direction_values):
+    if not all(value > 1 for value in direction_values):
         raise RuntimeError(f"non-forward local fanout {network}")
 
     branch_records: list[tuple[int, Point, Point, Point, Point]] = []
     staged_intervals: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_horizontal: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_hubs: set[Point] = set()
-    predicted_right = max(sink[0] - 2 for sink in routing_sinks)
+    predicted_right = max(sink[0] - 1 for sink in routing_sinks)
     source_y = routing_source[1]
     spine_y: int | None = None
     for delta in (0, *range(1, 17), *range(-1, -17, -1)):
@@ -1575,51 +1575,73 @@ def _growth_fanout_edges(
     )
     for sink, terminal in ordered:
         chosen: tuple[int, Point, Point] | None = None
-        first = terminal[0] - 2
-        last = routing_source[0] + 2
+        rejected: dict[str, int] = defaultdict(int)
+        first = terminal[0] - 1
+        last = routing_source[0]
         for branch_x in range(first, last - 1, -1):
-            top = (branch_x, spine_y)
+            top = (
+                routing_source
+                if branch_x == routing_source[0]
+                else (branch_x, spine_y)
+            )
             bottom = (branch_x, terminal[1])
             low_y, high_y = sorted((top[1], bottom[1]))
             if any(
-                not (high_y < other_low or low_y > other_high)
-                for other_low, other_high, _owner in (
+                (
+                    not (high_y < other_low or low_y > other_high)
+                    if owner != network
+                    else min(high_y, other_high) > max(low_y, other_low)
+                )
+                for other_low, other_high, owner in (
                     *track_intervals.get(branch_x, ()),
                     *staged_intervals.get(branch_x, ()),
                 )
             ):
+                rejected["vertical-track-overlap"] += 1
                 continue
             vertical = _axis_points(top, bottom)
             if any(
                 _edge(left, right) in forbidden_edges
                 for left, right in zip(vertical, vertical[1:])
             ):
+                rejected["pin-access-edge"] += 1
                 continue
-            if any(point in forbidden for point in vertical):
+            if any(
+                point in forbidden
+                and point not in {routing_source, terminal}
+                for point in vertical
+            ):
+                rejected["component-or-pin"] += 1
                 continue
             if set(vertical) & reserved:
+                rejected["reserved-point"] += 1
                 continue
             tap = _axis_points(bottom, terminal)
             if any(
                 _edge(left, right) in forbidden_edges
                 for left, right in zip(tap, tap[1:])
             ):
+                rejected["tap-pin-access-edge"] += 1
                 continue
             if any(
                 point in forbidden and point != terminal
                 for point in tap[1:]
             ):
+                rejected["tap-component-or-pin"] += 1
                 continue
             if set(tap[:-1]) & reserved:
+                rejected["tap-reserved-point"] += 1
                 continue
             hubs = {top, bottom}
-            if hubs & (reserved | staged_hubs):
+            if hubs & reserved or (hubs - {spine_origin}) & staged_hubs:
+                rejected["reserved-hub"] += 1
                 continue
             if any(
                 owner != network and low <= hub[0] <= high
                 for hub in hubs
                 for low, high, owner in horizontal_intervals.get(hub[1], ())
             ):
+                rejected["foreign-horizontal-at-hub"] += 1
                 continue
             tap_low, tap_high = sorted((bottom[0], terminal[0]))
             if any(
@@ -1633,11 +1655,17 @@ def _growth_fanout_edges(
                     *staged_horizontal.get(bottom[1], ()),
                 )
             ):
+                rejected["horizontal-overlap"] += 1
                 continue
             chosen = (branch_x, top, bottom)
             break
         if chosen is None:
-            raise RuntimeError(f"no local branch station for {network} -> {sink}")
+            detail = ", ".join(
+                f"{reason}={count}" for reason, count in sorted(rejected.items())
+            )
+            raise RuntimeError(
+                f"no local branch station for {network} -> {sink}: {detail}"
+            )
         branch_x, top, bottom = chosen
         staged_intervals[branch_x].append(
             (min(top[1], bottom[1]), max(top[1], bottom[1]), network)
@@ -1651,7 +1679,11 @@ def _growth_fanout_edges(
     spine_points = sorted(
         {
             spine_origin,
-            *(top for _x, _sink, _terminal, top, _bottom in branch_records),
+            *(
+                top
+                for _x, _sink, _terminal, top, _bottom in branch_records
+                if top[1] == spine_y
+            ),
         },
         key=lambda point: point[0],
     )
@@ -1918,18 +1950,39 @@ def _attempt(
         if physical_net_by_name[network].additional_sources:
             return (1, *spec)
         if network in structured_networks:
+            routing_source = pin_access.get(source, source)
+            routing_sinks = tuple(pin_access.get(sink, sink) for sink in sinks)
             candidates, _direction, _track_min, _track_max = (
                 _fanout_track_candidates(
-                    pin_access.get(source, source),
-                    tuple(pin_access.get(sink, sink) for sink in sinks),
+                    routing_source,
+                    routing_sinks,
                     forbidden=forbidden_hubs,
                     bounds=bounds,
                 )
             )
             candidate_count = len(candidates) if candidates else 1 << 20
+            vertical_span = max(
+                point[1] for point in (routing_source, *routing_sinks)
+            ) - min(point[1] for point in (routing_source, *routing_sinks))
             # Allocate genuinely scarce local channels first. Networks with
             # no vertical candidate retain the old structural order because
             # they depend on the axis-adaptive growth planner instead.
+            if order_strategy == "longest-first":
+                return (
+                    2,
+                    0 if network in conductor_hints else 1,
+                    -vertical_span,
+                    candidate_count,
+                    *spec,
+                )
+            if order_strategy == "local-first":
+                return (
+                    2,
+                    0 if network in conductor_hints else 1,
+                    candidate_count,
+                    -vertical_span,
+                    *spec,
+                )
             return (2, candidate_count, *spec)
         return (3, *spec)
 
