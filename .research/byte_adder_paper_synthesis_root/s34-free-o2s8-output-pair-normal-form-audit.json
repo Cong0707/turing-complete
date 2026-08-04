@@ -1,0 +1,104 @@
+{
+  "schema": "s34-free-o2s8-output-pair-normal-form-audit-v1",
+  "status": "unsat_within_normal_form",
+  "global_o2s8_lower_bound_proved": false,
+  "scope": {
+    "ordinary_components": 2,
+    "switch_components": 8,
+    "ordinary_nodes_precede_all_switches": true,
+    "exactly_two_switch_drivers_per_public_output": true,
+    "switch_inputs_arrive_by": 4,
+    "public_output_deadline": 5,
+    "interleaved_switch_to_ordinary_topologies_in_scope": false,
+    "cross_output_physical_partition_relaxed": true,
+    "component_liveness_relaxed": true
+  },
+  "domain": {
+    "rows": 486,
+    "base_source_count": 35,
+    "base_sources": [
+      "nC3",
+      "G3",
+      "Q3",
+      "P3",
+      "N3",
+      "G4",
+      "Q4",
+      "P4",
+      "N4",
+      "G5",
+      "Q5",
+      "P5",
+      "N5",
+      "G6",
+      "Q6",
+      "P6",
+      "N6",
+      "G7",
+      "Q7",
+      "P7",
+      "A34n",
+      "V34n",
+      "A56n",
+      "V56n",
+      "A36n",
+      "V36n",
+      "nC7",
+      "s34_u0",
+      "s34_u1",
+      "s34_u2",
+      "s34_u3",
+      "s34_u4",
+      "s34_u5",
+      "0",
+      "1"
+    ],
+    "targets": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ]
+  },
+  "independent": {
+    "unique_one_gate_functions_d4": 1118,
+    "unordered_function_pairs": 625521,
+    "pair_stream_sha256": "f0e5cd79fab9089f6411d9eac005ccfa91a6ee3ebad3d77cd0326cd678dce128",
+    "representable_pair_count_by_target": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "representable_target_count_histogram": {
+      "0": 625521,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    }
+  },
+  "dependent_chain": {
+    "unique_first_gate_functions_d3": 752,
+    "topological_function_pairs": 67847,
+    "pair_stream_sha256": "d7e8fd93492aa076dc4aaef53355ef3849e1852bb203d946ad7028564809f8d6",
+    "representable_pair_count_by_target": {
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "representable_target_count_histogram": {
+      "0": 67847,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    }
+  },
+  "dependency_sha256": {
+    ".research/byte_adder_paper_synthesis_root/exact_tail_with_s34_free.py": "df10a58605770f4f1466a166853190beb7ef8ebe473cf4f785ee025af62bb01e",
+    ".research/byte_adder_paper_synthesis_root/audit_s34_free_o2s8_output_pair_normal_form.py": "12a4c4549618fe4aeb9e3ccb3ae31ab21e51e00529695eb2ecb69c88773f50b0"
+  },
+  "elapsed_seconds": 4.1142345999978716
+}
