@@ -1,0 +1,71 @@
+{
+  "schema": "tc-byte-adder-bit35-joint-phase-driver-terminal-audit-v1",
+  "status": "pass",
+  "terminal_classification": "strict_unsat",
+  "expected": {
+    "gate_bound": 16,
+    "components": 13,
+    "c5_shard": "single_k8",
+    "t5_drivers": 1,
+    "s5_drivers": 2,
+    "solver": "cadical195",
+    "internal_timeout": 0.0,
+    "watchdog_seconds": 21600,
+    "as_limit_kib": 4194304,
+    "nice": 10,
+    "truth_domain_rows": 96,
+    "truth_domain_sha256": "1c9768429735b2f87bca12bb62dad82624f45a419b80ea6b5470655764c34b60"
+  },
+  "artifact": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\results\\g16_n13_c5_single_k8_t1_s2.json",
+    "exists": true,
+    "sha256": "c4918bfcdfe757ce82479bd59e1c8e5bbabef9b16f9bb614055279b6b906e3d8",
+    "solver_status": "unsat"
+  },
+  "run_record": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\results\\g16_n13_c5_single_k8_t1_s2.run.json",
+    "exists": true,
+    "sha256": "ce9902e9e6bc0d6568f44198ff26645e40b8dc6bb43cd5c34e4f0bbf0330078f",
+    "classification": "solver_exit",
+    "exit_code": 0
+  },
+  "recomputed_constraints": {
+    "c5_constraint_sha256": "d9620326c2ced43956d7d0dd849907ec301a5fe2b17240f45a3a06df58bb897f",
+    "phase_constraint_sha256": "345d0d128fb7a3c6272306168c6a3def67cf847058cc9d37ba2835fc81c48195"
+  },
+  "worker": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\exact_bit35_joint_phase_driver_shard.py",
+    "sha256": "a64634e6c160114b8bdb06c893a8e26e4f8c9c6e9eb208ca410fe538313f770d"
+  },
+  "dependencies": [
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_c5_normal_form.py",
+      "sha256": "583036983d44c9f90bb1d8fbd694f34b3de8932e6a722511a2f88b0ff3a63c83"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\bit35_joint_phase_driver_classes.py",
+      "sha256": "babbf4bb118cbcda9638f2d76cd3082a996a15c7225dd5ef49f12ae8be25a3d9"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\exact_bit35_joint_c5_normal_form_shard.py",
+      "sha256": "949b0e922710db86afa3a7f7881da47005319db147bf2be77b0527e0d0c97276"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_cross_boundary_joint_restart\\exact_bit35_joint_sat.py",
+      "sha256": "83e3d79130ce2f8844041ad2d1b55363a8a00297836c81b98eab69e607c75aef"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_macro_exact\\exact_paid_physical_search_core.py",
+      "sha256": "5cfd8d5121620393201f51a3db0f7328229253502cf6831ce32f8ea935b5108a"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_macro_exact\\exact_paid_physical_core.py",
+      "sha256": "9c671db251d1070b647094833c616501f72f6f6b542b6da35f0856b4f0c29dd6"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_macro_exact\\exact_paid_physical_cnf.py",
+      "sha256": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    }
+  ],
+  "errors": []
+}
