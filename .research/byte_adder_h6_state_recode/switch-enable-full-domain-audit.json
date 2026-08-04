@@ -1,0 +1,522 @@
+{
+  "schema": "byte-adder-physical-switch-enable-full-domain-audit-v2",
+  "scope": {
+    "truth_rows": 131072,
+    "input_order": "Cin toggles fastest, then B[0:7], then A[0:7]",
+    "source": "decoded physical components, pins, and wires",
+    "game_started": false,
+    "save_modified": false
+  },
+  "circuit": {
+    "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\byte_adder\\Default\\circuit.data",
+    "bytes": 8411,
+    "sha256": "3CA8806C27FFD2532F3C80041EDD1466D169D41E1C81F8B3F79F6FB9DA057AAC",
+    "component_count": 82,
+    "wire_count": 167,
+    "switch_count": 13
+  },
+  "baseline": {
+    "mismatch_union_rows": 0,
+    "mismatch_by_lane": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "conflict_rows": 0
+  },
+  "switches": [
+    {
+      "component_index": 30,
+      "permanent_id": 4761040021047908428,
+      "position": [
+        1048,
+        -156
+      ],
+      "rotation": 0,
+      "enable_network": 19,
+      "enable_drivers": [
+        {
+          "component_index": 1,
+          "component_kind": 61,
+          "permanent_id": 2,
+          "pin": "value"
+        }
+      ],
+      "enable_one_rows": 65536,
+      "input_one_rows": 98304,
+      "active_one_rows": 49152,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        32768,
+        32768,
+        16384,
+        8192,
+        4096,
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 31,
+      "permanent_id": 4276971345213248280,
+      "position": [
+        1088,
+        -144
+      ],
+      "rotation": 0,
+      "enable_network": 22,
+      "enable_drivers": [
+        {
+          "component_index": 7,
+          "component_kind": 4,
+          "permanent_id": 6634214333358014993,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 32768,
+      "input_one_rows": 98304,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 16384,
+      "delete_mismatch_by_lane": [
+        16384,
+        16384,
+        8192,
+        4096,
+        2048,
+        1024,
+        512,
+        256,
+        128
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 40,
+      "permanent_id": 2156182932238695802,
+      "position": [
+        1448,
+        -36
+      ],
+      "rotation": 0,
+      "enable_network": 29,
+      "enable_drivers": [
+        {
+          "component_index": 9,
+          "component_kind": 4,
+          "permanent_id": 4048189856950606415,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 32768,
+      "input_one_rows": 73728,
+      "active_one_rows": 24576,
+      "delete_mismatch_union_rows": 8192,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        8192,
+        4096,
+        2048,
+        1024,
+        512,
+        256
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 41,
+      "permanent_id": 5392850014949100170,
+      "position": [
+        1488,
+        -24
+      ],
+      "rotation": 0,
+      "enable_network": 83,
+      "enable_drivers": [
+        {
+          "component_index": 30,
+          "component_kind": 12,
+          "permanent_id": 4761040021047908428,
+          "pin": "out"
+        },
+        {
+          "component_index": 31,
+          "component_kind": 12,
+          "permanent_id": 4276971345213248280,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 65536,
+      "input_one_rows": 73728,
+      "active_one_rows": 36864,
+      "delete_mismatch_union_rows": 16384,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        16384,
+        8192,
+        4096,
+        2048,
+        1024,
+        512
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 43,
+      "permanent_id": 9182984506583840134,
+      "position": [
+        1568,
+        0
+      ],
+      "rotation": 0,
+      "enable_network": 102,
+      "enable_drivers": [
+        {
+          "component_index": 38,
+          "component_kind": 7,
+          "permanent_id": 8255523550073490537,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 75776,
+      "input_one_rows": 81920,
+      "active_one_rows": 57344,
+      "delete_mismatch_union_rows": 34816,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        27648,
+        34816,
+        17408,
+        8704,
+        4352
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 44,
+      "permanent_id": 649798936394693373,
+      "position": [
+        1608,
+        12
+      ],
+      "rotation": 0,
+      "enable_network": 105,
+      "enable_drivers": [
+        {
+          "component_index": 40,
+          "component_kind": 12,
+          "permanent_id": 2156182932238695802,
+          "pin": "out"
+        },
+        {
+          "component_index": 41,
+          "component_kind": 12,
+          "permanent_id": 5392850014949100170,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 49152,
+      "input_one_rows": 81920,
+      "active_one_rows": 30720,
+      "delete_mismatch_union_rows": 8192,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        8192,
+        8192,
+        4096,
+        2048,
+        1024
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 59,
+      "permanent_id": 8138414059056981679,
+      "position": [
+        2208,
+        192
+      ],
+      "rotation": 0,
+      "enable_network": 134,
+      "enable_drivers": [
+        {
+          "component_index": 56,
+          "component_kind": 9,
+          "permanent_id": 5072686950149564002,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 49152,
+      "input_one_rows": 98304,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768,
+        0,
+        0
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 60,
+      "permanent_id": 331424298957701623,
+      "position": [
+        2248,
+        204
+      ],
+      "rotation": 0,
+      "enable_network": 135,
+      "enable_drivers": [
+        {
+          "component_index": 57,
+          "component_kind": 9,
+          "permanent_id": 7611104304367181974,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 49152,
+      "input_one_rows": 81920,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768,
+        0,
+        0
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 66,
+      "permanent_id": 8968393936431826627,
+      "position": [
+        2488,
+        276
+      ],
+      "rotation": 0,
+      "enable_network": 140,
+      "enable_drivers": [
+        {
+          "component_index": 62,
+          "component_kind": 9,
+          "permanent_id": 6466471207490208403,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 49152,
+      "input_one_rows": 65536,
+      "active_one_rows": 24576,
+      "delete_mismatch_union_rows": 14336,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        14336,
+        0
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 67,
+      "permanent_id": 8945000509902214613,
+      "position": [
+        2528,
+        288
+      ],
+      "rotation": 0,
+      "enable_network": 143,
+      "enable_drivers": [
+        {
+          "component_index": 63,
+          "component_kind": 9,
+          "permanent_id": 5646465707283482222,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 36864,
+      "input_one_rows": 65536,
+      "active_one_rows": 18432,
+      "delete_mismatch_union_rows": 8192,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8192,
+        0
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 68,
+      "permanent_id": 7644919988486876164,
+      "position": [
+        2568,
+        300
+      ],
+      "rotation": 0,
+      "enable_network": 144,
+      "enable_drivers": [
+        {
+          "component_index": 64,
+          "component_kind": 9,
+          "permanent_id": 4994196427458248891,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 40960,
+      "input_one_rows": 94208,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768,
+        0
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 70,
+      "permanent_id": 1685091179937481930,
+      "position": [
+        2648,
+        324
+      ],
+      "rotation": 0,
+      "enable_network": 74,
+      "enable_drivers": [
+        {
+          "component_index": 27,
+          "component_kind": 4,
+          "permanent_id": 1598449967554519053,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 32768,
+      "input_one_rows": 32768,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    },
+    {
+      "component_index": 71,
+      "permanent_id": 1858118712644640620,
+      "position": [
+        2688,
+        336
+      ],
+      "rotation": 0,
+      "enable_network": 153,
+      "enable_drivers": [
+        {
+          "component_index": 69,
+          "component_kind": 9,
+          "permanent_id": 1930821609849880948,
+          "pin": "out"
+        }
+      ],
+      "enable_one_rows": 40960,
+      "input_one_rows": 94208,
+      "active_one_rows": 32768,
+      "delete_mismatch_union_rows": 32768,
+      "delete_mismatch_by_lane": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32768
+      ],
+      "delete_conflict_rows": 0,
+      "constant_zero_enable": false,
+      "individually_deletable": false
+    }
+  ],
+  "conclusion": {
+    "constant_zero_enable_count": 0,
+    "individually_deletable_switch_count": 0,
+    "minimum_enable_one_rows": 32768,
+    "minimum_delete_mismatch_union_rows": 8192,
+    "status": "all-physical-switches-have-live-enable"
+  }
+}
