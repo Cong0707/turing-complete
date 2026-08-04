@@ -1,0 +1,96 @@
+{
+  "schema": "tc-primitive-expansion-physical-byproduct-catalog-audit-v1",
+  "status": "pass",
+  "catalog_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\truth-byproduct-catalog-v1.json",
+  "catalog_sha256": "387fae011a0acc49db710704132d07f7acc74f9cb415a3919ee1cedcc7d4f9a6",
+  "dependency_sha256s": {
+    ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    ".research/byte_adder_component_costs_agent/byte_adder_available_primitives.json": "0a6a27926a89de2f98bee7624bfcd72a656fd52fcdbd6b79d883e1135c8046e8",
+    ".research/byte_adder_component_byproduct_catalog/runtime-evidence-2.1.292.json": "31c014dafe2a677cbd281dea02aa0973f168df5a97f1e43d526c0091e5758d14",
+    ".research/byte_adder_boolean_superopt_agent/advanced_adder_cell_library.py": "1a40b6f56a642c7b493b58ff71d64d046f29f613bce07477449deede89cc807a"
+  },
+  "counts": {
+    "domains": 6,
+    "truth_classes": 155,
+    "producers": 295,
+    "packed_masks": 166,
+    "owner_sets": 245,
+    "current_nodes": 82,
+    "current_switch_drivers": 10,
+    "embedded_patterns": 22,
+    "direct_reuse_hits": 0
+  },
+  "source_kind_counts": {
+    "domain-input": 32,
+    "explicit-minimal-expansion": 115,
+    "native-component-score-profile": 24,
+    "ordinary-minimal-enumeration": 24,
+    "resolved-multidriver-bus": 2,
+    "switch-boolean-projection-only": 1,
+    "switch-bus-expansion": 4,
+    "switch-physical-expansion": 1,
+    "verified-80d7-node": 82,
+    "verified-80d7-switch-driver": 10
+  },
+  "role_counts": {
+    "boolean-main": 1,
+    "byproduct": 88,
+    "input": 32,
+    "intermediate": 73,
+    "main": 73,
+    "partial-driver": 14,
+    "partial-driver-main": 3,
+    "primary-output": 9,
+    "resolved-bus-main": 2
+  },
+  "full_adder_witness_replay": {
+    "rows": 8,
+    "gate": 7,
+    "delay": 4,
+    "sum_truth_hex": "0x96",
+    "carry_truth_hex": "0xe8",
+    "mismatch_count": 0
+  },
+  "current_80d7_replay": {
+    "rows": 131072,
+    "gate": 80,
+    "delay": 7,
+    "mismatch_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mismatch_union_count": 0,
+    "conflict_assignment_count": 0,
+    "z_assignment_count_by_output": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "source_structural_sha256": "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f",
+    "replay_structural_sha256": "dec74e32c3bc5b51cf693d8bfc401f6f6ac8be1e79022e83bc731aeb803432c8",
+    "node_count": 82,
+    "switch_driver_count": 10
+  },
+  "checks": {
+    "all_packed_masks_and_sha256s_recomputed": true,
+    "all_physical_and_boolean_truth_sha256s_recomputed": true,
+    "all_owner_sets_and_truth_pareto_frontiers_recomputed": true,
+    "all_required_primitive_families_present": true,
+    "full_adder_7gate_witness_independently_replayed": true,
+    "current_82_nodes_and_10_partial_drivers_accounted": true,
+    "current_outputs_131072_rows_zero_mismatch_conflict_z": true
+  }
+}

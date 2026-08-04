@@ -1,0 +1,1540 @@
+{
+  "artifacts": {
+    "candidate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\kind15_bit0_intake\\g77_d9_r2\\candidate.circuit.data",
+      "sha256": "16a0601651ff41a5c31050b663fe5835e69db404aa2d00f69e1a2fbc221879b4"
+    },
+    "candidate_decoded": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\kind15_bit0_intake\\g77_d9_r2\\candidate.decoded.json",
+      "sha256": "4f8bacc4c8a4e651fc36be10b13cd998b2f83eeab4a4405d87d359aac5f5966f"
+    },
+    "semantic_proxy": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\kind15_bit0_intake\\g77_d9_r2\\semantic_proxy.circuit.data",
+      "sha256": "e8e544268dd0474c6cbdd2403e4fdd6219ba5c1287b35bc2d41e120a03a568fd"
+    },
+    "transformed_factory_dag": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\kind15_bit0_intake\\g77_d9_r2\\transformed_factory_dag.json",
+      "sha256": "6116e041b6079982220af7c284e4d92244b6d51561e67fc46fd32c12bc228a68"
+    }
+  },
+  "deterministic_rebuild_byte_identical": true,
+  "full_adder_7_4_prerequisite": {
+    "audit": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\full_adder_7_4_intake\\formal_9f83306a_r1\\audit.json",
+    "audit_sha256": "a166bdf0409a888cfa0eb5419ac9f34bfca0dfa056b8f2a3c8df993c0703be6c",
+    "formal_save": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\full_adder\\Default\\circuit.data",
+    "formal_save_sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2",
+    "physical_candidate_verified": true
+  },
+  "physical_audit": {
+    "candidate_sha256": "16a0601651ff41a5c31050b663fe5835e69db404aa2d00f69e1a2fbc221879b4",
+    "component_count": 71,
+    "component_kind_counts": {
+      "12": 8,
+      "15": 1,
+      "16": 1,
+      "17": 2,
+      "4": 15,
+      "6": 3,
+      "61": 3,
+      "69": 2,
+      "7": 12,
+      "9": 24
+    },
+    "connectivity": {
+      "connected_pin_count": 223,
+      "cycle_component_count": 0,
+      "effective_component_count": 71,
+      "logical_edge_count": 151,
+      "logical_network_count": 80,
+      "multi_driver_network_count": 0,
+      "pin_count": 223,
+      "sinkless_network_count": 0,
+      "supported_component_count": 71,
+      "unconnected_pin_count": 0,
+      "unconnected_pins": [],
+      "undriven_network_count": 0,
+      "unit_logic_depth": 9,
+      "unsupported_component_kind_counts": {},
+      "width_mismatch_network_count": 0
+    },
+    "geometry": {
+      "alpha_cell_count": 1075,
+      "component_overlap_cells": [],
+      "kind15_pin_body_mask_contract": {
+        "all_five_pin_offsets_have_wire_endpoints_on_every_instance": true,
+        "baseline": "examples/byte_adder/baseline/circuit.data",
+        "baseline_full_adder_count": 8,
+        "baseline_sha256": "f8219a2c1dff42f8811bd105e4581b02d4164a765b550b0a8234f94418bd0570",
+        "pin_offsets": {
+          "carry_in": [
+            -1,
+            -1
+          ],
+          "carry_out": [
+            1,
+            1
+          ],
+          "in0": [
+            -1,
+            0
+          ],
+          "in1": [
+            -1,
+            1
+          ],
+          "sum": [
+            1,
+            0
+          ]
+        },
+        "reviewed_output_lead_offsets": [
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "schema": "kind15-v15-pin-body-mask-contract-v1",
+        "sprite": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\asset\\component_sprites\\com_full_adder.png",
+        "sprite_sha256": "aeba47d81be3d135de5b9bd5ce5df7194c28d507eb96eb28332517f548f121f7"
+      },
+      "reviewed_kind15_output_lead_contact_count": 4,
+      "sprite_files": [
+        "com_and_bit.png",
+        "com_full_adder.png",
+        "com_level_input_word.png",
+        "com_level_output_word.png",
+        "com_maker_bit_8.png",
+        "com_nand_bit.png",
+        "com_nor_bit.png",
+        "com_or_bit.png",
+        "com_splitter_bit_8.png",
+        "com_switch_bit.png"
+      ],
+      "sprite_sha256": {
+        "com_and_bit.png": "572004db29f0e36e234017dc3d59e3f36349ae3ac44154f74b32922f8d80d707",
+        "com_full_adder.png": "aeba47d81be3d135de5b9bd5ce5df7194c28d507eb96eb28332517f548f121f7",
+        "com_level_input_word.png": "696d9b69472863572b31e58a7b4c42cfdb867a4e6bc28b16d6d000cfbc57808e",
+        "com_level_output_word.png": "696d9b69472863572b31e58a7b4c42cfdb867a4e6bc28b16d6d000cfbc57808e",
+        "com_maker_bit_8.png": "5c4116013d804d138bc77c4c373d4e373f90c0b6aa8a1440f4ad3cfb593ef8c0",
+        "com_nand_bit.png": "5e32ae02ad6f96b760964925ad290243ff6836b96dc3b4bf90a8a2d15b20602c",
+        "com_nor_bit.png": "5942fe576695374b74bd95f4e02cd4ea4c92530a83c8b4c60b050de8e3d37f7d",
+        "com_or_bit.png": "ae409283fa78fc1e7294d447723755705da33a370d70ab46a4f9c3244e603715",
+        "com_splitter_bit_8.png": "5c4116013d804d138bc77c4c373d4e373f90c0b6aa8a1440f4ad3cfb593ef8c0",
+        "com_switch_bit.png": "fe25a1e9f6b4085452b6b3813c7aa8897fe80d919b031fd430c50c77a52b4625"
+      },
+      "unexpected_wire_collision_count": 0,
+      "unsupported_component_kinds": [],
+      "wire_collisions": [
+        {
+          "component_index": 7,
+          "component_kind": 15,
+          "endpoint": false,
+          "pin_names": [],
+          "point": [
+            130,
+            -365
+          ],
+          "wire_index": 67
+        },
+        {
+          "component_index": 7,
+          "component_kind": 15,
+          "endpoint": false,
+          "pin_names": [],
+          "point": [
+            130,
+            -365
+          ],
+          "wire_index": 68
+        },
+        {
+          "component_index": 7,
+          "component_kind": 15,
+          "endpoint": false,
+          "pin_names": [],
+          "point": [
+            130,
+            -365
+          ],
+          "wire_index": 69
+        },
+        {
+          "component_index": 7,
+          "component_kind": 15,
+          "endpoint": false,
+          "pin_names": [],
+          "point": [
+            130,
+            -366
+          ],
+          "wire_index": 70
+        }
+      ],
+      "wire_interior_pin_contacts": []
+    },
+    "kind15_selection_fields": [
+      7,
+      4
+    ],
+    "native_com_add_count": 0,
+    "native_com_full_adder_count": 1,
+    "resolved_networks": {
+      "adversarial_foreign_label_rejected": true,
+      "fragmented_intended_network_count": 0,
+      "intended_resolved_network_count": 80,
+      "mixed_intended_physical_network_count": 0,
+      "physical_resolved_network_count": 80,
+      "tri_state_assignments": [
+        {
+          "component_index": 32,
+          "incident_wire_count": 3,
+          "permanent_id": 1779637428409930634,
+          "pin": "out",
+          "position": [
+            1130,
+            -66
+          ],
+          "resolved_network": "signal:55"
+        },
+        {
+          "component_index": 33,
+          "incident_wire_count": 1,
+          "permanent_id": 497537119202125963,
+          "pin": "out",
+          "position": [
+            1170,
+            -54
+          ],
+          "resolved_network": "signal:55"
+        },
+        {
+          "component_index": 34,
+          "incident_wire_count": 5,
+          "permanent_id": 1792837827284584689,
+          "pin": "out",
+          "position": [
+            1210,
+            -42
+          ],
+          "resolved_network": "signal:56"
+        },
+        {
+          "component_index": 35,
+          "incident_wire_count": 1,
+          "permanent_id": 7006785621321181516,
+          "pin": "out",
+          "position": [
+            1250,
+            -30
+          ],
+          "resolved_network": "signal:56"
+        },
+        {
+          "component_index": 41,
+          "incident_wire_count": 4,
+          "permanent_id": 772875523042664894,
+          "pin": "out",
+          "position": [
+            1490,
+            42
+          ],
+          "resolved_network": "signal:62"
+        },
+        {
+          "component_index": 42,
+          "incident_wire_count": 1,
+          "permanent_id": 2130860679548907973,
+          "pin": "out",
+          "position": [
+            1530,
+            54
+          ],
+          "resolved_network": "signal:62"
+        },
+        {
+          "component_index": 49,
+          "incident_wire_count": 4,
+          "permanent_id": 3391794249081224129,
+          "pin": "out",
+          "position": [
+            1810,
+            138
+          ],
+          "resolved_network": "signal:69"
+        },
+        {
+          "component_index": 50,
+          "incident_wire_count": 1,
+          "permanent_id": 4253451050955538417,
+          "pin": "out",
+          "position": [
+            1850,
+            150
+          ],
+          "resolved_network": "signal:69"
+        }
+      ],
+      "tri_state_output_pin_count": 8,
+      "tri_state_outputs_with_exactly_one_resolved_network": 8
+    },
+    "reviewed_gate": 77,
+    "semantic": {
+      "bus_nodes": [
+        {
+          "arrival": 2,
+          "conflict_assignment_count": 0,
+          "driver_count": 2,
+          "node": 55,
+          "z_assignment_count": 24576
+        },
+        {
+          "arrival": 5,
+          "conflict_assignment_count": 0,
+          "driver_count": 2,
+          "node": 56,
+          "z_assignment_count": 36864
+        },
+        {
+          "arrival": 6,
+          "conflict_assignment_count": 0,
+          "driver_count": 2,
+          "node": 62,
+          "z_assignment_count": 36864
+        },
+        {
+          "arrival": 7,
+          "conflict_assignment_count": 0,
+          "driver_count": 2,
+          "node": 69,
+          "z_assignment_count": 40960
+        }
+      ],
+      "carry_correct": true,
+      "carry_depth": 9,
+      "global_depth": 9,
+      "node_replay_count": 77,
+      "node_replay_mismatch_count": 0,
+      "output_arrivals": [
+        4,
+        6,
+        9,
+        7,
+        9,
+        8,
+        9,
+        9,
+        9
+      ],
+      "packed_conflict_cases": 0,
+      "primary_output_z_count": 0,
+      "sum_correct": true,
+      "sum_depth": 9,
+      "vectors_checked": 131072
+    },
+    "serialization": {
+      "canonical_json_rebuild_byte_identical": true,
+      "v15_roundtrip_byte_identical": true
+    },
+    "wire_count": 143
+  },
+  "runtime_cost_precondition": {
+    "acceptance_derived_kind15_7_4_ready_now": false,
+    "byte_adder_frontier": [
+      [
+        80,
+        7,
+        1
+      ],
+      [
+        154,
+        4,
+        1
+      ]
+    ],
+    "deployable_now": false,
+    "full_adder_frontier": [
+      [
+        16,
+        8,
+        1
+      ]
+    ],
+    "levels": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\levels.txt",
+    "levels_sha256": "178f80adf2acc08027c07044e6ea8428d7955b65b30e054e0ac56918245a7303",
+    "reason": "research materialization is complete, but deployment is forbidden; additionally kind15 may be costed as 7/4 only after Full Adder level acceptance writes that frontier",
+    "required_full_adder_frontier": [
+      7,
+      4,
+      1
+    ]
+  },
+  "schema": "byte-adder-kind15-bit0-materialization-audit-v1",
+  "scope": {
+    "backup_created": false,
+    "deployment_supported": false,
+    "formal_byte_adder_written": false,
+    "formal_full_adder_written": false,
+    "game_started": false,
+    "levels_written": false,
+    "repository_candidate_written": false
+  },
+  "source_review": {
+    "builder": null,
+    "builder_sha256": null,
+    "builder_witness": null,
+    "builder_witness_sha256": null,
+    "bus_node_count": 5,
+    "bus_resolved_name_forms": {
+      "bus-node": 5
+    },
+    "dag_source": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+    "dag_source_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "factory_dag_hash_form": "compact-ascii",
+    "factory_dag_sha256": "90cd25fbbc68736078b4373bd2721cb5c86923b34d284c2283b589bbf8cb09b5",
+    "generator_replay_equal": null,
+    "recursive_cost_delay_verified": true,
+    "referenced_certificates": [],
+    "structural_sha256": "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f",
+    "tri_state_output_count": 10
+  },
+  "status": "verified-research-candidate",
+  "transformation": {
+    "cost_assumption": {
+      "component_kind": 15,
+      "component_selection_fields": [
+        7,
+        4
+      ],
+      "header_fields_are_not_cost_proof": true,
+      "required_acceptance_derived_frontier": [
+        7,
+        4
+      ]
+    },
+    "factory_dag": {
+      "live_node_count": 77,
+      "nodes": [
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 2,
+          "label": "a0",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 3,
+          "label": "b0",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 4,
+          "label": "a1",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 5,
+          "label": "b1",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 6,
+          "label": "a2",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 7,
+          "label": "b2",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 8,
+          "label": "a3",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 9,
+          "label": "b3",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 10,
+          "label": "a4",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 11,
+          "label": "b4",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 12,
+          "label": "a5",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 13,
+          "label": "b5",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 14,
+          "label": "a6",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 15,
+          "label": "b6",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 16,
+          "label": "a7",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 17,
+          "label": "b7",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [],
+          "arrival": 0,
+          "cost": 0,
+          "id": 18,
+          "label": "cin",
+          "may_z": false,
+          "op": "INPUT",
+          "step_delay": 0
+        },
+        {
+          "args": [
+            4,
+            5
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 22,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            4,
+            5
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 23,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            22,
+            23
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 24,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            6,
+            7
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 25,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            8,
+            9
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 28,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            8,
+            9
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 29,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            28,
+            29
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 30,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            10,
+            11
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 31,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            10,
+            11
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 32,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            31,
+            32
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 33,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            12,
+            13
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 34,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            12,
+            13
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 35,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            34,
+            35
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 36,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            14,
+            15
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 37,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            14,
+            15
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 38,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            37,
+            38
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 39,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            16,
+            17
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 40,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            16,
+            17
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 41,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            40,
+            41
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 42,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            2,
+            3,
+            18
+          ],
+          "arrival": 4,
+          "cost": 7,
+          "drivers": [
+            {
+              "data": 43,
+              "enable": 2,
+              "owner": "bus_node_45"
+            },
+            {
+              "data": 44,
+              "enable": 44,
+              "owner": "bus_node_45"
+            }
+          ],
+          "id": 45,
+          "label": "kind15:bit0",
+          "may_z": false,
+          "op": "FULL_ADDER_CARRY",
+          "resolved_network": "bus_node_45",
+          "shared_component": "kind15-bit0",
+          "step_delay": 4
+        },
+        {
+          "args": [
+            2,
+            3,
+            18
+          ],
+          "arrival": 4,
+          "cost": 0,
+          "id": 49,
+          "label": "kind15:bit0",
+          "may_z": false,
+          "op": "FULL_ADDER_SUM",
+          "shared_component": "kind15-bit0",
+          "step_delay": 4
+        },
+        {
+          "args": [
+            4,
+            5
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 50,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            6,
+            7
+          ],
+          "arrival": 1,
+          "cost": 1,
+          "id": 51,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            24,
+            45
+          ],
+          "arrival": 5,
+          "cost": 1,
+          "id": 52,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            22,
+            52
+          ],
+          "arrival": 6,
+          "cost": 1,
+          "id": 53,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            22,
+            25
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 54,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            25,
+            51,
+            50,
+            51
+          ],
+          "arrival": 2,
+          "cost": 4,
+          "drivers": [
+            {
+              "data": 51,
+              "enable": 25,
+              "owner": "bus_node_55"
+            },
+            {
+              "data": 51,
+              "enable": 50,
+              "owner": "bus_node_55"
+            }
+          ],
+          "id": 55,
+          "label": "",
+          "may_z": true,
+          "op": "BUS",
+          "resolved_network": "bus_node_55",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            45,
+            55,
+            54,
+            55
+          ],
+          "arrival": 5,
+          "cost": 4,
+          "drivers": [
+            {
+              "data": 55,
+              "enable": 45,
+              "owner": "bus_node_56"
+            },
+            {
+              "data": 55,
+              "enable": 54,
+              "owner": "bus_node_56"
+            }
+          ],
+          "id": 56,
+          "label": "",
+          "may_z": true,
+          "op": "BUS",
+          "resolved_network": "bus_node_56",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            30,
+            56
+          ],
+          "arrival": 6,
+          "cost": 1,
+          "id": 57,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            28,
+            57
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 58,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            28,
+            31
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 59,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            29,
+            32
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 60,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            31,
+            60
+          ],
+          "arrival": 3,
+          "cost": 1,
+          "id": 61,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            56,
+            61,
+            59,
+            61
+          ],
+          "arrival": 6,
+          "cost": 4,
+          "drivers": [
+            {
+              "data": 61,
+              "enable": 56,
+              "owner": "bus_node_62"
+            },
+            {
+              "data": 61,
+              "enable": 59,
+              "owner": "bus_node_62"
+            }
+          ],
+          "id": 62,
+          "label": "",
+          "may_z": true,
+          "op": "BUS",
+          "resolved_network": "bus_node_62",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            36,
+            62
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 63,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            36,
+            62
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 64,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            63,
+            64
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 65,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            36,
+            39
+          ],
+          "arrival": 3,
+          "cost": 1,
+          "id": 66,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            38,
+            66
+          ],
+          "arrival": 4,
+          "cost": 1,
+          "id": 67,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            34,
+            37
+          ],
+          "arrival": 2,
+          "cost": 1,
+          "id": 68,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            66,
+            62,
+            68,
+            67
+          ],
+          "arrival": 7,
+          "cost": 4,
+          "drivers": [
+            {
+              "data": 62,
+              "enable": 66,
+              "owner": "bus_node_69"
+            },
+            {
+              "data": 67,
+              "enable": 68,
+              "owner": "bus_node_69"
+            }
+          ],
+          "id": 69,
+          "label": "",
+          "may_z": true,
+          "op": "BUS",
+          "resolved_network": "bus_node_69",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            39,
+            69
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 70,
+          "label": "",
+          "may_z": false,
+          "op": "NAND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            34,
+            39
+          ],
+          "arrival": 3,
+          "cost": 1,
+          "id": 71,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            63,
+            71
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 72,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            70,
+            72
+          ],
+          "arrival": 9,
+          "cost": 1,
+          "id": 73,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            42,
+            69
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 74,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            40,
+            74
+          ],
+          "arrival": 9,
+          "cost": 1,
+          "id": 75,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            24,
+            45
+          ],
+          "arrival": 5,
+          "cost": 1,
+          "id": 76,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            52,
+            76
+          ],
+          "arrival": 6,
+          "cost": 1,
+          "id": 77,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            51,
+            53
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 78,
+          "label": "",
+          "may_z": false,
+          "op": "OR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            25,
+            53
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 79,
+          "label": "",
+          "may_z": false,
+          "op": "NAND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            56,
+            79
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 80,
+          "label": "",
+          "may_z": false,
+          "op": "NAND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            78,
+            80
+          ],
+          "arrival": 9,
+          "cost": 1,
+          "id": 81,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            30,
+            56
+          ],
+          "arrival": 6,
+          "cost": 1,
+          "id": 82,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            57,
+            82
+          ],
+          "arrival": 7,
+          "cost": 1,
+          "id": 83,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            33,
+            58
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 84,
+          "label": "",
+          "may_z": false,
+          "op": "AND",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            33,
+            58
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 85,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            84,
+            85
+          ],
+          "arrival": 9,
+          "cost": 1,
+          "id": 86,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            42,
+            69
+          ],
+          "arrival": 8,
+          "cost": 1,
+          "id": 87,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        },
+        {
+          "args": [
+            74,
+            87
+          ],
+          "arrival": 9,
+          "cost": 1,
+          "id": 88,
+          "label": "",
+          "may_z": false,
+          "op": "NOR",
+          "step_delay": 1
+        }
+      ],
+      "outputs": [
+        49,
+        77,
+        81,
+        83,
+        86,
+        65,
+        73,
+        88,
+        75
+      ],
+      "sha256": "05c353765036d5f44b098ed5348ba684ab7a3e47ab156e6b3a40542cf5edc648"
+    },
+    "family": "authoritative 80/7 with bit0 10-gate cone replaced by native kind15",
+    "metrics": {
+      "delay": 9,
+      "energy": 693,
+      "gate": 77,
+      "output_arrivals": [
+        4,
+        6,
+        9,
+        7,
+        9,
+        8,
+        9,
+        9,
+        9
+      ],
+      "reachable_nodes": 77
+    },
+    "schema": "byte-adder-kind15-bit0-physical-candidate-v1",
+    "semantic": {
+      "conflict_assignment_count": 0,
+      "mismatch_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mismatch_union_count": 0,
+      "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410",
+      "truth_table_rows": 131072,
+      "z_assignment_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "source": {
+      "authoritative_dag": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+      "authoritative_dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+      "authoritative_factory_dag_sha256": "90cd25fbbc68736078b4373bd2721cb5c86923b34d284c2283b589bbf8cb09b5",
+      "removed_nodes": [
+        43,
+        44,
+        46,
+        47,
+        48
+      ],
+      "replaced_output_nodes": [
+        49,
+        45
+      ]
+    },
+    "status": "sat-under-accepted-kind15-7-4-cost",
+    "timing_delta": {
+      "after": {
+        "C1": 4,
+        "S0": 4
+      },
+      "before": {
+        "C1": 2,
+        "S0": 4
+      },
+      "global_after": 9,
+      "global_before": 7,
+      "reason": "the replaced cone has asymmetric outputs; kind15 charges delay 4 to both"
+    }
+  }
+}

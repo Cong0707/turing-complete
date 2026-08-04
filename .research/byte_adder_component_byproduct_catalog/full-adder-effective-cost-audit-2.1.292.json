@@ -1,0 +1,238 @@
+{
+  "schema": "tc-full-adder-effective-cost-audit-2.1.292-v1",
+  "status": "pass",
+  "scope": {
+    "premise": "the Full Adder level is genuinely accepted and persisted at 7/4",
+    "game_launched": false,
+    "save_or_levels_txt_read_or_modified_by_this_audit": false,
+    "remote_submission_performed": false,
+    "evidence_kind": "installed campaign metadata + previously captured runtime/IDA/derived research"
+  },
+  "dependencies": {
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_costs_agent\\component_evidence.json": "c785cd20f09f551805ed61c2ec3a08f73a0600cfa629c4e18c9a21b7c6c1e98e",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\runtime-evidence-2.1.292.json": "31c014dafe2a677cbd281dea02aa0973f168df5a97f1e43d526c0091e5758d14",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\cost-import-semantics-2.1.292.json": "831a00531df6c613a820758ece5eccc054db7fc80db6f561edd9c1aff8335adf",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\truth-byproduct-catalog-v1.json": "387fae011a0acc49db710704132d07f7acc74f9cb415a3919ee1cedcc7d4f9a6",
+    "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\campaign\\full_adder\\meta.txt": "f3c09b4afebe70683248b75dfa008cef0cf4c1355c02b0d3c14f11a1ead9900e"
+  },
+  "kind_mapping": {
+    "component_kind": 15,
+    "name": "com_full_adder",
+    "runtime_default_separate_profile": [
+      8,
+      4
+    ],
+    "level_override_allowed": true,
+    "installed_level_kind": "combinational",
+    "unlock_declaration": "unlocks_components = [com_full_adder]"
+  },
+  "captured_before_acceptance": {
+    "saved_frontier": [
+      [
+        16,
+        8,
+        1
+      ]
+    ],
+    "custom_circuit_file_header": [
+      7,
+      4
+    ],
+    "file_header_is_not_effective_runtime_cost_proof": true
+  },
+  "accepted_7_4": {
+    "exact_minimum_proof": {
+      "status": "sat",
+      "gate": 7,
+      "delay": 4,
+      "seconds": 33.82437439999194,
+      "scope": "shared NOT/AND/OR/NAND/NOR DAG, free constants, both SUM and CARRY, delay<=4"
+    },
+    "frontier_transition": {
+      "old": {
+        "gate": 16,
+        "delay": 8,
+        "score_product": 128
+      },
+      "accepted": {
+        "gate": 7,
+        "delay": 4,
+        "score_product": 28
+      },
+      "strictly_better_product": true,
+      "strictly_dominates_in_both_axes": true,
+      "resulting_gate_delay_frontier": [
+        [
+          7,
+          4
+        ]
+      ]
+    },
+    "effective_cost_after_successful_local_completion": [
+      7,
+      4
+    ],
+    "effective_cost_after_restart_from_persisted_frontier": [
+      7,
+      4
+    ]
+  },
+  "runtime_recalculation": {
+    "kind_15_gate_and_delay_are_pass_through_from_selected_cost_point": true,
+    "parent_gate_total_sums_per_component_get_cost_results": true,
+    "parent_delay_uses_selected_component_delay_in_runtime_scheduling": true,
+    "formula_for_parent_with_n_full_adders": {
+      "gate": "G_other + 7*n",
+      "delay": "recompute critical path with each opaque FullAdder arc weighted 4"
+    },
+    "evidence": [
+      {
+        "name": "get_gate_cost__modelZscores_u2232",
+        "address": "0x00000001402777ab",
+        "size": 2680,
+        "machine_sha256": "6ef3f19c85f6ce2930a7369919086e57c4a8b49bbbae0ae3356e551958b2c4aa",
+        "pseudocode_sha256": "68fb90c13b6fe87afcee35c8ba55c6d783a57b42106de32e06a90f7bc06f3ae1",
+        "decisive_fragments": [
+          "if ( a1 > 0x11u",
+          "v42 = a3;"
+        ]
+      },
+      {
+        "name": "get_delay_cost__modelZscores_u2270",
+        "address": "0x0000000140278841",
+        "size": 1514,
+        "machine_sha256": "ed6b3a7dc7e528ecbbd7f75cfa7ac293fbb0aeb31730a39b49f6e1c7c064ddbe",
+        "pseudocode_sha256": "4fa8bb741720f2a0a3a892a0ee184b8c3d9687043a1b214f09ae8a702466cffe",
+        "decisive_fragments": [
+          "if ( a1 <= 0x11u",
+          "v28 = a3;"
+        ]
+      },
+      {
+        "name": "get_cost__modelZscores_u2321",
+        "address": "0x0000000140279367",
+        "size": 5150,
+        "machine_sha256": "6215c4710e2b74fa81b4ea7445d8a2e3aebd192498c5a3c1173cf4eb16a454b8",
+        "pseudocode_sha256": "f114931f59136fb0838103fa90d41c5944dc3fb543c7343b925e96a1b55de005",
+        "decisive_fragments": [
+          "component_costs__modelZscores_u10",
+          "get_gate_cost__modelZscores_u2304",
+          "get_delay_cost__modelZscores_u2316"
+        ]
+      },
+      {
+        "name": "get_gate_cost__modelZscores_u2556",
+        "address": "0x000000014027a785",
+        "size": 1124,
+        "machine_sha256": "2385d37ecb2c9fec41285281163704e6c13759e5ebf7df5422baf95339401c6a",
+        "pseudocode_sha256": "6344a6fadc630369c1b299e4251e42e0c0ad58f9705dbe174da8de9a1f41d92f",
+        "decisive_fragments": [
+          "get_cost__modelZscores_u2321",
+          "v27 = v12;"
+        ]
+      }
+    ]
+  },
+  "persistence_and_pareto": {
+    "component_cost_table_supports_multiple_nondominated_gate_delay_points": true,
+    "level_progress_frontier_is_a_sequence_of_24_byte_gate_delay_third_metric_triples": true,
+    "ordinary_frontier_path_calls_update_efficient_frontier": true,
+    "special_level_kind_3_path_replaces_frontier_with_one_point_when_product_improves": true,
+    "for_7_4_vs_16_8_branch_choice_does_not_change_result": "7/4 strictly dominates 16/8 and has product 28 < 128",
+    "component_instance_can_select_from_a_multi_point_runtime_frontier": true,
+    "evidence": [
+      {
+        "name": "complete_level__modelZutilities_u9086",
+        "address": "0x00000001405ab6d5",
+        "size": 3032,
+        "machine_sha256": "1c3d03307046b0bcb931f2518262da1e641f51f94f9a88fec1c93f7bdb4f5d43",
+        "pseudocode_sha256": "4739a15a3212a08f69bd140088bd0194a3a5c1bcd01076f8df57ab8190172128",
+        "decisive_fragments": [
+          "add_cost__modelZscores_u2110",
+          "update_efficient_frontier__modelZutilities_u9054",
+          "save_level_data__modelZutilities_u5683"
+        ]
+      },
+      {
+        "name": "game_initialize__modelZinitialize_u17",
+        "address": "0x00000001404c7488",
+        "size": 36477,
+        "machine_sha256": "444f81c02f06ebf8c7b7745c6234dc23fc365414e0ca1e8c6bc91f7937c78a41",
+        "pseudocode_sha256": "086d6af0eeaae88b8e83e23166b583a70232faf1f8d02169921831e1ba80df0b",
+        "decisive_fragments": [
+          "add_cost__modelZscores_u2110"
+        ]
+      },
+      {
+        "name": "insert_cost__modelZscores_u13",
+        "address": "0x000000014027abe9",
+        "size": 3424,
+        "machine_sha256": "f5797ff58447a509863ab7c98f3423e2fe85cad83db59e8382676105f5955a84",
+        "pseudocode_sha256": "0233fa8462f5d24eed0ac86b4491b139ca8d9ca79918269685727c39af359053",
+        "decisive_fragments": [
+          "v42 > qword_146772D68",
+          "v42 < qword_146772D68"
+        ]
+      },
+      {
+        "name": "import_costs__modelZscores_u2127",
+        "address": "0x000000014027cad9",
+        "size": 2072,
+        "machine_sha256": "729e3f9eade5be5227b92e549d5750af488b2554cd19b1a9a85cf5ca334ef05a",
+        "pseudocode_sha256": "6148f02968431f5adc6e831496b7c26d371279c7b84124cf0b86faddf7e6ac48",
+        "decisive_fragments": [
+          "insert_cost__modelZscores_u49",
+          "component_cost_buffer_len__modelZscores_u11 - 1"
+        ]
+      },
+      {
+        "name": "process_network_responses__presenterZutilities_u38339",
+        "address": "0x000000014065735f",
+        "size": 34049,
+        "machine_sha256": "6c72ea05ee275aef5ac0ed90d3d6a3d8f0043dc5bbf5633dd3abfb247c435ce3",
+        "pseudocode_sha256": "ddb880deec21a17950c9c69c077c93ed7edef27821f8b27346fc3c10d9241997",
+        "decisive_fragments": [
+          "import_costs__modelZscores_u2127",
+          "save_level_data__modelZutilities_u5683"
+        ]
+      }
+    ]
+  },
+  "network_service_boundary": {
+    "client_network_response_imports_server_supplied_cost_frontiers": true,
+    "server_response_can_replace_local_component_cost_table": true,
+    "conditional_conclusion": "If 'genuinely accepted' includes server persistence of the 7/4 Full Adder score, the returned/imported frontier makes parent scoring use 7/4.",
+    "not_claimed_offline": "This static audit does not directly observe the service's private recomputation or acceptance; no remote submission was permitted."
+  },
+  "eight_stage_ripple_example": {
+    "component_count": 8,
+    "shipped_file_header_using_runtime_default_8_4": [
+      64,
+      32
+    ],
+    "captured_imported_frontier_16_8_recomputed": [
+      128,
+      64
+    ],
+    "genuinely_accepted_7_4_recomputed": [
+      56,
+      32
+    ],
+    "note": "This is the all-eight-FullAdder serial hint topology. Gate totals add; the 32-cycle delay assumes all eight opaque FullAdder delays lie on the ripple path."
+  },
+  "authoritative_80d7_impact": {
+    "opaque_full_adder_node_count": 0,
+    "score_before_and_after_7_4_acceptance": [
+      80,
+      7
+    ],
+    "conclusion": "the current 80/7 ordinary/Switch/BUS DAG is unaffected by com_full_adder cost changes"
+  },
+  "final_conclusions": {
+    "com_full_adder_imports_as_7_4_after_genuine_acceptance": true,
+    "local_parent_gate_and_delay_are_recomputed_from_7_4": true,
+    "multiple_pareto_points_are_supported_but_not_needed_for_this_strictly_dominating_update": true,
+    "server_internal_recalculation_directly_proven_offline": false,
+    "server_authoritative_frontier_reimport_path_proven": true
+  }
+}

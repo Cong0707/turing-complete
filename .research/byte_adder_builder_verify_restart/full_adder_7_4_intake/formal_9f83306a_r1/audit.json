@@ -1,0 +1,250 @@
+{
+  "connectivity": {
+    "connected_pin_count": 26,
+    "cycle_component_count": 0,
+    "effective_component_count": 12,
+    "logical_edge_count": 16,
+    "logical_network_count": 10,
+    "multi_driver_network_count": 0,
+    "pin_count": 26,
+    "sinkless_network_count": 0,
+    "supported_component_count": 12,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "undriven_network_count": 0,
+    "unit_logic_depth": 4,
+    "unsupported_component_kind_counts": {},
+    "width_mismatch_network_count": 0
+  },
+  "derived_artifacts": {
+    "candidate_decoded_json": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\full_adder_7_4_intake\\formal_9f83306a_r1\\candidate.decoded.json",
+      "sha256": "6bc38cfb555e1d0c2c5b7779ee0fb258e13432a16079dadf689fa618a296acd9"
+    },
+    "candidate_rebuilt_data": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\full_adder_7_4_intake\\formal_9f83306a_r1\\candidate.rebuilt.data",
+      "sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2"
+    }
+  },
+  "geometry": {
+    "alpha_cell_count": 186,
+    "component_overlap_cells": [],
+    "sprite_files": [
+      "com_and_bit.png",
+      "com_level_input_1_pin.png",
+      "com_level_output_word.png",
+      "com_nor_bit.png",
+      "com_or_bit.png"
+    ],
+    "sprite_sha256": {
+      "com_and_bit.png": "572004db29f0e36e234017dc3d59e3f36349ae3ac44154f74b32922f8d80d707",
+      "com_level_input_1_pin.png": "9caa707478a4be175fafd9fe079fda7461a656fcfcdf2f5769c9ba0b1b58bf8b",
+      "com_level_output_word.png": "696d9b69472863572b31e58a7b4c42cfdb867a4e6bc28b16d6d000cfbc57808e",
+      "com_nor_bit.png": "5942fe576695374b74bd95f4e02cd4ea4c92530a83c8b4c60b050de8e3d37f7d",
+      "com_or_bit.png": "ae409283fa78fc1e7294d447723755705da33a370d70ab46a4f9c3244e603715"
+    },
+    "unsupported_component_kinds": [],
+    "wire_collisions": [],
+    "wire_interior_pin_contacts": []
+  },
+  "schema": "full-adder-7-4-physical-candidate-audit-v1",
+  "scope": {
+    "deployment_supported": false,
+    "formal_save_was_not_modified": true,
+    "game_was_not_started": true,
+    "levels_was_not_modified": true,
+    "repository_candidate_was_not_written": true
+  },
+  "score": {
+    "declared": [
+      7,
+      4,
+      28
+    ],
+    "replayed": [
+      7,
+      4,
+      28
+    ]
+  },
+  "serialization": {
+    "canonical_json_deterministic_rebuild_byte_identical": true,
+    "rebuilt_sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2",
+    "v15_roundtrip_byte_identical": true
+  },
+  "source": {
+    "bytes": 1567,
+    "format_version": 15,
+    "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\full_adder\\Default\\circuit.data",
+    "sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2"
+  },
+  "status": "verified",
+  "structure": {
+    "component_count": 12,
+    "component_kind_counts": {
+      "4": 2,
+      "7": 1,
+      "9": 4,
+      "60": 3,
+      "69": 2
+    },
+    "duplicate_permanent_ids": [],
+    "native_com_add_count": 0,
+    "native_com_full_adder_count": 0,
+    "wire_count": 16
+  },
+  "timing_and_ownership": {
+    "dead_primitive_count": 0,
+    "logical_network_count": 10,
+    "output_arrivals": {
+      "Carry": 4,
+      "Sum": 4
+    },
+    "primitive_gate_cost": 7,
+    "replayed_max_delay": 4,
+    "single_driver_network_count": 10,
+    "topological_gate_permanent_ids": [
+      8121646454061373909,
+      2251895042252664308,
+      7800332433213635826,
+      8017539214231209287,
+      5786501052207374775,
+      1181219621300352238,
+      2406035862176736002
+    ]
+  },
+  "truth_protocol": {
+    "mismatch_count": 0,
+    "rows": [
+      {
+        "actual": {
+          "Carry": 0,
+          "Sum": 0
+        },
+        "expected": {
+          "Carry": 0,
+          "Sum": 0
+        },
+        "inputs": [
+          0,
+          0,
+          0
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "expected": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "inputs": [
+          0,
+          0,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "expected": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "inputs": [
+          0,
+          1,
+          0
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "expected": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "inputs": [
+          0,
+          1,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "expected": {
+          "Carry": 0,
+          "Sum": 1
+        },
+        "inputs": [
+          1,
+          0,
+          0
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "expected": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "inputs": [
+          1,
+          0,
+          1
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "expected": {
+          "Carry": 1,
+          "Sum": 0
+        },
+        "inputs": [
+          1,
+          1,
+          0
+        ],
+        "pass": true
+      },
+      {
+        "actual": {
+          "Carry": 1,
+          "Sum": 1
+        },
+        "expected": {
+          "Carry": 1,
+          "Sum": 1
+        },
+        "inputs": [
+          1,
+          1,
+          1
+        ],
+        "pass": true
+      }
+    ],
+    "vectors": 8
+  }
+}
