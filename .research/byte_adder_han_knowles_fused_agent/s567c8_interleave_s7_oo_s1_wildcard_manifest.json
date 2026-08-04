@@ -1,0 +1,216 @@
+{
+  "schema": "s567c8-interleave-s7-oo-s1-wildcard-manifest-v1",
+  "status": "unsat-covered",
+  "topology": [
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "*",
+    "*",
+    "SWITCH"
+  ],
+  "wildcard_slots": [
+    7,
+    8
+  ],
+  "ordinary_kind_alphabet": [
+    "NOT",
+    "AND",
+    "OR",
+    "NAND",
+    "NOR"
+  ],
+  "covered_ordered_pair_count": 25,
+  "covered_ordered_pairs": [
+    [
+      "NOT",
+      "NOT"
+    ],
+    [
+      "NOT",
+      "AND"
+    ],
+    [
+      "NOT",
+      "OR"
+    ],
+    [
+      "NOT",
+      "NAND"
+    ],
+    [
+      "NOT",
+      "NOR"
+    ],
+    [
+      "AND",
+      "NOT"
+    ],
+    [
+      "AND",
+      "AND"
+    ],
+    [
+      "AND",
+      "OR"
+    ],
+    [
+      "AND",
+      "NAND"
+    ],
+    [
+      "AND",
+      "NOR"
+    ],
+    [
+      "OR",
+      "NOT"
+    ],
+    [
+      "OR",
+      "AND"
+    ],
+    [
+      "OR",
+      "OR"
+    ],
+    [
+      "OR",
+      "NAND"
+    ],
+    [
+      "OR",
+      "NOR"
+    ],
+    [
+      "NAND",
+      "NOT"
+    ],
+    [
+      "NAND",
+      "AND"
+    ],
+    [
+      "NAND",
+      "OR"
+    ],
+    [
+      "NAND",
+      "NAND"
+    ],
+    [
+      "NAND",
+      "NOR"
+    ],
+    [
+      "NOR",
+      "NOT"
+    ],
+    [
+      "NOR",
+      "AND"
+    ],
+    [
+      "NOR",
+      "OR"
+    ],
+    [
+      "NOR",
+      "NAND"
+    ],
+    [
+      "NOR",
+      "NOR"
+    ]
+  ],
+  "coverage_proof": {
+    "slot_exactly_one_kind": true,
+    "exact_switches": 8,
+    "fixed_switch_slots": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      9
+    ],
+    "fixed_switch_quota_is_full": true,
+    "exact_xors": 0,
+    "wildcard_remaining_kinds": [
+      "NOT",
+      "AND",
+      "OR",
+      "NAND",
+      "NOR"
+    ],
+    "gate_cost": "8*2 + 2*1 = 18",
+    "split_slots": 1,
+    "split_slot_index": 9,
+    "split_slot_fixed_kind": "SWITCH",
+    "all_suffix_signatures_assigned": true,
+    "shard_restricts_wildcard_slots": false,
+    "both_wildcard_slots_are_solver_free": true
+  },
+  "model": {
+    "domain": "s34567c8_leaf",
+    "rows": 486,
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate_bound": 18,
+    "max_delay": 5,
+    "components": 10,
+    "ordinary": 2,
+    "switches": 8,
+    "xors": 0,
+    "unrestricted_input_bus_selection": true,
+    "switch_z_and_conflict_semantics": true,
+    "physical_net_partition": true,
+    "public_outputs_must_be_driven": true,
+    "dead_component_clauses": true
+  },
+  "solver_evidence": {
+    "status": "unsat",
+    "solver": "cadical195",
+    "variables": 174812,
+    "clauses": 1340420,
+    "solve_seconds": 131.03557559498586,
+    "json": ".research/byte_adder_han_knowles_fused_agent/remote-results/s567c8_g18_o2s8_interleave_s7_oo_s1_cadical195.json",
+    "json_sha256": "5b979b6b5f4a3b0f32f02b6fc9bbe2c196c2265f0b8315fd2fdca82a74010c6c",
+    "log": ".research/byte_adder_han_knowles_fused_agent/remote-results/s567c8_g18_o2s8_interleave_s7_oo_s1_cadical195.log",
+    "log_sha256": "344f5913b37eca5bef7cc0b75a485994141e3bf9224d53a3f5dab18eead1dbaa",
+    "run_record": ".research/byte_adder_han_knowles_fused_agent/remote-results/s567c8_g18_o2s8_interleave_s7_oo_s1_cadical195.run.json",
+    "run_record_sha256": "182685a484d80013fe09cafb5e258087c7453e5a80cf2b1c7866949d65f267f9",
+    "run_classification": "solver_exit",
+    "watchdog_seconds": 900,
+    "as_limit_kib": 6291456,
+    "nice": 5,
+    "line_endings": "LF (Ubuntu bytes preserved after download)"
+  },
+  "worker": {
+    "path": ".research/byte_adder_phase_shortcut_restart/physical_exact.py",
+    "sha256": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    "dependency_sha256": {
+      ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    }
+  },
+  "scope_exclusions": [
+    "ordinary slots other than 7 and 8",
+    "ordinary/Switch decompositions other than o2/s8",
+    "XOR components",
+    "gate cost other than exact 18",
+    "complete cost-18 lower bound across every topology"
+  ],
+  "conclusion": "The strict wildcard UNSAT solve covers all 25 ordered ordinary-kind pairs for topology SWITCHx7,K1,K2,SWITCH. The width-1 shard concerns fixed slot 9 and omits neither wildcard."
+}
