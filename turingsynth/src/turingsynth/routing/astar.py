@@ -1374,14 +1374,20 @@ def _attempt(
             ref = PinRef(key, pin.name)
             pins[ref] = pin.position
             all_pin_points.add(pin.position)
+            access_length = (
+                1
+                if pin.direction == INPUT
+                or components_by_key[key].role == "gate"
+                else 2
+            )
             access_path = _pin_access_path(
                 component,
                 pin.position,
-                # Parallel adapter outputs already leave on distinct rows or
-                # columns.  Equal two-cell leads create the flat bus baseline;
-                # staggering them produced a false staircase before every
-                # splitter trunk.
-                length=1 if pin.direction == INPUT else 2,
+                # Parallel adapters retain equal two-cell leads so splitter
+                # and maker banks start on a flat baseline.  Logic gates need
+                # only one clear cell; forcing two consumes the only local
+                # collector column between compact adjacent stages.
+                length=access_length,
             )
             access = access_path[-1]
             previous = pin_access.setdefault(pin.position, access)
@@ -1526,15 +1532,31 @@ def _attempt(
         {x: list(values) for x, values in fixed_track_intervals.items()}
     )
     planned_nets: list[tuple[str, tuple[RoutedEdge, ...]]] = []
-    planning_specs = sorted(
-        net_specs,
-        key=lambda spec: (
-            0 if spec[2] in fixed_track_assignments else
-            1 if physical_net_by_name[spec[2]].additional_sources else
-            2 if spec[2] in structured_networks else 3,
-            *spec,
-        ),
-    )
+    def planning_key(
+        spec: tuple[int, int, str, Point, tuple[Point, ...]],
+    ) -> tuple[object, ...]:
+        _fanout_sort, _span_sort, network, source, sinks = spec
+        if network in fixed_track_assignments:
+            return (0, *spec)
+        if physical_net_by_name[network].additional_sources:
+            return (1, *spec)
+        if network in structured_networks:
+            candidates, _direction, _track_min, _track_max = (
+                _fanout_track_candidates(
+                    pin_access.get(source, source),
+                    tuple(pin_access.get(sink, sink) for sink in sinks),
+                    forbidden=forbidden_hubs,
+                    bounds=bounds,
+                )
+            )
+            candidate_count = len(candidates) if candidates else 1 << 20
+            # Allocate genuinely scarce local channels first. Networks with
+            # no vertical candidate retain the old structural order because
+            # they depend on the axis-adaptive growth planner instead.
+            return (2, candidate_count, *spec)
+        return (3, *spec)
+
+    planning_specs = sorted(net_specs, key=planning_key)
     for _fanout, _span, network, source, sinks in planning_specs:
         # The network now owns its reservation.  Its actual growth spine or
         # collector immediately republishes the junctions it really uses.
