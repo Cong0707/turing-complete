@@ -1,0 +1,43 @@
+{
+  "purpose": "Complete all-268 cumulative mixed BUS enumeration after k128 observed max expanded forms 475 and 150 truncated coverages.",
+  "predecessor_result_sha256": "1881f430781162879488276cffa852839c7bf4bf02076e56d7db9a2a3b455c43",
+  "model": {
+    "mode": "integrated-nc7",
+    "delay_bound": 5,
+    "high_gate_bound": 33,
+    "complete_gate_bound": 102,
+    "universe_expansion": "source1-residual",
+    "base_bus_driver_universe": "base",
+    "target_profile": "all-base-bus-targets",
+    "driver_profiles": [
+      "source1-enable-base-data",
+      "source1-enable-source1-data"
+    ],
+    "source1_data_excludes_base": true,
+    "probe_rows": 1024,
+    "probe_filter_conservative": true,
+    "full_packed_truth_recheck": true,
+    "max_per_coverage": 512,
+    "required_zero_truncation": true
+  },
+  "estimator": {
+    "cost_encoding": "producer-tiered",
+    "cardinality_encoding": "seqcounter",
+    "cnf_storage": "streaming",
+    "seqcounter_shape_method": "closed-form exactly cross-checked against PySAT CardEnc",
+    "exact_shape_assertions_before_any_future_solve": [
+      "cost_literal_count",
+      "cnf_variables",
+      "cnf_clauses"
+    ]
+  },
+  "resource_limits": {
+    "address_space_kib": 6291456,
+    "nice": 5,
+    "outer_timeout_seconds": 14400,
+    "kill_after_seconds": 60,
+    "required_mem_available_kib": 8388608,
+    "maximum_branch_workers": 1
+  },
+  "interpretation": "This remains enumeration-only. Even with zero truncation, inspect exact CNF/RAM sizing and a complete mutually exclusive solver partition plan before any SAT run."
+}

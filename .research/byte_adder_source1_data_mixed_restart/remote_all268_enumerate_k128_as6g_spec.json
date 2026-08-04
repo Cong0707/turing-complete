@@ -1,0 +1,41 @@
+{
+  "purpose": "Exact enumeration and CNF/RAM sizing for the cumulative all-268 mixed BUS model before any SAT solve.",
+  "model": {
+    "mode": "integrated-nc7",
+    "delay_bound": 5,
+    "high_gate_bound": 33,
+    "complete_gate_bound": 102,
+    "universe_expansion": "source1-residual",
+    "base_bus_driver_universe": "base",
+    "target_profile": "all-base-bus-targets",
+    "driver_profiles": [
+      "source1-enable-base-data",
+      "source1-enable-source1-data"
+    ],
+    "source1_data_excludes_base": true,
+    "probe_rows": 1024,
+    "probe_filter_conservative": true,
+    "full_packed_truth_recheck": true,
+    "max_per_coverage": 128
+  },
+  "estimator": {
+    "cost_encoding": "producer-tiered",
+    "cardinality_encoding": "seqcounter",
+    "cnf_storage": "streaming",
+    "seqcounter_shape_method": "closed-form exactly cross-checked against PySAT CardEnc",
+    "exact_shape_assertions_before_solve": [
+      "cost_literal_count",
+      "cnf_variables",
+      "cnf_clauses"
+    ]
+  },
+  "resource_limits": {
+    "address_space_kib": 6291456,
+    "nice": 5,
+    "outer_timeout_seconds": 14400,
+    "kill_after_seconds": 60,
+    "required_mem_available_kib": 8388608,
+    "maximum_branch_workers": 1
+  },
+  "interpretation": "A complete result requires zero base and expanded coverage truncation. This run enumerates and sizes only; it does not launch a SAT solver."
+}
