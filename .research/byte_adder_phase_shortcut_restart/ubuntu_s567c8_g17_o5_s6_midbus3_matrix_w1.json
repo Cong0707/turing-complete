@@ -1,0 +1,260 @@
+{
+  "schema": "tc-byte-adder-remote-sweep-v1",
+  "name": "ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1",
+  "description": "Exact g17/o5/s6 class with fixed NOT,NOR,OR,OR prefix, three early Switches, one ordinary-kind slot, and three later Switches",
+  "proof_scope": {
+    "mode": "matrix",
+    "domain": "s34567c8_leaf",
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate": 17,
+    "max_delay": 5,
+    "components": 11,
+    "ordinary": 5,
+    "switches": 6,
+    "xors": 0,
+    "fixed_prefix": [
+      "NOT",
+      "NOR",
+      "OR",
+      "OR"
+    ],
+    "early_switch_slots_zero_based": [
+      4,
+      5,
+      6
+    ],
+    "variable_ordinary_slots_zero_based": [
+      7
+    ],
+    "terminal_switch_slots_zero_based": [
+      8,
+      9,
+      10
+    ],
+    "ordinary_kinds": [
+      "NOT",
+      "AND",
+      "OR",
+      "NAND",
+      "NOR"
+    ],
+    "ordered_kind_count": 5,
+    "kind_execution_order": [
+      "OR",
+      "NOT",
+      "AND",
+      "NAND",
+      "NOR"
+    ],
+    "fixed_topology": [
+      "NOT",
+      "NOR",
+      "OR",
+      "OR",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "ordinary-kind-slot",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH"
+    ],
+    "gate_cost_identity": "5*1 + 6*2 = 17",
+    "bus_access_contract": {
+      "slot7_can_select_switch_slots": [
+        4,
+        5,
+        6
+      ],
+      "terminal_switches_can_select_slot7": true,
+      "identical_switch_driver_set_may_fanout": true,
+      "partial_driver_set_overlap_forbidden": true
+    },
+    "coverage": "complete-5-way-partition-of-midbus3-one-slot-class",
+    "constraint_encoding": "compact-json-string-list-v1",
+    "constraint_set_sha256": "72470e9942cae0c41361f601cc1d19f00247f1c196e00f2e646b91d7421be804",
+    "worker_sha256": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    "dependency_sha256": {
+      ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+      ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+      ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+    },
+    "auditor": {
+      "path": ".research/byte_adder_phase_shortcut_restart/audit_s567c8_g17_o5_s6_midbus3_one_slot.py",
+      "sha256": "c48c92871d303fc90341b18398b99de9031222d9652b6597cc1aa5314c2182bf"
+    },
+    "positive_regression": {
+      "script": ".research/byte_adder_phase_shortcut_restart/verify_s567c8_g17_o5_s6_midbus3_positive_regression.py",
+      "script_sha256": "c06c9cbf64c61ea0c337af5e52dc63b039cda14647640945cc7b97f54fe64f5b",
+      "artifact": ".research/byte_adder_phase_shortcut_restart/s567c8_g17_o5_s6_midbus3_positive_s7c8.json",
+      "artifact_sha256": "8b233eba5c64661ef0e376309fbbe7ffa66ce72bb38cfc623bfec45a6053f376",
+      "status": "verified-positive-regression",
+      "outputs": [
+        "S7",
+        "C8"
+      ],
+      "rows": 486,
+      "actual_gate": 17,
+      "actual_max_delay": 5,
+      "competitive_candidate": false
+    },
+    "terminal_statuses": [
+      "sat",
+      "unsat"
+    ],
+    "unknown_is_not_unsat": true,
+    "complete_byte_adder_if_sat": {
+      "fixed_low_and_paid_high": 73,
+      "s3_s4_cost": 11,
+      "this_tail_cost": 17,
+      "total_gate": 101,
+      "delay": 5,
+      "energy": 505
+    },
+    "scope_exclusions": [
+      "other ordinary/Switch slot orders",
+      "other first-four ordinary orders or multisets",
+      "XOR or other gate/component decompositions",
+      "paid-source shell and residual interface rewrites",
+      "the global g17 topology space"
+    ]
+  },
+  "script": "physical_exact.py",
+  "working_directory": "../..",
+  "workers": 1,
+  "timeout_seconds": 900.0,
+  "memory_mb_per_process": 1536,
+  "cpu_set": "0-31",
+  "nice": 5,
+  "stop_on_first_sat": true,
+  "values": [
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-or",
+      "domain": "s34567c8_leaf",
+      "outputs": "S5,S6,S7,C8",
+      "gate": 17,
+      "delay": 5,
+      "components": 11,
+      "ordinary": 5,
+      "switches": 6,
+      "xors": 0,
+      "fixed_kinds": "NOT,NOR,OR,OR,SWITCH,SWITCH,SWITCH,OR,SWITCH,SWITCH,SWITCH",
+      "constraint_sha256": "2bbb9b96468720d5522db3f8b2af1458d9389c92c04596c80017332b51fb24ca",
+      "split_slots": 1,
+      "shard_count": 1,
+      "shard_index": 0,
+      "solver": "cadical195",
+      "output": ".research/byte_adder_phase_shortcut_restart/server-results/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/s567c8-d5-g17-o05-s06-midbus3-or.json"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-not",
+      "domain": "s34567c8_leaf",
+      "outputs": "S5,S6,S7,C8",
+      "gate": 17,
+      "delay": 5,
+      "components": 11,
+      "ordinary": 5,
+      "switches": 6,
+      "xors": 0,
+      "fixed_kinds": "NOT,NOR,OR,OR,SWITCH,SWITCH,SWITCH,NOT,SWITCH,SWITCH,SWITCH",
+      "constraint_sha256": "4ba1cb01871b135cbbdc87fff9b3db46896154c3e671d4d98cfe3cf98c90c4f0",
+      "split_slots": 1,
+      "shard_count": 1,
+      "shard_index": 0,
+      "solver": "cadical195",
+      "output": ".research/byte_adder_phase_shortcut_restart/server-results/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/s567c8-d5-g17-o05-s06-midbus3-not.json"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-and",
+      "domain": "s34567c8_leaf",
+      "outputs": "S5,S6,S7,C8",
+      "gate": 17,
+      "delay": 5,
+      "components": 11,
+      "ordinary": 5,
+      "switches": 6,
+      "xors": 0,
+      "fixed_kinds": "NOT,NOR,OR,OR,SWITCH,SWITCH,SWITCH,AND,SWITCH,SWITCH,SWITCH",
+      "constraint_sha256": "abcc6f56a89150ca67ae3f4d8e28c91defb34e8db361fe151c1bace71765c727",
+      "split_slots": 1,
+      "shard_count": 1,
+      "shard_index": 0,
+      "solver": "cadical195",
+      "output": ".research/byte_adder_phase_shortcut_restart/server-results/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/s567c8-d5-g17-o05-s06-midbus3-and.json"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-nand",
+      "domain": "s34567c8_leaf",
+      "outputs": "S5,S6,S7,C8",
+      "gate": 17,
+      "delay": 5,
+      "components": 11,
+      "ordinary": 5,
+      "switches": 6,
+      "xors": 0,
+      "fixed_kinds": "NOT,NOR,OR,OR,SWITCH,SWITCH,SWITCH,NAND,SWITCH,SWITCH,SWITCH",
+      "constraint_sha256": "67431dc0420018280e782515937181989a64f02bc7588ec1c9457e46822b88c2",
+      "split_slots": 1,
+      "shard_count": 1,
+      "shard_index": 0,
+      "solver": "cadical195",
+      "output": ".research/byte_adder_phase_shortcut_restart/server-results/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/s567c8-d5-g17-o05-s06-midbus3-nand.json"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-nor",
+      "domain": "s34567c8_leaf",
+      "outputs": "S5,S6,S7,C8",
+      "gate": 17,
+      "delay": 5,
+      "components": 11,
+      "ordinary": 5,
+      "switches": 6,
+      "xors": 0,
+      "fixed_kinds": "NOT,NOR,OR,OR,SWITCH,SWITCH,SWITCH,NOR,SWITCH,SWITCH,SWITCH",
+      "constraint_sha256": "30d027c1fc122350711e68fd8ed4b950e2076f4cf5a13c35f2d742f8c0593abd",
+      "split_slots": 1,
+      "shard_count": 1,
+      "shard_index": 0,
+      "solver": "cadical195",
+      "output": ".research/byte_adder_phase_shortcut_restart/server-results/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/s567c8-d5-g17-o05-s06-midbus3-nor.json"
+    }
+  ],
+  "arguments": [
+    "--domain",
+    "{domain}",
+    "--outputs",
+    "{outputs}",
+    "--gate-bound",
+    "{gate}",
+    "--max-delay",
+    "{delay}",
+    "--components",
+    "{components}",
+    "--switches",
+    "{switches}",
+    "--xors",
+    "{xors}",
+    "--fixed-kinds",
+    "{fixed_kinds}",
+    "--split-slots",
+    "{split_slots}",
+    "--shard-count",
+    "{shard_count}",
+    "--shard-index",
+    "{shard_index}",
+    "--solver",
+    "{solver}",
+    "--timeout",
+    "0",
+    "--output",
+    "{output}"
+  ],
+  "log_directory": "server-runs/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/logs",
+  "result_directory": "server-runs/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/run-results",
+  "summary": "server-runs/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1/sweep-summary.json"
+}

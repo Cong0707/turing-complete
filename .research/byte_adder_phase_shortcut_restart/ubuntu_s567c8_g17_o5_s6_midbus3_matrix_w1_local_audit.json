@@ -1,0 +1,104 @@
+{
+  "schema": "s567c8-g17-o5-s6-midbus3-one-slot-audit-v1",
+  "status": "unsat-covered",
+  "coverage": "complete-5-way-partition-of-midbus3-one-slot-class",
+  "spec": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1.json",
+  "spec_sha256": "4a7d12316ca69e018dec9c1b97e08f73a024d53796bb1f49cc34d8e149807cdd",
+  "worker_sha256_expected": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+  "worker_sha256_actual": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+  "worker_sha256_match": true,
+  "auditor_sha256_expected": "c48c92871d303fc90341b18398b99de9031222d9652b6597cc1aa5314c2182bf",
+  "auditor_sha256_actual": "c48c92871d303fc90341b18398b99de9031222d9652b6597cc1aa5314c2182bf",
+  "auditor_sha256_match": true,
+  "dependency_sha256_match": true,
+  "dependency_errors": [],
+  "positive_regression_match": true,
+  "positive_regression_errors": [],
+  "constraint_set_sha256_expected": "72470e9942cae0c41361f601cc1d19f00247f1c196e00f2e646b91d7421be804",
+  "constraint_set_sha256_actual": "72470e9942cae0c41361f601cc1d19f00247f1c196e00f2e646b91d7421be804",
+  "manifest_complete": true,
+  "proof_scope_match": true,
+  "kinds_expected": 5,
+  "kinds_seen": 5,
+  "overlap_count": 0,
+  "jobs_expected": 5,
+  "missing_jobs": 0,
+  "invalid_jobs": 0,
+  "unknown_jobs": 0,
+  "sat_paths": [],
+  "records": [
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-or",
+      "kind": "OR",
+      "constraint_sha256_expected": "2bbb9b96468720d5522db3f8b2af1458d9389c92c04596c80017332b51fb24ca",
+      "constraint_sha256_actual": "2bbb9b96468720d5522db3f8b2af1458d9389c92c04596c80017332b51fb24ca",
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-results\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\s567c8-d5-g17-o05-s06-midbus3-or.json",
+      "status": "unsat",
+      "sha256": "ab268679d10602e8889e3c8b289ba17be0b0f5c9b972bdc4212df2e1c5853049",
+      "solve_seconds": 55.536687311017886,
+      "state": "terminal"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-not",
+      "kind": "NOT",
+      "constraint_sha256_expected": "4ba1cb01871b135cbbdc87fff9b3db46896154c3e671d4d98cfe3cf98c90c4f0",
+      "constraint_sha256_actual": "4ba1cb01871b135cbbdc87fff9b3db46896154c3e671d4d98cfe3cf98c90c4f0",
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-results\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\s567c8-d5-g17-o05-s06-midbus3-not.json",
+      "status": "unsat",
+      "sha256": "eeb4c5a16e44946f2704feee9d0cc9497097d1f43dbf3b07f8cb2bdd8828dccf",
+      "solve_seconds": 74.25435687002027,
+      "state": "terminal"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-and",
+      "kind": "AND",
+      "constraint_sha256_expected": "abcc6f56a89150ca67ae3f4d8e28c91defb34e8db361fe151c1bace71765c727",
+      "constraint_sha256_actual": "abcc6f56a89150ca67ae3f4d8e28c91defb34e8db361fe151c1bace71765c727",
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-results\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\s567c8-d5-g17-o05-s06-midbus3-and.json",
+      "status": "unsat",
+      "sha256": "edea11831e9af6222191648b9b859e2aedef5f3da81678694b402fb9354b8fcc",
+      "solve_seconds": 65.01533866295358,
+      "state": "terminal"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-nand",
+      "kind": "NAND",
+      "constraint_sha256_expected": "67431dc0420018280e782515937181989a64f02bc7588ec1c9457e46822b88c2",
+      "constraint_sha256_actual": "67431dc0420018280e782515937181989a64f02bc7588ec1c9457e46822b88c2",
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-results\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\s567c8-d5-g17-o05-s06-midbus3-nand.json",
+      "status": "unsat",
+      "sha256": "a6e0d71c973b0e4bcfeb64fa620654703e2799e23bc4c14ac35959d6141e939b",
+      "solve_seconds": 61.00236109999241,
+      "state": "terminal"
+    },
+    {
+      "name": "s567c8-d5-g17-o05-s06-midbus3-nor",
+      "kind": "NOR",
+      "constraint_sha256_expected": "30d027c1fc122350711e68fd8ed4b950e2076f4cf5a13c35f2d742f8c0593abd",
+      "constraint_sha256_actual": "30d027c1fc122350711e68fd8ed4b950e2076f4cf5a13c35f2d742f8c0593abd",
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-results\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\s567c8-d5-g17-o05-s06-midbus3-nor.json",
+      "status": "unsat",
+      "sha256": "1a20cf74db977201bcb505eab4af1c5ffd8b60663c6dbe25ecbfe1fed7a6b1f3",
+      "solve_seconds": 66.97656458703568,
+      "state": "terminal"
+    }
+  ],
+  "summary": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\server-runs\\ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1\\sweep-summary.json",
+    "exists": true,
+    "integrity": true,
+    "errors": [],
+    "sha256": "79641773ef0777061408c63a2b80106b8eecec001595768f7ed455d97e5a932c",
+    "finished": true,
+    "result_count": 5,
+    "states": {
+      "completed": 5
+    },
+    "statuses": {
+      "unsat": 5
+    },
+    "unknown_entries": 0,
+    "sat_present": false,
+    "complete_unsat": true
+  }
+}

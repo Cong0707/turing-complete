@@ -1,0 +1,283 @@
+{
+  "schema": "s567c8-g17-o5-s6-midbus3-positive-regression-v1",
+  "status": "verified-positive-regression",
+  "purpose": "Two-output S7/C8 calibration of the exact new component order; not a four-output competitive witness",
+  "source_witness": ".research/byte_adder_phase_shortcut_restart/tail_s7c8_g16_fixed_kinds_d5.json",
+  "source_witness_sha256": "bad7c9b909be8faf572c1577632b4f1f39143a92c2763ff7fee96ab2b911db29",
+  "worker": ".research/byte_adder_phase_shortcut_restart/physical_exact.py",
+  "worker_sha256": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+  "competitive_candidate": false,
+  "regression": {
+    "domain": "s34567c8_leaf",
+    "rows": 486,
+    "output_names": [
+      "S7",
+      "C8"
+    ],
+    "target_search_outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate_bound": 17,
+    "max_delay": 5,
+    "components": 11,
+    "ordinary": 5,
+    "exact_switches": 6,
+    "exact_xors": 0,
+    "fixed_kinds": [
+      "NOT",
+      "NOR",
+      "OR",
+      "OR",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "OR",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH"
+    ],
+    "free_sources": [
+      "nC3",
+      "G3",
+      "Q3",
+      "P3",
+      "N3",
+      "G4",
+      "Q4",
+      "P4",
+      "N4",
+      "G5",
+      "Q5",
+      "P5",
+      "N5",
+      "G6",
+      "Q6",
+      "P6",
+      "N6",
+      "G7",
+      "Q7",
+      "P7",
+      "A34n",
+      "V34n",
+      "A56n",
+      "V56n",
+      "A36n",
+      "V36n",
+      "nC7",
+      "0",
+      "1"
+    ],
+    "source_arrivals": {
+      "nC3": 3,
+      "G3": 1,
+      "Q3": 1,
+      "P3": 2,
+      "N3": 1,
+      "G4": 1,
+      "Q4": 1,
+      "P4": 2,
+      "N4": 1,
+      "G5": 1,
+      "Q5": 1,
+      "P5": 2,
+      "N5": 1,
+      "G6": 1,
+      "Q6": 1,
+      "P6": 2,
+      "N6": 1,
+      "G7": 1,
+      "Q7": 1,
+      "P7": 2,
+      "A34n": 2,
+      "V34n": 2,
+      "A56n": 2,
+      "V56n": 2,
+      "A36n": 3,
+      "V36n": 3,
+      "nC7": 4,
+      "0": 0,
+      "1": 0
+    },
+    "network": [
+      {
+        "slot": 0,
+        "source": 29,
+        "kind": "NOT",
+        "left_bus": [
+          25
+        ],
+        "right_bus": [],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 1,
+        "source": 30,
+        "kind": "NOR",
+        "left_bus": [
+          0
+        ],
+        "right_bus": [
+          24
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 2,
+        "source": 31,
+        "kind": "OR",
+        "left_bus": [
+          17
+        ],
+        "right_bus": [
+          19
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 3,
+        "source": 32,
+        "kind": "OR",
+        "left_bus": [
+          17
+        ],
+        "right_bus": [
+          18
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 4,
+        "source": 33,
+        "kind": "SWITCH",
+        "left_bus": [
+          30
+        ],
+        "right_bus": [
+          32
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 5,
+        "source": 34,
+        "kind": "SWITCH",
+        "left_bus": [
+          26
+        ],
+        "right_bus": [
+          17
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 6,
+        "source": 35,
+        "kind": "SWITCH",
+        "left_bus": [
+          29
+        ],
+        "right_bus": [
+          32
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 7,
+        "source": 36,
+        "kind": "OR",
+        "left_bus": [
+          27
+        ],
+        "right_bus": [
+          31
+        ],
+        "cost": 1,
+        "depth_upper_bound": 4
+      },
+      {
+        "slot": 8,
+        "source": 37,
+        "kind": "SWITCH",
+        "left_bus": [
+          30
+        ],
+        "right_bus": [
+          36
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 9,
+        "source": 38,
+        "kind": "SWITCH",
+        "left_bus": [
+          26
+        ],
+        "right_bus": [
+          19
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      },
+      {
+        "slot": 10,
+        "source": 39,
+        "kind": "SWITCH",
+        "left_bus": [
+          29
+        ],
+        "right_bus": [
+          31
+        ],
+        "cost": 2,
+        "depth_upper_bound": 5
+      }
+    ],
+    "output_buses": [
+      [
+        33,
+        35,
+        38
+      ],
+      [
+        34,
+        37,
+        39
+      ]
+    ],
+    "physical_nets": true,
+    "public_outputs_must_be_driven": true
+  },
+  "verification": {
+    "rows": 486,
+    "actual_gate": 17,
+    "actual_output_arrivals": [
+      5,
+      5
+    ],
+    "actual_max_delay": 5,
+    "mismatch_count": 0,
+    "bus_conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "active_bus_non_switch_driver_violation_count": 0,
+    "topology_violation_count": 0,
+    "commutative_order_violation_count": 0,
+    "dead_component_count": 0,
+    "depth_upper_bound_violation_count": 0,
+    "output_deadline_violation_count": 0,
+    "verified": true
+  },
+  "scope_note": "This proves that the topology, exact cost, D5 timing, Z/BUS resolution, physical partition, and dead-component replay admit a known S7/C8 witness. It does not prove S5/S6/S7/C8 SAT."
+}

@@ -1,0 +1,411 @@
+{
+  "schema": "s567c8-g16-o4-s6-all-switch-tail-preflight-v1",
+  "status": "ready-for-ubuntu-fixed-job",
+  "spec": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\ubuntu_s567c8_g16_o4_s6_all_switch_tail_w1.json",
+  "spec_sha256": "954db3c9be747c413e698a8351931ae9ff643e752cfd1d4e61cb927e31cddcf8",
+  "constraint_set_sha256": "e4b11af69661104fdddf09def8750cf3e33a18f4232d543dba8d068702ed878e",
+  "checks": {
+    "schema": true,
+    "script": true,
+    "working_directory": true,
+    "single_job": true,
+    "value_structurally_valid": true,
+    "constraint_set_matches": true,
+    "proof_topology_matches": true,
+    "worker_sha_matches": true,
+    "dependency_sha_matches": true,
+    "auditor_sha_matches": true,
+    "positive_regression_verified": true,
+    "source_bus_contracts_verified": true,
+    "all_scanned_prior_families_disjoint": true,
+    "han_families_disjoint": true,
+    "workers_one": true,
+    "memory_budget_1536_mib": true,
+    "outer_timeout_900_seconds": true,
+    "stop_on_first_sat": true,
+    "unknown_is_not_unsat": true
+  },
+  "errors": [],
+  "source_bus_contracts": {
+    "slot_inputs_only_see_sources_and_prior_slots": true,
+    "left_bus_multi_driver_restricted_to_switches": true,
+    "right_bus_multi_driver_restricted_to_switches": true,
+    "multi_driver_bus_switch_only_contract": true,
+    "identical_driver_set_fanout_allowed": true,
+    "partial_driver_overlap_forbidden": true,
+    "exact_gate_cost_identity_enforced": true
+  },
+  "dependency_sha_matches": {
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": true,
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": true,
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": true
+  },
+  "positive_regression": {
+    "artifact": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_phase_shortcut_restart\\s567c8_g16_o4_s6_all_switch_tail_positive_s7c8.json",
+    "artifact_sha256": "8b0712579649754262c4b06d6fab59c7397e52f8df5f17cd5407eb0b32c1a5b5",
+    "status": "verified-positive-regression",
+    "verification": {
+      "rows": 486,
+      "actual_gate": 16,
+      "actual_output_arrivals": [
+        5,
+        5
+      ],
+      "actual_max_delay": 5,
+      "mismatch_count": 0,
+      "bus_conflict_count": 0,
+      "undriven_output_count": 0,
+      "physical_net_partition_violation_count": 0,
+      "active_bus_non_switch_driver_violation_count": 0,
+      "topology_violation_count": 0,
+      "commutative_order_violation_count": 0,
+      "dead_component_count": 0,
+      "depth_upper_bound_violation_count": 0,
+      "output_deadline_violation_count": 0,
+      "verified": true
+    },
+    "scope": "S7/C8 only; not a four-output SAT witness"
+  },
+  "non_duplication": {
+    "all_scanned_prior_family_overlap_count": 0,
+    "scanned_json_files": 98,
+    "scanned_family_files": 55,
+    "han_family_files": 40,
+    "han_overlap_count": 0,
+    "records": [
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_nor_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_not_s6_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_not_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_or_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_s_nor_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_s_not_s5_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_s_not_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_nor_s_or_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_nor_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_not_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_or_s6_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_or_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_s_nor_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_s_not_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_not_s_or_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_o_s_o_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_oo_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_nor_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_not_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_or_s6_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_or_s6_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_s_nor_s5_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_s_nor_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_s_not_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_ss_or_s_or_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_sss_not_nor_s5_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_sss_o_s_o_s4_cadical195.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_g18_o2s8_interleave_sss_o_s_o_s4_glucose300.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s5_o_s_o_s2_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s5_oo_s3_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s6_o_s_o_s1_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s6_oo_s2_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s7_o_s_o_s0_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_s7_oo_s1_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_ss_s_tail_phase_3x3_audit.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_ss_tail_phase_3x3_audit.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_sss_o_s_o_s4_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_sss_oo_s5_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_ssss_o_s_o_s3_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_han_knowles_fused_agent/s567c8_interleave_ssss_oo_s4_wildcard_manifest.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o2_s8_kind_matrix_w4.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o2_s8_kind_matrix_w6.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2and_resume_w3.json",
+        "family_count": 24,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2and_w4.json",
+        "family_count": 24,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2nand_w3.json",
+        "family_count": 24,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2nor_w3.json",
+        "family_count": 12,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2not_resume_w2.json",
+        "family_count": 12,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_adj_or2not_w3.json",
+        "family_count": 12,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o4_s7_tail_multiset_w4.json",
+        "family_count": 12,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o6_s6_tailprefix_matrix_resume_w1.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o6_s6_tailprefix_matrix_w2.json",
+        "family_count": 25,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/local_s567c8_g18_o6_s6_tailprefix_wildcard_w1.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/s567c8_g18_o0_s9_all_switch_d5.json",
+        "family_count": 1,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/ubuntu_s567c8_g17_o5_s6_midbus3_matrix_w1.json",
+        "family_count": 5,
+        "overlap_count": 0
+      },
+      {
+        "path": ".research/byte_adder_phase_shortcut_restart/ubuntu_s567c8_g18_o6_s6_midbus_matrix_w1.json",
+        "family_count": 25,
+        "overlap_count": 0
+      }
+    ],
+    "structural_reason": "This fixed family is g16/o4/s6 with 10 components. Han/root position sweeps are g17/o5s6 or g18/o2s8; the closed phase families are g17 or g18 and therefore have different fixed tuples."
+  },
+  "resource_budget": {
+    "workers": 1,
+    "memory_mb_per_process": 1536,
+    "maximum_concurrent_address_space_mib": 1536,
+    "outer_hard_timeout_seconds": 900,
+    "jobs": 1,
+    "worst_case_solver_wall_seconds": 900
+  },
+  "strict_proof_scope": {
+    "topology": [
+      "NOT",
+      "NOR",
+      "OR",
+      "OR",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH",
+      "SWITCH"
+    ],
+    "domain": "s34567c8_leaf",
+    "rows": 486,
+    "outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "gate": 16,
+    "delay": 5,
+    "components": 10,
+    "ordinary": 4,
+    "switches": 6,
+    "xors": 0,
+    "sat_rule": "The single auditor-valid SAT payload plus matching finished runner summary is decisive.",
+    "unsat_rule": "UNSAT only if the payload is terminal UNSAT and the finished runner summary has no timeout/error/missing result.",
+    "unknown_rule": "Timeout, missing/invalid JSON, null/nonterminal status, worker or dependency drift, or summary mismatch remains UNKNOWN/incomplete.",
+    "exclusions": [
+      "any other ordinary kind/order",
+      "any other ordinary/Switch phase order",
+      "XOR or other gate/component decompositions",
+      "paid-source shell and residual interface rewrites",
+      "the global g16 topology space"
+    ]
+  },
+  "commands": {
+    "ubuntu_launch_foreground": "cd /root/congProjects/turing-complete-works && .venv/bin/python .research/byte_adder_remote_compute/remote_sweep.py .research/byte_adder_phase_shortcut_restart/ubuntu_s567c8_g16_o4_s6_all_switch_tail_w1.json",
+    "terminal_audit": ".venv/bin/python .research/byte_adder_phase_shortcut_restart/audit_s567c8_g16_o4_s6_all_switch_tail.py .research/byte_adder_phase_shortcut_restart/ubuntu_s567c8_g16_o4_s6_all_switch_tail_w1.json --output .research/byte_adder_phase_shortcut_restart/ubuntu_s567c8_g16_o4_s6_all_switch_tail_w1_audit.json"
+  },
+  "artifact_sha256": {
+    "worker": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    "generator": "7da94c4e065a08aec55c77bbbbb560c97f30aee2c06032348d5e3d60d2f8de50",
+    "auditor": "e5cdff31250d4620d8fb17be01a72a10ca20809205649102ee69afb65641a4aa",
+    "positive_script": "7af0dd5de7a49b553fd7c7eca20236f6645568f6316dc5acc592072bff9294be",
+    "positive_result": "8b0712579649754262c4b06d6fab59c7397e52f8df5f17cd5407eb0b32c1a5b5"
+  }
+}
