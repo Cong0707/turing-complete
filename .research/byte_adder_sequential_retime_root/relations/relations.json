@@ -1,0 +1,58 @@
+{
+  "schema": "tc-byte-adder-delay-line-relation-v1",
+  "status": "candidate-discovery-only",
+  "test_protocol": {
+    "cycles": 131072,
+    "first_cycle": 0,
+    "last_cycle": 131071,
+    "xorshift": [
+      "x ^= x << 6",
+      "x ^= x >> 11",
+      "x ^= x << 9"
+    ],
+    "intermediate_truncation": false,
+    "cycle_2048_low17_regression": 35393,
+    "xorshift_bijective": true,
+    "cycle_zero_input": 0,
+    "cycle_zero_expected_output": 0
+  },
+  "delay_line_cost_assumption": {
+    "kind": 13,
+    "gate": 5,
+    "arrival": 4,
+    "source": "Turing Complete 2.1.292 effective component audit",
+    "timing_cut": false,
+    "output_arrival": "max(input arrivals) + 4"
+  },
+  "history_relation": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_sequential_retime_root\\relations\\history_relation_fr.pla",
+    "sha256": "c6d65d3920c3bd97598e835f64c8a77fda612d857f1d0d9d2079590a48030e02",
+    "bytes": 5898417,
+    "care_rows": 131072,
+    "unique_inputs": 131072,
+    "input_count": 34,
+    "output_count": 9
+  },
+  "future_output_relation": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_sequential_retime_root\\relations\\future_output_relation_fr.pla",
+    "sha256": "0d6414988ea0a855a5c0bc921a2abae7945d1c960cac2c0aad8d5d2913297d6d",
+    "bytes": 3670107,
+    "care_rows": 131071,
+    "unique_inputs": 131071,
+    "input_count": 17,
+    "output_count": 9
+  },
+  "runtime_semantics": {
+    "initial_state": 0,
+    "cycle_zero_output": "actively driven 0",
+    "update_order": "read old state, publish output, then store current input",
+    "z_storage": "input Z is read as data-plane 0; next output is driven 0",
+    "single_stage_sequence": "y[0]=0; y[t]=x[t-1]",
+    "evidence": [
+      "Turing Complete 2.1.292 kind13 codegen case",
+      "campaign/double_buffer/test.si",
+      "campaign/odd_ticks/test.si"
+    ]
+  },
+  "future_relation_warning": "Delay Line does not hide future-function depth; a precomputed signal with arrival d leaves the component at d+4.  The final source cycle is an external don't-care because its captured value is never read."
+}
