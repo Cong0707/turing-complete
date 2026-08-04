@@ -6,7 +6,17 @@ from collections import defaultdict, deque
 import re
 
 from turingsynth.floorplan.timing import analyze_timing
-from turingsynth.ir.floorplan import BusTrunk, Floorplan, FlowFrame, OutputMerge, TrunkLane
+from turingsynth.ir.floorplan import (
+    BusTrunk,
+    ConductorTip,
+    Floorplan,
+    FlowFrame,
+    GrowthCone,
+    OutputMerge,
+    PlannedConductor,
+    TapSocket,
+    TrunkLane,
+)
 from turingsynth.ir.physical import PhysicalComponent, PhysicalDesign, PhysicalNet
 
 
@@ -159,6 +169,162 @@ def _output_merge(
     )
 
 
+def _planned_conductors(
+    design: PhysicalDesign,
+    frame: FlowFrame,
+    input_trunks: tuple[BusTrunk, ...],
+) -> tuple[PlannedConductor, ...]:
+    arrivals = frame.arrival_by_net()
+    required = frame.required_by_net()
+    facts = frame.fact_by_component()
+    trunk_lane_by_net = {
+        lane.net: (trunk.key, lane.index)
+        for trunk in input_trunks
+        for lane in trunk.lanes
+    }
+    result = []
+    for net in sorted(design.nets, key=lambda item: item.name):
+        trunk_lane = trunk_lane_by_net.get(net.name)
+        tips = tuple(
+            ConductorTip(
+                key=f"{net.name}:driver:{index}",
+                net=net.name,
+                source=source,
+                arrival=arrivals[net.name],
+                trunk_key=trunk_lane[0] if trunk_lane is not None else None,
+                lane_index=trunk_lane[1] if trunk_lane is not None else None,
+            )
+            for index, source in enumerate(net.sources)
+        )
+        sockets = tuple(
+            TapSocket(
+                key=f"{net.name}:sink:{index}",
+                net=net.name,
+                sink=sink,
+                required=required[net.name],
+                slack=max(0, required[net.name] - arrivals[net.name]),
+                critical=(
+                    required[net.name] <= arrivals[net.name]
+                    or facts[sink.component].critical_input_net == net.name
+                ),
+            )
+            for index, sink in enumerate(net.sinks)
+        )
+        critical = any(socket.critical for socket in sockets)
+        result.append(
+            PlannedConductor(
+                key=f"conductor:{net.name}",
+                net=net.name,
+                tips=tips,
+                sockets=sockets,
+                timing_priority=(
+                    frame.target_delay * 2
+                    - min(frame.target_delay, required[net.name])
+                    + (frame.target_delay if critical else 0)
+                ),
+                critical=critical,
+            )
+        )
+    return tuple(result)
+
+
+def _growth_cones(
+    design: PhysicalDesign,
+    frame: FlowFrame,
+    input_trunks: tuple[BusTrunk, ...],
+    output_merges: tuple[OutputMerge, ...],
+    conductors: tuple[PlannedConductor, ...],
+    incoming: dict[str, list[PhysicalNet]],
+) -> tuple[GrowthCone, ...]:
+    components = design.component_by_key()
+    conductor_by_net = {conductor.net: conductor for conductor in conductors}
+    net_by_name = {net.name: net for net in design.nets}
+    order = {key: index for index, key in enumerate(frame.topological_order)}
+    input_frontiers = {
+        net: trunk.key
+        for trunk in input_trunks
+        for net in trunk.frontier_nets
+    }
+    facts = frame.fact_by_component()
+    result = []
+    for merge in output_merges:
+        stack = list(merge.frontier_nets)
+        seen_nets: set[str] = set()
+        cone_components: set[str] = set()
+        while stack:
+            net_name = stack.pop()
+            if net_name in seen_nets:
+                continue
+            seen_nets.add(net_name)
+            net = net_by_name[net_name]
+            for source in net.sources:
+                component = components[source.component]
+                if component.role != "gate":
+                    continue
+                if component.key in cone_components:
+                    continue
+                cone_components.add(component.key)
+                for predecessor in incoming[component.key]:
+                    if predecessor.name in input_frontiers:
+                        seen_nets.add(predecessor.name)
+                    else:
+                        stack.append(predecessor.name)
+
+        entry_nets = {
+            net.name
+            for net in design.nets
+            if any(sink.component in cone_components for sink in net.sinks)
+            and any(source.component not in cone_components for source in net.sources)
+        }
+        cone_conductors = tuple(
+            conductor_by_net[name]
+            for name in sorted(seen_nets | entry_nets)
+            if name in conductor_by_net
+        )
+        entry_tips = tuple(
+            tip
+            for name in sorted(entry_nets)
+            for tip in conductor_by_net[name].tips
+        )
+        output_tips = tuple(
+            tip
+            for name in merge.frontier_nets
+            for tip in conductor_by_net[name].tips
+        )
+        tap_sockets = tuple(
+            socket
+            for conductor in cone_conductors
+            for socket in conductor.sockets
+            if socket.sink.component in cone_components
+        )
+        ordered_components = tuple(
+            sorted(cone_components, key=lambda key: (order[key], key))
+        )
+        result.append(
+            GrowthCone(
+                key=f"cone:{merge.key}",
+                components=ordered_components,
+                input_trunks=tuple(
+                    sorted(
+                        {
+                            input_frontiers[name]
+                            for name in entry_nets
+                            if name in input_frontiers
+                        }
+                    )
+                ),
+                entry_tips=entry_tips,
+                tap_sockets=tap_sockets,
+                output_tips=output_tips,
+                critical_delay=max(
+                    (facts[key].arrival for key in cone_components),
+                    default=0,
+                ),
+            )
+        )
+    return tuple(result)
+
+
 def extract_io_frontiers(
     design: PhysicalDesign,
     timing: FlowFrame | None = None,
@@ -204,11 +370,20 @@ def extract_io_frontiers(
             key for key, component in components.items() if component.role == "output_port"
         )
     )
+    conductors = _planned_conductors(design, frame, input_trunks)
+    growth_cones = _growth_cones(
+        design,
+        frame,
+        input_trunks,
+        output_merges,
+        conductors,
+        incoming,
+    )
     return Floorplan(
         design_name=design.name,
         timing=frame,
         input_trunks=input_trunks,
-        growth_cones=(),
-        conductors=(),
+        growth_cones=growth_cones,
+        conductors=conductors,
         output_merges=output_merges,
     )

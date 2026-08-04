@@ -86,6 +86,21 @@ class FloorplanFrontierTests(unittest.TestCase):
             merges["fan-output"].frontier_nets,
             ("ordinary-high-fanout",),
         )
+        conductors = {conductor.net: conductor for conductor in floorplan.conductors}
+        self.assertEqual(len(conductors), len(design.nets))
+        ordinary = conductors["ordinary-high-fanout"]
+        self.assertEqual(len(ordinary.tips), 1)
+        self.assertEqual(len(ordinary.sockets), 3)
+        self.assertEqual(ordinary.tips[0].source, PinRef("fan-source", "out"))
+
+        cones = {
+            cone.key.removeprefix("cone:output:"): cone
+            for cone in floorplan.growth_cones
+        }
+        self.assertEqual(cones["output"].components, ("gate-a", "gate-b"))
+        self.assertEqual(cones["output"].input_trunks, ("input:input",))
+        self.assertEqual(cones["fan-output"].components, ("fan-source",))
+        self.assertEqual(floorplan.schema, "turingsynth-floorplan-v2")
         json.dumps(floorplan.to_dict())
 
     def test_nonzero_splitter_is_a_logic_boundary(self) -> None:
@@ -115,4 +130,3 @@ class FloorplanFrontierTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

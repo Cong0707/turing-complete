@@ -10,8 +10,10 @@ from turingsynth.formats.model import Component
 from turingsynth.mapping.native import INPUT, OUTPUT
 from turingsynth.routing.astar import (
     _collector_edges,
+    _direct_axis_path,
     _fanout_track_candidates,
     _fanout_edges,
+    _growth_fanout_edges,
     _plan_fanout_tracks,
     _pin_access_path,
     _pin_access_point,
@@ -20,6 +22,81 @@ from turingsynth.routing.astar import (
 
 
 class FanoutRoutingTests(unittest.TestCase):
+    def test_direct_hanan_path_is_committed_without_general_search(self) -> None:
+        reserved: set[tuple[int, int]] = set()
+        vertical: dict[int, list[tuple[int, int, str]]] = {}
+        horizontal: dict[int, list[tuple[int, int, str]]] = {}
+        path = _direct_axis_path(
+            "direct",
+            (0, 0),
+            (8, 4),
+            routing_source=(1, 0),
+            routing_sink=(7, 4),
+            forbidden=frozenset(),
+            forbidden_edges=frozenset(),
+            reserved=reserved,
+            track_intervals=vertical,
+            horizontal_intervals=horizontal,
+            bounds=(-2, -2, 10, 6),
+        )
+
+        self.assertIsNotNone(path)
+        assert path is not None
+        self.assertEqual(path[0], (0, 0))
+        self.assertEqual(path[-1], (8, 4))
+        directions = {
+            (right[0] - left[0], right[1] - left[1])
+            for left, right in zip(path, path[1:])
+        }
+        self.assertLessEqual(len(directions), 2)
+        self.assertTrue(reserved)
+
+    def test_growth_comb_commits_prevalidated_terminal_paths(self) -> None:
+        edges = _growth_fanout_edges(
+            "growth",
+            (0, 0),
+            ((10, -4), (12, 4)),
+            routing_source=(1, 0),
+            routing_sinks=((9, -4), (11, 4)),
+            forbidden=frozenset(),
+            forbidden_edges=frozenset(),
+            reserved=set(),
+            track_intervals={},
+            horizontal_intervals={},
+        )
+
+        feeder = next(edge for edge in edges if edge.role == "feeder")
+        taps = [edge for edge in edges if edge.role == "tap"]
+        self.assertEqual(feeder.planned_path, ((0, 0), (1, 0)))
+        self.assertEqual(len(taps), 2)
+        self.assertTrue(all(edge.planned_path is not None for edge in taps))
+        self.assertTrue(
+            all(
+                edge.planned_path[0] == edge.source
+                and edge.planned_path[-1] == edge.sink
+                for edge in taps
+                if edge.planned_path is not None
+            )
+        )
+
+    def test_local_collector_commits_prevalidated_terminal_paths(self) -> None:
+        edges = _collector_edges(
+            "collector",
+            (0, 0),
+            ((8, -4), (8, 4)),
+            routing_source=(1, 0),
+            routing_sinks=((7, -4), (7, 4)),
+            forbidden=frozenset(),
+            reserved=set(),
+            track_intervals={},
+            horizontal_intervals={},
+            bounds=(-4, -8, 12, 8),
+        )
+
+        terminals = [edge for edge in edges if edge.role in {"feeder", "tap"}]
+        self.assertEqual(len(terminals), 3)
+        self.assertTrue(all(edge.planned_path is not None for edge in terminals))
+
     def test_collector_fallback_reserves_off_spine_sockets(self) -> None:
         terminals = ((0, 0), (4, 0), (8, 0))
         reserved: set[tuple[int, int]] = set()
@@ -133,6 +210,26 @@ class FanoutRoutingTests(unittest.TestCase):
         }
         self.assertGreater(len(hub_points), 1)
         self.assertEqual({point[0] for point in hub_points}, {1})
+
+    def test_vertical_hub_cannot_land_on_foreign_horizontal_wire(self) -> None:
+        horizontal = {
+            0: [(-2, 6, "foreign")],
+            4: [(-2, 6, "foreign")],
+        }
+
+        with self.assertRaisesRegex(RuntimeError, "touches a foreign wire"):
+            _fanout_edges(
+                "fanout",
+                (0, 0),
+                ((4, 0), (4, 4)),
+                routing_source=(0, 0),
+                routing_sinks=((4, 0), (4, 4)),
+                forbidden=frozenset(),
+                reserved=set(),
+                track_intervals={},
+                horizontal_intervals=horizontal,
+                bounds=(-2, -2, 6, 6),
+            )
 
     def test_single_sink_collector_uses_segmented_track(self) -> None:
         edges = _fanout_edges(

@@ -25,6 +25,7 @@ class RoutedEdge:
     source: Point
     sink: Point
     role: str = "direct"
+    planned_path: tuple[Point, ...] | None = None
 
 
 @dataclass(frozen=True)
@@ -819,6 +820,120 @@ def _plan_fanout_tracks(
     )
 
 
+def _exact_vertical_comb_x(
+    network: str,
+    terminals: tuple[Point, ...],
+    *,
+    forbidden: frozenset[Point],
+    forbidden_edges: frozenset[tuple[Point, Point]],
+    reserved: set[Point],
+    track_intervals: dict[int, list[tuple[int, int, str]]],
+    horizontal_intervals: dict[int, list[tuple[int, int, str]]],
+    bounds: tuple[int, int, int, int],
+    candidates: tuple[int | None, ...] | None = None,
+    preferred_x: int | None = None,
+) -> int | None:
+    """Choose a local vertical comb whose complete terminal leads are proven.
+
+    Unlike the legacy track allocator, this planner may put the spine on a
+    terminal access column.  A terminal then becomes the hub itself, which is
+    both electrically valid and essential when adjacent component layers have
+    no unused integer column between them.
+    """
+
+    if not terminals:
+        return None
+    min_x, min_y, max_x, max_y = bounds
+    terminal_set = frozenset(terminals)
+    low_y = min(point[1] for point in terminals)
+    high_y = max(point[1] for point in terminals)
+    if candidates is None:
+        left = max(min_x, min(point[0] for point in terminals))
+        right = min(max_x, max(point[0] for point in terminals))
+        source_x = terminals[0][0]
+        terminal_xs = {point[0] for point in terminals}
+        candidate_xs = sorted(
+            range(left, right + 1),
+            key=lambda x: (
+                0 if x == preferred_x else 1,
+                1 if x in terminal_xs else 0,
+                abs(source_x - x),
+                sum(abs(point[0] - x) for point in terminals),
+                max(abs(point[0] - x) for point in terminals),
+                x,
+            ),
+        )
+    else:
+        candidate_xs = [x for x in candidates if x is not None]
+
+    for x in candidate_xs:
+        if not min_x <= x <= max_x:
+            continue
+        spine = _axis_points((x, low_y), (x, high_y))
+        if any(point in reserved for point in spine):
+            continue
+        if any(point in forbidden and point not in terminal_set for point in spine):
+            continue
+        if any(
+            _edge(left_point, right_point) in forbidden_edges
+            for left_point, right_point in zip(spine, spine[1:])
+        ):
+            continue
+        if any(
+            owner != network and not (high_y < other_low or low_y > other_high)
+            for other_low, other_high, owner in track_intervals.get(x, ())
+        ):
+            continue
+
+        valid = True
+        staged_leads: dict[int, list[tuple[int, int]]] = defaultdict(list)
+        for terminal in terminals:
+            hub = (x, terminal[1])
+            if any(
+                owner != network and low <= hub[0] <= high
+                for low, high, owner in horizontal_intervals.get(hub[1], ())
+            ):
+                valid = False
+                break
+            lead = _axis_points(hub, terminal)
+            if any(point in reserved for point in lead):
+                valid = False
+                break
+            if any(
+                point in forbidden and point not in terminal_set
+                for point in lead
+            ):
+                valid = False
+                break
+            if any(
+                _edge(left_point, right_point) in forbidden_edges
+                for left_point, right_point in zip(lead, lead[1:])
+            ):
+                valid = False
+                break
+            lead_low, lead_high = sorted((hub[0], terminal[0]))
+            if lead_low != lead_high and any(
+                min(lead_high, other_high) > max(lead_low, other_low)
+                for other_low, other_high in staged_leads.get(terminal[1], ())
+            ):
+                valid = False
+                break
+            if lead_low != lead_high and any(
+                owner != network
+                and min(lead_high, other_high) >= max(lead_low, other_low)
+                for other_low, other_high, owner in horizontal_intervals.get(
+                    terminal[1], ()
+                )
+            ):
+                valid = False
+                break
+            if lead_low != lead_high:
+                staged_leads[terminal[1]].append((lead_low, lead_high))
+        if valid:
+            return x
+    return None
+
+
 def _fanout_edges(
     network: str,
     source: Point,
@@ -830,7 +945,10 @@ def _fanout_edges(
     reserved: set[Point],
     track_intervals: dict[int, list[tuple[int, int, str]]],
     bounds: tuple[int, int, int, int],
+    forbidden_edges: frozenset[tuple[Point, Point]] = frozenset(),
+    horizontal_intervals: dict[int, list[tuple[int, int, str]]] | None = None,
     channel_x: int | None = None,
+    preferred_channel_x: int | None = None,
 ) -> tuple[RoutedEdge, ...]:
     if len(sinks) == 1 and channel_x is None:
         return (RoutedEdge(network, source, sinks[0]),)
@@ -840,7 +958,32 @@ def _fanout_edges(
     )
     ordered_sinks = tuple(pair[0] for pair in terminal_pairs)
     ordered_routing_sinks = tuple(pair[1] for pair in terminal_pairs)
-    if channel_x is None:
+    horizontal_intervals = horizontal_intervals if horizontal_intervals is not None else {}
+    terminals = (routing_source, *ordered_routing_sinks)
+    exact_track = _exact_vertical_comb_x(
+        network,
+        terminals,
+        forbidden=forbidden,
+        forbidden_edges=forbidden_edges,
+        reserved=reserved,
+        track_intervals=track_intervals,
+        horizontal_intervals=horizontal_intervals,
+        bounds=bounds,
+        candidates=(channel_x,) if channel_x is not None else None,
+        preferred_x=preferred_channel_x,
+    )
+    if exact_track is not None:
+        channel_x = exact_track
+        low_y = min(point[1] for point in terminals)
+        high_y = max(point[1] for point in terminals)
+        track_intervals.setdefault(channel_x, []).append((low_y, high_y, network))
+        for terminal in terminals:
+            low_x, high_x = sorted((terminal[0], channel_x))
+            if low_x != high_x:
+                horizontal_intervals.setdefault(terminal[1], []).append(
+                    (low_x, high_x, network)
+                )
+    elif channel_x is None:
         channel_x = _fanout_track_x(
             routing_source,
             ordered_routing_sinks,
@@ -857,11 +1000,43 @@ def _fanout_edges(
     source_hub = (channel_x, routing_source[1])
     taps = [(channel_x, sink[1]) for sink in ordered_routing_sinks]
     hubs = sorted(set((source_hub, *taps)), key=lambda point: (point[1], point[0]))
+    if any(
+        owner != network and low <= hub[0] <= high
+        for hub in hubs
+        for low, high, owner in horizontal_intervals.get(hub[1], ())
+    ):
+        raise RuntimeError(f"vertical fanout hub for {network} touches a foreign wire")
     reserved.update(hubs)
-    result = [RoutedEdge(network, source, source_hub, "feeder")]
+    result = [
+        RoutedEdge(
+            network,
+            source,
+            source_hub,
+            "feeder",
+            (
+                _axis_chain(source, routing_source, source_hub)
+                if exact_track is not None
+                else None
+            ),
+        )
+    ]
     result.extend(
-        RoutedEdge(network, tap, sink, "tap")
-        for tap, sink in zip(taps, ordered_sinks)
+        RoutedEdge(
+            network,
+            tap,
+            sink,
+            "tap",
+            (
+                _axis_chain(tap, routing_sink, sink)
+                if exact_track is not None
+                else None
+            ),
+        )
+        for tap, routing_sink, sink in zip(
+            taps,
+            ordered_routing_sinks,
+            ordered_sinks,
+        )
     )
     for left, right in zip(hubs, hubs[1:]):
         result.append(RoutedEdge(network, left, right, "trunk"))
@@ -1096,9 +1271,25 @@ def _collector_edges(
     result: list[RoutedEdge] = []
     for pin, terminal, tap_hub, role in records:
         if role == "feeder":
-            result.append(RoutedEdge(network, pin, tap_hub, role))
+            result.append(
+                RoutedEdge(
+                    network,
+                    pin,
+                    tap_hub,
+                    role,
+                    _axis_chain(pin, terminal, tap_hub),
+                )
+            )
         else:
-            result.append(RoutedEdge(network, tap_hub, pin, role))
+            result.append(
+                RoutedEdge(
+                    network,
+                    tap_hub,
+                    pin,
+                    role,
+                    _axis_chain(tap_hub, terminal, pin),
+                )
+            )
         spine_hub = (tap_hub[0], spine_y)
         if tap_hub != spine_hub:
             result.append(RoutedEdge(network, tap_hub, spine_hub, "branch"))
@@ -1130,6 +1321,164 @@ def _axis_points(left: Point, right: Point) -> tuple[Point, ...]:
     )
 
 
+def _axis_chain(*anchors: Point) -> tuple[Point, ...]:
+    """Join already-approved orthogonal segments without duplicating hubs."""
+
+    if not anchors:
+        raise ValueError("an axis chain needs at least one anchor")
+    points = [anchors[0]]
+    for left, right in zip(anchors, anchors[1:]):
+        segment = _axis_points(left, right)
+        points.extend(segment[1:])
+    return tuple(points)
+
+
+def _point_on_horizontal_track(
+    point: Point,
+    horizontal_intervals: dict[int, list[tuple[int, int, str]]],
+) -> bool:
+    return any(
+        low_x <= point[0] <= high_x
+        for low_x, high_x, _network in horizontal_intervals.get(point[1], ())
+    )
+
+
+def _direct_axis_path(
+    network: str,
+    source: Point,
+    sink: Point,
+    *,
+    routing_source: Point,
+    routing_sink: Point,
+    forbidden: frozenset[Point],
+    forbidden_edges: frozenset[tuple[Point, Point]],
+    reserved: set[Point],
+    track_intervals: dict[int, list[tuple[int, int, str]]],
+    horizontal_intervals: dict[int, list[tuple[int, int, str]]],
+    bounds: tuple[int, int, int, int],
+) -> tuple[Point, ...] | None:
+    """Plan a monotonic Hanan dogleg before falling back to general A*."""
+
+    left_x, top_y, right_x, bottom_y = bounds
+    sx, sy = routing_source
+    tx, ty = routing_sink
+    x_values = range(min(sx, tx), max(sx, tx) + 1)
+    y_values = range(min(sy, ty), max(sy, ty) + 1)
+    anchor_candidates = [
+        (routing_source, routing_sink),
+        (routing_source, (tx, sy), routing_sink),
+        (routing_source, (sx, ty), routing_sink),
+        *(
+            (routing_source, (x, sy), (x, ty), routing_sink)
+            for x in x_values
+        ),
+        *(
+            (routing_source, (sx, y), (tx, y), routing_sink)
+            for y in y_values
+        ),
+    ]
+    unique_candidates: dict[tuple[Point, ...], tuple[Point, ...]] = {}
+    for anchors in anchor_candidates:
+        compact = tuple(
+            point
+            for index, point in enumerate(anchors)
+            if index == 0 or point != anchors[index - 1]
+        )
+        try:
+            core = _axis_chain(*compact)
+        except ValueError:
+            continue
+        unique_candidates.setdefault(core, compact)
+
+    valid: list[
+        tuple[
+            tuple[object, ...],
+            tuple[Point, ...],
+            tuple[tuple[str, int, int, int], ...],
+        ]
+    ] = []
+    own_terminals = {routing_source, routing_sink}
+    for core, anchors in unique_candidates.items():
+        if any(
+            not (left_x <= point[0] <= right_x and top_y <= point[1] <= bottom_y)
+            for point in core
+        ):
+            continue
+        if any(point in forbidden and point not in own_terminals for point in core):
+            continue
+        if any(point in reserved and point not in own_terminals for point in core):
+            continue
+        if any(
+            _edge(left, right) in forbidden_edges
+            for left, right in zip(core, core[1:])
+        ):
+            continue
+
+        segment_intervals: list[tuple[str, int, int, int]] = []
+        rejected = False
+        for left, right in zip(anchors, anchors[1:]):
+            if left == right:
+                continue
+            if left[0] == right[0]:
+                low, high = sorted((left[1], right[1]))
+                if any(
+                    owner != network and min(high, other_high) >= max(low, other_low)
+                    for other_low, other_high, owner in track_intervals.get(left[0], ())
+                ):
+                    rejected = True
+                    break
+                segment_intervals.append(("V", left[0], low, high))
+            elif left[1] == right[1]:
+                low, high = sorted((left[0], right[0]))
+                if any(
+                    owner != network and min(high, other_high) >= max(low, other_low)
+                    for other_low, other_high, owner in horizontal_intervals.get(
+                        left[1], ()
+                    )
+                ):
+                    rejected = True
+                    break
+                segment_intervals.append(("H", left[1], low, high))
+            else:
+                rejected = True
+                break
+        if rejected:
+            continue
+        turns = tuple(_vertices(core)[1:-1])
+        if any(
+            _point_on_track(point, track_intervals)
+            or _point_on_horizontal_track(point, horizontal_intervals)
+            for point in turns
+        ):
+            continue
+        full_path = _axis_chain(source, routing_source)[:-1] + core
+        full_path = full_path + _axis_chain(routing_sink, sink)[1:]
+        segment_lengths = [
+            _manhattan(left, right) for left, right in zip(anchors, anchors[1:])
+        ]
+        cost = (
+            max(0, len(_vertices(core)) - 2),
+            len(core) - 1,
+            max(segment_lengths, default=0),
+            tuple(_vertices(core)),
+        )
+        valid.append((cost, full_path, tuple(segment_intervals)))
+
+    if not valid:
+        return None
+    _cost, path, intervals = min(valid, key=lambda item: item[0])
+    turns = set(_vertices(path)[1:-1])
+    reserved.update(turns)
+    for axis, coordinate, low, high in intervals:
+        if axis == "V":
+            track_intervals.setdefault(coordinate, []).append((low, high, network))
+        else:
+            horizontal_intervals.setdefault(coordinate, []).append(
+                (low, high, network)
+            )
+    return path
+
+
 def _growth_fanout_edges(
     network: str,
     source: Point,
@@ -1158,7 +1507,7 @@ def _growth_fanout_edges(
     if not all(value > 4 for value in direction_values):
         raise RuntimeError(f"non-forward local fanout {network}")
 
-    branch_records: list[tuple[int, Point, Point, Point]] = []
+    branch_records: list[tuple[int, Point, Point, Point, Point]] = []
     staged_intervals: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_horizontal: dict[int, list[tuple[int, int, str]]] = defaultdict(list)
     staged_hubs: set[Point] = set()
@@ -1266,6 +1615,12 @@ def _growth_fanout_edges(
             hubs = {top, bottom}
             if hubs & (reserved | staged_hubs):
                 continue
+            if any(
+                owner != network and low <= hub[0] <= high
+                for hub in hubs
+                for low, high, owner in horizontal_intervals.get(hub[1], ())
+            ):
+                continue
             tap_low, tap_high = sorted((bottom[0], terminal[0]))
             if any(
                 (
@@ -1291,10 +1646,13 @@ def _growth_fanout_edges(
         staged_horizontal[bottom[1]].append(
             (min(bottom[0], terminal[0]), max(bottom[0], terminal[0]), network)
         )
-        branch_records.append((branch_x, sink, top, bottom))
+        branch_records.append((branch_x, sink, terminal, top, bottom))
 
     spine_points = sorted(
-        {spine_origin, *(top for _x, _sink, top, _bottom in branch_records)},
+        {
+            spine_origin,
+            *(top for _x, _sink, _terminal, top, _bottom in branch_records),
+        },
         key=lambda point: point[0],
     )
     if spine_points[0] != spine_origin:
@@ -1333,17 +1691,33 @@ def _growth_fanout_edges(
         track_intervals.setdefault(x, []).extend(values)
     for y, values in staged_horizontal.items():
         horizontal_intervals.setdefault(y, []).extend(values)
-    result = [RoutedEdge(network, source, routing_source, "feeder")]
+    result = [
+        RoutedEdge(
+            network,
+            source,
+            routing_source,
+            "feeder",
+            _axis_chain(source, routing_source),
+        )
+    ]
     if spine_origin != routing_source:
         result.append(RoutedEdge(network, routing_source, spine_origin, "stem"))
     result.extend(
         RoutedEdge(network, left, right, "spine")
         for left, right in zip(spine_points, spine_points[1:])
     )
-    for _branch_x, sink, top, bottom in branch_records:
+    for _branch_x, sink, terminal, top, bottom in branch_records:
         if top != bottom:
             result.append(RoutedEdge(network, top, bottom, "branch"))
-        result.append(RoutedEdge(network, bottom, sink, "tap"))
+        result.append(
+            RoutedEdge(
+                network,
+                bottom,
+                sink,
+                "tap",
+                _axis_chain(bottom, terminal, sink),
+            )
+        )
     return tuple(result)
 
 
@@ -1351,6 +1725,7 @@ def _attempt(
     design: PhysicalDesign,
     margin: int,
     order_strategy: str,
+    conductor_hints: dict[str, int],
 ) -> RoutingResult:
     components_by_key = design.component_by_key()
     physical_net_by_name = {net.name: net for net in design.nets}
@@ -1532,6 +1907,8 @@ def _attempt(
         {x: list(values) for x, values in fixed_track_intervals.items()}
     )
     planned_nets: list[tuple[str, tuple[RoutedEdge, ...]]] = []
+    planning_modes: dict[str, str] = {}
+    planning_fallbacks: dict[str, dict[str, str]] = {}
     def planning_key(
         spec: tuple[int, int, str, Point, tuple[Point, ...]],
     ) -> tuple[object, ...]:
@@ -1584,8 +1961,11 @@ def _attempt(
                     reserved=reserved_hubs,
                     track_intervals=track_intervals,
                     bounds=bounds,
+                    forbidden_edges=terminal_access_edges,
+                    horizontal_intervals=horizontal_intervals,
                 )
-            except RuntimeError:
+                planning_modes[network] = "vertical-collector"
+            except RuntimeError as vertical_error:
                 tree_edges = _collector_edges(
                     network,
                     source,
@@ -1598,6 +1978,10 @@ def _attempt(
                     horizontal_intervals=horizontal_intervals,
                     bounds=bounds,
                 )
+                planning_modes[network] = "horizontal-collector"
+                planning_fallbacks[network] = {
+                    "vertical": str(vertical_error),
+                }
         elif use_growth_spine:
             try:
                 tree_edges = _growth_fanout_edges(
@@ -1612,6 +1996,7 @@ def _attempt(
                     track_intervals=track_intervals,
                     horizontal_intervals=horizontal_intervals,
                 )
+                planning_modes[network] = "local-horizontal-growth"
             except RuntimeError as growth_error:
                 try:
                     tree_edges = _fanout_edges(
@@ -1624,7 +2009,14 @@ def _attempt(
                         reserved=reserved_hubs,
                         track_intervals=track_intervals,
                         bounds=bounds,
+                        forbidden_edges=terminal_access_edges,
+                        horizontal_intervals=horizontal_intervals,
+                        preferred_channel_x=conductor_hints.get(network),
                     )
+                    planning_modes[network] = "vertical-growth-fallback"
+                    planning_fallbacks[network] = {
+                        "local_horizontal": str(growth_error),
+                    }
                 except RuntimeError as vertical_error:
                     try:
                         tree_edges = _collector_edges(
@@ -1639,6 +2031,11 @@ def _attempt(
                             horizontal_intervals=horizontal_intervals,
                             bounds=bounds,
                         )
+                        planning_modes[network] = "horizontal-growth-fallback"
+                        planning_fallbacks[network] = {
+                            "local_horizontal": str(growth_error),
+                            "vertical": str(vertical_error),
+                        }
                     except RuntimeError as legacy_error:
                         raise RuntimeError(
                             f"growth routing failed for {network}: {growth_error}; "
@@ -1646,18 +2043,54 @@ def _attempt(
                             f"horizontal fallback failed: {legacy_error}"
                         ) from legacy_error
         else:
-            tree_edges = _fanout_edges(
-                network,
-                source,
-                sinks,
-                routing_source=routing_source,
-                routing_sinks=routing_sinks,
-                forbidden=forbidden_hubs,
-                reserved=reserved_hubs,
-                track_intervals=track_intervals,
-                bounds=bounds,
-                channel_x=fanout_track_assignments.get(network),
+            direct_path = (
+                _direct_axis_path(
+                    network,
+                    source,
+                    sinks[0],
+                    routing_source=routing_source,
+                    routing_sink=routing_sinks[0],
+                    forbidden=forbidden_hubs,
+                    forbidden_edges=terminal_access_edges,
+                    reserved=reserved_hubs,
+                    track_intervals=track_intervals,
+                    horizontal_intervals=horizontal_intervals,
+                    bounds=bounds,
+                )
+                if len(sinks) == 1 and network not in fixed_track_assignments
+                else None
             )
+            if direct_path is not None:
+                tree_edges = (
+                    RoutedEdge(
+                        network,
+                        source,
+                        sinks[0],
+                        "direct",
+                        direct_path,
+                    ),
+                )
+                planning_modes[network] = "local-direct"
+            else:
+                tree_edges = _fanout_edges(
+                    network,
+                    source,
+                    sinks,
+                    routing_source=routing_source,
+                    routing_sinks=routing_sinks,
+                    forbidden=forbidden_hubs,
+                    reserved=reserved_hubs,
+                    track_intervals=track_intervals,
+                    bounds=bounds,
+                    forbidden_edges=terminal_access_edges,
+                    horizontal_intervals=horizontal_intervals,
+                    channel_x=fanout_track_assignments.get(network),
+                )
+                planning_modes[network] = (
+                    "fixed-vertical"
+                    if network in fixed_track_assignments
+                    else "direct-fallback"
+                )
         planned_nets.append((network, tree_edges))
 
     structured_leads: dict[RoutedEdge, tuple[Point, ...]] = {}
@@ -1733,10 +2166,20 @@ def _attempt(
         edge
         for _network, tree_edges in planned_nets
         for edge in tree_edges
-        if edge.role in {"trunk", "stem", "spine", "branch"}
+        if edge.planned_path is not None
+        or edge.role in {"trunk", "stem", "spine", "branch"}
     ]
     for tree_edge in backbone_edges:
-        points = _axis_points(tree_edge.source, tree_edge.sink)
+        points = (
+            tree_edge.planned_path
+            if tree_edge.planned_path is not None
+            else _axis_points(tree_edge.source, tree_edge.sink)
+        )
+        if not points or points[0] != tree_edge.source or points[-1] != tree_edge.sink:
+            raise RuntimeError(
+                f"planned path endpoints disagree for {tree_edge.network}: "
+                f"{tree_edge.source} -> {tree_edge.sink}"
+            )
         for left, right in zip(points, points[1:]):
             used_edge = _edge(left, right)
             previous_owner = edge_owner.setdefault(used_edge, tree_edge.network)
@@ -1761,7 +2204,8 @@ def _attempt(
         tree_edge
         for _network, tree_edges in planned_nets
         for tree_edge in tree_edges
-        if tree_edge.role not in {"trunk", "stem", "spine", "branch"}
+        if tree_edge.planned_path is None
+        and tree_edge.role not in {"trunk", "stem", "spine", "branch"}
     ]
     monotonic_fallback_count = 0
 
@@ -1889,6 +2333,39 @@ def _attempt(
             _manhattan(right, goal) > _manhattan(left, goal)
             for left, right in zip(points, points[1:])
         )
+    network_metrics: dict[str, dict[str, object]] = {}
+    for edge_value, points in zip(routed_edges, route_points):
+        length = len(points) - 1
+        bends = max(0, len(_vertices(points)) - 2)
+        goal = points[-1]
+        backtracks = sum(
+            _manhattan(right, goal) > _manhattan(left, goal)
+            for left, right in zip(points, points[1:])
+        )
+        metrics = network_metrics.setdefault(
+            edge_value.network,
+            {
+                "wire_count": 0,
+                "total_length": 0,
+                "maximum_wire_length": 0,
+                "internal_bend_count": 0,
+                "backtrack_segment_count": 0,
+                "role_counts": {},
+            },
+        )
+        metrics["wire_count"] = int(metrics["wire_count"]) + 1
+        metrics["total_length"] = int(metrics["total_length"]) + length
+        metrics["maximum_wire_length"] = max(
+            int(metrics["maximum_wire_length"]), length
+        )
+        metrics["internal_bend_count"] = int(metrics["internal_bend_count"]) + bends
+        metrics["backtrack_segment_count"] = (
+            int(metrics["backtrack_segment_count"]) + backtracks
+        )
+        roles = metrics["role_counts"]
+        if not isinstance(roles, dict):
+            raise RuntimeError("routing role metrics were corrupted")
+        roles[edge_value.role] = int(roles.get(edge_value.role, 0)) + 1
     report = {
         "schema": "turingsynth-routing-v1",
         "order_strategy": order_strategy,
@@ -1918,15 +2395,24 @@ def _attempt(
         "foreign_tap_crossing_count": 0,
         "diagonal_crossing_count": diagonal_crossings,
         "overlapping_edge_count": 0,
+        "planning_modes": dict(sorted(planning_modes.items())),
+        "planning_fallbacks": dict(sorted(planning_fallbacks.items())),
+        "conductor_hints": dict(sorted(conductor_hints.items())),
+        "network_metrics": dict(sorted(network_metrics.items())),
         "bounds": list(bounds),
     }
     return RoutingResult(tuple(wires), tuple(routed_edges), report)
 
 
-def route(design: PhysicalDesign) -> RoutingResult:
+def route(
+    design: PhysicalDesign,
+    *,
+    conductor_hints: dict[str, int] | None = None,
+) -> RoutingResult:
     """Route all nets using bounded deterministic rip-up/reroute strategies."""
 
     errors = []
+    hints = dict(conductor_hints or {})
     for margin in (16, 28, 44, 68):
         successes = []
         for strategy in (
@@ -1936,7 +2422,7 @@ def route(design: PhysicalDesign) -> RoutingResult:
             "longest-first",
         ):
             try:
-                successes.append(_attempt(design, margin, strategy))
+                successes.append(_attempt(design, margin, strategy, hints))
             except FanoutTrackCapacityError:
                 raise
             except RuntimeError as exc:

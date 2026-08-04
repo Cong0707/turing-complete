@@ -236,6 +236,7 @@ def audit_physical(
         raise ValueError("routed wire/edge/circuit populations differ")
     endpoint_wires: dict[Point, list[int]] = defaultdict(list)
     edge_owner: dict[tuple[Point, Point], str] = {}
+    edge_wire_index: dict[tuple[Point, Point], int] = {}
     body_collisions = []
     pin_contacts = []
     points_by_wire: list[tuple[Point, ...]] = []
@@ -254,8 +255,15 @@ def audit_physical(
         for left, right in zip(points, points[1:]):
             edge = (left, right) if left <= right else (right, left)
             if edge in edge_owner:
-                raise ValueError(f"wire edge overlap at {edge!r}")
+                previous = edge_wire_index[edge]
+                raise ValueError(
+                    f"wire edge overlap at {edge!r}: "
+                    f"wire {previous} {routing.edges[previous].network} "
+                    f"({routing.edges[previous].role}) and wire {index} "
+                    f"{routed.network} ({routed.role})"
+                )
             edge_owner[edge] = routed.network
+            edge_wire_index[edge] = index
     if body_collisions or pin_contacts:
         raise ValueError(
             "wire geometry crosses a component or unrelated pin: "

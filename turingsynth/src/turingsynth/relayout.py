@@ -114,7 +114,15 @@ def relayout_v15(
             _write_json(build / "03-layout" / "placed.json", placed.to_dict())
             _write_json(build / "03-layout" / "report.json", layout_report)
             try:
-                routed = route(placed)
+                routed = route(
+                    placed,
+                    conductor_hints={
+                        str(network): int(x)
+                        for network, x in dict(
+                            layout_report.get("planned_conductor_spines", {})
+                        ).items()
+                    },
+                )
                 break
             except FanoutTrackCapacityError as exc:
                 failed_networks = tuple(

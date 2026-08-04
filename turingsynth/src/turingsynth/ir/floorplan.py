@@ -126,7 +126,7 @@ class PlannedConductor(_JsonReport):
 
     key: str
     net: str
-    tip: ConductorTip
+    tips: tuple[ConductorTip, ...]
     sockets: tuple[TapSocket, ...]
     timing_priority: int
     critical: bool = False
@@ -153,5 +153,4 @@ class Floorplan(_JsonReport):
     growth_cones: tuple[GrowthCone, ...]
     conductors: tuple[PlannedConductor, ...]
     output_merges: tuple[OutputMerge, ...]
-    schema: str = field(default="turingsynth-floorplan-v1", init=False)
-
+    schema: str = field(default="turingsynth-floorplan-v2", init=False)
