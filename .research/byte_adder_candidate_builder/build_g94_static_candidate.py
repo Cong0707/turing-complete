@@ -129,15 +129,47 @@ class PatchFactory(core.Factory):
     def __init__(self) -> None:
         super().__init__()
         self.splitter_metadata: dict[int, dict[str, Any]] = {}
+        self.normalizer_owners: dict[str, tuple[int, int]] = {}
+        self.normalizer_metadata: dict[int, dict[str, Any]] = {}
 
     def normalize_scalar(self, raw: int, filler: int, *, owner: str) -> int:
-        """Read a may-Z scalar through Maker2 lane 0 and split an active clone."""
+        """Read a may-Z scalar as active ``value & driven`` at zero cost/delay.
+
+        Maker2 reads each scalar lane's data plane and emits an active word;
+        Splitter2 then exposes lane 0 as a distinct active scalar network.  The
+        filler occupies lane 1 only, but it must already be active and no later
+        than ``raw`` so the normalizer preserves ``raw``'s exact arrival.
+        """
+
+        if self.nodes[raw].op == "MAKER2" or self.nodes[filler].op == "MAKER2":
+            raise RuntimeError("normalize_scalar accepts scalar nodes only")
 
         if not self.nodes[raw].may_z:
             return raw
+        if (
+            not owner
+            or len(owner) > 128
+            or any(
+                not (character.isascii() and (character.isalnum() or character in "_.:-"))
+                for character in owner
+            )
+        ):
+            raise RuntimeError(f"invalid normalize_scalar owner {owner!r}")
         if self.nodes[filler].may_z:
             raise RuntimeError("Maker2 filler must be fully driven")
-        arrival = max(self.nodes[raw].arrival, self.nodes[filler].arrival)
+        if self.nodes[filler].arrival > self.nodes[raw].arrival:
+            raise RuntimeError(
+                "Maker2 filler arrives after the partial scalar; zero-delay "
+                "normalization would still inherit the later input arrival"
+            )
+        contract = (raw, filler)
+        previous = self.normalizer_owners.get(owner)
+        if previous is not None and previous != contract:
+            raise RuntimeError(
+                f"normalize_scalar owner {owner!r} aliases {previous} and {contract}"
+            )
+        self.normalizer_owners[owner] = contract
+        arrival = self.nodes[raw].arrival
         maker = self._new(
             ("MAKER2", raw, filler),
             core.Node(
@@ -163,7 +195,39 @@ class PatchFactory(core.Factory):
             ),
         )
         self.splitter_metadata[splitter] = {"owner": owner, "lane": 0}
+        self.normalizer_metadata[splitter] = {
+            "raw": raw,
+            "filler": filler,
+            "maker": maker,
+            "owner": owner,
+            "arrival": arrival,
+        }
         return splitter
+
+    def structural_hash(self, outputs: tuple[int, ...]) -> str:
+        """Hash extended nodes with the same owner-aware form as the materializer."""
+
+        memo: dict[int, str] = {}
+
+        def visit(index: int) -> str:
+            found = memo.get(index)
+            if found is not None:
+                return found
+            node = self.nodes[index]
+            payload: list[Any] = [node.op, node.label, node.cost, node.step_delay]
+            if node.op == "SPLITTER2":
+                metadata = self.splitter_metadata.get(index)
+                if metadata is None:
+                    raise RuntimeError(f"SPLITTER2 {index} lacks structural metadata")
+                payload.extend((metadata["owner"], metadata["lane"]))
+            payload.extend(visit(argument) for argument in node.args)
+            digest = hashlib.sha256(
+                json.dumps(payload, ensure_ascii=True, separators=(",", ":")).encode()
+            ).hexdigest()
+            memo[index] = digest
+            return digest
+
+        return hashlib.sha256("".join(visit(output) for output in outputs).encode()).hexdigest()
 
     def evaluate(
         self, outputs: tuple[int, ...]
@@ -835,6 +899,7 @@ def audit_static_dag(
     topological_violations: list[dict[str, Any]] = []
     arrival_violations: list[dict[str, Any]] = []
     bus_rows: list[dict[str, Any]] = []
+    normalizer_rows: list[dict[str, Any]] = []
     supported_ops = {
         "INPUT",
         "CONST",
@@ -901,6 +966,7 @@ def audit_static_dag(
                 raise RuntimeError(f"MAKER2 {node_id} must produce an active word")
         elif node.op == "SPLITTER2":
             metadata = factory.splitter_metadata.get(node_id)
+            normalizer = factory.normalizer_metadata.get(node_id)
             if (
                 len(node.args) != 1
                 or factory.nodes[node.args[0]].op != "MAKER2"
@@ -908,11 +974,40 @@ def audit_static_dag(
                 or node.step_delay != 0
                 or metadata is None
                 or metadata.get("lane") != 0
+                or normalizer is None
             ):
                 raise RuntimeError(f"SPLITTER2 {node_id} contract changed")
             expected_arrival = factory.nodes[node.args[0]].arrival
             if node.may_z:
                 raise RuntimeError(f"SPLITTER2 {node_id} must produce an active scalar")
+            maker = factory.nodes[node.args[0]]
+            raw, filler = maker.args
+            if (
+                normalizer.get("raw") != raw
+                or normalizer.get("filler") != filler
+                or normalizer.get("maker") != node.args[0]
+                or normalizer.get("owner") != metadata.get("owner")
+                or not factory.nodes[raw].may_z
+                or factory.nodes[filler].may_z
+                or factory.nodes[filler].arrival > factory.nodes[raw].arrival
+                or expected_arrival != factory.nodes[raw].arrival
+            ):
+                raise RuntimeError(f"SPLITTER2 {node_id} zero-delay normalizer changed")
+            normalizer_rows.append(
+                {
+                    "splitter": node_id,
+                    "maker": node.args[0],
+                    "owner": metadata["owner"],
+                    "raw": raw,
+                    "filler": filler,
+                    "raw_may_z": True,
+                    "output_may_z": False,
+                    "cost": maker.cost + node.cost,
+                    "step_delay": maker.step_delay + node.step_delay,
+                    "raw_arrival": factory.nodes[raw].arrival,
+                    "output_arrival": node.arrival,
+                }
+            )
         else:
             expected_arrival = (
                 max(factory.nodes[argument].arrival for argument in node.args)
@@ -1013,6 +1108,12 @@ def audit_static_dag(
                 "instances; only witness source identity may prove illegal partial reuse"
             ),
         },
+        "normalizer_audit": {
+            "status": "pass",
+            "contract": "active = value & driven; cost=0; step_delay=0",
+            "count": len(normalizer_rows),
+            "rows": normalizer_rows,
+        },
     }
 
 
@@ -1084,7 +1185,13 @@ def layout_contract(
     }
 
 
-def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[str, Any]:
+def build_candidate(
+    hooks: FormulaHooks,
+    *,
+    full_verify: bool = False,
+    b12_g1_recode: bool = False,
+    hub87_high_graft: bool = False,
+) -> dict[str, Any]:
     carry_witness, carry_raw = read_frozen_json(
         CARRY_WITNESS_PATH, CARRY_WITNESS_SHA256
     )
@@ -1114,7 +1221,7 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
             p[bit] = factory.gate("NOR", g[bit], q[bit])
             nets[f"Q{bit}"] = int(q[bit])
             nets[f"P{bit}"] = int(p[bit])
-        if bit in (0, 5, 6):
+        if bit == 0 or (bit in (5, 6) and not hub87_high_graft):
             v[bit] = factory.gate("OR", a, b)
             nets[f"V{bit}"] = int(v[bit])
     creation_regions["bit_state_leaves"] = range(phase_start, len(factory.nodes))
@@ -1127,11 +1234,15 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
     a12 = factory.gate("OR", g[1], g[2])
     n12 = factory.gate("NOR", int(q[1]), int(q[2]))
     n34 = factory.gate("NOR", int(q[3]), int(q[4]))
-    a56, v56 = av_switch_combine(
-        factory,
-        (g[5], int(v[5])),
-        (g[6], int(v[6])),
-    )
+    if hub87_high_graft:
+        a56 = factory.gate("OR", g[5], g[6])
+        v56 = None
+    else:
+        a56, v56 = av_switch_combine(
+            factory,
+            (g[5], int(v[5])),
+            (g[6], int(v[6])),
+        )
 
     # X23 is built before the carry witness so Factory interning guarantees the
     # S3/S4 formula and Apre consume one physical OR gate.
@@ -1145,20 +1256,47 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
             "N12": n12,
             "N34": n34,
             "A56": a56,
-            "V56": v56,
             "X23": x23,
         }
     )
+    if v56 is not None:
+        nets["V56"] = v56
     creation_regions["low_shell_and_x23"] = range(phase_start, len(factory.nodes))
     phase_start = len(factory.nodes)
 
-    carry_sources = tuple(nets[name] for name in REASSOCIATED_CARRY_SOURCES)
+    carry_source_nodes = dict(nets)
+    if hub87_high_graft:
+        # V56 is used only by the dead high-carry suffix of the frozen witness.
+        # A scalar placeholder lets the shared low witness produce C3/C5 while
+        # the final live cone omits V5/V6/V56/V36/C7 entirely.
+        carry_source_nodes["V56"] = g[5]
+    carry_sources = tuple(carry_source_nodes[name] for name in REASSOCIATED_CARRY_SOURCES)
     carry_graft = StaticWitnessGraft(factory, carry_sources, patched_carry["network"])
     carry_graft.build()
-    c3, c5, c7 = carry_graft.outputs(patched_carry["output_buses"])
+    original_c3, original_c5, original_c7 = carry_graft.outputs(
+        patched_carry["output_buses"]
+    )
     apre = carry_graft.nodes[9]
     v34 = carry_graft.nodes[15]
-    b12 = carry_graft.resolve_bus((10, 12), "named.B12")
+    original_b12 = carry_graft.resolve_bus((10, 12), "named.B12")
+
+    if b12_g1_recode:
+        # Old B12 uses enables C1 and A12=(G1|G2).  Replacing A12 by G1 only
+        # removes the G2-only rows.  Every B12 consumer already has an
+        # independent G2-containing absorbing path: C3 has G2 directly,
+        # C5/C7 have Apre=(G2|G3|G4), and S4 has X23=(G2|G3).
+        b12 = factory.bus(((c1, n12), (g[1], n12)))
+        c3 = factory.gate("OR", g[2], b12)
+        c5 = factory.bus(((apre, v34), (b12, v34)))
+        if hub87_high_graft:
+            c7 = None
+        else:
+            v36 = carry_graft.resolve_bus((11, 14, 17), "named.V36")
+            c7 = factory.bus(((a56, int(v56)), (apre, v36), (b12, v36)))
+    else:
+        b12 = original_b12
+        c3, c5 = original_c3, original_c5
+        c7 = None if hub87_high_graft else original_c7
 
     # Exact structural assertions make the reassociation independent of node ids.
     def assert_gate(node_id: int, op: str, args: Iterable[int], label: str) -> None:
@@ -1170,7 +1308,14 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
     assert_gate(apre, "OR", (x23, g[4]), "Apre")
     assert_gate(v34, "OR", (n34, g[4]), "V34")
     assert_gate(c3, "OR", (g[2], b12), "C3")
-    nets.update({"Apre": apre, "V34": v34, "B12": b12, "C3": c3, "C5": c5, "C7": c7})
+    if b12_g1_recode:
+        expected_b12_args = tuple(sorted((c1, n12, g[1], n12)))
+        actual_b12 = factory.nodes[b12]
+        if actual_b12.op != "BUS" or tuple(sorted(actual_b12.args)) != expected_b12_args:
+            raise RuntimeError(f"B12 G1 recode structure changed: {actual_b12}")
+    nets.update({"Apre": apre, "V34": v34, "B12": b12, "C3": c3, "C5": c5})
+    if c7 is not None:
+        nets["C7"] = c7
     creation_regions["reassociated_carry_witness"] = range(phase_start, len(factory.nodes))
     phase_start = len(factory.nodes)
 
@@ -1185,18 +1330,74 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
     context.absorb("s34", s34_result, {"S3", "S4"})
     creation_regions["s34_patch"] = range(phase_start, len(factory.nodes))
     phase_start = len(factory.nodes)
-    s56_result = normalize_region_result(hooks.build_s56(context), "s56")
-    context.absorb("s56", s56_result, {"S5", "S6"})
-    creation_regions["s56_patch"] = range(phase_start, len(factory.nodes))
-    phase_start = len(factory.nodes)
+    if hub87_high_graft:
+        region = "hub87_high_graft"
+        o5 = context.gate("Hub87.O5", "OR", "P5", "C5", region=region)
+        d5 = context.gate("Hub87.D5", "NAND", "P5", "C5", region=region)
+        s5 = context.gate("S5", "AND", o5, d5, region=region)
 
-    t7 = factory.gate("AND", int(p[7]), c7)
-    c8 = factory.gate("OR", g[7], t7)
+        e6 = context.gate("Hub87.E6", "NOR", "A56", "Q6", region=region)
+        f6 = context.gate("Hub87.F6", "NOR", "P6", "Q5", region=region)
+        h6 = context.gate("Hub87.H6", "OR", "G5", "C5", region=region)
+        s6 = context.bus(
+            "S6",
+            ((e6, d5), (f6, h6)),
+            region=region,
+        )
+
+        n56 = context.gate("Hub87.N56", "NOR", "Q5", "Q6", region=region)
+        k56 = context.gate("Hub87.K56", "NOR", "G6", n56, region=region)
+        r7 = context.gate("Hub87.R7", "NOR", "C5", "A56", region=region)
+        j7 = context.gate("Hub87.J7", "NOR", "P7", k56, region=region)
+        h7 = context.gate("Hub87.H7", "OR", "A56", "C5", region=region)
+        s7 = context.bus(
+            "S7",
+            ((k56, "P7"), (r7, "P7"), (j7, h7)),
+            region=region,
+        )
+
+        # J7 is already paid by S7.  Reuse it to obtain the final propagate
+        # phase in one gate:
+        #   NOR(K56, NOR(P7, K56)) = P7 & ~K56.
+        # This removes the private X7=(G7|Q7)=~P7 gate while preserving D6.
+        f7 = context.gate("Hub87.F7", "NOR", k56, j7, region=region)
+        c8_raw = context.bus(
+            "Hub87.C8raw",
+            (("G7", "G7"), (f7, h7)),
+            region=region,
+        )
+        c8 = context.normalize_scalar(
+            "C8",
+            c8_raw,
+            "Cin",
+            owner="codex.byte_adder.hub87.c8_active",
+            region=region,
+        )
+        s56_result = RegionResult(
+            outputs={"S5": s5, "S6": s6},
+            byproducts={
+                "Hub87.N56": n56,
+                "Hub87.K56": k56,
+                "Hub87.H7": h7,
+            },
+            note="Hub87 direct high graft with explicit zero-cost C8 normalization",
+        )
+        creation_regions["hub87_high_graft"] = range(phase_start, len(factory.nodes))
+        phase_start = len(factory.nodes)
+    else:
+        s56_result = normalize_region_result(hooks.build_s56(context), "s56")
+        context.absorb("s56", s56_result, {"S5", "S6"})
+        creation_regions["s56_patch"] = range(phase_start, len(factory.nodes))
+        phase_start = len(factory.nodes)
+
+        t7 = factory.gate("AND", int(p[7]), int(c7))
+        c8 = factory.gate("OR", g[7], t7)
+        s7 = factory.gate("NOR", t7, factory.gate("NOR", int(p[7]), int(c7)))
+
     s0 = reduced_sum(factory, g[0], int(v[0]), c0, c1)
     s1 = factory.gate("NOR", t1, factory.gate("NOR", int(p[1]), c1))
     t2 = factory.gate("AND", int(p[2]), c2)
     s2 = factory.gate("NOR", t2, factory.gate("NOR", int(p[2]), c2))
-    s7 = factory.gate("NOR", t7, factory.gate("NOR", int(p[7]), c7))
     context.define("C8", c8, "fixed_shell")
     context.define("S0", s0, "fixed_shell")
     context.define("S1", s1, "fixed_shell")
@@ -1212,10 +1413,11 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
         "C2": factory.nodes[c2].arrival,
         "C3": factory.nodes[c3].arrival,
         "C5": factory.nodes[c5].arrival,
-        "C7": factory.nodes[c7].arrival,
         **{f"S{bit}": factory.nodes[node].arrival for bit, node in enumerate(sums)},
         "C8": factory.nodes[c8].arrival,
     }
+    if c7 is not None:
+        arrivals["C7"] = factory.nodes[c7].arrival
     static_audit = audit_static_dag(
         factory,
         outputs,
@@ -1256,7 +1458,7 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
             "mismatch_assignment_count": semantic["mismatch_count_by_output"][6],
             "conflict_assignment_count": raw_s6_audit["conflict_assignment_count"],
         }
-        if hooks.name == "s56-tail9-raw-z-to-final-maker8":
+        if hooks.name == "s56-tail9-raw-z-to-final-maker8" and not hub87_high_graft:
             expected_tail9 = {
                 "z_assignment_count": 32768,
                 "driven_assignment_count": 98304,
@@ -1293,6 +1495,9 @@ def build_candidate(hooks: FormulaHooks, *, full_verify: bool = False) -> dict[s
             "before": "A34=OR(G3,G4); Apre=OR(G2,A34)",
             "after": "X23=OR(G2,G3); Apre=OR(X23,G4)",
             "A34_live": "A34" in context.nets and context.nets["A34"] in factory.reachable(outputs),
+            "A12_live": a12 in factory.reachable(outputs),
+            "b12_g1_recode": b12_g1_recode,
+            "hub87_high_graft": hub87_high_graft,
             "X23_node": x23,
             "Apre_node": apre,
         },
@@ -1344,6 +1549,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--max-gate", type=int, default=94)
     parser.add_argument("--max-delay", type=int, default=6)
     parser.add_argument(
+        "--b12-g1-recode",
+        action="store_true",
+        help="replace B12's private A12 enable by G1; downstream G2 paths absorb the difference",
+    )
+    parser.add_argument(
+        "--hub87-high-graft",
+        action="store_true",
+        help="replace V5/V6/V56/V36/C7 and the high output shell by the Hub87 direct macro",
+    )
+    parser.add_argument(
         "--full-verify",
         action="store_true",
         help="run 131072 rows; reserved for an explicitly authorized closed candidate",
@@ -1351,7 +1566,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     hooks = load_formula_hooks(args.patch_module)
-    payload = build_candidate(hooks, full_verify=args.full_verify)
+    payload = build_candidate(
+        hooks,
+        full_verify=args.full_verify,
+        b12_g1_recode=args.b12_g1_recode,
+        hub87_high_graft=args.hub87_high_graft,
+    )
     metrics = payload["metrics"]
     if metrics["gate"] > args.max_gate:
         raise RuntimeError(f"gate threshold failed: {metrics['gate']} > {args.max_gate}")
