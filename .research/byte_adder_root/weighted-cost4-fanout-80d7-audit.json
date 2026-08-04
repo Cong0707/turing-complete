@@ -1,0 +1,295 @@
+{
+  "schema": "byte-adder-80d7-weighted-cost4-fanout-audit-v1",
+  "status": "pass",
+  "scope": {
+    "negative_records": 8,
+    "positive_records": 4,
+    "full_truth_rows_replayed_per_positive": 131072,
+    "claim": "reviewed-source local arbitrary-fanout closure only",
+    "global_79d7_lower_bound_claimed": false,
+    "proof_trace_present": false
+  },
+  "inputs": {
+    "dag": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+    "dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "materializer": ".research/byte_adder_builder_layout_agent/materialize_factory_dag.py",
+    "materializer_sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf"
+  },
+  "partitions": {
+    "s2": {
+      "compact_truth_rows": 48,
+      "inconsistent_rows": 0,
+      "fully_driven_conflict_free": 1
+    },
+    "s4": {
+      "compact_truth_rows": 48,
+      "inconsistent_rows": 0,
+      "fully_driven_conflict_free": 1
+    }
+  },
+  "records": [
+    {
+      "file": "weighted-cost4-fanout-s2-cadical195-constants.json",
+      "sha256": "43a3940fca4a82a637de80370cd63c3c39cb54664fd302b9c073a2f5d96d0921",
+      "target": "s2",
+      "variant": "constants",
+      "solver": "cadical195",
+      "status": "unsat",
+      "variables": 2931,
+      "clauses": 31162,
+      "cnf_sha256": "19c7b5dd6c6ed13c869cd079fdcebbc16b19fb3616f293e57cbf2eed95cabbb6",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s2-cadical195.json",
+      "sha256": "2f0f655956a70c440af0d483574e9f1c1aa8f938bee5672c20dfdae91da0ce5d",
+      "target": "s2",
+      "variant": "negative",
+      "solver": "cadical195",
+      "status": "unsat",
+      "variables": 2845,
+      "clauses": 28434,
+      "cnf_sha256": "3d74901cfa9efe18d6cb51d6e48f87c20d0c7efaeb13b215cc262436bda7d123",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s2-glucose42-constants.json",
+      "sha256": "75a228fd1c706c709c2b4753f7d925e60bf00a07a598abdc6682557c0ae4b24c",
+      "target": "s2",
+      "variant": "constants",
+      "solver": "glucose42",
+      "status": "unsat",
+      "variables": 2931,
+      "clauses": 31162,
+      "cnf_sha256": "19c7b5dd6c6ed13c869cd079fdcebbc16b19fb3616f293e57cbf2eed95cabbb6",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s2-glucose42.json",
+      "sha256": "5b8432769280c8d71fec318885b6d8cd87ef016280c5c3073117c8c3ac9aeb25",
+      "target": "s2",
+      "variant": "negative",
+      "solver": "glucose42",
+      "status": "unsat",
+      "variables": 2845,
+      "clauses": 28434,
+      "cnf_sha256": "3d74901cfa9efe18d6cb51d6e48f87c20d0c7efaeb13b215cc262436bda7d123",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s2-positive-cadical195.json",
+      "sha256": "4a0ab587f08443582d42e20bb6350d6efadf0d2c4a9866c8029464e607cc3952",
+      "target": "s2",
+      "variant": "positive",
+      "solver": "cadical195",
+      "status": "sat",
+      "variables": 6086,
+      "clauses": 58210,
+      "cnf_sha256": "7624681eb838574621304f19b75509941ce4471c31f1ed0100874704508466d2",
+      "positive_replay": {
+        "truth_rows": 131072,
+        "mismatch_count": 0,
+        "conflict_assignment_count": 0,
+        "undriven_output_count": 0,
+        "actual_gate": 5,
+        "actual_output_arrival": 7,
+        "switch_count": 0,
+        "xor_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "live_components": 5
+      },
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s2-positive-glucose42.json",
+      "sha256": "b57338aff8844ac8884021b046c26addf5394e3772a6625308060585a236f16d",
+      "target": "s2",
+      "variant": "positive",
+      "solver": "glucose42",
+      "status": "sat",
+      "variables": 6086,
+      "clauses": 58210,
+      "cnf_sha256": "7624681eb838574621304f19b75509941ce4471c31f1ed0100874704508466d2",
+      "positive_replay": {
+        "truth_rows": 131072,
+        "mismatch_count": 0,
+        "conflict_assignment_count": 0,
+        "undriven_output_count": 0,
+        "actual_gate": 5,
+        "actual_output_arrival": 7,
+        "switch_count": 0,
+        "xor_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "live_components": 5
+      },
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-cadical195-constants.json",
+      "sha256": "5404008f711629124a7396b1f4537cf8650761ffce5d50a2081e7e4035a24238",
+      "target": "s4",
+      "variant": "constants",
+      "solver": "cadical195",
+      "status": "unsat",
+      "variables": 2931,
+      "clauses": 31519,
+      "cnf_sha256": "d13e13d3284bec625c18ddc763c3f52582ec3ba0cea0679a219048f7468954f6",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-cadical195.json",
+      "sha256": "7899010ae8f5cff36fe42958408f8fe29f079ab91bd35f40db0d2ec5d83e4f2a",
+      "target": "s4",
+      "variant": "negative",
+      "solver": "cadical195",
+      "status": "unsat",
+      "variables": 2845,
+      "clauses": 28791,
+      "cnf_sha256": "fc2a2c8e8b1ffa79f62534f2fdd4b5bd1b7fc972b126353a1fe082a2c0dff278",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-glucose42-constants.json",
+      "sha256": "540489a6cf419a979a07a1dba8eaeb3da19deb1716413972db8e6ae38733f02a",
+      "target": "s4",
+      "variant": "constants",
+      "solver": "glucose42",
+      "status": "unsat",
+      "variables": 2931,
+      "clauses": 31519,
+      "cnf_sha256": "d13e13d3284bec625c18ddc763c3f52582ec3ba0cea0679a219048f7468954f6",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-glucose42.json",
+      "sha256": "c8c8daf2980fa12e89a8cd661473fe561012fc8829ed4cb47100a552d7f7922b",
+      "target": "s4",
+      "variant": "negative",
+      "solver": "glucose42",
+      "status": "unsat",
+      "variables": 2845,
+      "clauses": 28791,
+      "cnf_sha256": "fc2a2c8e8b1ffa79f62534f2fdd4b5bd1b7fc972b126353a1fe082a2c0dff278",
+      "positive_replay": null,
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-positive-cadical195.json",
+      "sha256": "1dc6930ea535c63b3a6ea520e806a6bd0cdb900b728b39c279bf5bdc2f3646b7",
+      "target": "s4",
+      "variant": "positive",
+      "solver": "cadical195",
+      "status": "sat",
+      "variables": 6086,
+      "clauses": 58799,
+      "cnf_sha256": "84a95f766b8cfba4485bdc76ae2ddec56808bde84661f68aab044e2d0bdbf300",
+      "positive_replay": {
+        "truth_rows": 131072,
+        "mismatch_count": 0,
+        "conflict_assignment_count": 0,
+        "undriven_output_count": 0,
+        "actual_gate": 5,
+        "actual_output_arrival": 7,
+        "switch_count": 0,
+        "xor_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "live_components": 5
+      },
+      "audit_pass": true
+    },
+    {
+      "file": "weighted-cost4-fanout-s4-positive-glucose42.json",
+      "sha256": "6612e2a98e78b1d04bc411f147847f6484b200f5fa2d9fd43c08a9ea474ce38e",
+      "target": "s4",
+      "variant": "positive",
+      "solver": "glucose42",
+      "status": "sat",
+      "variables": 6086,
+      "clauses": 58799,
+      "cnf_sha256": "84a95f766b8cfba4485bdc76ae2ddec56808bde84661f68aab044e2d0bdbf300",
+      "positive_replay": {
+        "truth_rows": 131072,
+        "mismatch_count": 0,
+        "conflict_assignment_count": 0,
+        "undriven_output_count": 0,
+        "actual_gate": 5,
+        "actual_output_arrival": 6,
+        "switch_count": 0,
+        "xor_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "live_components": 5
+      },
+      "audit_pass": true
+    }
+  ],
+  "cross_solver_checks": [
+    {
+      "target": "s2",
+      "variant": "constants",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    },
+    {
+      "target": "s2",
+      "variant": "negative",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    },
+    {
+      "target": "s2",
+      "variant": "positive",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    },
+    {
+      "target": "s4",
+      "variant": "constants",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    },
+    {
+      "target": "s4",
+      "variant": "negative",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    },
+    {
+      "target": "s4",
+      "variant": "positive",
+      "solvers": [
+        "cadical195",
+        "glucose42"
+      ],
+      "identical_cnf": true,
+      "audit_pass": true
+    }
+  ],
+  "errors": []
+}
