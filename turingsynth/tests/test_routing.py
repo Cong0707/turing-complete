@@ -9,6 +9,7 @@ from turingsynth.audit.physical import (
 from turingsynth.formats.model import Component
 from turingsynth.mapping.native import INPUT, OUTPUT
 from turingsynth.routing.astar import (
+    _collector_edges,
     _fanout_track_candidates,
     _fanout_edges,
     _plan_fanout_tracks,
@@ -19,6 +20,48 @@ from turingsynth.routing.astar import (
 
 
 class FanoutRoutingTests(unittest.TestCase):
+    def test_collector_fallback_reserves_off_spine_sockets(self) -> None:
+        terminals = ((0, 0), (4, 0), (8, 0))
+        reserved: set[tuple[int, int]] = set()
+        track_intervals: dict[int, list[tuple[int, int, str]]] = {}
+        # Both horizontal exits are blocked at each terminal, forcing the
+        # collector to use its empty-margin fallback.
+        forbidden = frozenset(
+            (x + offset, y)
+            for x, y in terminals
+            for offset in (-1, 1)
+        )
+
+        edges = _collector_edges(
+            "collector",
+            terminals[0],
+            terminals[1:],
+            routing_source=terminals[0],
+            routing_sinks=terminals[1:],
+            forbidden=forbidden,
+            reserved=reserved,
+            track_intervals=track_intervals,
+            horizontal_intervals={},
+            bounds=(-2, -2, 10, 10),
+        )
+
+        branches = [edge for edge in edges if edge.role == "branch"]
+        self.assertEqual(len(branches), len(terminals))
+        self.assertTrue(
+            all(
+                edge.source[0] == edge.sink[0]
+                and abs(edge.source[1] - edge.sink[1]) == 2
+                for edge in branches
+            )
+        )
+        self.assertTrue({edge.sink for edge in branches} <= reserved)
+        self.assertTrue(
+            all(
+                any(owner == "collector" for _low, _high, owner in track_intervals[x])
+                for x, _y in (edge.source for edge in branches)
+            )
+        )
+
     def test_pin_access_leaves_component_on_pin_side(self) -> None:
         component = Component(
             kind=109,
@@ -113,7 +156,7 @@ class FanoutRoutingTests(unittest.TestCase):
         self.assertEqual(trunk.source[0], 6)
         self.assertEqual(trunk.sink[0], 6)
 
-    def test_global_tracks_do_not_cross_foreign_tap_ports(self) -> None:
+    def test_global_tracks_may_cross_ordinary_tap_branch_interiors(self) -> None:
         assignments = _plan_fanout_tracks(
             (
                 ("a", (0, 0), ((6, -2), (6, 2))),
@@ -123,7 +166,9 @@ class FanoutRoutingTests(unittest.TestCase):
             bounds=(-4, -8, 10, 8),
         )
 
-        self.assertEqual(assignments, {"a": 1, "b": 4})
+        # Only the electrical tap at x=1 is protected.  The horizontal branch
+        # after that tap is an ordinary conductor, so b may cross it at x=2.
+        self.assertEqual(assignments, {"a": 1, "b": 2})
 
     def test_track_leaves_two_cell_terminal_escape(self) -> None:
         assignments = _plan_fanout_tracks(

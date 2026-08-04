@@ -145,17 +145,18 @@ def relayout_v15(
         else:
             raise RuntimeError("v15 relayout exhausted targeted channel expansion")
 
-        positions = {
-            component.key: component.position for component in placed.components
+        placements = {
+            component.key: (component.position, component.rotation)
+            for component in placed.components
         }
         relocated_components = []
         for index, original in enumerate(imported.circuit.components):
-            position = positions[imported.component_key_by_index[index]]
+            position, rotation = placements[imported.component_key_by_index[index]]
             if position is None:
                 raise RuntimeError("relayout omitted a component position")
-            if original.immutable and position != original.position:
-                raise RuntimeError("relayout moved an immutable campaign component")
-            relocated_components.append(replace(original, position=position))
+            relocated_components.append(
+                replace(original, position=position, rotation=rotation)
+            )
         circuit = replace(
             imported.circuit,
             components=tuple(relocated_components),
@@ -186,8 +187,9 @@ def relayout_v15(
             "component_count": len(circuit.components),
             "logical_network_count": imported.logical_network_count,
             "wire_count": len(circuit.wires),
-            "immutable_component_positions_preserved": True,
-            "all_component_fields_except_position_preserved": True,
+            "component_identity_and_immutable_flags_preserved": True,
+            "component_positions_and_rotations_replanned": True,
+            "all_component_fields_except_position_and_rotation_preserved": True,
             "hashes": {
                 "source_sha256": sha256(source_payload).hexdigest(),
                 "output_sha256": sha256(payload).hexdigest(),

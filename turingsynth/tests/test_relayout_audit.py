@@ -43,7 +43,57 @@ def _two_channel_circuit(*, crossed: bool = False) -> Circuit:
     )
 
 
+def _driver_only_splitter_rail() -> Circuit:
+    return Circuit(
+        components=(
+            Component(
+                kind=61,
+                position=(0, 0),
+                rotation=0,
+                permanent_id=20,
+                word_size=2,
+            ),
+            Component(kind=109, position=(8, 0), rotation=0, permanent_id=21),
+            Component(kind=69, position=(16, -1), rotation=0, permanent_id=22),
+        ),
+        wires=(
+            wire_from_vertices(((3, 0), (7, 0))),
+            wire_from_vertices(((9, -1), (13, -1))),
+            wire_from_vertices(((9, 0), (9, 6))),
+        ),
+    )
+
+
 class RelayoutAuditTests(unittest.TestCase):
+    def test_endpoint_to_interior_contact_does_not_join_networks(self) -> None:
+        circuit = Circuit(
+            components=(
+                _port(61, (0, 0), 30),
+                _port(69, (16, 0), 31),
+                Component(kind=61, position=(8, 3), rotation=3, permanent_id=32),
+                Component(kind=69, position=(8, 8), rotation=1, permanent_id=33),
+            ),
+            wires=(
+                wire_from_vertices(((3, 0), (13, 0))),
+                wire_from_vertices(((8, 0), (8, 5))),
+            ),
+        )
+
+        signature = topology_signature(circuit)
+
+        self.assertEqual(sum(signature.values()), 2)
+        self.assertEqual(sorted(map(len, signature.elements())), [2, 2])
+
+    def test_driver_only_rail_is_counted_and_must_be_preserved(self) -> None:
+        source = _driver_only_splitter_rail()
+
+        report = audit_relayout(source, source)
+
+        self.assertEqual(report["logical_network_count"], 3)
+        without_rail = replace(source, wires=source.wires[:2])
+        with self.assertRaisesRegex(ValueError, "unconnected pin"):
+            audit_relayout(source, without_rail)
+
     def test_position_and_wire_geometry_may_change(self) -> None:
         source = _two_channel_circuit()
         moved_components = (
@@ -84,7 +134,7 @@ class RelayoutAuditTests(unittest.TestCase):
             ),
         )
 
-        with self.assertRaisesRegex(ValueError, "other than position"):
+        with self.assertRaisesRegex(ValueError, "other than position/rotation"):
             audit_relayout(source, candidate)
 
     def test_changed_top_level_metadata_is_rejected(self) -> None:

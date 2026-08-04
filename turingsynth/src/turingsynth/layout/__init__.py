@@ -1,5 +1,5 @@
-"""Human-readable layered placement."""
+"""Conductor-first, timing-driven placement."""
 
-from .layered import place
+from .growth import place, place_growth
 
-__all__ = ["place"]
+__all__ = ["place", "place_growth"]

@@ -6,7 +6,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
-from turingsynth.formats.model import Circuit
+from turingsynth.formats.model import Circuit, Wire
 from turingsynth.formats.v15 import decode_v15
 from turingsynth.formats.wire import wire_points
 from turingsynth.ir.physical import (
@@ -29,10 +29,21 @@ SPLITTER_KINDS = frozenset({17, 99, 100, 109, 110})
 
 
 @dataclass(frozen=True)
+class DriverOnlyRail:
+    """A preserved save-format rail driven by pins but used by no sink."""
+
+    root: int
+    sources: tuple[PinRef, ...]
+    wire_indices: tuple[int, ...]
+    wires: tuple[Wire, ...]
+
+
+@dataclass(frozen=True)
 class ImportedV15:
     circuit: Circuit
     design: PhysicalDesign
     component_key_by_index: tuple[str, ...]
+    driver_only_rails: tuple[DriverOnlyRail, ...]
     logical_network_count: int
 
 
@@ -147,8 +158,11 @@ def import_v15(path: Path) -> ImportedV15:
         for index, component in enumerate(circuit.components)
     )
     root_by_endpoint, root_count = _network_roots(circuit)
+    wire_indices_by_root: dict[int, list[int]] = defaultdict(list)
+    for wire_index, wire in enumerate(circuit.wires):
+        root = root_by_endpoint[wire_points(wire)[0]]
+        wire_indices_by_root[root].append(wire_index)
     pins_by_root: dict[int, list[tuple[PinRef, object]]] = defaultdict(list)
-    pin_root: dict[tuple[int, str], int] = {}
     for index, component in enumerate(circuit.components):
         for pin in positioned_pins(component, index):
             root = root_by_endpoint.get(pin.position)
@@ -158,9 +172,9 @@ def import_v15(path: Path) -> ImportedV15:
                 )
             ref = PinRef(keys[index], pin.name)
             pins_by_root[root].append((ref, pin))
-            pin_root[(index, pin.name)] = root
 
     nets = []
+    driver_only_rails = []
     for ordinal, root in enumerate(sorted(pins_by_root)):
         members = pins_by_root[root]
         drivers = sorted(
@@ -175,7 +189,7 @@ def import_v15(path: Path) -> ImportedV15:
             ((ref, pin) for ref, pin in members if pin.direction == INPUT),
             key=lambda value: (value[1].component_index, value[1].name),
         )
-        if not drivers or not sinks:
+        if not drivers:
             raise ValueError(
                 f"imported network {root} lacks drivers or sinks: "
                 f"drivers={len(drivers)}, sinks={len(sinks)}"
@@ -185,6 +199,17 @@ def import_v15(path: Path) -> ImportedV15:
         widths = {pin.width for _ref, pin in (*drivers, *sinks)}
         if len(widths) != 1:
             raise ValueError(f"imported network {root} has mixed widths {sorted(widths)!r}")
+        if not sinks:
+            wire_indices = tuple(wire_indices_by_root[root])
+            driver_only_rails.append(
+                DriverOnlyRail(
+                    root=root,
+                    sources=tuple(ref for ref, _pin in drivers),
+                    wire_indices=wire_indices,
+                    wires=tuple(circuit.wires[index] for index in wire_indices),
+                )
+            )
+            continue
         nets.append(
             PhysicalNet(
                 name=f"import:net:{ordinal}",
@@ -315,5 +340,6 @@ def import_v15(path: Path) -> ImportedV15:
         circuit=circuit,
         design=design,
         component_key_by_index=keys,
+        driver_only_rails=tuple(driver_only_rails),
         logical_network_count=root_count,
     )

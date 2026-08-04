@@ -92,7 +92,7 @@ def topology_signature(circuit: Circuit) -> Counter[tuple[tuple[object, ...], ..
 
 
 def audit_relayout(source: Circuit, candidate: Circuit) -> dict[str, object]:
-    """Prove that relayout changed only component positions and wire geometry."""
+    """Prove that relayout changed only physical orientation and wire geometry."""
 
     if replace(source, components=(), wires=()) != replace(
         candidate,
@@ -110,9 +110,13 @@ def audit_relayout(source: Circuit, candidate: Circuit) -> dict[str, object]:
     for index, (left, right) in enumerate(
         zip(source.components, candidate.components)
     ):
-        if replace(left, position=(0, 0)) != replace(right, position=(0, 0)):
+        if replace(left, position=(0, 0), rotation=0) != replace(
+            right,
+            position=(0, 0),
+            rotation=0,
+        ):
             raise ValueError(
-                "relayout changed a component field other than position: "
+                "relayout changed a component field other than position/rotation: "
                 f"component={index}"
             )
 
@@ -132,7 +136,7 @@ def audit_relayout(source: Circuit, candidate: Circuit) -> dict[str, object]:
         "status": "pass",
         "top_level_metadata_preserved": True,
         "component_identity_order_preserved": True,
-        "component_fields_except_position_preserved": True,
+        "component_fields_except_position_and_rotation_preserved": True,
         "logical_network_partition_preserved": True,
         "component_count": len(candidate.components),
         "logical_network_count": sum(candidate_signature.values()),
