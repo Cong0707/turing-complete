@@ -26,7 +26,10 @@ from typing import Callable, Iterable, Sequence
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-DAG_PATH = ROOT / ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json"
+DAG_PATH = (
+    ROOT
+    / ".research/byte_adder_av_reduced_forward/byte-adder-hybrid-shared-s34-audit-g80-d7.json"
+)
 COST_PATH = (
     ROOT
     / ".research/byte_adder_component_costs_agent/byte_adder_available_primitives.json"
@@ -1898,7 +1901,7 @@ def report_markdown(payload: dict[str, object], catalog_sha: str) -> str:
         "",
         f"- 80/7 replay: `{current['replay']['gate']}/{current['replay']['delay']}`, `{current['replay']['rows']}` rows, mismatch/conflict/Z = `0/0/0`.",
         f"- Current DAG nodes / Switch partial drivers: `{current['replay']['node_count']}/{current['replay']['switch_driver_count']}`.",
-        f"- Direct score-improving truth-reuse hits: `{len(current['score_improving_direct_reuse_hits'])}`.",
+        f"- Direct score-improving truth-reuse hits: `{len(current['score_improving_direct_reuse_hits'])}` (search disabled in this audit).",
         f"- Embedded minimal-expansion pattern hits: `{len(current['embedded_expansion_hits'])}`.",
         "",
         "## Exhaustive small minima",
@@ -1922,7 +1925,7 @@ def report_markdown(payload: dict[str, object], catalog_sha: str) -> str:
             "",
             "The JSON is the machine artifact. It retains every value/driven/conflict mask,",
             "truth SHA, producer, owner set, gate/delay/owner Pareto point, input arc depth,",
-            "embedded 80/7 hit, and full-domain direct-reuse replay.",
+            "and embedded 80/7 hit. Replacement/optimization search is disabled.",
             "",
         ]
     )
@@ -1933,7 +1936,7 @@ def build(timeout_ms: int) -> dict[str, object]:
     dag_payload = json.loads(DAG_PATH.read_text(encoding="utf-8"))
     cost_payload = json.loads(COST_PATH.read_text(encoding="utf-8"))
     runtime_payload = json.loads(RUNTIME_PATH.read_text(encoding="utf-8"))
-    if dag_payload["metrics"]["structural_sha256"] != "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f":
+    if dag_payload["metrics"]["structural_sha256"] != "67587e25f156565af5539a0e78dc3ea183786c63a658ea12b7a3d088f2adbe2a":
         raise RuntimeError("authoritative 80/7 DAG anchor changed")
 
     bit2 = make_domain("bit2-full", ("A", "B"))
@@ -2025,9 +2028,9 @@ def build(timeout_ms: int) -> dict[str, object]:
         baseline,
         node_truths,
     )
-    direct_hits = direct_reuse_search(
-        full80, dag_payload["factory_dag"], baseline, node_truths
-    )
+    # This artifact is a component/byproduct audit, not a continuation of the
+    # phase/prefix optimizer.  Keep replacement search disabled.
+    direct_hits: list[dict[str, object]] = []
 
     truths = catalog.finalized_truths()
     producer_count = sum(int(row["producer_count"]) for row in truths)
@@ -2082,7 +2085,8 @@ def build(timeout_ms: int) -> dict[str, object]:
             "full_adder_7gate_minimum_z3_exact": True,
             "all_80d7_nodes_and_switch_drivers_extracted": True,
             "full_131072_row_80d7_replay": True,
-            "direct_reuse_hits_full_domain_replayed": True,
+            "direct_reuse_hits_full_domain_replayed": False,
+            "optimization_or_replacement_search_performed": False,
             "word_variants_parametric_not_full_truth_expanded": True,
             "physical_layout_or_materialization_claimed_for_reuse_hits": False,
         },

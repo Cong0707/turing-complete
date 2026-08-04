@@ -1,7 +1,7 @@
 # 80/7 primitive-expansion byproduct truth catalog
 
 - Status: `pass`
-- Catalog SHA256: `387fae011a0acc49db710704132d07f7acc74f9cb415a3919ee1cedcc7d4f9a6`
+- Catalog SHA256: `3f877317e2b6ab0e2a418142e5a4bd47bb94f11100ec850bc5780a1d2e76b1c7`
 - Physical truth classes: `155`
 - Producers: `295`
 - Packed masks: `166`
@@ -10,8 +10,8 @@
 
 - 80/7 replay: `80/7`, `131072` rows, mismatch/conflict/Z = `0/0/0`.
 - Current DAG nodes / Switch partial drivers: `82/10`.
-- Direct score-improving truth-reuse hits: `0`.
-- Embedded minimal-expansion pattern hits: `22`.
+- Direct score-improving truth-reuse hits: `0` (search disabled in this audit).
+- Embedded minimal-expansion pattern hits: `20`.
 
 ## Exhaustive small minima
 
@@ -31,4 +31,4 @@
 
 The JSON is the machine artifact. It retains every value/driven/conflict mask,
 truth SHA, producer, owner set, gate/delay/owner Pareto point, input arc depth,
-embedded 80/7 hit, and full-domain direct-reuse replay.
+and embedded 80/7 hit. Replacement/optimization search is disabled.
