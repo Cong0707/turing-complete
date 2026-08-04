@@ -11,6 +11,7 @@ from turingsynth.mapping.native import INPUT, OUTPUT
 from turingsynth.routing.astar import (
     _collector_edges,
     _direct_axis_path,
+    _direct_visibility_path,
     _fanout_track_candidates,
     _fanout_edges,
     _growth_fanout_edges,
@@ -18,6 +19,7 @@ from turingsynth.routing.astar import (
     _pin_access_path,
     _pin_access_point,
     _search,
+    _vertices,
 )
 
 
@@ -50,6 +52,31 @@ class FanoutRoutingTests(unittest.TestCase):
         }
         self.assertLessEqual(len(directions), 2)
         self.assertTrue(reserved)
+
+    def test_direct_visibility_minimizes_detour_before_turns(self) -> None:
+        reserved: set[tuple[int, int]] = set()
+        vertical: dict[int, list[tuple[int, int, str]]] = {}
+        horizontal: dict[int, list[tuple[int, int, str]]] = {}
+        path = _direct_visibility_path(
+            "visibility",
+            (0, 0),
+            (8, 0),
+            routing_source=(0, 0),
+            routing_sink=(8, 0),
+            forbidden=frozenset({(4, 0)}),
+            forbidden_edges=frozenset(),
+            reserved=reserved,
+            track_intervals=vertical,
+            horizontal_intervals=horizontal,
+            bounds=(-4, -4, 12, 4),
+        )
+
+        self.assertIsNotNone(path)
+        assert path is not None
+        self.assertEqual(len(path) - 1, 10)
+        self.assertEqual(len(_vertices(path)) - 2, 2)
+        self.assertNotIn((4, 0), path)
+        self.assertEqual(len(reserved), 2)
 
     def test_growth_comb_commits_prevalidated_terminal_paths(self) -> None:
         edges = _growth_fanout_edges(

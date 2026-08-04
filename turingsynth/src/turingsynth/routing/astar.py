@@ -1479,6 +1479,153 @@ def _direct_axis_path(
     return path
 
 
+def _direct_visibility_path(
+    network: str,
+    source: Point,
+    sink: Point,
+    *,
+    routing_source: Point,
+    routing_sink: Point,
+    forbidden: frozenset[Point],
+    forbidden_edges: frozenset[tuple[Point, Point]],
+    reserved: set[Point],
+    track_intervals: dict[int, list[tuple[int, int, str]]],
+    horizontal_intervals: dict[int, list[tuple[int, int, str]]],
+    bounds: tuple[int, int, int, int],
+    detour_radius: int = 8,
+) -> tuple[Point, ...] | None:
+    """Find a shortest local rectilinear path before using global A*.
+
+    The state cost is lexicographic: first minimize unit edges which move
+    away from the goal, then turns, then total length.  That preserves a
+    compact obstacle detour instead of trading a much longer U-shape for one
+    fewer bend.  The search window is the terminal box plus a fixed halo, so
+    this remains a bounded local visibility step rather than a global maze
+    router.
+    """
+
+    left_x, top_y, right_x, bottom_y = bounds
+    min_x = max(left_x, min(routing_source[0], routing_sink[0]) - detour_radius)
+    max_x = min(right_x, max(routing_source[0], routing_sink[0]) + detour_radius)
+    min_y = max(top_y, min(routing_source[1], routing_sink[1]) - detour_radius)
+    max_y = min(bottom_y, max(routing_source[1], routing_sink[1]) + detour_radius)
+    own_terminals = {routing_source, routing_sink}
+    blocked = (forbidden | frozenset(reserved)) - own_terminals
+
+    def same_axis_overlap(left: Point, right: Point) -> bool:
+        if left[0] == right[0]:
+            low, high = sorted((left[1], right[1]))
+            return any(
+                owner != network and min(high, other_high) >= max(low, other_low)
+                for other_low, other_high, owner in track_intervals.get(left[0], ())
+            )
+        low, high = sorted((left[0], right[0]))
+        return any(
+            owner != network and min(high, other_high) >= max(low, other_low)
+            for other_low, other_high, owner in horizontal_intervals.get(left[1], ())
+        )
+
+    start_state = (routing_source, -1)
+    zero_cost = (0, 0, 0)
+    frontier: list[
+        tuple[int, int, int, int, int, int, Point, int]
+    ] = [
+        (
+            *zero_cost,
+            routing_source[0],
+            routing_source[1],
+            -1,
+            routing_source,
+            -1,
+        )
+    ]
+    best: dict[tuple[Point, int], tuple[int, int, int]] = {
+        start_state: zero_cost
+    }
+    previous: dict[tuple[Point, int], tuple[Point, int]] = {}
+    final: tuple[Point, int] | None = None
+    while frontier:
+        away, turns, length, _x, _y, _sort_direction, point, direction = heappop(
+            frontier
+        )
+        state = (point, direction)
+        cost = (away, turns, length)
+        if cost != best.get(state):
+            continue
+        if point == routing_sink:
+            final = state
+            break
+        for next_direction, (dx, dy) in enumerate(DIRECTIONS):
+            neighbor = (point[0] + dx, point[1] + dy)
+            if not (min_x <= neighbor[0] <= max_x and min_y <= neighbor[1] <= max_y):
+                continue
+            if neighbor in blocked:
+                continue
+            used_edge = _edge(point, neighbor)
+            if used_edge in forbidden_edges or same_axis_overlap(point, neighbor):
+                continue
+            turning = direction >= 0 and next_direction != direction
+            if turning and (
+                _point_on_track(point, track_intervals)
+                or _point_on_horizontal_track(point, horizontal_intervals)
+            ):
+                continue
+            candidate = (
+                away
+                + int(
+                    _manhattan(neighbor, routing_sink)
+                    > _manhattan(point, routing_sink)
+                ),
+                turns + int(turning),
+                length + 1,
+            )
+            next_state = (neighbor, next_direction)
+            if candidate >= best.get(next_state, (1 << 60, 1 << 60, 1 << 60)):
+                continue
+            best[next_state] = candidate
+            previous[next_state] = state
+            heappush(
+                frontier,
+                (
+                    *candidate,
+                    neighbor[0],
+                    neighbor[1],
+                    next_direction,
+                    neighbor,
+                    next_direction,
+                ),
+            )
+
+    if final is None:
+        return None
+    core = [final[0]]
+    while final != start_state:
+        final = previous[final]
+        core.append(final[0])
+    core.reverse()
+    core_path = tuple(core)
+    vertices = _vertices(core_path)
+    turn_points = set(vertices[1:-1])
+    if any(
+        _point_on_track(point, track_intervals)
+        or _point_on_horizontal_track(point, horizontal_intervals)
+        for point in turn_points
+    ):
+        raise RuntimeError(f"visibility path for {network} turns on a foreign track")
+    reserved.update(turn_points)
+    for left, right in zip(vertices, vertices[1:]):
+        if left[0] == right[0]:
+            low, high = sorted((left[1], right[1]))
+            track_intervals.setdefault(left[0], []).append((low, high, network))
+        else:
+            low, high = sorted((left[0], right[0]))
+            horizontal_intervals.setdefault(left[1], []).append(
+                (low, high, network)
+            )
+    full_path = _axis_chain(source, routing_source)[:-1] + core_path
+    return full_path + _axis_chain(routing_sink, sink)[1:]
+
+
 def _growth_fanout_edges(
     network: str,
     source: Point,
@@ -2129,17 +2276,41 @@ def _attempt(
                 if len(sinks) == 1 and network not in fixed_track_assignments
                 else None
             )
-            if direct_path is not None:
+            visibility_path = (
+                _direct_visibility_path(
+                    network,
+                    source,
+                    sinks[0],
+                    routing_source=routing_source,
+                    routing_sink=routing_sinks[0],
+                    forbidden=forbidden_hubs,
+                    forbidden_edges=terminal_access_edges,
+                    reserved=reserved_hubs,
+                    track_intervals=track_intervals,
+                    horizontal_intervals=horizontal_intervals,
+                    bounds=bounds,
+                )
+                if direct_path is None
+                and len(sinks) == 1
+                and network not in fixed_track_assignments
+                else None
+            )
+            planned_direct_path = direct_path or visibility_path
+            if planned_direct_path is not None:
                 tree_edges = (
                     RoutedEdge(
                         network,
                         source,
                         sinks[0],
                         "direct",
-                        direct_path,
+                        planned_direct_path,
                     ),
                 )
-                planning_modes[network] = "local-direct"
+                planning_modes[network] = (
+                    "local-direct"
+                    if direct_path is not None
+                    else "local-visibility-direct"
+                )
             else:
                 tree_edges = _fanout_edges(
                     network,
