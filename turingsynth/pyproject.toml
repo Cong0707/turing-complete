@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turingsynth"
+version = "0.1.0"
+description = "Verilog to Turing Complete v15 compiler"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Cong0707/turing-complete contributors" }]
+dependencies = ["yowasp-yosys==0.67.0.0.post1190"]
+
+[project.scripts]
+turingsynth = "turingsynth.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.unittest]
+start-directory = "tests"

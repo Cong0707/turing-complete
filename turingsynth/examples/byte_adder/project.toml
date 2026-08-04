@@ -1,0 +1,16 @@
+[project]
+name = "字节加法器"
+top = "byte_adder"
+sources = ["byte_adder.sv"]
+
+[target]
+kind = "foundry"
+logical_key = "foundry/codex/verilog/byte_adder"
+description = "由 turingsynth 编译的字节加法器示例"
+
+[compile]
+pack_widths = [8, 4, 2]
+
+[layout]
+horizontal_clearance = 5
+vertical_clearance = 3
