@@ -1,0 +1,316 @@
+{
+  "schema": "exact-s34-family1-two-phase-physical729-tail-v1",
+  "status": "unsat",
+  "domain": "negative_high_d5_physical",
+  "rows": 729,
+  "boolean_value_rows": 486,
+  "physical_value_driven_rows": 729,
+  "truth_projection_sha256": "4d2d55125af3610ef372dfd5be2f11702d1dea30b48de8c62c9eb67ed8c71360",
+  "output_names": [
+    "S5",
+    "S6",
+    "S7",
+    "C8"
+  ],
+  "free_sources": [
+    "nC3",
+    "G3",
+    "Q3",
+    "P3",
+    "N3",
+    "G4",
+    "Q4",
+    "P4",
+    "N4",
+    "G5",
+    "Q5",
+    "P5",
+    "N5",
+    "G6",
+    "Q6",
+    "P6",
+    "N6",
+    "G7",
+    "Q7",
+    "P7",
+    "A34n",
+    "V34n",
+    "A56n",
+    "V56n",
+    "A36n",
+    "V36n",
+    "nC7",
+    "s34_family1_u0",
+    "s34_family1_u1",
+    "s34_family1_u2",
+    "s34_family1_u3",
+    "s34_family1_u4",
+    "s34_family1_u7",
+    "phase_nor_q6_p7",
+    "phase_nor_n4_p5"
+  ],
+  "constructive_constants": false,
+  "source_arrivals": {
+    "nC3": 3,
+    "G3": 1,
+    "Q3": 1,
+    "P3": 2,
+    "N3": 1,
+    "G4": 1,
+    "Q4": 1,
+    "P4": 2,
+    "N4": 1,
+    "G5": 1,
+    "Q5": 1,
+    "P5": 2,
+    "N5": 1,
+    "G6": 1,
+    "Q6": 1,
+    "P6": 2,
+    "N6": 1,
+    "G7": 1,
+    "Q7": 1,
+    "P7": 2,
+    "A34n": 2,
+    "V34n": 2,
+    "A56n": 2,
+    "V56n": 2,
+    "A36n": 3,
+    "V36n": 3,
+    "nC7": 4,
+    "s34_family1_u0": 3,
+    "s34_family1_u1": 4,
+    "s34_family1_u2": 3,
+    "s34_family1_u3": 4,
+    "s34_family1_u4": 4,
+    "s34_family1_u7": 4,
+    "phase_nor_q6_p7": 3,
+    "phase_nor_n4_p5": 3
+  },
+  "source_driven_profiles": {
+    "nC3": {
+      "active": 486,
+      "z": 243
+    },
+    "V34n": {
+      "active": 567,
+      "z": 162
+    },
+    "V56n": {
+      "active": 567,
+      "z": 162
+    },
+    "V36n": {
+      "active": 585,
+      "z": 144
+    },
+    "nC7": {
+      "active": 633,
+      "z": 96
+    }
+  },
+  "gate_bound": 16,
+  "max_delay": 5,
+  "components": 8,
+  "ordinary": 0,
+  "exact_switches": 8,
+  "exact_xors": 0,
+  "solver": "glucose42",
+  "variables": 182937,
+  "clauses": 1533660,
+  "solve_seconds": 43.672904600003676,
+  "physical_nets": true,
+  "public_outputs_must_be_driven": true,
+  "shard": {
+    "split_slots": 1,
+    "shard_count": 1,
+    "shard_index": 0,
+    "suffix_universe_count": 1,
+    "suffix_universe_sha256": "f1763a7fc45f07b64a60231bb370032eeca21b5c9d28380725838d0ca93a120c",
+    "assigned_suffix_signatures": [
+      [
+        "SWITCH"
+      ]
+    ]
+  },
+  "timer_errors": [],
+  "dependency_sha256": {
+    ".research/byte_adder_phase_shortcut_restart/physical_exact.py": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    ".research/byte_adder_ling_theory_agent/exact_free_ling_pair_sat.py": "49bb2640e1cb08c6e2b9ac412a8cf56c058f27966e1dd799d1d813c8f1821017",
+    ".research/byte_adder_boolean_superopt_agent/exact_adder_block_sat.py": "f320ed3029b949185acd13b5462b659502a970406d1bf5047713279e152f56de",
+    ".research/rng_468_joint_macro/joint_parity_cnf.py": "a565201bf7e99f6ded6732e70d883cd9a90e5da2e42d72171f11952bb3566ca4"
+  },
+  "base_schema": "exact-negative-high-d5-physical-shard-v1",
+  "fixed_kinds": [
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH",
+    "SWITCH"
+  ],
+  "fixed_phase_constraints": [],
+  "free_source_projection": {
+    "schema": "s34-family1-two-phase-physical729-projection-v1",
+    "profile": "primary",
+    "physical_rows": 729,
+    "boolean_value_rows": 486,
+    "constructive_constants": false,
+    "tail_outputs": [
+      "S5",
+      "S6",
+      "S7",
+      "C8"
+    ],
+    "family": {
+      "path": ".research/byte_adder_paper_synthesis_root/s34-internal-phase-family-r1.json",
+      "sha256": "54d4170d1ab9795c11e94bc06bf119da1728b04034a24d940ea082d89a81717f",
+      "model_index": 1,
+      "phase_family_sha256": "8538e303d5c4b79cbc06010cc79b90d2679720b581a2469851625d449b2fbe0d",
+      "paid_gate": 11,
+      "paid_components": 9,
+      "output_buses": [
+        [
+          31
+        ],
+        [
+          32,
+          34
+        ]
+      ],
+      "s3_s4_replayed_over_729_rows": true
+    },
+    "exported_family_nodes": [
+      {
+        "name": "s34_family1_u0",
+        "source_slot": 0,
+        "kind": "AND",
+        "left_bus": [
+          "Q3"
+        ],
+        "right_bus": [
+          "P4"
+        ],
+        "arrival": 3,
+        "always_driven": true,
+        "physical_truth_sha256": "1b67aa75ea2e759684aad89d54b2d734a2df11429b94441ef202173958cf7701"
+      },
+      {
+        "name": "s34_family1_u1",
+        "source_slot": 1,
+        "kind": "NAND",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "physical_truth_sha256": "6a0b8c4f8ac57dbc675a5381e13be6db1373dd666c5ed5469b5d7f766438470d"
+      },
+      {
+        "name": "s34_family1_u2",
+        "source_slot": 2,
+        "kind": "NOR",
+        "left_bus": [
+          "Q3"
+        ],
+        "right_bus": [
+          "P4"
+        ],
+        "arrival": 3,
+        "always_driven": true,
+        "physical_truth_sha256": "7e2617ce9e243ad7934ddef54253744e2d562f915b5e0f56544b266f5a2d06cf"
+      },
+      {
+        "name": "s34_family1_u3",
+        "source_slot": 3,
+        "kind": "OR",
+        "left_bus": [
+          "s34_family1_u0"
+        ],
+        "right_bus": [
+          "s34_family1_u2"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "physical_truth_sha256": "a489821209fb1feb0f59227df40732c9bf68cd87efde14414289d7943bf3fd1f"
+      },
+      {
+        "name": "s34_family1_u4",
+        "source_slot": 4,
+        "kind": "OR",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "physical_truth_sha256": "5e9ae861454b40a3fb76d794d78f94c238bae374e2be23746415aec7a98d9e06"
+      },
+      {
+        "name": "s34_family1_u7",
+        "source_slot": 7,
+        "kind": "AND",
+        "left_bus": [
+          "nC3"
+        ],
+        "right_bus": [
+          "P3"
+        ],
+        "arrival": 4,
+        "always_driven": true,
+        "physical_truth_sha256": "94067a4e30e9401fdbd81e6831d1976adfcd83ea3d1fc2c9f15f62159f420907"
+      }
+    ],
+    "fixed_paid_phases": [
+      {
+        "name": "phase_nor_q6_p7",
+        "kind": "NOR",
+        "left": "Q6",
+        "right": "P7",
+        "left_z_rows": 0,
+        "right_z_rows": 0,
+        "arrival": 3,
+        "always_driven": true,
+        "physical_truth_sha256": "f4de33366cb22d040471a6f6012cf91f51c759dd8f6a6259d0ca7c12049c715e"
+      },
+      {
+        "name": "phase_nor_n4_p5",
+        "kind": "NOR",
+        "left": "N4",
+        "right": "P5",
+        "left_z_rows": 0,
+        "right_z_rows": 0,
+        "arrival": 3,
+        "always_driven": true,
+        "physical_truth_sha256": "822f33b28c75e1dec66b5faf8718e97c0372a548e30e40859a8d9cc62cf467b8"
+      }
+    ],
+    "excluded_family_nodes": [
+      {
+        "source_slot": 5,
+        "reason": "arrival D5 cannot feed an incremental D5 component"
+      },
+      {
+        "source_slot": 6,
+        "reason": "individual Switch output may be high impedance"
+      },
+      {
+        "source_slot": 8,
+        "reason": "individual Switch output may be high impedance"
+      }
+    ]
+  },
+  "extended_dependency_sha256": {
+    ".research/byte_adder_phase_shortcut_restart/exact_tail729_with_s34_family1_two_phase_free.py": "5c0470e0f0c21e05b1b8236634ed20c20f4abf3cd041b27b835adbb3bcdde7c8",
+    ".research/byte_adder_av_reduced_forward/exact_negative_high_d5_sat.py": "098c7467d2cdaaefb0e3c16414b06d48644465b1b1ea7e0348cb9cdd7d791e16",
+    ".research/byte_adder_phase_shortcut_restart/physical_exact.py": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    ".research/byte_adder_paper_synthesis_root/s34-internal-phase-family-r1.json": "54d4170d1ab9795c11e94bc06bf119da1728b04034a24d940ea082d89a81717f"
+  }
+}
