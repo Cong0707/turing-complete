@@ -1,0 +1,221 @@
+{
+  "schema": "full-adder-10-3-materialization-manifest-v1",
+  "status": "materialized_pending_independent_audit",
+  "scope": {
+    "research_only": true,
+    "formal_save_modified": false,
+    "levels_txt_modified": false,
+    "repository_candidate_modified": false,
+    "game_started": false
+  },
+  "artifacts": {
+    "factory_dag": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\factory_dag.json",
+      "sha256": "b24a6c08bd45fab9c4cb0289198acce797be1752cf830d256373e7d1ab6ede46"
+    },
+    "candidate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\candidate.circuit.data",
+      "bytes": 1322,
+      "sha256": "18b8e25952d00499f093bdad61f70a5374205bf2d71074e70881d899f04ea4a5"
+    },
+    "candidate_decoded": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\candidate.decoded.json",
+      "sha256": "41a1850199d9929a6a3dcee30eaf35e1967e5009a3b10dbce9deddd6a8713703"
+    },
+    "real_pin_mapping": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\pin_mapping.json",
+      "sha256": "fb524d0b6dcb7f5d9ca71695927b0c5ad4ba8b6148605445688622c5369c5178"
+    },
+    "exact_solver_witness": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\exact_pretarget_physical_cases\\fa_g10_d3_strict_p8_n0.json",
+      "sha256": "521e462f1e6f09fa6a820f70d2d4d1cd45b205c494bf1bc9759334f755f45cb4"
+    }
+  },
+  "score": {
+    "gate": 10,
+    "delay": 3,
+    "energy": 30
+  },
+  "structure": {
+    "component_kind_counts": {
+      "4": 1,
+      "6": 4,
+      "7": 1,
+      "12": 2,
+      "60": 3,
+      "69": 2
+    },
+    "paid_component_count": 8,
+    "ordinary_gate_count": 6,
+    "switch_count": 2,
+    "normalizer_count": 0,
+    "resolved_sum_bus_owner": "sum_bus"
+  },
+  "byproduct_and_phase_contract": [
+    {
+      "node": 0,
+      "name": "Input 0",
+      "truth_mask_hex": "aa",
+      "arrival": 0,
+      "phase": null,
+      "owner": "node:0",
+      "partial_drivers": []
+    },
+    {
+      "node": 1,
+      "name": "Input 1",
+      "truth_mask_hex": "cc",
+      "arrival": 0,
+      "phase": null,
+      "owner": "node:1",
+      "partial_drivers": []
+    },
+    {
+      "node": 2,
+      "name": "Input 2",
+      "truth_mask_hex": "f0",
+      "arrival": 0,
+      "phase": null,
+      "owner": "node:2",
+      "partial_drivers": []
+    },
+    {
+      "node": 3,
+      "name": "V",
+      "truth_mask_hex": "fa",
+      "arrival": 1,
+      "phase": "positive AC generate-or-propagate envelope",
+      "owner": "node:3",
+      "partial_drivers": []
+    },
+    {
+      "node": 4,
+      "name": "N",
+      "truth_mask_hex": "5f",
+      "arrival": 1,
+      "phase": "negative AC generate",
+      "owner": "node:4",
+      "partial_drivers": []
+    },
+    {
+      "node": 5,
+      "name": "Q",
+      "truth_mask_hex": "a5",
+      "arrival": 2,
+      "phase": "even parity selector",
+      "owner": "node:5",
+      "partial_drivers": []
+    },
+    {
+      "node": 6,
+      "name": "P",
+      "truth_mask_hex": "5a",
+      "arrival": 2,
+      "phase": "odd parity selector",
+      "owner": "node:6",
+      "partial_drivers": []
+    },
+    {
+      "node": 7,
+      "name": "R",
+      "truth_mask_hex": "37",
+      "arrival": 2,
+      "phase": "negative B/V term",
+      "owner": "node:7",
+      "partial_drivers": []
+    },
+    {
+      "node": 8,
+      "name": "SUM",
+      "truth_mask_hex": "96",
+      "arrival": 3,
+      "phase": "Q/P complementary resolved Sum",
+      "owner": "sum_bus",
+      "partial_drivers": [
+        {
+          "enable": 5,
+          "data": 1,
+          "owner": "sum_bus",
+          "partial_driver": "SQ",
+          "driven_mask_hex": "a5",
+          "one_mask_hex": "84",
+          "z_mask_hex": "5a"
+        },
+        {
+          "enable": 6,
+          "data": 7,
+          "owner": "sum_bus",
+          "partial_driver": "SP",
+          "driven_mask_hex": "5a",
+          "one_mask_hex": "12",
+          "z_mask_hex": "a5"
+        }
+      ]
+    },
+    {
+      "node": 9,
+      "name": "CARRY",
+      "truth_mask_hex": "e8",
+      "arrival": 3,
+      "phase": "positive majority",
+      "owner": "node:9",
+      "partial_drivers": []
+    }
+  ],
+  "correspondence_to_7_4": {
+    "candidate_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\full_adder_7_4_intake\\formal_9f83306a_r1\\candidate.rebuilt.data",
+    "candidate_sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2",
+    "audit_path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_builder_verify_restart\\full_adder_7_4_intake\\formal_9f83306a_r1\\audit.json",
+    "audit_sha256": "a166bdf0409a888cfa0eb5419ac9f34bfca0dfa056b8f2a3c8df993c0703be6c",
+    "shared_port_truth": {
+      "Sum": "96",
+      "Carry": "e8"
+    },
+    "seven_four": {
+      "score": [
+        7,
+        4
+      ],
+      "ordinary_gate_components": 7,
+      "switch_components": 0,
+      "output_arrivals": {
+        "Sum": 4,
+        "Carry": 4
+      },
+      "output_driver_style": "single-driver ordinary outputs"
+    },
+    "ten_three": {
+      "score": [
+        10,
+        3
+      ],
+      "ordinary_gate_components": 6,
+      "switch_components": 2,
+      "output_arrivals": {
+        "Sum": 3,
+        "Carry": 3
+      },
+      "output_driver_style": "two complementary partial drivers for Sum; single NAND driver for Carry"
+    },
+    "pareto_relation": "nondominated: 7<10 while 4>3"
+  },
+  "materializer": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\materialize_full_adder_10_3.py",
+    "sha256": "3e22cdad010edb2e7390afbe09a95163bee542c2a19318cb3da0fe9bd21b1d80"
+  },
+  "geometry": {
+    "sprite_files": [
+      "com_and_bit.png",
+      "com_level_input_1_pin.png",
+      "com_level_output_word.png",
+      "com_nand_bit.png",
+      "com_or_bit.png",
+      "com_switch_bit.png"
+    ],
+    "alpha_cell_count": 207,
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": [],
+    "wire_collisions": [],
+    "wire_interior_pin_contacts": []
+  }
+}

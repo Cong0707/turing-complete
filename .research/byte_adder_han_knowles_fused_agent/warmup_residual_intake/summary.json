@@ -1,0 +1,1442 @@
+{
+  "schema": "tc-byte-adder-cycle0-warmup-residual-intake-v1",
+  "status": "COMPLETE",
+  "scope": "candidate-discovery; no save materialization",
+  "elapsed_seconds": 193.088,
+  "selected_groups_this_run": [
+    "all9"
+  ],
+  "espresso_mode_this_run": "so",
+  "test_contract": {
+    "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\campaign\\byte_adder\\test.si",
+    "sha256": "a7829f918476b0bfa7ac3cb16f7610a6fa3734da5c1fb12ab89843a0dbd70c92",
+    "required_source_patterns": {
+      "cycle_source": true,
+      "shift_left_6": true,
+      "shift_right_11": true,
+      "shift_left_9": true,
+      "last_cycle": true
+    },
+    "first_cycle": 0,
+    "last_cycle": 131071,
+    "cycles": 131072
+  },
+  "live_sequence": {
+    "is_complete_17_bit_permutation": true,
+    "duplicate_assignment_count": 0,
+    "missing_assignment_count": 0,
+    "zero_assignment_cycles": [
+      0
+    ],
+    "packed_u24le_sequence_sha256": "491f0a4c5c94a15622c6938711587e3c5ad2122327b557a9fe634df9c660d9dd"
+  },
+  "baseline": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+    "sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "reported_gate": 80,
+    "reported_delay": 7
+  },
+  "tools": {
+    "espresso": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\rng_42state_direct\\sample_nonlinear\\agent_care\\espresso-src\\bin\\espresso.exe",
+      "sha256": "571c5890ca61acf9f607eeb3532622b7dadc47a8703b034f7ced969640fcd5af"
+    },
+    "abc": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\yosys-msys\\mingw64\\bin\\yosys-abc.exe",
+      "sha256": "2ecde41789915fc3a0d075905a0fa2f7ac087615a29cc6f2c7b963eab505d690"
+    },
+    "genlib": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\turing-complete.genlib",
+      "sha256": "d7eb0d22a061c68d2caa073cb8ab08abd50ae7443d4b2f0a25655393f9511f5e"
+    }
+  },
+  "warmup_model": {
+    "delay_line_count": 1,
+    "delay_line_gate": 5,
+    "delay_line_arrival": 4,
+    "init_data": 0,
+    "data_input": 1,
+    "phase_by_cycle": "0 at cycle 0; 1 at cycles 1..131071",
+    "outer_gate": "AND",
+    "outer_gate_cost": 1,
+    "outer_gate_step_delay": 1,
+    "residual_care_source_cycles": [
+      1,
+      131071
+    ],
+    "residual_dont_care_source_cycles": [
+      0
+    ],
+    "terminal_dont_care_present": false,
+    "reason": "At cycle 0 the phase is zero and all targets are zero, so AND does not observe residual F."
+  },
+  "thresholds": {
+    "global_delay_at_most": 5,
+    "global_gate_less_than": 80,
+    "slow6_residual_gate_at_most": 34,
+    "all9_residual_gate_at_most": 65,
+    "residual_delay_at_most": 4
+  },
+  "recipes": {
+    "plain": "fx; strash",
+    "resyn": "fx; strash; balance; rewrite; refactor; balance; rewrite -z; refactor -z; balance; dch",
+    "resyn2": "fx; strash; balance; rewrite; refactor; balance; rewrite; rewrite -z; balance; refactor -z; rewrite -z; balance; dch",
+    "dc2": "fx; strash; balance; rewrite; refactor; balance; dc2; dch",
+    "resub8": "fx; strash; balance; resub -K 8; resub -K 8 -N 2; rewrite; refactor; balance; dch"
+  },
+  "groups": [
+    {
+      "name": "all9",
+      "status": "COMPLETE",
+      "pla": {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\care.pla",
+        "sha256": "5b4fa6fae8883ce84e1165a8d1ae62ac7ac3e23b511ea52584f2e52df29515e0",
+        "rows": 131072,
+        "care_assignments": 131071,
+        "dont_care_assignments": [
+          0
+        ],
+        "output_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "output_names": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "Cout"
+        ],
+        "one_counts_excluding_dc": [
+          65536,
+          65536,
+          65536,
+          65536,
+          65536,
+          65536,
+          65536,
+          65536,
+          65536
+        ]
+      },
+      "cut": {
+        "selected_output_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "selected_output_names": [
+          "S0",
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "Cout"
+        ],
+        "retained_output_indices": [],
+        "retained_output_names": [],
+        "baseline_gate": 80,
+        "deleted_current_gate": 80,
+        "retained_current_gate": 0,
+        "retained_current_node_ids": [],
+        "retained_output_arrivals": [],
+        "retained_delay": 0
+      },
+      "espresso": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_seconds": 183.304,
+        "mode": "so",
+        "command": [
+          "D:\\Develop\\Other\\turing-complete\\.research\\rng_42state_direct\\sample_nonlinear\\agent_care\\espresso-src\\bin\\espresso.exe",
+          "-Dso"
+        ],
+        "output": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\espresso_so.pla",
+        "output_sha256": "74c7ab14bc4ac5dce672c1eef2d10e0e0a1c9f4678ae24b4fde24453c86922ba",
+        "stderr_log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\espresso_so.stderr.log",
+        "stderr_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cube_count": 2519,
+        "input_literal_count": 21692,
+        "output_literal_count": 2519,
+        "care_mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "care_mismatch_union": 0,
+        "residual_value_at_dc_assignment": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "conversion": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_seconds": 0.044,
+        "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_pla D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/espresso_so.pla; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/espresso_so.blif",
+        "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_convert.log",
+        "log_sha256": "bb1ae3b34b6dd35623356cb30051fc67cb0e4f2beda1bc875069f565a8ca5f60",
+        "blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\espresso_so.blif",
+        "blif_sha256": "37999daac8f55c8dd6758b55c69dc0e2cbaed5a5ef69b79e1b12dffe87d289a2"
+      },
+      "timed_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\timed_d4.blif",
+      "timed_blif_sha256": "c68b779192440bec823740152fd9e37f525e910762dffd9748078d07682734d3",
+      "mapping_results": [
+        {
+          "recipe": "resub8",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.233,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/timed_d4.blif; fx; strash; balance; resub -K 8; resub -K 8 -N 2; rewrite; refactor; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/mapped_resub8_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_resub8_d4.log",
+          "log_sha256": "b3ec30becb18ef18e24f5df41864330565124dd20bb7e6161282d2e2f2f3ceac",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\mapped_resub8_d4.blif",
+          "mapped_blif_sha256": "fc51b9f3f00f223a9cf857bb193d1dd928be482a043f26b3a098e4326a31aac0",
+          "ordinary_gate": 63,
+          "mapped_components": 51,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 9,
+            "NAND": 2,
+            "NOR": 23,
+            "NOT": 1,
+            "OR": 10,
+            "XNOR": 6
+          },
+          "residual_output_arrivals": [
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 0,
+            "phase_gate": 5,
+            "outer_and_gate": 9,
+            "fixed_gate_before_residual": 14,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 77,
+          "candidate_output_arrivals": [
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 1386,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "dc2",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.225,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; dc2; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/mapped_dc2_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_dc2_d4.log",
+          "log_sha256": "2aa5e6b7b00bdb79f942ae043fb22cc1fb74a73ba8bc788d6db50898fc8a38cf",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\mapped_dc2_d4.blif",
+          "mapped_blif_sha256": "6950c91e0780eec187950942f3dafc380b8d4ef40d4ba603de1eb42d23ae335a",
+          "ordinary_gate": 65,
+          "mapped_components": 53,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 9,
+            "NAND": 4,
+            "NOR": 27,
+            "NOT": 1,
+            "OR": 6,
+            "XNOR": 6
+          },
+          "residual_output_arrivals": [
+            5,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 0,
+            "phase_gate": 5,
+            "outer_and_gate": 9,
+            "fixed_gate_before_residual": 14,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 79,
+          "candidate_output_arrivals": [
+            6,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 1422,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "resyn",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.228,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; rewrite -z; refactor -z; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/mapped_resyn_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_resyn_d4.log",
+          "log_sha256": "8028919be1ae582fdff3890da8ffe2b6b9c113972876ce02bdbbb3307327569b",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\mapped_resyn_d4.blif",
+          "mapped_blif_sha256": "25ee292cb99963959d5ea92e5de0295fb991c95f41ff62cc1a88b5162dbb2116",
+          "ordinary_gate": 65,
+          "mapped_components": 53,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 10,
+            "NOR": 33,
+            "NOT": 1,
+            "OR": 3,
+            "XNOR": 6
+          },
+          "residual_output_arrivals": [
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 0,
+            "phase_gate": 5,
+            "outer_and_gate": 9,
+            "fixed_gate_before_residual": 14,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 79,
+          "candidate_output_arrivals": [
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 1422,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "resyn2",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.236,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; rewrite; rewrite -z; balance; refactor -z; rewrite -z; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/mapped_resyn2_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_resyn2_d4.log",
+          "log_sha256": "1166ac91fb03b2e9299e3eb22015481fe1020fe76735a551b3b14ef64f0f81e7",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\mapped_resyn2_d4.blif",
+          "mapped_blif_sha256": "4e3576cf11763a0935e82f12c858e2ce8c70a8930caa43949bba816496e59f8a",
+          "ordinary_gate": 65,
+          "mapped_components": 49,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 8,
+            "NOR": 30,
+            "NOT": 1,
+            "OR": 2,
+            "XNOR": 8
+          },
+          "residual_output_arrivals": [
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 0,
+            "phase_gate": 5,
+            "outer_and_gate": 9,
+            "fixed_gate_before_residual": 14,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 79,
+          "candidate_output_arrivals": [
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 1422,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "plain",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.217,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/timed_d4.blif; fx; strash; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/all9/mapped_plain_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\abc_plain_d4.log",
+          "log_sha256": "97155068782896c27efa3d8637329f238e1fa9315aec05a8c0424184ff99ab7e",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\all9\\mapped_plain_d4.blif",
+          "mapped_blif_sha256": "95904bff0333de4d86278c99c6d92b4bf5fa081c48ab6d93e4c022b145ea0227",
+          "ordinary_gate": 95,
+          "mapped_components": 93,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 9,
+            "NAND": 53,
+            "NOR": 10,
+            "NOT": 16,
+            "OR": 4,
+            "XNOR": 1
+          },
+          "residual_output_arrivals": [
+            4,
+            5,
+            7,
+            9,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 0,
+            "phase_gate": 5,
+            "outer_and_gate": 9,
+            "fixed_gate_before_residual": 14,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 109,
+          "candidate_output_arrivals": [
+            5,
+            6,
+            8,
+            10,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 1962,
+          "beats_80_gate_at_d5": false
+        }
+      ],
+      "qualified_candidate_count": 0,
+      "unknown_mapping_count": 0
+    },
+    {
+      "name": "slow6",
+      "status": "COMPLETE",
+      "pla": {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\care.pla",
+        "sha256": "9a96a67cb234871d71a09c80f90079b2abef6b7b5d3c4fbe82f485e793f24676",
+        "rows": 131072,
+        "care_assignments": 131071,
+        "dont_care_assignments": [
+          0
+        ],
+        "output_indices": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "output_names": [
+          "S2",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "Cout"
+        ],
+        "one_counts_excluding_dc": [
+          65536,
+          65536,
+          65536,
+          65536,
+          65536,
+          65536
+        ]
+      },
+      "cut": {
+        "selected_output_indices": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "selected_output_names": [
+          "S2",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "Cout"
+        ],
+        "retained_output_indices": [
+          0,
+          1,
+          3
+        ],
+        "retained_output_names": [
+          "S0",
+          "S1",
+          "S3"
+        ],
+        "baseline_gate": 80,
+        "deleted_current_gate": 46,
+        "retained_current_gate": 34,
+        "retained_current_node_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          18,
+          22,
+          23,
+          24,
+          25,
+          28,
+          29,
+          30,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          54,
+          55,
+          56,
+          57,
+          76,
+          77,
+          82,
+          83
+        ],
+        "retained_output_arrivals": [
+          4,
+          4,
+          5
+        ],
+        "retained_delay": 5
+      },
+      "espresso": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_seconds": 28.718,
+        "output": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\espresso.pla",
+        "output_sha256": "8d6a63839a68e418f0013f10eb29f40bfc3c40d926e320850a5ce546a5244796",
+        "stderr_log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\espresso.stderr.log",
+        "stderr_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "cube_count": 2443,
+        "input_literal_count": 21288,
+        "output_literal_count": 2443,
+        "care_mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "care_mismatch_union": 0,
+        "residual_value_at_dc_assignment": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "conversion": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_seconds": 0.039,
+        "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_pla D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/espresso.pla; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/espresso.blif",
+        "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_convert.log",
+        "log_sha256": "f21e8fb7923bc57f04540d913f0ccf70cd7ea9d4aba4bab4e0aec9322b66cf56",
+        "blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\espresso.blif",
+        "blif_sha256": "393f921aa2186a5f50902753d812f1f9b70e386a728e307dca25de14026d8042"
+      },
+      "timed_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\timed_d4.blif",
+      "timed_blif_sha256": "d46e3272d6d9d76c0b3802c8ee78a06a19f139f773431549919fbee075c4bdeb",
+      "mapping_results": [
+        {
+          "recipe": "resub8",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.222,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/timed_d4.blif; fx; strash; balance; resub -K 8; resub -K 8 -N 2; rewrite; refactor; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/mapped_resub8_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_resub8_d4.log",
+          "log_sha256": "43b161c8aeec369b2bc8f6cf15da8bc7c76bc7d311152a8c0dd5c146e5bce6e8",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\mapped_resub8_d4.blif",
+          "mapped_blif_sha256": "b6964a1dd3695e17cbafa0fcde879d9194da7340e4885d04e504384736e9e3f8",
+          "ordinary_gate": 51,
+          "mapped_components": 45,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 10,
+            "NOR": 25,
+            "OR": 7,
+            "XNOR": 3
+          },
+          "residual_output_arrivals": [
+            6,
+            9,
+            11,
+            13,
+            15,
+            15
+          ],
+          "residual_delay": 15,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 34,
+            "phase_gate": 5,
+            "outer_and_gate": 6,
+            "fixed_gate_before_residual": 45,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 96,
+          "candidate_output_arrivals": [
+            4,
+            4,
+            5,
+            7,
+            10,
+            12,
+            14,
+            16,
+            16
+          ],
+          "candidate_delay": 16,
+          "candidate_energy": 1536,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "dc2",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.222,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; dc2; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/mapped_dc2_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_dc2_d4.log",
+          "log_sha256": "587d6c93f5d3305159f4149bdc7d353e971247fd9cc8e5ba0deebd72b7f9d773",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\mapped_dc2_d4.blif",
+          "mapped_blif_sha256": "7a17d37ed917a44aeeca809c10ab504f84e7f5b395aae92e83e625d1c0ee67a8",
+          "ordinary_gate": 52,
+          "mapped_components": 46,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 10,
+            "NOR": 29,
+            "OR": 4,
+            "XNOR": 3
+          },
+          "residual_output_arrivals": [
+            6,
+            10,
+            12,
+            14,
+            16,
+            16
+          ],
+          "residual_delay": 16,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 34,
+            "phase_gate": 5,
+            "outer_and_gate": 6,
+            "fixed_gate_before_residual": 45,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 97,
+          "candidate_output_arrivals": [
+            4,
+            4,
+            5,
+            7,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "candidate_delay": 17,
+          "candidate_energy": 1649,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "resyn",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.223,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; rewrite -z; refactor -z; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/mapped_resyn_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_resyn_d4.log",
+          "log_sha256": "cfea9b058ee2650bdf9c133ef550a9bfb8c0ee0efc450fab1085a3fc44e22257",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\mapped_resyn_d4.blif",
+          "mapped_blif_sha256": "06638e5b5fb6051ab06ae0fee30810b31d7cef7fa428574e1bb757bc438f5f2f",
+          "ordinary_gate": 52,
+          "mapped_components": 44,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 9,
+            "NOR": 24,
+            "OR": 7,
+            "XNOR": 3,
+            "XOR": 1
+          },
+          "residual_output_arrivals": [
+            6,
+            10,
+            12,
+            14,
+            16,
+            16
+          ],
+          "residual_delay": 16,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 34,
+            "phase_gate": 5,
+            "outer_and_gate": 6,
+            "fixed_gate_before_residual": 45,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 97,
+          "candidate_output_arrivals": [
+            4,
+            4,
+            5,
+            7,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "candidate_delay": 17,
+          "candidate_energy": 1649,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "resyn2",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.224,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/timed_d4.blif; fx; strash; balance; rewrite; refactor; balance; rewrite; rewrite -z; balance; refactor -z; rewrite -z; balance; dch; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/mapped_resyn2_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_resyn2_d4.log",
+          "log_sha256": "f2d140a17014dde1b1994db40220b2d6be6ad6462a90e0131ca3d6d0a6477a25",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\mapped_resyn2_d4.blif",
+          "mapped_blif_sha256": "276827ae29a29c19c4a5663d8d82d5dc33d2afee4cfe785792baa875b438ea41",
+          "ordinary_gate": 52,
+          "mapped_components": 42,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 8,
+            "NOR": 26,
+            "OR": 3,
+            "XNOR": 5
+          },
+          "residual_output_arrivals": [
+            6,
+            10,
+            12,
+            14,
+            16,
+            16
+          ],
+          "residual_delay": 16,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 34,
+            "phase_gate": 5,
+            "outer_and_gate": 6,
+            "fixed_gate_before_residual": 45,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 97,
+          "candidate_output_arrivals": [
+            4,
+            4,
+            5,
+            7,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "candidate_delay": 17,
+          "candidate_energy": 1649,
+          "beats_80_gate_at_d5": false
+        },
+        {
+          "recipe": "plain",
+          "status": "SAT",
+          "returncode": 0,
+          "elapsed_seconds": 0.215,
+          "command": "read_library D:/Develop/Other/turing-complete/.research/turing-complete.genlib; read_blif -n D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/timed_d4.blif; fx; strash; map -D 4; topo; print_stats; write_blif D:/Develop/Other/turing-complete/.research/byte_adder_han_knowles_fused_agent/warmup_residual_intake/slow6/mapped_plain_d4.blif",
+          "log": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\abc_plain_d4.log",
+          "log_sha256": "cf21acf7a8a9c46fc0e18313378617be236d0281541eeed02315e8ad5304f17d",
+          "abc_reported_unmet_timing": true,
+          "mapped_blif": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_han_knowles_fused_agent\\warmup_residual_intake\\slow6\\mapped_plain_d4.blif",
+          "mapped_blif_sha256": "566b9bdb3eb3b4e8eb7e06b906c12e3c8219110891fa2669c8a10270819ce976",
+          "ordinary_gate": 79,
+          "mapped_components": 79,
+          "zero_cost_names_nodes": 0,
+          "kind_counts": {
+            "AND": 6,
+            "NAND": 47,
+            "NOR": 8,
+            "NOT": 13,
+            "OR": 5
+          },
+          "residual_output_arrivals": [
+            7,
+            11,
+            13,
+            15,
+            17,
+            17
+          ],
+          "residual_delay": 17,
+          "care_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "care_mismatch_union": 0,
+          "residual_value_at_dc_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_assignment_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_cycle_mismatch_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "warmup_shell_mismatch_union": 0,
+          "conflict_assignment_count": 0,
+          "z_assignment_count_by_output": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "fixed_shell": {
+            "retained_current_gate": 34,
+            "phase_gate": 5,
+            "outer_and_gate": 6,
+            "fixed_gate_before_residual": 45,
+            "phase_arrival": 4,
+            "outer_and_step_delay": 1
+          },
+          "candidate_total_gate": 124,
+          "candidate_output_arrivals": [
+            4,
+            4,
+            5,
+            8,
+            12,
+            14,
+            16,
+            18,
+            18
+          ],
+          "candidate_delay": 18,
+          "candidate_energy": 2232,
+          "beats_80_gate_at_d5": false
+        }
+      ],
+      "qualified_candidate_count": 0,
+      "unknown_mapping_count": 0
+    }
+  ],
+  "qualified_candidates": [],
+  "qualified_candidate_count": 0,
+  "unknown_mapping_count": 0,
+  "search_interpretation": "No qualifying candidate found by these finite recipes; this is not UNSAT"
+}

@@ -1,0 +1,1179 @@
+{
+  "schema": "full-adder-10-3-real-pin-mapping-v1",
+  "factory_dag_sha256": "27faefe685ee15aad333c4d4e87a1207bf245e8e190bdfc364ae67aad45e311f",
+  "candidate_component_count": 13,
+  "candidate_wire_count": 19,
+  "ports": {
+    "Input 0": 0,
+    "Sum": 1,
+    "Carry": 2,
+    "Input 1": 3,
+    "Input 2": 4
+  },
+  "node_components": {
+    "3": 5,
+    "4": 6,
+    "5": 7,
+    "6": 8,
+    "7": 9,
+    "9": 12
+  },
+  "bus_switches": {
+    "8": [
+      10,
+      11
+    ]
+  },
+  "networks": [
+    {
+      "label": "node:0",
+      "node_id": 0,
+      "pins": [
+        {
+          "component_index": 0,
+          "component_permanent_id": 3048953663694076690,
+          "component_kind": 60,
+          "component_label": "Input 0",
+          "pin": "value",
+          "pin_direction": "output",
+          "position": [
+            -16,
+            -4
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 5,
+          "component_permanent_id": 8962867078666263782,
+          "component_kind": 7,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            47,
+            -50
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 6,
+          "component_permanent_id": 706012467123331794,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            87,
+            -36
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:1",
+      "node_id": 1,
+      "pins": [
+        {
+          "component_index": 3,
+          "component_permanent_id": 2177045702667073564,
+          "component_kind": 60,
+          "component_label": "Input 1",
+          "pin": "value",
+          "pin_direction": "output",
+          "position": [
+            -16,
+            0
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 9,
+          "component_permanent_id": 4285385470170305396,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            207,
+            6
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 10,
+          "component_permanent_id": 5460885035161688524,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "in",
+          "pin_direction": "input",
+          "position": [
+            247,
+            21
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:2",
+      "node_id": 2,
+      "pins": [
+        {
+          "component_index": 4,
+          "component_permanent_id": 2642107204728122708,
+          "component_kind": 60,
+          "component_label": "Input 2",
+          "pin": "value",
+          "pin_direction": "output",
+          "position": [
+            -16,
+            4
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 5,
+          "component_permanent_id": 8962867078666263782,
+          "component_kind": 7,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            47,
+            -48
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 6,
+          "component_permanent_id": 706012467123331794,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            87,
+            -34
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:3",
+      "node_id": 3,
+      "pins": [
+        {
+          "component_index": 5,
+          "component_permanent_id": 8962867078666263782,
+          "component_kind": 7,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            50,
+            -49
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 7,
+          "component_permanent_id": 3590777093194173956,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            127,
+            -22
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 8,
+          "component_permanent_id": 2723613870595622316,
+          "component_kind": 4,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            167,
+            -8
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 9,
+          "component_permanent_id": 4285385470170305396,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            207,
+            8
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:4",
+      "node_id": 4,
+      "pins": [
+        {
+          "component_index": 6,
+          "component_permanent_id": 706012467123331794,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            90,
+            -35
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 7,
+          "component_permanent_id": 3590777093194173956,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            127,
+            -20
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 8,
+          "component_permanent_id": 2723613870595622316,
+          "component_kind": 4,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            167,
+            -6
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 12,
+          "component_permanent_id": 7793393207892421899,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in0",
+          "pin_direction": "input",
+          "position": [
+            327,
+            48
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:5",
+      "node_id": 5,
+      "pins": [
+        {
+          "component_index": 7,
+          "component_permanent_id": 3590777093194173956,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            130,
+            -21
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 10,
+          "component_permanent_id": 5460885035161688524,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "enable",
+          "pin_direction": "input",
+          "position": [
+            248,
+            22
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:6",
+      "node_id": 6,
+      "pins": [
+        {
+          "component_index": 8,
+          "component_permanent_id": 2723613870595622316,
+          "component_kind": 4,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            170,
+            -7
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 11,
+          "component_permanent_id": 2639303468364086965,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "enable",
+          "pin_direction": "input",
+          "position": [
+            288,
+            36
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:7",
+      "node_id": 7,
+      "pins": [
+        {
+          "component_index": 9,
+          "component_permanent_id": 4285385470170305396,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            210,
+            7
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 11,
+          "component_permanent_id": 2639303468364086965,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "in",
+          "pin_direction": "input",
+          "position": [
+            287,
+            35
+          ],
+          "role": "receiver"
+        },
+        {
+          "component_index": 12,
+          "component_permanent_id": 7793393207892421899,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "in1",
+          "pin_direction": "input",
+          "position": [
+            327,
+            50
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:8",
+      "node_id": 8,
+      "pins": [
+        {
+          "component_index": 10,
+          "component_permanent_id": 5460885035161688524,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output_tristate",
+          "position": [
+            250,
+            21
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 11,
+          "component_permanent_id": 2639303468364086965,
+          "component_kind": 12,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output_tristate",
+          "position": [
+            290,
+            35
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 1,
+          "component_permanent_id": 1528294232749530588,
+          "component_kind": 69,
+          "component_label": "Sum",
+          "pin": "value",
+          "pin_direction": "input",
+          "position": [
+            14,
+            -3
+          ],
+          "role": "receiver"
+        }
+      ]
+    },
+    {
+      "label": "node:9",
+      "node_id": 9,
+      "pins": [
+        {
+          "component_index": 12,
+          "component_permanent_id": 7793393207892421899,
+          "component_kind": 6,
+          "component_label": "",
+          "pin": "out",
+          "pin_direction": "output",
+          "position": [
+            330,
+            49
+          ],
+          "role": "driver"
+        },
+        {
+          "component_index": 2,
+          "component_permanent_id": 4197512562819507509,
+          "component_kind": 69,
+          "component_label": "Carry",
+          "pin": "value",
+          "pin_direction": "input",
+          "position": [
+            14,
+            2
+          ],
+          "role": "receiver"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "network": "node:0",
+      "source": [
+        -16,
+        -4
+      ],
+      "sink": [
+        47,
+        -50
+      ],
+      "vertices": [
+        [
+          -16,
+          -4
+        ],
+        [
+          -12,
+          -4
+        ],
+        [
+          -12,
+          -74
+        ],
+        [
+          45,
+          -74
+        ],
+        [
+          45,
+          -50
+        ],
+        [
+          47,
+          -50
+        ]
+      ]
+    },
+    {
+      "network": "node:0",
+      "source": [
+        -16,
+        -4
+      ],
+      "sink": [
+        87,
+        -36
+      ],
+      "vertices": [
+        [
+          -16,
+          -4
+        ],
+        [
+          -12,
+          -4
+        ],
+        [
+          -12,
+          -74
+        ],
+        [
+          85,
+          -74
+        ],
+        [
+          85,
+          -36
+        ],
+        [
+          87,
+          -36
+        ]
+      ]
+    },
+    {
+      "network": "node:1",
+      "source": [
+        -16,
+        0
+      ],
+      "sink": [
+        207,
+        6
+      ],
+      "vertices": [
+        [
+          -16,
+          0
+        ],
+        [
+          -11,
+          0
+        ],
+        [
+          -11,
+          -77
+        ],
+        [
+          205,
+          -77
+        ],
+        [
+          205,
+          6
+        ],
+        [
+          207,
+          6
+        ]
+      ]
+    },
+    {
+      "network": "node:1",
+      "source": [
+        -16,
+        0
+      ],
+      "sink": [
+        247,
+        21
+      ],
+      "vertices": [
+        [
+          -16,
+          0
+        ],
+        [
+          -11,
+          0
+        ],
+        [
+          -11,
+          -77
+        ],
+        [
+          245,
+          -77
+        ],
+        [
+          245,
+          21
+        ],
+        [
+          247,
+          21
+        ]
+      ]
+    },
+    {
+      "network": "node:2",
+      "source": [
+        -16,
+        4
+      ],
+      "sink": [
+        47,
+        -48
+      ],
+      "vertices": [
+        [
+          -16,
+          4
+        ],
+        [
+          -10,
+          4
+        ],
+        [
+          -10,
+          -80
+        ],
+        [
+          44,
+          -80
+        ],
+        [
+          44,
+          -48
+        ],
+        [
+          47,
+          -48
+        ]
+      ]
+    },
+    {
+      "network": "node:2",
+      "source": [
+        -16,
+        4
+      ],
+      "sink": [
+        87,
+        -34
+      ],
+      "vertices": [
+        [
+          -16,
+          4
+        ],
+        [
+          -10,
+          4
+        ],
+        [
+          -10,
+          -80
+        ],
+        [
+          84,
+          -80
+        ],
+        [
+          84,
+          -34
+        ],
+        [
+          87,
+          -34
+        ]
+      ]
+    },
+    {
+      "network": "node:3",
+      "source": [
+        50,
+        -49
+      ],
+      "sink": [
+        127,
+        -22
+      ],
+      "vertices": [
+        [
+          50,
+          -49
+        ],
+        [
+          52,
+          -49
+        ],
+        [
+          52,
+          -83
+        ],
+        [
+          125,
+          -83
+        ],
+        [
+          125,
+          -22
+        ],
+        [
+          127,
+          -22
+        ]
+      ]
+    },
+    {
+      "network": "node:3",
+      "source": [
+        50,
+        -49
+      ],
+      "sink": [
+        167,
+        -8
+      ],
+      "vertices": [
+        [
+          50,
+          -49
+        ],
+        [
+          52,
+          -49
+        ],
+        [
+          52,
+          -83
+        ],
+        [
+          165,
+          -83
+        ],
+        [
+          165,
+          -8
+        ],
+        [
+          167,
+          -8
+        ]
+      ]
+    },
+    {
+      "network": "node:3",
+      "source": [
+        50,
+        -49
+      ],
+      "sink": [
+        207,
+        8
+      ],
+      "vertices": [
+        [
+          50,
+          -49
+        ],
+        [
+          52,
+          -49
+        ],
+        [
+          52,
+          -83
+        ],
+        [
+          204,
+          -83
+        ],
+        [
+          204,
+          8
+        ],
+        [
+          207,
+          8
+        ]
+      ]
+    },
+    {
+      "network": "node:4",
+      "source": [
+        90,
+        -35
+      ],
+      "sink": [
+        127,
+        -20
+      ],
+      "vertices": [
+        [
+          90,
+          -35
+        ],
+        [
+          92,
+          -35
+        ],
+        [
+          92,
+          -86
+        ],
+        [
+          124,
+          -86
+        ],
+        [
+          124,
+          -20
+        ],
+        [
+          127,
+          -20
+        ]
+      ]
+    },
+    {
+      "network": "node:4",
+      "source": [
+        90,
+        -35
+      ],
+      "sink": [
+        167,
+        -6
+      ],
+      "vertices": [
+        [
+          90,
+          -35
+        ],
+        [
+          92,
+          -35
+        ],
+        [
+          92,
+          -86
+        ],
+        [
+          164,
+          -86
+        ],
+        [
+          164,
+          -6
+        ],
+        [
+          167,
+          -6
+        ]
+      ]
+    },
+    {
+      "network": "node:4",
+      "source": [
+        90,
+        -35
+      ],
+      "sink": [
+        327,
+        48
+      ],
+      "vertices": [
+        [
+          90,
+          -35
+        ],
+        [
+          92,
+          -35
+        ],
+        [
+          92,
+          -86
+        ],
+        [
+          325,
+          -86
+        ],
+        [
+          325,
+          48
+        ],
+        [
+          327,
+          48
+        ]
+      ]
+    },
+    {
+      "network": "node:5",
+      "source": [
+        130,
+        -21
+      ],
+      "sink": [
+        248,
+        22
+      ],
+      "vertices": [
+        [
+          130,
+          -21
+        ],
+        [
+          132,
+          -21
+        ],
+        [
+          132,
+          -89
+        ],
+        [
+          244,
+          -89
+        ],
+        [
+          244,
+          23
+        ],
+        [
+          248,
+          23
+        ],
+        [
+          248,
+          22
+        ]
+      ]
+    },
+    {
+      "network": "node:6",
+      "source": [
+        170,
+        -7
+      ],
+      "sink": [
+        288,
+        36
+      ],
+      "vertices": [
+        [
+          170,
+          -7
+        ],
+        [
+          172,
+          -7
+        ],
+        [
+          172,
+          -92
+        ],
+        [
+          284,
+          -92
+        ],
+        [
+          284,
+          37
+        ],
+        [
+          288,
+          37
+        ],
+        [
+          288,
+          36
+        ]
+      ]
+    },
+    {
+      "network": "node:7",
+      "source": [
+        210,
+        7
+      ],
+      "sink": [
+        287,
+        35
+      ],
+      "vertices": [
+        [
+          210,
+          7
+        ],
+        [
+          212,
+          7
+        ],
+        [
+          212,
+          -95
+        ],
+        [
+          285,
+          -95
+        ],
+        [
+          285,
+          35
+        ],
+        [
+          287,
+          35
+        ]
+      ]
+    },
+    {
+      "network": "node:7",
+      "source": [
+        210,
+        7
+      ],
+      "sink": [
+        327,
+        50
+      ],
+      "vertices": [
+        [
+          210,
+          7
+        ],
+        [
+          212,
+          7
+        ],
+        [
+          212,
+          -95
+        ],
+        [
+          324,
+          -95
+        ],
+        [
+          324,
+          50
+        ],
+        [
+          327,
+          50
+        ]
+      ]
+    },
+    {
+      "network": "node:8",
+      "source": [
+        250,
+        21
+      ],
+      "sink": [
+        290,
+        35
+      ],
+      "vertices": [
+        [
+          250,
+          21
+        ],
+        [
+          252,
+          21
+        ],
+        [
+          252,
+          -98
+        ],
+        [
+          292,
+          -98
+        ],
+        [
+          292,
+          35
+        ],
+        [
+          290,
+          35
+        ]
+      ]
+    },
+    {
+      "network": "node:8",
+      "source": [
+        250,
+        21
+      ],
+      "sink": [
+        14,
+        -3
+      ],
+      "vertices": [
+        [
+          250,
+          21
+        ],
+        [
+          252,
+          21
+        ],
+        [
+          252,
+          -98
+        ],
+        [
+          10,
+          -98
+        ],
+        [
+          10,
+          -3
+        ],
+        [
+          14,
+          -3
+        ]
+      ]
+    },
+    {
+      "network": "node:9",
+      "source": [
+        330,
+        49
+      ],
+      "sink": [
+        14,
+        2
+      ],
+      "vertices": [
+        [
+          330,
+          49
+        ],
+        [
+          332,
+          49
+        ],
+        [
+          332,
+          -101
+        ],
+        [
+          9,
+          -101
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          14,
+          2
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schema": "full-adder-strict-physical-factory-dag-v1",
+  "status": "sat",
+  "family": "Complementary Q/P Switch-resolved Sum with NAND majority Carry",
+  "formula": {
+    "inputs": {
+      "A": 0,
+      "B": 1,
+      "C": 2
+    },
+    "V": "OR(A,C)",
+    "N": "NAND(A,C)",
+    "Q": "NAND(V,N)",
+    "P": "AND(V,N)",
+    "SQ": "SWITCH(enable=Q,data=B)",
+    "R": "NAND(B,V)",
+    "SP": "SWITCH(enable=P,data=R)",
+    "SUM": "BUS(SQ,SP)",
+    "CARRY": "NAND(N,R)"
+  },
+  "metrics": {
+    "gate": 10,
+    "delay": 3,
+    "energy": 30,
+    "paid_physical_components": 8,
+    "ordinary_gate_components": 6,
+    "switch_components": 2,
+    "normalizer_components": 0,
+    "output_arrivals": {
+      "Sum": 3,
+      "Carry": 3
+    }
+  },
+  "semantic": {
+    "assignments": 8,
+    "input_case_bit_order": [
+      "Input 0",
+      "Input 1",
+      "Input 2"
+    ],
+    "sum_truth_mask_hex": "96",
+    "carry_truth_mask_hex": "e8",
+    "sum_driven_mask_hex": "ff",
+    "sum_conflict_mask_hex": "00",
+    "q_or_p_complete_mask_hex": "ff",
+    "q_and_p_overlap_mask_hex": "00"
+  },
+  "physical": {
+    "resolved_bus_count": 1,
+    "resolved_bus_owner": "sum_bus",
+    "tri_state_driver_count": 2,
+    "driver_sets_form_wire_net_partition": true,
+    "normalizer_count": 0,
+    "primary_outputs_fully_driven": true
+  },
+  "factory_dag": {
+    "outputs": [
+      8,
+      9
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "Input 0",
+        "truth_mask_hex": "aa"
+      },
+      {
+        "id": 1,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "Input 1",
+        "truth_mask_hex": "cc"
+      },
+      {
+        "id": 2,
+        "op": "INPUT",
+        "args": [],
+        "cost": 0,
+        "step_delay": 0,
+        "arrival": 0,
+        "may_z": false,
+        "label": "Input 2",
+        "truth_mask_hex": "f0"
+      },
+      {
+        "id": 3,
+        "op": "OR",
+        "args": [
+          0,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": "V=A|C",
+        "truth_mask_hex": "fa",
+        "phase": "positive AC generate-or-propagate envelope",
+        "byproduct": "V"
+      },
+      {
+        "id": 4,
+        "op": "NAND",
+        "args": [
+          0,
+          2
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 1,
+        "may_z": false,
+        "label": "N=~(A&C)",
+        "truth_mask_hex": "5f",
+        "phase": "negative AC generate",
+        "byproduct": "N"
+      },
+      {
+        "id": 5,
+        "op": "NAND",
+        "args": [
+          3,
+          4
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "Q=~(V&N)=XNOR(A,C)",
+        "truth_mask_hex": "a5",
+        "phase": "even parity selector",
+        "byproduct": "Q"
+      },
+      {
+        "id": 6,
+        "op": "AND",
+        "args": [
+          3,
+          4
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "P=V&N=XOR(A,C)",
+        "truth_mask_hex": "5a",
+        "phase": "odd parity selector",
+        "byproduct": "P"
+      },
+      {
+        "id": 7,
+        "op": "NAND",
+        "args": [
+          1,
+          3
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 2,
+        "may_z": false,
+        "label": "R=~(B&V)",
+        "truth_mask_hex": "37",
+        "phase": "negative B/V term",
+        "byproduct": "R"
+      },
+      {
+        "id": 8,
+        "op": "BUS",
+        "args": [
+          5,
+          1,
+          6,
+          7
+        ],
+        "cost": 4,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": true,
+        "label": "SUM",
+        "truth_mask_hex": "96",
+        "driven_mask_hex": "ff",
+        "conflict_mask_hex": "00",
+        "resolved_network": "sum_bus",
+        "owner": "sum_bus",
+        "drivers": [
+          {
+            "enable": 5,
+            "data": 1,
+            "owner": "sum_bus",
+            "partial_driver": "SQ",
+            "driven_mask_hex": "a5",
+            "one_mask_hex": "84",
+            "z_mask_hex": "5a"
+          },
+          {
+            "enable": 6,
+            "data": 7,
+            "owner": "sum_bus",
+            "partial_driver": "SP",
+            "driven_mask_hex": "5a",
+            "one_mask_hex": "12",
+            "z_mask_hex": "a5"
+          }
+        ],
+        "phase": "Q/P complementary resolved Sum",
+        "byproduct": "SUM"
+      },
+      {
+        "id": 9,
+        "op": "NAND",
+        "args": [
+          4,
+          7
+        ],
+        "cost": 1,
+        "step_delay": 1,
+        "arrival": 3,
+        "may_z": false,
+        "label": "CARRY=~(N&R)",
+        "truth_mask_hex": "e8",
+        "phase": "positive majority",
+        "byproduct": "CARRY"
+      }
+    ],
+    "live_node_count": 10,
+    "sha256": "27faefe685ee15aad333c4d4e87a1207bf245e8e190bdfc364ae67aad45e311f",
+    "sha256_form": "sorted-compact-ascii"
+  }
+}

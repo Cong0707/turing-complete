@@ -1,0 +1,189 @@
+{
+  "schema": "full-adder-7-4-10-3-dual-frontier-audit-v1",
+  "status": "verified",
+  "scope": {
+    "game_launched": false,
+    "formal_save_modified": false,
+    "levels_txt_read_or_modified": false,
+    "remote_submission_performed": false,
+    "server_private_acceptance_implementation_claimed": false
+  },
+  "premise": "Both physically verified FullAdder points are genuinely accepted and persisted; the audit proves client insertion, persistence shape, restart import/selection, and parent-instance use under that premise.",
+  "dependencies": {
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\cost-import-semantics-2.1.292.json": "831a00531df6c613a820758ece5eccc054db7fc80db6f561edd9c1aff8335adf",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\runtime-evidence-2.1.292.json": "31c014dafe2a677cbd281dea02aa0973f168df5a97f1e43d526c0091e5758d14",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\full-adder-effective-cost-audit-2.1.292.json": "e44e31485e7732ca54ad2ba17cdb4d6b8bfc36c124763e8b4820a541c26def12",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\physical_certificate.json": "810c30a2e4b020ef1e536477fb297f3c02f45ec8d52538dff7ffcd7a1c577936"
+  },
+  "accepted_points": {
+    "legacy": [
+      16,
+      8,
+      1
+    ],
+    "seven_four": [
+      7,
+      4,
+      1
+    ],
+    "ten_three": [
+      10,
+      3,
+      1
+    ],
+    "seven_four_dominates_legacy": true,
+    "seven_four_vs_ten_three": {
+      "gate_relation": "7 < 10",
+      "delay_relation": "4 > 3",
+      "mutually_nondominated": true
+    }
+  },
+  "level_progress_frontier": {
+    "after_7_4": [
+      [
+        7,
+        4,
+        1
+      ]
+    ],
+    "after_7_4_then_10_3": [
+      [
+        7,
+        4,
+        1
+      ],
+      [
+        10,
+        3,
+        1
+      ]
+    ],
+    "after_10_3_then_7_4": [
+      [
+        7,
+        4,
+        1
+      ],
+      [
+        10,
+        3,
+        1
+      ]
+    ],
+    "both_points_retained": true,
+    "acceptance_order_independent": true,
+    "third_metric": 1
+  },
+  "kind_15_component_cost_frontier": {
+    "after_both": [
+      [
+        7,
+        4
+      ],
+      [
+        10,
+        3
+      ]
+    ],
+    "gate_strictly_increases": true,
+    "delay_strictly_decreases": true,
+    "add_cost_retains_both_points": true,
+    "restart_import_retains_both_points_under_server_or_saved_dual-frontier_premise": true
+  },
+  "instance_selection": {
+    "serialized_modes": {
+      "cost_gate=-1,cost_delay=0": "minimum gate; selects 7/4",
+      "cost_gate=0,cost_delay=-1": "minimum delay; selects 10/3",
+      "cost_gate=7,cost_delay=4": "explicit frontier point 7/4",
+      "cost_gate=10,cost_delay=3": "explicit frontier point 10/3"
+    },
+    "replayed": {
+      "minimum_gate": [
+        7,
+        4
+      ],
+      "minimum_delay": [
+        10,
+        3
+      ],
+      "explicit_7_4": [
+        7,
+        4
+      ],
+      "explicit_10_3": [
+        10,
+        3
+      ]
+    },
+    "selection_granularity": "one atomic (gate,delay) row per component instance",
+    "same_instance_gate_delay_mixing_allowed": false,
+    "impossible_synthetic_pair": [
+      7,
+      3
+    ],
+    "different_instances_may_choose_different_rows": true,
+    "builder_requirement_for_low_delay": "A kind-15 instance must use cost_gate=10,cost_delay=3 or minimum-delay cost_gate=0,cost_delay=-1; the default minimum-gate fields select 7/4."
+  },
+  "parent_scoring": {
+    "gate": "sum the gate coordinate from each instance's selected atomic row",
+    "delay": "schedule each opaque instance with the delay coordinate from that same selected row",
+    "no_cross_coordinate_selection": true,
+    "mixed_instance_example": "A parent may deliberately contain one FullAdder at 7/4 and another at 10/3, but neither instance is priced as 7/3."
+  },
+  "evidence": {
+    "insert_cost": {
+      "name": "insert_cost__modelZscores_u13",
+      "address": "0x000000014027abe9",
+      "size": 3424,
+      "machine_sha256": "f5797ff58447a509863ab7c98f3423e2fe85cad83db59e8382676105f5955a84",
+      "pseudocode_sha256": "0233fa8462f5d24eed0ac86b4491b139ca8d9ca79918269685727c39af359053",
+      "decisive_fragments": [
+        "component_cost_buffer__modelZscores_u12 + 2 * v64) >= v41",
+        "v42 < qword_146772D68[2 * v50]",
+        "v42 > qword_146772D68[2 * v69]"
+      ]
+    },
+    "add_cost": {
+      "name": "add_cost__modelZscores_u2110",
+      "address": "0x000000014027c64a",
+      "size": 756,
+      "machine_sha256": "d919f81ecc7c08f8da8d2263a8f215f6b269a8aacd960cbabc8b28161109acad",
+      "pseudocode_sha256": "db2df9fe111a2d5209beb5bada8d332ce6059ec51ce1d98f76eb7adadccec3b2",
+      "decisive_fragments": [
+        "insert_cost__modelZscores_u49(a1, &v6)"
+      ]
+    },
+    "complete_level": {
+      "name": "complete_level__modelZutilities_u9086",
+      "address": "0x00000001405ab6d5",
+      "size": 3032,
+      "machine_sha256": "1c3d03307046b0bcb931f2518262da1e641f51f94f9a88fec1c93f7bdb4f5d43",
+      "pseudocode_sha256": "4739a15a3212a08f69bd140088bd0194a3a5c1bcd01076f8df57ab8190172128",
+      "decisive_fragments": [
+        "add_cost__modelZscores_u2110(v10, &v22)",
+        "update_efficient_frontier__modelZutilities_u9054(v49 + 48, v21)",
+        "save_level_data__modelZutilities_u5683"
+      ]
+    },
+    "get_cost": {
+      "name": "get_cost__modelZscores_u2321",
+      "address": "0x0000000140279367",
+      "size": 5150,
+      "machine_sha256": "6215c4710e2b74fa81b4ea7445d8a2e3aebd192498c5a3c1173cf4eb16a454b8",
+      "pseudocode_sha256": "f114931f59136fb0838103fa90d41c5944dc3fb543c7343b925e96a1b55de005",
+      "decisive_fragments": [
+        "if ( (unsigned __int8)v84 == 2 )",
+        "v105 = v36 <= v85",
+        "v105 = v37 <= v86",
+        "v33 = get_gate_cost__modelZscores_u2304((unsigned __int8 *)a2, v36)",
+        "v34 = get_delay_cost__modelZscores_u2316((unsigned __int8 *)a2, v37)",
+        "v89 = v33",
+        "v90 = v34"
+      ]
+    }
+  },
+  "auditor": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\build_full_adder_dual_frontier_audit.py",
+    "sha256": "183bfdfbe99e6f855ed2ef72fe6392f8bd1adbf44289995ed4eb0ba65104908a"
+  }
+}

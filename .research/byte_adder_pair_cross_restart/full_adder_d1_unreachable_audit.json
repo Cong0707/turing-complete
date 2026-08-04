@@ -1,0 +1,345 @@
+{
+  "schema": "full-adder-delay1-physical-unreachability-audit-v1",
+  "status": "verified_unreachable",
+  "claim": "FullAdder is unreachable at delay<=1 because its Sum parity mask 0x96 is absent from every possible delay-1 primary output form.",
+  "target": {
+    "sum_hex": "96",
+    "carry_hex": "e8",
+    "delay_bound": 1,
+    "primary_outputs_fully_driven": true
+  },
+  "completeness": {
+    "raw_sources": 5,
+    "ordinary_gate_instances_enumerated": 65,
+    "distinct_ordinary_truth_masks": 20,
+    "raw_switch_enable_data_pairs": 25,
+    "xors_excluded": "XOR has primitive delay 2 and cannot be live at a delay-1 output",
+    "ordinary_inputs": "arrival-1 ordinary gates can consume only raw inputs/constants",
+    "switch_inputs": "arrival-1 Switch enable/data can consume only raw inputs/constants",
+    "normalizer": "a zero-delay Maker/Splitter may normalize a delay-1 Switch BUS, so both direct and normalized BUS policies are checked",
+    "physical_bus_argument": "a wrong-valued enabled driver cannot be repaired by another driver: it would cause either a mismatch or a forbidden 0/1 conflict"
+  },
+  "raw_sources_hex": {
+    "Input 0": "aa",
+    "Input 1": "cc",
+    "Input 2": "f0",
+    "constant 0": "00",
+    "constant 1": "ff"
+  },
+  "ordinary_truth_masks_hex": [
+    "00",
+    "03",
+    "05",
+    "0f",
+    "11",
+    "33",
+    "3f",
+    "55",
+    "5f",
+    "77",
+    "88",
+    "a0",
+    "aa",
+    "c0",
+    "cc",
+    "ee",
+    "f0",
+    "fa",
+    "fc",
+    "ff"
+  ],
+  "raw_sum_hits": [],
+  "ordinary_sum_hits": [],
+  "switch_driver_audit": {
+    "pairs": [
+      {
+        "enable": "Input 0",
+        "data": "Input 0",
+        "driven_hex": "aa",
+        "value_hex": "aa",
+        "mismatch_hex": "28",
+        "covered_sum_one_rows_hex": "82",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 0",
+        "data": "Input 1",
+        "driven_hex": "aa",
+        "value_hex": "88",
+        "mismatch_hex": "0a",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 0",
+        "data": "Input 2",
+        "driven_hex": "aa",
+        "value_hex": "a0",
+        "mismatch_hex": "22",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 0",
+        "data": "constant 0",
+        "driven_hex": "aa",
+        "value_hex": "00",
+        "mismatch_hex": "82",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 0",
+        "data": "constant 1",
+        "driven_hex": "aa",
+        "value_hex": "aa",
+        "mismatch_hex": "28",
+        "covered_sum_one_rows_hex": "82",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 1",
+        "data": "Input 0",
+        "driven_hex": "cc",
+        "value_hex": "88",
+        "mismatch_hex": "0c",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 1",
+        "data": "Input 1",
+        "driven_hex": "cc",
+        "value_hex": "cc",
+        "mismatch_hex": "48",
+        "covered_sum_one_rows_hex": "84",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 1",
+        "data": "Input 2",
+        "driven_hex": "cc",
+        "value_hex": "c0",
+        "mismatch_hex": "44",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 1",
+        "data": "constant 0",
+        "driven_hex": "cc",
+        "value_hex": "00",
+        "mismatch_hex": "84",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 1",
+        "data": "constant 1",
+        "driven_hex": "cc",
+        "value_hex": "cc",
+        "mismatch_hex": "48",
+        "covered_sum_one_rows_hex": "84",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 2",
+        "data": "Input 0",
+        "driven_hex": "f0",
+        "value_hex": "a0",
+        "mismatch_hex": "30",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 2",
+        "data": "Input 1",
+        "driven_hex": "f0",
+        "value_hex": "c0",
+        "mismatch_hex": "50",
+        "covered_sum_one_rows_hex": "80",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 2",
+        "data": "Input 2",
+        "driven_hex": "f0",
+        "value_hex": "f0",
+        "mismatch_hex": "60",
+        "covered_sum_one_rows_hex": "90",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 2",
+        "data": "constant 0",
+        "driven_hex": "f0",
+        "value_hex": "00",
+        "mismatch_hex": "90",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "Input 2",
+        "data": "constant 1",
+        "driven_hex": "f0",
+        "value_hex": "f0",
+        "mismatch_hex": "60",
+        "covered_sum_one_rows_hex": "90",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "constant 0",
+        "data": "Input 0",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "Input 1",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "Input 2",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "constant 0",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "constant 1",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 1",
+        "data": "Input 0",
+        "driven_hex": "ff",
+        "value_hex": "aa",
+        "mismatch_hex": "3c",
+        "covered_sum_one_rows_hex": "82",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "constant 1",
+        "data": "Input 1",
+        "driven_hex": "ff",
+        "value_hex": "cc",
+        "mismatch_hex": "5a",
+        "covered_sum_one_rows_hex": "84",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "constant 1",
+        "data": "Input 2",
+        "driven_hex": "ff",
+        "value_hex": "f0",
+        "mismatch_hex": "66",
+        "covered_sum_one_rows_hex": "90",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "constant 1",
+        "data": "constant 0",
+        "driven_hex": "ff",
+        "value_hex": "00",
+        "mismatch_hex": "96",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": false
+      },
+      {
+        "enable": "constant 1",
+        "data": "constant 1",
+        "driven_hex": "ff",
+        "value_hex": "ff",
+        "mismatch_hex": "69",
+        "covered_sum_one_rows_hex": "96",
+        "compatible_with_sum_where_driven": false
+      }
+    ],
+    "compatible_pair_count": 5,
+    "compatible_pairs": [
+      {
+        "enable": "constant 0",
+        "data": "Input 0",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "Input 1",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "Input 2",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "constant 0",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      },
+      {
+        "enable": "constant 0",
+        "data": "constant 1",
+        "driven_hex": "00",
+        "value_hex": "00",
+        "mismatch_hex": "00",
+        "covered_sum_one_rows_hex": "00",
+        "compatible_with_sum_where_driven": true
+      }
+    ],
+    "covered_sum_one_rows_hex": "00",
+    "required_sum_one_rows_hex": "96",
+    "uncovered_sum_one_rows_hex": "96",
+    "driven_rows_hex": "00",
+    "direct_strict_bus_possible": false,
+    "maker_splitter_normalized_bus_possible": false
+  },
+  "conclusion": {
+    "sum_reachable_at_d1": false,
+    "full_adder_reachable_at_d1": false,
+    "carry_analysis_needed": false
+  },
+  "auditor": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\audit_full_adder_d1_unreachable.py",
+    "sha256": "6ca7f803850dd730cfbaf5851a1d34437999ddce1b8b63f53a1d93232bcc85d5"
+  }
+}

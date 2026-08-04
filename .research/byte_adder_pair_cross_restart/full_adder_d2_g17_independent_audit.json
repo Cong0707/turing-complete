@@ -1,0 +1,157 @@
+{
+  "schema": "full-adder-d2-g17-independent-physical-audit-v1",
+  "status": "verified",
+  "scope": "offline decoded-witness replay; no SAT/CNF helper imported",
+  "witness": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\truth_tuple_cases\\fa_d2_g17_p11_n2_s6_x0.json",
+    "sha256": "c9cfc91124202330d00175289022177ebde56280897034c020823d707ed4698d"
+  },
+  "score": {
+    "gate": 17,
+    "delay": 2
+  },
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "output_arrivals": [
+    2,
+    2
+  ],
+  "kind_counts": {
+    "ordinary": 5,
+    "switch": 6,
+    "normalizer": 2,
+    "xor": 0
+  },
+  "verification": {
+    "assignments": 8,
+    "output_checks": 16,
+    "mismatch_count": 0,
+    "conflict_count": 0,
+    "undriven_output_count": 0,
+    "physical_net_partition_violation_count": 0,
+    "dead_component_count": 0,
+    "normalizer_normal_form_violation_count": 0
+  },
+  "physical_owners": {
+    "driver_set_count": 12,
+    "sum_partial_driver_owner": "physical_net_owner_006",
+    "carry_output_owner": "physical_net_owner_010",
+    "sum_output_owner": "physical_net_owner_011",
+    "maker_splitter_owners": [
+      "maker_splitter_slot_6",
+      "maker_splitter_slot_12"
+    ]
+  },
+  "nodes": [
+    {
+      "slot": 0,
+      "source": 5,
+      "kind": "NOR",
+      "value_hex": "11",
+      "driven_hex": "ff",
+      "arrival": 1
+    },
+    {
+      "slot": 1,
+      "source": 6,
+      "kind": "NOR",
+      "value_hex": "05",
+      "driven_hex": "ff",
+      "arrival": 1
+    },
+    {
+      "slot": 2,
+      "source": 7,
+      "kind": "NOR",
+      "value_hex": "03",
+      "driven_hex": "ff",
+      "arrival": 1
+    },
+    {
+      "slot": 3,
+      "source": 8,
+      "kind": "SWITCH",
+      "value_hex": "02",
+      "driven_hex": "03",
+      "arrival": 2
+    },
+    {
+      "slot": 4,
+      "source": 9,
+      "kind": "SWITCH",
+      "value_hex": "a0",
+      "driven_hex": "aa",
+      "arrival": 1
+    },
+    {
+      "slot": 5,
+      "source": 10,
+      "kind": "SWITCH",
+      "value_hex": "c0",
+      "driven_hex": "cc",
+      "arrival": 1
+    },
+    {
+      "slot": 6,
+      "source": 11,
+      "kind": "NORMALIZE",
+      "value_hex": "e0",
+      "driven_hex": "ff",
+      "arrival": 1
+    },
+    {
+      "slot": 7,
+      "source": 12,
+      "kind": "SWITCH",
+      "value_hex": "10",
+      "driven_hex": "11",
+      "arrival": 2
+    },
+    {
+      "slot": 8,
+      "source": 13,
+      "kind": "SWITCH",
+      "value_hex": "04",
+      "driven_hex": "05",
+      "arrival": 2
+    },
+    {
+      "slot": 9,
+      "source": 14,
+      "kind": "AND",
+      "value_hex": "88",
+      "driven_hex": "ff",
+      "arrival": 1
+    },
+    {
+      "slot": 10,
+      "source": 15,
+      "kind": "SWITCH",
+      "value_hex": "80",
+      "driven_hex": "e0",
+      "arrival": 2
+    },
+    {
+      "slot": 11,
+      "source": 16,
+      "kind": "OR",
+      "value_hex": "e8",
+      "driven_hex": "ff",
+      "arrival": 2
+    },
+    {
+      "slot": 12,
+      "source": 17,
+      "kind": "NORMALIZE",
+      "value_hex": "96",
+      "driven_hex": "ff",
+      "arrival": 2
+    }
+  ],
+  "auditor": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\audit_full_adder_d2_g17.py",
+    "sha256": "951c650f7d0f5268a8072b4b29a1a41029a6cb5027b5f961dbe5f27fc10e3219"
+  }
+}

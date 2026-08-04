@@ -1,0 +1,925 @@
+{
+  "schema": "full-adder-10-3-independent-physical-certificate-v1",
+  "status": "verified",
+  "independence": {
+    "sat_or_cnf_module_imported": false,
+    "cnf_boolean_replay_reused": false,
+    "physical_wire_endpoint_partition_rebuilt": true,
+    "component_pin_semantics_replayed_row_by_row": true,
+    "weighted_cost_and_arrival_recomputed_from_physical_components": true
+  },
+  "scope": {
+    "research_only": true,
+    "formal_save_modified": false,
+    "levels_txt_modified": false,
+    "repository_candidate_modified": false,
+    "game_started": false
+  },
+  "inputs": {
+    "candidate": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\candidate.circuit.data",
+      "sha256": "18b8e25952d00499f093bdad61f70a5374205bf2d71074e70881d899f04ea4a5"
+    },
+    "factory_dag": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\factory_dag.json",
+      "sha256": "b24a6c08bd45fab9c4cb0289198acce797be1752cf830d256373e7d1ab6ede46"
+    },
+    "pin_mapping": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\pin_mapping.json",
+      "sha256": "fb524d0b6dcb7f5d9ca71695927b0c5ad4ba8b6148605445688622c5369c5178"
+    },
+    "materialization_manifest": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\full_adder_10_3\\materialization_manifest.json",
+      "sha256": "8af15cee31d9b465202faaae31199b8c44309780a102db06ca92a184158bcc95"
+    }
+  },
+  "score": {
+    "declared": [
+      10,
+      3,
+      30
+    ],
+    "replayed": [
+      10,
+      3,
+      30
+    ]
+  },
+  "structure": {
+    "component_count": 13,
+    "wire_count": 19,
+    "component_kind_counts": {
+      "4": 1,
+      "6": 4,
+      "7": 1,
+      "12": 2,
+      "60": 3,
+      "69": 2
+    },
+    "logical_network_count": 10,
+    "resolved_multi_driver_network_count": 1,
+    "resolved_sum_bus_driver_count": 2,
+    "native_full_adder_count": 0,
+    "native_add_count": 0
+  },
+  "physical_networks": [
+    {
+      "root": 0,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 2,
+      "drivers": [
+        {
+          "component_index": 0,
+          "permanent_id": 3048953663694076690,
+          "kind": 60,
+          "pin": "value",
+          "position": [
+            -16,
+            -4
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 5,
+          "permanent_id": 8962867078666263782,
+          "kind": 7,
+          "pin": "in0",
+          "position": [
+            47,
+            -50
+          ]
+        },
+        {
+          "component_index": 6,
+          "permanent_id": 706012467123331794,
+          "kind": 6,
+          "pin": "in0",
+          "position": [
+            87,
+            -36
+          ]
+        }
+      ]
+    },
+    {
+      "root": 2,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 2,
+      "drivers": [
+        {
+          "component_index": 3,
+          "permanent_id": 2177045702667073564,
+          "kind": 60,
+          "pin": "value",
+          "position": [
+            -16,
+            0
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 9,
+          "permanent_id": 4285385470170305396,
+          "kind": 6,
+          "pin": "in0",
+          "position": [
+            207,
+            6
+          ]
+        },
+        {
+          "component_index": 10,
+          "permanent_id": 5460885035161688524,
+          "kind": 12,
+          "pin": "in",
+          "position": [
+            247,
+            21
+          ]
+        }
+      ]
+    },
+    {
+      "root": 4,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 2,
+      "drivers": [
+        {
+          "component_index": 4,
+          "permanent_id": 2642107204728122708,
+          "kind": 60,
+          "pin": "value",
+          "position": [
+            -16,
+            4
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 5,
+          "permanent_id": 8962867078666263782,
+          "kind": 7,
+          "pin": "in1",
+          "position": [
+            47,
+            -48
+          ]
+        },
+        {
+          "component_index": 6,
+          "permanent_id": 706012467123331794,
+          "kind": 6,
+          "pin": "in1",
+          "position": [
+            87,
+            -34
+          ]
+        }
+      ]
+    },
+    {
+      "root": 6,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 3,
+      "drivers": [
+        {
+          "component_index": 5,
+          "permanent_id": 8962867078666263782,
+          "kind": 7,
+          "pin": "out",
+          "position": [
+            50,
+            -49
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 7,
+          "permanent_id": 3590777093194173956,
+          "kind": 6,
+          "pin": "in0",
+          "position": [
+            127,
+            -22
+          ]
+        },
+        {
+          "component_index": 8,
+          "permanent_id": 2723613870595622316,
+          "kind": 4,
+          "pin": "in0",
+          "position": [
+            167,
+            -8
+          ]
+        },
+        {
+          "component_index": 9,
+          "permanent_id": 4285385470170305396,
+          "kind": 6,
+          "pin": "in1",
+          "position": [
+            207,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "root": 9,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 3,
+      "drivers": [
+        {
+          "component_index": 6,
+          "permanent_id": 706012467123331794,
+          "kind": 6,
+          "pin": "out",
+          "position": [
+            90,
+            -35
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 7,
+          "permanent_id": 3590777093194173956,
+          "kind": 6,
+          "pin": "in1",
+          "position": [
+            127,
+            -20
+          ]
+        },
+        {
+          "component_index": 8,
+          "permanent_id": 2723613870595622316,
+          "kind": 4,
+          "pin": "in1",
+          "position": [
+            167,
+            -6
+          ]
+        },
+        {
+          "component_index": 12,
+          "permanent_id": 7793393207892421899,
+          "kind": 6,
+          "pin": "in0",
+          "position": [
+            327,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "root": 12,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 1,
+      "drivers": [
+        {
+          "component_index": 7,
+          "permanent_id": 3590777093194173956,
+          "kind": 6,
+          "pin": "out",
+          "position": [
+            130,
+            -21
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 10,
+          "permanent_id": 5460885035161688524,
+          "kind": 12,
+          "pin": "enable",
+          "position": [
+            248,
+            22
+          ]
+        }
+      ]
+    },
+    {
+      "root": 13,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 1,
+      "drivers": [
+        {
+          "component_index": 8,
+          "permanent_id": 2723613870595622316,
+          "kind": 4,
+          "pin": "out",
+          "position": [
+            170,
+            -7
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 11,
+          "permanent_id": 2639303468364086965,
+          "kind": 12,
+          "pin": "enable",
+          "position": [
+            288,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "root": 14,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 2,
+      "drivers": [
+        {
+          "component_index": 9,
+          "permanent_id": 4285385470170305396,
+          "kind": 6,
+          "pin": "out",
+          "position": [
+            210,
+            7
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 11,
+          "permanent_id": 2639303468364086965,
+          "kind": 12,
+          "pin": "in",
+          "position": [
+            287,
+            35
+          ]
+        },
+        {
+          "component_index": 12,
+          "permanent_id": 7793393207892421899,
+          "kind": 6,
+          "pin": "in1",
+          "position": [
+            327,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "root": 16,
+      "driver_count": 2,
+      "tri_state_driver_count": 2,
+      "receiver_count": 1,
+      "drivers": [
+        {
+          "component_index": 10,
+          "permanent_id": 5460885035161688524,
+          "kind": 12,
+          "pin": "out",
+          "position": [
+            250,
+            21
+          ]
+        },
+        {
+          "component_index": 11,
+          "permanent_id": 2639303468364086965,
+          "kind": 12,
+          "pin": "out",
+          "position": [
+            290,
+            35
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 1,
+          "permanent_id": 1528294232749530588,
+          "kind": 69,
+          "pin": "value",
+          "position": [
+            14,
+            -3
+          ]
+        }
+      ]
+    },
+    {
+      "root": 18,
+      "driver_count": 1,
+      "tri_state_driver_count": 0,
+      "receiver_count": 1,
+      "drivers": [
+        {
+          "component_index": 12,
+          "permanent_id": 7793393207892421899,
+          "kind": 6,
+          "pin": "out",
+          "position": [
+            330,
+            49
+          ]
+        }
+      ],
+      "receivers": [
+        {
+          "component_index": 2,
+          "permanent_id": 4197512562819507509,
+          "kind": 69,
+          "pin": "value",
+          "position": [
+            14,
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "pin_mapping_review": {
+    "network_partition_isomorphic": true,
+    "all_component_pins_covered_exactly_once": true,
+    "label_by_root": {
+      "0": "node:0",
+      "2": "node:1",
+      "4": "node:2",
+      "6": "node:3",
+      "9": "node:4",
+      "12": "node:5",
+      "13": "node:6",
+      "14": "node:7",
+      "16": "node:8",
+      "18": "node:9"
+    },
+    "root_by_label": {
+      "node:0": 0,
+      "node:1": 2,
+      "node:2": 4,
+      "node:3": 6,
+      "node:4": 9,
+      "node:5": 12,
+      "node:6": 13,
+      "node:7": 14,
+      "node:8": 16,
+      "node:9": 18
+    },
+    "networks": [
+      {
+        "label": "node:0",
+        "root": 0,
+        "pin_count": 3
+      },
+      {
+        "label": "node:1",
+        "root": 2,
+        "pin_count": 3
+      },
+      {
+        "label": "node:2",
+        "root": 4,
+        "pin_count": 3
+      },
+      {
+        "label": "node:3",
+        "root": 6,
+        "pin_count": 4
+      },
+      {
+        "label": "node:4",
+        "root": 9,
+        "pin_count": 4
+      },
+      {
+        "label": "node:5",
+        "root": 12,
+        "pin_count": 2
+      },
+      {
+        "label": "node:6",
+        "root": 13,
+        "pin_count": 2
+      },
+      {
+        "label": "node:7",
+        "root": 14,
+        "pin_count": 3
+      },
+      {
+        "label": "node:8",
+        "root": 16,
+        "pin_count": 3
+      },
+      {
+        "label": "node:9",
+        "root": 18,
+        "pin_count": 2
+      }
+    ]
+  },
+  "timing_and_ownership": {
+    "weighted_gate_cost": 10,
+    "replayed_max_delay": 3,
+    "output_arrivals": {
+      "Carry": 3,
+      "Sum": 3
+    },
+    "topological_component_indices": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "topological_permanent_ids": [
+      8962867078666263782,
+      706012467123331794,
+      3590777093194173956,
+      2723613870595622316,
+      4285385470170305396,
+      5460885035161688524,
+      2639303468364086965,
+      7793393207892421899
+    ],
+    "dead_paid_component_count": 0
+  },
+  "truth_protocol": {
+    "assignments": 8,
+    "output_checks": 16,
+    "mismatch_count": 0,
+    "conflict_assignment_count": 0,
+    "undriven_output_assignment_count": 0,
+    "rows": [
+      {
+        "case": 0,
+        "inputs": [
+          0,
+          0,
+          0
+        ],
+        "actual": {
+          "Sum": 0,
+          "Carry": 0
+        },
+        "expected": {
+          "Sum": 0,
+          "Carry": 0
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 1
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 0
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 1,
+        "inputs": [
+          1,
+          0,
+          0
+        ],
+        "actual": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "expected": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 0
+          },
+          {
+            "component_index": 11,
+            "value": 1,
+            "driven": 1
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 2,
+        "inputs": [
+          0,
+          1,
+          0
+        ],
+        "actual": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "expected": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 1,
+            "driven": 1
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 0
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 3,
+        "inputs": [
+          1,
+          1,
+          0
+        ],
+        "actual": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "expected": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 0
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 1
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 4,
+        "inputs": [
+          0,
+          0,
+          1
+        ],
+        "actual": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "expected": {
+          "Sum": 1,
+          "Carry": 0
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 0
+          },
+          {
+            "component_index": 11,
+            "value": 1,
+            "driven": 1
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 5,
+        "inputs": [
+          1,
+          0,
+          1
+        ],
+        "actual": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "expected": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 1
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 0
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 6,
+        "inputs": [
+          0,
+          1,
+          1
+        ],
+        "actual": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "expected": {
+          "Sum": 0,
+          "Carry": 1
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 0,
+            "driven": 0
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 1
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      },
+      {
+        "case": 7,
+        "inputs": [
+          1,
+          1,
+          1
+        ],
+        "actual": {
+          "Sum": 1,
+          "Carry": 1
+        },
+        "expected": {
+          "Sum": 1,
+          "Carry": 1
+        },
+        "sum_driver_states": [
+          {
+            "component_index": 10,
+            "value": 1,
+            "driven": 1
+          },
+          {
+            "component_index": 11,
+            "value": 0,
+            "driven": 0
+          }
+        ],
+        "conflict_count": 0,
+        "undriven_output_count": 0
+      }
+    ],
+    "node_masks": {
+      "0": {
+        "value": "aa",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "1": {
+        "value": "cc",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "2": {
+        "value": "f0",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "3": {
+        "value": "fa",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "4": {
+        "value": "5f",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "5": {
+        "value": "a5",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "6": {
+        "value": "5a",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "7": {
+        "value": "37",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "8": {
+        "value": "96",
+        "driven": "ff",
+        "conflict": "00"
+      },
+      "9": {
+        "value": "e8",
+        "driven": "ff",
+        "conflict": "00"
+      }
+    },
+    "partial_driver_masks": {
+      "5460885035161688524": {
+        "component_index": 10,
+        "one_mask_hex": "84",
+        "driven_mask_hex": "a5",
+        "z_mask_hex": "5a",
+        "conflict_mask_hex": "00"
+      },
+      "2639303468364086965": {
+        "component_index": 11,
+        "one_mask_hex": "12",
+        "driven_mask_hex": "5a",
+        "z_mask_hex": "a5",
+        "conflict_mask_hex": "00"
+      }
+    },
+    "sum_driver_overlap_mask_hex": "00",
+    "sum_driver_complete_mask_hex": "ff"
+  },
+  "connectivity": {
+    "effective_component_count": 13,
+    "supported_component_count": 13,
+    "unsupported_component_kind_counts": {},
+    "pin_count": 29,
+    "connected_pin_count": 29,
+    "unconnected_pin_count": 0,
+    "unconnected_pins": [],
+    "logical_network_count": 10,
+    "logical_edge_count": 19,
+    "multi_driver_network_count": 0,
+    "undriven_network_count": 0,
+    "sinkless_network_count": 0,
+    "width_mismatch_network_count": 0,
+    "unit_logic_depth": 3,
+    "cycle_component_count": 0
+  },
+  "geometry": {
+    "sprite_files": [
+      "com_and_bit.png",
+      "com_level_input_1_pin.png",
+      "com_level_output_word.png",
+      "com_nand_bit.png",
+      "com_or_bit.png",
+      "com_switch_bit.png"
+    ],
+    "alpha_cell_count": 207,
+    "unsupported_component_kinds": [],
+    "component_overlap_cells": [],
+    "wire_collisions": [],
+    "wire_interior_pin_contacts": []
+  },
+  "serialization": {
+    "v15_roundtrip_byte_identical": true,
+    "decoded_json_determinism_not_assumed": true
+  },
+  "auditor": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\audit_full_adder_10_3.py",
+    "sha256": "8e35397c42c63f940aa7be5feefcb533d24e0674603d2234872296c08e316401"
+  }
+}

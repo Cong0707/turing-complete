@@ -1,0 +1,4879 @@
+{
+  "schema": "tc-byte-adder-live-delayline-sequence-audit-v1",
+  "status": "complete",
+  "test_contract": {
+    "path": "D:\\Game\\Steam\\steamapps\\common\\Turing Complete\\campaign\\byte_adder\\test.si",
+    "sha256": "a7829f918476b0bfa7ac3cb16f7610a6fa3734da5c1fb12ab89843a0dbd70c92",
+    "bytes": 2084,
+    "required_source_patterns": {
+      "cycle_source": true,
+      "shift_left_6": true,
+      "shift_right_11": true,
+      "shift_left_9": true,
+      "a_extract": true,
+      "b_extract": true,
+      "cin_extract": true,
+      "sum": true,
+      "last_cycle": true
+    },
+    "first_cycle": 0,
+    "last_cycle": 131071,
+    "cycles": 131072
+  },
+  "sequence": {
+    "width": 17,
+    "cycles": 131072,
+    "bijective": true,
+    "cycle_zero_input": 0,
+    "cycle_zero_expected_output": 0,
+    "last_cycle_input": 127487,
+    "permutation_u32le_sha256": "2fd98014c77e2d2e05cc92dfa85f9a4a155c0644ae9554967f34dffae6328605",
+    "live_unmasked_operations": [
+      "x = cycle",
+      "x ^= x << 6",
+      "x ^= x >> 11",
+      "x ^= x << 9",
+      "x &= 0x1ffff only when extracting the 17 input bits"
+    ],
+    "incorrect_intermediate_mask_regression": {
+      "different_cycle_count": 129024,
+      "first_different_cycle": 2048,
+      "first_live_value": 35393,
+      "first_masked_value": 2561,
+      "first_xor_difference": 32832,
+      "masked_sequence_also_bijective": true
+    }
+  },
+  "baseline": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_root\\byte-adder-hybrid-phasefold-g80-d7.json",
+    "sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "live_node_count": 82,
+    "outputs": [
+      49,
+      77,
+      81,
+      83,
+      86,
+      65,
+      73,
+      88,
+      75
+    ],
+    "semantic_replay": {
+      "mismatch_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "conflict_assignment_count": 0,
+      "z_assignment_count_by_output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "output_arrivals": [
+        4,
+        4,
+        7,
+        5,
+        7,
+        6,
+        7,
+        7,
+        7
+      ],
+      "gate": 80,
+      "delay": 7
+    }
+  },
+  "timing": {
+    "delay_line_kind": 13,
+    "delay_line_gate": 5,
+    "delay_line_component_delay": 4,
+    "native_recurrence": "arrival(component outputs) = max(arrival(all component inputs)) + component_delay",
+    "delay_line_is_timing_cut": false,
+    "single_delay_arrival": "input_logic_arrival + 4",
+    "chain_arrival": "input_logic_arrival + 4 * number_of_delay_lines",
+    "d5_consequence": "For one Delay Line, logic before plus logic after it may contribute at most one ordinary delay unit in total.",
+    "evidence": [
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_control_simplify\\native_score_audit\\evidence.recheck.json",
+        "sha256": "53864dbc76395cbf0356df08b02322595e55764db5ebfe81bf0bdd799b3e9b58",
+        "bytes": 6665
+      },
+      {
+        "path": "D:\\Develop\\Other\\turing-complete\\examples\\rng\\research\\archive\\rng_control_simplify\\native_score_audit\\RESULT.md",
+        "sha256": "e9e4db458db8405c7183ac73045fc9db7372b3749a0c3f2b8c08eede5c4070b2",
+        "bytes": 5108
+      }
+    ]
+  },
+  "future_d1_live_node_search": {
+    "delay_cycles": 1,
+    "care_rows": 131071,
+    "dont_care_source_cycles": [
+      131071
+    ],
+    "dont_care_current_assignments": [
+      127487
+    ],
+    "target_live_node_count": 82,
+    "target_output_ids": [
+      49,
+      77,
+      81,
+      83,
+      86,
+      65,
+      73,
+      88,
+      75
+    ],
+    "target_output_names": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "Cout"
+    ],
+    "current_direct_function_count": 162,
+    "current_one_gate_function_count": 17791,
+    "current_bus2_function_count": 2331,
+    "matched_target_count": 0,
+    "matched_output_count": 0,
+    "matches": [],
+    "post_delay_one_gate_match_count": 0,
+    "post_delay_one_gate_matches": []
+  },
+  "future_d1_live_node_anf": {
+    "delay_cycles": 1,
+    "missing_source_cycle": 131071,
+    "missing_current_assignment": 127487,
+    "completion_count": 2,
+    "minimum_degree_across_all_live_targets": 11,
+    "maximum_degree_across_all_live_targets": 16,
+    "nodes": [
+      {
+        "target_id": 2,
+        "target": "a0",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 11,
+          "term_count": 17078
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 17086
+        },
+        "minimum_completion_degree": 11
+      },
+      {
+        "target_id": 3,
+        "target": "b0",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 13,
+          "term_count": 5463
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 5471
+        },
+        "minimum_completion_degree": 13
+      },
+      {
+        "target_id": 4,
+        "target": "a1",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 12,
+          "term_count": 6353
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 6361
+        },
+        "minimum_completion_degree": 12
+      },
+      {
+        "target_id": 5,
+        "target": "b1",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 21330
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 21336
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 6,
+        "target": "a2",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 13,
+          "term_count": 4065
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 4073
+        },
+        "minimum_completion_degree": 13
+      },
+      {
+        "target_id": 7,
+        "target": "b2",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 16757
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 16761
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 8,
+        "target": "a3",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 4689
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 4695
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 9,
+        "target": "b3",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 19943
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 19943
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 10,
+        "target": "a4",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 8481
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 8485
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 11,
+        "target": "b4",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 9643
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 9649
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 12,
+        "target": "a5",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 13613
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 13613
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 13,
+        "target": "b5",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 10395
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 10399
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 14,
+        "target": "a6",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 11,
+          "term_count": 17850
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 17858
+        },
+        "minimum_completion_degree": 11
+      },
+      {
+        "target_id": 15,
+        "target": "b6",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 15037
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 15039
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 16,
+        "target": "a7",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 12,
+          "term_count": 7719
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 7727
+        },
+        "minimum_completion_degree": 12
+      },
+      {
+        "target_id": 17,
+        "target": "b7",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 21514
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 21518
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 18,
+        "target": "cin",
+        "target_is_output": false,
+        "target_original_arrival": 0,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 17339
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 17339
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 22,
+        "target": "n22",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 13,
+          "term_count": 13560
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 13568
+        },
+        "minimum_completion_degree": 13
+      },
+      {
+        "target_id": 23,
+        "target": "n23",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 21134
+        },
+        "missing_assignment_value_one": {
+          "degree": 14,
+          "term_count": 21128
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 24,
+        "target": "n24",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 21523
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 21529
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 25,
+        "target": "n25",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 10265
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 10273
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 28,
+        "target": "n28",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 15187
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 15191
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 29,
+        "target": "n29",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 19520
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 19522
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 30,
+        "target": "n30",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 20944
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 20946
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 31,
+        "target": "n31",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 10957
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 10961
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 32,
+        "target": "n32",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 12976
+        },
+        "missing_assignment_value_one": {
+          "degree": 15,
+          "term_count": 12974
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 33,
+        "target": "n33",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 12410
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 12416
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 34,
+        "target": "n34",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 17213
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 17215
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 35,
+        "target": "n35",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 14194
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 14196
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 36,
+        "target": "n36",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 16128
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 16132
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 37,
+        "target": "n37",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 12,
+          "term_count": 19054
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 19062
+        },
+        "minimum_completion_degree": 12
+      },
+      {
+        "target_id": 38,
+        "target": "n38",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 21306
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 21304
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 39,
+        "target": "n39",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 20931
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 20933
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 40,
+        "target": "n40",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 13,
+          "term_count": 11104
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 11112
+        },
+        "minimum_completion_degree": 13
+      },
+      {
+        "target_id": 41,
+        "target": "n41",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 20440
+        },
+        "missing_assignment_value_one": {
+          "degree": 15,
+          "term_count": 20436
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 42,
+        "target": "n42",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 21373
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 21377
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 43,
+        "target": "n43",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 18753
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 18755
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 44,
+        "target": "n44",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 11169
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 11175
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 45,
+        "target": "n45",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 23883
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 23889
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 46,
+        "target": "n46",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 22400
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 22398
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 47,
+        "target": "n47",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 8245
+        },
+        "missing_assignment_value_one": {
+          "degree": 13,
+          "term_count": 8237
+        },
+        "minimum_completion_degree": 13
+      },
+      {
+        "target_id": 48,
+        "target": "n48",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 22787
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 22793
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 49,
+        "target": "n49",
+        "target_is_output": true,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 22382
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 22382
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 50,
+        "target": "n50",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 21129
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 21135
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 51,
+        "target": "n51",
+        "target_is_output": false,
+        "target_original_arrival": 1,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 19085
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 19089
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 52,
+        "target": "n52",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 26395
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 26399
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 53,
+        "target": "n53",
+        "target_is_output": false,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 28413
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 28417
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 54,
+        "target": "n54",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 23569
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 23573
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 55,
+        "target": "n55",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 28557
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 28561
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 56,
+        "target": "n56",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 34239
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 34237
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 57,
+        "target": "n57",
+        "target_is_output": false,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 36634
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 36636
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 58,
+        "target": "n58",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 36897
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 36899
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 59,
+        "target": "n59",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 19807
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 19811
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 60,
+        "target": "n60",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 24691
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 24689
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 61,
+        "target": "n61",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 23799
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 23797
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 62,
+        "target": "n62",
+        "target_is_output": false,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 38425
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 38423
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 63,
+        "target": "n63",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 37988
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 37984
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 64,
+        "target": "n64",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 38154
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 38152
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 65,
+        "target": "n65",
+        "target_is_output": true,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 39881
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 39879
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 66,
+        "target": "n66",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 25934
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 25936
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 67,
+        "target": "n67",
+        "target_is_output": false,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 24905
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 24905
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 68,
+        "target": "n68",
+        "target_is_output": false,
+        "target_original_arrival": 2,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 26203
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 26203
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 69,
+        "target": "n69",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 39063
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 39063
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 70,
+        "target": "n70",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 38470
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 38470
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 71,
+        "target": "n71",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 26269
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 26271
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 72,
+        "target": "n72",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 35201
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 35201
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 73,
+        "target": "n73",
+        "target_is_output": true,
+        "target_original_arrival": 7,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 38958
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 38958
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 74,
+        "target": "n74",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 39199
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 39197
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 75,
+        "target": "n75",
+        "target_is_output": true,
+        "target_original_arrival": 7,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 39435
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 39433
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 76,
+        "target": "n76",
+        "target_is_output": false,
+        "target_original_arrival": 3,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 28450
+        },
+        "missing_assignment_value_one": {
+          "degree": 15,
+          "term_count": 28446
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 77,
+        "target": "n77",
+        "target_is_output": true,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 14,
+          "term_count": 23476
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 23484
+        },
+        "minimum_completion_degree": 14
+      },
+      {
+        "target_id": 78,
+        "target": "n78",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 30583
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 30589
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 79,
+        "target": "n79",
+        "target_is_output": false,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 27818
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 27818
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 80,
+        "target": "n80",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 34393
+        },
+        "missing_assignment_value_one": {
+          "degree": 15,
+          "term_count": 34387
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 81,
+        "target": "n81",
+        "target_is_output": true,
+        "target_original_arrival": 7,
+        "missing_assignment_value_zero": {
+          "degree": 15,
+          "term_count": 28869
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 28877
+        },
+        "minimum_completion_degree": 15
+      },
+      {
+        "target_id": 82,
+        "target": "n82",
+        "target_is_output": false,
+        "target_original_arrival": 4,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 37062
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 37060
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 83,
+        "target": "n83",
+        "target_is_output": true,
+        "target_original_arrival": 5,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 35947
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 35951
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 84,
+        "target": "n84",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 38754
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 38756
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 85,
+        "target": "n85",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 39516
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 39518
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 86,
+        "target": "n86",
+        "target_is_output": true,
+        "target_original_arrival": 7,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 37845
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 37849
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 87,
+        "target": "n87",
+        "target_is_output": false,
+        "target_original_arrival": 6,
+        "missing_assignment_value_zero": {
+          "degree": 17,
+          "term_count": 41280
+        },
+        "missing_assignment_value_one": {
+          "degree": 16,
+          "term_count": 41278
+        },
+        "minimum_completion_degree": 16
+      },
+      {
+        "target_id": 88,
+        "target": "n88",
+        "target_is_output": true,
+        "target_original_arrival": 7,
+        "missing_assignment_value_zero": {
+          "degree": 16,
+          "term_count": 39618
+        },
+        "missing_assignment_value_one": {
+          "degree": 17,
+          "term_count": 39614
+        },
+        "minimum_completion_degree": 16
+      }
+    ]
+  },
+  "future_d1_to_d20_affine": [
+    {
+      "delay_cycles": 1,
+      "care_rows": 131071,
+      "dont_care_source_cycles": [
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 2,
+      "care_rows": 131070,
+      "dont_care_source_cycles": [
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 3,
+      "care_rows": 131069,
+      "dont_care_source_cycles": [
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 4,
+      "care_rows": 131068,
+      "dont_care_source_cycles": [
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 5,
+      "care_rows": 131067,
+      "dont_care_source_cycles": [
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 6,
+      "care_rows": 131066,
+      "dont_care_source_cycles": [
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 7,
+      "care_rows": 131065,
+      "dont_care_source_cycles": [
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 8,
+      "care_rows": 131064,
+      "dont_care_source_cycles": [
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 9,
+      "care_rows": 131063,
+      "dont_care_source_cycles": [
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 10,
+      "care_rows": 131062,
+      "dont_care_source_cycles": [
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 11,
+      "care_rows": 131061,
+      "dont_care_source_cycles": [
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 12,
+      "care_rows": 131060,
+      "dont_care_source_cycles": [
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 13,
+      "care_rows": 131059,
+      "dont_care_source_cycles": [
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 14,
+      "care_rows": 131058,
+      "dont_care_source_cycles": [
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 15,
+      "care_rows": 131057,
+      "dont_care_source_cycles": [
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 16,
+      "care_rows": 131056,
+      "dont_care_source_cycles": [
+        131056,
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 17,
+      "care_rows": 131055,
+      "dont_care_source_cycles": [
+        131055,
+        131056,
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 18,
+      "care_rows": 131054,
+      "dont_care_source_cycles": [
+        131054,
+        131055,
+        131056,
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 19,
+      "care_rows": 131053,
+      "dont_care_source_cycles": [
+        131053,
+        131054,
+        131055,
+        131056,
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    },
+    {
+      "delay_cycles": 20,
+      "care_rows": 131052,
+      "dont_care_source_cycles": [
+        131052,
+        131053,
+        131054,
+        131055,
+        131056,
+        131057,
+        131058,
+        131059,
+        131060,
+        131061,
+        131062,
+        131063,
+        131064,
+        131065,
+        131066,
+        131067,
+        131068,
+        131069,
+        131070,
+        131071
+      ],
+      "future_input_bits": [
+        {
+          "name": "A0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "A7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "B7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cin",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "future_output_bits": [
+        {
+          "name": "S0",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S1",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S2",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S3",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S4",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S5",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S6",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "S7",
+          "affine": false,
+          "form": null
+        },
+        {
+          "name": "Cout",
+          "affine": false,
+          "form": null
+        }
+      ],
+      "affine_future_input_count": 0,
+      "affine_future_output_count": 0
+    }
+  ],
+  "delay_chain_full_sequence_replay": [
+    {
+      "delay_cycles": 1,
+      "rail_gate": 5,
+      "rail_delay": 4,
+      "source_care_rows": 131071,
+      "initial_stage_values_input_to_output": [
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 2,
+      "rail_gate": 10,
+      "rail_delay": 8,
+      "source_care_rows": 131070,
+      "initial_stage_values_input_to_output": [
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 3,
+      "rail_gate": 15,
+      "rail_delay": 12,
+      "source_care_rows": 131069,
+      "initial_stage_values_input_to_output": [
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 4,
+      "rail_gate": 20,
+      "rail_delay": 16,
+      "source_care_rows": 131068,
+      "initial_stage_values_input_to_output": [
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 5,
+      "rail_gate": 25,
+      "rail_delay": 20,
+      "source_care_rows": 131067,
+      "initial_stage_values_input_to_output": [
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 6,
+      "rail_gate": 30,
+      "rail_delay": 24,
+      "source_care_rows": 131066,
+      "initial_stage_values_input_to_output": [
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 7,
+      "rail_gate": 35,
+      "rail_delay": 28,
+      "source_care_rows": 131065,
+      "initial_stage_values_input_to_output": [
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 8,
+      "rail_gate": 40,
+      "rail_delay": 32,
+      "source_care_rows": 131064,
+      "initial_stage_values_input_to_output": [
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 9,
+      "rail_gate": 45,
+      "rail_delay": 36,
+      "source_care_rows": 131063,
+      "initial_stage_values_input_to_output": [
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 10,
+      "rail_gate": 50,
+      "rail_delay": 40,
+      "source_care_rows": 131062,
+      "initial_stage_values_input_to_output": [
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 11,
+      "rail_gate": 55,
+      "rail_delay": 44,
+      "source_care_rows": 131061,
+      "initial_stage_values_input_to_output": [
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 12,
+      "rail_gate": 60,
+      "rail_delay": 48,
+      "source_care_rows": 131060,
+      "initial_stage_values_input_to_output": [
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 13,
+      "rail_gate": 65,
+      "rail_delay": 52,
+      "source_care_rows": 131059,
+      "initial_stage_values_input_to_output": [
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 14,
+      "rail_gate": 70,
+      "rail_delay": 56,
+      "source_care_rows": 131058,
+      "initial_stage_values_input_to_output": [
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 15,
+      "rail_gate": 75,
+      "rail_delay": 60,
+      "source_care_rows": 131057,
+      "initial_stage_values_input_to_output": [
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 16,
+      "rail_gate": 80,
+      "rail_delay": 64,
+      "source_care_rows": 131056,
+      "initial_stage_values_input_to_output": [
+        365,
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 17,
+      "rail_gate": 85,
+      "rail_delay": 68,
+      "source_care_rows": 131055,
+      "initial_stage_values_input_to_output": [
+        52,
+        365,
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 18,
+      "rail_gate": 90,
+      "rail_delay": 72,
+      "source_care_rows": 131054,
+      "initial_stage_values_input_to_output": [
+        247,
+        52,
+        365,
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 19,
+      "rail_gate": 95,
+      "rail_delay": 76,
+      "source_care_rows": 131053,
+      "initial_stage_values_input_to_output": [
+        179,
+        247,
+        52,
+        365,
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    },
+    {
+      "delay_cycles": 20,
+      "rail_gate": 100,
+      "rail_delay": 80,
+      "source_care_rows": 131052,
+      "initial_stage_values_input_to_output": [
+        374,
+        179,
+        247,
+        52,
+        365,
+        174,
+        230,
+        39,
+        352,
+        161,
+        217,
+        26,
+        343,
+        148,
+        208,
+        13,
+        330,
+        135,
+        195,
+        0
+      ],
+      "mismatch_count": 0,
+      "first_mismatch_cycle": null
+    }
+  ],
+  "conclusions": {
+    "full_sequence_cycles_checked": 131072,
+    "future_relation_final_source_is_dont_care": true,
+    "d1_future_live_node_direct_or_one_gate_or_bus2_match_count": 0,
+    "d1_future_output_direct_or_one_gate_or_bus2_match_count": 0,
+    "d1_post_delay_one_gate_live_node_match_count": 0,
+    "minimum_d1_future_live_node_anf_degree": 11,
+    "affine_future_input_forms_d1_to_d20": 0,
+    "affine_future_output_forms_d1_to_d20": 0,
+    "shallow_named_byproduct_retime_found": false
+  }
+}

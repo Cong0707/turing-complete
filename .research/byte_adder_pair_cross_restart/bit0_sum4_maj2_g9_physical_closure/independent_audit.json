@@ -1,0 +1,558 @@
+{
+  "schema": "bit0-sum4-maj2-g9-exact-physical-cut-independent-audit-v1",
+  "status": "verified_unsat",
+  "claim": "Every enumerated strict physical shard for SUM=0x96 at arrival<=4 and MAJ=0xe8 at arrival<=2 with gate<=9 is UNSAT.",
+  "scope_boundary": "This is only a lower bound for the named two-output connected cut. It is not a global lower bound for the byte adder and does not rule out 79/7 via another tuple, cofactor, phase, partial-driver network, or internal byproduct.",
+  "coverage": {
+    "shards": 45,
+    "paid_components": [
+      1,
+      9
+    ],
+    "normalizers": [
+      0,
+      4
+    ],
+    "unknown_count": 0,
+    "sat_count": 0,
+    "unsat_count": 45,
+    "full_cartesian_product_recomputed": true,
+    "strict_fully_driven": true,
+    "physical_wire_net_partitions": true
+  },
+  "target": {
+    "truth_masks_hex": [
+      "96",
+      "e8"
+    ],
+    "output_max_delays": [
+      4,
+      2
+    ],
+    "gate_bound": 9
+  },
+  "normalizer_completeness": {
+    "bound": 4,
+    "derivation": "floor(gate_bound / Switch_cost) = floor(9/2) = 4",
+    "useful_normalizer_requires_distinct_physical_switch_output_net": true
+  },
+  "dependencies": {
+    "manifest": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\bit0_sum4_maj2_g9_physical_closure\\manifest.json",
+      "sha256": "4d321384a9f31fdf40020889e4ced499885a31537174fa41aaf6d41e48117517"
+    },
+    "solver": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\exact_truth_tuple_physical.py",
+      "sha256": "9c48d6d82fbc37ebcad3c862f1a30b6a87bfdf085014af6f4fb7623b941caf7a"
+    },
+    "base_solver": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\exact_pretarget_physical.py",
+      "sha256": "b7b8dc7471fef399b919fc0eae2aa0df07dbcdbefa7942c3fba3d9ef0bef1e0c"
+    },
+    "driver": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\run_bit0_sum4_maj2_g9_physical_closure.py",
+      "sha256": "f5f4abb5f05d5db32329f9a147efe85d2e7414e29424a511ba4c52ab038f4b08"
+    }
+  },
+  "cases": [
+    {
+      "artifact": "bit0_sum4_maj2_g9_p1_n0.json",
+      "sha256": "6571d705056c4c6d44c7372ebd0c4f7bb4b2504cd7c78ed9b018050aeec774b1",
+      "paid_components": 1,
+      "normalizers": 0,
+      "total_components": 1,
+      "variables": 236,
+      "clauses": 1408,
+      "solve_seconds": 0.004722800003946759,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p1_n1.json",
+      "sha256": "950a023ab80d995f6e45ea12c0ad96bfce194f8d6b95f4d8821e986938018192",
+      "paid_components": 1,
+      "normalizers": 1,
+      "total_components": 2,
+      "variables": 575,
+      "clauses": 3470,
+      "solve_seconds": 0.010784700003569014,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p1_n2.json",
+      "sha256": "29061beeb309dc46d1aab3f869513f02d3d4e280ffd0acdb6d802ed80c42cbd8",
+      "paid_components": 1,
+      "normalizers": 2,
+      "total_components": 3,
+      "variables": 979,
+      "clauses": 6329,
+      "solve_seconds": 0.01945589999377262,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p1_n3.json",
+      "sha256": "058e8d96a5362f929d4aa913c738355f2f9f24e57d7cfb5673637553014a4c44",
+      "paid_components": 1,
+      "normalizers": 3,
+      "total_components": 4,
+      "variables": 1458,
+      "clauses": 10056,
+      "solve_seconds": 0.029301999995368533,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p1_n4.json",
+      "sha256": "cbcdc20b26186138ae69b6e81ef02668681da27daaf5b61ddf7524ef545ad31c",
+      "paid_components": 1,
+      "normalizers": 4,
+      "total_components": 5,
+      "variables": 2017,
+      "clauses": 14718,
+      "solve_seconds": 0.03711100001237355,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p2_n0.json",
+      "sha256": "8d50b3311a64bbbb7d3a9ece874bb1800adbb85d435e07a0fb1138aa5a154d77",
+      "paid_components": 2,
+      "normalizers": 0,
+      "total_components": 2,
+      "variables": 575,
+      "clauses": 3470,
+      "solve_seconds": 0.0146495000080904,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p2_n1.json",
+      "sha256": "00dd0081c52ac4e4f696d6edb81faf506acb9b6018b4e795341187a6ca6d3a1e",
+      "paid_components": 2,
+      "normalizers": 1,
+      "total_components": 3,
+      "variables": 979,
+      "clauses": 6329,
+      "solve_seconds": 0.02184750000014901,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p2_n2.json",
+      "sha256": "d5ae344955251ed93d17f45b9e0b11c90066c4bc7763327db234f3858fceba39",
+      "paid_components": 2,
+      "normalizers": 2,
+      "total_components": 4,
+      "variables": 1463,
+      "clauses": 10063,
+      "solve_seconds": 0.026332699999329634,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p2_n3.json",
+      "sha256": "47130e1acca47e9182488ed9ad905965176502edb74b9de05581f9a99f6d3e3e",
+      "paid_components": 2,
+      "normalizers": 3,
+      "total_components": 5,
+      "variables": 2025,
+      "clauses": 14730,
+      "solve_seconds": 0.03888970000843983,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p2_n4.json",
+      "sha256": "da05fdc8b16cef7f33503d18fa6ff01a39718ace29a58cdbb697c6874ccaeddb",
+      "paid_components": 2,
+      "normalizers": 4,
+      "total_components": 6,
+      "variables": 2671,
+      "clauses": 20398,
+      "solve_seconds": 0.05022500001359731,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p3_n0.json",
+      "sha256": "a6ec99282609795aa4ac8d416a7b6f1455dab2c2c069e28e3387620189cd848d",
+      "paid_components": 3,
+      "normalizers": 0,
+      "total_components": 3,
+      "variables": 977,
+      "clauses": 6326,
+      "solve_seconds": 0.02471319999312982,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p3_n1.json",
+      "sha256": "397f33d7385a364d72044dd8d0e4f66e2a64d203fbaa74aad5fd151ecfbce401",
+      "paid_components": 3,
+      "normalizers": 1,
+      "total_components": 4,
+      "variables": 1458,
+      "clauses": 10056,
+      "solve_seconds": 0.050931499994476326,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p3_n2.json",
+      "sha256": "779a469631e19be8075ed94a2f69e9278725a245f223ceab3932533702bb3ffc",
+      "paid_components": 3,
+      "normalizers": 2,
+      "total_components": 5,
+      "variables": 2025,
+      "clauses": 14730,
+      "solve_seconds": 0.057149999993271194,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p3_n3.json",
+      "sha256": "5fef5115f2864e9efe48f157ae0ec5cf064cc25590f194fc9171f863a10aacb2",
+      "paid_components": 3,
+      "normalizers": 3,
+      "total_components": 6,
+      "variables": 2673,
+      "clauses": 20402,
+      "solve_seconds": 0.09380469999450725,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p3_n4.json",
+      "sha256": "13e33a4604f6e9f00670bd5fd335f4db7e3f2d24aa3be91b5bb66030aa9919b2",
+      "paid_components": 3,
+      "normalizers": 4,
+      "total_components": 7,
+      "variables": 3409,
+      "clauses": 27141,
+      "solve_seconds": 0.12493299999914598,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p4_n0.json",
+      "sha256": "f639019ec3d2d7048f89c0bcc23caf341ecdc105ba40392c67819e2039a03dd0",
+      "paid_components": 4,
+      "normalizers": 0,
+      "total_components": 4,
+      "variables": 1455,
+      "clauses": 10051,
+      "solve_seconds": 0.11472519999369979,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p4_n1.json",
+      "sha256": "c90db039588b6a5e8839913c35c91c872bb50eb427b459618553fb6526b1efd7",
+      "paid_components": 4,
+      "normalizers": 1,
+      "total_components": 5,
+      "variables": 2017,
+      "clauses": 14718,
+      "solve_seconds": 0.3265614999982063,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p4_n2.json",
+      "sha256": "5d03262f0a972a9e6c69993f568c0e45a6b7e6b7423ec728612c1fbef078f30b",
+      "paid_components": 4,
+      "normalizers": 2,
+      "total_components": 6,
+      "variables": 2671,
+      "clauses": 20398,
+      "solve_seconds": 0.467247699998552,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p4_n3.json",
+      "sha256": "12ca88f65fac367e2ca76b346c237284485e8553efcc2fb7ab8e861763a406e7",
+      "paid_components": 4,
+      "normalizers": 3,
+      "total_components": 7,
+      "variables": 3409,
+      "clauses": 27141,
+      "solve_seconds": 0.8423213000060059,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p4_n4.json",
+      "sha256": "6e95b0fb844126e0572e28acc62de446d661891ab2ae45d77d5c015c1183ecab",
+      "paid_components": 4,
+      "normalizers": 4,
+      "total_components": 8,
+      "variables": 4239,
+      "clauses": 35017,
+      "solve_seconds": 1.2325579000025755,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p5_n0.json",
+      "sha256": "f3625ef635cfdc147fdd67dc75e9ed0d3c6e9afe328eb23a4226a34e80a99bb2",
+      "paid_components": 5,
+      "normalizers": 0,
+      "total_components": 5,
+      "variables": 2013,
+      "clauses": 14711,
+      "solve_seconds": 0.5433347999933176,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p5_n1.json",
+      "sha256": "aac8929061a75cb5e2d62ef0383ce6ca69e3c2bf87a96ccaa77512ea02ffd262",
+      "paid_components": 5,
+      "normalizers": 1,
+      "total_components": 6,
+      "variables": 2660,
+      "clauses": 20381,
+      "solve_seconds": 1.803682600002503,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p5_n2.json",
+      "sha256": "52477d17964d73ce8f2284b548f63180a06e2ad9c95f24be959ae18164f26087",
+      "paid_components": 5,
+      "normalizers": 2,
+      "total_components": 7,
+      "variables": 3405,
+      "clauses": 27133,
+      "solve_seconds": 3.8224997999932384,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p5_n3.json",
+      "sha256": "f71858c481cc80b2e7d94d7ca6c5a859a9e25761eab54b273341bfe4b48fdc9e",
+      "paid_components": 5,
+      "normalizers": 3,
+      "total_components": 8,
+      "variables": 4237,
+      "clauses": 35013,
+      "solve_seconds": 8.116267300007166,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p5_n4.json",
+      "sha256": "fc1ac383564a180959f4511b45377c340d4a1415763a1598d90ec669101df9dd",
+      "paid_components": 5,
+      "normalizers": 4,
+      "total_components": 9,
+      "variables": 5165,
+      "clauses": 44092,
+      "solve_seconds": 13.204776999991736,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p6_n0.json",
+      "sha256": "109bb427b9c349f56d2d7ac8dbb2c4c844a6adf98826fb2e1e00963aaeb7ef6d",
+      "paid_components": 6,
+      "normalizers": 0,
+      "total_components": 6,
+      "variables": 2655,
+      "clauses": 20372,
+      "solve_seconds": 2.1004040999978315,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p6_n1.json",
+      "sha256": "1c5ac61cb3ca0245108c30758eb88940a84abfb31028ff83e7d64b5ce9f31f9f",
+      "paid_components": 6,
+      "normalizers": 1,
+      "total_components": 7,
+      "variables": 3391,
+      "clauses": 27111,
+      "solve_seconds": 8.441767399999662,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p6_n2.json",
+      "sha256": "06ef3bf012f42da7f10e2e36d587d2f98ef1eb1e9641be6a0de989188aff7982",
+      "paid_components": 6,
+      "normalizers": 2,
+      "total_components": 8,
+      "variables": 4231,
+      "clauses": 35001,
+      "solve_seconds": 23.495421999992686,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p6_n3.json",
+      "sha256": "250e407a625b5de28e04a0a52ce39db6e0ecc7fb6358cf56678ed91d3c5349a7",
+      "paid_components": 6,
+      "normalizers": 3,
+      "total_components": 9,
+      "variables": 5161,
+      "clauses": 44084,
+      "solve_seconds": 46.61699419999786,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p6_n4.json",
+      "sha256": "21fa801c75b1cf26c92127fd4dc3a911cdd93512feffd9380ce6eeb947080c69",
+      "paid_components": 6,
+      "normalizers": 4,
+      "total_components": 10,
+      "variables": 6191,
+      "clauses": 54432,
+      "solve_seconds": 96.79406709999603,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p7_n0.json",
+      "sha256": "c84a870db9fe15b7041ddb555ff6feb0643f5eec346d88be303ed7f6640e7a1d",
+      "paid_components": 7,
+      "normalizers": 0,
+      "total_components": 7,
+      "variables": 3385,
+      "clauses": 27100,
+      "solve_seconds": 4.542802299998584,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p7_n1.json",
+      "sha256": "4d3e7cc5cdb8f83a888fa4a8551fd17bf77d2409f8df0f7c110541af98645046",
+      "paid_components": 7,
+      "normalizers": 1,
+      "total_components": 8,
+      "variables": 4214,
+      "clauses": 34974,
+      "solve_seconds": 15.05393660000118,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p7_n2.json",
+      "sha256": "bdda1fcf87909cb1887243ba164010d5be169a009d388a7f107fa0cd18e9dc86",
+      "paid_components": 7,
+      "normalizers": 2,
+      "total_components": 9,
+      "variables": 5153,
+      "clauses": 44068,
+      "solve_seconds": 19.224497799994424,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p7_n3.json",
+      "sha256": "23be21164f17836f95d2b9dfb8de81a4eca0b36ba3cb30bb0f5465dabf76e8fa",
+      "paid_components": 7,
+      "normalizers": 3,
+      "total_components": 10,
+      "variables": 6185,
+      "clauses": 54420,
+      "solve_seconds": 23.696651499994914,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p7_n4.json",
+      "sha256": "fa0a58dc8b26181fa252acf08aca1fc4b91d9ec8ba3c9669ef3bb63781a7dd4f",
+      "paid_components": 7,
+      "normalizers": 4,
+      "total_components": 11,
+      "variables": 7321,
+      "clauses": 66103,
+      "solve_seconds": 28.68095209999592,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p8_n0.json",
+      "sha256": "e8f131b60c16fa0825ec2d2053d9061ccde45614a1d4b79b84a0f8d4da4160dc",
+      "paid_components": 8,
+      "normalizers": 0,
+      "total_components": 8,
+      "variables": 4207,
+      "clauses": 34961,
+      "solve_seconds": 1.1797148999903584,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p8_n1.json",
+      "sha256": "db8171f6f0fcc615f8c535487eb6640238486cc5ecfdc7e6a51de0ba45235cec",
+      "paid_components": 8,
+      "normalizers": 1,
+      "total_components": 9,
+      "variables": 5133,
+      "clauses": 44036,
+      "solve_seconds": 4.725535999998101,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p8_n2.json",
+      "sha256": "e359f7ef4e8ad907eaaa0d194669b8a551f4f4b6ae720aed7dd982b46dd4f1e6",
+      "paid_components": 8,
+      "normalizers": 2,
+      "total_components": 10,
+      "variables": 6175,
+      "clauses": 54400,
+      "solve_seconds": 4.624750500006485,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p8_n3.json",
+      "sha256": "026d3c4660f33e7e93f388aa54676e071f53e0b99f6b7817ed04abec957a1e21",
+      "paid_components": 8,
+      "normalizers": 3,
+      "total_components": 11,
+      "variables": 7313,
+      "clauses": 66087,
+      "solve_seconds": 14.863066799996886,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p8_n4.json",
+      "sha256": "3565833ffb1c9cc7330f5a232d9c1e5e89b36aa79870fe0205f8deb886e26fb4",
+      "paid_components": 8,
+      "normalizers": 4,
+      "total_components": 12,
+      "variables": 8559,
+      "clauses": 79171,
+      "solve_seconds": 21.501585399993928,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p9_n0.json",
+      "sha256": "ad75a23fb815d47ef0824a6c81a826c3ad825e2ee8d4227c75150b9d65cfd151",
+      "paid_components": 9,
+      "normalizers": 0,
+      "total_components": 9,
+      "variables": 5125,
+      "clauses": 44021,
+      "solve_seconds": 1.1895051000028616,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p9_n1.json",
+      "sha256": "29cd897f0c1930c8d71ef76cb433d8a506380c509ac897cb3828ab613971872c",
+      "paid_components": 9,
+      "normalizers": 1,
+      "total_components": 10,
+      "variables": 6152,
+      "clauses": 54363,
+      "solve_seconds": 0.14562740000837948,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p9_n2.json",
+      "sha256": "f334252165b4599d58df2499e8befd14f7ca4295decdf6c59b206d388c2b96b3",
+      "paid_components": 9,
+      "normalizers": 2,
+      "total_components": 11,
+      "variables": 7301,
+      "clauses": 66063,
+      "solve_seconds": 0.17012399999657646,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p9_n3.json",
+      "sha256": "2b98fc49af6280c1bf6a72f091ee1f80a90224e84f81fd78f8e3ced81609f317",
+      "paid_components": 9,
+      "normalizers": 3,
+      "total_components": 12,
+      "variables": 8549,
+      "clauses": 79151,
+      "solve_seconds": 0.2217372000013711,
+      "status": "unsat"
+    },
+    {
+      "artifact": "bit0_sum4_maj2_g9_p9_n4.json",
+      "sha256": "050ee2d6f54c6142677acad0d6779d4e8f444567cb31fbffe262001820c3bc61",
+      "paid_components": 9,
+      "normalizers": 4,
+      "total_components": 13,
+      "variables": 9909,
+      "clauses": 93702,
+      "solve_seconds": 0.2157792999933008,
+      "status": "unsat"
+    }
+  ],
+  "auditor": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\audit_bit0_sum4_maj2_g9_physical_closure.py",
+    "sha256": "d46565c3b48367c562f83f0938a3b8a28354f22ae88e0d2c09d5b792128d6947"
+  }
+}

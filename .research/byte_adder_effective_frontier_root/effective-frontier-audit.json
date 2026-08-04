@@ -1,0 +1,924 @@
+{
+  "schema": "tc-byte-adder-effective-component-frontier-audit-v1",
+  "status": "pass",
+  "scope": {
+    "game_launched": false,
+    "save_modified": false,
+    "levels_read_only": true,
+    "allowed_component_kind_count": 23
+  },
+  "dependencies": {
+    "component_catalog": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\component-catalog-v1.json",
+      "sha256": "2f193e52e0fb554c72cdc97310409f691ff8e32ecb2b405b6e3efe49a94d1347"
+    },
+    "levels": {
+      "path": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\levels.txt",
+      "sha256": "178f80adf2acc08027c07044e6ea8428d7955b65b30e054e0ac56918245a7303"
+    }
+  },
+  "summary": {
+    "component_kind_count": 23,
+    "registered_kind_count": 8,
+    "default_kind_count": 15,
+    "catalog_mismatch_count": 0,
+    "all_native_hidden_wireable_outputs_false": true
+  },
+  "components": [
+    {
+      "kind": 1,
+      "symbol_name": "com_off",
+      "display_name": "OFF",
+      "semantic_role": "constant_active_zero",
+      "unlock_levels": [
+        "always_on"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 2,
+      "symbol_name": "com_on",
+      "display_name": "ON",
+      "semantic_role": "constant_active_one",
+      "unlock_levels": [
+        "always_on"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 3,
+      "symbol_name": "com_not_bit",
+      "display_name": "NOT",
+      "semantic_role": "bit_not",
+      "unlock_levels": [
+        "not_gate"
+      ],
+      "registered_sources": [
+        "not_gate"
+      ],
+      "default": {
+        "gate": 1,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 1
+      },
+      "registered_rows": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 4,
+      "symbol_name": "com_and_bit",
+      "display_name": "AND",
+      "semantic_role": "bit_and2",
+      "unlock_levels": [
+        "and_gate"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 1,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 1
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 5,
+      "symbol_name": "com_and_3_bit",
+      "display_name": "3 Pin AND",
+      "semantic_role": "bit_and3",
+      "unlock_levels": [
+        "and_gate_3"
+      ],
+      "registered_sources": [
+        "and_gate_3"
+      ],
+      "default": {
+        "gate": 2,
+        "delay": 2,
+        "sample_count": 1,
+        "energy": 4
+      },
+      "registered_rows": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "strictly dominated"
+    },
+    {
+      "kind": 6,
+      "symbol_name": "com_nand_bit",
+      "display_name": "NAND",
+      "semantic_role": "bit_nand2",
+      "unlock_levels": [
+        "nand_gate"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 1,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 1
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 7,
+      "symbol_name": "com_or_bit",
+      "display_name": "OR",
+      "semantic_role": "bit_or2",
+      "unlock_levels": [
+        "or_gate"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 1,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 1
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 8,
+      "symbol_name": "com_or_3_bit",
+      "display_name": "3 Pin OR",
+      "semantic_role": "bit_or3",
+      "unlock_levels": [
+        "or_gate_3"
+      ],
+      "registered_sources": [
+        "or_gate_3"
+      ],
+      "default": {
+        "gate": 2,
+        "delay": 2,
+        "sample_count": 1,
+        "energy": 4
+      },
+      "registered_rows": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "strictly dominated"
+    },
+    {
+      "kind": 9,
+      "symbol_name": "com_nor_bit",
+      "display_name": "NOR",
+      "semantic_role": "bit_nor2",
+      "unlock_levels": [
+        "nor_gate"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 1,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 1
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 1,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 1
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 10,
+      "symbol_name": "com_xor_bit",
+      "display_name": "XOR",
+      "semantic_role": "bit_xor2",
+      "unlock_levels": [
+        "xor_gate"
+      ],
+      "registered_sources": [
+        "xor_gate"
+      ],
+      "default": {
+        "gate": 4,
+        "delay": 3,
+        "sample_count": 1,
+        "energy": 12
+      },
+      "registered_rows": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 3,
+          "delay": 2,
+          "sample_count": 1,
+          "energy": 6
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "score-equal but byproduct-superior"
+    },
+    {
+      "kind": 11,
+      "symbol_name": "com_xnor_bit",
+      "display_name": "XNOR",
+      "semantic_role": "bit_xnor2",
+      "unlock_levels": [
+        "xnor"
+      ],
+      "registered_sources": [
+        "xnor"
+      ],
+      "default": {
+        "gate": 4,
+        "delay": 3,
+        "sample_count": 1,
+        "energy": 12
+      },
+      "registered_rows": [
+        {
+          "gate": 5,
+          "delay": 4,
+          "sample_count": 1,
+          "energy": 20
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 5,
+          "delay": 4,
+          "sample_count": 1,
+          "energy": 20
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "strictly dominated"
+    },
+    {
+      "kind": 12,
+      "symbol_name": "com_switch_bit",
+      "display_name": "Switch",
+      "semantic_role": "bit_tristate_switch",
+      "unlock_levels": [
+        "bit_switch"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 2,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 2
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 2,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 2
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "Boolean-projection dominated only"
+    },
+    {
+      "kind": 13,
+      "symbol_name": "com_delay_line_bit",
+      "display_name": "Delay Line",
+      "semantic_role": "one_tick_bit_delay",
+      "unlock_levels": [
+        "double_buffer"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 5,
+        "delay": 4,
+        "sample_count": 1,
+        "energy": 20
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 5,
+          "delay": 4,
+          "sample_count": 1,
+          "energy": 20
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 15,
+      "symbol_name": "com_full_adder",
+      "display_name": "Full Adder",
+      "semantic_role": "bit_full_adder",
+      "unlock_levels": [
+        "full_adder"
+      ],
+      "registered_sources": [
+        "full_adder"
+      ],
+      "default": {
+        "gate": 8,
+        "delay": 4,
+        "sample_count": 1,
+        "energy": 32
+      },
+      "registered_rows": [
+        {
+          "gate": 16,
+          "delay": 8,
+          "sample_count": 1,
+          "energy": 128
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 16,
+          "delay": 8,
+          "sample_count": 1,
+          "energy": 128
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": true,
+      "dominance": "strictly dominated"
+    },
+    {
+      "kind": 16,
+      "symbol_name": "com_splitter_bit_8",
+      "display_name": "Maker",
+      "semantic_role": "maker_word_8",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 17,
+      "symbol_name": "com_maker_bit_8",
+      "display_name": "Splitter",
+      "semantic_role": "splitter_word_8",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 18,
+      "symbol_name": "com_not_word",
+      "display_name": "NOT",
+      "semantic_role": "word_not_lane_parallel",
+      "unlock_levels": [
+        "byte_not"
+      ],
+      "registered_sources": [
+        "byte_not"
+      ],
+      "default": {
+        "gate": 8,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 8
+      },
+      "registered_rows": [
+        {
+          "gate": 8,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 8
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 8,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 8
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "score-neutral lane expansion"
+    },
+    {
+      "kind": 21,
+      "symbol_name": "com_nand_word",
+      "display_name": "NAND",
+      "semantic_role": "word_nand_lane_parallel",
+      "unlock_levels": [
+        "byte_nand"
+      ],
+      "registered_sources": [
+        "byte_nand"
+      ],
+      "default": {
+        "gate": 8,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 8
+      },
+      "registered_rows": [
+        {
+          "gate": 8,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 8
+        }
+      ],
+      "effective_frontier": [
+        {
+          "gate": 8,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 8
+        }
+      ],
+      "effective_source": "registered_save_rows",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "score-neutral lane expansion"
+    },
+    {
+      "kind": 25,
+      "symbol_name": "com_switch_word",
+      "display_name": "Switch",
+      "semantic_role": "word_tristate_switch_shared_enable",
+      "unlock_levels": [
+        "bit_switch"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 16,
+        "delay": 1,
+        "sample_count": 1,
+        "energy": 16
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 16,
+          "delay": 1,
+          "sample_count": 1,
+          "energy": 16
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "score-neutral physical lane expansion"
+    },
+    {
+      "kind": 109,
+      "symbol_name": "com_splitter_bit_2",
+      "display_name": "Splitter",
+      "semantic_role": "splitter_word_2",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 110,
+      "symbol_name": "com_splitter_bit_4",
+      "display_name": "Splitter",
+      "semantic_role": "splitter_word_4",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 111,
+      "symbol_name": "com_maker_bit_2",
+      "display_name": "Maker",
+      "semantic_role": "maker_word_2",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    },
+    {
+      "kind": 112,
+      "symbol_name": "com_maker_bit_4",
+      "display_name": "Maker",
+      "semantic_role": "maker_word_4",
+      "unlock_levels": [
+        "double_number"
+      ],
+      "registered_sources": [],
+      "default": {
+        "gate": 0,
+        "delay": 0,
+        "sample_count": 1,
+        "energy": 0
+      },
+      "registered_rows": [],
+      "effective_frontier": [
+        {
+          "gate": 0,
+          "delay": 0,
+          "sample_count": 1,
+          "energy": 0
+        }
+      ],
+      "effective_source": "exe_default",
+      "catalog_checks": {
+        "registered_rows_match_catalog_import": true,
+        "effective_rows_match_catalog": true
+      },
+      "native_hidden_wireable_outputs_found": false,
+      "flat_expansion_available": false,
+      "dominance": "not dominated by a smaller required catalog expansion"
+    }
+  ],
+  "catalog_mismatches": [],
+  "full_adder_research_frontier": {
+    "currently_registered": [
+      {
+        "gate": 16,
+        "delay": 8,
+        "energy": 128
+      }
+    ],
+    "unregistered_physical_witnesses": [
+      {
+        "gate": 7,
+        "delay": 4,
+        "energy": 28,
+        "status": "formal_candidate_present_but_not_registered",
+        "candidate_sha256": "9f83306a02ed064f7eb834b874daf786202651e73beb8d0f7ce3050f221572b2",
+        "physical_use": "explicit seven-gate expansion exposes internal byproducts"
+      },
+      {
+        "gate": 10,
+        "delay": 3,
+        "energy": 30,
+        "status": "materialized_research_candidate_but_not_registered",
+        "candidate_sha256": "18b8e25952d00499f093bdad61f70a5374205bf2d71074e70881d899f04ea4a5",
+        "physical_use": "six ordinary gates plus two Switches; late designated input has two-level arcs"
+      },
+      {
+        "gate": 17,
+        "delay": 2,
+        "energy": 34,
+        "status": "strict_physical_witness_not_yet_materialized_as_level_candidate",
+        "witness_sha256": "c9cfc91124202330d00175289022177ebde56280897034c020823d707ed4698d",
+        "physical_use": "five ordinary gates, six Switches and two zero-cost normalizers"
+      }
+    ],
+    "frontier_after_genuine_registration": [
+      {
+        "gate": 7,
+        "delay": 4,
+        "sample_count": 1,
+        "energy": 28
+      },
+      {
+        "gate": 10,
+        "delay": 3,
+        "sample_count": 1,
+        "energy": 30
+      },
+      {
+        "gate": 17,
+        "delay": 2,
+        "sample_count": 1,
+        "energy": 34
+      }
+    ],
+    "atomic_selection_rule": "one component instance selects one registered gate/delay row; rows cannot be mixed into a fictitious 7/3 component"
+  },
+  "decisions": {
+    "do_not_price_full_adder_as_7_4_or_10_3_native_yet": true,
+    "explicit_inline_witnesses_remain_usable": true,
+    "registered_rows_replace_exe_defaults": true,
+    "research_witness_is_not_server_registration": true
+  },
+  "artifact_sha256": "83d48ab849f406ab5bb7c594292867189c1a3eb979e147ee6c1ecd14057b6443"
+}

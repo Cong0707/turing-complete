@@ -1,0 +1,86 @@
+{
+  "schema": "tc-arbitrary-truth-tuple-exact-physical-v1",
+  "status": "unsat",
+  "target": "truth-tuple",
+  "input_count": 3,
+  "input_ports": [
+    "Input 0",
+    "Input 1",
+    "Input 2"
+  ],
+  "output_ports": [
+    "Sum",
+    "Carry"
+  ],
+  "target_truth_tables_hex": [
+    "96",
+    "e8"
+  ],
+  "output_max_delays": [
+    4,
+    2
+  ],
+  "gate_bound": 9,
+  "max_delay": 4,
+  "components": 5,
+  "exact_normalizers": 3,
+  "exact_switches": null,
+  "exact_xors": null,
+  "allow_z_false": false,
+  "physical_nets": true,
+  "solver": "cadical195",
+  "timeout_seconds": 1800.0,
+  "conflict_budget": null,
+  "variables": 2025,
+  "clauses": 14730,
+  "solve_seconds": 0.03888970000843983,
+  "library": {
+    "NOT": {
+      "gate": 1,
+      "delay": 1
+    },
+    "AND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "OR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NAND": {
+      "gate": 1,
+      "delay": 1
+    },
+    "NOR": {
+      "gate": 1,
+      "delay": 1
+    },
+    "XOR": {
+      "gate": 3,
+      "delay": 2
+    },
+    "SWITCH": {
+      "gate": 2,
+      "delay": 1
+    },
+    "NORMALIZE": {
+      "gate": 0,
+      "delay": 0
+    }
+  },
+  "semantics": {
+    "switch": "value=enable&data; driven=enable; disabled output is Z",
+    "ordinary_gate_reads_z_as_zero": true,
+    "normalizer": "Maker/Splitter physical owner: Z is read as numeric 0 and emitted driven at gate/delay 0/0",
+    "normalizer_complete_normal_form": "normalizer inputs contain only Switch output pins",
+    "multi_driver_conflict_forbidden": true,
+    "physical_driver_sets_form_wire_net_partitions": true,
+    "primary_output_policy": "fully driven on every row",
+    "free_sources": "real raw input ports plus constants 0 and 1; complements are not free"
+  },
+  "dependencies": {
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_component_byproduct_catalog\\exact_pretarget_physical.py": "b7b8dc7471fef399b919fc0eae2aa0df07dbcdbefa7942c3fba3d9ef0bef1e0c",
+    "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_pair_cross_restart\\exact_truth_tuple_physical.py": "9c48d6d82fbc37ebcad3c862f1a30b6a87bfdf085014af6f4fb7623b941caf7a"
+  },
+  "case_sha256": "cc8c324a7f96d53db28a557ea140021a477b829e8b09948db810f43191d11def"
+}
