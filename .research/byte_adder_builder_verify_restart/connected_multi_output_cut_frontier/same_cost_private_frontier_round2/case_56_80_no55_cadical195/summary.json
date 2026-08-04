@@ -1,0 +1,151 @@
+{
+  "schema": "byte-adder-80d7-ranked-private-frontier-sweep-v1",
+  "ranking": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/same_cost_private_frontier_ranking.json",
+  "ranking_sha256": "deb480ffc26874f60a3e60009d9407f07f1e49acea41a19e4856f3b96303fdec",
+  "worker": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/exact_ranked_private_frontier_sat.py",
+  "worker_sha256": "0659493d1108a4c732619d86bcfbd50e4a63253f928462b706fc7b9da1d0d46c",
+  "runner_sha256": "3924e7847989f031133a8cbd6e7fd6791e4668bf0bde5eda38a27a666d315681",
+  "case_key": "56-80__no_55",
+  "cut_node_ids": [
+    56,
+    80
+  ],
+  "source_profile": "no_private",
+  "private_frontier_id": 55,
+  "solver": "cadical195",
+  "timeout_seconds_per_case": 300.0,
+  "gate_bound": 5,
+  "projected_complete_gate": 76,
+  "execution_order": "increasing components, then xors, switches, ordinary",
+  "expected_decompositions": [
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0
+    },
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0
+    }
+  ],
+  "expected_case_count": 5,
+  "executed_case_count": 5,
+  "complete_without_sat": true,
+  "stopped_on_sat": false,
+  "status_counts": {
+    "unsat": 5
+  },
+  "results": [
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n2_s1_x1_cadical195.json",
+      "result_sha256": "8404891c34a6e30e0dfbf003efb8c1e639dc562d21139f5882dbf46274046328",
+      "variables": 4678,
+      "clauses": 47690,
+      "build_seconds": 0.050956972991116345,
+      "solve_seconds": 0.01542926102411002,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n2_s1_x1_cadical195.json\",\n  \"output_sha256\": \"8404891c34a6e30e0dfbf003efb8c1e639dc562d21139f5882dbf46274046328\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    0,\n    1,\n    1\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 4678,\n  \"clauses\": 47690,\n  \"build_seconds\": 0.050956972991116345,\n  \"solve_seconds\": 0.01542926102411002\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s2_x0_cadical195.json",
+      "result_sha256": "c739183f6b983b2af16e30fa6db0bf7e8fd3c1854fe64e4f05b3ca8b54cb036a",
+      "variables": 7542,
+      "clauses": 73335,
+      "build_seconds": 0.06841183896176517,
+      "solve_seconds": 0.05669406498782337,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s2_x0_cadical195.json\",\n  \"output_sha256\": \"c739183f6b983b2af16e30fa6db0bf7e8fd3c1854fe64e4f05b3ca8b54cb036a\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    1,\n    2,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 7542,\n  \"clauses\": 73335,\n  \"build_seconds\": 0.06841183896176517,\n  \"solve_seconds\": 0.05669406498782337\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s0_x1_cadical195.json",
+      "result_sha256": "bc1cc4bab1eb665af61799ae6f4ee8445a3d0fa88ed0f80c9cdff137bfb8ddbc",
+      "variables": 7542,
+      "clauses": 73335,
+      "build_seconds": 0.06842138699721545,
+      "solve_seconds": 0.05278110603103414,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s0_x1_cadical195.json\",\n  \"output_sha256\": \"bc1cc4bab1eb665af61799ae6f4ee8445a3d0fa88ed0f80c9cdff137bfb8ddbc\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    2,\n    0,\n    1\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 7542,\n  \"clauses\": 73335,\n  \"build_seconds\": 0.06842138699721545,\n  \"solve_seconds\": 0.05278110603103414\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n4_s1_x0_cadical195.json",
+      "result_sha256": "1801e6393c5079b929a9900d4953ca257acc2b4b3f276b5fc5375cf7b969bc4b",
+      "variables": 11029,
+      "clauses": 103100,
+      "build_seconds": 0.0861006379709579,
+      "solve_seconds": 0.4206428130273707,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n4_s1_x0_cadical195.json\",\n  \"output_sha256\": \"1801e6393c5079b929a9900d4953ca257acc2b4b3f276b5fc5375cf7b969bc4b\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    3,\n    1,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 11029,\n  \"clauses\": 103100,\n  \"build_seconds\": 0.0861006379709579,\n  \"solve_seconds\": 0.4206428130273707\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n5_s0_x0_cadical195.json",
+      "result_sha256": "a5188667ba34e63153bc21dee267f7e021ab7fb0d4cfe12c2a8d56ffa327ba7b",
+      "variables": 15140,
+      "clauses": 137041,
+      "build_seconds": 0.10692156699951738,
+      "solve_seconds": 1.0456697120098397,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n5_s0_x0_cadical195.json\",\n  \"output_sha256\": \"a5188667ba34e63153bc21dee267f7e021ab7fb0d4cfe12c2a8d56ffa327ba7b\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    5,\n    0,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 15140,\n  \"clauses\": 137041,\n  \"build_seconds\": 0.10692156699951738,\n  \"solve_seconds\": 1.0456697120098397\n}\n",
+      "stderr": ""
+    }
+  ]
+}

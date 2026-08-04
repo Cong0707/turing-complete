@@ -1,0 +1,146 @@
+{
+  "schema": "byte-adder-80d7-ranked-private-frontier-case-audit-v1",
+  "audit_pass": true,
+  "case_key": "56-80__no_55",
+  "ranking": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/same_cost_private_frontier_ranking.json",
+  "ranking_sha256": "deb480ffc26874f60a3e60009d9407f07f1e49acea41a19e4856f3b96303fdec",
+  "catalogue_sha256": "1ee126ea63150ef4428db4f7b384c597ba4a82452f8ebcda60544aaed10e40d7",
+  "dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+  "materializer_sha256": "cc15810d423706a65f7d55a90b5cfe02c8966b84c9447da4172a35158524a3cf",
+  "auditor_sha256": "6b2065713e2d90905418097c4e0a458a7676a2c4466dc9b2765e51e817d70627",
+  "cut_node_ids": [
+    56,
+    80
+  ],
+  "cut_connected": true,
+  "cut_convex": true,
+  "cut_liveness_complete": true,
+  "current_cut_gate": 5,
+  "current_decomposition": {
+    "ordinary": 1,
+    "components": 3,
+    "switches": 2,
+    "xors": 0,
+    "weighted_gate": 5
+  },
+  "target_ids": [
+    56,
+    80
+  ],
+  "target_names": [
+    "C3",
+    "n80"
+  ],
+  "target_deadlines": [
+    3,
+    6
+  ],
+  "target_may_z": [
+    true,
+    false
+  ],
+  "retained_frontier_ids": [
+    45,
+    54,
+    55,
+    79
+  ],
+  "private_frontier_id": 55,
+  "private_frontier_consumers": [
+    56
+  ],
+  "guaranteed_prune_ids": [
+    55
+  ],
+  "guaranteed_prune_cost": 4,
+  "expanded_source_ids": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    18,
+    22,
+    23,
+    24,
+    25,
+    43,
+    44,
+    45,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    79
+  ],
+  "expanded_source_count": 21,
+  "expanded_compressed_truth_rows": 128,
+  "no_private_source_ids": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    18,
+    22,
+    23,
+    24,
+    25,
+    43,
+    44,
+    45,
+    50,
+    51,
+    52,
+    53,
+    54,
+    79
+  ],
+  "no_private_source_count": 20,
+  "no_private_compressed_truth_rows": 128,
+  "targets_functional_in_both_shells": true,
+  "private_descendant_absent_from_no_private_shell": true,
+  "replacement_exact_bound": 5,
+  "fixed_shell_after_guaranteed_prune": 71,
+  "projected_complete_gate": 76,
+  "projected_complete_delay": 7,
+  "projected_complete_energy": 532,
+  "exact_compositions": [
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1
+    },
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1
+    }
+  ],
+  "exact_composition_count": 5,
+  "conclusion": "source-shell, liveness, and same-cost private-prune accounting are complete; exact SAT status remains to be solved"
+}

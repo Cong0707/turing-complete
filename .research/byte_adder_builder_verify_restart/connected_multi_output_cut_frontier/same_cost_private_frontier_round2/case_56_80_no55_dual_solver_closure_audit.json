@@ -1,0 +1,347 @@
+{
+  "schema": "byte-adder-80d7-ranked-private-frontier-dual-solver-closure-audit-v1",
+  "audit_pass": true,
+  "case_key": "56-80__no_55",
+  "scope": "only the recorded no-private source shell at exact weighted cost 5",
+  "authority": {
+    "ranking": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/same_cost_private_frontier_ranking.json",
+    "ranking_sha256": "deb480ffc26874f60a3e60009d9407f07f1e49acea41a19e4856f3b96303fdec",
+    "dag": ".research/byte_adder_root/byte-adder-hybrid-phasefold-g80-d7.json",
+    "dag_sha256": "71625de2b86ea03127415802dbc68f605ac16d69da6d9e8b3ade35db317ec884",
+    "factory_dag_sha256": "90cd25fbbc68736078b4373bd2721cb5c86923b34d284c2283b589bbf8cb09b5",
+    "structural_sha256": "ba31029a5b3fa05c180a1f6ce23d90140dbaed75b4dd22bd19b7090ed3e1d15f",
+    "source_shell_audit": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_source_shell_audit.json",
+    "source_shell_audit_sha256": "022ea1cfa0a16443773d2a2ccb79e9e87561de1c0d946e9a0d3725ca4e10e00f",
+    "worker_sha256": "0659493d1108a4c732619d86bcfbd50e4a63253f928462b706fc7b9da1d0d46c",
+    "runner_sha256": "3924e7847989f031133a8cbd6e7fd6791e4668bf0bde5eda38a27a666d315681",
+    "auditor_sha256": "f5734749e700822f444c1ff405f3cf93c745c8b42325b22d6e90de168da46753"
+  },
+  "independent_full_replay": {
+    "rows": 131072,
+    "output_mismatch_count": 0,
+    "conflict_assignment_count": 0,
+    "illegal_z_output_count": 0,
+    "all_nodes_live": true,
+    "gate": 80,
+    "delay": 7,
+    "energy": 560,
+    "output_arrivals": [
+      4,
+      4,
+      7,
+      5,
+      7,
+      6,
+      7,
+      7,
+      7
+    ]
+  },
+  "source_shell": {
+    "cut_node_ids": [
+      56,
+      80
+    ],
+    "target_ids": [
+      56,
+      80
+    ],
+    "retained_frontier_ids": [
+      45,
+      54,
+      55,
+      79
+    ],
+    "expanded_source_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      18,
+      22,
+      23,
+      24,
+      25,
+      43,
+      44,
+      45,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      79
+    ],
+    "no_private_source_ids": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      18,
+      22,
+      23,
+      24,
+      25,
+      43,
+      44,
+      45,
+      50,
+      51,
+      52,
+      53,
+      54,
+      79
+    ],
+    "removed_exactly": [
+      55
+    ],
+    "private_frontier_consumers": [
+      56
+    ],
+    "compressed_truth_rows": 128,
+    "targets_bits_driven_conflict_functional": true
+  },
+  "accounting": {
+    "current_complete_gate": 80,
+    "current_cut_gate": 5,
+    "guaranteed_private_prune_gate": 4,
+    "fixed_shell_after_prune": 71,
+    "replacement_bound": 5,
+    "projected_complete_gate": 76,
+    "projected_complete_delay": 7,
+    "projected_complete_energy": 532
+  },
+  "positive_regression": {
+    "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_expanded_g5_positive.json",
+    "sha256": "531f448a77178d9fc0b33b7f410837907f1e7c13637247c87781b52436f9d76a",
+    "status": "sat",
+    "composition": {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0
+    },
+    "full_truth_rows": 131072,
+    "full_replay_clean": true
+  },
+  "solvers": {
+    "cadical195": {
+      "summary": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/summary.json",
+      "summary_sha256": "40045f1d9824cea116c59fae09de57fe2c2945e79a066bc3fe6efc57e4dc0ed7",
+      "launch_stdout_sha256": "2049b11d2370413e80bdc694eb7531d660cf420de9c0a5712c86cd6218810b02",
+      "launch_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_case_count": 5,
+      "executed_case_count": 5,
+      "status_counts": {
+        "unsat": 5
+      },
+      "complete_without_sat": true,
+      "results": [
+        {
+          "ordinary": 0,
+          "components": 2,
+          "switches": 1,
+          "xors": 1,
+          "variables": 4678,
+          "clauses": 47690,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n2_s1_x1_cadical195.json",
+          "sha256": "8404891c34a6e30e0dfbf003efb8c1e639dc562d21139f5882dbf46274046328"
+        },
+        {
+          "ordinary": 1,
+          "components": 3,
+          "switches": 2,
+          "xors": 0,
+          "variables": 7542,
+          "clauses": 73335,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s2_x0_cadical195.json",
+          "sha256": "c739183f6b983b2af16e30fa6db0bf7e8fd3c1854fe64e4f05b3ca8b54cb036a"
+        },
+        {
+          "ordinary": 2,
+          "components": 3,
+          "switches": 0,
+          "xors": 1,
+          "variables": 7542,
+          "clauses": 73335,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n3_s0_x1_cadical195.json",
+          "sha256": "bc1cc4bab1eb665af61799ae6f4ee8445a3d0fa88ed0f80c9cdff137bfb8ddbc"
+        },
+        {
+          "ordinary": 3,
+          "components": 4,
+          "switches": 1,
+          "xors": 0,
+          "variables": 11029,
+          "clauses": 103100,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n4_s1_x0_cadical195.json",
+          "sha256": "1801e6393c5079b929a9900d4953ca257acc2b4b3f276b5fc5375cf7b969bc4b"
+        },
+        {
+          "ordinary": 5,
+          "components": 5,
+          "switches": 0,
+          "xors": 0,
+          "variables": 15140,
+          "clauses": 137041,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_cadical195/results/56_80__no_55_no_private_g5_n5_s0_x0_cadical195.json",
+          "sha256": "a5188667ba34e63153bc21dee267f7e021ab7fb0d4cfe12c2a8d56ffa327ba7b"
+        }
+      ]
+    },
+    "glucose42": {
+      "summary": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/summary.json",
+      "summary_sha256": "9aaf570949278e4c392f9ddf0f0eea7fd906a6799a2e755a25ea64dd15658800",
+      "launch_stdout_sha256": "2fcd8707ad20129db4a628709a2b54b277f746e77a9b6149f554c7740efc451f",
+      "launch_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_case_count": 5,
+      "executed_case_count": 5,
+      "status_counts": {
+        "unsat": 5
+      },
+      "complete_without_sat": true,
+      "results": [
+        {
+          "ordinary": 0,
+          "components": 2,
+          "switches": 1,
+          "xors": 1,
+          "variables": 4678,
+          "clauses": 47690,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n2_s1_x1_glucose42.json",
+          "sha256": "0aa1ab84cb9aad0ed0552c5a4c9db66c74cc20639daa54ff0cd15b9a8e5d2dd2"
+        },
+        {
+          "ordinary": 1,
+          "components": 3,
+          "switches": 2,
+          "xors": 0,
+          "variables": 7542,
+          "clauses": 73335,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s2_x0_glucose42.json",
+          "sha256": "3ed57a6e1b2e47d552f494c0b0a2b230d357daaed466d77a2f3e96a8b409a4d0"
+        },
+        {
+          "ordinary": 2,
+          "components": 3,
+          "switches": 0,
+          "xors": 1,
+          "variables": 7542,
+          "clauses": 73335,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s0_x1_glucose42.json",
+          "sha256": "e3d0bc2f2fd6d9eac2c5409ce76a2df289e2b52c645ce84ec0a200d7befccfc0"
+        },
+        {
+          "ordinary": 3,
+          "components": 4,
+          "switches": 1,
+          "xors": 0,
+          "variables": 11029,
+          "clauses": 103100,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n4_s1_x0_glucose42.json",
+          "sha256": "c775ff8bd38c870fa45619600c3ee2654eadbb161f8d5ffa6572435a6363968b"
+        },
+        {
+          "ordinary": 5,
+          "components": 5,
+          "switches": 0,
+          "xors": 0,
+          "variables": 15140,
+          "clauses": 137041,
+          "status": "unsat",
+          "path": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n5_s0_x0_glucose42.json",
+          "sha256": "9597dc58b84f9a372559d72d3ad5f0abd559a42630d9ef6fc4a567b5412b59fb"
+        }
+      ]
+    }
+  },
+  "paired_cnf_counts": [
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1,
+      "variables": 4678,
+      "clauses": 47690,
+      "cadical195_status": "unsat",
+      "glucose42_status": "unsat",
+      "variables_clauses_identical": true
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0,
+      "variables": 7542,
+      "clauses": 73335,
+      "cadical195_status": "unsat",
+      "glucose42_status": "unsat",
+      "variables_clauses_identical": true
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1,
+      "variables": 7542,
+      "clauses": 73335,
+      "cadical195_status": "unsat",
+      "glucose42_status": "unsat",
+      "variables_clauses_identical": true
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0,
+      "variables": 11029,
+      "clauses": 103100,
+      "cadical195_status": "unsat",
+      "glucose42_status": "unsat",
+      "variables_clauses_identical": true
+    },
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0,
+      "variables": 15140,
+      "clauses": 137041,
+      "cadical195_status": "unsat",
+      "glucose42_status": "unsat",
+      "variables_clauses_identical": true
+    }
+  ],
+  "coverage": {
+    "expected_compositions": 5,
+    "results_per_solver": 5,
+    "total_results": 10,
+    "status_counts": {
+      "unsat": 10
+    },
+    "timeout_count": 0,
+    "unknown_count": 0,
+    "paired_variables_clauses_identical": true,
+    "complete": true
+  },
+  "conclusion": "exact weighted cost 5 is dual-solver UNSAT for this no-private source shell only",
+  "non_claims": [
+    "not a lower bound for another source shell",
+    "not a lower bound for another connected cut",
+    "not a lower bound outside the recorded primitive, liveness, physical-net, timing, and Z/conflict contract"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "schema": "byte-adder-80d7-ranked-private-frontier-sweep-v1",
+  "ranking": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/same_cost_private_frontier_ranking.json",
+  "ranking_sha256": "deb480ffc26874f60a3e60009d9407f07f1e49acea41a19e4856f3b96303fdec",
+  "worker": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/exact_ranked_private_frontier_sat.py",
+  "worker_sha256": "0659493d1108a4c732619d86bcfbd50e4a63253f928462b706fc7b9da1d0d46c",
+  "runner_sha256": "3924e7847989f031133a8cbd6e7fd6791e4668bf0bde5eda38a27a666d315681",
+  "case_key": "56-80__no_55",
+  "cut_node_ids": [
+    56,
+    80
+  ],
+  "source_profile": "no_private",
+  "private_frontier_id": 55,
+  "solver": "glucose42",
+  "timeout_seconds_per_case": 300.0,
+  "gate_bound": 5,
+  "projected_complete_gate": 76,
+  "execution_order": "increasing components, then xors, switches, ordinary",
+  "expected_decompositions": [
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0
+    },
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0
+    }
+  ],
+  "expected_case_count": 5,
+  "executed_case_count": 5,
+  "complete_without_sat": true,
+  "stopped_on_sat": false,
+  "status_counts": {
+    "unsat": 5
+  },
+  "results": [
+    {
+      "ordinary": 0,
+      "components": 2,
+      "switches": 1,
+      "xors": 1,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n2_s1_x1_glucose42.json",
+      "result_sha256": "0aa1ab84cb9aad0ed0552c5a4c9db66c74cc20639daa54ff0cd15b9a8e5d2dd2",
+      "variables": 4678,
+      "clauses": 47690,
+      "build_seconds": 0.036360908998176455,
+      "solve_seconds": 0.00967166101327166,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n2_s1_x1_glucose42.json\",\n  \"output_sha256\": \"0aa1ab84cb9aad0ed0552c5a4c9db66c74cc20639daa54ff0cd15b9a8e5d2dd2\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    0,\n    1,\n    1\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 4678,\n  \"clauses\": 47690,\n  \"build_seconds\": 0.036360908998176455,\n  \"solve_seconds\": 0.00967166101327166\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 1,
+      "components": 3,
+      "switches": 2,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s2_x0_glucose42.json",
+      "result_sha256": "3ed57a6e1b2e47d552f494c0b0a2b230d357daaed466d77a2f3e96a8b409a4d0",
+      "variables": 7542,
+      "clauses": 73335,
+      "build_seconds": 0.0679723370121792,
+      "solve_seconds": 0.04067161004059017,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s2_x0_glucose42.json\",\n  \"output_sha256\": \"3ed57a6e1b2e47d552f494c0b0a2b230d357daaed466d77a2f3e96a8b409a4d0\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    1,\n    2,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 7542,\n  \"clauses\": 73335,\n  \"build_seconds\": 0.0679723370121792,\n  \"solve_seconds\": 0.04067161004059017\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 2,
+      "components": 3,
+      "switches": 0,
+      "xors": 1,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s0_x1_glucose42.json",
+      "result_sha256": "e3d0bc2f2fd6d9eac2c5409ce76a2df289e2b52c645ce84ec0a200d7befccfc0",
+      "variables": 7542,
+      "clauses": 73335,
+      "build_seconds": 0.06816588301444426,
+      "solve_seconds": 0.035855312016792595,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n3_s0_x1_glucose42.json\",\n  \"output_sha256\": \"e3d0bc2f2fd6d9eac2c5409ce76a2df289e2b52c645ce84ec0a200d7befccfc0\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    2,\n    0,\n    1\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 7542,\n  \"clauses\": 73335,\n  \"build_seconds\": 0.06816588301444426,\n  \"solve_seconds\": 0.035855312016792595\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 3,
+      "components": 4,
+      "switches": 1,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n4_s1_x0_glucose42.json",
+      "result_sha256": "c775ff8bd38c870fa45619600c3ee2654eadbb161f8d5ffa6572435a6363968b",
+      "variables": 11029,
+      "clauses": 103100,
+      "build_seconds": 0.09015927196014673,
+      "solve_seconds": 0.15999055898282677,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n4_s1_x0_glucose42.json\",\n  \"output_sha256\": \"c775ff8bd38c870fa45619600c3ee2654eadbb161f8d5ffa6572435a6363968b\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    3,\n    1,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 11029,\n  \"clauses\": 103100,\n  \"build_seconds\": 0.09015927196014673,\n  \"solve_seconds\": 0.15999055898282677\n}\n",
+      "stderr": ""
+    },
+    {
+      "ordinary": 5,
+      "components": 5,
+      "switches": 0,
+      "xors": 0,
+      "weighted_gate": 5,
+      "status": "unsat",
+      "returncode": 0,
+      "reused": false,
+      "result": ".research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n5_s0_x0_glucose42.json",
+      "result_sha256": "9597dc58b84f9a372559d72d3ad5f0abd559a42630d9ef6fc4a567b5412b59fb",
+      "variables": 15140,
+      "clauses": 137041,
+      "build_seconds": 0.11270324297947809,
+      "solve_seconds": 0.7050885340431705,
+      "stdout": "{\n  \"output\": \"/root/congProjects/turing-complete-works/.research/byte_adder_builder_verify_restart/connected_multi_output_cut_frontier/same_cost_private_frontier_round2/case_56_80_no55_glucose42/results/56_80__no_55_no_private_g5_n5_s0_x0_glucose42.json\",\n  \"output_sha256\": \"9597dc58b84f9a372559d72d3ad5f0abd559a42630d9ef6fc4a567b5412b59fb\",\n  \"status\": \"unsat\",\n  \"case_key\": \"56-80__no_55\",\n  \"source_profile\": \"no_private\",\n  \"projected_complete_gate_at_bound\": 76,\n  \"decomposition\": [\n    5,\n    0,\n    0\n  ],\n  \"compressed_truth_rows\": 128,\n  \"variables\": 15140,\n  \"clauses\": 137041,\n  \"build_seconds\": 0.11270324297947809,\n  \"solve_seconds\": 0.7050885340431705\n}\n",
+      "stderr": ""
+    }
+  ]
+}
