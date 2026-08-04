@@ -291,6 +291,17 @@ def place_growth(
         for conductor in floorplan.conductors
         if len(conductor.tips) + len(conductor.sockets) > 2
     }
+    direct_reconvergent_consumers = {
+        key
+        for key in gate_keys
+        if len(incoming[key]) >= 2
+        and all(
+            net.name not in structured_nets
+            and not net.additional_sources
+            and len(net.sinks) == 1
+            for _sink, net in incoming[key]
+        )
+    }
     conductor_by_net = {
         conductor.net: conductor for conductor in floorplan.conductors
     }
@@ -529,18 +540,34 @@ def place_growth(
             conductor_hubs.setdefault((spine_x, low_y), network)
             conductor_hubs.setdefault((spine_x, high_y), network)
     arrivals = sorted({timing_by_component[key].arrival for key in gate_keys})
+    keys_by_arrival = {
+        arrival: sorted(
+            (
+                key
+                for key in gate_keys
+                if timing_by_component[key].arrival == arrival
+            ),
+            key=lambda key: (
+                components[key].affinity,
+                components[key].logic_depth,
+                key,
+            ),
+        )
+        for arrival in arrivals
+    }
+    slot_offset_by_key = {
+        key: offset
+        for keys in keys_by_arrival.values()
+        for key, offset in _group_slot_offsets(keys, components).items()
+    }
     first_arrival = min(arrivals, default=1)
     for arrival in arrivals:
-        keys = sorted(
-            (key for key in gate_keys if timing_by_component[key].arrival == arrival),
-            key=lambda key: (components[key].affinity, components[key].logic_depth, key),
-        )
-        slot_offsets = _group_slot_offsets(keys, components)
+        keys = keys_by_arrival[arrival]
         for key in keys:
             component = components[key]
             band_y = _lane_band(component.affinity, logic_base_y, affinity_pitch)
             proposals: list[tuple[int, int]] = [
-                (band_y + slot_offsets[key], 4),
+                (band_y + slot_offset_by_key[key], 4),
             ]
             source_right = logic_start_x - 4
             frontier_pins: list[str] = []
@@ -568,6 +595,47 @@ def place_growth(
                     if timing_by_component[key].critical_input_net == net.name:
                         weight += 6
                     proposals.append((source_pin[1] - sink_offset[1], weight))
+
+            # A producer should also anticipate the lane where an unplaced
+            # consumer will grow.  This is deliberately weaker than real
+            # predecessor geometry: it breaks long future doglegs without
+            # pulling the current gate away from conductors that already
+            # exist.  Reconvergent critical inputs receive one extra vote so
+            # sibling producers tend to form a compact triangle around their
+            # shared consumer.  Critical inputs receive a slightly stronger
+            # vote, but never enough to override an established conductor.
+            for source, net in outgoing[key]:
+                if (
+                    net.name in structured_nets
+                    or net.additional_sources
+                    or len(net.sinks) != 1
+                ):
+                    continue
+                source_offset = _pin_offset(component, source.pin)
+                for sink in net.sinks:
+                    consumer = components[sink.component]
+                    if sink.component not in direct_reconvergent_consumers:
+                        continue
+                    consumer_center_y = _lane_band(
+                        consumer.affinity,
+                        logic_base_y,
+                        affinity_pitch,
+                    ) + slot_offset_by_key[sink.component]
+                    sink_offset = _pin_offset(consumer, sink.pin)
+                    weight = 3
+                    if (
+                        timing_by_component[sink.component].critical_input_net
+                        == net.name
+                    ):
+                        weight += 2
+                    proposals.append(
+                        (
+                            consumer_center_y
+                            + sink_offset[1]
+                            - source_offset[1],
+                            weight,
+                        )
+                    )
 
             ideal_y = _weighted_median(proposals)
             # Timing affinity may pull a consumer toward its predecessors, but
@@ -785,6 +853,9 @@ def place_growth(
         "ordinary_global_trunk_count": 0,
         "planned_conductor_channel_count": len(conductor_spine_x),
         "planned_conductor_spines": dict(sorted(conductor_spine_x.items())),
+        "direct_reconvergent_consumers": sorted(
+            direct_reconvergent_consumers
+        ),
         "bus_trunks": trunk_geometry,
         "splitter_y": splitter_y,
         "logic_start_x": logic_start_x,

@@ -218,6 +218,78 @@ class GrowthLayoutTests(unittest.TestCase):
 
         self.assertNotEqual(spines["fanout-a"], spines["fanout-b"])
 
+    def test_direct_reconvergent_producers_form_a_compact_triangle(self) -> None:
+        design = PhysicalDesign(
+            name="direct-triangle",
+            components=(
+                PhysicalComponent(
+                    "input-a",
+                    61,
+                    1,
+                    "input_port",
+                    0.0,
+                    0,
+                    immutable=True,
+                    position=(-20, 0),
+                ),
+                PhysicalComponent(
+                    "input-b",
+                    61,
+                    1,
+                    "input_port",
+                    1.0,
+                    0,
+                    immutable=True,
+                    position=(-10, 0),
+                ),
+                PhysicalComponent("left", 4, 1, "gate", 0.0, 1, 1, 1),
+                PhysicalComponent("right", 7, 1, "gate", 0.0, 1, 1, 1),
+                PhysicalComponent("join", 6, 1, "gate", 0.0, 2, 1, 1),
+            ),
+            nets=(
+                PhysicalNet(
+                    "input-a-net",
+                    1,
+                    PinRef("input-a", "value"),
+                    (PinRef("left", "in0"), PinRef("right", "in0")),
+                ),
+                PhysicalNet(
+                    "input-b-net",
+                    1,
+                    PinRef("input-b", "value"),
+                    (PinRef("left", "in1"), PinRef("right", "in1")),
+                ),
+                PhysicalNet(
+                    "left-net",
+                    1,
+                    PinRef("left", "out"),
+                    (PinRef("join", "in0"),),
+                ),
+                PhysicalNet(
+                    "right-net",
+                    1,
+                    PinRef("right", "out"),
+                    (PinRef("join", "in1"),),
+                ),
+            ),
+            gate=3,
+            delay=2,
+            target_kind="level",
+        )
+
+        placed, report = place_growth(design, _config())
+        components = placed.component_by_key()
+        producer_rows = [
+            components["left"].position[1],
+            components["right"].position[1],
+        ]
+        join_row = components["join"].position[1]
+
+        self.assertLessEqual(max(producer_rows) - min(producer_rows), 4)
+        self.assertLessEqual(min(producer_rows), join_row)
+        self.assertGreaterEqual(max(producer_rows), join_row)
+        self.assertEqual(report["direct_reconvergent_consumers"], ["join"])
+
 
 if __name__ == "__main__":
     unittest.main()
