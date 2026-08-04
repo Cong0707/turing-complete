@@ -405,7 +405,7 @@ def main(argv: list[str] | None = None) -> int:
     payload = strengthened_solve(args)
     encoded = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(encoded, encoding="utf-8")
+    args.output.write_bytes(encoded.encode("utf-8"))
     summary = {key: value for key, value in payload.items() if key != "network"}
     summary["output"] = str(args.output.resolve())
     summary["sha256"] = sha256(encoded.encode()).hexdigest()
