@@ -1,0 +1,1043 @@
+{
+  "schema": "s34-internal-phase-family-enumeration-v1",
+  "status": "limit",
+  "exact_models": 300,
+  "unique_phase_families": 6,
+  "elapsed_seconds": 132.506541499999,
+  "solver": "cadical195",
+  "limits": {
+    "max_models": 300,
+    "wall_seconds": 3600.0
+  },
+  "scope": {
+    "s34_gate": 11,
+    "s34_delay": 5,
+    "components": 9,
+    "ordinary": 7,
+    "switches": 2,
+    "xors": 0,
+    "tail_cover_is_only_a_heuristic": true,
+    "complete_high29_claimed": false
+  },
+  "dependency_sha256": {
+    ".research/byte_adder_phase_shortcut_restart/physical_exact.py": "c48a96e55d8c5076418999f5fa5ee95e9f8207c03f138cd4bccf48908a69c071",
+    ".research/byte_adder_paper_synthesis_root/exact_tail_with_s34_free.py": "df10a58605770f4f1466a166853190beb7ef8ebe473cf4f785ee025af62bb01e",
+    ".research/byte_adder_paper_synthesis_root/enumerate_s34_internal_phase_family.py": "fee88bd8c8cff8499b4b4298df128195feeff23405eaec5710ad07025864c133"
+  },
+  "records": [
+    {
+      "model_index": 1,
+      "new_phase_family": true,
+      "phase_family_sha256": "8538e303d5c4b79cbc06010cc79b90d2679720b581a2469851625d449b2fbe0d",
+      "useful_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 2,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "NOR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            28
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "OR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "NAND",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            30
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "SWITCH",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            29
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            33
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          31
+        ],
+        [
+          32,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    },
+    {
+      "model_index": 2,
+      "new_phase_family": true,
+      "phase_family_sha256": "1b5a22d46e6af27fb0b38994b86252b3d2ce1d45c373a351f15089b2e966d701",
+      "useful_slots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 2,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "NOR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            28
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "OR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "NAND",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            30
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "SWITCH",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            29
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            4
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            33
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          31
+        ],
+        [
+          32,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    },
+    {
+      "model_index": 3,
+      "new_phase_family": true,
+      "phase_family_sha256": "2be9ca0ca52c1f67460b3fac8c7159182da37dd6a0af85c9133aafeabf9a29b7",
+      "useful_slots": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 1,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            4
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "SWITCH",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "NAND",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            29
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "OR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "NAND",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "NAND",
+          "left_bus": [
+            31
+          ],
+          "right_bus": [
+            32
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            33
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          30
+        ],
+        [
+          28,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    },
+    {
+      "model_index": 4,
+      "new_phase_family": true,
+      "phase_family_sha256": "7b9594b591d0399d360a14a345224928fe503ec01682c5b0b6dcad6638ec097d",
+      "useful_slots": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 1,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "SWITCH",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "NAND",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            29
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "OR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "NAND",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "NAND",
+          "left_bus": [
+            31
+          ],
+          "right_bus": [
+            32
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            27
+          ],
+          "right_bus": [
+            33
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          30
+        ],
+        [
+          28,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    },
+    {
+      "model_index": 11,
+      "new_phase_family": true,
+      "phase_family_sha256": "b53dc1268219eee6ddcbb1801e448b78663411b84138732738e46ef0a5040fcf",
+      "useful_slots": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 2,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NOR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "SWITCH",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            27
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "NOR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "AND",
+          "left_bus": [
+            7
+          ],
+          "right_bus": [
+            17
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "OR",
+          "left_bus": [
+            31
+          ],
+          "right_bus": [
+            32
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            30
+          ],
+          "right_bus": [
+            33
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          29
+        ],
+        [
+          28,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    },
+    {
+      "model_index": 15,
+      "new_phase_family": true,
+      "phase_family_sha256": "73a0fda1bf6bd5dc09566349dd1d352538768902e1fb7f593d5fab4256c3baaa",
+      "useful_slots": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        7
+      ],
+      "useful_phase_count": 6,
+      "tail_terminal_switch_minimum": {
+        "S5": null,
+        "S6": null,
+        "S7": null,
+        "C8": null
+      },
+      "tail_terminal_switch_score": 396,
+      "direct_tail_targets": [],
+      "valid_enable_count": {
+        "S5": 1,
+        "S6": 2,
+        "S7": 3,
+        "C8": 4
+      },
+      "network": [
+        {
+          "slot": 0,
+          "source": 26,
+          "kind": "AND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 1,
+          "source": 27,
+          "kind": "NOR",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 2,
+          "source": 28,
+          "kind": "SWITCH",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 3,
+          "source": 29,
+          "kind": "OR",
+          "left_bus": [
+            26
+          ],
+          "right_bus": [
+            27
+          ],
+          "cost": 1,
+          "depth_upper_bound": 5
+        },
+        {
+          "slot": 4,
+          "source": 30,
+          "kind": "NAND",
+          "left_bus": [
+            0
+          ],
+          "right_bus": [
+            3
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 5,
+          "source": 31,
+          "kind": "OR",
+          "left_bus": [
+            2
+          ],
+          "right_bus": [
+            7
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 6,
+          "source": 32,
+          "kind": "NAND",
+          "left_bus": [
+            7
+          ],
+          "right_bus": [
+            17
+          ],
+          "cost": 1,
+          "depth_upper_bound": 3
+        },
+        {
+          "slot": 7,
+          "source": 33,
+          "kind": "NAND",
+          "left_bus": [
+            31
+          ],
+          "right_bus": [
+            32
+          ],
+          "cost": 1,
+          "depth_upper_bound": 4
+        },
+        {
+          "slot": 8,
+          "source": 34,
+          "kind": "SWITCH",
+          "left_bus": [
+            30
+          ],
+          "right_bus": [
+            33
+          ],
+          "cost": 2,
+          "depth_upper_bound": 5
+        }
+      ],
+      "output_buses": [
+        [
+          29
+        ],
+        [
+          28,
+          34
+        ]
+      ],
+      "verification": {
+        "mismatch_count": 0,
+        "bus_conflict_count": 0,
+        "undriven_output_count": 0,
+        "physical_net_partition_violation_count": 0,
+        "actual_output_arrivals": [
+          5,
+          5
+        ],
+        "actual_max_delay": 5,
+        "depth_upper_bound_violation_count": 0,
+        "output_deadline_violation_count": 0
+      }
+    }
+  ]
+}
