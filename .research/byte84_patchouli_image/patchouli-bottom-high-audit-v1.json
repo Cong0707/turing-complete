@@ -1,0 +1,164 @@
+{
+  "schema": "patchouli-byte84-bottom-high-audit-v1",
+  "scope": {
+    "method": "manual screenshot trace plus fixed 18-state replay",
+    "rows": 18,
+    "inputs": [
+      "C6",
+      "bit6 in K/P/G",
+      "bit7 in K/P/G"
+    ],
+    "no_search": true
+  },
+  "evidence": {
+    "04-bottom-high.png": {
+      "path": "04-bottom-high.png",
+      "sha256": "a09b2d72cab6c1cb00f2fc3643dd3ee31c7f9f9a08ea21a43a3706746490ba22"
+    },
+    "05-output-owner.png": {
+      "path": "05-output-owner.png",
+      "sha256": "efbabe06ceaa5629f034a55c8051d49d47e902ad8706fbc8ab046fdf2839a3d8"
+    },
+    "06-full-logic.png": {
+      "path": "06-full-logic.png",
+      "sha256": "4c9d50535c34895fe1ea3927e9813d2a27827cfd2907c5551848c2cb0f0e0b3d"
+    }
+  },
+  "architecture": {
+    "state": [
+      "G6=AND(a6,b6)",
+      "Q6=NOR(a6,b6)",
+      "nP6=OR(G6,Q6)",
+      "G7=AND(a7,b7)",
+      "Q7=NOR(a7,b7)",
+      "P7=NOR(G7,Q7)"
+    ],
+    "reason": [
+      "T67=AND(Q6,P7)",
+      "R67=NOR(Q6,P7)",
+      "E7=OR(T67,R67)",
+      "H7=OR(T67,Q7)",
+      "K67=OR(G6,G7)"
+    ],
+    "outputs": [
+      "A6=OR(C6,nP6)",
+      "B6=NAND(C6,nP6)",
+      "S6=NAND(A6,B6)",
+      "Z7=NOR(C6,K67)",
+      "S7=BUS(SW(E7,A6),SW(Z7,P7))",
+      "C8=NOR(Z7,H7)"
+    ]
+  },
+  "ledger": {
+    "G6_Q6_nP6_G7_Q7_P7": 6,
+    "T67_R67_E7_H7_K67": 5,
+    "A6_B6_S6": 3,
+    "Z7_C8": 2,
+    "S7_two_switch_owner": 4,
+    "total": 20
+  },
+  "arrival": {
+    "G6_Q6_G7_Q7": 1,
+    "nP6_P7_K67": 2,
+    "T67_R67": 3,
+    "E7_H7_C6_input": 4,
+    "A6_B6_Z7": 5,
+    "S6_S7_C8": 6
+  },
+  "fanout": {
+    "C6": [
+      "A6",
+      "B6",
+      "Z7",
+      "D5 outside this crop"
+    ],
+    "G6": [
+      "nP6",
+      "K67"
+    ],
+    "Q6": [
+      "nP6",
+      "T67",
+      "R67"
+    ],
+    "nP6": [
+      "A6",
+      "B6"
+    ],
+    "G7": [
+      "P7",
+      "K67"
+    ],
+    "Q7": [
+      "P7",
+      "H7"
+    ],
+    "P7": [
+      "T67",
+      "R67",
+      "S7 driver Z data"
+    ],
+    "T67": [
+      "E7",
+      "H7"
+    ],
+    "R67": [
+      "E7"
+    ],
+    "E7": [
+      "S7 driver E enable"
+    ],
+    "H7": [
+      "C8"
+    ],
+    "K67": [
+      "Z7"
+    ],
+    "A6": [
+      "S6",
+      "S7 driver E data"
+    ],
+    "B6": [
+      "S6"
+    ],
+    "Z7": [
+      "S7 driver Z enable",
+      "C8"
+    ]
+  },
+  "three_state": {
+    "enabled_data_z": "not exercised: both S7 data rails are ordinary active rails",
+    "driver_E": {
+      "active_one": 8,
+      "active_zero": 2,
+      "z": 8
+    },
+    "driver_Z": {
+      "active_one": 2,
+      "active_zero": 2,
+      "z": 14
+    },
+    "overlap": {
+      "rows": 2,
+      "both_one": 1,
+      "both_zero": 1,
+      "disagreement": 0
+    },
+    "resolved_S7": {
+      "active_one": 9,
+      "active_zero": 3,
+      "z": 6,
+      "conflict": 0
+    }
+  },
+  "semantic": {
+    "mismatch_rows": 0,
+    "conflict_rows": 0
+  },
+  "conclusion": {
+    "matches_verified_human85_high_tail": true,
+    "is_19_gate_high_tail": false,
+    "is_20_gate_high_tail": true,
+    "implication": "Patchouli's 84th-gate saving is above the bits6:7 high tail."
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "schema": "tc-byte-adder-patchouli-first-carry-owner-v1",
+  "scope": {
+    "rows": 32,
+    "search": false,
+    "game_started": false,
+    "save_modified": false
+  },
+  "evidence": {
+    "image": ".research/byte84_patchouli_image/02-upper-mid.png",
+    "image_sha256": "8cfcbb3a866be83522ea703bc73260ca3923b8a125b70e724fe67e46121af4fb",
+    "grid_image": ".research/byte84_patchouli_image/12-upper-mid-grid-2x.png",
+    "grid_image_sha256": "b8aa852430c4296224dce5545189fe426604dc982335f1666aaa678e1308185e",
+    "visible_owner": "three vertically stacked Switches near x=350,y=80..120 in the 760x420 crop"
+  },
+  "trace": {
+    "upstream": [
+      "T0=BUS(SW(a0,cin),SW(b0,cin)) @1",
+      "G0=a0 AND b0 @1",
+      "C1=T0 OR G0 @2",
+      "V1=a1 OR b1 @1",
+      "G1=a1 AND b1 @1"
+    ],
+    "owner": "C2=BUS(SW(T0,V1),SW(G0,V1),SW(G1,V1)) @2",
+    "downstream": [
+      "NAND(D1,C2) in the S1 four-gate phase closure",
+      "NOR(C2,P2) in the S2 zero phase",
+      "AND(C2,P2) in the S2 one phase",
+      "SW(enable=C2,data=N23) in the B23 carry-reason owner"
+    ]
+  },
+  "ledger": {
+    "t0_owner_gate": 4,
+    "g0_v1_g1_gate": 3,
+    "c1_gate": 1,
+    "c2_owner_gate": 6,
+    "s1_tail_gate": 4,
+    "c1_arrival": 2,
+    "c2_arrival": 2,
+    "s1_arrival": 5,
+    "full_bits0_to_1_gate_with_q0_p0_s0": 23
+  },
+  "semantic": {
+    "c1_mismatch": 0,
+    "c2_mismatch": 0,
+    "s1_mismatch": 0,
+    "c2_conflict_rows": 0,
+    "c2_active_one_rows": 16,
+    "c2_active_zero_rows": 4,
+    "c2_z_rows": 12,
+    "c2_driver_active_rows": [
+      12,
+      8,
+      8
+    ],
+    "c2_multi_driver_overlap_rows": 7,
+    "c2_state_vector_sha256": "8d7b2117ea7ad465c4a8a80e384183226c25e321ff133715787e9e4bfe985c8d",
+    "cofactor_by_bit1_state": {
+      "K": [
+        {
+          "c1": 0,
+          "effective_values": [
+            0
+          ],
+          "driven_values": [
+            0
+          ]
+        },
+        {
+          "c1": 1,
+          "effective_values": [
+            0
+          ],
+          "driven_values": [
+            1
+          ]
+        }
+      ],
+      "P0": [
+        {
+          "c1": 0,
+          "effective_values": [
+            0
+          ],
+          "driven_values": [
+            0
+          ]
+        },
+        {
+          "c1": 1,
+          "effective_values": [
+            1
+          ],
+          "driven_values": [
+            1
+          ]
+        }
+      ],
+      "P1": [
+        {
+          "c1": 0,
+          "effective_values": [
+            0
+          ],
+          "driven_values": [
+            0
+          ]
+        },
+        {
+          "c1": 1,
+          "effective_values": [
+            1
+          ],
+          "driven_values": [
+            1
+          ]
+        }
+      ],
+      "G": [
+        {
+          "c1": 0,
+          "effective_values": [
+            1
+          ],
+          "driven_values": [
+            1
+          ]
+        },
+        {
+          "c1": 1,
+          "effective_values": [
+            1
+          ],
+          "driven_values": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "architectural_conclusion": {
+    "matches_strict_d2_carry_owner": true,
+    "matches_joint10_slow_c2": false,
+    "reason": "the image has three common-data drivers and the owner must feed D2 fanouts",
+    "leaderboard_84_gate_saving_is_in_this_slice": false
+  }
+}

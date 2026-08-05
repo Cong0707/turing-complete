@@ -1,0 +1,322 @@
+{
+  "schema": "patchouli-byte-adder-mid22-audit-v1",
+  "source_image": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte84_patchouli_image\\Patchouli-84门6延迟原始截图.jpg",
+    "sha256": "b9090fb9d253ded8db241590387457f401f8e50f17958f88d986a5fa6b6ecccd"
+  },
+  "scope": "bits4:5 plus C6, with G3/B23/C4 as the low-boundary ABI",
+  "rows": 512,
+  "metrics": {
+    "gate": 22,
+    "delay": 6,
+    "block_output_arrivals": {
+      "C6": 4,
+      "S4": 6,
+      "S5": 6
+    },
+    "complete_score_with_frozen_low42_high20": [
+      84,
+      6,
+      504
+    ]
+  },
+  "semantic": {
+    "mismatch_count": {
+      "C4": 0,
+      "C6": 0,
+      "S4": 0,
+      "S5": 0
+    },
+    "conflict_count": {
+      "B23": 0,
+      "C6": 0
+    },
+    "expected_one_undriven": {
+      "B23": 0,
+      "C6": 0
+    },
+    "bus_state_count": {
+      "B23": {
+        "active_one": 192,
+        "active_zero": 128,
+        "z": 192
+      },
+      "C6": {
+        "active_one": 256,
+        "active_zero": 112,
+        "z": 144
+      }
+    },
+    "c6_driver_state_count": {
+      "B23_enable": {
+        "active_one": 120,
+        "active_zero": 72,
+        "z": 320
+      },
+      "G345_enable": {
+        "active_one": 224,
+        "active_zero": 72,
+        "z": 216
+      }
+    },
+    "c6_driver_overlap": 120,
+    "c6_overlap_disagreement": 0,
+    "ordinary_gate_z_rule_exercised": true
+  },
+  "cost_partition": {
+    "GQP4_GQP5": 6,
+    "C6_support_K34_G345_V45_D45_plus_two_switches": 8,
+    "S4": 3,
+    "S5_U45_H5_T5_J5_output_or": 5,
+    "total": 22
+  },
+  "formula": {
+    "K34": "G3 OR G4",
+    "G345": "K34 OR G5",
+    "V45": "NOR(Q4,Q5)",
+    "D45": "G5 OR V45",
+    "C6": "BUS(SW(enable=B23,data=D45),SW(enable=G345,data=D45))",
+    "S4": "NOR(AND(P4,C4),NOR(P4,C4))",
+    "U45": "B23 OR K34 = C4 OR G4",
+    "H5": "NOR(Q4,P5)",
+    "T5": "U45 AND H5",
+    "J5": "NOR(Q5,C6)",
+    "S5": "T5 OR J5"
+  },
+  "ledger": [
+    {
+      "name": "G3",
+      "op": "BOUNDARY",
+      "args": [],
+      "cost": 0,
+      "arrival": 1
+    },
+    {
+      "name": "B23",
+      "op": "BOUNDARY_BUS",
+      "args": [],
+      "cost": 0,
+      "arrival": 3,
+      "may_z": true
+    },
+    {
+      "name": "C4",
+      "op": "OR",
+      "args": [
+        "G3",
+        "B23"
+      ],
+      "cost": 0,
+      "arrival": 4
+    },
+    {
+      "name": "G4",
+      "op": "AND",
+      "args": [
+        "A4",
+        "B4"
+      ],
+      "cost": 1,
+      "arrival": 1
+    },
+    {
+      "name": "Q4",
+      "op": "NOR",
+      "args": [
+        "A4",
+        "B4"
+      ],
+      "cost": 1,
+      "arrival": 1
+    },
+    {
+      "name": "P4",
+      "op": "NOR",
+      "args": [
+        "Q4",
+        "G4"
+      ],
+      "cost": 1,
+      "arrival": 2
+    },
+    {
+      "name": "G5",
+      "op": "AND",
+      "args": [
+        "A5",
+        "B5"
+      ],
+      "cost": 1,
+      "arrival": 1
+    },
+    {
+      "name": "Q5",
+      "op": "NOR",
+      "args": [
+        "A5",
+        "B5"
+      ],
+      "cost": 1,
+      "arrival": 1
+    },
+    {
+      "name": "P5",
+      "op": "NOR",
+      "args": [
+        "Q5",
+        "G5"
+      ],
+      "cost": 1,
+      "arrival": 2
+    },
+    {
+      "name": "K34",
+      "op": "OR",
+      "args": [
+        "G3",
+        "G4"
+      ],
+      "cost": 1,
+      "arrival": 2
+    },
+    {
+      "name": "G345",
+      "op": "OR",
+      "args": [
+        "K34",
+        "G5"
+      ],
+      "cost": 1,
+      "arrival": 3
+    },
+    {
+      "name": "V45",
+      "op": "NOR",
+      "args": [
+        "Q4",
+        "Q5"
+      ],
+      "cost": 1,
+      "arrival": 2
+    },
+    {
+      "name": "D45",
+      "op": "OR",
+      "args": [
+        "G5",
+        "V45"
+      ],
+      "cost": 1,
+      "arrival": 3
+    },
+    {
+      "name": "C6.driver.B23",
+      "op": "SWITCH",
+      "data": "D45",
+      "enable": "B23",
+      "cost": 2,
+      "arrival": 4,
+      "may_z": true
+    },
+    {
+      "name": "C6.driver.G345",
+      "op": "SWITCH",
+      "data": "D45",
+      "enable": "G345",
+      "cost": 2,
+      "arrival": 4,
+      "may_z": true
+    },
+    {
+      "name": "C6",
+      "op": "RESOLVED_BUS",
+      "drivers": [
+        "C6.driver.B23",
+        "C6.driver.G345"
+      ],
+      "cost": 0,
+      "arrival": 4,
+      "may_z": true
+    },
+    {
+      "name": "T4",
+      "op": "AND",
+      "args": [
+        "P4",
+        "C4"
+      ],
+      "cost": 1,
+      "arrival": 5
+    },
+    {
+      "name": "R4",
+      "op": "NOR",
+      "args": [
+        "P4",
+        "C4"
+      ],
+      "cost": 1,
+      "arrival": 5
+    },
+    {
+      "name": "S4",
+      "op": "NOR",
+      "args": [
+        "T4",
+        "R4"
+      ],
+      "cost": 1,
+      "arrival": 6
+    },
+    {
+      "name": "U45",
+      "op": "OR",
+      "args": [
+        "B23",
+        "K34"
+      ],
+      "cost": 1,
+      "arrival": 4
+    },
+    {
+      "name": "H5",
+      "op": "NOR",
+      "args": [
+        "Q4",
+        "P5"
+      ],
+      "cost": 1,
+      "arrival": 3
+    },
+    {
+      "name": "T5",
+      "op": "AND",
+      "args": [
+        "U45",
+        "H5"
+      ],
+      "cost": 1,
+      "arrival": 5
+    },
+    {
+      "name": "J5",
+      "op": "NOR",
+      "args": [
+        "Q5",
+        "C6"
+      ],
+      "cost": 1,
+      "arrival": 5
+    },
+    {
+      "name": "S5",
+      "op": "OR",
+      "args": [
+        "T5",
+        "J5"
+      ],
+      "cost": 1,
+      "arrival": 6
+    }
+  ]
+}
