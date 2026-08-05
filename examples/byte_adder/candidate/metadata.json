@@ -4,7 +4,7 @@
   "title": "Adding Bytes",
   "title_zh": "字节加法器",
   "strategy": "依据 Patchouli 公开 84/6 电路图逐线反解：冻结 42 门低四位和 20 门高尾，把原六门 S5 双开关 owner 替换为 U45/H5/T5/J5/S5 五门普通逻辑链。",
-  "validation_status": "已完成两条独立截图反解、生成器重放、82 节点物理逐节点重算、131072 组全真值、BUS/Z 冲突、递归延迟、v15 往返、连通性、无损重排和真实精灵几何审计；等待游戏实机验收。",
+  "validation_status": "已完成两条独立截图反解、生成器重放、82 节点物理逐节点重算、131072 组全真值、BUS/Z 冲突、递归延迟、v15 往返、连通性、无损重排和真实精灵几何审计；已由用户在 Turing Complete 2.1.292 中实机验收为 84/6/504。",
   "deployment_target": "schematics/byte_adder/Default/circuit.data",
   "source": ".research/byte84_patchouli_image/byte-adder-patchouli84-s5-five-gate-full.json",
   "source_sha256": "767b51dec2d445247bd53a6a559051b0807a6a8334cdefc51430c7683505a9ed",
@@ -14,7 +14,7 @@
   "structural_sha256": "0c8363999805062496b3dcc1240e02b7a175e1763122f65db81dc47ab4362c9c",
   "machine_certificate": ".research/byte84_patchouli_image/materialized_patchouli84_s5_five_gate/machine_certificate.json",
   "materialized_sha256": "16ad06eff5eb93e8bada90f5284ae4e3b1e21848e18319ccb11e6d6006030a51",
-  "sha256": "0484d0e07822a774fb2e46cade58fb633259ec1477572f93dcf409ad3064799c",
+  "sha256": "953a83a229df9c1d104498f0dcefd9da216b63599445e7d9df85e543d175b14a",
   "format_version": 15,
   "component_count": 79,
   "wire_count": 438,
@@ -27,7 +27,15 @@
     504
   ],
   "native_com_add_used": false,
-  "in_game_verified": false,
+  "in_game_verified": true,
+  "in_game_verification": {
+    "date": "2026-08-05",
+    "game_version": "2.1.292",
+    "gate": 84,
+    "delay": 6,
+    "energy": 504,
+    "validated_save_sha256": "953a83a229df9c1d104498f0dcefd9da216b63599445e7d9df85e543d175b14a"
+  },
   "previous_in_game_verified_frontier": {
     "gate": 85,
     "delay": 6,
@@ -101,6 +109,24 @@
     "component_fields_except_position_and_rotation_preserved": true,
     "logical_network_partition_preserved": true,
     "logical_network_count": 85
+  },
+  "game_canonicalization": {
+    "pre_validation_sha256": "0484d0e07822a774fb2e46cade58fb633259ec1477572f93dcf409ad3064799c",
+    "validated_sha256": "953a83a229df9c1d104498f0dcefd9da216b63599445e7d9df85e543d175b14a",
+    "top_level_fields_changed": [
+      "custom_id",
+      "clock_speed",
+      "design"
+    ],
+    "display_word_size_component_indices_changed": [
+      5,
+      6,
+      78
+    ],
+    "component_population_preserved": true,
+    "wire_geometry_preserved": true,
+    "wire_geometry_sha256": "df134468647fd0e67c8ee1b6aaf461ef9da3b60c62578bf7a858827959cfb770",
+    "logical_network_partition_preserved": true
   },
   "layout": {
     "component_overlap_count": 0,

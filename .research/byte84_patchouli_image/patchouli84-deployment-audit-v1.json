@@ -9,9 +9,9 @@
   "source": ".research/byte84_patchouli_image/materialized_patchouli84_s5_five_gate/candidate/circuit.data",
   "source_sha256": "16ad06eff5eb93e8bada90f5284ae4e3b1e21848e18319ccb11e6d6006030a51",
   "candidate": "examples/byte_adder/candidate/circuit.data",
-  "candidate_sha256": "0484d0e07822a774fb2e46cade58fb633259ec1477572f93dcf409ad3064799c",
+  "candidate_sha256": "953a83a229df9c1d104498f0dcefd9da216b63599445e7d9df85e543d175b14a",
   "formal_save": "C:\\Users\\cong\\AppData\\Roaming\\Turing Complete\\schematics\\byte_adder\\Default\\circuit.data",
-  "formal_save_sha256": "0484d0e07822a774fb2e46cade58fb633259ec1477572f93dcf409ad3064799c",
+  "formal_save_sha256": "953a83a229df9c1d104498f0dcefd9da216b63599445e7d9df85e543d175b14a",
   "formal_save_matches": true,
   "component_count": 79,
   "wire_count": 438,
@@ -25,6 +25,38 @@
     "width_mismatch_network_count": 0,
     "cycle_component_count": 0
   },
+  "game_canonicalization": {
+    "status": "pass",
+    "game_version": "2.1.292",
+    "top_level_fields": [
+      "custom_id",
+      "clock_speed",
+      "design"
+    ],
+    "component_word_size_changes": [
+      {
+        "index": 5,
+        "kind": 17,
+        "before": 8,
+        "after": 1
+      },
+      {
+        "index": 6,
+        "kind": 17,
+        "before": 8,
+        "after": 1
+      },
+      {
+        "index": 78,
+        "kind": 16,
+        "before": 8,
+        "after": 1
+      }
+    ],
+    "wire_geometry_preserved_after_game_save": true,
+    "wire_geometry_sha256": "df134468647fd0e67c8ee1b6aaf461ef9da3b60c62578bf7a858827959cfb770",
+    "logic_normalized_before_relayout_audit": true
+  },
   "relayout": {
     "schema": "turingsynth-v15-relayout-audit-v1",
     "status": "pass",
@@ -35,6 +67,8 @@
     "component_count": 79,
     "logical_network_count": 85
   },
+  "in_game_verified": true,
+  "in_game_verified_date": "2026-08-05",
   "backup_created": false,
   "game_started": false
 }
