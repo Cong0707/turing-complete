@@ -18,8 +18,10 @@ from turingsynth.routing.astar import (
     _plan_fanout_tracks,
     _pin_access_path,
     _pin_access_point,
+    _prefer_single_sink_trunk,
     _search,
     _vertices,
+    RoutedEdge,
 )
 
 
@@ -77,6 +79,52 @@ class FanoutRoutingTests(unittest.TestCase):
         self.assertEqual(len(_vertices(path)) - 2, 2)
         self.assertNotIn((4, 0), path)
         self.assertEqual(len(reserved), 2)
+
+    def test_short_segmented_trunk_replaces_repeated_backtracking(self) -> None:
+        visibility = (
+            (0, 0),
+            (-1, 0),
+            (-1, 1),
+            (0, 1),
+            (1, 1),
+            (2, 1),
+            (3, 1),
+            (4, 1),
+            (5, 1),
+            (6, 1),
+            (6, 0),
+        )
+        trunk = (
+            RoutedEdge("trunk", (0, 0), (0, 1), "feeder"),
+            RoutedEdge("trunk", (0, 1), (6, 1), "spine"),
+            RoutedEdge("trunk", (6, 1), (6, 0), "tap"),
+        )
+
+        self.assertTrue(_prefer_single_sink_trunk(visibility, trunk))
+
+    def test_remote_trunk_does_not_replace_local_visibility_detour(self) -> None:
+        visibility = (
+            (0, 0),
+            (-1, 0),
+            (-1, 1),
+            (0, 1),
+            (1, 1),
+            (2, 1),
+            (3, 1),
+            (4, 1),
+            (5, 1),
+            (6, 1),
+            (6, 0),
+        )
+        remote_trunk = (
+            RoutedEdge("trunk", (0, 0), (0, 10), "feeder"),
+            RoutedEdge("trunk", (0, 10), (6, 10), "spine"),
+            RoutedEdge("trunk", (6, 10), (6, 0), "tap"),
+        )
+
+        self.assertFalse(
+            _prefer_single_sink_trunk(visibility, remote_trunk)
+        )
 
     def test_growth_comb_commits_prevalidated_terminal_paths(self) -> None:
         edges = _growth_fanout_edges(

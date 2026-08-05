@@ -1626,6 +1626,46 @@ def _direct_visibility_path(
     return full_path + _axis_chain(routing_sink, sink)[1:]
 
 
+def _prefer_single_sink_trunk(
+    visibility_path: tuple[Point, ...],
+    trunk_edges: tuple[RoutedEdge, ...],
+    *,
+    length_slack: int = 8,
+) -> bool:
+    """Trade a short amount of wire for a readable single-owner trunk.
+
+    A visibility path remains preferable unless obstacles force at least two
+    steps away from its destination.  In that case a segmented spine removes
+    the U-shaped fold without hiding the electrical junctions.  The bounded
+    length allowance prevents a remote margin bus from replacing a compact
+    local detour merely because it has fewer bends.
+    """
+
+    visibility_length = len(visibility_path) - 1
+    goal = visibility_path[-1]
+    visibility_backtracks = sum(
+        _manhattan(right, goal) > _manhattan(left, goal)
+        for left, right in zip(visibility_path, visibility_path[1:])
+    )
+    visibility_bends = max(0, len(_vertices(visibility_path)) - 2)
+    trunk_length = sum(
+        len(edge.planned_path) - 1
+        if edge.planned_path is not None
+        else _manhattan(edge.source, edge.sink) // 10
+        for edge in trunk_edges
+    )
+    trunk_bends = sum(
+        max(0, len(_vertices(edge.planned_path)) - 2)
+        for edge in trunk_edges
+        if edge.planned_path is not None
+    )
+    return (
+        visibility_backtracks >= 2
+        and trunk_bends == 0
+        and trunk_length <= visibility_length + length_slack
+    )
+
+
 def _growth_fanout_edges(
     network: str,
     source: Point,
@@ -2276,8 +2316,22 @@ def _attempt(
                 if len(sinks) == 1 and network not in fixed_track_assignments
                 else None
             )
-            visibility_path = (
-                _direct_visibility_path(
+            direct_trunk = None
+            visibility_path = None
+            if (
+                direct_path is None
+                and len(sinks) == 1
+                and network not in fixed_track_assignments
+            ):
+                reserved_before = set(reserved_hubs)
+                vertical_before = {
+                    x: list(intervals) for x, intervals in track_intervals.items()
+                }
+                horizontal_before = {
+                    y: list(intervals)
+                    for y, intervals in horizontal_intervals.items()
+                }
+                visibility_path = _direct_visibility_path(
                     network,
                     source,
                     sinks[0],
@@ -2290,13 +2344,57 @@ def _attempt(
                     horizontal_intervals=horizontal_intervals,
                     bounds=bounds,
                 )
-                if direct_path is None
-                and len(sinks) == 1
-                and network not in fixed_track_assignments
-                else None
-            )
+                trial_trunk = None
+                if visibility_path is not None:
+                    try:
+                        trial_trunk = _collector_edges(
+                            network,
+                            source,
+                            sinks,
+                            routing_source=routing_source,
+                            routing_sinks=routing_sinks,
+                            forbidden=forbidden_hubs,
+                            reserved=set(reserved_before),
+                            track_intervals={
+                                x: list(intervals)
+                                for x, intervals in vertical_before.items()
+                            },
+                            horizontal_intervals={
+                                y: list(intervals)
+                                for y, intervals in horizontal_before.items()
+                            },
+                            bounds=bounds,
+                        )
+                    except RuntimeError:
+                        trial_trunk = None
+                if trial_trunk is not None and _prefer_single_sink_trunk(
+                    visibility_path,
+                    trial_trunk,
+                ):
+                    reserved_hubs.clear()
+                    reserved_hubs.update(reserved_before)
+                    track_intervals.clear()
+                    track_intervals.update(vertical_before)
+                    horizontal_intervals.clear()
+                    horizontal_intervals.update(horizontal_before)
+                    direct_trunk = _collector_edges(
+                        network,
+                        source,
+                        sinks,
+                        routing_source=routing_source,
+                        routing_sinks=routing_sinks,
+                        forbidden=forbidden_hubs,
+                        reserved=reserved_hubs,
+                        track_intervals=track_intervals,
+                        horizontal_intervals=horizontal_intervals,
+                        bounds=bounds,
+                    )
+                    visibility_path = None
             planned_direct_path = direct_path or visibility_path
-            if planned_direct_path is not None:
+            if direct_trunk is not None:
+                tree_edges = direct_trunk
+                planning_modes[network] = "single-sink-horizontal-trunk"
+            elif planned_direct_path is not None:
                 tree_edges = (
                     RoutedEdge(
                         network,
