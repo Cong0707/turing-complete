@@ -80,24 +80,18 @@ class FanoutRoutingTests(unittest.TestCase):
         self.assertNotIn((4, 0), path)
         self.assertEqual(len(reserved), 2)
 
-    def test_short_segmented_trunk_replaces_repeated_backtracking(self) -> None:
+    def test_long_segmented_trunk_replaces_repeated_backtracking(self) -> None:
         visibility = (
             (0, 0),
             (-1, 0),
             (-1, 1),
-            (0, 1),
-            (1, 1),
-            (2, 1),
-            (3, 1),
-            (4, 1),
-            (5, 1),
-            (6, 1),
-            (6, 0),
+            *((x, 1) for x in range(40)),
+            (39, 0),
         )
         trunk = (
             RoutedEdge("trunk", (0, 0), (0, 1), "feeder"),
-            RoutedEdge("trunk", (0, 1), (6, 1), "spine"),
-            RoutedEdge("trunk", (6, 1), (6, 0), "tap"),
+            RoutedEdge("trunk", (0, 1), (39, 1), "spine"),
+            RoutedEdge("trunk", (39, 1), (39, 0), "tap"),
         )
 
         self.assertTrue(_prefer_single_sink_trunk(visibility, trunk))
@@ -107,19 +101,13 @@ class FanoutRoutingTests(unittest.TestCase):
             (0, 0),
             (-1, 0),
             (-1, 1),
-            (0, 1),
-            (1, 1),
-            (2, 1),
-            (3, 1),
-            (4, 1),
-            (5, 1),
-            (6, 1),
-            (6, 0),
+            *((x, 1) for x in range(40)),
+            (39, 0),
         )
         remote_trunk = (
-            RoutedEdge("trunk", (0, 0), (0, 10), "feeder"),
-            RoutedEdge("trunk", (0, 10), (6, 10), "spine"),
-            RoutedEdge("trunk", (6, 10), (6, 0), "tap"),
+            RoutedEdge("trunk", (0, 0), (0, 30), "feeder"),
+            RoutedEdge("trunk", (0, 30), (39, 30), "spine"),
+            RoutedEdge("trunk", (39, 30), (39, 0), "tap"),
         )
 
         self.assertFalse(
@@ -246,6 +234,24 @@ class FanoutRoutingTests(unittest.TestCase):
         terminals = [edge for edge in edges if edge.role in {"feeder", "tap"}]
         self.assertEqual(len(terminals), 3)
         self.assertTrue(all(edge.planned_path is not None for edge in terminals))
+
+    def test_vertical_terminal_grows_inline_into_collector_spine(self) -> None:
+        edges = _collector_edges(
+            "inline-terminal",
+            (0, 0),
+            ((8, 0),),
+            routing_source=(1, 0),
+            routing_sinks=((8, 1),),
+            forbidden=frozenset({(8, 1)}),
+            reserved=set(),
+            track_intervals={},
+            horizontal_intervals={},
+            bounds=(-4, -4, 12, 6),
+        )
+
+        tap = next(edge for edge in edges if edge.role == "tap")
+        self.assertEqual(tap.source, (8, 1))
+        self.assertEqual(tap.planned_path, ((8, 1), (8, 0)))
 
     def test_collector_fallback_reserves_off_spine_sockets(self) -> None:
         terminals = ((0, 0), (4, 0), (8, 0))

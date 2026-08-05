@@ -1097,6 +1097,11 @@ def _collector_edges(
             offsets = tuple(
                 dict.fromkeys(
                     (
+                        *(
+                            (0,)
+                            if terminal[0] == pin[0] and terminal[1] != pin[1]
+                            else ()
+                        ),
                         *range(outward, outward * 13, outward),
                         *range(-outward, -outward * 9, -outward),
                     )
@@ -1116,7 +1121,10 @@ def _collector_edges(
                     for point in tap[1:]
                 ):
                     continue
-                if any(point in forbidden for point in branch):
+                if any(
+                    point in forbidden and point != terminal
+                    for point in branch
+                ):
                     continue
                 if (set(tap[1:]) | set(branch)) & (reserved | staged_hubs):
                     continue
@@ -1149,9 +1157,10 @@ def _collector_edges(
             low_y, high_y = sorted((tap_hub[1], spine_hub[1]))
             staged_vertical[tap_hub[0]].append((low_y, high_y, network))
             tap_low, tap_high = sorted((terminal[0], tap_hub[0]))
-            staged_horizontal[terminal[1]].append(
-                (tap_low, tap_high, network)
-            )
+            if tap_low != tap_high:
+                staged_horizontal[terminal[1]].append(
+                    (tap_low, tap_high, network)
+                )
             staged_hubs.update((tap_hub, spine_hub))
         if failed:
             continue
@@ -1630,6 +1639,7 @@ def _prefer_single_sink_trunk(
     visibility_path: tuple[Point, ...],
     trunk_edges: tuple[RoutedEdge, ...],
     *,
+    minimum_length: int = 40,
     length_slack: int = 8,
 ) -> bool:
     """Trade a short amount of wire for a readable single-owner trunk.
@@ -1660,7 +1670,8 @@ def _prefer_single_sink_trunk(
         if edge.planned_path is not None
     )
     return (
-        visibility_backtracks >= 2
+        visibility_length >= minimum_length
+        and visibility_backtracks >= 2
         and trunk_bends == 0
         and trunk_length <= visibility_length + length_slack
     )
