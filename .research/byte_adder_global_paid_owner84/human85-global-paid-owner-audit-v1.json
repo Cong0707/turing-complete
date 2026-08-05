@@ -1,0 +1,4120 @@
+{
+  "schema": "tc-byte-adder-human85-global-paid-owner-audit-v1",
+  "status": "pass",
+  "method": "deterministic accepted-DAG replay, complete paid-rail fanout, complete BUS-driver physical states, and bounded-certificate aggregation; no SAT, BDD, ABC, random search, game launch, or live-save access",
+  "source": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_architecture_restart\\byte-adder-human85-s3-positive-phase-full.json",
+    "sha256": "b3dbe1d83ed28f32c929f4c840a6fa69a9d747e84895c0df9af794d7f704feee",
+    "structural_sha256": "5b3aa51e17c763d85617f28b7db20ac89635157251241498626f2fb148e928ca"
+  },
+  "baseline": {
+    "gate": 85,
+    "delay": 6,
+    "energy": 510,
+    "output_arrivals": [
+      4,
+      5,
+      4,
+      6,
+      6,
+      6,
+      6,
+      6,
+      6
+    ],
+    "reachable_nodes": 80,
+    "structural_sha256": "5b3aa51e17c763d85617f28b7db20ac89635157251241498626f2fb148e928ca",
+    "paid_instance_count": 63,
+    "paid_gate_sum": 85,
+    "output_mismatch_rows": {
+      "S0": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "S4": 0,
+      "S5": 0,
+      "S6": 0,
+      "S7": 0,
+      "C8": 0
+    },
+    "output_z_rows": {
+      "S0": 0,
+      "S1": 0,
+      "S2": 0,
+      "S3": 0,
+      "S4": 0,
+      "S5": 32768,
+      "S6": 0,
+      "S7": 45056,
+      "C8": 0
+    },
+    "global_conflict_rows": 0
+  },
+  "paid_rails": [
+    {
+      "id": 18,
+      "name": "B0partial",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        26,
+        36
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 36,
+          "consumer_name": "C1",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 19,
+      "name": "G1",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        26,
+        37
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 37,
+          "consumer_name": "S1_nand_left",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 20,
+      "name": "V1",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        26,
+        39
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data",
+            "data"
+          ]
+        },
+        {
+          "consumer": 39,
+          "consumer_name": "S1_or",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 21,
+      "name": "G0",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        23,
+        26,
+        36
+      ],
+      "direct_roles": [
+        {
+          "consumer": 23,
+          "consumer_name": "P0",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 36,
+          "consumer_name": "C1",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 22,
+      "name": "Q0",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 3,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        23
+      ],
+      "direct_roles": [
+        {
+          "consumer": 23,
+          "consumer_name": "P0",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S0"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 23,
+      "name": "P0",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        45
+      ],
+      "direct_roles": [
+        {
+          "consumer": 45,
+          "consumer_name": "S0",
+          "kind": "terminal",
+          "pins": [
+            "S0"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S0"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 24,
+      "name": "Q2",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        27,
+        30
+      ],
+      "direct_roles": [
+        {
+          "consumer": 27,
+          "consumer_name": "P2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 30,
+          "consumer_name": "N23",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 25,
+      "name": "G2",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        27,
+        31,
+        54
+      ],
+      "direct_roles": [
+        {
+          "consumer": 27,
+          "consumer_name": "P2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 54,
+          "consumer_name": "E3",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 26,
+      "name": "C2",
+      "op": "BUS",
+      "cost": 6,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        28,
+        31,
+        34,
+        38
+      ],
+      "direct_roles": [
+        {
+          "consumer": 28,
+          "consumer_name": "R2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 34,
+          "consumer_name": "T2",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 38,
+          "consumer_name": "S1_nand_right",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 27,
+      "name": "P2",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 3,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        28,
+        34
+      ],
+      "direct_roles": [
+        {
+          "consumer": 28,
+          "consumer_name": "R2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 34,
+          "consumer_name": "T2",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S2",
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 28,
+      "name": "R2",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 5,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        47
+      ],
+      "direct_roles": [
+        {
+          "consumer": 47,
+          "consumer_name": "S2",
+          "kind": "terminal",
+          "pins": [
+            "S2"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S2"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 29,
+      "name": "Q3",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        30,
+        48
+      ],
+      "direct_roles": [
+        {
+          "consumer": 30,
+          "consumer_name": "N23",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 48,
+          "consumer_name": "P3",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 30,
+      "name": "N23",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        31
+      ],
+      "direct_roles": [
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 31,
+      "name": "B23",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        49,
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 49,
+          "consumer_name": "C4",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 32,
+      "name": "G6",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 3,
+      "slack": 2,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        40,
+        50
+      ],
+      "direct_roles": [
+        {
+          "consumer": 40,
+          "consumer_name": "K67",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 50,
+          "consumer_name": "nP6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 33,
+      "name": "G7",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        40,
+        42
+      ],
+      "direct_roles": [
+        {
+          "consumer": 40,
+          "consumer_name": "K67",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 42,
+          "consumer_name": "P7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 34,
+      "name": "T2",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        47,
+        55
+      ],
+      "direct_roles": [
+        {
+          "consumer": 47,
+          "consumer_name": "S2",
+          "kind": "terminal",
+          "pins": [
+            "S2"
+          ]
+        },
+        {
+          "consumer": 55,
+          "consumer_name": "O3",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S2",
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 35,
+      "name": "Q7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        42,
+        53
+      ],
+      "direct_roles": [
+        {
+          "consumer": 42,
+          "consumer_name": "P7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 53,
+          "consumer_name": "H7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 36,
+      "name": "C1",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 3,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        37,
+        39
+      ],
+      "direct_roles": [
+        {
+          "consumer": 37,
+          "consumer_name": "S1_nand_left",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 39,
+          "consumer_name": "S1_or",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S1"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 37,
+      "name": "S1_nand_left",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        38
+      ],
+      "direct_roles": [
+        {
+          "consumer": 38,
+          "consumer_name": "S1_nand_right",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S1"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 38,
+      "name": "S1_nand_right",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 5,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        46
+      ],
+      "direct_roles": [
+        {
+          "consumer": 46,
+          "consumer_name": "S1",
+          "kind": "terminal",
+          "pins": [
+            "S1"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S1"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 39,
+      "name": "S1_or",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 5,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        46
+      ],
+      "direct_roles": [
+        {
+          "consumer": 46,
+          "consumer_name": "S1",
+          "kind": "terminal",
+          "pins": [
+            "S1"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S1"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 40,
+      "name": "K67",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        78
+      ],
+      "direct_roles": [
+        {
+          "consumer": 78,
+          "consumer_name": "Z7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 41,
+      "name": "Q6",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 3,
+      "slack": 2,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        43,
+        50,
+        52
+      ],
+      "direct_roles": [
+        {
+          "consumer": 43,
+          "consumer_name": "S7_reason_left",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 50,
+          "consumer_name": "nP6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 52,
+          "consumer_name": "Q6P7",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 42,
+      "name": "P7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 3,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        43,
+        52,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 43,
+          "consumer_name": "S7_reason_left",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 52,
+          "consumer_name": "Q6P7",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 43,
+      "name": "S7_reason_left",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        57
+      ],
+      "direct_roles": [
+        {
+          "consumer": 57,
+          "consumer_name": "E7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 44,
+      "name": "G3",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        48,
+        49,
+        64
+      ],
+      "direct_roles": [
+        {
+          "consumer": 48,
+          "consumer_name": "P3",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 49,
+          "consumer_name": "C4",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 64,
+          "consumer_name": "K34",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 45,
+      "name": "S0",
+      "op": "XOR",
+      "cost": 3,
+      "arrival": 4,
+      "latest_arrival_for_D6": 6,
+      "slack": 2,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S0"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 46,
+      "name": "S1",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 6,
+      "slack": 1,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S1"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 47,
+      "name": "S2",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 6,
+      "slack": 2,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S2"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 48,
+      "name": "P3",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 3,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        51,
+        54
+      ],
+      "direct_roles": [
+        {
+          "consumer": 51,
+          "consumer_name": "D3",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 54,
+          "consumer_name": "E3",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 49,
+      "name": "C4",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 4,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        51,
+        69,
+        70
+      ],
+      "direct_roles": [
+        {
+          "consumer": 51,
+          "consumer_name": "D3",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 69,
+          "consumer_name": "T4",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 70,
+          "consumer_name": "R4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 50,
+      "name": "nP6",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        75,
+        76
+      ],
+      "direct_roles": [
+        {
+          "consumer": 75,
+          "consumer_name": "A6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 76,
+          "consumer_name": "B6",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 51,
+      "name": "D3",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        56
+      ],
+      "direct_roles": [
+        {
+          "consumer": 56,
+          "consumer_name": "S3",
+          "kind": "terminal",
+          "pins": [
+            "S3"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 52,
+      "name": "Q6P7",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        53,
+        57
+      ],
+      "direct_roles": [
+        {
+          "consumer": 53,
+          "consumer_name": "H7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 57,
+          "consumer_name": "E7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 53,
+      "name": "H7",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 5,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        79
+      ],
+      "direct_roles": [
+        {
+          "consumer": 79,
+          "consumer_name": "C8",
+          "kind": "terminal",
+          "pins": [
+            "C8"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 54,
+      "name": "E3",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        55
+      ],
+      "direct_roles": [
+        {
+          "consumer": 55,
+          "consumer_name": "O3",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 55,
+      "name": "O3",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 5,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        56
+      ],
+      "direct_roles": [
+        {
+          "consumer": 56,
+          "consumer_name": "S3",
+          "kind": "terminal",
+          "pins": [
+            "S3"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 56,
+      "name": "S3",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S3"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 57,
+      "name": "E7",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 5,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 58,
+      "name": "G4",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        60,
+        64,
+        73
+      ],
+      "direct_roles": [
+        {
+          "consumer": 60,
+          "consumer_name": "P4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 64,
+          "consumer_name": "K34",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 73,
+          "consumer_name": "E5",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 59,
+      "name": "Q4",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        60,
+        66
+      ],
+      "direct_roles": [
+        {
+          "consumer": 60,
+          "consumer_name": "P4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 66,
+          "consumer_name": "V45",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 60,
+      "name": "P4",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        69,
+        70
+      ],
+      "direct_roles": [
+        {
+          "consumer": 69,
+          "consumer_name": "T4",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 70,
+          "consumer_name": "R4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S4",
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 61,
+      "name": "G5",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        63,
+        65,
+        67
+      ],
+      "direct_roles": [
+        {
+          "consumer": 63,
+          "consumer_name": "P5",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 65,
+          "consumer_name": "G345",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 67,
+          "consumer_name": "D45",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 62,
+      "name": "Q5",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        63,
+        66
+      ],
+      "direct_roles": [
+        {
+          "consumer": 63,
+          "consumer_name": "P5",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 66,
+          "consumer_name": "V45",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 63,
+      "name": "P5",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        72,
+        73
+      ],
+      "direct_roles": [
+        {
+          "consumer": 72,
+          "consumer_name": "D5",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 73,
+          "consumer_name": "E5",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 64,
+      "name": "K34",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        65
+      ],
+      "direct_roles": [
+        {
+          "consumer": 65,
+          "consumer_name": "G345",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 65,
+      "name": "G345",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 66,
+      "name": "V45",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        67
+      ],
+      "direct_roles": [
+        {
+          "consumer": 67,
+          "consumer_name": "D45",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 67,
+      "name": "D45",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 68,
+      "name": "C6",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 4,
+      "latest_arrival_for_D6": 4,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        72,
+        75,
+        76,
+        78
+      ],
+      "direct_roles": [
+        {
+          "consumer": 72,
+          "consumer_name": "D5",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 75,
+          "consumer_name": "A6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 76,
+          "consumer_name": "B6",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 78,
+          "consumer_name": "Z7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 69,
+      "name": "T4",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        71,
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 71,
+          "consumer_name": "S4",
+          "kind": "terminal",
+          "pins": [
+            "S4"
+          ]
+        },
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S4",
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 70,
+      "name": "R4",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        71
+      ],
+      "direct_roles": [
+        {
+          "consumer": 71,
+          "consumer_name": "S4",
+          "kind": "terminal",
+          "pins": [
+            "S4"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S4"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 71,
+      "name": "S4",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S4"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 72,
+      "name": "D5",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "data",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 73,
+      "name": "E5",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 5,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 74,
+      "name": "S5",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 75,
+      "name": "A6",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        77,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 77,
+          "consumer_name": "S6",
+          "kind": "terminal",
+          "pins": [
+            "S6"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 76,
+      "name": "B6",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        77
+      ],
+      "direct_roles": [
+        {
+          "consumer": 77,
+          "consumer_name": "S6",
+          "kind": "terminal",
+          "pins": [
+            "S6"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S6"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 77,
+      "name": "S6",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S6"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 78,
+      "name": "Z7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        79,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 79,
+          "consumer_name": "C8",
+          "kind": "terminal",
+          "pins": [
+            "C8"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 79,
+      "name": "C8",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "C8"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 80,
+      "name": "S7",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 6,
+      "latest_arrival_for_D6": 6,
+      "slack": 0,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "direct_roles": [],
+      "downstream_outputs": [
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": false
+    }
+  ],
+  "cross_role_paid_rails": [
+    {
+      "id": 18,
+      "name": "B0partial",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        26,
+        36
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 36,
+          "consumer_name": "C1",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 19,
+      "name": "G1",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        26,
+        37
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 37,
+          "consumer_name": "S1_nand_left",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 20,
+      "name": "V1",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        26,
+        39
+      ],
+      "direct_roles": [
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data",
+            "data"
+          ]
+        },
+        {
+          "consumer": 39,
+          "consumer_name": "S1_or",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 21,
+      "name": "G0",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        23,
+        26,
+        36
+      ],
+      "direct_roles": [
+        {
+          "consumer": 23,
+          "consumer_name": "P0",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 26,
+          "consumer_name": "C2",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 36,
+          "consumer_name": "C1",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 24,
+      "name": "Q2",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        27,
+        30
+      ],
+      "direct_roles": [
+        {
+          "consumer": 27,
+          "consumer_name": "P2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 30,
+          "consumer_name": "N23",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 25,
+      "name": "G2",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        27,
+        31,
+        54
+      ],
+      "direct_roles": [
+        {
+          "consumer": 27,
+          "consumer_name": "P2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 54,
+          "consumer_name": "E3",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 26,
+      "name": "C2",
+      "op": "BUS",
+      "cost": 6,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        28,
+        31,
+        34,
+        38
+      ],
+      "direct_roles": [
+        {
+          "consumer": 28,
+          "consumer_name": "R2",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        },
+        {
+          "consumer": 34,
+          "consumer_name": "T2",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 38,
+          "consumer_name": "S1_nand_right",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 29,
+      "name": "Q3",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        30,
+        48
+      ],
+      "direct_roles": [
+        {
+          "consumer": 30,
+          "consumer_name": "N23",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 48,
+          "consumer_name": "P3",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 30,
+      "name": "N23",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        31
+      ],
+      "direct_roles": [
+        {
+          "consumer": 31,
+          "consumer_name": "B23",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 31,
+      "name": "B23",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        49,
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 49,
+          "consumer_name": "C4",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 32,
+      "name": "G6",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 3,
+      "slack": 2,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        40,
+        50
+      ],
+      "direct_roles": [
+        {
+          "consumer": 40,
+          "consumer_name": "K67",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 50,
+          "consumer_name": "nP6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 33,
+      "name": "G7",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        40,
+        42
+      ],
+      "direct_roles": [
+        {
+          "consumer": 40,
+          "consumer_name": "K67",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 42,
+          "consumer_name": "P7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 35,
+      "name": "Q7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        42,
+        53
+      ],
+      "direct_roles": [
+        {
+          "consumer": 42,
+          "consumer_name": "P7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 53,
+          "consumer_name": "H7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 40,
+      "name": "K67",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 4,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        78
+      ],
+      "direct_roles": [
+        {
+          "consumer": 78,
+          "consumer_name": "Z7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 41,
+      "name": "Q6",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 3,
+      "slack": 2,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        43,
+        50,
+        52
+      ],
+      "direct_roles": [
+        {
+          "consumer": 43,
+          "consumer_name": "S7_reason_left",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 50,
+          "consumer_name": "nP6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 52,
+          "consumer_name": "Q6P7",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 42,
+      "name": "P7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 3,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        43,
+        52,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 43,
+          "consumer_name": "S7_reason_left",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 52,
+          "consumer_name": "Q6P7",
+          "kind": "ordinary",
+          "pins": [
+            "AND"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 44,
+      "name": "G3",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        48,
+        49,
+        64
+      ],
+      "direct_roles": [
+        {
+          "consumer": 48,
+          "consumer_name": "P3",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 49,
+          "consumer_name": "C4",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 64,
+          "consumer_name": "K34",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 52,
+      "name": "Q6P7",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 4,
+      "slack": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        53,
+        57
+      ],
+      "direct_roles": [
+        {
+          "consumer": 53,
+          "consumer_name": "H7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 57,
+          "consumer_name": "E7",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 57,
+      "name": "E7",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 4,
+      "latest_arrival_for_D6": 5,
+      "slack": 1,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 58,
+      "name": "G4",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        60,
+        64,
+        73
+      ],
+      "direct_roles": [
+        {
+          "consumer": 60,
+          "consumer_name": "P4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 64,
+          "consumer_name": "K34",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 73,
+          "consumer_name": "E5",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 59,
+      "name": "Q4",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        60,
+        66
+      ],
+      "direct_roles": [
+        {
+          "consumer": 60,
+          "consumer_name": "P4",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 66,
+          "consumer_name": "V45",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 61,
+      "name": "G5",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 2,
+      "slack": 1,
+      "fanout_edges": 3,
+      "unique_consumers": [
+        63,
+        65,
+        67
+      ],
+      "direct_roles": [
+        {
+          "consumer": 63,
+          "consumer_name": "P5",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 65,
+          "consumer_name": "G345",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 67,
+          "consumer_name": "D45",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 62,
+      "name": "Q5",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 1,
+      "latest_arrival_for_D6": 1,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        63,
+        66
+      ],
+      "direct_roles": [
+        {
+          "consumer": 63,
+          "consumer_name": "P5",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        },
+        {
+          "consumer": 66,
+          "consumer_name": "V45",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 64,
+      "name": "K34",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        65
+      ],
+      "direct_roles": [
+        {
+          "consumer": 65,
+          "consumer_name": "G345",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 65,
+      "name": "G345",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "enable"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 66,
+      "name": "V45",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 2,
+      "latest_arrival_for_D6": 2,
+      "slack": 0,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        67
+      ],
+      "direct_roles": [
+        {
+          "consumer": 67,
+          "consumer_name": "D45",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 67,
+      "name": "D45",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 3,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        68
+      ],
+      "direct_roles": [
+        {
+          "consumer": 68,
+          "consumer_name": "C6",
+          "kind": "bus",
+          "pins": [
+            "data",
+            "data"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 68,
+      "name": "C6",
+      "op": "BUS",
+      "cost": 4,
+      "arrival": 4,
+      "latest_arrival_for_D6": 4,
+      "slack": 0,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        72,
+        75,
+        76,
+        78
+      ],
+      "direct_roles": [
+        {
+          "consumer": 72,
+          "consumer_name": "D5",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 75,
+          "consumer_name": "A6",
+          "kind": "ordinary",
+          "pins": [
+            "OR"
+          ]
+        },
+        {
+          "consumer": 76,
+          "consumer_name": "B6",
+          "kind": "ordinary",
+          "pins": [
+            "NAND"
+          ]
+        },
+        {
+          "consumer": 78,
+          "consumer_name": "Z7",
+          "kind": "ordinary",
+          "pins": [
+            "NOR"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": false
+    },
+    {
+      "id": 69,
+      "name": "T4",
+      "op": "AND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        71,
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 71,
+          "consumer_name": "S4",
+          "kind": "terminal",
+          "pins": [
+            "S4"
+          ]
+        },
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S4",
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 72,
+      "name": "D5",
+      "op": "NAND",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "data",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 73,
+      "name": "E5",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 3,
+      "latest_arrival_for_D6": 5,
+      "slack": 2,
+      "fanout_edges": 1,
+      "unique_consumers": [
+        74
+      ],
+      "direct_roles": [
+        {
+          "consumer": 74,
+          "consumer_name": "S5",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S5"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 75,
+      "name": "A6",
+      "op": "OR",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        77,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 77,
+          "consumer_name": "S6",
+          "kind": "terminal",
+          "pins": [
+            "S6"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "data",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "S6",
+        "S7"
+      ],
+      "crosses_sum_and_carry": false,
+      "directly_feeds_bus": true
+    },
+    {
+      "id": 78,
+      "name": "Z7",
+      "op": "NOR",
+      "cost": 1,
+      "arrival": 5,
+      "latest_arrival_for_D6": 5,
+      "slack": 0,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        79,
+        80
+      ],
+      "direct_roles": [
+        {
+          "consumer": 79,
+          "consumer_name": "C8",
+          "kind": "terminal",
+          "pins": [
+            "C8"
+          ]
+        },
+        {
+          "consumer": 80,
+          "consumer_name": "S7",
+          "kind": "bus_terminal",
+          "pins": [
+            "enable",
+            "terminal:S7"
+          ]
+        }
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S7"
+      ],
+      "crosses_sum_and_carry": true,
+      "directly_feeds_bus": true
+    }
+  ],
+  "bus_owners": [
+    {
+      "id": 18,
+      "name": "B0partial",
+      "resolved_network": "bus_18",
+      "gate": 4,
+      "arrival": 1,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        26,
+        36
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "drivers": [
+        {
+          "enable": 9,
+          "enable_name": "b0",
+          "enable_arrival": 0,
+          "data": 17,
+          "data_name": "cin",
+          "data_arrival": 0,
+          "active_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        },
+        {
+          "enable": 1,
+          "enable_name": "a0",
+          "enable_arrival": 0,
+          "data": 17,
+          "data_name": "cin",
+          "data_arrival": 0,
+          "active_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 32768,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 32768,
+      "active_zero_rows": 49152,
+      "active_one_rows": 49152,
+      "conflict_rows": 0
+    },
+    {
+      "id": 26,
+      "name": "C2",
+      "resolved_network": "bus_26",
+      "gate": 6,
+      "arrival": 2,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        28,
+        31,
+        34,
+        38
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "drivers": [
+        {
+          "enable": 18,
+          "enable_name": "B0partial",
+          "enable_arrival": 1,
+          "data": 20,
+          "data_name": "V1",
+          "data_arrival": 1,
+          "active_rows": 49152,
+          "active_one_rows": 36864,
+          "active_zero_rows": 12288
+        },
+        {
+          "enable": 19,
+          "enable_name": "G1",
+          "enable_arrival": 1,
+          "data": 20,
+          "data_name": "V1",
+          "data_arrival": 1,
+          "active_rows": 32768,
+          "active_one_rows": 32768,
+          "active_zero_rows": 0
+        },
+        {
+          "enable": 21,
+          "enable_name": "G0",
+          "enable_arrival": 1,
+          "data": 20,
+          "data_name": "V1",
+          "data_arrival": 1,
+          "active_rows": 32768,
+          "active_one_rows": 24576,
+          "active_zero_rows": 8192
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 12288,
+          "data_disagreement_rows": 0
+        },
+        {
+          "drivers": [
+            0,
+            2
+          ],
+          "active_overlap_rows": 16384,
+          "data_disagreement_rows": 0
+        },
+        {
+          "drivers": [
+            1,
+            2
+          ],
+          "active_overlap_rows": 8192,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 49152,
+      "active_zero_rows": 16384,
+      "active_one_rows": 65536,
+      "conflict_rows": 0
+    },
+    {
+      "id": 31,
+      "name": "B23",
+      "resolved_network": "bus_31",
+      "gate": 4,
+      "arrival": 3,
+      "fanout_edges": 2,
+      "unique_consumers": [
+        49,
+        68
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "drivers": [
+        {
+          "enable": 26,
+          "enable_name": "C2",
+          "enable_arrival": 2,
+          "data": 30,
+          "data_name": "N23",
+          "data_arrival": 2,
+          "active_rows": 65536,
+          "active_one_rows": 36864,
+          "active_zero_rows": 28672
+        },
+        {
+          "enable": 25,
+          "enable_name": "G2",
+          "enable_arrival": 1,
+          "data": 30,
+          "data_name": "N23",
+          "data_arrival": 2,
+          "active_rows": 32768,
+          "active_one_rows": 24576,
+          "active_zero_rows": 8192
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 16384,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 49152,
+      "active_zero_rows": 32768,
+      "active_one_rows": 49152,
+      "conflict_rows": 0
+    },
+    {
+      "id": 68,
+      "name": "C6",
+      "resolved_network": "bus_68",
+      "gate": 4,
+      "arrival": 4,
+      "fanout_edges": 4,
+      "unique_consumers": [
+        72,
+        75,
+        76,
+        78
+      ],
+      "downstream_outputs": [
+        "C8",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "drivers": [
+        {
+          "enable": 31,
+          "enable_name": "B23",
+          "enable_arrival": 3,
+          "data": 67,
+          "data_name": "D45",
+          "data_arrival": 3,
+          "active_rows": 49152,
+          "active_one_rows": 30720,
+          "active_zero_rows": 18432
+        },
+        {
+          "enable": 65,
+          "enable_name": "G345",
+          "enable_arrival": 3,
+          "data": 67,
+          "data_name": "D45",
+          "data_arrival": 3,
+          "active_rows": 75776,
+          "active_one_rows": 57344,
+          "active_zero_rows": 18432
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 30720,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 36864,
+      "active_zero_rows": 28672,
+      "active_one_rows": 65536,
+      "conflict_rows": 0
+    },
+    {
+      "id": 74,
+      "name": "S5",
+      "resolved_network": "bus_74",
+      "gate": 4,
+      "arrival": 6,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "downstream_outputs": [
+        "S5"
+      ],
+      "drivers": [
+        {
+          "enable": 73,
+          "enable_name": "E5",
+          "enable_arrival": 3,
+          "data": 72,
+          "data_name": "D5",
+          "data_arrival": 5,
+          "active_rows": 81920,
+          "active_one_rows": 49152,
+          "active_zero_rows": 32768
+        },
+        {
+          "enable": 69,
+          "enable_name": "T4",
+          "enable_arrival": 5,
+          "data": 72,
+          "data_name": "D5",
+          "data_arrival": 5,
+          "active_rows": 32768,
+          "active_one_rows": 16384,
+          "active_zero_rows": 16384
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 16384,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 32768,
+      "active_zero_rows": 32768,
+      "active_one_rows": 65536,
+      "conflict_rows": 0
+    },
+    {
+      "id": 80,
+      "name": "S7",
+      "resolved_network": "bus_80",
+      "gate": 4,
+      "arrival": 6,
+      "fanout_edges": 0,
+      "unique_consumers": [],
+      "downstream_outputs": [
+        "S7"
+      ],
+      "drivers": [
+        {
+          "enable": 57,
+          "enable_name": "E7",
+          "enable_arrival": 4,
+          "data": 75,
+          "data_name": "A6",
+          "data_arrival": 5,
+          "active_rows": 65536,
+          "active_one_rows": 49152,
+          "active_zero_rows": 16384
+        },
+        {
+          "enable": 78,
+          "enable_name": "Z7",
+          "enable_arrival": 5,
+          "data": 42,
+          "data_name": "P7",
+          "data_arrival": 2,
+          "active_rows": 36864,
+          "active_one_rows": 24576,
+          "active_zero_rows": 12288
+        }
+      ],
+      "overlaps": [
+        {
+          "drivers": [
+            0,
+            1
+          ],
+          "active_overlap_rows": 16384,
+          "data_disagreement_rows": 0
+        }
+      ],
+      "z_rows": 45056,
+      "active_zero_rows": 20480,
+      "active_one_rows": 65536,
+      "conflict_rows": 0
+    }
+  ],
+  "paid_signature_relations": {
+    "physical_equal_pairs": [],
+    "normalized_value_equal_pairs": [],
+    "normalized_value_complement_pairs": [],
+    "warning": "Normalized equality discards Z/owner identity and is not by itself a wireable replacement."
+  },
+  "candidate_boundaries": [
+    {
+      "priority": 1,
+      "name": "U6部分进位与S6/S7/C8完整高尾",
+      "current_gate": 15,
+      "target_gate": 14,
+      "best_closed_gate": 15,
+      "arrival": 6,
+      "status": "one_gate_gap",
+      "decisive_fact": "D45/G345 deletion saves two gates; shared G5 absorption costs one, and S6 has no <=2-gate D6 closure in the recorded widened basis.",
+      "next_architectural_move": "Change the bit6/7 paid-state encoding or final S7/C8 owner so one new phase replaces A6/Z7 or one M/N/Kprime rail; do not materialize C6."
+    },
+    {
+      "priority": 2,
+      "name": "C2的G1-driver拆分与S1/S2/T2消费者ABI",
+      "current_gate": 6,
+      "target_gate": 5,
+      "best_closed_gate": 6,
+      "arrival": 6,
+      "status": "one_gate_gap_after_full_consumers",
+      "decisive_fact": "B=V1*C1 owner costs four and H12=G1|G2 costs one, but retaining the S1/S2/T2 ABI requires one more complete-C2 phase; bounded final-Z covers do not remove that payment.",
+      "next_architectural_move": "Cancel the scalar C2 ABI across S1/S2/S3/B23 as one block; isolated owner compression is already closed at equal cost."
+    },
+    {
+      "priority": 3,
+      "name": "B23/C4与S2/S3联合状态块",
+      "current_gate": 18,
+      "target_gate": 17,
+      "best_closed_gate": 18,
+      "arrival": 6,
+      "status": "one_gate_gap",
+      "decisive_fact": "B23 must remain at D3 for C6; a D4 C4 owner cannot replace that external consumer.  Existing equal-cost near cuts have no strict union hit.",
+      "next_architectural_move": "Expose a new D3 lower-carry descriptor that simultaneously serves C6 and one S2/S3 phase, rather than replacing only BUS31."
+    },
+    {
+      "priority": 4,
+      "name": "当前S5/S7最终Switch owner直接重画",
+      "current_gate": 10,
+      "target_gate": 9,
+      "best_closed_gate": 10,
+      "arrival": 6,
+      "status": "closed_for_recorded_paid_endpoints",
+      "decisive_fact": "The only zero-delta final positive covers reproduce the current S5 and S7 owners.  Word Switch cost is lane-linear, so a shared enable does not itself reduce gates.",
+      "next_architectural_move": "Only revisit after an upstream state recode exposes a genuinely shared data phase; swapping existing enable/data endpoints cannot save a gate."
+    }
+  ],
+  "bounded_evidence": {
+    "paid_ledger_cut_count": 3,
+    "c6_two_gate_s6_hit_count": 0,
+    "global_real_byproduct_strict_hit_count": 0,
+    "near_cut_strict_union_hit_count": 0,
+    "switch_positive_cover_best": {
+      "S0": null,
+      "S1": {
+        "gate": 86,
+        "delay": 6,
+        "gate_delta": 1
+      },
+      "S2": null,
+      "S3": {
+        "gate": 86,
+        "delay": 6,
+        "gate_delta": 1
+      },
+      "S4": null,
+      "S5": {
+        "gate": 85,
+        "delay": 6,
+        "gate_delta": 0
+      },
+      "S6": null,
+      "S7": {
+        "gate": 85,
+        "delay": 6,
+        "gate_delta": 0
+      },
+      "C8": null
+    },
+    "low_partial_s1_ordinary": {
+      "four_gate": "unsat",
+      "five_gate": "sat",
+      "compressed_truth_rows": 32
+    },
+    "claim_boundary": "These are exact only for their recorded paid endpoints and bounded topologies.  They are not a global 84/6 impossibility proof."
+  },
+  "result": {
+    "complete_84_6_candidate": false,
+    "best_complete_score": [
+      85,
+      6,
+      510
+    ],
+    "highest_priority_unclosed_boundary": "U6部分进位与S6/S7/C8完整高尾",
+    "formal_save_modified": false,
+    "game_started": false
+  },
+  "artifact_hashes": [
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_architecture_restart\\byte-adder-human85-s3-positive-phase-full.json",
+      "sha256": "b3dbe1d83ed28f32c929f4c840a6fa69a9d747e84895c0df9af794d7f704feee"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_conditional_sum_restart\\global_byproduct_core.py",
+      "sha256": "7859644657063a430573a368b47024c7d4d70fc1607e8ac0c4812d6bccb147c1"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte85_paid_phase_ledger\\byte85-paid-phase-ledger.json",
+      "sha256": "25e634c08b5ce0a5e2514b49b13bbcff29df01c12d195b0c7df02596834c6188"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_c6_joint_owner_recode\\c6-joint-owner-audit.json",
+      "sha256": "62e89d11d8e6c7259a13dccde8dac225613077d961c7bd5d8a6be387de6f47cf"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_primitive_relation_miner\\human85-global-real-byproduct-atlas-v1.json",
+      "sha256": "26808838089f06c7915c4c1254a9209704bfcb32ebbdf5dedd482c04b857699c"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_primitive_relation_miner\\human85-near-cut-hyperedges-v1.json",
+      "sha256": "2eaa9a63f929bd4d0d97fa3d35493e3909af2d67f09212c622d89b27d57d575a"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_primitive_relation_miner\\human85-switch-positive-output-covers-v1.json",
+      "sha256": "4508f0356ab0d26009b9d8f42fac947c87d52667dc3e59e41257ef863898e361"
+    },
+    {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_low_partial_sum\\audit-result-with-sat.json",
+      "sha256": "67f9c56ee36921f453a9abadb145ec24dd9d9d40747366f2d2a90b1e536b28ac"
+    }
+  ],
+  "self_checks": {
+    "baseline_is_85_6": true,
+    "paid_gate_sum_is_85": true,
+    "paid_instance_count_is_63": true,
+    "zero_output_mismatch": true,
+    "zero_global_conflict": true,
+    "all_owner_conflicts_zero": true,
+    "six_complete_bus_owners": true,
+    "c6_bounded_two_gate_s6_is_empty": true,
+    "recorded_global_strict_hits_empty": true,
+    "recorded_near_cut_strict_unions_empty": true
+  }
+}

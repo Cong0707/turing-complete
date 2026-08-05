@@ -1,0 +1,162 @@
+{
+  "schema": "byte-adder-c2-fixed-partial-sum-audit-v1",
+  "dag": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_architecture_restart\\byte-adder-human85-s3-positive-phase-full.json",
+  "baseline": {
+    "gate": 85,
+    "delay": 6,
+    "energy": 510
+  },
+  "s1_boundary": {
+    "source_ids": [
+      1,
+      2,
+      9,
+      10,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      26,
+      45
+    ],
+    "private_ids": [
+      36,
+      37,
+      38,
+      39,
+      46
+    ],
+    "private_gate_cost": 5,
+    "two_switch_source_cover": {
+      "target": 46,
+      "candidate_nodes": 69,
+      "positive_term_count": 14,
+      "two_switch_conflict_free_covers": [],
+      "cover_count": 0
+    },
+    "weighted_cost_at_most_four_nonordinary_shapes": {
+      "compressed_truth_rows": 32,
+      "one_gate_function_count": 238,
+      "final_switch_plus_at_most_two_ordinary_hits": [],
+      "switch_shape_hit_count": 0,
+      "xor_or_xor_plus_one_ordinary_hits": [],
+      "xor_shape_hit_count": 0
+    }
+  },
+  "all_large_private_sum_cones": {
+    "S0": {
+      "private_ids": [
+        22,
+        23,
+        45
+      ],
+      "private_gate_cost": 5,
+      "two_switch_source_cover": {
+        "target": 45,
+        "candidate_nodes": 71,
+        "positive_term_count": 4,
+        "two_switch_conflict_free_covers": [],
+        "cover_count": 0
+      }
+    },
+    "S1": {
+      "private_ids": [
+        36,
+        37,
+        38,
+        39,
+        46
+      ],
+      "private_gate_cost": 5,
+      "two_switch_source_cover": {
+        "target": 46,
+        "candidate_nodes": 69,
+        "positive_term_count": 14,
+        "two_switch_conflict_free_covers": [],
+        "cover_count": 0
+      }
+    },
+    "S3": {
+      "private_ids": [
+        48,
+        51,
+        54,
+        55,
+        56
+      ],
+      "private_gate_cost": 5,
+      "two_switch_source_cover": {
+        "target": 56,
+        "candidate_nodes": 70,
+        "positive_term_count": 20,
+        "two_switch_conflict_free_covers": [],
+        "cover_count": 0
+      }
+    }
+  },
+  "ordinary_s1": {
+    "four": {
+      "gate_count": 4,
+      "status": "unsat",
+      "compressed_truth_rows": 32,
+      "delay_limit": 6,
+      "witness": null
+    },
+    "five": {
+      "gate_count": 5,
+      "status": "sat",
+      "compressed_truth_rows": 32,
+      "delay_limit": 6,
+      "witness": [
+        {
+          "gate": 0,
+          "kind": "OR",
+          "inputs": [
+            "n21",
+            "n18"
+          ],
+          "actual_arrival": 2
+        },
+        {
+          "gate": 1,
+          "kind": "NAND",
+          "inputs": [
+            "n19",
+            "g0"
+          ],
+          "actual_arrival": 3
+        },
+        {
+          "gate": 2,
+          "kind": "NAND",
+          "inputs": [
+            "n26",
+            "g1"
+          ],
+          "actual_arrival": 4
+        },
+        {
+          "gate": 3,
+          "kind": "OR",
+          "inputs": [
+            "g0",
+            "n20"
+          ],
+          "actual_arrival": 3
+        },
+        {
+          "gate": 4,
+          "kind": "AND",
+          "inputs": [
+            "g3",
+            "g2"
+          ],
+          "actual_arrival": 5
+        }
+      ]
+    }
+  }
+}

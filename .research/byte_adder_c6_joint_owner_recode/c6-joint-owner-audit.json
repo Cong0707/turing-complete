@@ -1,0 +1,173 @@
+{
+  "schema": "byte-adder-c6-joint-owner-audit-v1",
+  "method": "1458 legal K/P/G rows; fixed paid-rail substitutions; bounded one/two-level ordinary-gate templates; no SAT/BDD",
+  "source": {
+    "path": ".research/byte_adder_architecture_restart/byte-adder-human85-s3-positive-phase-full.json",
+    "sha256": "b3dbe1d83ed28f32c929f4c840a6fa69a9d747e84895c0df9af794d7f704feee",
+    "score": {
+      "gate": 85,
+      "delay": 6,
+      "energy": 510
+    }
+  },
+  "domain_rows": 1458,
+  "basis": [
+    "c2",
+    "g2",
+    "q2",
+    "p2",
+    "g3",
+    "q3",
+    "p3",
+    "n23",
+    "r23",
+    "c4",
+    "g4",
+    "q4",
+    "p4",
+    "g5",
+    "q5",
+    "p5",
+    "k34",
+    "g345",
+    "v45",
+    "d45",
+    "u6",
+    "t4",
+    "d5",
+    "e5",
+    "g6",
+    "q6",
+    "p6",
+    "n6",
+    "g7",
+    "q7",
+    "p7",
+    "k67",
+    "t67",
+    "r67",
+    "e7",
+    "h7",
+    "m",
+    "nprime",
+    "kprime",
+    "a6",
+    "z7"
+  ],
+  "one_gate_hits": {
+    "d5": [
+      "AND(d5,d5)",
+      "NAND(p5,u6)",
+      "OR(d5,d5)",
+      "OR(d5,z7)",
+      "OR(g5,d5)",
+      "OR(q4,d5)",
+      "OR(q5,d5)"
+    ],
+    "a6": [
+      "AND(a6,a6)",
+      "OR(a6,a6)",
+      "OR(g5,a6)",
+      "OR(g6,a6)",
+      "OR(m,a6)",
+      "OR(n6,a6)",
+      "OR(nprime,a6)",
+      "OR(q6,a6)",
+      "OR(t67,a6)",
+      "OR(u6,a6)",
+      "OR(u6,nprime)"
+    ],
+    "b6": [],
+    "z7": [
+      "AND(d5,z7)",
+      "AND(z7,z7)",
+      "NOR(u6,kprime)",
+      "OR(z7,z7)"
+    ],
+    "s5": [],
+    "s6": [],
+    "s7": [],
+    "c8": [
+      "NOR(h7,z7)"
+    ]
+  },
+  "two_gate_s6_hits": [],
+  "flat_three_gate_d6_s7_hits": [],
+  "native_xor_s7_relations": [
+    {
+      "formula": "XNOR(e7,a6)",
+      "cost": 3,
+      "arrival": 7,
+      "meets_d6": false
+    }
+  ],
+  "direct_substitution_hits": {
+    "c6_replace_r23_enable": [
+      "c4",
+      "r23",
+      "t4",
+      "u6"
+    ],
+    "c6_replace_g345_enable": [
+      "g345"
+    ],
+    "c6_replace_d45_data": [
+      "d45"
+    ],
+    "s5_replace_d5_data": [
+      "d5"
+    ],
+    "s5_replace_e5_enable": [
+      "e5"
+    ],
+    "s5_replace_t4_enable": [
+      "t4"
+    ]
+  },
+  "owner_audit": {
+    "c6_conflict_rows": 0,
+    "u6_conflict_rows": 0,
+    "s5_conflict_rows": 0,
+    "s7_conflict_rows": 0,
+    "c6_z_rows": 324,
+    "u6_z_rows": 486,
+    "s5_z_rows": 486,
+    "s7_z_rows": 486,
+    "s5_one_undriven_rows": 0,
+    "s7_one_undriven_rows": 0,
+    "late_carry_rows": 81,
+    "late_only_carry_rows": 27
+  },
+  "ledger": {
+    "current_fixed_downstream_cut": {
+      "K34": 1,
+      "G345": 1,
+      "V45": 1,
+      "D45": 1,
+      "C6_two_switch_owner": 4,
+      "D5": 1,
+      "n6": 1,
+      "K67": 1,
+      "A6": 1,
+      "B6": 1,
+      "Z7": 1,
+      "S6_final": 1,
+      "total": 15
+    },
+    "u6_fixed_downstream_lower_bound": {
+      "K34": 1,
+      "V45": 1,
+      "U6_two_switch_owner": 4,
+      "D5": 1,
+      "M_N_Kprime": 3,
+      "A6_Z7": 2,
+      "S6_direct_minimum": 3,
+      "total_lower_bound": 15
+    }
+  },
+  "result": {
+    "complete_84_6_candidate": false,
+    "fixed_downstream_u6_family_lower_bound": "85/6",
+    "reason": "U6 deletes D45/G345, but shared G5 absorption consumes one gate and S6 has no <=2-gate D6 closure even when all listed paid rails and P6 are granted for free."
+  }
+}
