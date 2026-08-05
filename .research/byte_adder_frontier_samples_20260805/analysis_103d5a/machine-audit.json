@@ -1,0 +1,9616 @@
+{
+  "schema": "byte-adder-frontier-sample-103d5a-audit-v1",
+  "source": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 103 5 A\\circuit.data",
+    "bytes": 4042,
+    "sha256": "5A38F50DE81E8B72B0BE3E7ABD160F38E335DFD1269A9A5894B7D5BE561A89A9",
+    "format": 15,
+    "v15_encode_decode_round_trip_equal": true
+  },
+  "declared": {
+    "gate": 103,
+    "delay": 5,
+    "energy": 515,
+    "custom_id": 853664988659981896
+  },
+  "recomputed": {
+    "gate": 103,
+    "delay": 5,
+    "energy": 515,
+    "component_count": 90,
+    "wire_count": 368,
+    "logical_network_count": 89,
+    "paid_physical_component_count": 80,
+    "truth_rows": 131072,
+    "mismatch_union_rows": 0,
+    "conflict_union_rows": 0,
+    "output_vector_sha256": "aecfd0e1b038b77d0f9c9a89d84afadb78ad248be185c367a9707f2009c9b280"
+  },
+  "cost_by_kind": {
+    "AND": {
+      "count": 14,
+      "unit_gate": 1,
+      "gate": 14
+    },
+    "NAND": {
+      "count": 15,
+      "unit_gate": 1,
+      "gate": 15
+    },
+    "OR": {
+      "count": 15,
+      "unit_gate": 1,
+      "gate": 15
+    },
+    "NOR": {
+      "count": 13,
+      "unit_gate": 1,
+      "gate": 13
+    },
+    "SWITCH": {
+      "count": 23,
+      "unit_gate": 2,
+      "gate": 46
+    },
+    "MAKER8": {
+      "count": 1,
+      "unit_gate": 0,
+      "gate": 0
+    },
+    "SPLITTER8": {
+      "count": 2,
+      "unit_gate": 0,
+      "gate": 0
+    },
+    "INPUT": {
+      "count": 3,
+      "unit_gate": 0,
+      "gate": 0
+    },
+    "OUTPUT": {
+      "count": 2,
+      "unit_gate": 0,
+      "gate": 0
+    },
+    "SPLITTER2": {
+      "count": 1,
+      "unit_gate": 0,
+      "gate": 0
+    },
+    "MAKER2": {
+      "count": 1,
+      "unit_gate": 0,
+      "gate": 0
+    }
+  },
+  "ports": [
+    {
+      "component": 85,
+      "direction": "output",
+      "label": "Output",
+      "word_size": 8,
+      "position": [
+        4,
+        -53
+      ]
+    },
+    {
+      "component": 86,
+      "direction": "input",
+      "label": "Carry in",
+      "word_size": 1,
+      "position": [
+        -23,
+        -50
+      ]
+    },
+    {
+      "component": 87,
+      "direction": "input",
+      "label": "A",
+      "word_size": 8,
+      "position": [
+        -52,
+        -53
+      ]
+    },
+    {
+      "component": 88,
+      "direction": "input",
+      "label": "B",
+      "word_size": 8,
+      "position": [
+        -43,
+        -53
+      ]
+    },
+    {
+      "component": 89,
+      "direction": "output",
+      "label": "Carry out",
+      "word_size": 1,
+      "position": [
+        7,
+        51
+      ]
+    }
+  ],
+  "unconnected": {
+    "inputs": [
+      [
+        57,
+        "in0"
+      ]
+    ],
+    "outputs": [
+      [
+        55,
+        "out0"
+      ]
+    ],
+    "interpretation": "maker_2.in0 is Z->0 normalization; splitter_2.out0 is unused"
+  },
+  "outputs": [
+    {
+      "name": "S0",
+      "network": 41,
+      "arrival": 4,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S1",
+      "network": 138,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S2",
+      "network": 140,
+      "arrival": 4,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S3",
+      "network": 142,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 98304,
+      "z_rows": 32768
+    },
+    {
+      "name": "S4",
+      "network": 144,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S5",
+      "network": 332,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S6",
+      "network": 237,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "S7",
+      "network": 245,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    },
+    {
+      "name": "C8",
+      "network": 278,
+      "arrival": 5,
+      "mismatch_rows": 0,
+      "driven_rows": 131072,
+      "z_rows": 0
+    }
+  ],
+  "architecture_signal_certificate": {
+    "named_scalar_network_count": 83,
+    "mismatch_union_network_count": 0,
+    "mismatch_rows_by_network": {
+      "1": 0,
+      "3": 0,
+      "6": 0,
+      "11": 0,
+      "13": 0,
+      "14": 0,
+      "18": 0,
+      "21": 0,
+      "29": 0,
+      "30": 0,
+      "34": 0,
+      "36": 0,
+      "37": 0,
+      "38": 0,
+      "41": 0,
+      "43": 0,
+      "45": 0,
+      "51": 0,
+      "54": 0,
+      "56": 0,
+      "60": 0,
+      "63": 0,
+      "72": 0,
+      "78": 0,
+      "79": 0,
+      "82": 0,
+      "83": 0,
+      "84": 0,
+      "85": 0,
+      "89": 0,
+      "92": 0,
+      "94": 0,
+      "103": 0,
+      "105": 0,
+      "108": 0,
+      "111": 0,
+      "114": 0,
+      "124": 0,
+      "125": 0,
+      "138": 0,
+      "140": 0,
+      "142": 0,
+      "144": 0,
+      "152": 0,
+      "163": 0,
+      "171": 0,
+      "174": 0,
+      "177": 0,
+      "188": 0,
+      "191": 0,
+      "197": 0,
+      "203": 0,
+      "210": 0,
+      "213": 0,
+      "214": 0,
+      "215": 0,
+      "218": 0,
+      "223": 0,
+      "233": 0,
+      "234": 0,
+      "237": 0,
+      "240": 0,
+      "245": 0,
+      "257": 0,
+      "267": 0,
+      "270": 0,
+      "275": 0,
+      "276": 0,
+      "278": 0,
+      "281": 0,
+      "282": 0,
+      "306": 0,
+      "307": 0,
+      "319": 0,
+      "325": 0,
+      "332": 0,
+      "334": 0,
+      "335": 0,
+      "337": 0,
+      "347": 0,
+      "351": 0,
+      "352": 0,
+      "356": 0
+    }
+  },
+  "owners": [
+    {
+      "network": 36,
+      "name": "T0=Cin*V0",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 1,
+      "one_rows": 49152,
+      "driven_rows": 98304,
+      "z_rows": 32768,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 12,
+          "enable_network": 38,
+          "enable_name": "B0",
+          "data_network": 30,
+          "data_name": "Cin",
+          "arrival": 1,
+          "enable_one_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        },
+        {
+          "component": 13,
+          "enable_network": 43,
+          "enable_name": "A0",
+          "data_network": 30,
+          "data_name": "Cin",
+          "arrival": 1,
+          "enable_one_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        }
+      ]
+    },
+    {
+      "network": 83,
+      "name": "C4",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 3,
+      "one_rows": 65536,
+      "driven_rows": 94208,
+      "z_rows": 36864,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 41,
+          "enable_network": 191,
+          "enable_name": "R23=G2|G3",
+          "data_network": 174,
+          "data_name": "D23=G23|P23",
+          "arrival": 3,
+          "enable_one_rows": 57344,
+          "active_one_rows": 49152,
+          "active_zero_rows": 8192
+        },
+        {
+          "component": 42,
+          "enable_network": 177,
+          "enable_name": "C2",
+          "data_network": 174,
+          "data_name": "D23=G23|P23",
+          "arrival": 3,
+          "enable_one_rows": 65536,
+          "active_one_rows": 40960,
+          "active_zero_rows": 24576
+        }
+      ]
+    },
+    {
+      "network": 142,
+      "name": "S3",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 5,
+      "one_rows": 65536,
+      "driven_rows": 98304,
+      "z_rows": 32768,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 8,
+          "enable_network": 21,
+          "enable_name": "X3=nP3",
+          "data_network": 11,
+          "data_name": "C3",
+          "arrival": 5,
+          "enable_one_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        },
+        {
+          "component": 10,
+          "enable_network": 18,
+          "enable_name": "P3*nC4",
+          "data_network": 18,
+          "data_name": "P3*nC4",
+          "arrival": 5,
+          "enable_one_rows": 32768,
+          "active_one_rows": 32768,
+          "active_zero_rows": 0
+        }
+      ]
+    },
+    {
+      "network": 174,
+      "name": "D23=G23|P23",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 2,
+      "one_rows": 81920,
+      "driven_rows": 106496,
+      "z_rows": 24576,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 4,
+          "enable_network": 14,
+          "enable_name": "G3",
+          "data_network": 13,
+          "data_name": "V3",
+          "arrival": 2,
+          "enable_one_rows": 32768,
+          "active_one_rows": 32768,
+          "active_zero_rows": 0
+        },
+        {
+          "component": 9,
+          "enable_network": 188,
+          "enable_name": "V2",
+          "data_network": 13,
+          "data_name": "V3",
+          "arrival": 2,
+          "enable_one_rows": 98304,
+          "active_one_rows": 73728,
+          "active_zero_rows": 24576
+        }
+      ]
+    },
+    {
+      "network": 177,
+      "name": "C2",
+      "driver_count": 3,
+      "gate_cost": 6,
+      "arrival": 2,
+      "one_rows": 65536,
+      "driven_rows": 81920,
+      "z_rows": 49152,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 25,
+          "enable_network": 72,
+          "enable_name": "G1",
+          "data_network": 171,
+          "data_name": "V1",
+          "arrival": 2,
+          "enable_one_rows": 32768,
+          "active_one_rows": 32768,
+          "active_zero_rows": 0
+        },
+        {
+          "component": 26,
+          "enable_network": 34,
+          "enable_name": "G0",
+          "data_network": 171,
+          "data_name": "V1",
+          "arrival": 2,
+          "enable_one_rows": 32768,
+          "active_one_rows": 24576,
+          "active_zero_rows": 8192
+        },
+        {
+          "component": 40,
+          "enable_network": 36,
+          "enable_name": "T0=Cin*V0",
+          "data_network": 171,
+          "data_name": "V1",
+          "arrival": 2,
+          "enable_one_rows": 49152,
+          "active_one_rows": 36864,
+          "active_zero_rows": 12288
+        }
+      ]
+    },
+    {
+      "network": 210,
+      "name": "C8",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 5,
+      "one_rows": 65536,
+      "driven_rows": 106496,
+      "z_rows": 24576,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 52,
+          "enable_network": 223,
+          "enable_name": "E67=G6|X7",
+          "data_network": 213,
+          "data_name": "D67=G67|P67",
+          "arrival": 5,
+          "enable_one_rows": 81920,
+          "active_one_rows": 49152,
+          "active_zero_rows": 32768
+        },
+        {
+          "component": 53,
+          "enable_network": 337,
+          "enable_name": "C6",
+          "data_network": 213,
+          "data_name": "D67=G67|P67",
+          "arrival": 5,
+          "enable_one_rows": 65536,
+          "active_one_rows": 40960,
+          "active_zero_rows": 24576
+        }
+      ]
+    },
+    {
+      "network": 237,
+      "name": "S6",
+      "driver_count": 3,
+      "gate_cost": 6,
+      "arrival": 5,
+      "one_rows": 65536,
+      "driven_rows": 131072,
+      "z_rows": 0,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 58,
+          "enable_network": 356,
+          "enable_name": "K54",
+          "data_network": 233,
+          "data_name": "P6",
+          "arrival": 4,
+          "enable_one_rows": 49152,
+          "active_one_rows": 24576,
+          "active_zero_rows": 24576
+        },
+        {
+          "component": 59,
+          "enable_network": 234,
+          "enable_name": "R45=P5*nG4*nC4",
+          "data_network": 233,
+          "data_name": "P6",
+          "arrival": 5,
+          "enable_one_rows": 24576,
+          "active_one_rows": 12288,
+          "active_zero_rows": 12288
+        },
+        {
+          "component": 60,
+          "enable_network": 337,
+          "enable_name": "C6",
+          "data_network": 240,
+          "data_name": "X6=nP6",
+          "arrival": 5,
+          "enable_one_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        }
+      ]
+    },
+    {
+      "network": 245,
+      "name": "S7",
+      "driver_count": 3,
+      "gate_cost": 6,
+      "arrival": 5,
+      "one_rows": 65536,
+      "driven_rows": 131072,
+      "z_rows": 0,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 62,
+          "enable_network": 356,
+          "enable_name": "K54",
+          "data_network": 281,
+          "data_name": "L7=G6 xor P7",
+          "arrival": 5,
+          "enable_one_rows": 49152,
+          "active_one_rows": 24576,
+          "active_zero_rows": 24576
+        },
+        {
+          "component": 63,
+          "enable_network": 337,
+          "enable_name": "C6",
+          "data_network": 270,
+          "data_name": "F7=XNOR(Q6,P7)",
+          "arrival": 5,
+          "enable_one_rows": 65536,
+          "active_one_rows": 32768,
+          "active_zero_rows": 32768
+        },
+        {
+          "component": 64,
+          "enable_network": 234,
+          "enable_name": "R45=P5*nG4*nC4",
+          "data_network": 281,
+          "data_name": "L7=G6 xor P7",
+          "arrival": 5,
+          "enable_one_rows": 24576,
+          "active_one_rows": 12288,
+          "active_zero_rows": 12288
+        }
+      ]
+    },
+    {
+      "network": 332,
+      "name": "S5",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 5,
+      "one_rows": 65536,
+      "driven_rows": 131072,
+      "z_rows": 0,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 77,
+          "enable_network": 325,
+          "enable_name": "n(C4*P4)",
+          "data_network": 334,
+          "data_name": "L5=G4 xor P5",
+          "arrival": 5,
+          "enable_one_rows": 98304,
+          "active_one_rows": 49152,
+          "active_zero_rows": 49152
+        },
+        {
+          "component": 78,
+          "enable_network": 79,
+          "enable_name": "C4*P4",
+          "data_network": 352,
+          "data_name": "E45=G4|nP5",
+          "arrival": 5,
+          "enable_one_rows": 32768,
+          "active_one_rows": 16384,
+          "active_zero_rows": 16384
+        }
+      ]
+    },
+    {
+      "network": 337,
+      "name": "C6",
+      "driver_count": 2,
+      "gate_cost": 4,
+      "arrival": 4,
+      "one_rows": 65536,
+      "driven_rows": 106496,
+      "z_rows": 24576,
+      "conflict_rows": 0,
+      "drivers": [
+        {
+          "component": 79,
+          "enable_network": 352,
+          "enable_name": "E45=G4|nP5",
+          "data_network": 347,
+          "data_name": "D45=G54|P54",
+          "arrival": 4,
+          "enable_one_rows": 81920,
+          "active_one_rows": 49152,
+          "active_zero_rows": 32768
+        },
+        {
+          "component": 80,
+          "enable_network": 83,
+          "enable_name": "C4",
+          "data_network": 347,
+          "data_name": "D45=G54|P54",
+          "arrival": 4,
+          "enable_one_rows": 65536,
+          "active_one_rows": 40960,
+          "active_zero_rows": 24576
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "index": 0,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -33,
+        -4
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "AND(r6<B3>, r111<A3>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 6,
+          "width": 1,
+          "labels": [
+            [
+              "B3"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 111,
+          "width": 1,
+          "labels": [
+            [
+              "A3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 14,
+          "width": 1,
+          "labels": [
+            [
+              "G3",
+              "G3:3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -33,
+        -8
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NAND(r6<B3>, r111<A3>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 6,
+          "width": 1,
+          "labels": [
+            [
+              "B3"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 111,
+          "width": 1,
+          "labels": [
+            [
+              "A3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 3,
+          "width": 1,
+          "labels": [
+            [
+              "nG3",
+              "nG3:3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        -24
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r1<B2>, r124<A2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 1,
+          "width": 1,
+          "labels": [
+            [
+              "B2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 124,
+          "width": 1,
+          "labels": [
+            [
+              "A2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 188,
+          "width": 1,
+          "labels": [
+            [
+              "V2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -30,
+        -10
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "NAND(r13<V3>, r3<nG3>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 13,
+          "width": 1,
+          "labels": [
+            [
+              "V3"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 3,
+          "width": 1,
+          "labels": [
+            [
+              "nG3",
+              "nG3:3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 21,
+          "width": 1,
+          "labels": [
+            [
+              "X3=nP3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -24,
+        -6
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "SW(enable=r14<G3>, data=r13<V3>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 14,
+          "width": 1,
+          "labels": [
+            [
+              "G3",
+              "G3:3"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 13,
+          "width": 1,
+          "labels": [
+            [
+              "V3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 174,
+          "width": 1,
+          "labels": [
+            [
+              "D23=G23|P23"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -33,
+        -20
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NAND(r1<B2>, r124<A2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 1,
+          "width": 1,
+          "labels": [
+            [
+              "B2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 124,
+          "width": 1,
+          "labels": [
+            [
+              "A2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 306,
+          "width": 1,
+          "labels": [
+            [
+              "nG2",
+              "nG2:2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        -12
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r6<B3>, r111<A3>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 6,
+          "width": 1,
+          "labels": [
+            [
+              "B3"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 111,
+          "width": 1,
+          "labels": [
+            [
+              "A3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 13,
+          "width": 1,
+          "labels": [
+            [
+              "V3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -8,
+        -8
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NOR(r21<X3=nP3>, r83<C4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 21,
+          "width": 1,
+          "labels": [
+            [
+              "X3=nP3"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 18,
+          "width": 1,
+          "labels": [
+            [
+              "P3*nC4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -5,
+        -11
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r21<X3=nP3>, data=r11<C3>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 21,
+          "width": 1,
+          "labels": [
+            [
+              "X3=nP3"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 11,
+          "width": 1,
+          "labels": [
+            [
+              "C3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 142,
+          "width": 1,
+          "labels": [
+            [
+              "S3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -24,
+        -4
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "SW(enable=r188<V2>, data=r13<V3>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 188,
+          "width": 1,
+          "labels": [
+            [
+              "V2"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 13,
+          "width": 1,
+          "labels": [
+            [
+              "V3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 174,
+          "width": 1,
+          "labels": [
+            [
+              "D23=G23|P23"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -5,
+        -9
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r18<P3*nC4>, data=r18<P3*nC4>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 18,
+          "width": 1,
+          "labels": [
+            [
+              "P3*nC4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 18,
+          "width": 1,
+          "labels": [
+            [
+              "P3*nC4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 142,
+          "width": 1,
+          "labels": [
+            [
+              "S3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        -36
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r37<B1>, r114<A1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 37,
+          "width": 1,
+          "labels": [
+            [
+              "B1"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 114,
+          "width": 1,
+          "labels": [
+            [
+              "A1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 171,
+          "width": 1,
+          "labels": [
+            [
+              "V1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -28,
+        -42
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "SW(enable=r38<B0>, data=r30<Cin>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 38,
+          "width": 1,
+          "labels": [
+            [
+              "B0"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 30,
+          "width": 1,
+          "labels": [
+            [
+              "Cin",
+              "C0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 36,
+          "width": 1,
+          "labels": [
+            [
+              "T0=Cin*V0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -28,
+        -40
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "SW(enable=r43<A0>, data=r30<Cin>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 43,
+          "width": 1,
+          "labels": [
+            [
+              "A0"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 30,
+          "width": 1,
+          "labels": [
+            [
+              "Cin",
+              "C0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 36,
+          "width": 1,
+          "labels": [
+            [
+              "T0=Cin*V0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        -48
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r38<B0>, r43<A0>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 38,
+          "width": 1,
+          "labels": [
+            [
+              "B0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 43,
+          "width": 1,
+          "labels": [
+            [
+              "A0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 51,
+          "width": 1,
+          "labels": [
+            [
+              "V0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -22,
+        -41
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "OR(r34<G0>, r36<T0=Cin*V0>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 34,
+          "width": 1,
+          "labels": [
+            [
+              "G0",
+              "G0:0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 36,
+          "width": 1,
+          "labels": [
+            [
+              "T0=Cin*V0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 56,
+          "width": 1,
+          "labels": [
+            [
+              "C1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -16,
+        -47
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "NOR(r51<V0>, r30<Cin>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 51,
+          "width": 1,
+          "labels": [
+            [
+              "V0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 30,
+          "width": 1,
+          "labels": [
+            [
+              "Cin",
+              "C0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 54,
+          "width": 1,
+          "labels": [
+            [
+              "Q0*nCin"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -33,
+        -32
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "AND(r37<B1>, r114<A1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 37,
+          "width": 1,
+          "labels": [
+            [
+              "B1"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 114,
+          "width": 1,
+          "labels": [
+            [
+              "A1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 72,
+          "width": 1,
+          "labels": [
+            [
+              "G1",
+              "G1:1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -8,
+        -48
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NOR(r56<C1>, r54<Q0*nCin>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 56,
+          "width": 1,
+          "labels": [
+            [
+              "C1"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 54,
+          "width": 1,
+          "labels": [
+            [
+              "Q0*nCin"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 44,
+          "width": 1,
+          "labels": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -5,
+        -46
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "OR(r44, r45<G0*Cin>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 44,
+          "width": 1,
+          "labels": [
+            []
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 45,
+          "width": 1,
+          "labels": [
+            [
+              "G0*Cin"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 41,
+          "width": 1,
+          "labels": [
+            [
+              "S0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -8,
+        -44
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "AND(r30<Cin>, r34<G0>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 30,
+          "width": 1,
+          "labels": [
+            [
+              "Cin",
+              "C0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 34,
+          "width": 1,
+          "labels": [
+            [
+              "G0",
+              "G0:0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 45,
+          "width": 1,
+          "labels": [
+            [
+              "G0*Cin"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -8,
+        -32
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "AND(r56<C1>, r72<G1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 56,
+          "width": 1,
+          "labels": [
+            [
+              "C1"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 72,
+          "width": 1,
+          "labels": [
+            [
+              "G1",
+              "G1:1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 60,
+          "width": 1,
+          "labels": [
+            [
+              "G1*C1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -8,
+        -36
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NOR(r177<C2>, r63<Q1*nC1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 63,
+          "width": 1,
+          "labels": [
+            [
+              "Q1*nC1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 61,
+          "width": 1,
+          "labels": [
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -5,
+        -34
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "OR(r61, r60<G1*C1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 61,
+          "width": 1,
+          "labels": [
+            []
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 60,
+          "width": 1,
+          "labels": [
+            [
+              "G1*C1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 138,
+          "width": 1,
+          "labels": [
+            [
+              "S1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 24,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -16,
+        -35
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NOR(r171<V1>, r56<C1>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 171,
+          "width": 1,
+          "labels": [
+            [
+              "V1"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 56,
+          "width": 1,
+          "labels": [
+            [
+              "C1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 63,
+          "width": 1,
+          "labels": [
+            [
+              "Q1*nC1"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -22,
+        -30
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "SW(enable=r72<G1>, data=r171<V1>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 72,
+          "width": 1,
+          "labels": [
+            [
+              "G1",
+              "G1:1"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 171,
+          "width": 1,
+          "labels": [
+            [
+              "V1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 26,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -22,
+        -28
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "SW(enable=r34<G0>, data=r171<V1>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 34,
+          "width": 1,
+          "labels": [
+            [
+              "G0",
+              "G0:0"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 171,
+          "width": 1,
+          "labels": [
+            [
+              "V1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 27,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -8,
+        4
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "AND(r83<C4>, r82<P4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 82,
+          "width": 1,
+          "labels": [
+            [
+              "P4",
+              "P4:4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 79,
+          "width": 1,
+          "labels": [
+            [
+              "C4*P4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 28,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -30,
+        2
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "AND(r89<V4>, r85<nG4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 89,
+          "width": 1,
+          "labels": [
+            [
+              "V4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 85,
+          "width": 1,
+          "labels": [
+            [
+              "nG4",
+              "nG4:4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 82,
+          "width": 1,
+          "labels": [
+            [
+              "P4",
+              "P4:4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 29,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -33,
+        4
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NAND(r78<B4>, r103<A4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 78,
+          "width": 1,
+          "labels": [
+            [
+              "B4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 103,
+          "width": 1,
+          "labels": [
+            [
+              "A4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 85,
+          "width": 1,
+          "labels": [
+            [
+              "nG4",
+              "nG4:4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        0
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r78<B4>, r103<A4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 78,
+          "width": 1,
+          "labels": [
+            [
+              "B4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 103,
+          "width": 1,
+          "labels": [
+            [
+              "A4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 89,
+          "width": 1,
+          "labels": [
+            [
+              "V4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 31,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -8,
+        0
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NOR(r83<C4>, r82<P4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 82,
+          "width": 1,
+          "labels": [
+            [
+              "P4",
+              "P4:4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 152,
+          "width": 1,
+          "labels": [
+            [
+              "nC4*nP4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 32,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "word_size": 1,
+      "position": [
+        -40,
+        -51
+      ],
+      "rotation": 1,
+      "label": "",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 134,
+          "width": 8,
+          "labels": [
+            [
+              "B0"
+            ],
+            [
+              "B1"
+            ],
+            [
+              "B2"
+            ],
+            [
+              "B3"
+            ],
+            [
+              "B4"
+            ],
+            [
+              "B5"
+            ],
+            [
+              "B6"
+            ],
+            [
+              "B7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 38,
+          "width": 1,
+          "labels": [
+            [
+              "B0"
+            ]
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 37,
+          "width": 1,
+          "labels": [
+            [
+              "B1"
+            ]
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 1,
+          "width": 1,
+          "labels": [
+            [
+              "B2"
+            ]
+          ]
+        },
+        {
+          "pin": "out3",
+          "network": 6,
+          "width": 1,
+          "labels": [
+            [
+              "B3"
+            ]
+          ]
+        },
+        {
+          "pin": "out4",
+          "network": 78,
+          "width": 1,
+          "labels": [
+            [
+              "B4"
+            ]
+          ]
+        },
+        {
+          "pin": "out5",
+          "network": 84,
+          "width": 1,
+          "labels": [
+            [
+              "B5"
+            ]
+          ]
+        },
+        {
+          "pin": "out6",
+          "network": 92,
+          "width": 1,
+          "labels": [
+            [
+              "B6"
+            ]
+          ]
+        },
+        {
+          "pin": "out7",
+          "network": 94,
+          "width": 1,
+          "labels": [
+            [
+              "B7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "kind": 17,
+      "kind_name": "SPLITTER8",
+      "word_size": 1,
+      "position": [
+        -49,
+        -51
+      ],
+      "rotation": 1,
+      "label": "",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 102,
+          "width": 8,
+          "labels": [
+            [
+              "A0"
+            ],
+            [
+              "A1"
+            ],
+            [
+              "A2"
+            ],
+            [
+              "A3"
+            ],
+            [
+              "A4"
+            ],
+            [
+              "A5"
+            ],
+            [
+              "A6"
+            ],
+            [
+              "A7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": 43,
+          "width": 1,
+          "labels": [
+            [
+              "A0"
+            ]
+          ]
+        },
+        {
+          "pin": "out1",
+          "network": 114,
+          "width": 1,
+          "labels": [
+            [
+              "A1"
+            ]
+          ]
+        },
+        {
+          "pin": "out2",
+          "network": 124,
+          "width": 1,
+          "labels": [
+            [
+              "A2"
+            ]
+          ]
+        },
+        {
+          "pin": "out3",
+          "network": 111,
+          "width": 1,
+          "labels": [
+            [
+              "A3"
+            ]
+          ]
+        },
+        {
+          "pin": "out4",
+          "network": 103,
+          "width": 1,
+          "labels": [
+            [
+              "A4"
+            ]
+          ]
+        },
+        {
+          "pin": "out5",
+          "network": 105,
+          "width": 1,
+          "labels": [
+            [
+              "A5"
+            ]
+          ]
+        },
+        {
+          "pin": "out6",
+          "network": 108,
+          "width": 1,
+          "labels": [
+            [
+              "A6"
+            ]
+          ]
+        },
+        {
+          "pin": "out7",
+          "network": 125,
+          "width": 1,
+          "labels": [
+            [
+              "A7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 34,
+      "kind": 16,
+      "kind_name": "MAKER8",
+      "word_size": 1,
+      "position": [
+        1,
+        -51
+      ],
+      "rotation": 3,
+      "label": "",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 5,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 41,
+          "width": 1,
+          "labels": [
+            [
+              "S0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 138,
+          "width": 1,
+          "labels": [
+            [
+              "S1"
+            ]
+          ]
+        },
+        {
+          "pin": "in2",
+          "network": 140,
+          "width": 1,
+          "labels": [
+            [
+              "S2"
+            ]
+          ]
+        },
+        {
+          "pin": "in3",
+          "network": 142,
+          "width": 1,
+          "labels": [
+            [
+              "S3"
+            ]
+          ]
+        },
+        {
+          "pin": "in4",
+          "network": 144,
+          "width": 1,
+          "labels": [
+            [
+              "S4"
+            ]
+          ]
+        },
+        {
+          "pin": "in5",
+          "network": 332,
+          "width": 1,
+          "labels": [
+            [
+              "S5"
+            ]
+          ]
+        },
+        {
+          "pin": "in6",
+          "network": 237,
+          "width": 1,
+          "labels": [
+            [
+              "S6"
+            ]
+          ]
+        },
+        {
+          "pin": "in7",
+          "network": 245,
+          "width": 1,
+          "labels": [
+            [
+              "S7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 135,
+          "width": 8,
+          "labels": [
+            [
+              "S0"
+            ],
+            [
+              "S1"
+            ],
+            [
+              "S2"
+            ],
+            [
+              "S3"
+            ],
+            [
+              "S4"
+            ],
+            [
+              "S5"
+            ],
+            [
+              "S6"
+            ],
+            [
+              "S7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 35,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -5,
+        2
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "NOR(r152<nC4*nP4>, r79<C4*P4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 152,
+          "width": 1,
+          "labels": [
+            [
+              "nC4*nP4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 79,
+          "width": 1,
+          "labels": [
+            [
+              "C4*P4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 144,
+          "width": 1,
+          "labels": [
+            [
+              "S4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 36,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -33,
+        15
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NAND(r84<B5>, r105<A5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 84,
+          "width": 1,
+          "labels": [
+            [
+              "B5"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 105,
+          "width": 1,
+          "labels": [
+            [
+              "A5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 335,
+          "width": 1,
+          "labels": [
+            [
+              "nG5",
+              "nG5:5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 37,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -33,
+        11
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "OR(r84<B5>, r105<A5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 84,
+          "width": 1,
+          "labels": [
+            [
+              "B5"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 105,
+          "width": 1,
+          "labels": [
+            [
+              "A5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 163,
+          "width": 1,
+          "labels": [
+            [
+              "V5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 38,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -30,
+        13
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "AND(r163<V5>, r335<nG5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 163,
+          "width": 1,
+          "labels": [
+            [
+              "V5"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 335,
+          "width": 1,
+          "labels": [
+            [
+              "nG5",
+              "nG5:5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 319,
+          "width": 1,
+          "labels": [
+            [
+              "P5",
+              "P5:5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 39,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -33,
+        -44
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "AND(r38<B0>, r43<A0>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 38,
+          "width": 1,
+          "labels": [
+            [
+              "B0"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 43,
+          "width": 1,
+          "labels": [
+            [
+              "A0"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 34,
+          "width": 1,
+          "labels": [
+            [
+              "G0",
+              "G0:0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 40,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -22,
+        -26
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "SW(enable=r36<T0=Cin*V0>, data=r171<V1>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 36,
+          "width": 1,
+          "labels": [
+            [
+              "T0=Cin*V0"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 171,
+          "width": 1,
+          "labels": [
+            [
+              "V1"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 41,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -18,
+        -6
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "SW(enable=r191<R23=G2|G3>, data=r174<D23=G23|P23>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 191,
+          "width": 1,
+          "labels": [
+            [
+              "R23=G2|G3"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 174,
+          "width": 1,
+          "labels": [
+            [
+              "D23=G23|P23"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 42,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -18,
+        -4
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "SW(enable=r177<C2>, data=r174<D23=G23|P23>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 174,
+          "width": 1,
+          "labels": [
+            [
+              "D23=G23|P23"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 43,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -24,
+        -8
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "NAND(r306<nG2>, r3<nG3>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 306,
+          "width": 1,
+          "labels": [
+            [
+              "nG2",
+              "nG2:2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 3,
+          "width": 1,
+          "labels": [
+            [
+              "nG3",
+              "nG3:3"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 191,
+          "width": 1,
+          "labels": [
+            [
+              "R23=G2|G3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 44,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -30,
+        -22
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "AND(r188<V2>, r306<nG2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 188,
+          "width": 1,
+          "labels": [
+            [
+              "V2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 306,
+          "width": 1,
+          "labels": [
+            [
+              "nG2",
+              "nG2:2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 307,
+          "width": 1,
+          "labels": [
+            [
+              "P2",
+              "P2:2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 45,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -8,
+        -20
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NAND(r177<C2>, r307<P2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 307,
+          "width": 1,
+          "labels": [
+            [
+              "P2",
+              "P2:2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 29,
+          "width": 1,
+          "labels": [
+            [
+              "N2=~(C2*P2)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 46,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -8,
+        -24
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "OR(r177<C2>, r307<P2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 177,
+          "width": 1,
+          "labels": [
+            [
+              "C2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 307,
+          "width": 1,
+          "labels": [
+            [
+              "P2",
+              "P2:2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 197,
+          "width": 1,
+          "labels": [
+            [
+              "O2=C2|P2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 47,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -33,
+        28
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NOR(r92<B6>, r108<A6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 92,
+          "width": 1,
+          "labels": [
+            [
+              "B6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 108,
+          "width": 1,
+          "labels": [
+            [
+              "A6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 257,
+          "width": 1,
+          "labels": [
+            [
+              "Q6",
+              "K6:6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 48,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -33,
+        32
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "AND(r92<B6>, r108<A6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 92,
+          "width": 1,
+          "labels": [
+            [
+              "B6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 108,
+          "width": 1,
+          "labels": [
+            [
+              "A6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 275,
+          "width": 1,
+          "labels": [
+            [
+              "G6",
+              "G6:6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 49,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -33,
+        44
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "NOR(r94<B7>, r125<A7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 94,
+          "width": 1,
+          "labels": [
+            [
+              "B7"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 125,
+          "width": 1,
+          "labels": [
+            [
+              "A7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 215,
+          "width": 1,
+          "labels": [
+            [
+              "Q7",
+              "K7:7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 50,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -33,
+        48
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 1,
+      "formula": "AND(r94<B7>, r125<A7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 94,
+          "width": 1,
+          "labels": [
+            [
+              "B7"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 125,
+          "width": 1,
+          "labels": [
+            [
+              "A7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 218,
+          "width": 1,
+          "labels": [
+            [
+              "G7",
+              "G7:7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 51,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -16,
+        28
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "NOR(r257<Q6>, r275<G6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 257,
+          "width": 1,
+          "labels": [
+            [
+              "Q6",
+              "K6:6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 275,
+          "width": 1,
+          "labels": [
+            [
+              "G6",
+              "G6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 233,
+          "width": 1,
+          "labels": [
+            [
+              "P6",
+              "P6:6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 52,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        50
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r223<E67=G6|X7>, data=r213<D67=G67|P67>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 223,
+          "width": 1,
+          "labels": [
+            [
+              "E67=G6|X7"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 213,
+          "width": 1,
+          "labels": [
+            [
+              "D67=G67|P67"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 210,
+          "width": 1,
+          "labels": [
+            [
+              "C8"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 53,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        52
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r337<C6>, data=r213<D67=G67|P67>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 337,
+          "width": 1,
+          "labels": [
+            [
+              "C6"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 213,
+          "width": 1,
+          "labels": [
+            [
+              "D67=G67|P67"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 210,
+          "width": 1,
+          "labels": [
+            [
+              "C8"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 54,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -13,
+        52
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "OR(r214<P7*nQ6>, r218<G7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 214,
+          "width": 1,
+          "labels": [
+            [
+              "P7*nQ6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 218,
+          "width": 1,
+          "labels": [
+            [
+              "G7",
+              "G7:7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 213,
+          "width": 1,
+          "labels": [
+            [
+              "D67=G67|P67"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 55,
+      "kind": 109,
+      "kind_name": "SPLITTER2",
+      "word_size": 1,
+      "position": [
+        2,
+        51
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 5,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "in",
+          "network": 274,
+          "width": 2,
+          "labels": [
+            [],
+            [
+              "C8"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out0",
+          "network": null,
+          "width": 1
+        },
+        {
+          "pin": "out1",
+          "network": 278,
+          "width": 1,
+          "labels": [
+            [
+              "C8"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 56,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -30,
+        46
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "OR(r215<Q7>, r218<G7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 215,
+          "width": 1,
+          "labels": [
+            [
+              "Q7",
+              "K7:7"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 218,
+          "width": 1,
+          "labels": [
+            [
+              "G7",
+              "G7:7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 276,
+          "width": 1,
+          "labels": [
+            [
+              "X7=nP7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 57,
+      "kind": 111,
+      "kind_name": "MAKER2",
+      "word_size": 1,
+      "position": [
+        -1,
+        51
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 5,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": null,
+          "width": 1
+        },
+        {
+          "pin": "in1",
+          "network": 210,
+          "width": 1,
+          "labels": [
+            [
+              "C8"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 274,
+          "width": 2,
+          "labels": [
+            [],
+            [
+              "C8"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 58,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        28
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "SW(enable=r356<K54>, data=r233<P6>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 356,
+          "width": 1,
+          "labels": [
+            [
+              "K54",
+              "K5:4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 233,
+          "width": 1,
+          "labels": [
+            [
+              "P6",
+              "P6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 237,
+          "width": 1,
+          "labels": [
+            [
+              "S6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 59,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        30
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r234<R45=P5*nG4*nC4>, data=r233<P6>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 234,
+          "width": 1,
+          "labels": [
+            [
+              "R45=P5*nG4*nC4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 233,
+          "width": 1,
+          "labels": [
+            [
+              "P6",
+              "P6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 237,
+          "width": 1,
+          "labels": [
+            [
+              "S6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 60,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        32
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r337<C6>, data=r240<X6=nP6>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 337,
+          "width": 1,
+          "labels": [
+            [
+              "C6"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 240,
+          "width": 1,
+          "labels": [
+            [
+              "X6=nP6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 237,
+          "width": 1,
+          "labels": [
+            [
+              "S6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 61,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -16,
+        32
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "OR(r257<Q6>, r275<G6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 257,
+          "width": 1,
+          "labels": [
+            [
+              "Q6",
+              "K6:6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 275,
+          "width": 1,
+          "labels": [
+            [
+              "G6",
+              "G6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 240,
+          "width": 1,
+          "labels": [
+            [
+              "X6=nP6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 62,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        44
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r356<K54>, data=r281<L7=G6 xor P7>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 356,
+          "width": 1,
+          "labels": [
+            [
+              "K54",
+              "K5:4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 281,
+          "width": 1,
+          "labels": [
+            [
+              "L7=G6 xor P7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 245,
+          "width": 1,
+          "labels": [
+            [
+              "S7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 63,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        48
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r337<C6>, data=r270<F7=XNOR(Q6,P7)>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 337,
+          "width": 1,
+          "labels": [
+            [
+              "C6"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 270,
+          "width": 1,
+          "labels": [
+            [
+              "F7=XNOR(Q6,P7)"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 245,
+          "width": 1,
+          "labels": [
+            [
+              "S7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 64,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        46
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r234<R45=P5*nG4*nC4>, data=r281<L7=G6 xor P7>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 234,
+          "width": 1,
+          "labels": [
+            [
+              "R45=P5*nG4*nC4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 281,
+          "width": 1,
+          "labels": [
+            [
+              "L7=G6 xor P7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 245,
+          "width": 1,
+          "labels": [
+            [
+              "S7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 65,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -16,
+        48
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NOR(r276<X7=nP7>, r257<Q6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 276,
+          "width": 1,
+          "labels": [
+            [
+              "X7=nP7"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 257,
+          "width": 1,
+          "labels": [
+            [
+              "Q6",
+              "K6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 214,
+          "width": 1,
+          "labels": [
+            [
+              "P7*nQ6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 66,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -13,
+        46
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NOR(r267<X7*Q6>, r214<P7*nQ6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 267,
+          "width": 1,
+          "labels": [
+            [
+              "X7*Q6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 214,
+          "width": 1,
+          "labels": [
+            [
+              "P7*nQ6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 270,
+          "width": 1,
+          "labels": [
+            [
+              "F7=XNOR(Q6,P7)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 67,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -16,
+        44
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "AND(r276<X7=nP7>, r257<Q6>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 276,
+          "width": 1,
+          "labels": [
+            [
+              "X7=nP7"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 257,
+          "width": 1,
+          "labels": [
+            [
+              "Q6",
+              "K6:6"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 267,
+          "width": 1,
+          "labels": [
+            [
+              "X7*Q6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 68,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -16,
+        40
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "OR(r275<G6>, r276<X7=nP7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 275,
+          "width": 1,
+          "labels": [
+            [
+              "G6",
+              "G6:6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 276,
+          "width": 1,
+          "labels": [
+            [
+              "X7=nP7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 223,
+          "width": 1,
+          "labels": [
+            [
+              "E67=G6|X7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 69,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -16,
+        36
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NAND(r275<G6>, r276<X7=nP7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 275,
+          "width": 1,
+          "labels": [
+            [
+              "G6",
+              "G6:6"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 276,
+          "width": 1,
+          "labels": [
+            [
+              "X7=nP7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 282,
+          "width": 1,
+          "labels": [
+            [
+              "N67=~(G6*X7)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 70,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -13,
+        38
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NAND(r282<N67=~(G6*X7)>, r223<E67=G6|X7>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 282,
+          "width": 1,
+          "labels": [
+            [
+              "N67=~(G6*X7)"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 223,
+          "width": 1,
+          "labels": [
+            [
+              "E67=G6|X7"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 281,
+          "width": 1,
+          "labels": [
+            [
+              "L7=G6 xor P7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 71,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -5,
+        -22
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "AND(r197<O2=C2|P2>, r29<N2=~(C2*P2)>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 197,
+          "width": 1,
+          "labels": [
+            [
+              "O2=C2|P2"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 29,
+          "width": 1,
+          "labels": [
+            [
+              "N2=~(C2*P2)"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 140,
+          "width": 1,
+          "labels": [
+            [
+              "S2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 72,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -5,
+        -18
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NAND(r29<N2=~(C2*P2)>, r306<nG2>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 29,
+          "width": 1,
+          "labels": [
+            [
+              "N2=~(C2*P2)"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 306,
+          "width": 1,
+          "labels": [
+            [
+              "nG2",
+              "nG2:2"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 11,
+          "width": 1,
+          "labels": [
+            [
+              "C3"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 73,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -8,
+        8
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NAND(r83<C4>, r82<P4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 82,
+          "width": 1,
+          "labels": [
+            [
+              "P4",
+              "P4:4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 325,
+          "width": 1,
+          "labels": [
+            [
+              "n(C4*P4)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 74,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -19,
+        15
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NAND(r85<nG4>, r319<P5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 85,
+          "width": 1,
+          "labels": [
+            [
+              "nG4",
+              "nG4:4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 319,
+          "width": 1,
+          "labels": [
+            [
+              "P5",
+              "P5:5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 352,
+          "width": 1,
+          "labels": [
+            [
+              "E45=G4|nP5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 75,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -16,
+        13
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NAND(r203<F45=nG4|P5>, r352<E45=G4|nP5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 203,
+          "width": 1,
+          "labels": [
+            [
+              "F45=nG4|P5"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 352,
+          "width": 1,
+          "labels": [
+            [
+              "E45=G4|nP5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 334,
+          "width": 1,
+          "labels": [
+            [
+              "L5=G4 xor P5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 76,
+      "kind": 7,
+      "kind_name": "OR",
+      "word_size": 1,
+      "position": [
+        -19,
+        11
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "OR(r85<nG4>, r319<P5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 85,
+          "width": 1,
+          "labels": [
+            [
+              "nG4",
+              "nG4:4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 319,
+          "width": 1,
+          "labels": [
+            [
+              "P5",
+              "P5:5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 203,
+          "width": 1,
+          "labels": [
+            [
+              "F45=nG4|P5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 77,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        13
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r325<n(C4*P4)>, data=r334<L5=G4 xor P5>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 325,
+          "width": 1,
+          "labels": [
+            [
+              "n(C4*P4)"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 334,
+          "width": 1,
+          "labels": [
+            [
+              "L5=G4 xor P5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 332,
+          "width": 1,
+          "labels": [
+            [
+              "S5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 78,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        15
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 5,
+      "formula": "SW(enable=r79<C4*P4>, data=r352<E45=G4|nP5>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 79,
+          "width": 1,
+          "labels": [
+            [
+              "C4*P4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 352,
+          "width": 1,
+          "labels": [
+            [
+              "E45=G4|nP5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 332,
+          "width": 1,
+          "labels": [
+            [
+              "S5"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 79,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        17
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "SW(enable=r352<E45=G4|nP5>, data=r347<D45=G54|P54>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 352,
+          "width": 1,
+          "labels": [
+            [
+              "E45=G4|nP5"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 347,
+          "width": 1,
+          "labels": [
+            [
+              "D45=G54|P54"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 337,
+          "width": 1,
+          "labels": [
+            [
+              "C6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 80,
+      "kind": 12,
+      "kind_name": "SWITCH",
+      "word_size": 1,
+      "position": [
+        -8,
+        19
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 2,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "SW(enable=r83<C4>, data=r347<D45=G54|P54>)",
+      "inputs": [
+        {
+          "pin": "enable",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        },
+        {
+          "pin": "in",
+          "network": 347,
+          "width": 1,
+          "labels": [
+            [
+              "D45=G54|P54"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 337,
+          "width": 1,
+          "labels": [
+            [
+              "C6"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 81,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -24,
+        20
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 2,
+      "formula": "NAND(r89<V4>, r163<V5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 89,
+          "width": 1,
+          "labels": [
+            [
+              "V4"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 163,
+          "width": 1,
+          "labels": [
+            [
+              "V5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 351,
+          "width": 1,
+          "labels": [
+            [
+              "N45=~(V4*V5)"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 82,
+      "kind": 6,
+      "kind_name": "NAND",
+      "word_size": 1,
+      "position": [
+        -16,
+        20
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "NAND(r351<N45=~(V4*V5)>, r335<nG5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 351,
+          "width": 1,
+          "labels": [
+            [
+              "N45=~(V4*V5)"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 335,
+          "width": 1,
+          "labels": [
+            [
+              "nG5",
+              "nG5:5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 347,
+          "width": 1,
+          "labels": [
+            [
+              "D45=G54|P54"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 83,
+      "kind": 9,
+      "kind_name": "NOR",
+      "word_size": 1,
+      "position": [
+        -8,
+        22
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 4,
+      "formula": "NOR(r352<E45=G4|nP5>, r83<C4>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 352,
+          "width": 1,
+          "labels": [
+            [
+              "E45=G4|nP5"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 83,
+          "width": 1,
+          "labels": [
+            [
+              "C4"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 234,
+          "width": 1,
+          "labels": [
+            [
+              "R45=P5*nG4*nC4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 84,
+      "kind": 4,
+      "kind_name": "AND",
+      "word_size": 1,
+      "position": [
+        -16,
+        24
+      ],
+      "rotation": 0,
+      "label": "",
+      "cost": 1,
+      "step_delay": 1,
+      "arrival": 3,
+      "formula": "AND(r351<N45=~(V4*V5)>, r335<nG5>)",
+      "inputs": [
+        {
+          "pin": "in0",
+          "network": 351,
+          "width": 1,
+          "labels": [
+            [
+              "N45=~(V4*V5)"
+            ]
+          ]
+        },
+        {
+          "pin": "in1",
+          "network": 335,
+          "width": 1,
+          "labels": [
+            [
+              "nG5",
+              "nG5:5"
+            ]
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "pin": "out",
+          "network": 356,
+          "width": 1,
+          "labels": [
+            [
+              "K54",
+              "K5:4"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 85,
+      "kind": 69,
+      "kind_name": "OUTPUT",
+      "word_size": 8,
+      "position": [
+        4,
+        -53
+      ],
+      "rotation": 0,
+      "label": "Output",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "value",
+          "network": 135,
+          "width": 8,
+          "labels": [
+            [
+              "S0"
+            ],
+            [
+              "S1"
+            ],
+            [
+              "S2"
+            ],
+            [
+              "S3"
+            ],
+            [
+              "S4"
+            ],
+            [
+              "S5"
+            ],
+            [
+              "S6"
+            ],
+            [
+              "S7"
+            ]
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "index": 86,
+      "kind": 61,
+      "kind_name": "INPUT",
+      "word_size": 1,
+      "position": [
+        -23,
+        -50
+      ],
+      "rotation": 0,
+      "label": "Carry in",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [],
+      "outputs": [
+        {
+          "pin": "value",
+          "network": 30,
+          "width": 1,
+          "labels": [
+            [
+              "Cin",
+              "C0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 87,
+      "kind": 61,
+      "kind_name": "INPUT",
+      "word_size": 8,
+      "position": [
+        -52,
+        -53
+      ],
+      "rotation": 0,
+      "label": "A",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [],
+      "outputs": [
+        {
+          "pin": "value",
+          "network": 102,
+          "width": 8,
+          "labels": [
+            [
+              "A0"
+            ],
+            [
+              "A1"
+            ],
+            [
+              "A2"
+            ],
+            [
+              "A3"
+            ],
+            [
+              "A4"
+            ],
+            [
+              "A5"
+            ],
+            [
+              "A6"
+            ],
+            [
+              "A7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 88,
+      "kind": 61,
+      "kind_name": "INPUT",
+      "word_size": 8,
+      "position": [
+        -43,
+        -53
+      ],
+      "rotation": 0,
+      "label": "B",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [],
+      "outputs": [
+        {
+          "pin": "value",
+          "network": 134,
+          "width": 8,
+          "labels": [
+            [
+              "B0"
+            ],
+            [
+              "B1"
+            ],
+            [
+              "B2"
+            ],
+            [
+              "B3"
+            ],
+            [
+              "B4"
+            ],
+            [
+              "B5"
+            ],
+            [
+              "B6"
+            ],
+            [
+              "B7"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "index": 89,
+      "kind": 69,
+      "kind_name": "OUTPUT",
+      "word_size": 1,
+      "position": [
+        7,
+        51
+      ],
+      "rotation": 0,
+      "label": "Carry out",
+      "cost": 0,
+      "step_delay": 0,
+      "arrival": 0,
+      "formula": "",
+      "inputs": [
+        {
+          "pin": "value",
+          "network": 278,
+          "width": 1,
+          "labels": [
+            [
+              "C8"
+            ]
+          ]
+        }
+      ],
+      "outputs": []
+    }
+  ],
+  "networks": [
+    {
+      "network": 1,
+      "manual_name": "B2",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out2"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 2,
+          "pin": "in0"
+        },
+        {
+          "component": 5,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "db87ce9a1c59d89b3970fdad29cca72b39a612e3812c4ba34ef78fe796103b9b"
+        }
+      ]
+    },
+    {
+      "network": 3,
+      "manual_name": "nG3",
+      "drivers": [
+        {
+          "component": 1,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 3,
+          "pin": "in1"
+        },
+        {
+          "component": 43,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "nG3",
+            "nG3:3"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+        }
+      ]
+    },
+    {
+      "network": 6,
+      "manual_name": "B3",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out3"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 0,
+          "pin": "in0"
+        },
+        {
+          "component": 1,
+          "pin": "in0"
+        },
+        {
+          "component": 6,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "cc2fecf6f752dee8c23ce885fe8259fd8b73c8e4ad6e54d27b4578a1cdf0168c"
+        }
+      ]
+    },
+    {
+      "network": 11,
+      "manual_name": "C3",
+      "drivers": [
+        {
+          "component": 72,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 8,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "c7a195955d55b2e75e7b17d056ff8705eea8a280dac5524fabe1169d643f0b4c"
+        }
+      ]
+    },
+    {
+      "network": 13,
+      "manual_name": "V3",
+      "drivers": [
+        {
+          "component": 6,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 3,
+          "pin": "in0"
+        },
+        {
+          "component": 4,
+          "pin": "in"
+        },
+        {
+          "component": 9,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V3"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "6bd7aa58f6938c523df248ed711b810b7647f507b5dfaaed05f488598b70f008"
+        }
+      ]
+    },
+    {
+      "network": 14,
+      "manual_name": "G3",
+      "drivers": [
+        {
+          "component": 0,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 4,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G3",
+            "G3:3"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "2a5c6b761cda05690550d8aadf59389e986c0a3ba2caeb0c811fa5e1a74a2488"
+        }
+      ]
+    },
+    {
+      "network": 18,
+      "manual_name": "P3*nC4",
+      "drivers": [
+        {
+          "component": 7,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 10,
+          "pin": "enable"
+        },
+        {
+          "component": 10,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P3*nC4"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "04a6e3eeaaf865015393e5a90204ab0303b0d71353854a1d16022ed62de382f3"
+        }
+      ]
+    },
+    {
+      "network": 21,
+      "manual_name": "X3=nP3",
+      "drivers": [
+        {
+          "component": 3,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 7,
+          "pin": "in0"
+        },
+        {
+          "component": 8,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "X3=nP3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "6c5ddc9e451779f72a078777195bf6ef4fe5917b010240ec349597ca9b4928c5"
+        }
+      ]
+    },
+    {
+      "network": 29,
+      "manual_name": "N2=~(C2*P2)",
+      "drivers": [
+        {
+          "component": 45,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 71,
+          "pin": "in1"
+        },
+        {
+          "component": 72,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "N2=~(C2*P2)"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "be5dd5da062358a15b7f58a7dab686d85f9822ad83d565fb7731e4811e5243de"
+        }
+      ]
+    },
+    {
+      "network": 30,
+      "manual_name": "Cin",
+      "drivers": [
+        {
+          "component": 86,
+          "pin": "value"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 12,
+          "pin": "in"
+        },
+        {
+          "component": 13,
+          "pin": "in"
+        },
+        {
+          "component": 16,
+          "pin": "in1"
+        },
+        {
+          "component": 20,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "Cin",
+            "C0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "ab310ceac8e862c3379549e4588edbff7dc47ccfa0dfdeb1db897fe83bedd596"
+        }
+      ]
+    },
+    {
+      "network": 34,
+      "manual_name": "G0",
+      "drivers": [
+        {
+          "component": 39,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 15,
+          "pin": "in0"
+        },
+        {
+          "component": 20,
+          "pin": "in1"
+        },
+        {
+          "component": 26,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G0",
+            "G0:0"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "24327420584ffb4e26713876a081ef16cd6f628988f23024f3e55e1e56466406"
+        }
+      ]
+    },
+    {
+      "network": 36,
+      "manual_name": "T0=Cin*V0",
+      "drivers": [
+        {
+          "component": 12,
+          "pin": "out"
+        },
+        {
+          "component": 13,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 15,
+          "pin": "in1"
+        },
+        {
+          "component": 40,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "T0=Cin*V0"
+          ],
+          "one_rows": 49152,
+          "driven_rows": 98304,
+          "z_rows": 32768,
+          "value_sha256": "44a6b6ec9b156cbba17c34e78e2529f4c15dbb06d93141add82e10e6595875c9"
+        }
+      ]
+    },
+    {
+      "network": 37,
+      "manual_name": "B1",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out1"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 11,
+          "pin": "in0"
+        },
+        {
+          "component": 17,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f84ce8f29ad711741534250b1271da8e97c43ef4c5a386b7ea8eebcdba09ab13"
+        }
+      ]
+    },
+    {
+      "network": 38,
+      "manual_name": "B0",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out0"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 12,
+          "pin": "enable"
+        },
+        {
+          "component": 14,
+          "pin": "in0"
+        },
+        {
+          "component": 39,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "ab0b65ea4d3db9c8e1279af0bd9f58572ae2b0bcb6b3cbd059243ca98ae4db3e"
+        }
+      ]
+    },
+    {
+      "network": 41,
+      "manual_name": "S0",
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "dcf107cd8f8b9a3d45e3a1d41cddb4d138fac07c39754c8b6994911ea94f549d"
+        }
+      ]
+    },
+    {
+      "network": 43,
+      "manual_name": "A0",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out0"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 13,
+          "pin": "enable"
+        },
+        {
+          "component": 14,
+          "pin": "in1"
+        },
+        {
+          "component": 39,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b0a5e3a96d68294156bbda6cd2d8751017f948905020f505086faaf1d59553fe"
+        }
+      ]
+    },
+    {
+      "network": 44,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 19,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [],
+          "one_rows": 49152,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "2b5278cb00926b60335d060f5d3b05a16ea23095c90a1efa1219a0be7e7e7d00"
+        }
+      ]
+    },
+    {
+      "network": 45,
+      "manual_name": "G0*Cin",
+      "drivers": [
+        {
+          "component": 20,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 19,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G0*Cin"
+          ],
+          "one_rows": 16384,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "7a1c11d101a6c19fa5dbecb4f947adfda027db86c5979ea845ac968e550b456f"
+        }
+      ]
+    },
+    {
+      "network": 51,
+      "manual_name": "V0",
+      "drivers": [
+        {
+          "component": 14,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 16,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V0"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "e9e6fcc5df874879f53a5ddcad21f96bfffd65f5224d5f6d78ce50478f43e7fd"
+        }
+      ]
+    },
+    {
+      "network": 54,
+      "manual_name": "Q0*nCin",
+      "drivers": [
+        {
+          "component": 16,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 18,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "Q0*nCin"
+          ],
+          "one_rows": 16384,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "8399d2759ab1f59f3f4252483a78562b2d1a38412e4c08703655d8e9240d6f1c"
+        }
+      ]
+    },
+    {
+      "network": 56,
+      "manual_name": "C1",
+      "drivers": [
+        {
+          "component": 15,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 18,
+          "pin": "in0"
+        },
+        {
+          "component": 21,
+          "pin": "in0"
+        },
+        {
+          "component": 24,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "5cdd43383523e63e6697d0851a766e1f1f2bf0990dc59f2996875fa58c361d6c"
+        }
+      ]
+    },
+    {
+      "network": 60,
+      "manual_name": "G1*C1",
+      "drivers": [
+        {
+          "component": 21,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 23,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G1*C1"
+          ],
+          "one_rows": 16384,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "79645c69732f5b5cd4329bd3fc081df22fd04e8d691834c09281ddac459dc33c"
+        }
+      ]
+    },
+    {
+      "network": 61,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 22,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 23,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [],
+          "one_rows": 49152,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "1c8da893e806e924509951848f218930990cb70b307200d67cfd2e0f22036d26"
+        }
+      ]
+    },
+    {
+      "network": 63,
+      "manual_name": "Q1*nC1",
+      "drivers": [
+        {
+          "component": 24,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 22,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "Q1*nC1"
+          ],
+          "one_rows": 16384,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b64bb5260af1671c760d273dde1de8207ca6b5c7e9fe79a1abf643d8697a0e04"
+        }
+      ]
+    },
+    {
+      "network": 72,
+      "manual_name": "G1",
+      "drivers": [
+        {
+          "component": 17,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 21,
+          "pin": "in1"
+        },
+        {
+          "component": 25,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G1",
+            "G1:1"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144"
+        }
+      ]
+    },
+    {
+      "network": 78,
+      "manual_name": "B4",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out4"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 29,
+          "pin": "in0"
+        },
+        {
+          "component": 30,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "619b0fe2da0d9ec7b2b614e81802bce9dd6c7e43d2887d7d4fb6544d0ae7d32d"
+        }
+      ]
+    },
+    {
+      "network": 79,
+      "manual_name": "C4*P4",
+      "drivers": [
+        {
+          "component": 27,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 35,
+          "pin": "in1"
+        },
+        {
+          "component": 78,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C4*P4"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "4dae2c9d66ecfffc5e14bf97d5c82faab7c5bbe53ef212afd98fea0f0a519393"
+        }
+      ]
+    },
+    {
+      "network": 82,
+      "manual_name": "P4",
+      "drivers": [
+        {
+          "component": 28,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 27,
+          "pin": "in1"
+        },
+        {
+          "component": 31,
+          "pin": "in1"
+        },
+        {
+          "component": 73,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P4",
+            "P4:4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e"
+        }
+      ]
+    },
+    {
+      "network": 83,
+      "manual_name": "C4",
+      "drivers": [
+        {
+          "component": 41,
+          "pin": "out"
+        },
+        {
+          "component": 42,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 7,
+          "pin": "in1"
+        },
+        {
+          "component": 27,
+          "pin": "in0"
+        },
+        {
+          "component": 31,
+          "pin": "in0"
+        },
+        {
+          "component": 73,
+          "pin": "in0"
+        },
+        {
+          "component": 80,
+          "pin": "enable"
+        },
+        {
+          "component": 83,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 94208,
+          "z_rows": 36864,
+          "value_sha256": "411dc1473c7aaf6178dd3ff55fd94a33b7b7226d0b1fd5320a61a08d9104946f"
+        }
+      ]
+    },
+    {
+      "network": 84,
+      "manual_name": "B5",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out5"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 36,
+          "pin": "in0"
+        },
+        {
+          "component": 37,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f050b8abcf729162b37710172809ca25809c8e4e6975d1d90af05aef1e41aa8f"
+        }
+      ]
+    },
+    {
+      "network": 85,
+      "manual_name": "nG4",
+      "drivers": [
+        {
+          "component": 29,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 28,
+          "pin": "in1"
+        },
+        {
+          "component": 74,
+          "pin": "in0"
+        },
+        {
+          "component": 76,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "nG4",
+            "nG4:4"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8"
+        }
+      ]
+    },
+    {
+      "network": 89,
+      "manual_name": "V4",
+      "drivers": [
+        {
+          "component": 30,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 28,
+          "pin": "in0"
+        },
+        {
+          "component": 81,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V4"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b1401ff7cc1c7dd572f9907b500f4c293c611819821aa52b5713a5b2f2e30fe2"
+        }
+      ]
+    },
+    {
+      "network": 92,
+      "manual_name": "B6",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out6"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 47,
+          "pin": "in0"
+        },
+        {
+          "component": 48,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "242c05a5fbb062b0920fbaa4e40b6178916c92b8e2ad84480284421f3bd17f4a"
+        }
+      ]
+    },
+    {
+      "network": 94,
+      "manual_name": "B7",
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out7"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 49,
+          "pin": "in0"
+        },
+        {
+          "component": 50,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f7e2a81fa72024ae2bf59d950f9eb0461a78c74c978bb53b52fa54409667a67e"
+        }
+      ]
+    },
+    {
+      "network": 102,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 87,
+          "pin": "value"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 33,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b0a5e3a96d68294156bbda6cd2d8751017f948905020f505086faaf1d59553fe"
+        },
+        {
+          "lane": 1,
+          "labels": [
+            "A1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "baec77237cb0cd2db7199a5d402fde35ba847f6e136f253d3c0c510aeb36721a"
+        },
+        {
+          "lane": 2,
+          "labels": [
+            "A2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "eb5866e3afb37d5d9d3e6ef47c9ad3a2c2dd33799bf6e75788bf78823ae8ff4b"
+        },
+        {
+          "lane": 3,
+          "labels": [
+            "A3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "33f0b127ba923aed3a397fada8b9d98caeeb6a0c707e765394a8e3d291caa607"
+        },
+        {
+          "lane": 4,
+          "labels": [
+            "A4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "41622799635e6c4311a2415fc16ee140418081fa79a3a86e0bf4ec805ef2443f"
+        },
+        {
+          "lane": 5,
+          "labels": [
+            "A5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "5f019fb8df3446d52a2bbb403cf1ccb9cbb92dcb5b8d1c2283452698141ac701"
+        },
+        {
+          "lane": 6,
+          "labels": [
+            "A6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "046bd1e3ea8b7eabe318697869a7c6b9ebf4ae865c4d5142193ebb3224cabaa8"
+        },
+        {
+          "lane": 7,
+          "labels": [
+            "A7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b389750f10909b2b706b0f40b4a06cc8880c059af086a7c69c029f65870f84cc"
+        }
+      ]
+    },
+    {
+      "network": 103,
+      "manual_name": "A4",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out4"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 29,
+          "pin": "in1"
+        },
+        {
+          "component": 30,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "41622799635e6c4311a2415fc16ee140418081fa79a3a86e0bf4ec805ef2443f"
+        }
+      ]
+    },
+    {
+      "network": 105,
+      "manual_name": "A5",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out5"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 36,
+          "pin": "in1"
+        },
+        {
+          "component": 37,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "5f019fb8df3446d52a2bbb403cf1ccb9cbb92dcb5b8d1c2283452698141ac701"
+        }
+      ]
+    },
+    {
+      "network": 108,
+      "manual_name": "A6",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out6"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 47,
+          "pin": "in1"
+        },
+        {
+          "component": 48,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "046bd1e3ea8b7eabe318697869a7c6b9ebf4ae865c4d5142193ebb3224cabaa8"
+        }
+      ]
+    },
+    {
+      "network": 111,
+      "manual_name": "A3",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out3"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 0,
+          "pin": "in1"
+        },
+        {
+          "component": 1,
+          "pin": "in1"
+        },
+        {
+          "component": 6,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "33f0b127ba923aed3a397fada8b9d98caeeb6a0c707e765394a8e3d291caa607"
+        }
+      ]
+    },
+    {
+      "network": 114,
+      "manual_name": "A1",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out1"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 11,
+          "pin": "in1"
+        },
+        {
+          "component": 17,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "baec77237cb0cd2db7199a5d402fde35ba847f6e136f253d3c0c510aeb36721a"
+        }
+      ]
+    },
+    {
+      "network": 124,
+      "manual_name": "A2",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out2"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 2,
+          "pin": "in1"
+        },
+        {
+          "component": 5,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "eb5866e3afb37d5d9d3e6ef47c9ad3a2c2dd33799bf6e75788bf78823ae8ff4b"
+        }
+      ]
+    },
+    {
+      "network": 125,
+      "manual_name": "A7",
+      "drivers": [
+        {
+          "component": 33,
+          "pin": "out7"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 49,
+          "pin": "in1"
+        },
+        {
+          "component": 50,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "A7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "b389750f10909b2b706b0f40b4a06cc8880c059af086a7c69c029f65870f84cc"
+        }
+      ]
+    },
+    {
+      "network": 134,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 88,
+          "pin": "value"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 32,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "B0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "ab0b65ea4d3db9c8e1279af0bd9f58572ae2b0bcb6b3cbd059243ca98ae4db3e"
+        },
+        {
+          "lane": 1,
+          "labels": [
+            "B1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f84ce8f29ad711741534250b1271da8e97c43ef4c5a386b7ea8eebcdba09ab13"
+        },
+        {
+          "lane": 2,
+          "labels": [
+            "B2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "db87ce9a1c59d89b3970fdad29cca72b39a612e3812c4ba34ef78fe796103b9b"
+        },
+        {
+          "lane": 3,
+          "labels": [
+            "B3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "cc2fecf6f752dee8c23ce885fe8259fd8b73c8e4ad6e54d27b4578a1cdf0168c"
+        },
+        {
+          "lane": 4,
+          "labels": [
+            "B4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "619b0fe2da0d9ec7b2b614e81802bce9dd6c7e43d2887d7d4fb6544d0ae7d32d"
+        },
+        {
+          "lane": 5,
+          "labels": [
+            "B5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f050b8abcf729162b37710172809ca25809c8e4e6975d1d90af05aef1e41aa8f"
+        },
+        {
+          "lane": 6,
+          "labels": [
+            "B6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "242c05a5fbb062b0920fbaa4e40b6178916c92b8e2ad84480284421f3bd17f4a"
+        },
+        {
+          "lane": 7,
+          "labels": [
+            "B7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f7e2a81fa72024ae2bf59d950f9eb0461a78c74c978bb53b52fa54409667a67e"
+        }
+      ]
+    },
+    {
+      "network": 135,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 34,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 85,
+          "pin": "value"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S0"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "dcf107cd8f8b9a3d45e3a1d41cddb4d138fac07c39754c8b6994911ea94f549d"
+        },
+        {
+          "lane": 1,
+          "labels": [
+            "S1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "7a3cd3288f4b148fea948d0b6ac9acfbf34aa568ed48cca81615c51f7ad81b84"
+        },
+        {
+          "lane": 2,
+          "labels": [
+            "S2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f5ccdba47cadde27d3a4d37348d769cabaa3daf745ea5a346f05deb53ccaf939"
+        },
+        {
+          "lane": 3,
+          "labels": [
+            "S3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "ba935f6bbc2682b605dc354562d3f5a6de610399f981c8a39195733959a6074a"
+        },
+        {
+          "lane": 4,
+          "labels": [
+            "S4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "3379e2e4ebc6be616087f5d9bb0fcf921130f875324c1eea33791da74a92a6aa"
+        },
+        {
+          "lane": 5,
+          "labels": [
+            "S5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "1ae58b6ea3b4e42f1423bef82790bcc8761a687d32b6bb1d693ed17611dc79ad"
+        },
+        {
+          "lane": 6,
+          "labels": [
+            "S6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "a4d56b433519f741c7e0e26ef0560eaf39a17847bffb2958830b1b6566825063"
+        },
+        {
+          "lane": 7,
+          "labels": [
+            "S7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "185c8261f4a057bd9a9fd2527a19ae68ef8cae2487eccf7c8bf38612b99fc6bf"
+        }
+      ]
+    },
+    {
+      "network": 138,
+      "manual_name": "S1",
+      "drivers": [
+        {
+          "component": 23,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S1"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "7a3cd3288f4b148fea948d0b6ac9acfbf34aa568ed48cca81615c51f7ad81b84"
+        }
+      ]
+    },
+    {
+      "network": 140,
+      "manual_name": "S2",
+      "drivers": [
+        {
+          "component": 71,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in2"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f5ccdba47cadde27d3a4d37348d769cabaa3daf745ea5a346f05deb53ccaf939"
+        }
+      ]
+    },
+    {
+      "network": 142,
+      "manual_name": "S3",
+      "drivers": [
+        {
+          "component": 8,
+          "pin": "out"
+        },
+        {
+          "component": 10,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in3"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S3"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 98304,
+          "z_rows": 32768,
+          "value_sha256": "ba935f6bbc2682b605dc354562d3f5a6de610399f981c8a39195733959a6074a"
+        }
+      ]
+    },
+    {
+      "network": 144,
+      "manual_name": "S4",
+      "drivers": [
+        {
+          "component": 35,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in4"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S4"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "3379e2e4ebc6be616087f5d9bb0fcf921130f875324c1eea33791da74a92a6aa"
+        }
+      ]
+    },
+    {
+      "network": 152,
+      "manual_name": "nC4*nP4",
+      "drivers": [
+        {
+          "component": 31,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 35,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "nC4*nP4"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "2a9d7b575631f55c2cfc0112ef2fcc56834dd96ae0b99bf5d5008a44bc938808"
+        }
+      ]
+    },
+    {
+      "network": 163,
+      "manual_name": "V5",
+      "drivers": [
+        {
+          "component": 37,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 38,
+          "pin": "in0"
+        },
+        {
+          "component": 81,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V5"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "d194f59c431df5aafb47472687a114fa08f9ac9009fe964bcaef8106c916553c"
+        }
+      ]
+    },
+    {
+      "network": 171,
+      "manual_name": "V1",
+      "drivers": [
+        {
+          "component": 11,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 24,
+          "pin": "in0"
+        },
+        {
+          "component": 25,
+          "pin": "in"
+        },
+        {
+          "component": 26,
+          "pin": "in"
+        },
+        {
+          "component": 40,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V1"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "2f14481a90a891c0e45ae4479f72e0feda21c1707facfff3efad3c437b1fa454"
+        }
+      ]
+    },
+    {
+      "network": 174,
+      "manual_name": "D23=G23|P23",
+      "drivers": [
+        {
+          "component": 4,
+          "pin": "out"
+        },
+        {
+          "component": 9,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 41,
+          "pin": "in"
+        },
+        {
+          "component": 42,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "D23=G23|P23"
+          ],
+          "one_rows": 81920,
+          "driven_rows": 106496,
+          "z_rows": 24576,
+          "value_sha256": "b03b73ff8ac6734a2687b602036c0c72157aec625b7e3bd05175c074a640ad62"
+        }
+      ]
+    },
+    {
+      "network": 177,
+      "manual_name": "C2",
+      "drivers": [
+        {
+          "component": 25,
+          "pin": "out"
+        },
+        {
+          "component": 26,
+          "pin": "out"
+        },
+        {
+          "component": 40,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 22,
+          "pin": "in0"
+        },
+        {
+          "component": 42,
+          "pin": "enable"
+        },
+        {
+          "component": 45,
+          "pin": "in0"
+        },
+        {
+          "component": 46,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 81920,
+          "z_rows": 49152,
+          "value_sha256": "10046ebd418c9b0f03becbd21f864a250f82ba1dbab3348c770150f3f45c3ad6"
+        }
+      ]
+    },
+    {
+      "network": 188,
+      "manual_name": "V2",
+      "drivers": [
+        {
+          "component": 2,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 9,
+          "pin": "enable"
+        },
+        {
+          "component": 44,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "V2"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "875df47c185c966d40fd55d1f9b51a58d33195028c8bd9944d5a6668d8d2118e"
+        }
+      ]
+    },
+    {
+      "network": 191,
+      "manual_name": "R23=G2|G3",
+      "drivers": [
+        {
+          "component": 43,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 41,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "R23=G2|G3"
+          ],
+          "one_rows": 57344,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "7f016885082c2f98110fedb62b95c6c144bb75876123dc379032d9c46f6fa44d"
+        }
+      ]
+    },
+    {
+      "network": 197,
+      "manual_name": "O2=C2|P2",
+      "drivers": [
+        {
+          "component": 46,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 71,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "O2=C2|P2"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "3a2ac13d84d55d23469f2c26514b63d5c00ab6f685bb7b30aaab6fe045587afe"
+        }
+      ]
+    },
+    {
+      "network": 203,
+      "manual_name": "F45=nG4|P5",
+      "drivers": [
+        {
+          "component": 76,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 75,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "F45=nG4|P5"
+          ],
+          "one_rows": 114688,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "bda4bbcf7674e5012d8a0d1d9112c3744af8f99f74f839dddf8f216f978b04d2"
+        }
+      ]
+    },
+    {
+      "network": 210,
+      "manual_name": "C8",
+      "drivers": [
+        {
+          "component": 52,
+          "pin": "out"
+        },
+        {
+          "component": 53,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 57,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C8"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 106496,
+          "z_rows": 24576,
+          "value_sha256": "9f2428c03a8a13a2e93e05eda5b6d978e717cd27b312871317d043238d572f90"
+        }
+      ]
+    },
+    {
+      "network": 213,
+      "manual_name": "D67=G67|P67",
+      "drivers": [
+        {
+          "component": 54,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 52,
+          "pin": "in"
+        },
+        {
+          "component": 53,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "D67=G67|P67"
+          ],
+          "one_rows": 81920,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "db2229fc9f065e73bf48f3e16bc31195f23dce3b624c432f760a51cd2137c62d"
+        }
+      ]
+    },
+    {
+      "network": 214,
+      "manual_name": "P7*nQ6",
+      "drivers": [
+        {
+          "component": 65,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 54,
+          "pin": "in0"
+        },
+        {
+          "component": 66,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P7*nQ6"
+          ],
+          "one_rows": 49152,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "496c663b9bc2fb998121d8b7f461008b57efa7991b711d0433ca20174c22f14d"
+        }
+      ]
+    },
+    {
+      "network": 215,
+      "manual_name": "Q7",
+      "drivers": [
+        {
+          "component": 49,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 56,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "Q7",
+            "K7:7"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "c152b79934b7274efe853efa61966da1915bd95fcdb46c345a8fd897d65523a0"
+        }
+      ]
+    },
+    {
+      "network": 218,
+      "manual_name": "G7",
+      "drivers": [
+        {
+          "component": 50,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 54,
+          "pin": "in1"
+        },
+        {
+          "component": 56,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G7",
+            "G7:7"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "04fa8535dd8b9a899638ee4694d8139d9e3d05340a241a28c162169773104dda"
+        }
+      ]
+    },
+    {
+      "network": 223,
+      "manual_name": "E67=G6|X7",
+      "drivers": [
+        {
+          "component": 68,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 52,
+          "pin": "enable"
+        },
+        {
+          "component": 70,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "E67=G6|X7"
+          ],
+          "one_rows": 81920,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "6c18f55c573e32c1f86b489e6db90953bbab860332f9f7c74daddb6bc7e55c01"
+        }
+      ]
+    },
+    {
+      "network": 233,
+      "manual_name": "P6",
+      "drivers": [
+        {
+          "component": 51,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 58,
+          "pin": "in"
+        },
+        {
+          "component": 59,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P6",
+            "P6:6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+        }
+      ]
+    },
+    {
+      "network": 234,
+      "manual_name": "R45=P5*nG4*nC4",
+      "drivers": [
+        {
+          "component": 83,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 59,
+          "pin": "enable"
+        },
+        {
+          "component": 64,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "R45=P5*nG4*nC4"
+          ],
+          "one_rows": 24576,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "1db99c7fe42aed822a97065e4bdb0c3f8f61c1e0589cfef6a33b2f0284a41e3a"
+        }
+      ]
+    },
+    {
+      "network": 237,
+      "manual_name": "S6",
+      "drivers": [
+        {
+          "component": 58,
+          "pin": "out"
+        },
+        {
+          "component": 59,
+          "pin": "out"
+        },
+        {
+          "component": 60,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in6"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "a4d56b433519f741c7e0e26ef0560eaf39a17847bffb2958830b1b6566825063"
+        }
+      ]
+    },
+    {
+      "network": 240,
+      "manual_name": "X6=nP6",
+      "drivers": [
+        {
+          "component": 61,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 60,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "X6=nP6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+        }
+      ]
+    },
+    {
+      "network": 245,
+      "manual_name": "S7",
+      "drivers": [
+        {
+          "component": 62,
+          "pin": "out"
+        },
+        {
+          "component": 63,
+          "pin": "out"
+        },
+        {
+          "component": 64,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in7"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "185c8261f4a057bd9a9fd2527a19ae68ef8cae2487eccf7c8bf38612b99fc6bf"
+        }
+      ]
+    },
+    {
+      "network": 257,
+      "manual_name": "Q6",
+      "drivers": [
+        {
+          "component": 47,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 51,
+          "pin": "in0"
+        },
+        {
+          "component": 61,
+          "pin": "in0"
+        },
+        {
+          "component": 65,
+          "pin": "in1"
+        },
+        {
+          "component": 67,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "Q6",
+            "K6:6"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad"
+        }
+      ]
+    },
+    {
+      "network": 267,
+      "manual_name": "X7*Q6",
+      "drivers": [
+        {
+          "component": 67,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 66,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "X7*Q6"
+          ],
+          "one_rows": 16384,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "c19d4ac262f9688883e6e57ed460e165bc366ba09f02c75d1df82c4eb2017687"
+        }
+      ]
+    },
+    {
+      "network": 270,
+      "manual_name": "F7=XNOR(Q6,P7)",
+      "drivers": [
+        {
+          "component": 66,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 63,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "F7=XNOR(Q6,P7)"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "92c841cc2804f4d3efbb90eb997fe1fb93c42bf66e55a1924afb07ee43dbf3e8"
+        }
+      ]
+    },
+    {
+      "network": 274,
+      "manual_name": "",
+      "drivers": [
+        {
+          "component": 57,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 55,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [],
+          "one_rows": 0,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+        },
+        {
+          "lane": 1,
+          "labels": [
+            "C8"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "9f2428c03a8a13a2e93e05eda5b6d978e717cd27b312871317d043238d572f90"
+        }
+      ]
+    },
+    {
+      "network": 275,
+      "manual_name": "G6",
+      "drivers": [
+        {
+          "component": 48,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 51,
+          "pin": "in1"
+        },
+        {
+          "component": 61,
+          "pin": "in1"
+        },
+        {
+          "component": 68,
+          "pin": "in0"
+        },
+        {
+          "component": 69,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "G6",
+            "G6:6"
+          ],
+          "one_rows": 32768,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "6717ae2af6adfd28dea40927cb77d570dfc715d882387e947a3aab2889802da5"
+        }
+      ]
+    },
+    {
+      "network": 276,
+      "manual_name": "X7=nP7",
+      "drivers": [
+        {
+          "component": 56,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 65,
+          "pin": "in0"
+        },
+        {
+          "component": 67,
+          "pin": "in0"
+        },
+        {
+          "component": 68,
+          "pin": "in1"
+        },
+        {
+          "component": 69,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "X7=nP7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "5e0d39a487dc3fdc955c019ea1d930f73715032aad47c35024f899d0caae0a53"
+        }
+      ]
+    },
+    {
+      "network": 278,
+      "manual_name": "C8",
+      "drivers": [
+        {
+          "component": 55,
+          "pin": "out1"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 89,
+          "pin": "value"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C8"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "9f2428c03a8a13a2e93e05eda5b6d978e717cd27b312871317d043238d572f90"
+        }
+      ]
+    },
+    {
+      "network": 281,
+      "manual_name": "L7=G6 xor P7",
+      "drivers": [
+        {
+          "component": 70,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 62,
+          "pin": "in"
+        },
+        {
+          "component": 64,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "L7=G6 xor P7"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "f58d3255302233727f6b3150e905e440977f75b3bdca6f713f854d4c2cb552f5"
+        }
+      ]
+    },
+    {
+      "network": 282,
+      "manual_name": "N67=~(G6*X7)",
+      "drivers": [
+        {
+          "component": 69,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 70,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "N67=~(G6*X7)"
+          ],
+          "one_rows": 114688,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "0f343f37aaac68de183c798d47370699445fda5ec6deba51359c73e7a3b61c60"
+        }
+      ]
+    },
+    {
+      "network": 306,
+      "manual_name": "nG2",
+      "drivers": [
+        {
+          "component": 5,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 43,
+          "pin": "in0"
+        },
+        {
+          "component": 44,
+          "pin": "in1"
+        },
+        {
+          "component": 72,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "nG2",
+            "nG2:2"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "55c61553d08b8f8ae51a5919b2758acd9afa2c7aa99854f54b9bb40bf32e44bd"
+        }
+      ]
+    },
+    {
+      "network": 307,
+      "manual_name": "P2",
+      "drivers": [
+        {
+          "component": 44,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 45,
+          "pin": "in1"
+        },
+        {
+          "component": 46,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P2",
+            "P2:2"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "82f7279bbcdb43697a6a596bd50af26a4da96a3a4a0f331e0aeb7e63ff9dd6b6"
+        }
+      ]
+    },
+    {
+      "network": 319,
+      "manual_name": "P5",
+      "drivers": [
+        {
+          "component": 38,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 74,
+          "pin": "in1"
+        },
+        {
+          "component": 76,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "P5",
+            "P5:5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664"
+        }
+      ]
+    },
+    {
+      "network": 325,
+      "manual_name": "n(C4*P4)",
+      "drivers": [
+        {
+          "component": 73,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 77,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "n(C4*P4)"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "2590d6d37b3165cbf91a56140b9d2893187f060fd2a79af75c19c1798e20f08c"
+        }
+      ]
+    },
+    {
+      "network": 332,
+      "manual_name": "S5",
+      "drivers": [
+        {
+          "component": 77,
+          "pin": "out"
+        },
+        {
+          "component": 78,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "in5"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "S5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "1ae58b6ea3b4e42f1423bef82790bcc8761a687d32b6bb1d693ed17611dc79ad"
+        }
+      ]
+    },
+    {
+      "network": 334,
+      "manual_name": "L5=G4 xor P5",
+      "drivers": [
+        {
+          "component": 75,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 77,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "L5=G4 xor P5"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "a9c1547454be7f6417b14475579757c3806f0a4167d707a5e441ba7baf691b10"
+        }
+      ]
+    },
+    {
+      "network": 335,
+      "manual_name": "nG5",
+      "drivers": [
+        {
+          "component": 36,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 38,
+          "pin": "in1"
+        },
+        {
+          "component": 82,
+          "pin": "in1"
+        },
+        {
+          "component": 84,
+          "pin": "in1"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "nG5",
+            "nG5:5"
+          ],
+          "one_rows": 98304,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "3fded9c1137844bc94e7d53f646afe43dac58ee64f542c2f54408511877b8b56"
+        }
+      ]
+    },
+    {
+      "network": 337,
+      "manual_name": "C6",
+      "drivers": [
+        {
+          "component": 79,
+          "pin": "out"
+        },
+        {
+          "component": 80,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 53,
+          "pin": "enable"
+        },
+        {
+          "component": 60,
+          "pin": "enable"
+        },
+        {
+          "component": 63,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "C6"
+          ],
+          "one_rows": 65536,
+          "driven_rows": 106496,
+          "z_rows": 24576,
+          "value_sha256": "76d348cd1495785e0c4119672f906e314007f01839257d7aabefc3b5f7cdd3b7"
+        }
+      ]
+    },
+    {
+      "network": 347,
+      "manual_name": "D45=G54|P54",
+      "drivers": [
+        {
+          "component": 82,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 79,
+          "pin": "in"
+        },
+        {
+          "component": 80,
+          "pin": "in"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "D45=G54|P54"
+          ],
+          "one_rows": 81920,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "4a8ca3d01abf9529872199d0eab94b9acdbe6f1675aa207a757e994ee8df3df2"
+        }
+      ]
+    },
+    {
+      "network": 351,
+      "manual_name": "N45=~(V4*V5)",
+      "drivers": [
+        {
+          "component": 81,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 82,
+          "pin": "in0"
+        },
+        {
+          "component": 84,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "N45=~(V4*V5)"
+          ],
+          "one_rows": 57344,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "7c57426d8c96678d5476961ce1552b475a663170186e7f0d6cddeccf5ff52e2b"
+        }
+      ]
+    },
+    {
+      "network": 352,
+      "manual_name": "E45=G4|nP5",
+      "drivers": [
+        {
+          "component": 74,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 75,
+          "pin": "in1"
+        },
+        {
+          "component": 78,
+          "pin": "in"
+        },
+        {
+          "component": 79,
+          "pin": "enable"
+        },
+        {
+          "component": 83,
+          "pin": "in0"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "E45=G4|nP5"
+          ],
+          "one_rows": 81920,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "1e5a3545da435947ab213033a49d6ed81ef973906c4a32f2722781fa0d6e7394"
+        }
+      ]
+    },
+    {
+      "network": 356,
+      "manual_name": "K54",
+      "drivers": [
+        {
+          "component": 84,
+          "pin": "out"
+        }
+      ],
+      "sinks": [
+        {
+          "component": 58,
+          "pin": "enable"
+        },
+        {
+          "component": 62,
+          "pin": "enable"
+        }
+      ],
+      "conflict_rows": 0,
+      "lanes": [
+        {
+          "lane": 0,
+          "labels": [
+            "K54",
+            "K5:4"
+          ],
+          "one_rows": 49152,
+          "driven_rows": 131072,
+          "z_rows": 0,
+          "value_sha256": "0956903fef47b962f1f6c3b5bf6f6ae978fb785f3ebc32d16bd6f33f5f74818d"
+        }
+      ]
+    }
+  ],
+  "cones": {
+    "S0": {
+      "paid_component_count": 9,
+      "gate_cost": 11,
+      "components": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        18,
+        19,
+        20,
+        39
+      ]
+    },
+    "S1": {
+      "paid_component_count": 13,
+      "gate_cost": 18,
+      "components": [
+        11,
+        12,
+        13,
+        15,
+        17,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        39,
+        40
+      ]
+    },
+    "S2": {
+      "paid_component_count": 14,
+      "gate_cost": 19,
+      "components": [
+        2,
+        5,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        39,
+        40,
+        44,
+        45,
+        46,
+        71
+      ]
+    },
+    "S3": {
+      "paid_component_count": 25,
+      "gate_cost": 36,
+      "components": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        72
+      ]
+    },
+    "S4": {
+      "paid_component_count": 24,
+      "gate_cost": 33,
+      "components": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        35,
+        39,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    "S5": {
+      "paid_component_count": 31,
+      "gate_cost": 42,
+      "components": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    "S6": {
+      "paid_component_count": 37,
+      "gate_cost": 51,
+      "components": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        47,
+        48,
+        51,
+        58,
+        59,
+        60,
+        61,
+        74,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    "S7": {
+      "paid_component_count": 44,
+      "gate_cost": 58,
+      "components": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        47,
+        48,
+        49,
+        50,
+        56,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        74,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    "C8": {
+      "paid_component_count": 38,
+      "gate_cost": 51,
+      "components": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13,
+        17,
+        25,
+        26,
+        29,
+        30,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        47,
+        48,
+        49,
+        50,
+        52,
+        53,
+        54,
+        56,
+        65,
+        68,
+        74,
+        79,
+        80,
+        81,
+        82
+      ]
+    }
+  },
+  "cross_output_shared_components": [
+    {
+      "component": 0,
+      "kind": "AND",
+      "network": 14,
+      "name": "G3",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 1,
+      "kind": "NAND",
+      "network": 3,
+      "name": "nG3",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 2,
+      "kind": "OR",
+      "network": 188,
+      "name": "V2",
+      "outputs": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 4,
+      "kind": "SWITCH",
+      "network": 174,
+      "name": "D23=G23|P23",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 5,
+      "kind": "NAND",
+      "network": 306,
+      "name": "nG2",
+      "outputs": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 6,
+      "kind": "OR",
+      "network": 13,
+      "name": "V3",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 9,
+      "kind": "SWITCH",
+      "network": 174,
+      "name": "D23=G23|P23",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 11,
+      "kind": "OR",
+      "network": 171,
+      "name": "V1",
+      "outputs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 12,
+      "kind": "SWITCH",
+      "network": 36,
+      "name": "T0=Cin*V0",
+      "outputs": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 13,
+      "kind": "SWITCH",
+      "network": 36,
+      "name": "T0=Cin*V0",
+      "outputs": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 15,
+      "kind": "OR",
+      "network": 56,
+      "name": "C1",
+      "outputs": [
+        "S0",
+        "S1"
+      ]
+    },
+    {
+      "component": 17,
+      "kind": "AND",
+      "network": 72,
+      "name": "G1",
+      "outputs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 25,
+      "kind": "SWITCH",
+      "network": 177,
+      "name": "C2",
+      "outputs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 26,
+      "kind": "SWITCH",
+      "network": 177,
+      "name": "C2",
+      "outputs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 27,
+      "kind": "AND",
+      "network": 79,
+      "name": "C4*P4",
+      "outputs": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "component": 28,
+      "kind": "AND",
+      "network": 82,
+      "name": "P4",
+      "outputs": [
+        "S4",
+        "S5"
+      ]
+    },
+    {
+      "component": 29,
+      "kind": "NAND",
+      "network": 85,
+      "name": "nG4",
+      "outputs": [
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 30,
+      "kind": "OR",
+      "network": 89,
+      "name": "V4",
+      "outputs": [
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 36,
+      "kind": "NAND",
+      "network": 335,
+      "name": "nG5",
+      "outputs": [
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 37,
+      "kind": "OR",
+      "network": 163,
+      "name": "V5",
+      "outputs": [
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 38,
+      "kind": "AND",
+      "network": 319,
+      "name": "P5",
+      "outputs": [
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 39,
+      "kind": "AND",
+      "network": 34,
+      "name": "G0",
+      "outputs": [
+        "S0",
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 40,
+      "kind": "SWITCH",
+      "network": 177,
+      "name": "C2",
+      "outputs": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 41,
+      "kind": "SWITCH",
+      "network": 83,
+      "name": "C4",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 42,
+      "kind": "SWITCH",
+      "network": 83,
+      "name": "C4",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 43,
+      "kind": "NAND",
+      "network": 191,
+      "name": "R23=G2|G3",
+      "outputs": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 44,
+      "kind": "AND",
+      "network": 307,
+      "name": "P2",
+      "outputs": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "component": 45,
+      "kind": "NAND",
+      "network": 29,
+      "name": "N2=~(C2*P2)",
+      "outputs": [
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "component": 47,
+      "kind": "NOR",
+      "network": 257,
+      "name": "Q6",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 48,
+      "kind": "AND",
+      "network": 275,
+      "name": "G6",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 49,
+      "kind": "NOR",
+      "network": 215,
+      "name": "Q7",
+      "outputs": [
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 50,
+      "kind": "AND",
+      "network": 218,
+      "name": "G7",
+      "outputs": [
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 56,
+      "kind": "OR",
+      "network": 276,
+      "name": "X7=nP7",
+      "outputs": [
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 65,
+      "kind": "NOR",
+      "network": 214,
+      "name": "P7*nQ6",
+      "outputs": [
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 68,
+      "kind": "OR",
+      "network": 223,
+      "name": "E67=G6|X7",
+      "outputs": [
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 74,
+      "kind": "NAND",
+      "network": 352,
+      "name": "E45=G4|nP5",
+      "outputs": [
+        "S5",
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 79,
+      "kind": "SWITCH",
+      "network": 337,
+      "name": "C6",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 80,
+      "kind": "SWITCH",
+      "network": 337,
+      "name": "C6",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 81,
+      "kind": "NAND",
+      "network": 351,
+      "name": "N45=~(V4*V5)",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 82,
+      "kind": "NAND",
+      "network": 347,
+      "name": "D45=G54|P54",
+      "outputs": [
+        "S6",
+        "S7",
+        "C8"
+      ]
+    },
+    {
+      "component": 83,
+      "kind": "NOR",
+      "network": 234,
+      "name": "R45=P5*nG4*nC4",
+      "outputs": [
+        "S6",
+        "S7"
+      ]
+    },
+    {
+      "component": 84,
+      "kind": "AND",
+      "network": 356,
+      "name": "K54",
+      "outputs": [
+        "S6",
+        "S7"
+      ]
+    }
+  ],
+  "independent_103d5_comparison": {
+    "isomorphic_preserving_native_ops_and_cost": false,
+    "proof": [
+      "sample has 10 BUS owners while independent DAG has 9",
+      "sample has 23 Switch components while independent DAG has 22",
+      "sample has 84 aggregated input/logic nodes while independent DAG has 81",
+      "sample has no XOR node and a different AND/NAND/OR/NOR multiset"
+    ],
+    "sample": {
+      "simple_ops": {
+        "AND": 14,
+        "NAND": 15,
+        "NOR": 13,
+        "OR": 15
+      },
+      "switch_count": 23,
+      "owner_count": 10,
+      "owner_arities": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "paid_physical_component_count": 80,
+      "aggregated_logic_node_count_including_inputs": 84
+    },
+    "independent": {
+      "ops": {
+        "AND": 12,
+        "BUS": 9,
+        "NAND": 3,
+        "NOR": 24,
+        "OR": 14,
+        "XOR": 2
+      },
+      "switch_count": 22,
+      "owner_count": 9,
+      "owner_arities": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3
+      ],
+      "paid_physical_component_count": 77,
+      "aggregated_logic_node_count_including_inputs": 81
+    },
+    "independent_structural_sha256": "8dac8a2fa748f8110ed54a1273f08df49a626fe542a74632508974025db94a0f"
+  },
+  "migration_certificate": {
+    "name": "independent reproduction of the existing ordered-cofactor nC4 owner",
+    "formula": {
+      "M23": "BUS(SW(Q3,nG3), SW(nG2,nG3))",
+      "Kreason": "Q2 OR Q3",
+      "nC4": "BUS(SW(Kreason,M23), SW(nC2,M23))"
+    },
+    "truth_rows": 131072,
+    "mismatch_rows": 0,
+    "conflict_rows": 0,
+    "assumed_existing": [
+      "Q2@1",
+      "Q3@1",
+      "nC2@2"
+    ],
+    "new_nodes": [
+      {
+        "name": "nG2",
+        "cost": 1,
+        "arrival": 1
+      },
+      {
+        "name": "nG3",
+        "cost": 1,
+        "arrival": 1
+      },
+      {
+        "name": "M23 two-Switch owner",
+        "cost": 4,
+        "arrival": 2
+      },
+      {
+        "name": "Kreason=Q2|Q3",
+        "cost": 1,
+        "arrival": 2
+      },
+      {
+        "name": "nC4 two-Switch owner",
+        "cost": 4,
+        "arrival": 3
+      }
+    ],
+    "cost_ledger": {
+      "owner_excluding_Q_nG_state_leaves": 9,
+      "incremental_if_Q2_Q3_exist_but_nG2_nG3_do_not": 11,
+      "standalone_with_Q2_nG2_Q3_nG3_leaves": 13
+    },
+    "arrival": 3,
+    "delta_vs_unadopted_three_switch_second_owner": -1,
+    "delta_vs_repository_ordered_cofactor_baseline": 0,
+    "repository_baseline": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_segmented_switch84\\segmented-negative-spine-audit.json",
+      "sha256": "4B4522EC643FF383E6EF3BBCECF3AEF390C4401A0B74B64B112236C14BE57523",
+      "formula_matches": true,
+      "recorded_mismatch_rows": 0,
+      "recorded_conflict_rows": 0,
+      "recorded_cost_excluding_state_leaves": {
+        "V23_negative_two_switch_owner": 4,
+        "U23_Q2_or_Q3": 1,
+        "nC4_two_switch_owner": 4,
+        "total": 9,
+        "arrival": 3
+      }
+    },
+    "complete_low_front_ledger": {
+      "bits0_1_timing_clean_best_known": 24,
+      "bits0_1_target": 23,
+      "bits0_1_gap": 1,
+      "bits2_3_target_including_S2_S3_nC4": 19,
+      "ordered_carry_boundary_standalone": 13,
+      "remaining_budget_for_S2_S3_if_no_more_sharing": 6,
+      "complete_bits2_3_within_19_known": false,
+      "complete_43_gate_negative_front_known": false,
+      "complete_42_gate_negative_front_known": false
+    },
+    "status": "exact sample-side corroboration of an existing 11-gate incremental/13-gate standalone boundary; no net improvement over the repository baseline and no complete 42-gate low front"
+  }
+}

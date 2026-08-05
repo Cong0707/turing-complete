@@ -1,0 +1,992 @@
+{
+  "schema": "byte-adder-103d5-ab-structural-cross-diff-v1",
+  "status": "verified_no_unconditional_102d5_splice",
+  "scope": "read-only derived audits, fixed truth algebra, authoritative 84/6 DAG",
+  "sources": {
+    "raw_samples": {
+      "A": {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 103 5 A\\circuit.data",
+        "sha256": "5a38f50de81e8b72b0be3e7abd160f38e335dfd1269a9a5894b7d5be561a89a9"
+      },
+      "B": {
+        "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 103 5 B\\circuit.data",
+        "sha256": "cce7e6e31131513041ca40bc4125094271e35e66c17512c665580d4364599e88"
+      }
+    },
+    "derived_A": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\derived\\switch-103-5-a-audit.json",
+      "sha256": "84b275b1b6b8f8f4e77ca1e21ebab62db0fe0b37f2714eb8d4fa3ea9aa7f88df"
+    },
+    "derived_B": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\derived\\switch-103-5-b-audit.json",
+      "sha256": "2073558eba98024a243bf89f6f4ff07c783b542d9ff54257ecde5af3076f3dbc"
+    },
+    "authority_84d6": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte84_patchouli_image\\byte-adder-patchouli84-s5-five-gate-full.json",
+      "sha256": "767b51dec2d445247bd53a6a559051b0807a6a8334cdefc51430c7683505a9ed"
+    }
+  },
+  "functional_baseline": {
+    "A": {
+      "gate": 103,
+      "output_depths": {
+        "Output": 5,
+        "Carry out": 5
+      },
+      "max_output_depth": 5,
+      "truth_rows": 131072,
+      "mismatch_count": 0,
+      "bus_conflict_rows": 0,
+      "component_count": 90,
+      "wire_count": 368,
+      "kind_counts": {
+        "AND": 14,
+        "INPUT": 3,
+        "MAKER2": 1,
+        "MAKER8": 1,
+        "NAND": 15,
+        "NOR": 13,
+        "OR": 15,
+        "OUTPUT": 2,
+        "SPLITTER2": 1,
+        "SPLITTER8": 2,
+        "SWITCH": 23
+      }
+    },
+    "B": {
+      "gate": 103,
+      "output_depths": {
+        "Carry out": 5,
+        "Output": 5
+      },
+      "max_output_depth": 5,
+      "truth_rows": 131072,
+      "mismatch_count": 0,
+      "bus_conflict_rows": 0,
+      "component_count": 89,
+      "wire_count": 367,
+      "kind_counts": {
+        "AND": 12,
+        "INPUT": 3,
+        "MAKER2": 1,
+        "MAKER8": 1,
+        "NAND": 10,
+        "NOR": 17,
+        "OR": 16,
+        "OUTPUT": 2,
+        "SPLITTER2": 1,
+        "SPLITTER8": 2,
+        "SWITCH": 24
+      }
+    },
+    "authority_metrics": {
+      "gate": 84,
+      "delay": 6,
+      "energy": 504,
+      "output_arrivals": [
+        4,
+        5,
+        4,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "reachable_nodes": 82,
+      "structural_sha256": "0c8363999805062496b3dcc1240e02b7a175e1763122f65db81dc47ab4362c9c"
+    }
+  },
+  "physical_and_signal_diff": {
+    "A_component_count": 90,
+    "B_component_count": 89,
+    "shared_permanent_id_count": 69,
+    "shared_exact_signal_interface_count": 63,
+    "shared_rewired_count": 6,
+    "shared_rewired": [
+      {
+        "permanent_id": "4423811084572700641",
+        "A_index": 34,
+        "B_index": 35,
+        "op": "MAKER8",
+        "position": [
+          1,
+          -51
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": true
+      },
+      {
+        "permanent_id": "7409393213786921113",
+        "A_index": 53,
+        "B_index": 61,
+        "op": "SWITCH",
+        "position": [
+          -8,
+          52
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": true
+      },
+      {
+        "permanent_id": "6114493918580915180",
+        "A_index": 59,
+        "B_index": 67,
+        "op": "SWITCH",
+        "position": [
+          -8,
+          30
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": false
+      },
+      {
+        "permanent_id": "2819089966161987004",
+        "A_index": 60,
+        "B_index": 68,
+        "op": "SWITCH",
+        "position": [
+          -8,
+          32
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": true
+      },
+      {
+        "permanent_id": "7195422567517374791",
+        "A_index": 63,
+        "B_index": 71,
+        "op": "SWITCH",
+        "position": [
+          -8,
+          48
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": true
+      },
+      {
+        "permanent_id": "2979809613434305588",
+        "A_index": 64,
+        "B_index": 72,
+        "op": "SWITCH",
+        "position": [
+          -8,
+          46
+        ],
+        "same_input_signal_signature": false,
+        "same_output_signal_signature": false
+      }
+    ],
+    "A_only_count": 21,
+    "B_only_count": 20,
+    "A_only_gate_cost": 25,
+    "B_only_gate_cost": 25,
+    "A_only": [
+      {
+        "index": 27,
+        "permanent_id": "8585918028770066180",
+        "op": "AND",
+        "position": [
+          -8,
+          4
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 28,
+        "permanent_id": "3930779741707393346",
+        "op": "AND",
+        "position": [
+          -30,
+          2
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": [
+          "P4"
+        ]
+      },
+      {
+        "index": 29,
+        "permanent_id": "4202277451708266883",
+        "op": "NAND",
+        "position": [
+          -33,
+          4
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "nG4"
+        ]
+      },
+      {
+        "index": 30,
+        "permanent_id": "6312903976695832282",
+        "op": "OR",
+        "position": [
+          -33,
+          0
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "V4"
+        ]
+      },
+      {
+        "index": 31,
+        "permanent_id": "6274401707845008483",
+        "op": "NOR",
+        "position": [
+          -8,
+          0
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 35,
+        "permanent_id": "7235508985218969622",
+        "op": "NOR",
+        "position": [
+          -5,
+          2
+        ],
+        "cost": 1,
+        "arrival": 5,
+        "semantic_labels": [
+          "S4"
+        ]
+      },
+      {
+        "index": 36,
+        "permanent_id": "9024223041361986822",
+        "op": "NAND",
+        "position": [
+          -33,
+          15
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "nG5"
+        ]
+      },
+      {
+        "index": 37,
+        "permanent_id": "2934187898414747636",
+        "op": "OR",
+        "position": [
+          -33,
+          11
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "V5"
+        ]
+      },
+      {
+        "index": 38,
+        "permanent_id": "572661566398699521",
+        "op": "AND",
+        "position": [
+          -30,
+          13
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": [
+          "P5"
+        ]
+      },
+      {
+        "index": 73,
+        "permanent_id": "8682497024927586683",
+        "op": "NAND",
+        "position": [
+          -8,
+          8
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 74,
+        "permanent_id": "7331111963946101566",
+        "op": "NAND",
+        "position": [
+          -19,
+          15
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      },
+      {
+        "index": 75,
+        "permanent_id": "27695301843532824",
+        "op": "NAND",
+        "position": [
+          -16,
+          13
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 76,
+        "permanent_id": "5087237915521516305",
+        "op": "OR",
+        "position": [
+          -19,
+          11
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      },
+      {
+        "index": 77,
+        "permanent_id": "7502463677213360265",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          13
+        ],
+        "cost": 2,
+        "arrival": 5,
+        "semantic_labels": []
+      },
+      {
+        "index": 78,
+        "permanent_id": "6604608392460652511",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          15
+        ],
+        "cost": 2,
+        "arrival": 5,
+        "semantic_labels": []
+      },
+      {
+        "index": 79,
+        "permanent_id": "5433519160971499648",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          17
+        ],
+        "cost": 2,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 80,
+        "permanent_id": "5571092807789457738",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          19
+        ],
+        "cost": 2,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 81,
+        "permanent_id": "1255903738878989582",
+        "op": "NAND",
+        "position": [
+          -24,
+          20
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": []
+      },
+      {
+        "index": 82,
+        "permanent_id": "3389160695766193645",
+        "op": "NAND",
+        "position": [
+          -16,
+          20
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      },
+      {
+        "index": 83,
+        "permanent_id": "8567114233643952951",
+        "op": "NOR",
+        "position": [
+          -8,
+          22
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 84,
+        "permanent_id": "4203448453692890959",
+        "op": "AND",
+        "position": [
+          -16,
+          24
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      }
+    ],
+    "B_only": [
+      {
+        "index": 27,
+        "permanent_id": "1592920551013459769",
+        "op": "OR",
+        "position": [
+          -8,
+          4
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 28,
+        "permanent_id": "4897733781297800159",
+        "op": "OR",
+        "position": [
+          -30,
+          2
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": []
+      },
+      {
+        "index": 29,
+        "permanent_id": "2246251042215632999",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          12
+        ],
+        "cost": 2,
+        "arrival": 5,
+        "semantic_labels": [
+          "P5"
+        ]
+      },
+      {
+        "index": 30,
+        "permanent_id": "2563369117023476044",
+        "op": "AND",
+        "position": [
+          -33,
+          4
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "G4"
+        ]
+      },
+      {
+        "index": 31,
+        "permanent_id": "8243883734648211125",
+        "op": "NOR",
+        "position": [
+          -33,
+          0
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "Q4"
+        ]
+      },
+      {
+        "index": 32,
+        "permanent_id": "368156365819572551",
+        "op": "NAND",
+        "position": [
+          -8,
+          0
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 36,
+        "permanent_id": "3135809051762062892",
+        "op": "NAND",
+        "position": [
+          -5,
+          2
+        ],
+        "cost": 1,
+        "arrival": 5,
+        "semantic_labels": [
+          "S4"
+        ]
+      },
+      {
+        "index": 37,
+        "permanent_id": "7735411007935855888",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          10
+        ],
+        "cost": 2,
+        "arrival": 3,
+        "semantic_labels": [
+          "P5"
+        ]
+      },
+      {
+        "index": 38,
+        "permanent_id": "2869954955662448749",
+        "op": "NOR",
+        "position": [
+          -33,
+          8
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "Q5"
+        ]
+      },
+      {
+        "index": 39,
+        "permanent_id": "4699678088402791184",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          8
+        ],
+        "cost": 2,
+        "arrival": 5,
+        "semantic_labels": []
+      },
+      {
+        "index": 40,
+        "permanent_id": "3189004276450364530",
+        "op": "AND",
+        "position": [
+          -33,
+          12
+        ],
+        "cost": 1,
+        "arrival": 1,
+        "semantic_labels": [
+          "G5"
+        ]
+      },
+      {
+        "index": 41,
+        "permanent_id": "6408833966084671220",
+        "op": "NOR",
+        "position": [
+          -30,
+          10
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": [
+          "P5"
+        ]
+      },
+      {
+        "index": 42,
+        "permanent_id": "9017762110664795890",
+        "op": "OR",
+        "position": [
+          -24,
+          16
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": []
+      },
+      {
+        "index": 51,
+        "permanent_id": "1853016537696682558",
+        "op": "NOR",
+        "position": [
+          -24,
+          20
+        ],
+        "cost": 1,
+        "arrival": 2,
+        "semantic_labels": []
+      },
+      {
+        "index": 52,
+        "permanent_id": "7863526837769034580",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          17
+        ],
+        "cost": 2,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 53,
+        "permanent_id": "5818534453424563132",
+        "op": "NOR",
+        "position": [
+          -8,
+          22
+        ],
+        "cost": 1,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 54,
+        "permanent_id": "8345703260341977235",
+        "op": "SWITCH",
+        "position": [
+          -8,
+          19
+        ],
+        "cost": 2,
+        "arrival": 4,
+        "semantic_labels": []
+      },
+      {
+        "index": 79,
+        "permanent_id": "6498656812964491486",
+        "op": "OR",
+        "position": [
+          -16,
+          20
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      },
+      {
+        "index": 80,
+        "permanent_id": "7829465926671196881",
+        "op": "NOR",
+        "position": [
+          -16,
+          24
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      },
+      {
+        "index": 83,
+        "permanent_id": "477260218146666651",
+        "op": "NOR",
+        "position": [
+          -8,
+          15
+        ],
+        "cost": 1,
+        "arrival": 3,
+        "semantic_labels": []
+      }
+    ],
+    "resolved_C6_z_rows": {
+      "A": 24576,
+      "B": 36864
+    }
+  },
+  "one_gate_ledger": {
+    "cut_definition": "The requested high-tail saving is the high-side S5 completion across the C6 producer window; it is not the bit6:7 common suffix.",
+    "common_unique_shell_cost_each": 16,
+    "A_helper": {
+      "cost": 2,
+      "formulas": [
+        "EA = G4 OR NOT(P5)",
+        "RA = NOT(C4 OR EA)"
+      ],
+      "saving_vs_B_helper": 1
+    },
+    "B_helper": {
+      "cost": 3,
+      "formulas": [
+        "EB = G4 OR G5",
+        "RB = NOT(C4 OR EB)",
+        "HB = NOT(Q4 OR P5)"
+      ]
+    },
+    "A_S5_completion": {
+      "cost": 7,
+      "shape": "3 ordinary gates plus 2 Switches"
+    },
+    "B_S5_completion": {
+      "cost": 6,
+      "shape": "3 Switches",
+      "saving_vs_A_completion": 1
+    },
+    "total": {
+      "A": 25,
+      "B": 25
+    }
+  },
+  "fixed_boolean_contract": {
+    "one_hot_rows": 18,
+    "mismatch": {
+      "A_S5": 0,
+      "B_S5": 0,
+      "A_C6": 0,
+      "B_C6": 0,
+      "P5_and_RA_vs_P5_and_RB": 0
+    },
+    "RA_vs_RB_differing_rows": 2,
+    "negative_cover_mismatch": {
+      "R0_or_RA_vs_not_C6": 0,
+      "R0_or_RB_vs_not_C6": 0
+    },
+    "reduced_C6_z_rows": {
+      "A": 2,
+      "B": 4
+    },
+    "truth_column_sha256": {
+      "expected_s5": "7a06606d00052a829a8463db099c569054dc2193d47bc37b055fd70879c199c7",
+      "expected_c6": "19240501bc27d26b02be45c727cb278be45482eaa1bb2276e5b444f10610d396",
+      "r0": "e01fa626c5d1a0ff1b75eede94b8ee4e2019a3e448cfdfa069f2e945222aaacb",
+      "r_a": "a602f2b9103050b180edfab13706d5cc0bd3a646396daf314fdb9ed6b32bc7f6",
+      "r_b": "31a4424f8ac7ff3a96f3a2d2a4f5c22c631338812b44d8f36bd383f31247f805",
+      "h_b": "0723dc0bc92a3a6bca859a4629a23e66ff9bb74ec23b1b7015af1ae9b3acd43f",
+      "n27_b": "99939535d76d7caa243f6ebfc5b8e11631b4f5e6fb5cd65494249ea62ed0a0ad"
+    }
+  },
+  "splice_verdict": {
+    "unconditional_complete_102d5": false,
+    "reason": "The apparent 24-gate hybrid counts A's two-gate helper with B's six-gate S5 completion, but the latter consumes HB and B's Q4/n27B phase interface. HB is paid inside B's three-gate helper and is absent from A's helper ABI. RA may replace RB only under the P5 data care domain; that identity does not supply the other missing rails.",
+    "omitted_paid_signal": "HB = NOT(Q4 OR P5)",
+    "additional_interface_mismatch": [
+      "B completion consumes Q4 while A materializes V4=NOT(Q4)",
+      "B completion consumes n27B=C4 OR NOT(P4); A exposes a different S4 phase pair",
+      "A and B C6 have equal Boolean data but different driven/Z domains"
+    ],
+    "claim_boundary": "This rejects only a zero-adapter structural splice. It is not a lower bound against a newly co-designed or resynthesized 102/5 circuit."
+  },
+  "authority_84d6_transfer": {
+    "exact_existing_function_matches": {
+      "A": [
+        {
+          "sample_component_index": 27,
+          "sample_op": "AND",
+          "sample_arrival": 4,
+          "authority_node": {
+            "id": 69,
+            "op": "AND",
+            "label": "human85.T4",
+            "arrival": 5
+          }
+        },
+        {
+          "sample_component_index": 28,
+          "sample_op": "AND",
+          "sample_arrival": 2,
+          "authority_node": {
+            "id": 60,
+            "op": "NOR",
+            "label": "human85.P4",
+            "arrival": 2
+          }
+        },
+        {
+          "sample_component_index": 31,
+          "sample_op": "NOR",
+          "sample_arrival": 4,
+          "authority_node": {
+            "id": 70,
+            "op": "NOR",
+            "label": "human85.R4",
+            "arrival": 5
+          }
+        },
+        {
+          "sample_component_index": 35,
+          "sample_op": "NOR",
+          "sample_arrival": 5,
+          "authority_node": {
+            "id": 71,
+            "op": "NOR",
+            "label": "human85.S4",
+            "arrival": 6
+          }
+        },
+        {
+          "sample_component_index": 38,
+          "sample_op": "AND",
+          "sample_arrival": 2,
+          "authority_node": {
+            "id": 63,
+            "op": "NOR",
+            "label": "human85.P5",
+            "arrival": 2
+          }
+        },
+        {
+          "sample_component_index": 82,
+          "sample_op": "NAND",
+          "sample_arrival": 3,
+          "authority_node": {
+            "id": 67,
+            "op": "OR",
+            "label": "human85.C6_data",
+            "arrival": 3
+          }
+        }
+      ],
+      "B": [
+        {
+          "sample_component_index": 30,
+          "sample_op": "AND",
+          "sample_arrival": 1,
+          "authority_node": {
+            "id": 58,
+            "op": "AND",
+            "label": "human85.G4",
+            "arrival": 1
+          }
+        },
+        {
+          "sample_component_index": 31,
+          "sample_op": "NOR",
+          "sample_arrival": 1,
+          "authority_node": {
+            "id": 59,
+            "op": "NOR",
+            "label": "human85.Q4",
+            "arrival": 1
+          }
+        },
+        {
+          "sample_component_index": 36,
+          "sample_op": "NAND",
+          "sample_arrival": 5,
+          "authority_node": {
+            "id": 71,
+            "op": "NOR",
+            "label": "human85.S4",
+            "arrival": 6
+          }
+        },
+        {
+          "sample_component_index": 38,
+          "sample_op": "NOR",
+          "sample_arrival": 1,
+          "authority_node": {
+            "id": 62,
+            "op": "NOR",
+            "label": "human85.Q5",
+            "arrival": 1
+          }
+        },
+        {
+          "sample_component_index": 40,
+          "sample_op": "AND",
+          "sample_arrival": 1,
+          "authority_node": {
+            "id": 61,
+            "op": "AND",
+            "label": "human85.G5",
+            "arrival": 1
+          }
+        },
+        {
+          "sample_component_index": 41,
+          "sample_op": "NOR",
+          "sample_arrival": 2,
+          "authority_node": {
+            "id": 63,
+            "op": "NOR",
+            "label": "human85.P5",
+            "arrival": 2
+          }
+        },
+        {
+          "sample_component_index": 51,
+          "sample_op": "NOR",
+          "sample_arrival": 2,
+          "authority_node": {
+            "id": 66,
+            "op": "NOR",
+            "label": "human85.V45",
+            "arrival": 2
+          }
+        },
+        {
+          "sample_component_index": 79,
+          "sample_op": "OR",
+          "sample_arrival": 3,
+          "authority_node": {
+            "id": 67,
+            "op": "OR",
+            "label": "human85.C6_data",
+            "arrival": 3
+          }
+        },
+        {
+          "sample_component_index": 83,
+          "sample_op": "NOR",
+          "sample_arrival": 3,
+          "authority_node": {
+            "id": 73,
+            "op": "NOR",
+            "label": "patchouli84.H5",
+            "arrival": 3
+          }
+        }
+      ]
+    },
+    "reason_byproducts": [
+      {
+        "name": "R0",
+        "formula": "NOT(D45)",
+        "sample_nodes": [
+          "A84",
+          "B80"
+        ],
+        "arrival": 3,
+        "sha256": "28e412957099030f9b931f48e9cfcfbadb07e6b1e03f9fb7234fe34e6f1db188",
+        "authority_status": "not currently materialized; costs one extra gate from node67"
+      },
+      {
+        "name": "RB",
+        "formula": "NOT(B23 OR G345)",
+        "sample_node": "B53",
+        "arrival": 4,
+        "sha256": "21e8bff1e7929d7f8f0b93000e80d0673616a4783d6f509a364ca6cb562a5661",
+        "authority_status": "one paid NOR from authoritative nodes31/65"
+      },
+      {
+        "name": "RA",
+        "formula": "P5 AND RB",
+        "sample_node": "A83",
+        "arrival": 4,
+        "sha256": "9f211fb74cf120edf2f49a0c88ab950661b8784240d490173456ea365f980a63",
+        "authority_status": "consumer-restricted reason; not a free full negative carry"
+      }
+    ],
+    "conditional_early_phase": "A T4/R4/S4 and B S4 equal authoritative functions but are one level earlier only because the samples receive C4 at depth3; authority C4 is depth4.",
+    "deterministic_gate_saving_on_current_84d6": 0
+  }
+}

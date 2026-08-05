@@ -1,0 +1,8982 @@
+{
+  "schema": "switch-154-4-read-only-audit-v1",
+  "source": {
+    "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 154 4\\circuit.data",
+    "sha256": "c4893eeb31548a6564e0681c360d387f7e404059b1f4c41e8c679297073e8091",
+    "bytes": 5017
+  },
+  "header": {
+    "gate": 154,
+    "delay": 4,
+    "energy": 616,
+    "component_count": 116,
+    "wire_count": 435
+  },
+  "recomputed": {
+    "gate": 154,
+    "delay": 4,
+    "output_arrivals": {
+      "Output": 4,
+      "Carry out": 4
+    },
+    "truth_rows": 131072,
+    "output_mismatch_counts": {
+      "Output": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "Carry out": [
+        0
+      ]
+    },
+    "bus_conflict_rows_union": 0,
+    "internal_z_rows_union": 119084
+  },
+  "kind_counts": [
+    {
+      "kind": 2,
+      "type": "constant_one",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 3,
+      "type": "not_bit",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 4,
+      "type": "and_bit",
+      "word_size": 1,
+      "count": 12
+    },
+    {
+      "kind": 6,
+      "type": "nand_bit",
+      "word_size": 1,
+      "count": 2
+    },
+    {
+      "kind": 7,
+      "type": "or_bit",
+      "word_size": 1,
+      "count": 16
+    },
+    {
+      "kind": 9,
+      "type": "nor_bit",
+      "word_size": 1,
+      "count": 25
+    },
+    {
+      "kind": 12,
+      "type": "switch_bit",
+      "word_size": 1,
+      "count": 49
+    },
+    {
+      "kind": 16,
+      "type": "maker_8",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 17,
+      "type": "splitter_8",
+      "word_size": 1,
+      "count": 2
+    },
+    {
+      "kind": 61,
+      "type": "campaign_input",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 61,
+      "type": "campaign_input",
+      "word_size": 8,
+      "count": 2
+    },
+    {
+      "kind": 69,
+      "type": "campaign_output",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 69,
+      "type": "campaign_output",
+      "word_size": 8,
+      "count": 1
+    },
+    {
+      "kind": 109,
+      "type": "splitter_2",
+      "word_size": 1,
+      "count": 1
+    },
+    {
+      "kind": 111,
+      "type": "maker_2",
+      "word_size": 1,
+      "count": 1
+    }
+  ],
+  "unconnected_pins": [
+    {
+      "component": 100,
+      "pin": "out0",
+      "direction": "output",
+      "width": 1
+    },
+    {
+      "component": 101,
+      "pin": "in0",
+      "direction": "input",
+      "width": 1
+    }
+  ],
+  "fixed_nC4_bridge_audit": {
+    "target": "nC4@3",
+    "base": {
+      "outputs": [
+        "S0",
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "gate": 41,
+      "delay": 4,
+      "live_components": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        44,
+        112,
+        113,
+        114
+      ]
+    },
+    "eligible_existing_roots": [
+      0,
+      2,
+      15,
+      24,
+      26,
+      28,
+      31,
+      33,
+      35,
+      39,
+      42,
+      44,
+      50,
+      51,
+      52,
+      55,
+      57,
+      86,
+      87,
+      100,
+      104,
+      108,
+      120,
+      124,
+      133,
+      250,
+      252,
+      264,
+      266,
+      352,
+      358,
+      364,
+      365,
+      419
+    ],
+    "one_gate_matches": [],
+    "conclusion": "no one-gate bridge in the fixed S0..S3 cone",
+    "all_sample_d2_reuse_matches": [],
+    "best_all_sample_reuse": []
+  },
+  "low_closure_descriptor_audit": {
+    "target": "nC4",
+    "target_active_one_rows": 65536,
+    "descriptor_count": 41,
+    "care_domain": {
+      "S4_XNOR_P4_nC4": "full low-input domain; XNOR is bijective in nC4 for either P4 value",
+      "S5_NAND_nC4_P4": "P4=1 observes every low-input assignment because bit4 is independent",
+      "nC6_SW_P45_nC4": "P45=1 observes every low-input assignment because bits4:5 are independent",
+      "projected_low_domain": "all 2^9 assignments of A[0:3], B[0:3], Cin",
+      "z_contract": "Z may replace logical 0, but cannot replace an nC4 active-one row"
+    },
+    "descriptors": [
+      {
+        "root": 0,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 0,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "K2"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 49152,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 2,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out2"
+          }
+        ],
+        "recognized_functions": [
+          "B[2]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 81920,
+        "consumer_components_outside_low_closure": [
+          107,
+          110
+        ]
+      },
+      {
+        "root": 15,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 25,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "P2"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 24,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 3,
+            "pin": "out"
+          },
+          {
+            "component": 4,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 49152,
+        "active_zero_rows": 49152,
+        "z_rows": 32768,
+        "active_one_sha256": "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780",
+        "driven_sha256": "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 71680,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 26,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out0"
+          }
+        ],
+        "recognized_functions": [
+          "B[0]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "2d826e6429ab88d6fa2d681ee3c84bb8faf8be109b15ac3603970c9f8c557115",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 69632,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 28,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 21,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "G0"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 69632,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 31,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out0"
+          }
+        ],
+        "recognized_functions": [
+          "A[0]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "fb06eba7d90aa7e938e072722adf84f3d3289ab8dfb22ca50c10477dff961657",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 69632,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 32,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 9,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 49152,
+        "active_zero_rows": 81920,
+        "z_rows": 0,
+        "active_one_sha256": "d016adef72ed8b7d75e72f7098bbf5ab2e092f0cc0189e49dc01388454bad105",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 59392,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 33,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 11,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 16384,
+        "active_zero_rows": 114688,
+        "z_rows": 0,
+        "active_one_sha256": "4f9836fe553296339f9fd9acd6891a6ef301ad37407fcc2478b5bcf7dca1c007",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 67584,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 35,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 112,
+            "pin": "value"
+          }
+        ],
+        "recognized_functions": [
+          "Cin",
+          "C0"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "0e04cabccb38842bccbd0d8ec90acd1c1ff1fcb06abe2424e75064f2892f03b1",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 69632,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 39,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 5,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "H0"
+        ],
+        "active_one_rows": 98304,
+        "active_zero_rows": 32768,
+        "z_rows": 0,
+        "active_one_sha256": "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 69632,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 42,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 7,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 16384,
+        "active_zero_rows": 114688,
+        "z_rows": 0,
+        "active_one_sha256": "99e3f98a049ceaf2f32d5a29753d92f8b171ef7893d58657fbf1d91c49efdb8c",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 63488,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 44,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 6,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "C1"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "cc1d362cdbf5c1d9bcd8d9b3a9c8a9970ea6c13deb16f1358c797821d063ae3f",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 48,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 12,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "bd088f8e1cbd1f913c816c24689ad1cf8bea82396c513c5e022a460133ab7566",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 49,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 13,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "b176a9ca05077068e26b6736711b6f72a07541f9f59be5d9b894432033728b4c",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 50,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 2,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "K1"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "24327420584ffb4e26713876a081ef16cd6f628988f23024f3e55e1e56466406",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 57344,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 51,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 8,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "G1"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 52,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 15,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "P1"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "093e6a4c7094f049931627465ae9f48bfd5bb9b177d211fab21b0154fee2f0ae",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 55,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out1"
+          }
+        ],
+        "recognized_functions": [
+          "B[1]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 57,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 16,
+            "pin": "out"
+          },
+          {
+            "component": 17,
+            "pin": "out"
+          },
+          {
+            "component": 44,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "C2"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 16384,
+        "z_rows": 49152,
+        "active_one_sha256": "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7",
+        "driven_sha256": "0bd5a2c0e238b7e930f4312ec4a0b6f6563c963b482f6daba4b6e95be4d63df4",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 81920,
+        "consumer_components_outside_low_closure": [
+          45,
+          52,
+          104
+        ]
+      },
+      {
+        "root": 86,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 27,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "K3"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "6b55a18028998dcc24768ed93d01a4786d22262375b067d7a73aea7ad721612c",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 32768,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 87,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 26,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "H1"
+        ],
+        "active_one_rows": 98304,
+        "active_zero_rows": 32768,
+        "z_rows": 0,
+        "active_one_sha256": "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 97,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 22,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 98304,
+        "active_zero_rows": 32768,
+        "z_rows": 0,
+        "active_one_sha256": "0781e937d95322aba11e8a479be9a3c269c49dbea71fb66bd05eb897873a5eb4",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 98,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 36,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 98304,
+        "active_zero_rows": 32768,
+        "z_rows": 0,
+        "active_one_sha256": "f088c35a35b67bcf80b08cb7d768a5e53c6ee1f85bbbcd8c5bfbd2fc524ef4db",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 49152,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 100,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out1"
+          }
+        ],
+        "recognized_functions": [
+          "A[1]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 73728,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 104,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out3"
+          }
+        ],
+        "recognized_functions": [
+          "B[3]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 98304,
+        "consumer_components_outside_low_closure": [
+          108,
+          109,
+          110
+        ]
+      },
+      {
+        "root": 108,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out3"
+          }
+        ],
+        "recognized_functions": [
+          "A[3]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 98304,
+        "consumer_components_outside_low_closure": [
+          106,
+          107,
+          108
+        ]
+      },
+      {
+        "root": 120,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 28,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "G3"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "8d15116201ddd325abc3f098d413079303cd5024f0b447eece42e69f2f6c7563",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 98304,
+        "consumer_components_outside_low_closure": [
+          46,
+          105
+        ]
+      },
+      {
+        "root": 124,
+        "arrival": 2,
+        "drivers": [
+          {
+            "component": 31,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "nP3"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 133,
+        "arrival": 1,
+        "drivers": [
+          {
+            "component": 1,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [
+          "G2"
+        ],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 81920,
+        "consumer_components_outside_low_closure": [
+          47,
+          105
+        ]
+      },
+      {
+        "root": 250,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out5"
+          }
+        ],
+        "recognized_functions": [
+          "B[5]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          54,
+          55,
+          67,
+          68
+        ]
+      },
+      {
+        "root": 252,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out5"
+          }
+        ],
+        "recognized_functions": [
+          "A[5]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          54,
+          55,
+          67,
+          68
+        ]
+      },
+      {
+        "root": 264,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out6"
+          }
+        ],
+        "recognized_functions": [
+          "B[6]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "622a24c7221ae020f137fe7e02197d3636f866ebd04f0b7ac4c6d35b227337e8",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          69,
+          70
+        ]
+      },
+      {
+        "root": 266,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out6"
+          }
+        ],
+        "recognized_functions": [
+          "A[6]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "ad11987750914a2c0911b020905c8140f8105e134796071fe3338be52dba5304",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          69,
+          70
+        ]
+      },
+      {
+        "root": 352,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out7"
+          }
+        ],
+        "recognized_functions": [
+          "B[7]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          72,
+          73,
+          98
+        ]
+      },
+      {
+        "root": 358,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out7"
+          }
+        ],
+        "recognized_functions": [
+          "A[7]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          72,
+          73,
+          98
+        ]
+      },
+      {
+        "root": 364,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out4"
+          }
+        ],
+        "recognized_functions": [
+          "A[4]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          29,
+          30,
+          96
+        ]
+      },
+      {
+        "root": 365,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 18,
+            "pin": "out4"
+          }
+        ],
+        "recognized_functions": [
+          "B[4]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 65536,
+        "consumer_components_outside_low_closure": [
+          29,
+          30,
+          96
+        ]
+      },
+      {
+        "root": 366,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 24,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 32768,
+        "active_zero_rows": 98304,
+        "z_rows": 0,
+        "active_one_sha256": "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 81920,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 395,
+        "arrival": 3,
+        "drivers": [
+          {
+            "component": 35,
+            "pin": "out"
+          }
+        ],
+        "recognized_functions": [],
+        "active_one_rows": 49152,
+        "active_zero_rows": 81920,
+        "z_rows": 0,
+        "active_one_sha256": "a27b272eaa3d832cb6c9d04b5746ed80673ce11b1c85a7aaf8cb4a7573f98eef",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 49152,
+        "consumer_components_outside_low_closure": []
+      },
+      {
+        "root": 419,
+        "arrival": 0,
+        "drivers": [
+          {
+            "component": 19,
+            "pin": "out2"
+          }
+        ],
+        "recognized_functions": [
+          "A[2]"
+        ],
+        "active_one_rows": 65536,
+        "active_zero_rows": 65536,
+        "z_rows": 0,
+        "active_one_sha256": "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+        "driven_sha256": "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee",
+        "equals_nC4_when_z_reads_zero": false,
+        "nC4_truth_distance": 81920,
+        "consumer_components_outside_low_closure": [
+          106,
+          109
+        ]
+      }
+    ],
+    "equivalent_roots": [],
+    "conclusion": "no existing <=D3 descriptor is care-domain equivalent to nC4"
+  },
+  "named_architecture_contracts": [
+    {
+      "name": "X0=H0*Cin",
+      "root": 24,
+      "arrival": 1,
+      "active_one_mismatch": 0,
+      "active_one_rows": 49152,
+      "active_zero_rows": 49152,
+      "z_rows": 32768,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "C1",
+      "root": 44,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "C2",
+      "root": 57,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 16384,
+      "z_rows": 49152,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "S3",
+      "root": 121,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 32768,
+      "z_rows": 32768,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "RA=A3*(H2|B3)",
+      "root": 417,
+      "arrival": 1,
+      "active_one_mismatch": 0,
+      "active_one_rows": 57344,
+      "active_zero_rows": 57344,
+      "z_rows": 16384,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "RB=B3*H2",
+      "root": 141,
+      "arrival": 1,
+      "active_one_mismatch": 0,
+      "active_one_rows": 49152,
+      "active_zero_rows": 49152,
+      "z_rows": 32768,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "nU23=not(G3|H3*H2)",
+      "root": 181,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 49152,
+      "active_zero_rows": 81920,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "Rgen234=G2|G3|G4",
+      "root": 154,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 75776,
+      "active_zero_rows": 0,
+      "z_rows": 55296,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "W4=H4*(G4|U23)",
+      "root": 156,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 73728,
+      "active_zero_rows": 20480,
+      "z_rows": 36864,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "N0_C5=not(C2|G2|G3|G4)",
+      "root": 401,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 27648,
+      "active_zero_rows": 103424,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "nW4",
+      "root": 328,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 57344,
+      "active_zero_rows": 73728,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "C5_positive_descriptor",
+      "root": 196,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 37888,
+      "z_rows": 27648,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "S4",
+      "root": 125,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 32768,
+      "z_rows": 32768
+    },
+    {
+      "name": "S5",
+      "root": 219,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F60=P6 xor G5",
+      "root": 200,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F61=P6 xor H5",
+      "root": 197,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "S6",
+      "root": 193,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "E0=G5*H6",
+      "root": 313,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 24576,
+      "active_zero_rows": 106496,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F0=H5*H6",
+      "root": 315,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 73728,
+      "active_zero_rows": 57344,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "E1=nG5*nG6",
+      "root": 314,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 73728,
+      "active_zero_rows": 57344,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F1=K5*nG6",
+      "root": 316,
+      "arrival": 2,
+      "active_one_mismatch": 0,
+      "active_one_rows": 24576,
+      "active_zero_rows": 106496,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F70=P7 xor (G6|P6*G5)",
+      "root": 346,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "F71=P7 xor (G6|P6*H5)",
+      "root": 302,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "S7",
+      "root": 326,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 65536,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "R0_C8=G6|G7|G5*H6",
+      "root": 384,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 69632,
+      "active_zero_rows": 61440,
+      "z_rows": 0,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "W8=H7*(G6|G7|H5*H6)",
+      "root": 349,
+      "arrival": 3,
+      "active_one_mismatch": 0,
+      "active_one_rows": 73728,
+      "active_zero_rows": 20480,
+      "z_rows": 36864,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "C8_positive_descriptor",
+      "root": 354,
+      "arrival": 4,
+      "active_one_mismatch": 0,
+      "active_one_rows": 65536,
+      "active_zero_rows": 34816,
+      "z_rows": 30720,
+      "driven_mismatch": 0
+    },
+    {
+      "name": "N0_C5 | nW4 = nC5 phase cover",
+      "roots": [
+        401,
+        328
+      ],
+      "arrival": 3,
+      "active_one_mismatch": 0
+    }
+  ],
+  "components": [
+    {
+      "index": 0,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        -26
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 2,
+        "in1": 419
+      },
+      "outputs": {
+        "out": 0
+      }
+    },
+    {
+      "index": 1,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        -22
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 2,
+        "in1": 419
+      },
+      "outputs": {
+        "out": 133
+      }
+    },
+    {
+      "index": 2,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        -38
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 55,
+        "in1": 100
+      },
+      "outputs": {
+        "out": 50
+      }
+    },
+    {
+      "index": 3,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -29,
+        -43
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 26,
+        "in": 35
+      },
+      "outputs": {
+        "out": 24
+      }
+    },
+    {
+      "index": 4,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -29,
+        -41
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 31,
+        "in": 35
+      },
+      "outputs": {
+        "out": 24
+      }
+    },
+    {
+      "index": 5,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -33,
+        -48
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 26,
+        "in1": 31
+      },
+      "outputs": {
+        "out": 39
+      }
+    },
+    {
+      "index": 6,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -23,
+        -42
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 28,
+        "in1": 24
+      },
+      "outputs": {
+        "out": 44
+      }
+    },
+    {
+      "index": 7,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -23,
+        -47
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 39,
+        "in1": 35
+      },
+      "outputs": {
+        "out": 42
+      }
+    },
+    {
+      "index": 8,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        -34
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 55,
+        "in1": 100
+      },
+      "outputs": {
+        "out": 51
+      }
+    },
+    {
+      "index": 9,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -18,
+        -48
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 44,
+        "in1": 42
+      },
+      "outputs": {
+        "out": 32
+      }
+    },
+    {
+      "index": 10,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -15,
+        -46
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "in0": 32,
+        "in1": 33
+      },
+      "outputs": {
+        "out": 29
+      }
+    },
+    {
+      "index": 11,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -18,
+        -44
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 35,
+        "in1": 28
+      },
+      "outputs": {
+        "out": 33
+      }
+    },
+    {
+      "index": 12,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -18,
+        -34
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 52,
+        "in1": 44
+      },
+      "outputs": {
+        "out": 48
+      }
+    },
+    {
+      "index": 13,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -18,
+        -38
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 44,
+        "in1": 52
+      },
+      "outputs": {
+        "out": 49
+      }
+    },
+    {
+      "index": 14,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -15,
+        -36
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "in0": 49,
+        "in1": 48
+      },
+      "outputs": {
+        "out": 82
+      }
+    },
+    {
+      "index": 15,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -30,
+        -36
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 50,
+        "in1": 51
+      },
+      "outputs": {
+        "out": 52
+      }
+    },
+    {
+      "index": 16,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -22,
+        -32
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 51,
+        "in": 87
+      },
+      "outputs": {
+        "out": 57
+      }
+    },
+    {
+      "index": 17,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -24,
+        -32
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 28,
+        "in": 87
+      },
+      "outputs": {
+        "out": 57
+      }
+    },
+    {
+      "index": 18,
+      "kind": 17,
+      "type": "splitter_8",
+      "label": "",
+      "position": [
+        -40,
+        -51
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {
+        "in": 78
+      },
+      "outputs": {
+        "out0": 26,
+        "out1": 55,
+        "out2": 2,
+        "out3": 104,
+        "out4": 365,
+        "out5": 250,
+        "out6": 264,
+        "out7": 352
+      }
+    },
+    {
+      "index": 19,
+      "kind": 17,
+      "type": "splitter_8",
+      "label": "",
+      "position": [
+        -49,
+        -51
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {
+        "in": 66
+      },
+      "outputs": {
+        "out0": 31,
+        "out1": 100,
+        "out2": 419,
+        "out3": 108,
+        "out4": 364,
+        "out5": 252,
+        "out6": 266,
+        "out7": 358
+      }
+    },
+    {
+      "index": 20,
+      "kind": 16,
+      "type": "maker_8",
+      "label": "",
+      "position": [
+        18,
+        -51
+      ],
+      "rotation": 3,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 4,
+      "inputs": {
+        "in0": 29,
+        "in1": 82,
+        "in2": 84,
+        "in3": 121,
+        "in4": 125,
+        "in5": 219,
+        "in6": 193,
+        "in7": 326
+      },
+      "outputs": {
+        "out": 79
+      }
+    },
+    {
+      "index": 21,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        -44
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 26,
+        "in1": 31
+      },
+      "outputs": {
+        "out": 28
+      }
+    },
+    {
+      "index": 22,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -5,
+        -26
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 57,
+        "in1": 15
+      },
+      "outputs": {
+        "out": 97
+      }
+    },
+    {
+      "index": 23,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -2,
+        -24
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "in0": 97,
+        "in1": 98
+      },
+      "outputs": {
+        "out": 84
+      }
+    },
+    {
+      "index": 24,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -10,
+        -20
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 57,
+        "in1": 15
+      },
+      "outputs": {
+        "out": 366
+      }
+    },
+    {
+      "index": 25,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -30,
+        -24
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 0,
+        "in1": 133
+      },
+      "outputs": {
+        "out": 15
+      }
+    },
+    {
+      "index": 26,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -33,
+        -30
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 55,
+        "in1": 100
+      },
+      "outputs": {
+        "out": 87
+      }
+    },
+    {
+      "index": 27,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        -18
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 104,
+        "in1": 108
+      },
+      "outputs": {
+        "out": 86
+      }
+    },
+    {
+      "index": 28,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        -14
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 104,
+        "in1": 108
+      },
+      "outputs": {
+        "out": 120
+      }
+    },
+    {
+      "index": 29,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        4
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 365,
+        "in1": 364
+      },
+      "outputs": {
+        "out": 158
+      }
+    },
+    {
+      "index": 30,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        0
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 365,
+        "in1": 364
+      },
+      "outputs": {
+        "out": 128
+      }
+    },
+    {
+      "index": 31,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -30,
+        -16
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 86,
+        "in1": 120
+      },
+      "outputs": {
+        "out": 124
+      }
+    },
+    {
+      "index": 32,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        -18
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 395,
+        "in": 98
+      },
+      "outputs": {
+        "out": 121
+      }
+    },
+    {
+      "index": 33,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        -16
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 133,
+        "in": 124
+      },
+      "outputs": {
+        "out": 121
+      }
+    },
+    {
+      "index": 34,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        -14
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 366,
+        "in": 124
+      },
+      "outputs": {
+        "out": 121
+      }
+    },
+    {
+      "index": 35,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -5,
+        -11
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 124,
+        "in1": 133
+      },
+      "outputs": {
+        "out": 395
+      }
+    },
+    {
+      "index": 36,
+      "kind": 6,
+      "type": "nand_bit",
+      "label": "",
+      "position": [
+        -5,
+        -22
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 15,
+        "in1": 57
+      },
+      "outputs": {
+        "out": 98
+      }
+    },
+    {
+      "index": 37,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        2
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 181,
+        "in": 119
+      },
+      "outputs": {
+        "out": 125
+      }
+    },
+    {
+      "index": 38,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        0
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 131,
+        "in": 411
+      },
+      "outputs": {
+        "out": 125
+      }
+    },
+    {
+      "index": 39,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -5,
+        4
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 401,
+        "in": 119
+      },
+      "outputs": {
+        "out": 125
+      }
+    },
+    {
+      "index": 40,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -30,
+        2
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 128,
+        "in1": 158
+      },
+      "outputs": {
+        "out": 119
+      }
+    },
+    {
+      "index": 41,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -5,
+        7
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 119,
+        "in1": 181
+      },
+      "outputs": {
+        "out": 131
+      }
+    },
+    {
+      "index": 42,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -16,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 158,
+        "in": 164
+      },
+      "outputs": {
+        "out": 154
+      }
+    },
+    {
+      "index": 43,
+      "kind": 2,
+      "type": "constant_one",
+      "label": "",
+      "position": [
+        -16,
+        3
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {},
+      "outputs": {
+        "out": 164
+      }
+    },
+    {
+      "index": 44,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -26,
+        -32
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 24,
+        "in": 87
+      },
+      "outputs": {
+        "out": 57
+      }
+    },
+    {
+      "index": 45,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -11,
+        5
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 57,
+        "in1": 154
+      },
+      "outputs": {
+        "out": 401
+      }
+    },
+    {
+      "index": 46,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -20,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 120,
+        "in": 164
+      },
+      "outputs": {
+        "out": 154
+      }
+    },
+    {
+      "index": 47,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -18,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 133,
+        "in": 164
+      },
+      "outputs": {
+        "out": 154
+      }
+    },
+    {
+      "index": 48,
+      "kind": 3,
+      "type": "not_bit",
+      "label": "",
+      "position": [
+        -11,
+        9
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in": 156
+      },
+      "outputs": {
+        "out": 328
+      }
+    },
+    {
+      "index": 49,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        32
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 401,
+        "in": 200
+      },
+      "outputs": {
+        "out": 193
+      }
+    },
+    {
+      "index": 50,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        34
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 328,
+        "in": 200
+      },
+      "outputs": {
+        "out": 193
+      }
+    },
+    {
+      "index": 51,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        36
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 196,
+        "in": 197
+      },
+      "outputs": {
+        "out": 193
+      }
+    },
+    {
+      "index": 52,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -13,
+        10
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 57,
+        "in": 156
+      },
+      "outputs": {
+        "out": 196
+      }
+    },
+    {
+      "index": 53,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -15,
+        10
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 154,
+        "in": 156
+      },
+      "outputs": {
+        "out": 196
+      }
+    },
+    {
+      "index": 54,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        16
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 250,
+        "in1": 252
+      },
+      "outputs": {
+        "out": 171
+      }
+    },
+    {
+      "index": 55,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        20
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 250,
+        "in1": 252
+      },
+      "outputs": {
+        "out": 170
+      }
+    },
+    {
+      "index": 56,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        10,
+        20
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 171,
+        "in1": 170
+      },
+      "outputs": {
+        "out": 218
+      }
+    },
+    {
+      "index": 57,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        10,
+        16
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 171,
+        "in1": 170
+      },
+      "outputs": {
+        "out": 194
+      }
+    },
+    {
+      "index": 58,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        16
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 401,
+        "in": 194
+      },
+      "outputs": {
+        "out": 219
+      }
+    },
+    {
+      "index": 59,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        18
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 328,
+        "in": 194
+      },
+      "outputs": {
+        "out": 219
+      }
+    },
+    {
+      "index": 60,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        20
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 196,
+        "in": 218
+      },
+      "outputs": {
+        "out": 219
+      }
+    },
+    {
+      "index": 61,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        0,
+        32
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 223,
+        "in1": 307
+      },
+      "outputs": {
+        "out": 237
+      }
+    },
+    {
+      "index": 62,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        0,
+        36
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 223,
+        "in1": 307
+      },
+      "outputs": {
+        "out": 238
+      }
+    },
+    {
+      "index": 63,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        10,
+        31
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 375,
+        "in": 237
+      },
+      "outputs": {
+        "out": 200
+      }
+    },
+    {
+      "index": 64,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        10,
+        33
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 170,
+        "in": 238
+      },
+      "outputs": {
+        "out": 200
+      }
+    },
+    {
+      "index": 65,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        10,
+        35
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 171,
+        "in": 237
+      },
+      "outputs": {
+        "out": 197
+      }
+    },
+    {
+      "index": 66,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        10,
+        37
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 240,
+        "in": 238
+      },
+      "outputs": {
+        "out": 197
+      }
+    },
+    {
+      "index": 67,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -33,
+        28
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 250,
+        "in1": 252
+      },
+      "outputs": {
+        "out": 240
+      }
+    },
+    {
+      "index": 68,
+      "kind": 6,
+      "type": "nand_bit",
+      "label": "",
+      "position": [
+        -33,
+        24
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 250,
+        "in1": 252
+      },
+      "outputs": {
+        "out": 375
+      }
+    },
+    {
+      "index": 69,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        32
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 264,
+        "in1": 266
+      },
+      "outputs": {
+        "out": 223
+      }
+    },
+    {
+      "index": 70,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        36
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 264,
+        "in1": 266
+      },
+      "outputs": {
+        "out": 307
+      }
+    },
+    {
+      "index": 71,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -19,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 307,
+        "in": 269
+      },
+      "outputs": {
+        "out": 346
+      }
+    },
+    {
+      "index": 72,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -33,
+        41
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 352,
+        "in1": 358
+      },
+      "outputs": {
+        "out": 281
+      }
+    },
+    {
+      "index": 73,
+      "kind": 4,
+      "type": "and_bit",
+      "label": "",
+      "position": [
+        -33,
+        45
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 352,
+        "in1": 358
+      },
+      "outputs": {
+        "out": 280
+      }
+    },
+    {
+      "index": 74,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -23,
+        45
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 281,
+        "in1": 280
+      },
+      "outputs": {
+        "out": 269
+      }
+    },
+    {
+      "index": 75,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -23,
+        41
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 281,
+        "in1": 280
+      },
+      "outputs": {
+        "out": 290
+      }
+    },
+    {
+      "index": 76,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -15,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 223,
+        "in": 290
+      },
+      "outputs": {
+        "out": 346
+      }
+    },
+    {
+      "index": 77,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -8,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 315,
+        "in": 269
+      },
+      "outputs": {
+        "out": 302
+      }
+    },
+    {
+      "index": 78,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -6,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 223,
+        "in": 290
+      },
+      "outputs": {
+        "out": 302
+      }
+    },
+    {
+      "index": 79,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -10,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 307,
+        "in": 269
+      },
+      "outputs": {
+        "out": 302
+      }
+    },
+    {
+      "index": 80,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -13,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 314,
+        "in": 290
+      },
+      "outputs": {
+        "out": 346
+      }
+    },
+    {
+      "index": 81,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -17,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 313,
+        "in": 269
+      },
+      "outputs": {
+        "out": 346
+      }
+    },
+    {
+      "index": 82,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -4,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 316,
+        "in": 290
+      },
+      "outputs": {
+        "out": 302
+      }
+    },
+    {
+      "index": 83,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -18,
+        38
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 375,
+        "in1": 223
+      },
+      "outputs": {
+        "out": 313
+      }
+    },
+    {
+      "index": 84,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -9,
+        38
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 171,
+        "in1": 223
+      },
+      "outputs": {
+        "out": 315
+      }
+    },
+    {
+      "index": 85,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -14,
+        38
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 170,
+        "in1": 307
+      },
+      "outputs": {
+        "out": 314
+      }
+    },
+    {
+      "index": 86,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -5,
+        38
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 240,
+        "in1": 307
+      },
+      "outputs": {
+        "out": 316
+      }
+    },
+    {
+      "index": 87,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        6,
+        51
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 381,
+        "in": 350
+      },
+      "outputs": {
+        "out": 349
+      }
+    },
+    {
+      "index": 88,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        41
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 401,
+        "in": 346
+      },
+      "outputs": {
+        "out": 326
+      }
+    },
+    {
+      "index": 89,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        43
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 328,
+        "in": 346
+      },
+      "outputs": {
+        "out": 326
+      }
+    },
+    {
+      "index": 90,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        45
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 196,
+        "in": 302
+      },
+      "outputs": {
+        "out": 326
+      }
+    },
+    {
+      "index": 91,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        51
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 384,
+        "in": 349
+      },
+      "outputs": {
+        "out": 354
+      }
+    },
+    {
+      "index": 92,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        17,
+        53
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 4,
+      "inputs": {
+        "enable": 196,
+        "in": 349
+      },
+      "outputs": {
+        "out": 354
+      }
+    },
+    {
+      "index": 93,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -24,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 417,
+        "in": 142
+      },
+      "outputs": {
+        "out": 156
+      }
+    },
+    {
+      "index": 94,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -26,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 141,
+        "in": 142
+      },
+      "outputs": {
+        "out": 156
+      }
+    },
+    {
+      "index": 95,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -22,
+        6
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "enable": 158,
+        "in": 142
+      },
+      "outputs": {
+        "out": 156
+      }
+    },
+    {
+      "index": 96,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -33,
+        8
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 365,
+        "in1": 364
+      },
+      "outputs": {
+        "out": 142
+      }
+    },
+    {
+      "index": 97,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        6,
+        53
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "enable": 315,
+        "in": 350
+      },
+      "outputs": {
+        "out": 349
+      }
+    },
+    {
+      "index": 98,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -33,
+        49
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "in0": 352,
+        "in1": 358
+      },
+      "outputs": {
+        "out": 350
+      }
+    },
+    {
+      "index": 99,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -28,
+        47
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 307,
+        "in1": 280
+      },
+      "outputs": {
+        "out": 381
+      }
+    },
+    {
+      "index": 100,
+      "kind": 109,
+      "type": "splitter_2",
+      "label": "",
+      "position": [
+        24,
+        53
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 4,
+      "inputs": {
+        "in": 388
+      },
+      "outputs": {
+        "out0": null,
+        "out1": 389
+      }
+    },
+    {
+      "index": 101,
+      "kind": 111,
+      "type": "maker_2",
+      "label": "",
+      "position": [
+        21,
+        53
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 4,
+      "inputs": {
+        "in0": null,
+        "in1": 354
+      },
+      "outputs": {
+        "out": 388
+      }
+    },
+    {
+      "index": 102,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        10,
+        51
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 313,
+        "in1": 381
+      },
+      "outputs": {
+        "out": 384
+      }
+    },
+    {
+      "index": 103,
+      "kind": 9,
+      "type": "nor_bit",
+      "label": "",
+      "position": [
+        -26,
+        11
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 417,
+        "in1": 141
+      },
+      "outputs": {
+        "out": 181
+      }
+    },
+    {
+      "index": 104,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -5,
+        -3
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 3,
+      "inputs": {
+        "in0": 57,
+        "in1": 363
+      },
+      "outputs": {
+        "out": 411
+      }
+    },
+    {
+      "index": 105,
+      "kind": 7,
+      "type": "or_bit",
+      "label": "",
+      "position": [
+        -20,
+        11
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 1,
+      "delay": 1,
+      "arrival": 2,
+      "inputs": {
+        "in0": 133,
+        "in1": 120
+      },
+      "outputs": {
+        "out": 363
+      }
+    },
+    {
+      "index": 106,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -33,
+        -9
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 419,
+        "in": 108
+      },
+      "outputs": {
+        "out": 417
+      }
+    },
+    {
+      "index": 107,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -33,
+        -7
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 2,
+        "in": 108
+      },
+      "outputs": {
+        "out": 417
+      }
+    },
+    {
+      "index": 108,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -33,
+        -11
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 104,
+        "in": 108
+      },
+      "outputs": {
+        "out": 417
+      }
+    },
+    {
+      "index": 109,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -33,
+        -5
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 419,
+        "in": 104
+      },
+      "outputs": {
+        "out": 141
+      }
+    },
+    {
+      "index": 110,
+      "kind": 12,
+      "type": "switch_bit",
+      "label": "",
+      "position": [
+        -33,
+        -3
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 2,
+      "delay": 1,
+      "arrival": 1,
+      "inputs": {
+        "enable": 2,
+        "in": 104
+      },
+      "outputs": {
+        "out": 141
+      }
+    },
+    {
+      "index": 111,
+      "kind": 69,
+      "type": "campaign_output",
+      "label": "Output",
+      "position": [
+        21,
+        -53
+      ],
+      "rotation": 0,
+      "word_size": 8,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 4,
+      "inputs": {
+        "value": 79
+      },
+      "outputs": {}
+    },
+    {
+      "index": 112,
+      "kind": 61,
+      "type": "campaign_input",
+      "label": "Carry in",
+      "position": [
+        -30,
+        -52
+      ],
+      "rotation": 1,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {},
+      "outputs": {
+        "value": 35
+      }
+    },
+    {
+      "index": 113,
+      "kind": 61,
+      "type": "campaign_input",
+      "label": "A",
+      "position": [
+        -52,
+        -53
+      ],
+      "rotation": 0,
+      "word_size": 8,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {},
+      "outputs": {
+        "value": 66
+      }
+    },
+    {
+      "index": 114,
+      "kind": 61,
+      "type": "campaign_input",
+      "label": "B",
+      "position": [
+        -43,
+        -53
+      ],
+      "rotation": 0,
+      "word_size": 8,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 0,
+      "inputs": {},
+      "outputs": {
+        "value": 78
+      }
+    },
+    {
+      "index": 115,
+      "kind": 69,
+      "type": "campaign_output",
+      "label": "Carry out",
+      "position": [
+        29,
+        53
+      ],
+      "rotation": 0,
+      "word_size": 1,
+      "gate": 0,
+      "delay": 0,
+      "arrival": 4,
+      "inputs": {
+        "value": 389
+      },
+      "outputs": {}
+    }
+  ],
+  "nets": [
+    {
+      "root": 0,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 0,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 25,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "02a6665eb0e0d92cf97e9e77bc7579faac5bfd535d93d44b3cc118c9d2215144"
+      ],
+      "recognized_functions": [
+        [
+          "K2"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        0
+      ]
+    },
+    {
+      "root": 2,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out2",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 0,
+          "pin": "in0"
+        },
+        {
+          "component": 1,
+          "pin": "in0"
+        },
+        {
+          "component": 107,
+          "pin": "enable"
+        },
+        {
+          "component": 110,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147"
+      ],
+      "recognized_functions": [
+        [
+          "B[2]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        1,
+        2,
+        8,
+        71,
+        139,
+        373,
+        420,
+        426
+      ]
+    },
+    {
+      "root": 15,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 25,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 22,
+          "pin": "in1"
+        },
+        {
+          "component": 24,
+          "pin": "in1"
+        },
+        {
+          "component": 36,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "19e72e851bb52272addb3f930235c05c0823b9c8e71e2e7d62a45aefc3688de7"
+      ],
+      "recognized_functions": [
+        [
+          "P2"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        15,
+        16,
+        17,
+        140,
+        144,
+        429,
+        432
+      ]
+    },
+    {
+      "root": 24,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 3,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 4,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 6,
+          "pin": "in1"
+        },
+        {
+          "component": 44,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "a7ab5046828d6ea41271fa3bd5b0ad833631c409522409bbe947708b373ae780"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        49152
+      ],
+      "active_zero_counts": [
+        49152
+      ],
+      "z_counts": [
+        32768
+      ],
+      "conflict_rows": 0,
+      "z_rows": 32768,
+      "wire_indices": [
+        24,
+        36,
+        90
+      ]
+    },
+    {
+      "root": 26,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out0",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 3,
+          "pin": "enable"
+        },
+        {
+          "component": 5,
+          "pin": "in0"
+        },
+        {
+          "component": 21,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "2d826e6429ab88d6fa2d681ee3c84bb8faf8be109b15ac3603970c9f8c557115"
+      ],
+      "recognized_functions": [
+        [
+          "B[0]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        19,
+        20,
+        26,
+        45,
+        53,
+        68
+      ]
+    },
+    {
+      "root": 28,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 21,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 6,
+          "pin": "in0"
+        },
+        {
+          "component": 11,
+          "pin": "in1"
+        },
+        {
+          "component": 17,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "ecd79a2e1071c54d9204065d199bc30d0fba1da6181b500c0339719aa06e60a6"
+      ],
+      "recognized_functions": [
+        [
+          "G0"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        27,
+        28,
+        37,
+        38,
+        91,
+        93
+      ]
+    },
+    {
+      "root": 29,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 10,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "31361610fb49bf747a00cc108c2c3cbf9c5c8dce5e97593998b43e5b32143b1a"
+      ],
+      "recognized_functions": [
+        [
+          "S0"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        29,
+        80
+      ]
+    },
+    {
+      "root": 31,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out0",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 4,
+          "pin": "enable"
+        },
+        {
+          "component": 5,
+          "pin": "in1"
+        },
+        {
+          "component": 21,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "fb06eba7d90aa7e938e072722adf84f3d3289ab8dfb22ca50c10477dff961657"
+      ],
+      "recognized_functions": [
+        [
+          "A[0]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        21,
+        23,
+        31,
+        65,
+        73,
+        75
+      ]
+    },
+    {
+      "root": 32,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 9,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 10,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "d016adef72ed8b7d75e72f7098bbf5ab2e092f0cc0189e49dc01388454bad105"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        49152
+      ],
+      "active_zero_counts": [
+        81920
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        32
+      ]
+    },
+    {
+      "root": 33,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 11,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 10,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "4f9836fe553296339f9fd9acd6891a6ef301ad37407fcc2478b5bcf7dca1c007"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        16384
+      ],
+      "active_zero_counts": [
+        114688
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        33
+      ]
+    },
+    {
+      "root": 35,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 112,
+          "pin": "value",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 3,
+          "pin": "in"
+        },
+        {
+          "component": 4,
+          "pin": "in"
+        },
+        {
+          "component": 7,
+          "pin": "in1"
+        },
+        {
+          "component": 11,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "0e04cabccb38842bccbd0d8ec90acd1c1ff1fcb06abe2424e75064f2892f03b1"
+      ],
+      "recognized_functions": [
+        [
+          "Cin",
+          "C0"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        18,
+        34,
+        35,
+        40,
+        41,
+        88
+      ]
+    },
+    {
+      "root": 39,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 5,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 7,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "7b6721a7256a7ba30261198e883cdca5908958c00451a61de7b313c4ee01fb4b"
+      ],
+      "recognized_functions": [
+        [
+          "H0"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        39
+      ]
+    },
+    {
+      "root": 42,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 7,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 9,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "99e3f98a049ceaf2f32d5a29753d92f8b171ef7893d58657fbf1d91c49efdb8c"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        16384
+      ],
+      "active_zero_counts": [
+        114688
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        42
+      ]
+    },
+    {
+      "root": 44,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 6,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 9,
+          "pin": "in0"
+        },
+        {
+          "component": 12,
+          "pin": "in1"
+        },
+        {
+          "component": 13,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "cc1d362cdbf5c1d9bcd8d9b3a9c8a9970ea6c13deb16f1358c797821d063ae3f"
+      ],
+      "recognized_functions": [
+        [
+          "C1"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        44,
+        46,
+        47,
+        58,
+        59,
+        166,
+        167
+      ]
+    },
+    {
+      "root": 48,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 12,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 14,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "bd088f8e1cbd1f913c816c24689ad1cf8bea82396c513c5e022a460133ab7566"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        48
+      ]
+    },
+    {
+      "root": 49,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 13,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 14,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "b176a9ca05077068e26b6736711b6f72a07541f9f59be5d9b894432033728b4c"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        49
+      ]
+    },
+    {
+      "root": 50,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 2,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 15,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "24327420584ffb4e26713876a081ef16cd6f628988f23024f3e55e1e56466406"
+      ],
+      "recognized_functions": [
+        [
+          "K1"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        50
+      ]
+    },
+    {
+      "root": 51,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 8,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 15,
+          "pin": "in1"
+        },
+        {
+          "component": 16,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "50148a67fc3d77ca060ceb26284a9089dc6644f7dd5d75dfeba15dd4c6070863"
+      ],
+      "recognized_functions": [
+        [
+          "G1"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        51,
+        94,
+        96
+      ]
+    },
+    {
+      "root": 52,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 15,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 12,
+          "pin": "in0"
+        },
+        {
+          "component": 13,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "093e6a4c7094f049931627465ae9f48bfd5bb9b177d211fab21b0154fee2f0ae"
+      ],
+      "recognized_functions": [
+        [
+          "P1"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        52,
+        54,
+        56
+      ]
+    },
+    {
+      "root": 55,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out1",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 2,
+          "pin": "in0"
+        },
+        {
+          "component": 8,
+          "pin": "in0"
+        },
+        {
+          "component": 26,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b"
+      ],
+      "recognized_functions": [
+        [
+          "B[1]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        25,
+        30,
+        43,
+        55,
+        67,
+        70
+      ]
+    },
+    {
+      "root": 57,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 16,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 17,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 44,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 22,
+          "pin": "in0"
+        },
+        {
+          "component": 24,
+          "pin": "in0"
+        },
+        {
+          "component": 36,
+          "pin": "in1"
+        },
+        {
+          "component": 45,
+          "pin": "in0"
+        },
+        {
+          "component": 52,
+          "pin": "enable"
+        },
+        {
+          "component": 104,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "a665ee52167122cbfad5e07ea456d2077a45d36525de3a3d2498b021dae7a0c7"
+      ],
+      "recognized_functions": [
+        [
+          "C2"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        16384
+      ],
+      "z_counts": [
+        49152
+      ],
+      "conflict_rows": 0,
+      "z_rows": 49152,
+      "wire_indices": [
+        4,
+        57,
+        60,
+        61,
+        62,
+        64,
+        81,
+        95,
+        143,
+        152,
+        153,
+        169,
+        177,
+        183,
+        430,
+        431
+      ]
+    },
+    {
+      "root": 66,
+      "width": 8,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 113,
+          "pin": "value",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 19,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "fb06eba7d90aa7e938e072722adf84f3d3289ab8dfb22ca50c10477dff961657",
+        "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3",
+        "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454",
+        "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368",
+        "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd",
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234",
+        "ad11987750914a2c0911b020905c8140f8105e134796071fe3338be52dba5304",
+        "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af"
+      ],
+      "recognized_functions": [
+        [
+          "A[0]"
+        ],
+        [
+          "A[1]"
+        ],
+        [
+          "A[2]"
+        ],
+        [
+          "A[3]"
+        ],
+        [
+          "A[4]"
+        ],
+        [
+          "A[5]"
+        ],
+        [
+          "A[6]"
+        ],
+        [
+          "A[7]"
+        ]
+      ],
+      "one_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "active_zero_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "z_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        66
+      ]
+    },
+    {
+      "root": 78,
+      "width": 8,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 114,
+          "pin": "value",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 18,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "2d826e6429ab88d6fa2d681ee3c84bb8faf8be109b15ac3603970c9f8c557115",
+        "5415aeadab9f04e32aa73366a3ea9bdd377f772023e5e9fe6581c4b679b1259b",
+        "f81ad97dd396b403b9a040de25683754f7879bf5588e15bf6fe8f69c14a0f147",
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27",
+        "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac",
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d",
+        "622a24c7221ae020f137fe7e02197d3636f866ebd04f0b7ac4c6d35b227337e8",
+        "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119"
+      ],
+      "recognized_functions": [
+        [
+          "B[0]"
+        ],
+        [
+          "B[1]"
+        ],
+        [
+          "B[2]"
+        ],
+        [
+          "B[3]"
+        ],
+        [
+          "B[4]"
+        ],
+        [
+          "B[5]"
+        ],
+        [
+          "B[6]"
+        ],
+        [
+          "B[7]"
+        ]
+      ],
+      "one_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "active_zero_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "z_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        78
+      ]
+    },
+    {
+      "root": 79,
+      "width": 8,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 20,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 111,
+          "pin": "value"
+        }
+      ],
+      "truth_sha256": [
+        "31361610fb49bf747a00cc108c2c3cbf9c5c8dce5e97593998b43e5b32143b1a",
+        "fc231dbe1f11c207933db22231ba202caa3824605494b520fdd52e74c92bd415",
+        "179086bbaef39d1f7d02ef3f858a35352aeda20d053a73b2a631320275c0c0d0",
+        "305042da7ed6c69bafd65a205e38c082435feb1cfd794e6ee7c4cb0e362cb71a",
+        "aa7132ec12519729d20ec9de1aca0cabbc11e0797d194b8ef59fc7977ee2636e",
+        "64c2869f6c42902242640c16e04e9c7210e93cb19829e4c852572ce1bb15ae9c",
+        "b6c5c31c9168b72ee2b04d863ffa699f2ea34e1b4209d059d367763df9c0b2ad",
+        "55f1587c425fafce9acc17a3246bc96e3566ada66ffc2f1d5690a94b578995e8"
+      ],
+      "recognized_functions": [
+        [
+          "S0"
+        ],
+        [
+          "S1"
+        ],
+        [
+          "S2"
+        ],
+        [
+          "S3"
+        ],
+        [
+          "S4"
+        ],
+        [
+          "S5"
+        ],
+        [
+          "S6"
+        ],
+        [
+          "S7"
+        ]
+      ],
+      "one_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "active_zero_counts": [
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536,
+        65536
+      ],
+      "z_counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        79
+      ]
+    },
+    {
+      "root": 82,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 14,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "fc231dbe1f11c207933db22231ba202caa3824605494b520fdd52e74c92bd415"
+      ],
+      "recognized_functions": [
+        [
+          "S1"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        82,
+        83
+      ]
+    },
+    {
+      "root": 84,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 23,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in2"
+        }
+      ],
+      "truth_sha256": [
+        "179086bbaef39d1f7d02ef3f858a35352aeda20d053a73b2a631320275c0c0d0"
+      ],
+      "recognized_functions": [
+        [
+          "S2"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        84,
+        85
+      ]
+    },
+    {
+      "root": 86,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 27,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 31,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "6b55a18028998dcc24768ed93d01a4786d22262375b067d7a73aea7ad721612c"
+      ],
+      "recognized_functions": [
+        [
+          "K3"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        86
+      ]
+    },
+    {
+      "root": 87,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 26,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 16,
+          "pin": "in"
+        },
+        {
+          "component": 17,
+          "pin": "in"
+        },
+        {
+          "component": 44,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "01c28b0a58127b91ca1756752ed1a5cf9514f6ea09d1e12c02da1a37ae6421bf"
+      ],
+      "recognized_functions": [
+        [
+          "H1"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        12,
+        22,
+        87,
+        89
+      ]
+    },
+    {
+      "root": 97,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 22,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 23,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "0781e937d95322aba11e8a479be9a3c269c49dbea71fb66bd05eb897873a5eb4"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        97,
+        126
+      ]
+    },
+    {
+      "root": 98,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 36,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 23,
+          "pin": "in1"
+        },
+        {
+          "component": 32,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "f088c35a35b67bcf80b08cb7d768a5e53c6ee1f85bbbcd8c5bfbd2fc524ef4db"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        98,
+        134,
+        145,
+        402,
+        404
+      ]
+    },
+    {
+      "root": 100,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out1",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 2,
+          "pin": "in1"
+        },
+        {
+          "component": 8,
+          "pin": "in1"
+        },
+        {
+          "component": 26,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "75ab15ab08caa432da449ee4929b975ddc137e8817337587bf6475ef5882e1f3"
+      ],
+      "recognized_functions": [
+        [
+          "A[1]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        72,
+        76,
+        92,
+        99,
+        100,
+        101
+      ]
+    },
+    {
+      "root": 104,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out3",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 27,
+          "pin": "in0"
+        },
+        {
+          "component": 28,
+          "pin": "in0"
+        },
+        {
+          "component": 108,
+          "pin": "enable"
+        },
+        {
+          "component": 109,
+          "pin": "in"
+        },
+        {
+          "component": 110,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "ef0fdb9c268760aac13685327b0cf787989e8f5701598d2d7115963409bdcc27"
+      ],
+      "recognized_functions": [
+        [
+          "B[3]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        102,
+        103,
+        104,
+        105,
+        138,
+        391,
+        394,
+        418,
+        422
+      ]
+    },
+    {
+      "root": 108,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out3",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 27,
+          "pin": "in1"
+        },
+        {
+          "component": 28,
+          "pin": "in1"
+        },
+        {
+          "component": 106,
+          "pin": "in"
+        },
+        {
+          "component": 107,
+          "pin": "in"
+        },
+        {
+          "component": 108,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "3d558540e8c59a9e6915aaa700c8d714c8927167920bf0bcf84c4ece2589f368"
+      ],
+      "recognized_functions": [
+        [
+          "A[3]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        106,
+        107,
+        108,
+        109,
+        130,
+        407,
+        421,
+        428
+      ]
+    },
+    {
+      "root": 119,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 40,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 37,
+          "pin": "in"
+        },
+        {
+          "component": 39,
+          "pin": "in"
+        },
+        {
+          "component": 41,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "37e393ef9a490a892610bb41d32ccea804fa970b07159424d70a467b9185b8cf"
+      ],
+      "recognized_functions": [
+        [
+          "P4"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        119,
+        390,
+        393
+      ]
+    },
+    {
+      "root": 120,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 28,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 31,
+          "pin": "in1"
+        },
+        {
+          "component": 46,
+          "pin": "enable"
+        },
+        {
+          "component": 105,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "8d15116201ddd325abc3f098d413079303cd5024f0b447eece42e69f2f6c7563"
+      ],
+      "recognized_functions": [
+        [
+          "G3"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        120,
+        122,
+        185,
+        414
+      ]
+    },
+    {
+      "root": 121,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 32,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 33,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 34,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in3"
+        }
+      ],
+      "truth_sha256": [
+        "305042da7ed6c69bafd65a205e38c082435feb1cfd794e6ee7c4cb0e362cb71a"
+      ],
+      "recognized_functions": [
+        [
+          "S3"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        32768
+      ],
+      "conflict_rows": 0,
+      "z_rows": 32768,
+      "wire_indices": [
+        121,
+        123,
+        135,
+        136,
+        398
+      ]
+    },
+    {
+      "root": 124,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 31,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 33,
+          "pin": "in"
+        },
+        {
+          "component": 34,
+          "pin": "in"
+        },
+        {
+          "component": 35,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "8a932b514301e67a3a11b4cbf73ad85eba21dd87030c2858b6096d6412f943c0"
+      ],
+      "recognized_functions": [
+        [
+          "nP3"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        124,
+        406,
+        408
+      ]
+    },
+    {
+      "root": 125,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 37,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 38,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 39,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in4"
+        }
+      ],
+      "truth_sha256": [
+        "aa7132ec12519729d20ec9de1aca0cabbc11e0797d194b8ef59fc7977ee2636e"
+      ],
+      "recognized_functions": [
+        [
+          "S4"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        32768
+      ],
+      "conflict_rows": 0,
+      "z_rows": 32768,
+      "wire_indices": [
+        125,
+        127,
+        146,
+        149
+      ]
+    },
+    {
+      "root": 128,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 30,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 40,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "2a5c6b761cda05690550d8aadf59389e986c0a3ba2caeb0c811fa5e1a74a2488"
+      ],
+      "recognized_functions": [
+        [
+          "K4"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        128
+      ]
+    },
+    {
+      "root": 131,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 41,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 38,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "52630936946626197dca1faae514122b6d86ac2e9e92a9333a3e7a321f76537b"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        40960
+      ],
+      "active_zero_counts": [
+        90112
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        131,
+        132,
+        148
+      ]
+    },
+    {
+      "root": 133,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 1,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 25,
+          "pin": "in1"
+        },
+        {
+          "component": 33,
+          "pin": "enable"
+        },
+        {
+          "component": 35,
+          "pin": "in1"
+        },
+        {
+          "component": 47,
+          "pin": "enable"
+        },
+        {
+          "component": 105,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "7d4293c0a90b40059ebaafba3cb4e526e982b406f850a0fcc0b2287fb0ddce16"
+      ],
+      "recognized_functions": [
+        [
+          "G2"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        11,
+        133,
+        147,
+        150,
+        187,
+        392,
+        415,
+        416,
+        433
+      ]
+    },
+    {
+      "root": 141,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 109,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 110,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 94,
+          "pin": "enable"
+        },
+        {
+          "component": 103,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "255cb7e027101cbf49cb494fe4466356ddf2068f19acf601bc331f4c705e11b6"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        49152
+      ],
+      "active_zero_counts": [
+        49152
+      ],
+      "z_counts": [
+        32768
+      ],
+      "conflict_rows": 0,
+      "z_rows": 32768,
+      "wire_indices": [
+        141,
+        155,
+        180,
+        424
+      ]
+    },
+    {
+      "root": 142,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 96,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 93,
+          "pin": "in"
+        },
+        {
+          "component": 94,
+          "pin": "in"
+        },
+        {
+          "component": 95,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "80b144235f0067bd2cd12df041647f454e1212cc20ca11d01ccdbe62b25e27e1"
+      ],
+      "recognized_functions": [
+        [
+          "H4"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        142,
+        157,
+        162,
+        361
+      ]
+    },
+    {
+      "root": 154,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 42,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 46,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 47,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 45,
+          "pin": "in1"
+        },
+        {
+          "component": 53,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "39865a6baf456c3d48145c12d235310ea187d00f6146d04f34d5a9f47386adff"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        75776
+      ],
+      "active_zero_counts": [
+        0
+      ],
+      "z_counts": [
+        55296
+      ],
+      "conflict_rows": 0,
+      "z_rows": 55296,
+      "wire_indices": [
+        13,
+        118,
+        154,
+        188,
+        211
+      ]
+    },
+    {
+      "root": 156,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 93,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 94,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 95,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 48,
+          "pin": "in"
+        },
+        {
+          "component": 52,
+          "pin": "in"
+        },
+        {
+          "component": 53,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "3dafccf27744847de3e0e17fc8052a263b41e4b161c19a31a04be949a1a8a14c"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        73728
+      ],
+      "active_zero_counts": [
+        20480
+      ],
+      "z_counts": [
+        36864
+      ],
+      "conflict_rows": 0,
+      "z_rows": 36864,
+      "wire_indices": [
+        3,
+        5,
+        151,
+        156,
+        163,
+        174
+      ]
+    },
+    {
+      "root": 158,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 29,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 40,
+          "pin": "in1"
+        },
+        {
+          "component": 42,
+          "pin": "enable"
+        },
+        {
+          "component": 95,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "d629a8850d4ea72bf2cdb6c09cf550facfee166bd90a7ae284fc675f0cfd234d"
+      ],
+      "recognized_functions": [
+        [
+          "G4"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        129,
+        158,
+        161,
+        165,
+        173
+      ]
+    },
+    {
+      "root": 164,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 43,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 42,
+          "pin": "in"
+        },
+        {
+          "component": 46,
+          "pin": "in"
+        },
+        {
+          "component": 47,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "0fbba07a833d4dcfc7024eaf313661a0ba8f80a05c6d29b8801c612e10e60dee"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        131072
+      ],
+      "active_zero_counts": [
+        0
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        164,
+        175,
+        190
+      ]
+    },
+    {
+      "root": 170,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 55,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 56,
+          "pin": "in1"
+        },
+        {
+          "component": 57,
+          "pin": "in1"
+        },
+        {
+          "component": 64,
+          "pin": "enable"
+        },
+        {
+          "component": 85,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "8a8b0544cb24577ad2ea88504f81d6a06c14aa72a22e0b45ad4d36b2067f0923"
+      ],
+      "recognized_functions": [
+        [
+          "G5"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        168,
+        170,
+        172,
+        189,
+        212,
+        217,
+        335,
+        336
+      ]
+    },
+    {
+      "root": 171,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 54,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 56,
+          "pin": "in0"
+        },
+        {
+          "component": 57,
+          "pin": "in0"
+        },
+        {
+          "component": 65,
+          "pin": "enable"
+        },
+        {
+          "component": 84,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "550fc4e8b281530e85ee9d147e19bd123a2cb6694cd5348bd3d0360e08811d89"
+      ],
+      "recognized_functions": [
+        [
+          "K5"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        171,
+        213,
+        215,
+        323,
+        324,
+        376,
+        377,
+        378
+      ]
+    },
+    {
+      "root": 181,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 103,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 37,
+          "pin": "enable"
+        },
+        {
+          "component": 41,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "bb8fb81857c0231687055cc4f49c35d6160bb1c1ee9fd5581e8184dfb911c0e8"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        49152
+      ],
+      "active_zero_counts": [
+        81920
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        178,
+        181,
+        182,
+        362,
+        399,
+        410
+      ]
+    },
+    {
+      "root": 193,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 49,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 50,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 51,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in6"
+        }
+      ],
+      "truth_sha256": [
+        "b6c5c31c9168b72ee2b04d863ffa699f2ea34e1b4209d059d367763df9c0b2ad"
+      ],
+      "recognized_functions": [
+        [
+          "S6"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        193,
+        195,
+        209,
+        210
+      ]
+    },
+    {
+      "root": 194,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 57,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 58,
+          "pin": "in"
+        },
+        {
+          "component": 59,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "c6e5d8bf3cad3b41a205b8ad5b7c57b04b5df97824d283d8166efe1d15eb972e"
+      ],
+      "recognized_functions": [
+        [
+          "P5"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        194,
+        214
+      ]
+    },
+    {
+      "root": 196,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 52,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 53,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 51,
+          "pin": "enable"
+        },
+        {
+          "component": 60,
+          "pin": "enable"
+        },
+        {
+          "component": 90,
+          "pin": "enable"
+        },
+        {
+          "component": 92,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "d3eda11403a129efcbca6f251943c935feae9b21ef9a41d8c8c29d01b4573329"
+      ],
+      "recognized_functions": [
+        [
+          "C5"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        37888
+      ],
+      "z_counts": [
+        27648
+      ],
+      "conflict_rows": 0,
+      "z_rows": 27648,
+      "wire_indices": [
+        6,
+        176,
+        184,
+        192,
+        196,
+        198,
+        207,
+        228,
+        330,
+        333
+      ]
+    },
+    {
+      "root": 197,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 65,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 66,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 51,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "7a6f4faec2c6024341c96095e30fdfabae3ace63a61ad005e37832931d7c50c9"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        197,
+        201,
+        203
+      ]
+    },
+    {
+      "root": 200,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 63,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 64,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 49,
+          "pin": "in"
+        },
+        {
+          "component": 50,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "1e8a3ac3066cc954e8f14566089a68bd3e9fed015b963b6c76a76e65dd15c891"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        200,
+        204,
+        208,
+        216
+      ]
+    },
+    {
+      "root": 218,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 56,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 60,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "aed263c05fed750da40969f55fbf73277d110a00a13089bb1e6e8895815c2d18"
+      ],
+      "recognized_functions": [
+        [
+          "nP5"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        218
+      ]
+    },
+    {
+      "root": 219,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 58,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 59,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 60,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in5"
+        }
+      ],
+      "truth_sha256": [
+        "64c2869f6c42902242640c16e04e9c7210e93cb19829e4c852572ce1bb15ae9c"
+      ],
+      "recognized_functions": [
+        [
+          "S5"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        219,
+        220,
+        221,
+        222
+      ]
+    },
+    {
+      "root": 223,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 69,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 61,
+          "pin": "in0"
+        },
+        {
+          "component": 62,
+          "pin": "in0"
+        },
+        {
+          "component": 76,
+          "pin": "enable"
+        },
+        {
+          "component": 78,
+          "pin": "enable"
+        },
+        {
+          "component": 83,
+          "pin": "in1"
+        },
+        {
+          "component": 84,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "f0d74354ac3a7be38ed51e6f6d254db69028e5fff4c511fad27ecd561baa7499"
+      ],
+      "recognized_functions": [
+        [
+          "K6"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        223,
+        224,
+        248,
+        309,
+        310,
+        311,
+        312,
+        317,
+        318,
+        321,
+        322
+      ]
+    },
+    {
+      "root": 237,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 61,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 63,
+          "pin": "in"
+        },
+        {
+          "component": 65,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "17b8d79372999c1248f4d7e03bf57921d73f7ae7ff69a7a5365492292791d664"
+      ],
+      "recognized_functions": [
+        [
+          "P6"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        227,
+        237,
+        243,
+        244,
+        245
+      ]
+    },
+    {
+      "root": 238,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 62,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 64,
+          "pin": "in"
+        },
+        {
+          "component": 66,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "6493c6d0dd671c322adf240b3125ad330033b522ba3dbbc8ff00ba1646671566"
+      ],
+      "recognized_functions": [
+        [
+          "nP6"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        238,
+        239,
+        242,
+        246,
+        247
+      ]
+    },
+    {
+      "root": 240,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 67,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 66,
+          "pin": "enable"
+        },
+        {
+          "component": 86,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "4ce8a50b054f453e72bfc035eae3a3fd4233e928807709d44281bd26f60a9ff8"
+      ],
+      "recognized_functions": [
+        [
+          "H5"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        240,
+        241,
+        298,
+        339,
+        340
+      ]
+    },
+    {
+      "root": 250,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out5",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 54,
+          "pin": "in0"
+        },
+        {
+          "component": 55,
+          "pin": "in0"
+        },
+        {
+          "component": 67,
+          "pin": "in0"
+        },
+        {
+          "component": 68,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "1713f82c30bd3fe8cd7434c9155e78d03fe0f610c923c4a72c8077a25c42526d"
+      ],
+      "recognized_functions": [
+        [
+          "B[5]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        229,
+        230,
+        233,
+        234,
+        250,
+        251,
+        253,
+        258,
+        259
+      ]
+    },
+    {
+      "root": 252,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out5",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 54,
+          "pin": "in1"
+        },
+        {
+          "component": 55,
+          "pin": "in1"
+        },
+        {
+          "component": 67,
+          "pin": "in1"
+        },
+        {
+          "component": 68,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "aa83ea04169f8eaaeab6b22586a1447b7ac11b4339194fd4c9c5909c9583a234"
+      ],
+      "recognized_functions": [
+        [
+          "A[5]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        231,
+        232,
+        235,
+        236,
+        252,
+        254,
+        255,
+        256,
+        257
+      ]
+    },
+    {
+      "root": 264,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out6",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 69,
+          "pin": "in0"
+        },
+        {
+          "component": 70,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "622a24c7221ae020f137fe7e02197d3636f866ebd04f0b7ac4c6d35b227337e8"
+      ],
+      "recognized_functions": [
+        [
+          "B[6]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        260,
+        261,
+        264,
+        265
+      ]
+    },
+    {
+      "root": 266,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out6",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 69,
+          "pin": "in1"
+        },
+        {
+          "component": 70,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "ad11987750914a2c0911b020905c8140f8105e134796071fe3338be52dba5304"
+      ],
+      "recognized_functions": [
+        [
+          "A[6]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        262,
+        263,
+        266,
+        267
+      ]
+    },
+    {
+      "root": 269,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 74,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 71,
+          "pin": "in"
+        },
+        {
+          "component": 77,
+          "pin": "in"
+        },
+        {
+          "component": 79,
+          "pin": "in"
+        },
+        {
+          "component": 81,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "90b6442af4c13605c36721b981ed312584771fc74a2788e48e84c4d5ff683f3f"
+      ],
+      "recognized_functions": [
+        [
+          "nP7"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        268,
+        269,
+        270,
+        271,
+        286,
+        287,
+        291,
+        293
+      ]
+    },
+    {
+      "root": 280,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 73,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 74,
+          "pin": "in1"
+        },
+        {
+          "component": 75,
+          "pin": "in1"
+        },
+        {
+          "component": 99,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "a014783955ef17cd73eb9e50b2ea2b54ad3b21156b9a9685a4fd184fa1baf8ad"
+      ],
+      "recognized_functions": [
+        [
+          "G7"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        280,
+        283,
+        285,
+        372,
+        374
+      ]
+    },
+    {
+      "root": 281,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 72,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 74,
+          "pin": "in0"
+        },
+        {
+          "component": 75,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "6717ae2af6adfd28dea40927cb77d570dfc715d882387e947a3aab2889802da5"
+      ],
+      "recognized_functions": [
+        [
+          "K7"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        281,
+        282,
+        284
+      ]
+    },
+    {
+      "root": 290,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 75,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 76,
+          "pin": "in"
+        },
+        {
+          "component": 78,
+          "pin": "in"
+        },
+        {
+          "component": 80,
+          "pin": "in"
+        },
+        {
+          "component": 82,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "a9d2d44d508ab9fb31cfd9d4447cf06ad752237255dfbf2b7d5570f3778c2181"
+      ],
+      "recognized_functions": [
+        [
+          "P7"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        288,
+        289,
+        290,
+        292,
+        294,
+        295,
+        296,
+        297
+      ]
+    },
+    {
+      "root": 302,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 77,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 78,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 79,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 82,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 90,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "2fec8b3c813a909edd726242ffca43b5c127afd0260b985e036d6967498a27e2"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        302,
+        303,
+        304,
+        341,
+        342,
+        343
+      ]
+    },
+    {
+      "root": 307,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 70,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 61,
+          "pin": "in1"
+        },
+        {
+          "component": 62,
+          "pin": "in1"
+        },
+        {
+          "component": 71,
+          "pin": "enable"
+        },
+        {
+          "component": 79,
+          "pin": "enable"
+        },
+        {
+          "component": 85,
+          "pin": "in1"
+        },
+        {
+          "component": 86,
+          "pin": "in1"
+        },
+        {
+          "component": 99,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "0dd50395fb4aea849a0d546dc0eaae99cfa73f9ab07ef73f6acc84c301853750"
+      ],
+      "recognized_functions": [
+        [
+          "G6"
+        ]
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        225,
+        226,
+        249,
+        305,
+        306,
+        307,
+        308,
+        325,
+        334,
+        337,
+        338,
+        379,
+        380
+      ]
+    },
+    {
+      "root": 313,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 83,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 81,
+          "pin": "enable"
+        },
+        {
+          "component": 102,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "dd9c2b089cb3215495947d897dcf34fb4670429f35f12f2f5185d9aa3ab87d83"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        24576
+      ],
+      "active_zero_counts": [
+        106496
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        313,
+        382,
+        387
+      ]
+    },
+    {
+      "root": 314,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 85,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 80,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "31fac446441c1ef27ca7523d984a113d841ee9681980904b19dbd9aa3a063a22"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        73728
+      ],
+      "active_zero_counts": [
+        57344
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        314
+      ]
+    },
+    {
+      "root": 315,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 84,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 77,
+          "pin": "enable"
+        },
+        {
+          "component": 97,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "6282bcb2708df2eab5f04c1797b97e47b725fcea4266bf9722e204267210fe83"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        73728
+      ],
+      "active_zero_counts": [
+        57344
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        315,
+        370,
+        371
+      ]
+    },
+    {
+      "root": 316,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 86,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 82,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "f4af616911d4ac5945745273440b2437d2b28457a53f149d491caad6dd73822c"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        24576
+      ],
+      "active_zero_counts": [
+        106496
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        316
+      ]
+    },
+    {
+      "root": 326,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 88,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 89,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 90,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 20,
+          "pin": "in7"
+        }
+      ],
+      "truth_sha256": [
+        "55f1587c425fafce9acc17a3246bc96e3566ada66ffc2f1d5690a94b578995e8"
+      ],
+      "recognized_functions": [
+        [
+          "S7"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        326,
+        329,
+        344,
+        345
+      ]
+    },
+    {
+      "root": 328,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 48,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 50,
+          "pin": "enable"
+        },
+        {
+          "component": 59,
+          "pin": "enable"
+        },
+        {
+          "component": 89,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "09297df4460d14979f158b1faccea00635383faa9a3860bc9bd2c8fd75529132"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        57344
+      ],
+      "active_zero_counts": [
+        73728
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        7,
+        10,
+        191,
+        205,
+        206,
+        328,
+        332
+      ]
+    },
+    {
+      "root": 346,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 71,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 76,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 80,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 81,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 88,
+          "pin": "in"
+        },
+        {
+          "component": 89,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "d479da9fad8e61d0754137ec7d355f73a447bc88ab6ec36680d16d4ac532d7b2"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        299,
+        300,
+        301,
+        346,
+        347,
+        348,
+        356
+      ]
+    },
+    {
+      "root": 349,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 87,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 97,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 91,
+          "pin": "in"
+        },
+        {
+          "component": 92,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "ed5fc0d31f9254ffb769ae649cbf1b4d3182d8555300b291bab87c4516dce6b4"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        73728
+      ],
+      "active_zero_counts": [
+        20480
+      ],
+      "z_counts": [
+        36864
+      ],
+      "conflict_rows": 0,
+      "z_rows": 36864,
+      "wire_indices": [
+        349,
+        351,
+        386
+      ]
+    },
+    {
+      "root": 350,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 98,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 87,
+          "pin": "in"
+        },
+        {
+          "component": 97,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "030340d8372c9101a95fb641bf8eddb2d70e53032913a2f278110a19488ac812"
+      ],
+      "recognized_functions": [
+        [
+          "H7"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        350,
+        360,
+        369
+      ]
+    },
+    {
+      "root": 352,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out7",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 72,
+          "pin": "in0"
+        },
+        {
+          "component": 73,
+          "pin": "in0"
+        },
+        {
+          "component": 98,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "5b52a4a9285412dad63af38b01b00be286f7c3b7c5639d08e81757c15f1f7119"
+      ],
+      "recognized_functions": [
+        [
+          "B[7]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        272,
+        273,
+        276,
+        277,
+        352,
+        353
+      ]
+    },
+    {
+      "root": 354,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 91,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 92,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 101,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb"
+      ],
+      "recognized_functions": [
+        [
+          "C8"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        34816
+      ],
+      "z_counts": [
+        30720
+      ],
+      "conflict_rows": 0,
+      "z_rows": 30720,
+      "wire_indices": [
+        354,
+        357
+      ]
+    },
+    {
+      "root": 358,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out7",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 72,
+          "pin": "in1"
+        },
+        {
+          "component": 73,
+          "pin": "in1"
+        },
+        {
+          "component": 98,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "9517c7ee07d732597bbeae772ecbf54f31dd6e832a4cc66502d2241edd0286af"
+      ],
+      "recognized_functions": [
+        [
+          "A[7]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        274,
+        275,
+        278,
+        279,
+        358,
+        359
+      ]
+    },
+    {
+      "root": 363,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 105,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 104,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "9a1e4ddbe6e4a76cc555312df7aa667bd8be22bc93bcb6ec5c468b4a5499bf11"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        57344
+      ],
+      "active_zero_counts": [
+        73728
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        363,
+        403,
+        405
+      ]
+    },
+    {
+      "root": 364,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out4",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 29,
+          "pin": "in1"
+        },
+        {
+          "component": 30,
+          "pin": "in1"
+        },
+        {
+          "component": 96,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "c34fb4331b2d031d7c644860b54a678424c66ef12352fc165a91dc09840d98fd"
+      ],
+      "recognized_functions": [
+        [
+          "A[4]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        112,
+        113,
+        116,
+        117,
+        364,
+        367
+      ]
+    },
+    {
+      "root": 365,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 18,
+          "pin": "out4",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 29,
+          "pin": "in0"
+        },
+        {
+          "component": 30,
+          "pin": "in0"
+        },
+        {
+          "component": 96,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "389446528bece75d60f2e5fac2e621a82c0ab27ed38be4fc252397dfd3e37bac"
+      ],
+      "recognized_functions": [
+        [
+          "B[4]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        110,
+        111,
+        114,
+        115,
+        365,
+        368
+      ]
+    },
+    {
+      "root": 366,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 24,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 34,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "167ea1f4c3c576fe6546bd9c2480515cb9972705ee0bf2d594c12f3e926f8edf"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        32768
+      ],
+      "active_zero_counts": [
+        98304
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        366,
+        400
+      ]
+    },
+    {
+      "root": 375,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 68,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 63,
+          "pin": "enable"
+        },
+        {
+          "component": 83,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "b1401ff7cc1c7dd572f9907b500f4c293c611819821aa52b5713a5b2f2e30fe2"
+      ],
+      "recognized_functions": [
+        [
+          "nG5"
+        ]
+      ],
+      "one_counts": [
+        98304
+      ],
+      "active_zero_counts": [
+        32768
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        63,
+        319,
+        320,
+        375,
+        434
+      ]
+    },
+    {
+      "root": 381,
+      "width": 1,
+      "arrival": 2,
+      "drivers": [
+        {
+          "component": 99,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 87,
+          "pin": "enable"
+        },
+        {
+          "component": 102,
+          "pin": "in1"
+        }
+      ],
+      "truth_sha256": [
+        "e9cb39d7086d3b8b78076324f6175cdb0710f8b4c5df397cbe06abd110c5fae6"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        57344
+      ],
+      "active_zero_counts": [
+        73728
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        355,
+        381,
+        383
+      ]
+    },
+    {
+      "root": 384,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 102,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 91,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "6eb5a63f52f0e50976c295f9714348a144d583e2f158693595d66ee977daafb2"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        69632
+      ],
+      "active_zero_counts": [
+        61440
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        384,
+        385
+      ]
+    },
+    {
+      "root": 388,
+      "width": 2,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 101,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 100,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe",
+        "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb"
+      ],
+      "recognized_functions": [
+        [],
+        [
+          "C8"
+        ]
+      ],
+      "one_counts": [
+        0,
+        65536
+      ],
+      "active_zero_counts": [
+        131072,
+        65536
+      ],
+      "z_counts": [
+        0,
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        388
+      ]
+    },
+    {
+      "root": 389,
+      "width": 1,
+      "arrival": 4,
+      "drivers": [
+        {
+          "component": 100,
+          "pin": "out1",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 115,
+          "pin": "value"
+        }
+      ],
+      "truth_sha256": [
+        "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb"
+      ],
+      "recognized_functions": [
+        [
+          "C8"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        389
+      ]
+    },
+    {
+      "root": 395,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 35,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 32,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "a27b272eaa3d832cb6c9d04b5746ed80673ce11b1c85a7aaf8cb4a7573f98eef"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        49152
+      ],
+      "active_zero_counts": [
+        81920
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        395,
+        396,
+        397
+      ]
+    },
+    {
+      "root": 401,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 45,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 39,
+          "pin": "enable"
+        },
+        {
+          "component": 49,
+          "pin": "enable"
+        },
+        {
+          "component": 58,
+          "pin": "enable"
+        },
+        {
+          "component": 88,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "1582de38c96cc2e439a1e5c2c7f073931a3b5449390b22145e64614d1a14756a"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        27648
+      ],
+      "active_zero_counts": [
+        103424
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        9,
+        186,
+        199,
+        202,
+        327,
+        331,
+        401,
+        409
+      ]
+    },
+    {
+      "root": 411,
+      "width": 1,
+      "arrival": 3,
+      "drivers": [
+        {
+          "component": 104,
+          "pin": "out",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 38,
+          "pin": "in"
+        }
+      ],
+      "truth_sha256": [
+        "1e20b22692d8de238f95014a87900e4cd34dcd3b0d5ecb9f950f96480b595ecc"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        94208
+      ],
+      "active_zero_counts": [
+        36864
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        411,
+        412,
+        413
+      ]
+    },
+    {
+      "root": 417,
+      "width": 1,
+      "arrival": 1,
+      "drivers": [
+        {
+          "component": 106,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 107,
+          "pin": "out",
+          "tristate": true
+        },
+        {
+          "component": 108,
+          "pin": "out",
+          "tristate": true
+        }
+      ],
+      "sinks": [
+        {
+          "component": 93,
+          "pin": "enable"
+        },
+        {
+          "component": 103,
+          "pin": "in0"
+        }
+      ],
+      "truth_sha256": [
+        "3ea95031dd3885e9628de15a0567e96377b9afc05d609af1bcc15cabd4605c15"
+      ],
+      "recognized_functions": [
+        []
+      ],
+      "one_counts": [
+        57344
+      ],
+      "active_zero_counts": [
+        57344
+      ],
+      "z_counts": [
+        16384
+      ],
+      "conflict_rows": 0,
+      "z_rows": 16384,
+      "wire_indices": [
+        159,
+        160,
+        179,
+        417,
+        425
+      ]
+    },
+    {
+      "root": 419,
+      "width": 1,
+      "arrival": 0,
+      "drivers": [
+        {
+          "component": 19,
+          "pin": "out2",
+          "tristate": false
+        }
+      ],
+      "sinks": [
+        {
+          "component": 0,
+          "pin": "in1"
+        },
+        {
+          "component": 1,
+          "pin": "in1"
+        },
+        {
+          "component": 106,
+          "pin": "enable"
+        },
+        {
+          "component": 109,
+          "pin": "enable"
+        }
+      ],
+      "truth_sha256": [
+        "10d2ec9f90b3c9aae88010806cf9dbd72a35350a82ae491dadfe3dcf4c26b454"
+      ],
+      "recognized_functions": [
+        [
+          "A[2]"
+        ]
+      ],
+      "one_counts": [
+        65536
+      ],
+      "active_zero_counts": [
+        65536
+      ],
+      "z_counts": [
+        0
+      ],
+      "conflict_rows": 0,
+      "z_rows": 0,
+      "wire_indices": [
+        14,
+        69,
+        74,
+        77,
+        137,
+        419,
+        423,
+        427
+      ]
+    }
+  ],
+  "output_truth_sha256": {
+    "Output": [
+      "31361610fb49bf747a00cc108c2c3cbf9c5c8dce5e97593998b43e5b32143b1a",
+      "fc231dbe1f11c207933db22231ba202caa3824605494b520fdd52e74c92bd415",
+      "179086bbaef39d1f7d02ef3f858a35352aeda20d053a73b2a631320275c0c0d0",
+      "305042da7ed6c69bafd65a205e38c082435feb1cfd794e6ee7c4cb0e362cb71a",
+      "aa7132ec12519729d20ec9de1aca0cabbc11e0797d194b8ef59fc7977ee2636e",
+      "64c2869f6c42902242640c16e04e9c7210e93cb19829e4c852572ce1bb15ae9c",
+      "b6c5c31c9168b72ee2b04d863ffa699f2ea34e1b4209d059d367763df9c0b2ad",
+      "55f1587c425fafce9acc17a3246bc96e3566ada66ffc2f1d5690a94b578995e8"
+    ],
+    "Carry out": [
+      "1176fb00af2d4913384f90d90aaa4f34340a00fdb420c11db373bfc9462829cb"
+    ]
+  }
+}

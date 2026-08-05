@@ -1,0 +1,8433 @@
+{
+  "schema": "byte-adder-frontier-sample-103d5b-audit-v1",
+  "sample_B": {
+    "source": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 103 5 B\\circuit.data",
+      "bytes": 4019,
+      "sha256": "CCE7E6E31131513041CA40BC4125094271E35E66C17512C665580D4364599E88",
+      "canonical_reencode_byte_identical": false,
+      "decode_encode_decode_object_identical": true
+    },
+    "declared": {
+      "gate": 103,
+      "delay": 5,
+      "energy": 515
+    },
+    "recomputed": {
+      "gate": 103,
+      "delay": 5,
+      "energy": 515,
+      "truth_mismatch_rows": 0,
+      "bus_conflict_rows": 0
+    },
+    "component_count": 89,
+    "wire_count": 367,
+    "kind_counts": {
+      "4": 12,
+      "6": 10,
+      "7": 16,
+      "9": 17,
+      "12": 24,
+      "16": 1,
+      "17": 2,
+      "61": 3,
+      "69": 2,
+      "109": 1,
+      "111": 1
+    },
+    "connectivity": {
+      "effective_component_count": 89,
+      "supported_component_count": 89,
+      "unsupported_component_kind_counts": {},
+      "pin_count": 275,
+      "connected_pin_count": 273,
+      "unconnected_pin_count": 2,
+      "unconnected_pins": [
+        {
+          "permanent_id": 4974274683982111025,
+          "kind": 109,
+          "name": "out0",
+          "direction": "output",
+          "width": 1,
+          "position": [
+            3,
+            50
+          ]
+        },
+        {
+          "permanent_id": 6554627175345552310,
+          "kind": 111,
+          "name": "in0",
+          "direction": "input",
+          "width": 1,
+          "position": [
+            -2,
+            50
+          ]
+        }
+      ],
+      "logical_network_count": 87,
+      "logical_edge_count": 199,
+      "multi_driver_network_count": 0,
+      "undriven_network_count": 0,
+      "sinkless_network_count": 0,
+      "width_mismatch_network_count": 0,
+      "unit_logic_depth": 7,
+      "cycle_component_count": 0
+    },
+    "outputs": [
+      {
+        "component": 85,
+        "label": "Carry out",
+        "network": 300,
+        "arrival": 5,
+        "lane_mismatch_rows": [
+          0
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ],
+        "drivers": [
+          {
+            "component": 63,
+            "kind": "SPLITTER2",
+            "pin": "out1",
+            "width": 1
+          }
+        ]
+      },
+      {
+        "component": 86,
+        "label": "Output",
+        "network": 136,
+        "arrival": 5,
+        "lane_mismatch_rows": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "S1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 2,
+            "labels": [
+              "S2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 3,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 4,
+            "labels": [
+              "S4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 5,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 6,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 7,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ],
+        "drivers": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "out",
+            "width": 8
+          }
+        ]
+      }
+    ],
+    "resolved_switch_owner_networks": {
+      "177": {
+        "drivers": [
+          {
+            "component": 4,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 9,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 45,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "143": {
+        "drivers": [
+          {
+            "component": 8,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 10,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in3",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "36": {
+        "drivers": [
+          {
+            "component": 12,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 13,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 15,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 44,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "180": {
+        "drivers": [
+          {
+            "component": 25,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 26,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 44,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 22,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 49,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 50,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 81920,
+            "z_rows": 49152
+          }
+        ]
+      },
+      "7": {
+        "drivers": [
+          {
+            "component": 29,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 37,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 39,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in5",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "83": {
+        "drivers": [
+          {
+            "component": 45,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 7,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 27,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 32,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 53,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 54,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 94208,
+            "z_rows": 36864
+          }
+        ]
+      },
+      "218": {
+        "drivers": [
+          {
+            "component": 52,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 54,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 61,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 68,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 71,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 94208,
+            "z_rows": 36864
+          }
+        ]
+      },
+      "232": {
+        "drivers": [
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 61,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 65,
+            "kind": "MAKER2",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "259": {
+        "drivers": [
+          {
+            "component": 66,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 67,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 68,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in6",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "267": {
+        "drivers": [
+          {
+            "component": 70,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 71,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 72,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in7",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      }
+    },
+    "networks": {
+      "1": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out2",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 2,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 5,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "3": {
+        "drivers": [
+          {
+            "component": 1,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 3,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 47,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "N3"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "6": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out3",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 0,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 1,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 6,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "7": {
+        "drivers": [
+          {
+            "component": 29,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 37,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 39,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in5",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "11": {
+        "drivers": [
+          {
+            "component": 82,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 8,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "13": {
+        "drivers": [
+          {
+            "component": 6,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 3,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 4,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 9,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "V3"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "14": {
+        "drivers": [
+          {
+            "component": 0,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 4,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G3"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "18": {
+        "drivers": [
+          {
+            "component": 7,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 10,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 10,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "21": {
+        "drivers": [
+          {
+            "component": 3,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 7,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 8,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "nP3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "29": {
+        "drivers": [
+          {
+            "component": 49,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 81,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 82,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "30": {
+        "drivers": [
+          {
+            "component": 87,
+            "kind": "INPUT",
+            "pin": "value",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 12,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 13,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 16,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 20,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C0",
+              "Cin"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "34": {
+        "drivers": [
+          {
+            "component": 43,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 15,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 20,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 26,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G0"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "36": {
+        "drivers": [
+          {
+            "component": 12,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 13,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 15,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 44,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "37": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out1",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 11,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 17,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "38": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out0",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 12,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 14,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 43,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "41": {
+        "drivers": [
+          {
+            "component": 19,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "43": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out0",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 13,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 14,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 43,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "44": {
+        "drivers": [
+          {
+            "component": 18,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 19,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "45": {
+        "drivers": [
+          {
+            "component": 20,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 19,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 16384,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "51": {
+        "drivers": [
+          {
+            "component": 14,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 16,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "V0"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "54": {
+        "drivers": [
+          {
+            "component": 16,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 18,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 16384,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "56": {
+        "drivers": [
+          {
+            "component": 15,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 18,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 21,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 24,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "60": {
+        "drivers": [
+          {
+            "component": 21,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 23,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 16384,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "61": {
+        "drivers": [
+          {
+            "component": 22,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 23,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "63": {
+        "drivers": [
+          {
+            "component": 24,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 22,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 16384,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "72": {
+        "drivers": [
+          {
+            "component": 17,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 21,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 25,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G1"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "78": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out4",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 30,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 31,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "82": {
+        "drivers": [
+          {
+            "component": 28,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 27,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 32,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "nP4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "83": {
+        "drivers": [
+          {
+            "component": 45,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 7,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 27,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 32,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 53,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 54,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 94208,
+            "z_rows": 36864
+          }
+        ]
+      },
+      "84": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out5",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 38,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 40,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "85": {
+        "drivers": [
+          {
+            "component": 30,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 28,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 42,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G4"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "93": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out6",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 55,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 56,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "95": {
+        "drivers": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "out7",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 57,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 58,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "103": {
+        "drivers": [
+          {
+            "component": 88,
+            "kind": "INPUT",
+            "pin": "value",
+            "width": 8
+          }
+        ],
+        "sinks": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "in",
+            "width": 8
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "A1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 2,
+            "labels": [
+              "A2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 3,
+            "labels": [
+              "A3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 4,
+            "labels": [
+              "A4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 5,
+            "labels": [
+              "A5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 6,
+            "labels": [
+              "A6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 7,
+            "labels": [
+              "A7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "104": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out4",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 30,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 31,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "106": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out5",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 38,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 40,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "109": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out6",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 55,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 56,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "112": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out3",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 0,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 1,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 6,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "115": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out1",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 11,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 17,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "125": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out2",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 2,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 5,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "126": {
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "SPLITTER8",
+            "pin": "out7",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 57,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 58,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "A7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "135": {
+        "drivers": [
+          {
+            "component": 84,
+            "kind": "INPUT",
+            "pin": "value",
+            "width": 8
+          }
+        ],
+        "sinks": [
+          {
+            "component": 33,
+            "kind": "SPLITTER8",
+            "pin": "in",
+            "width": 8
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "B0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "B1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 2,
+            "labels": [
+              "B2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 3,
+            "labels": [
+              "B3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 4,
+            "labels": [
+              "B4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 5,
+            "labels": [
+              "B5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 6,
+            "labels": [
+              "B6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 7,
+            "labels": [
+              "B7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "136": {
+        "drivers": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "out",
+            "width": 8
+          }
+        ],
+        "sinks": [
+          {
+            "component": 86,
+            "kind": "OUTPUT",
+            "pin": "value",
+            "width": 8
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "S1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 2,
+            "labels": [
+              "S2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 3,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 4,
+            "labels": [
+              "S4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 5,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 6,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 7,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "139": {
+        "drivers": [
+          {
+            "component": 23,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "141": {
+        "drivers": [
+          {
+            "component": 81,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in2",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "143": {
+        "drivers": [
+          {
+            "component": 8,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 10,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in3",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "145": {
+        "drivers": [
+          {
+            "component": 36,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in4",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "149": {
+        "drivers": [
+          {
+            "component": 27,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 36,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 39,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "155": {
+        "drivers": [
+          {
+            "component": 32,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 36,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "166": {
+        "drivers": [
+          {
+            "component": 38,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 41,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 51,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "Q5"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "174": {
+        "drivers": [
+          {
+            "component": 11,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 24,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 25,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 26,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 44,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "V1"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "177": {
+        "drivers": [
+          {
+            "component": 4,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 9,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 45,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "180": {
+        "drivers": [
+          {
+            "component": 25,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 26,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 44,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 22,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 49,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 50,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 81920,
+            "z_rows": 49152
+          }
+        ]
+      },
+      "191": {
+        "drivers": [
+          {
+            "component": 2,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 9,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 48,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "V2"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "194": {
+        "drivers": [
+          {
+            "component": 47,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 45,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 57344,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "200": {
+        "drivers": [
+          {
+            "component": 50,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 81,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "215": {
+        "drivers": [
+          {
+            "component": 53,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 29,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 67,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 72,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 36864,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "218": {
+        "drivers": [
+          {
+            "component": 52,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 54,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 61,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 68,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 71,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 94208,
+            "z_rows": 36864
+          }
+        ]
+      },
+      "220": {
+        "drivers": [
+          {
+            "component": 51,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 79,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 80,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 73728,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "232": {
+        "drivers": [
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 61,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 65,
+            "kind": "MAKER2",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "235": {
+        "drivers": [
+          {
+            "component": 62,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 61,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "236": {
+        "drivers": [
+          {
+            "component": 73,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 62,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 74,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "237": {
+        "drivers": [
+          {
+            "component": 57,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 64,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "Q7"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "240": {
+        "drivers": [
+          {
+            "component": 58,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 62,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 64,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G7"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "245": {
+        "drivers": [
+          {
+            "component": 76,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 78,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "255": {
+        "drivers": [
+          {
+            "component": 59,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 66,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 67,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "P6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "259": {
+        "drivers": [
+          {
+            "component": 66,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 67,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 68,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in6",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "262": {
+        "drivers": [
+          {
+            "component": 69,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 68,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "nP6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "267": {
+        "drivers": [
+          {
+            "component": 70,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 71,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 72,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 35,
+            "kind": "MAKER8",
+            "pin": "in7",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "279": {
+        "drivers": [
+          {
+            "component": 55,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 59,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 69,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 73,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 75,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "Q6"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "289": {
+        "drivers": [
+          {
+            "component": 75,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 74,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 16384,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "292": {
+        "drivers": [
+          {
+            "component": 74,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 71,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "296": {
+        "drivers": [
+          {
+            "component": 65,
+            "kind": "MAKER2",
+            "pin": "out",
+            "width": 2
+          }
+        ],
+        "sinks": [
+          {
+            "component": 63,
+            "kind": "SPLITTER2",
+            "pin": "in",
+            "width": 2
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 0,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "297": {
+        "drivers": [
+          {
+            "component": 56,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 59,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 69,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 76,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 77,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G6"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "298": {
+        "drivers": [
+          {
+            "component": 64,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 73,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 75,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 76,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 77,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "nP7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "300": {
+        "drivers": [
+          {
+            "component": 63,
+            "kind": "SPLITTER2",
+            "pin": "out1",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 85,
+            "kind": "OUTPUT",
+            "pin": "value",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "303": {
+        "drivers": [
+          {
+            "component": 78,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 70,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 72,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "304": {
+        "drivers": [
+          {
+            "component": 77,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 78,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 114688,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "328": {
+        "drivers": [
+          {
+            "component": 40,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 41,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 42,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 79,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 80,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "G5"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "330": {
+        "drivers": [
+          {
+            "component": 42,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 52,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 53,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 57344,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "332": {
+        "drivers": [
+          {
+            "component": 79,
+            "kind": "OR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 52,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 54,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "334": {
+        "drivers": [
+          {
+            "component": 80,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 66,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 70,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "K5:4"
+            ],
+            "one_rows": 49152,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "340": {
+        "drivers": [
+          {
+            "component": 5,
+            "kind": "NAND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 47,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 48,
+            "kind": "AND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 82,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "N2"
+            ],
+            "one_rows": 98304,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "341": {
+        "drivers": [
+          {
+            "component": 48,
+            "kind": "AND",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 49,
+            "kind": "NAND",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 50,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "P2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "349": {
+        "drivers": [
+          {
+            "component": 41,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 29,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 37,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 83,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "P5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "354": {
+        "drivers": [
+          {
+            "component": 83,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 39,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "360": {
+        "drivers": [
+          {
+            "component": 31,
+            "kind": "NOR",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 28,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 37,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 51,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 83,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "Q4"
+            ],
+            "one_rows": 32768,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      }
+    },
+    "components": [
+      {
+        "index": 0,
+        "permanent_id": 1605429058798993597,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          -4
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B3",
+          "in1=A3"
+        ],
+        "expression": "AND(B3,A3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 14,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G3"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "permanent_id": 1260698818863213700,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -33,
+          -8
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B3",
+          "in1=A3"
+        ],
+        "expression": "NAND(B3,A3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 3,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "N3"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 2,
+        "permanent_id": 4919387302245538682,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -33,
+          -24
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B2",
+          "in1=A2"
+        ],
+        "expression": "OR(B2,A2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 191,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "V2"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "permanent_id": 8539005483423417110,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -30,
+          -10
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=V3",
+          "in1=N3"
+        ],
+        "expression": "NAND(V3,N3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 21,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "nP3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "permanent_id": 562790280101753779,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -24,
+          -6
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 2,
+        "inputs": [
+          "enable=G3",
+          "in=V3"
+        ],
+        "expression": "SW(G3,V3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 177,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 81920,
+                "driven_rows": 106496,
+                "z_rows": 24576
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 5,
+        "permanent_id": 526318341906706052,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -33,
+          -20
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B2",
+          "in1=A2"
+        ],
+        "expression": "NAND(B2,A2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 340,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "N2"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 6,
+        "permanent_id": 3947553623709168867,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -33,
+          -12
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B3",
+          "in1=A3"
+        ],
+        "expression": "OR(B3,A3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 13,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "V3"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 7,
+        "permanent_id": 5749768290429817615,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -8,
+          -8
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=nP3",
+          "in1=C4"
+        ],
+        "expression": "NOR(nP3,C4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 18,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 8,
+        "permanent_id": 8787856760677682190,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -5,
+          -11
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=nP3",
+          "in=C3"
+        ],
+        "expression": "SW(nP3,C3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 143,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 9,
+        "permanent_id": 2826373443681980341,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -24,
+          -4
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 2,
+        "inputs": [
+          "enable=V2",
+          "in=V3"
+        ],
+        "expression": "SW(V2,V3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 177,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 81920,
+                "driven_rows": 106496,
+                "z_rows": 24576
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 10,
+        "permanent_id": 5994399283177941928,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -5,
+          -9
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node7",
+          "in=node7"
+        ],
+        "expression": "SW(node7,node7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 143,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 11,
+        "permanent_id": 2529880769890044473,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -33,
+          -36
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B1",
+          "in1=A1"
+        ],
+        "expression": "OR(B1,A1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 174,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "V1"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 12,
+        "permanent_id": 5027763548226836007,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -28,
+          -42
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 1,
+        "inputs": [
+          "enable=B0",
+          "in=C0/Cin"
+        ],
+        "expression": "SW(B0,C0/Cin)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 36,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 13,
+        "permanent_id": 9222708446776195092,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -28,
+          -40
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 1,
+        "inputs": [
+          "enable=A0",
+          "in=C0/Cin"
+        ],
+        "expression": "SW(A0,C0/Cin)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 36,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 14,
+        "permanent_id": 3136670327804080032,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -33,
+          -48
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B0",
+          "in1=A0"
+        ],
+        "expression": "OR(B0,A0)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 51,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "V0"
+                ],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 15,
+        "permanent_id": 5234887066136477863,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -22,
+          -41
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=G0",
+          "in1=BUS(node12,node13)"
+        ],
+        "expression": "OR(G0,BUS(node12,node13))",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 56,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 16,
+        "permanent_id": 5172229026867138465,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -16,
+          -47
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=V0",
+          "in1=C0/Cin"
+        ],
+        "expression": "NOR(V0,C0/Cin)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 54,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 16384,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 17,
+        "permanent_id": 8896029509988222571,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          -32
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B1",
+          "in1=A1"
+        ],
+        "expression": "AND(B1,A1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 72,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G1"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 18,
+        "permanent_id": 5307804406959279483,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -8,
+          -48
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=C1",
+          "in1=node16"
+        ],
+        "expression": "NOR(C1,node16)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 44,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 19,
+        "permanent_id": 7404221044495172013,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -5,
+          -46
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node18",
+          "in1=node20"
+        ],
+        "expression": "OR(node18,node20)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 41,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 20,
+        "permanent_id": 5308822877019575363,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -8,
+          -44
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=C0/Cin",
+          "in1=G0"
+        ],
+        "expression": "AND(C0/Cin,G0)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 45,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 16384,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 21,
+        "permanent_id": 3526386889064232923,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -8,
+          -32
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=C1",
+          "in1=G1"
+        ],
+        "expression": "AND(C1,G1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 60,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 16384,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 22,
+        "permanent_id": 676435375907262071,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -8,
+          -36
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=C2",
+          "in1=node24"
+        ],
+        "expression": "NOR(C2,node24)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 61,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 23,
+        "permanent_id": 2184718215603098445,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -5,
+          -34
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 5,
+        "inputs": [
+          "in0=node22",
+          "in1=node21"
+        ],
+        "expression": "OR(node22,node21)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 139,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 24,
+        "permanent_id": 3209279141909870487,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -16,
+          -35
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=V1",
+          "in1=C1"
+        ],
+        "expression": "NOR(V1,C1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 63,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 16384,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 25,
+        "permanent_id": 7391729437261563830,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -22,
+          -30
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 2,
+        "inputs": [
+          "enable=G1",
+          "in=V1"
+        ],
+        "expression": "SW(G1,V1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 180,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 81920,
+                "z_rows": 49152
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 26,
+        "permanent_id": 2467827227938922357,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -22,
+          -28
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 2,
+        "inputs": [
+          "enable=G0",
+          "in=V1"
+        ],
+        "expression": "SW(G0,V1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 180,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 81920,
+                "z_rows": 49152
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 27,
+        "permanent_id": 1592920551013459769,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -8,
+          4
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=C4",
+          "in1=nP4"
+        ],
+        "expression": "OR(C4,nP4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 149,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 28,
+        "permanent_id": 4897733781297800159,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -30,
+          2
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q4",
+          "in1=G4"
+        ],
+        "expression": "OR(Q4,G4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 82,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "nP4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 29,
+        "permanent_id": 2246251042215632999,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          12
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node53",
+          "in=P5"
+        ],
+        "expression": "SW(node53,P5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 7,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 30,
+        "permanent_id": 2563369117023476044,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          4
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B4",
+          "in1=A4"
+        ],
+        "expression": "AND(B4,A4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 85,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G4"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 31,
+        "permanent_id": 8243883734648211125,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -33,
+          0
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B4",
+          "in1=A4"
+        ],
+        "expression": "NOR(B4,A4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 360,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "Q4"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 32,
+        "permanent_id": 368156365819572551,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -8,
+          0
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=C4",
+          "in1=nP4"
+        ],
+        "expression": "NAND(C4,nP4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 155,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 33,
+        "permanent_id": 5502017748638957221,
+        "kind": 17,
+        "kind_name": "SPLITTER8",
+        "position": [
+          -40,
+          -51
+        ],
+        "rotation": 1,
+        "label": "",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [
+          "in=[B0,B1,B2,B3,B4,B5,B6,B7]"
+        ],
+        "expression": "SPLIT([B0,B1,B2,B3,B4,B5,B6,B7])",
+        "outputs": [
+          {
+            "pin": "out0",
+            "network": 38,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out1",
+            "network": 37,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out2",
+            "network": 1,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out3",
+            "network": 6,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out4",
+            "network": 78,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out5",
+            "network": 84,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out6",
+            "network": 93,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out7",
+            "network": 95,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 34,
+        "permanent_id": 1416152000279662190,
+        "kind": 17,
+        "kind_name": "SPLITTER8",
+        "position": [
+          -49,
+          -51
+        ],
+        "rotation": 1,
+        "label": "",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [
+          "in=[A0,A1,A2,A3,A4,A5,A6,A7]"
+        ],
+        "expression": "SPLIT([A0,A1,A2,A3,A4,A5,A6,A7])",
+        "outputs": [
+          {
+            "pin": "out0",
+            "network": 43,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out1",
+            "network": 115,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out2",
+            "network": 125,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out3",
+            "network": 112,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out4",
+            "network": 104,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out5",
+            "network": 106,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out6",
+            "network": 109,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          },
+          {
+            "pin": "out7",
+            "network": 126,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 35,
+        "permanent_id": 4423811084572700641,
+        "kind": 16,
+        "kind_name": "MAKER8",
+        "position": [
+          1,
+          -51
+        ],
+        "rotation": 3,
+        "label": "",
+        "cost": 0,
+        "arrival": 5,
+        "inputs": [
+          "in0=S0",
+          "in1=S1",
+          "in2=S2",
+          "in3=S3",
+          "in4=S4",
+          "in5=S5",
+          "in6=S6",
+          "in7=S7"
+        ],
+        "expression": "PACK(S0,S1,S2,S3,S4,S5,S6,S7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 136,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 1,
+                "labels": [
+                  "S1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 2,
+                "labels": [
+                  "S2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 3,
+                "labels": [
+                  "S3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 4,
+                "labels": [
+                  "S4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 5,
+                "labels": [
+                  "S5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 6,
+                "labels": [
+                  "S6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 7,
+                "labels": [
+                  "S7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 36,
+        "permanent_id": 3135809051762062892,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -5,
+          2
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 5,
+        "inputs": [
+          "in0=node32",
+          "in1=node27"
+        ],
+        "expression": "NAND(node32,node27)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 145,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 37,
+        "permanent_id": 7735411007935855888,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          10
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 3,
+        "inputs": [
+          "enable=Q4",
+          "in=P5"
+        ],
+        "expression": "SW(Q4,P5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 7,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 38,
+        "permanent_id": 2869954955662448749,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -33,
+          8
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B5",
+          "in1=A5"
+        ],
+        "expression": "NOR(B5,A5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 166,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "Q5"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 39,
+        "permanent_id": 4699678088402791184,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          8
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node83",
+          "in=node27"
+        ],
+        "expression": "SW(node83,node27)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 7,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 98304,
+                "z_rows": 32768
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 40,
+        "permanent_id": 3189004276450364530,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          12
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B5",
+          "in1=A5"
+        ],
+        "expression": "AND(B5,A5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 328,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G5"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 41,
+        "permanent_id": 6408833966084671220,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -30,
+          10
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q5",
+          "in1=G5"
+        ],
+        "expression": "NOR(Q5,G5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 349,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "P5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 42,
+        "permanent_id": 9017762110664795890,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -24,
+          16
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=G4",
+          "in1=G5"
+        ],
+        "expression": "OR(G4,G5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 330,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 57344,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 43,
+        "permanent_id": 4853359611816525850,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          -44
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B0",
+          "in1=A0"
+        ],
+        "expression": "AND(B0,A0)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 34,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G0"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 44,
+        "permanent_id": 8682635129727890073,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -22,
+          -26
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 2,
+        "inputs": [
+          "enable=BUS(node12,node13)",
+          "in=V1"
+        ],
+        "expression": "SW(BUS(node12,node13),V1)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 180,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 81920,
+                "z_rows": 49152
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 45,
+        "permanent_id": 1855338547925512141,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -18,
+          -6
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 3,
+        "inputs": [
+          "enable=node47",
+          "in=BUS(node4,node9)"
+        ],
+        "expression": "SW(node47,BUS(node4,node9))",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 83,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 94208,
+                "z_rows": 36864
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 46,
+        "permanent_id": 4905434218833185453,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -18,
+          -4
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 3,
+        "inputs": [
+          "enable=C2",
+          "in=BUS(node4,node9)"
+        ],
+        "expression": "SW(C2,BUS(node4,node9))",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 83,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 94208,
+                "z_rows": 36864
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 47,
+        "permanent_id": 47399412153696100,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -24,
+          -8
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=N2",
+          "in1=N3"
+        ],
+        "expression": "NAND(N2,N3)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 194,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 57344,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 48,
+        "permanent_id": 4235780147146232289,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -30,
+          -22
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=V2",
+          "in1=N2"
+        ],
+        "expression": "AND(V2,N2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 341,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "P2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 49,
+        "permanent_id": 618312088877347957,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -8,
+          -20
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=C2",
+          "in1=P2"
+        ],
+        "expression": "NAND(C2,P2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 29,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 50,
+        "permanent_id": 7723909351668170605,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -8,
+          -24
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=C2",
+          "in1=P2"
+        ],
+        "expression": "OR(C2,P2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 200,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 98304,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 51,
+        "permanent_id": 1853016537696682558,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -24,
+          20
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q4",
+          "in1=Q5"
+        ],
+        "expression": "NOR(Q4,Q5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 220,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 73728,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 52,
+        "permanent_id": 7863526837769034580,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          17
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 4,
+        "inputs": [
+          "enable=node42",
+          "in=node79"
+        ],
+        "expression": "SW(node42,node79)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 218,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 94208,
+                "z_rows": 36864
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 53,
+        "permanent_id": 5818534453424563132,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -8,
+          22
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node42",
+          "in1=C4"
+        ],
+        "expression": "NOR(node42,C4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 215,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 36864,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 54,
+        "permanent_id": 8345703260341977235,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          19
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 4,
+        "inputs": [
+          "enable=C4",
+          "in=node79"
+        ],
+        "expression": "SW(C4,node79)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 218,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 94208,
+                "z_rows": 36864
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 55,
+        "permanent_id": 7987339168260478809,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -33,
+          28
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B6",
+          "in1=A6"
+        ],
+        "expression": "NOR(B6,A6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 279,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "Q6"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 56,
+        "permanent_id": 6950024181409719971,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          32
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B6",
+          "in1=A6"
+        ],
+        "expression": "AND(B6,A6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 297,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G6"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 57,
+        "permanent_id": 4955522026529057107,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -33,
+          44
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B7",
+          "in1=A7"
+        ],
+        "expression": "NOR(B7,A7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 237,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "Q7"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 58,
+        "permanent_id": 7275307915445222030,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -33,
+          48
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 1,
+        "inputs": [
+          "in0=B7",
+          "in1=A7"
+        ],
+        "expression": "AND(B7,A7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 240,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "G7"
+                ],
+                "one_rows": 32768,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 59,
+        "permanent_id": 2412555319329303129,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -16,
+          28
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q6",
+          "in1=G6"
+        ],
+        "expression": "NOR(Q6,G6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 255,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "P6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 60,
+        "permanent_id": 27583406020923690,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          50
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node76",
+          "in=node62"
+        ],
+        "expression": "SW(node76,node62)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 232,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C8"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 106496,
+                "z_rows": 24576
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 61,
+        "permanent_id": 7409393213786921113,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          52
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=C6",
+          "in=node62"
+        ],
+        "expression": "SW(C6,node62)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 232,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C8"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 106496,
+                "z_rows": 24576
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 62,
+        "permanent_id": 2577497699691496819,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -13,
+          52
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node73",
+          "in1=G7"
+        ],
+        "expression": "OR(node73,G7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 235,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 81920,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 63,
+        "permanent_id": 4974274683982111025,
+        "kind": 109,
+        "kind_name": "SPLITTER2",
+        "position": [
+          2,
+          51
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 0,
+        "arrival": 5,
+        "inputs": [
+          "in=[node65,C8]"
+        ],
+        "expression": "SPLIT([node65,C8])",
+        "outputs": [
+          {
+            "pin": "out1",
+            "network": 300,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C8"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 64,
+        "permanent_id": 1869632388130603133,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -30,
+          46
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q7",
+          "in1=G7"
+        ],
+        "expression": "OR(Q7,G7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 298,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "nP7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 65,
+        "permanent_id": 6554627175345552310,
+        "kind": 111,
+        "kind_name": "MAKER2",
+        "position": [
+          -1,
+          51
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 0,
+        "arrival": 5,
+        "inputs": [
+          "in0=0",
+          "in1=C8"
+        ],
+        "expression": "PACK(0,C8)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 296,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 0,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 1,
+                "labels": [
+                  "C8"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 66,
+        "permanent_id": 1901903579149930123,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          28
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 4,
+        "inputs": [
+          "enable=K5:4",
+          "in=P6"
+        ],
+        "expression": "SW(K5:4,P6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 259,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 67,
+        "permanent_id": 6114493918580915180,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          30
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node53",
+          "in=P6"
+        ],
+        "expression": "SW(node53,P6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 259,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 68,
+        "permanent_id": 2819089966161987004,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          32
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=C6",
+          "in=nP6"
+        ],
+        "expression": "SW(C6,nP6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 259,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 69,
+        "permanent_id": 2382411108508331321,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -16,
+          32
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 2,
+        "inputs": [
+          "in0=Q6",
+          "in1=G6"
+        ],
+        "expression": "OR(Q6,G6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 262,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "nP6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 70,
+        "permanent_id": 5333027378209129473,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          44
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=K5:4",
+          "in=node78"
+        ],
+        "expression": "SW(K5:4,node78)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 267,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 71,
+        "permanent_id": 7195422567517374791,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          48
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=C6",
+          "in=node74"
+        ],
+        "expression": "SW(C6,node74)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 267,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 72,
+        "permanent_id": 2979809613434305588,
+        "kind": 12,
+        "kind_name": "SWITCH",
+        "position": [
+          -8,
+          46
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 2,
+        "arrival": 5,
+        "inputs": [
+          "enable=node53",
+          "in=node78"
+        ],
+        "expression": "SW(node53,node78)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 267,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 73,
+        "permanent_id": 5621734755491250246,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -16,
+          48
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=nP7",
+          "in1=Q6"
+        ],
+        "expression": "NOR(nP7,Q6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 236,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 74,
+        "permanent_id": 3364904048462405076,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -13,
+          46
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node75",
+          "in1=node73"
+        ],
+        "expression": "NOR(node75,node73)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 292,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 75,
+        "permanent_id": 4096567297290378095,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -16,
+          44
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=nP7",
+          "in1=Q6"
+        ],
+        "expression": "AND(nP7,Q6)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 289,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 16384,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 76,
+        "permanent_id": 9116777971350878251,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -16,
+          40
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=G6",
+          "in1=nP7"
+        ],
+        "expression": "OR(G6,nP7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 245,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 81920,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 77,
+        "permanent_id": 8940531179666505434,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -16,
+          36
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=G6",
+          "in1=nP7"
+        ],
+        "expression": "NAND(G6,nP7)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 304,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 114688,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 78,
+        "permanent_id": 3908770079308982119,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -13,
+          38
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node77",
+          "in1=node76"
+        ],
+        "expression": "NAND(node77,node76)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 303,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 79,
+        "permanent_id": 6498656812964491486,
+        "kind": 7,
+        "kind_name": "OR",
+        "position": [
+          -16,
+          20
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=node51",
+          "in1=G5"
+        ],
+        "expression": "OR(node51,G5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 332,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 81920,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 80,
+        "permanent_id": 7829465926671196881,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -16,
+          24
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=node51",
+          "in1=G5"
+        ],
+        "expression": "NOR(node51,G5)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 334,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "K5:4"
+                ],
+                "one_rows": 49152,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 81,
+        "permanent_id": 2488444094695762650,
+        "kind": 4,
+        "kind_name": "AND",
+        "position": [
+          -5,
+          -22
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node50",
+          "in1=node49"
+        ],
+        "expression": "AND(node50,node49)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 141,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "S2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 82,
+        "permanent_id": 8007948257427675672,
+        "kind": 6,
+        "kind_name": "NAND",
+        "position": [
+          -5,
+          -18
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 4,
+        "inputs": [
+          "in0=node49",
+          "in1=N2"
+        ],
+        "expression": "NAND(node49,N2)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 11,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 83,
+        "permanent_id": 477260218146666651,
+        "kind": 9,
+        "kind_name": "NOR",
+        "position": [
+          -8,
+          15
+        ],
+        "rotation": 0,
+        "label": "",
+        "cost": 1,
+        "arrival": 3,
+        "inputs": [
+          "in0=P5",
+          "in1=Q4"
+        ],
+        "expression": "NOR(P5,Q4)",
+        "outputs": [
+          {
+            "pin": "out",
+            "network": 354,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [],
+                "one_rows": 49152,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 84,
+        "permanent_id": 4257300573296473173,
+        "kind": 61,
+        "kind_name": "INPUT",
+        "position": [
+          -43,
+          -53
+        ],
+        "rotation": 0,
+        "label": "B",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [],
+        "expression": "INPUT()",
+        "outputs": [
+          {
+            "pin": "value",
+            "network": 135,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "B0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 1,
+                "labels": [
+                  "B1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 2,
+                "labels": [
+                  "B2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 3,
+                "labels": [
+                  "B3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 4,
+                "labels": [
+                  "B4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 5,
+                "labels": [
+                  "B5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 6,
+                "labels": [
+                  "B6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 7,
+                "labels": [
+                  "B7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 85,
+        "permanent_id": 2340322686578998678,
+        "kind": 69,
+        "kind_name": "OUTPUT",
+        "position": [
+          7,
+          51
+        ],
+        "rotation": 0,
+        "label": "Carry out",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [
+          "value=C8"
+        ],
+        "expression": "OUTPUT(C8)",
+        "outputs": []
+      },
+      {
+        "index": 86,
+        "permanent_id": 3,
+        "kind": 69,
+        "kind_name": "OUTPUT",
+        "position": [
+          4,
+          -53
+        ],
+        "rotation": 0,
+        "label": "Output",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [
+          "value=[S0,S1,S2,S3,S4,S5,S6,S7]"
+        ],
+        "expression": "OUTPUT([S0,S1,S2,S3,S4,S5,S6,S7])",
+        "outputs": []
+      },
+      {
+        "index": 87,
+        "permanent_id": 2,
+        "kind": 61,
+        "kind_name": "INPUT",
+        "position": [
+          -23,
+          -50
+        ],
+        "rotation": 0,
+        "label": "Carry in",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [],
+        "expression": "INPUT()",
+        "outputs": [
+          {
+            "pin": "value",
+            "network": 30,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "C0",
+                  "Cin"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "index": 88,
+        "permanent_id": 1,
+        "kind": 61,
+        "kind_name": "INPUT",
+        "position": [
+          -52,
+          -53
+        ],
+        "rotation": 0,
+        "label": "A",
+        "cost": 0,
+        "arrival": 0,
+        "inputs": [],
+        "expression": "INPUT()",
+        "outputs": [
+          {
+            "pin": "value",
+            "network": 103,
+            "lanes": [
+              {
+                "lane": 0,
+                "labels": [
+                  "A0"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 1,
+                "labels": [
+                  "A1"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 2,
+                "labels": [
+                  "A2"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 3,
+                "labels": [
+                  "A3"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 4,
+                "labels": [
+                  "A4"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 5,
+                "labels": [
+                  "A5"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 6,
+                "labels": [
+                  "A6"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              },
+              {
+                "lane": 7,
+                "labels": [
+                  "A7"
+                ],
+                "one_rows": 65536,
+                "driven_rows": 131072,
+                "z_rows": 0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "structural_signature_sha256": "FA01768310747B21444D904165E2B85A4B8B934022414994D2FCFF597F80993F"
+  },
+  "sample_A_summary": {
+    "source": {
+      "path": "D:\\Develop\\Other\\turing-complete\\.research\\byte_adder_frontier_samples_20260805\\raw\\extracted\\Switch 103 5 A\\circuit.data",
+      "bytes": 4042,
+      "sha256": "5A38F50DE81E8B72B0BE3E7ABD160F38E335DFD1269A9A5894B7D5BE561A89A9",
+      "canonical_reencode_byte_identical": false,
+      "decode_encode_decode_object_identical": true
+    },
+    "declared": {
+      "gate": 103,
+      "delay": 5,
+      "energy": 515
+    },
+    "recomputed": {
+      "gate": 103,
+      "delay": 5,
+      "energy": 515,
+      "truth_mismatch_rows": 0,
+      "bus_conflict_rows": 0
+    },
+    "component_count": 90,
+    "wire_count": 368,
+    "kind_counts": {
+      "4": 14,
+      "6": 15,
+      "7": 15,
+      "9": 13,
+      "12": 23,
+      "16": 1,
+      "17": 2,
+      "61": 3,
+      "69": 2,
+      "109": 1,
+      "111": 1
+    },
+    "outputs": [
+      {
+        "component": 85,
+        "label": "Output",
+        "network": 135,
+        "arrival": 5,
+        "lane_mismatch_rows": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S0"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 1,
+            "labels": [
+              "S1"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 2,
+            "labels": [
+              "S2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 3,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 4,
+            "labels": [
+              "S4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 5,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 6,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          },
+          {
+            "lane": 7,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ],
+        "drivers": [
+          {
+            "component": 34,
+            "kind": "MAKER8",
+            "pin": "out",
+            "width": 8
+          }
+        ]
+      },
+      {
+        "component": 89,
+        "label": "Carry out",
+        "network": 278,
+        "arrival": 5,
+        "lane_mismatch_rows": [
+          0
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ],
+        "drivers": [
+          {
+            "component": 55,
+            "kind": "SPLITTER2",
+            "pin": "out1",
+            "width": 1
+          }
+        ]
+      }
+    ],
+    "resolved_switch_owner_networks": {
+      "174": {
+        "drivers": [
+          {
+            "component": 4,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 9,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 41,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          },
+          {
+            "component": 42,
+            "kind": "SWITCH",
+            "pin": "in",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 81920,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "142": {
+        "drivers": [
+          {
+            "component": 8,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 10,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 34,
+            "kind": "MAKER8",
+            "pin": "in3",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S3"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "36": {
+        "drivers": [
+          {
+            "component": 12,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 13,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 15,
+            "kind": "OR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 40,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [],
+            "one_rows": 49152,
+            "driven_rows": 98304,
+            "z_rows": 32768
+          }
+        ]
+      },
+      "177": {
+        "drivers": [
+          {
+            "component": 25,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 26,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 40,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 22,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 42,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 45,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 46,
+            "kind": "OR",
+            "pin": "in0",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C2"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 81920,
+            "z_rows": 49152
+          }
+        ]
+      },
+      "83": {
+        "drivers": [
+          {
+            "component": 41,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 42,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 7,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          },
+          {
+            "component": 27,
+            "kind": "AND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 31,
+            "kind": "NOR",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 73,
+            "kind": "NAND",
+            "pin": "in0",
+            "width": 1
+          },
+          {
+            "component": 80,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 83,
+            "kind": "NOR",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C4"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 94208,
+            "z_rows": 36864
+          }
+        ]
+      },
+      "210": {
+        "drivers": [
+          {
+            "component": 52,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 53,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 57,
+            "kind": "MAKER2",
+            "pin": "in1",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C8"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      },
+      "237": {
+        "drivers": [
+          {
+            "component": 58,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 59,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 34,
+            "kind": "MAKER8",
+            "pin": "in6",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "245": {
+        "drivers": [
+          {
+            "component": 62,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 63,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 64,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 34,
+            "kind": "MAKER8",
+            "pin": "in7",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S7"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "332": {
+        "drivers": [
+          {
+            "component": 77,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 78,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 34,
+            "kind": "MAKER8",
+            "pin": "in5",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "S5"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 131072,
+            "z_rows": 0
+          }
+        ]
+      },
+      "337": {
+        "drivers": [
+          {
+            "component": 79,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          },
+          {
+            "component": 80,
+            "kind": "SWITCH",
+            "pin": "out",
+            "width": 1
+          }
+        ],
+        "sinks": [
+          {
+            "component": 53,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 60,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          },
+          {
+            "component": 63,
+            "kind": "SWITCH",
+            "pin": "enable",
+            "width": 1
+          }
+        ],
+        "lanes": [
+          {
+            "lane": 0,
+            "labels": [
+              "C6"
+            ],
+            "one_rows": 65536,
+            "driven_rows": 106496,
+            "z_rows": 24576
+          }
+        ]
+      }
+    },
+    "structural_signature_sha256": "A86898617EDE11280FB17FA56F45FD4CE286DD6E20F558621A7970F6AD7FF7FF"
+  },
+  "comparison": {
+    "A_vs_B": {
+      "same_bytes": false,
+      "kind_count_delta_B_minus_A": {
+        "4": -2,
+        "6": -5,
+        "7": 1,
+        "9": 4,
+        "12": 1
+      },
+      "structural_signature_equal": false,
+      "A_owner_summary": [
+        {
+          "network": 36,
+          "driver_count": 2,
+          "labels": [
+            []
+          ],
+          "z_rows": [
+            32768
+          ]
+        },
+        {
+          "network": 83,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C4"
+            ]
+          ],
+          "z_rows": [
+            36864
+          ]
+        },
+        {
+          "network": 142,
+          "driver_count": 2,
+          "labels": [
+            [
+              "S3"
+            ]
+          ],
+          "z_rows": [
+            32768
+          ]
+        },
+        {
+          "network": 174,
+          "driver_count": 2,
+          "labels": [
+            []
+          ],
+          "z_rows": [
+            24576
+          ]
+        },
+        {
+          "network": 177,
+          "driver_count": 3,
+          "labels": [
+            [
+              "C2"
+            ]
+          ],
+          "z_rows": [
+            49152
+          ]
+        },
+        {
+          "network": 210,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C8"
+            ]
+          ],
+          "z_rows": [
+            24576
+          ]
+        },
+        {
+          "network": 237,
+          "driver_count": 3,
+          "labels": [
+            [
+              "S6"
+            ]
+          ],
+          "z_rows": [
+            0
+          ]
+        },
+        {
+          "network": 245,
+          "driver_count": 3,
+          "labels": [
+            [
+              "S7"
+            ]
+          ],
+          "z_rows": [
+            0
+          ]
+        },
+        {
+          "network": 332,
+          "driver_count": 2,
+          "labels": [
+            [
+              "S5"
+            ]
+          ],
+          "z_rows": [
+            0
+          ]
+        },
+        {
+          "network": 337,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C6"
+            ]
+          ],
+          "z_rows": [
+            24576
+          ]
+        }
+      ],
+      "B_owner_summary": [
+        {
+          "network": 7,
+          "driver_count": 3,
+          "labels": [
+            [
+              "S5"
+            ]
+          ],
+          "z_rows": [
+            32768
+          ]
+        },
+        {
+          "network": 36,
+          "driver_count": 2,
+          "labels": [
+            []
+          ],
+          "z_rows": [
+            32768
+          ]
+        },
+        {
+          "network": 83,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C4"
+            ]
+          ],
+          "z_rows": [
+            36864
+          ]
+        },
+        {
+          "network": 143,
+          "driver_count": 2,
+          "labels": [
+            [
+              "S3"
+            ]
+          ],
+          "z_rows": [
+            32768
+          ]
+        },
+        {
+          "network": 177,
+          "driver_count": 2,
+          "labels": [
+            []
+          ],
+          "z_rows": [
+            24576
+          ]
+        },
+        {
+          "network": 180,
+          "driver_count": 3,
+          "labels": [
+            [
+              "C2"
+            ]
+          ],
+          "z_rows": [
+            49152
+          ]
+        },
+        {
+          "network": 218,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C6"
+            ]
+          ],
+          "z_rows": [
+            36864
+          ]
+        },
+        {
+          "network": 232,
+          "driver_count": 2,
+          "labels": [
+            [
+              "C8"
+            ]
+          ],
+          "z_rows": [
+            24576
+          ]
+        },
+        {
+          "network": 259,
+          "driver_count": 3,
+          "labels": [
+            [
+              "S6"
+            ]
+          ],
+          "z_rows": [
+            0
+          ]
+        },
+        {
+          "network": 267,
+          "driver_count": 3,
+          "labels": [
+            [
+              "S7"
+            ]
+          ],
+          "z_rows": [
+            0
+          ]
+        }
+      ],
+      "A_output_arrivals": [
+        5,
+        5
+      ],
+      "B_output_arrivals": [
+        5,
+        5
+      ]
+    },
+    "repository_independent_103d5": {
+      "metrics": {
+        "gate": 103,
+        "delay": 5,
+        "energy": 515,
+        "output_arrivals": [
+          4,
+          5,
+          4,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "reachable_nodes": 81,
+        "structural_sha256": "8dac8a2fa748f8110ed54a1273f08df49a626fe542a74632508974025db94a0f"
+      },
+      "semantic": {
+        "truth_table_rows": 131072,
+        "mismatch_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mismatch_union_count": 0,
+        "conflict_assignment_count": 0,
+        "z_assignment_count_by_output": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          32768,
+          0,
+          0,
+          36864
+        ],
+        "output_vector_sha256": "5786e3f47f5ca74fe1b0d6439246f17b3937357f9381c4a90eeaf3d85a6f6410"
+      },
+      "operation_counts": {
+        "AND": 12,
+        "BUS": 9,
+        "INPUT": 17,
+        "NAND": 3,
+        "NOR": 24,
+        "OR": 14,
+        "XOR": 2
+      },
+      "switch_count": 22,
+      "ordinary_weighted_gate": 59,
+      "bus_weighted_gate": 44
+    }
+  },
+  "migration_to_84d6": {
+    "truth_rows": 131072,
+    "C4_owner": {
+      "sample_B_formula": "W23=BUS(SW(G3,V3),SW(V2,V3)); R23=G2|G3; C4=BUS(SW(R23,W23),SW(C2,W23))",
+      "mismatch_rows": 0,
+      "conflict_rows": 0,
+      "missing_one_rows": 0,
+      "raw_z_rows": 36864,
+      "current_84_producer": {
+        "gate": 6,
+        "arrival": 4,
+        "parts": "N23 1 + B23 owner 4 + final OR 1"
+      },
+      "sample_B_producer": {
+        "gate": 9,
+        "arrival": 3,
+        "parts": "W23 owner 4 + R23 1 + C4 owner 4"
+      },
+      "delta_gate": 3
+    },
+    "D45_C6_owner": {
+      "sample_B_formula": "V45=~(Q4|Q5); D45=G5|V45; E45=G4|G5; C6=BUS(SW(E45,D45),SW(C4,D45))",
+      "mismatch_rows_with_B_C4": 0,
+      "conflict_rows_with_B_C4": 0,
+      "missing_one_rows_with_B_C4": 0,
+      "mismatch_rows_with_current_C4": 0,
+      "conflict_rows_with_current_C4": 0,
+      "current_84_core": {
+        "gate": 8,
+        "arrival": 4,
+        "parts": "K34 1 + G345 1 + V45 1 + D45 1 + owner 4"
+      },
+      "sample_B_core_if_C4_at_3": {
+        "gate": 7,
+        "arrival": 4,
+        "parts": "E45 1 + V45 1 + D45 1 + owner 4"
+      },
+      "sample_B_core_with_current_C4_at_4": {
+        "gate": 7,
+        "arrival": 5,
+        "valid_for_84_high_tail": false
+      },
+      "combined_C4_plus_C6": {
+        "current_84_gate": 14,
+        "sample_B_gate": 16,
+        "delta_gate": 2,
+        "conclusion": "C6 独看省 1 门，但为取得 C4@3 必须先多付 3 门，整体反而增加 2 门。"
+      }
+    },
+    "S5_three_switch_owner": {
+      "sample_B_formula": "S5=BUS(SW(Q4,P5),SW(H5,U),SW(R1,P5)); H5=~(P5|Q4); U=C4|nP4; R1=~(C4|G4|G5)",
+      "mismatch_rows": 0,
+      "conflict_rows": 0,
+      "missing_one_rows": 0,
+      "raw_z_rows": 32768,
+      "current_84_formula_mismatch_rows": 0,
+      "current_84_macro": {
+        "gate": 5,
+        "arrival": 6,
+        "parts": "U45,H5,T5,J5,OR"
+      },
+      "optimistic_B_marginal_when_U_and_R1_are_already_paid": {
+        "gate": 7,
+        "arrival_with_current_C4": 6,
+        "parts": "H5 1 + three Switch 6",
+        "delta_gate": 2
+      },
+      "standalone_B_macro_from_paid_G/Q/P/C4": {
+        "gate": 11,
+        "arrival": 6,
+        "parts": "nP4,U,H5,E45,R1 five ordinary + three Switch 6",
+        "delta_gate": 6
+      }
+    },
+    "shared_state_checks": {
+      "current_C4_mismatch_rows": 0,
+      "current_C6_mismatch_rows": 0,
+      "current_B23_conflict_rows": 0,
+      "current_C6_conflict_rows": 0,
+      "B_negative_reason_identity_mismatch_rows": 0
+    },
+    "migration_conclusion": {
+      "deterministic_84_to_83_improvement_found": false,
+      "reason": "B 的 1 门 C6 局部优势完全依赖 C4@3；连同 B 的 C4 producer 后净增 2 门。三 Switch S5 即使把 U/R1 视为免费共享，仍比当前五门 S5 多 2 门。"
+    }
+  }
+}

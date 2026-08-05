@@ -1,0 +1,65 @@
+{
+  "schema": "byte83-103d5b-split-reason-d6-audit-v1",
+  "status": "rejected_for_gate_budget",
+  "rows": 162,
+  "reason_mismatch": 0,
+  "mismatch": {
+    "s5": 0,
+    "s6": 0,
+    "s7": 0,
+    "c8": 0
+  },
+  "conflict": {
+    "s5": 0,
+    "s6": 0,
+    "s7": 0,
+    "c8": 0
+  },
+  "z_rows": {
+    "s5": 27,
+    "s6": 0,
+    "s7": 0,
+    "c8": 18
+  },
+  "arrivals": {
+    "K45": 3,
+    "R1_on_B_C4_at_3": 4,
+    "R1_on_current_C4_at_4_direct_formula": 5,
+    "R1_on_current_B23_G345_backbone": 4,
+    "B_outputs": 5,
+    "allowed_D6": true
+  },
+  "ledger": {
+    "patchouli84_relevant": {
+      "current_c6_core": 8,
+      "s5": 5,
+      "high_tail": 20,
+      "total": 33
+    },
+    "split_reason_transplant_on_current_backbone": {
+      "current_c6_core": 8,
+      "K45_and_R1": 2,
+      "s5": 8,
+      "high_tail": 30,
+      "total": 48,
+      "delta": 15
+    },
+    "decisive_s5_s6_only": {
+      "K45_and_R1": 2,
+      "s5_delta": 3,
+      "s6_delta": 4,
+      "combined_delta": 9,
+      "optimistic_remove_old_C6_owner": -4,
+      "still_delta_before_s7_c8": 5
+    },
+    "full_B_c4_c6_boundary": {
+      "current_C4_plus_C6": 14,
+      "B_C4_plus_C6": 16,
+      "delta_before_split_reasons": 2,
+      "K45_and_R1": 2,
+      "delta_with_split_reasons": 4
+    }
+  },
+  "conclusion": "The split reasons are functionally valid and conflict-free, but their S5/S6 consumers already cost nine extra gates.  Even an impossible optimistic four-gate removal of the shared C6 owner leaves +5 before S7/C8, so they cannot replace the public-E6/nC6 producer for an <=83/6 Patchouli derivative.",
+  "certificate_sha256": "9d624b64b28125f73c9cb78363722a21937fe6cbe84ff9747b855153ed4a5ef5"
+}
