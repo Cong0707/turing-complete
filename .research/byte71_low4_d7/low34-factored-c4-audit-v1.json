@@ -1,0 +1,73 @@
+{
+  "schema": "tc-byte-adder-low34-factored-c4-audit-v1",
+  "method": "fixed 512-row replay; no topology search",
+  "rows": 512,
+  "gate_ledger": {
+    "fast_bits0_1_and_C2": 19,
+    "bit2_state_sum_and_shared_C3": 7,
+    "bit3_state_sum_and_late_negative_factors": 6,
+    "late_split_total": 32,
+    "R23_and_P23_descriptors": 2,
+    "factored_total": 34,
+    "optional_fast_and_slow_products": 2,
+    "materialized_positive_reason_total": 36,
+    "optional_scalar_C4_final_OR": 1,
+    "scalar_C4_total": 37
+  },
+  "arrival": {
+    "S0": 4,
+    "S1": 6,
+    "C2": 3,
+    "N2": 4,
+    "S2": 5,
+    "C3": 5,
+    "N3": 6,
+    "S3": 7,
+    "late_negative_nG3": 1,
+    "late_negative_N3": 6,
+    "R23": 2,
+    "V3": 1,
+    "P23": 3,
+    "factored_C2": 3,
+    "optional_fast_product": 3,
+    "optional_slow_product": 4,
+    "optional_scalar_C4": 5
+  },
+  "interface": {
+    "late_32_gate": "C4 = NAND(nG3,N3)",
+    "early_34_gate": "C4 = (R23*V3) OR (P23*C2)",
+    "R23": "NAND(nG2,nG3) = G2 OR G3",
+    "P23": "P2*P3",
+    "products_are_materialized": false
+  },
+  "semantic": {
+    "low32_mismatch_rows": 0,
+    "low34_mismatch_rows": 0,
+    "C2_bus_driven_rows": 320,
+    "C2_bus_Z_rows": 192,
+    "C2_bus_conflict_rows": 0,
+    "factored_product_overlap_rows": 0,
+    "output_truth_sha256": "7b050181fb999957d7d8fc07ea9d28eba9e66e285ddbcb620e01cfcdfb748bb3",
+    "factor_truth_sha256": "f5d1f58daf2f3f746bda9b1ed3fd850e993c42e4c9cba0395303e92e152f2139"
+  },
+  "score_contract": {
+    "authoritative_frontier": {
+      "gate": 84,
+      "delay": 6,
+      "energy": 504
+    },
+    "strict_D7_gate_ceiling": 71,
+    "remaining_high_budget_with_low32": 39,
+    "remaining_high_budget_with_low34": 37,
+    "remaining_high_budget_with_low36": 35,
+    "remaining_high_budget_with_low37": 34
+  },
+  "conclusion": {
+    "complete_71_D7_found": false,
+    "low32_late_split_found": true,
+    "low34_early_factored_interface_found": true,
+    "statement": "The 34-gate boundary publishes every C4 factor by D3 without materializing either product or a resolved C4 bus.  A complete strict D7 improvement still requires a directly compatible high block of at most 37 gates."
+  },
+  "game_started": false,
+  "save_read_or_modified": false
+}
