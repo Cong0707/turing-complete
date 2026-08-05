@@ -1,0 +1,176 @@
+{
+  "schema": "tc-byte-adder-c1-s1-factorization-audit-v1",
+  "scope": {
+    "rows": 12,
+    "method": "deterministic replay of one hand-derived threshold factorization",
+    "search": false
+  },
+  "identities": {
+    "C1": "T0|G0",
+    "C2": "G1|P1*C1 = V1*(G1|T0|G0)",
+    "implication_chain": "G1 <= C2 <= V1",
+    "S1_parity": "C1 XOR V1 XOR G1",
+    "zero_count": "NOR(C1,V1)",
+    "not_all_three": "NAND(C1,G1)",
+    "exactly_two": "C2*not_all_three",
+    "S1_threshold": "NOR(zero_count,exactly_two)"
+  },
+  "mismatch_rows": {
+    "c2_value": 0,
+    "implication_g1_to_c2": 0,
+    "implication_c2_to_v1": 0,
+    "parity_identity": 0,
+    "current_factorization": 0,
+    "threshold_factorization": 0,
+    "current_equals_threshold": 0
+  },
+  "c2_physical_state_counts": {
+    "active_one": 7,
+    "active_zero": 3,
+    "z": 2
+  },
+  "direct_c2_output_counterexamples": {
+    "active_zero_but_s1_one": 3,
+    "active_one_but_s1_zero": 4,
+    "z_but_s1_one": 1
+  },
+  "gate_ledger": {
+    "C1_from_T0_G0": 1,
+    "zero_count": 1,
+    "not_all_three": 1,
+    "exactly_two": 1,
+    "S1": 1,
+    "total": 5
+  },
+  "arrival": {
+    "T0_G0_V1_G1": 1,
+    "C1_C2": 2,
+    "zero_count_not_all_three": 3,
+    "exactly_two": 4,
+    "S1": 5
+  },
+  "rows": [
+    {
+      "T0": 0,
+      "G0": 0,
+      "bit1": "K",
+      "C1": 0,
+      "V1": 0,
+      "G1": 0,
+      "C2_physical": "Z",
+      "S1": 0
+    },
+    {
+      "T0": 0,
+      "G0": 0,
+      "bit1": "P",
+      "C1": 0,
+      "V1": 1,
+      "G1": 0,
+      "C2_physical": "Z",
+      "S1": 1
+    },
+    {
+      "T0": 0,
+      "G0": 0,
+      "bit1": "G",
+      "C1": 0,
+      "V1": 1,
+      "G1": 1,
+      "C2_physical": "1",
+      "S1": 0
+    },
+    {
+      "T0": 0,
+      "G0": 1,
+      "bit1": "K",
+      "C1": 1,
+      "V1": 0,
+      "G1": 0,
+      "C2_physical": "0",
+      "S1": 1
+    },
+    {
+      "T0": 0,
+      "G0": 1,
+      "bit1": "P",
+      "C1": 1,
+      "V1": 1,
+      "G1": 0,
+      "C2_physical": "1",
+      "S1": 0
+    },
+    {
+      "T0": 0,
+      "G0": 1,
+      "bit1": "G",
+      "C1": 1,
+      "V1": 1,
+      "G1": 1,
+      "C2_physical": "1",
+      "S1": 1
+    },
+    {
+      "T0": 1,
+      "G0": 0,
+      "bit1": "K",
+      "C1": 1,
+      "V1": 0,
+      "G1": 0,
+      "C2_physical": "0",
+      "S1": 1
+    },
+    {
+      "T0": 1,
+      "G0": 0,
+      "bit1": "P",
+      "C1": 1,
+      "V1": 1,
+      "G1": 0,
+      "C2_physical": "1",
+      "S1": 0
+    },
+    {
+      "T0": 1,
+      "G0": 0,
+      "bit1": "G",
+      "C1": 1,
+      "V1": 1,
+      "G1": 1,
+      "C2_physical": "1",
+      "S1": 1
+    },
+    {
+      "T0": 1,
+      "G0": 1,
+      "bit1": "K",
+      "C1": 1,
+      "V1": 0,
+      "G1": 0,
+      "C2_physical": "0",
+      "S1": 1
+    },
+    {
+      "T0": 1,
+      "G0": 1,
+      "bit1": "P",
+      "C1": 1,
+      "V1": 1,
+      "G1": 0,
+      "C2_physical": "1",
+      "S1": 0
+    },
+    {
+      "T0": 1,
+      "G0": 1,
+      "bit1": "G",
+      "C1": 1,
+      "V1": 1,
+      "G1": 1,
+      "C2_physical": "1",
+      "S1": 1
+    }
+  ],
+  "digest_sha256": "a5368f5909500cbc3f0ce6e47a3575fd2fc8478ed2780495226a1f39a81135b6",
+  "conclusion": "The current five paid gates are an XOR-free three-input parity cell: C2 supplies the threshold bit, while two opposite C1 cofactors separate zero-count and all-three states.  The replay establishes the identities and the physical C2 counterexamples; it is not a global lower-bound proof."
+}

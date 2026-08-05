@@ -1,0 +1,376 @@
+{
+  "schema": "tc-byte-adder-strict-c2-reason-interface-audit-v1",
+  "scope": {
+    "rows": 32,
+    "method": "fixed replay of one hand-derived majority/reason factorization",
+    "search": false
+  },
+  "identities": {
+    "C1": "A0*B0 | Cin*(A0|B0)",
+    "pair_cover": "A0*B0 | A0*Cin | B0*Cin",
+    "strict_reasons": "G0 | T0, T0=Cin*(A0|B0)",
+    "C2": "G1 | P1*C1 = V1*(G1|G0|T0)",
+    "indispensable_residual": "V1*Cin*P0"
+  },
+  "mismatch_rows": {
+    "majority_pair_cover": 0,
+    "rotated_reason_cover": 0,
+    "strict_c2_value": 0,
+    "strict_c2_conflict": 0,
+    "joint10_c1": 0,
+    "joint10_s0": 0,
+    "joint10_slow_c2": 0
+  },
+  "counterexamples": {
+    "remove_T0_missing_rows": 4,
+    "replace_T0_by_Cin_false_positive_rows": 2,
+    "replace_T0_by_V0_false_positive_rows": 4
+  },
+  "gate_ledgers": {
+    "strict_two_reason_interface": {
+      "T0_two_switch_owner_at_D1": 4,
+      "remaining_pair_reason_G0_at_D1": 1,
+      "two_bit0_C2_switches_at_D2": 4,
+      "interface_subtotal_excluding_G1_driver": 9
+    },
+    "expanded_three_pair_interface": {
+      "three_pair_AND_reasons_at_D1": 3,
+      "three_bit0_C2_switches_at_D2": 6,
+      "interface_subtotal_excluding_G1_driver": 9
+    },
+    "mature_joint10": {
+      "bit0_macro": 10,
+      "C1_arrival": 2,
+      "two_switch_C2_owner_arrival": 3
+    },
+    "authoritative_strict": {
+      "bit0_macro": 11,
+      "T0_arrival": 1,
+      "C2_arrival": 2
+    }
+  },
+  "rows": [
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "K",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "G",
+      "C1": 0,
+      "C2": 1,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "K",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "G",
+      "C1": 0,
+      "C2": 1,
+      "strict_T0_physical": "Z",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "K",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "G",
+      "C1": 0,
+      "C2": 1,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "K",
+      "C1": 1,
+      "C2": 0,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 0,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "G",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "K",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 0,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 0,
+      "bit1": "G",
+      "C1": 0,
+      "C2": 1,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "K",
+      "C1": 1,
+      "C2": 0,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 1,
+      "b0": 0,
+      "cin": 1,
+      "bit1": "G",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 1
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "K",
+      "C1": 1,
+      "C2": 0,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 0,
+      "bit1": "G",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "0",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "K",
+      "C1": 1,
+      "C2": 0,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "P",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    },
+    {
+      "a0": 1,
+      "b0": 1,
+      "cin": 1,
+      "bit1": "G",
+      "C1": 1,
+      "C2": 1,
+      "strict_T0_physical": "1",
+      "missing_Cin_P0_V1": 0
+    }
+  ],
+  "digest_sha256": "4ac9145fc346fc6d4ccc46a4784e9c49661bc1c5f82e5b3a1c5b808f70deebc1",
+  "conclusion": "The 10-gate population-count macro saves its gate by resolving C1 at D2. Strict C2@2 still needs the D1 Cin*(A0|B0) reason.  Publishing that reason as a two-Switch owner or expanding it into two pair products has the same nine-gate reason-plus-C2-interface cost; neither preserves the 10-gate saving.  This is an interface result, not a global circuit lower bound."
+}
