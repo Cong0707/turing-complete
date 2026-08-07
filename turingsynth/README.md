@@ -13,7 +13,7 @@ TuringSynth 是一个以 Verilog/SystemVerilog 为输入、以当前 Turing Comp
 - **地图供人阅读**：DAG 从左到右分层，相关位按稳定 affinity 排列，元件紧凑但保留间隔。
 - **线路供人追踪**：优先短路、少折返、少交叉；禁止导线穿过元件、无关引脚或复用已有边。
 - **CI 先于写入游戏**：Yosys 形式等价、真实成本/到达、物理网络、几何和 v15 往返全部通过后才产出。
-- **不启动游戏、不修改存档**：编译器只生成 `build/05-output/circuit.data`。
+- **不启动游戏、不修改存档**：编译器只生成 `build/05-output/` 下的地图与包。
 
 ## 目录
 
@@ -24,7 +24,7 @@ src/turingsynth/ir/        阶段间稳定数据结构
 src/turingsynth/mapping/   游戏原生元件 ABI、成本和零成本向量打包
 src/turingsynth/layout/    DAG 分层、紧凑放置、bit affinity 排序
 src/turingsynth/routing/   fanout hub、A* 短路由、交叉/折返惩罚
-src/turingsynth/formats/   独立 v15 模型、Snappy 编解码和电路写出
+src/turingsynth/formats/   独立 v15/.pk 模型、Snappy 编解码和电路写出
 src/turingsynth/targets/   Foundry 自定义元件与主线关卡模板
 src/turingsynth/audit/     形式等价、时序、连通性、几何和成本审计
 src/turingsynth/render/    精确布局 SVG 人工预览
@@ -77,9 +77,18 @@ build/06-audit/formal.json        Yosys 形式等价证书
 build/06-audit/physical.json      成本、时序、网络和几何证书
 ```
 
+含 `[[components]]` 的工程还会生成：
+
+```text
+build/units/<name>/               每个 Foundry 元件的完整六阶段构建
+build/05-output/dependencies/     按 display_path 镜像的元件 circuit.data
+build/05-output/<name>.pk         主电路与全部依赖组成的游戏导入包
+build/05-output/package.json      包路径、Custom ID、哈希与往返证书
+```
+
 ## project.toml
 
-Foundry 自定义元件：
+单个 Foundry 自定义元件：
 
 ```toml
 [project]
@@ -99,6 +108,55 @@ pack_widths = [8, 4, 2]
 horizontal_clearance = 5
 vertical_clearance = 3
 ```
+
+### 多文件与分层元件包
+
+`sources` 的每一项可以是 `.v`/`.sv` 文件、目录或 glob。目录会递归发现 HDL，glob 与目录
+结果均按规范化绝对路径稳定排序，同一文件只编译一次。`include_dirs`、`defines` 和
+`parameters` 会传入 Yosys：
+
+```toml
+[project]
+name = "分层电路 C"
+top = "circuit_c"
+sources = ["circuit_c.sv", "rtl/common/*.sv"]
+include_dirs = ["include"]
+defines = ["USE_FAST_PATH=1"]
+parameters = { WIDTH = 8 }
+
+[target]
+kind = "foundry"
+logical_key = "foundry/codex/c"
+
+[[components]]
+name = "a"
+top = "component_a"
+sources = ["components/a"]
+display_path = "codex/a"
+logical_key = "foundry/codex/a"
+
+[[components]]
+name = "b"
+top = "component_b"
+sources = ["components/b/**/*.v"]
+display_path = "codex/b"
+logical_key = "foundry/codex/b"
+
+[package]
+enabled = true
+level = ""
+filename = "circuit-c.pk"
+```
+
+该配置先把文件夹 `a`、`b` 分别综合为 Foundry 元件，再综合顶层 `circuit_c`。只要顶层 HDL
+实例化 `component_a`/`component_b`，Yosys 中的黑盒边界就会保留为游戏 kind 78 Custom
+实例；模块内部辅助层次仍正常扁平化和优化。顶层可继续在 Custom 实例之间使用组合逻辑，
+多位端口会保持 lane 顺序并尽量直接使用整条总线，不会无故拆线再拼线。
+
+组件可以用 `dependencies = ["a"]` 声明它直接实例化的其他组件。编译器按依赖 DAG 构建，
+拒绝未知依赖、自依赖和环；最终 `.pk` 始终包含所有声明组件以及主 `circuit.data`。
+`display_path` 是导入包内路径，必须是安全相对路径。完整可运行示例见
+`examples/hierarchical_package/project.toml`。
 
 `horizontal_clearance` 的有效最小值是 `5`。这恰好在相邻元件边界之间留下四列：前级输出
 两格直线引出、共享转向/主干通道和后级输入短桩；继续压缩会封死连续 Splitter 输出的正交
@@ -140,10 +198,17 @@ pin = "value"
 `U8 + U4 + U2 + U1` 四组，不会用一个填充位把真实 15 门写成 16 门。输入恰好是同一连续总线时
 直接接字门；只有离散标量才使用免费 Maker。字门输出通过免费 Splitter 恢复标量扇出。
 
-## 当前边界
+## Verilog/SystemVerilog 支持边界
 
-`0.1` 严格支持组合逻辑和 `1/2/4/8/32/64` 位顶层端口。寄存器、RAM、三态 Verilog、黑盒、
-多时钟和 `x/z` 目前会显式失败，而不是用错误元件继续生成。后续处理器支持将在现有 IR 上新增：
+HDL 由 Yosys `read_verilog -sv` 读取。当前支持可被 Yosys 综合为组合布尔网络的 Verilog 和
+SystemVerilog 子集，包括模块/参数、`include`/宏、连续赋值、组合 `always`、`if`/`case`、
+`generate`、位选/拼接以及常见算术、比较和归约表达式。`.v` 和 `.sv` 都按 SystemVerilog
+模式读取，因此混合工程可以共同使用显式端口声明等语法。
+
+当前物理技术库只接受最终落到 NOT/AND/NAND/OR/NOR/XOR 的组合网表，以及工程中显式声明的
+Custom 模块。寄存器、锁存器、RAM、三态物理语义、未声明黑盒、inout、多时钟和 `x/z` 会在
+综合或规范化阶段显式失败，不会用错误元件继续生成。SystemVerilog interface、class、动态
+数组、SVA 等非 Yosys 可综合语言特性也不在当前支持范围内。后续处理器支持将在现有 IR 上新增：
 
 1. 时序 IR 与时钟域合同；
 2. kind 39 等寄存器 technology profile；

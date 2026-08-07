@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import replace
+from collections.abc import Mapping
 
+from turingsynth.formats.design import render_custom_design
 from turingsynth.formats.model import Circuit, Component
 from turingsynth.formats.v15 import decode_v15, encode_v15
 from turingsynth.ir.physical import PhysicalComponent, PhysicalDesign
@@ -24,6 +26,8 @@ def _component(value: PhysicalComponent) -> Component:
         ui_order=value.ui_order,
         word_size=value.word_size,
         immutable=value.immutable,
+        custom_id=value.custom_id,
+        custom_word_sizes=value.custom_word_sizes,
     )
 
 
@@ -33,7 +37,9 @@ def emit_v15(
     target: TargetContext,
     *,
     description: str,
+    custom_definitions: Mapping[int, Circuit] | None = None,
 ) -> tuple[Circuit, bytes]:
+    custom_definitions = custom_definitions or {}
     base_by_id = {
         component.permanent_id: component for component in target.base_circuit.components
     }
@@ -51,14 +57,34 @@ def emit_v15(
         raise ValueError("generated component permanent IDs are not unique positive integers")
     if target.kind == "level" and target.base_circuit.wires:
         raise ValueError("level target templates with existing wires are not supported yet")
+    seen_dependencies: set[int] = set()
+    dependencies = []
+    for component in components:
+        if (
+            component.kind == 78
+            and component.custom_id
+            and component.custom_id not in seen_dependencies
+        ):
+            seen_dependencies.add(component.custom_id)
+            dependencies.append(component.custom_id)
+    missing_dependencies = set(dependencies) - set(custom_definitions)
+    if missing_dependencies:
+        raise ValueError(
+            f"emitted circuit has missing Custom definitions: {sorted(missing_dependencies)!r}"
+        )
+    design_grid = (
+        render_custom_design(components, custom_definitions)
+        if target.kind == "foundry"
+        else b""
+    )
     circuit = replace(
         target.base_circuit,
         custom_id=target.custom_id,
         gate=design.gate,
         delay=design.delay,
         description=description,
-        dependencies=(),
-        design=bytes(512) if target.kind == "foundry" else b"",
+        dependencies=tuple(dependencies),
+        design=design_grid,
         components=tuple(components),
         wires=routing.wires,
     )

@@ -48,16 +48,13 @@ def main(argv: list[str] | None = None, *, compiler_root: Path | None = None) ->
     else:
         manifest = (args.manifest or Path("project.toml")).resolve()
         report = build_project(root, manifest)
-    print(
-        json.dumps(
-            {
-                "status": report["status"],
-                "score": report["score"],
-                "circuit": str(build / report["artifacts"]["circuit"]),
-                "preview": str(build / report["artifacts"]["preview"]),
-            },
-            ensure_ascii=False,
-            indent=2,
-        )
-    )
+    summary = {
+        "status": report["status"],
+        "score": report["score"],
+        "circuit": str(build / report["artifacts"]["circuit"]),
+        "preview": str(build / report["artifacts"]["preview"]),
+    }
+    if "package" in report["artifacts"]:
+        summary["package"] = str(build / report["artifacts"]["package"])
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0

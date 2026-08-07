@@ -20,6 +20,8 @@ def _prototype(component: PhysicalComponent, position: Point = (0, 0)) -> Compon
         ui_order=component.ui_order,
         word_size=component.word_size,
         immutable=component.immutable,
+        custom_id=component.custom_id,
+        custom_word_sizes=component.custom_word_sizes,
     )
 
 

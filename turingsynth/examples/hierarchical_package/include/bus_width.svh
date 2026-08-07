@@ -1,0 +1,3 @@
+`ifndef TURINGSYNTH_BUS_WIDTH
+`define TURINGSYNTH_BUS_WIDTH 8
+`endif

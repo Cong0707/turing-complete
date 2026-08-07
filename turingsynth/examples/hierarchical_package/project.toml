@@ -1,0 +1,40 @@
+[project]
+name = "分层元件打包示例"
+top = "circuit_c"
+sources = ["circuit_c.sv"]
+include_dirs = ["include"]
+defines = ["TURINGSYNTH_HIERARCHICAL_EXAMPLE=1"]
+parameters = { WIDTH = 8 }
+
+[target]
+kind = "foundry"
+logical_key = "foundry/codex/verilog/hierarchical_package/c"
+description = "由两个 HDL 目录元件组成的分层电路 C"
+
+[[components]]
+name = "a"
+top = "component_a"
+sources = ["components/a"]
+display_path = "codex/a"
+logical_key = "foundry/codex/verilog/hierarchical_package/a"
+description = "目录 a 生成的按位与元件"
+
+[[components]]
+name = "b"
+top = "component_b"
+sources = ["components/b/*.v"]
+display_path = "codex/b"
+logical_key = "foundry/codex/verilog/hierarchical_package/b"
+description = "目录 b 生成的按位取反元件"
+
+[package]
+enabled = true
+level = ""
+filename = "circuit-c.pk"
+
+[compile]
+pack_widths = [8, 4, 2]
+
+[layout]
+horizontal_clearance = 5
+vertical_clearance = 3

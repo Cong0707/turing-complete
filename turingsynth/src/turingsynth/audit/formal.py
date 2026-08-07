@@ -8,8 +8,9 @@ import re
 import subprocess
 
 from turingsynth.config import ProjectConfig
-from turingsynth.frontend.yosys import find_yosys
-from turingsynth.ir.logical import Bit, LogicNetlist
+from turingsynth.frontend.yosys import _staged_read_commands, find_yosys
+from turingsynth.ir.logical import Bit, Cell, CustomCell, LogicNetlist
+from turingsynth.library import CustomModule
 
 
 IDENTIFIER = re.compile(r"[A-Za-z_][A-Za-z0-9_$]*\Z")
@@ -23,7 +24,16 @@ def _quoted(path: Path) -> str:
     return '"' + str(path.resolve()).replace("\\", "/").replace('"', '\\"') + '"'
 
 
-def _mapped_verilog(logical: LogicNetlist) -> tuple[str, str]:
+def _vector_expression(bits: tuple[Bit, ...], expression: dict[Bit, str]) -> str:
+    values = [expression[bit] for bit in bits]
+    return values[0] if len(values) == 1 else "{" + ", ".join(reversed(values)) + "}"
+
+
+def _mapped_verilog(
+    logical: LogicNetlist,
+    custom_modules: dict[str, CustomModule] | None = None,
+) -> tuple[str, str]:
+    custom_modules = custom_modules or {}
     module_name = f"{logical.top}__turingsynth_mapped"
     port_names = ", ".join(_identifier(port.name) for port in logical.ports)
     lines = [f"module {_identifier(module_name)}({port_names});"]
@@ -40,26 +50,71 @@ def _mapped_verilog(logical: LogicNetlist) -> tuple[str, str]:
                     if len(port.bits) == 1
                     else f"{_identifier(port.name)}[{lane}]"
                 )
-    pending = list(logical.cells)
+    pending: list[Cell | CustomCell] = [*logical.cells, *logical.custom_cells]
     ordered = []
     while pending:
-        ready = [cell for cell in pending if all(bit in expression for bit in cell.inputs)]
+        ready = [
+            cell
+            for cell in pending
+            if all(
+                bit in expression
+                for bit in (
+                    cell.inputs if isinstance(cell, Cell) else cell.input_bits
+                )
+            )
+        ]
         if not ready:
             raise ValueError("cannot emit mapped Verilog from a cyclic logic netlist")
         ready.sort(key=lambda cell: cell.name)
         for cell in ready:
+            if isinstance(cell, CustomCell):
+                if cell.module not in custom_modules:
+                    raise ValueError(
+                        f"mapped Verilog references unknown Custom module {cell.module!r}"
+                    )
+                connections = []
+                for port in cell.ports:
+                    if port.direction == "input":
+                        value = _vector_expression(port.bits, expression)
+                    else:
+                        value = (
+                            f"turingsynth_custom_{len(ordered)}_"
+                            f"{re.sub(r'[^A-Za-z0-9_$]', '_', port.name)}"
+                        )
+                        vector = (
+                            ""
+                            if len(port.bits) == 1
+                            else f"[{len(port.bits) - 1}:0] "
+                        )
+                        lines.append(f"  wire {vector}{value};")
+                        for lane, bit in enumerate(port.bits):
+                            assert isinstance(bit, int)
+                            expression[bit] = (
+                                value if len(port.bits) == 1 else f"{value}[{lane}]"
+                            )
+                    connections.append(f".{_identifier(port.name)}({value})")
+                lines.append(
+                    f"  {_identifier(cell.module)} {_identifier(cell.name)} "
+                    f"({', '.join(connections)});"
+                )
+                ordered.append(cell)
+                pending.remove(cell)
+                continue
             wire = f"turingsynth_n_{cell.output}"
             lines.append(f"  wire {wire};")
             values = [expression[bit] for bit in cell.inputs]
-            formulas = {
-                "NOT": f"~({values[0]})",
-                "AND": f"({values[0]}) & ({values[1]})",
-                "NAND": f"~(({values[0]}) & ({values[1]}))",
-                "OR": f"({values[0]}) | ({values[1]})",
-                "NOR": f"~(({values[0]}) | ({values[1]}))",
-                "XOR": f"({values[0]}) ^ ({values[1]})",
-            }
-            lines.append(f"  assign {wire} = {formulas[cell.op]};")
+            if cell.op == "NOT":
+                formula = f"~({values[0]})"
+            else:
+                formulas = {
+                    "AND": f"({values[0]}) & ({values[1]})",
+                    "NAND": f"~(({values[0]}) & ({values[1]}))",
+                    "OR": f"({values[0]}) | ({values[1]})",
+                    "NOR": f"~(({values[0]}) | ({values[1]}))",
+                    "XOR": f"({values[0]}) ^ ({values[1]})",
+                }
+                formula = formulas[cell.op]
+            lines.append(f"  assign {wire} = {formula};")
             expression[cell.output] = wire
             ordered.append(cell)
             pending.remove(cell)
@@ -76,20 +131,40 @@ def _mapped_verilog(logical: LogicNetlist) -> tuple[str, str]:
 
 
 def verify_formal_equivalence(
-    config: ProjectConfig, logical: LogicNetlist, stage_dir: Path
+    config: ProjectConfig,
+    logical: LogicNetlist,
+    stage_dir: Path,
+    *,
+    custom_modules: dict[str, CustomModule] | None = None,
 ) -> dict[str, object]:
+    custom_modules = custom_modules or {}
     stage_dir.mkdir(parents=True, exist_ok=True)
-    mapped_name, mapped = _mapped_verilog(logical)
+    mapped_name, mapped = _mapped_verilog(logical, custom_modules)
     mapped_path = stage_dir / "mapped.v"
     script_path = stage_dir / "equiv.ys"
     log_path = stage_dir / "equiv.log"
     mapped_path.write_text(mapped, encoding="utf-8")
-    reads = "\n".join(f"read_verilog -sv {_quoted(path)}" for path in config.sources)
-    script = f"""{reads}
-prep -top {config.top}
+    library_reads = "\n".join(
+        _staged_read_commands(
+            config.for_component(module.config),
+            stage_dir,
+            f"library-{index:03d}",
+        )
+        for index, (_name, module) in enumerate(sorted(custom_modules.items()))
+    )
+    reads = _staged_read_commands(config, stage_dir, "project")
+    parameters = "\n".join(
+        f"chparam -set {_identifier(name)} {value} {_identifier(config.top)}"
+        for name, value in config.parameters
+    )
+    script = f"""{library_reads}
+{reads}
+{parameters}
+prep -top {config.top} -flatten
 design -stash gold
+{library_reads}
 read_verilog -sv {mapped_path.name}
-prep -top {mapped_name}
+prep -top {mapped_name} -flatten
 design -stash gate
 design -copy-from gold -as gold {config.top}
 design -copy-from gate -as gate {mapped_name}
@@ -118,5 +193,6 @@ equiv_status -assert
         "method": "Yosys equiv_make + equiv_simple + equiv_status -assert",
         "mapped_verilog_sha256": sha256(mapped.encode()).hexdigest(),
         "script_sha256": sha256(script.encode()).hexdigest(),
-        "mapped_cell_count": len(logical.cells),
+        "mapped_cell_count": len(logical.cells) + len(logical.custom_cells),
+        "custom_cell_count": len(logical.custom_cells),
     }

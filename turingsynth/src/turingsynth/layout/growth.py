@@ -38,6 +38,8 @@ def _prototype(
         ui_order=component.ui_order,
         word_size=component.word_size,
         immutable=component.immutable,
+        custom_id=component.custom_id,
+        custom_word_sizes=component.custom_word_sizes,
     )
 
 
@@ -278,7 +280,7 @@ def place_growth(
     gate_keys = [
         component.key
         for component in oriented.components
-        if component.role == "gate"
+        if component.role in {"gate", "custom"}
     ]
     collector_drivers = {
         source.component

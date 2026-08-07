@@ -8,7 +8,7 @@ from pathlib import Path
 from turingsynth.formats.model import Component
 from turingsynth.formats.wire import wire_points
 from turingsynth.ir.physical import PhysicalComponent, PhysicalDesign
-from turingsynth.mapping.native import COMPONENTS, component_bounds
+from turingsynth.mapping.native import component_bounds, component_spec
 from turingsynth.routing.astar import RoutingResult
 
 
@@ -20,6 +20,7 @@ ROLE_FILL = {
     "maker": "#fef3c7",
     "splitter": "#ccfbf1",
     "constant": "#f3e8ff",
+    "custom": "#fee2e2",
     "template": "#e5e7eb",
 }
 
@@ -32,6 +33,8 @@ def _component(value: PhysicalComponent) -> Component:
         rotation=value.rotation,
         permanent_id=value.permanent_id,
         word_size=value.word_size,
+        custom_id=value.custom_id,
+        custom_word_sizes=value.custom_word_sizes,
     )
 
 
@@ -92,7 +95,7 @@ def render_svg(
         box_width = (right - left + 1) * scale
         box_height = (bottom - top + 1) * scale
         fill = ROLE_FILL.get(component.role, "#ffffff")
-        spec_name = COMPONENTS[component.kind].name
+        spec_name = component_spec(_component(component)).name
         title = (
             f"{component.key} | {spec_name} | U{component.word_size} | "
             f"cost {component.gate_cost}/{component.gate_delay}"

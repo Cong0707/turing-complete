@@ -31,6 +31,8 @@ class PhysicalComponent:
     rotation: int = 0
     position: Point | None = None
     permanent_id: int = 0
+    custom_id: int = 0
+    custom_word_sizes: tuple[tuple[int, int], ...] = ()
 
 
 @dataclass(frozen=True)

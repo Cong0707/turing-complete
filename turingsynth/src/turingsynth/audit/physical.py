@@ -24,6 +24,8 @@ def _component(value: PhysicalComponent) -> Component:
         ui_order=value.ui_order,
         word_size=value.word_size,
         immutable=value.immutable,
+        custom_id=value.custom_id,
+        custom_word_sizes=value.custom_word_sizes,
     )
 
 

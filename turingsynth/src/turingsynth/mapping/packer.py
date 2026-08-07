@@ -6,8 +6,9 @@ from collections import defaultdict
 from dataclasses import dataclass
 
 from turingsynth.config import ProjectConfig
-from turingsynth.ir.logical import Bit, Cell, LogicNetlist
+from turingsynth.ir.logical import Bit, Cell, CustomCell, LogicNetlist
 from turingsynth.ir.physical import PhysicalComponent, PhysicalDesign, PhysicalNet, PinRef
+from turingsynth.library import CustomModule
 from turingsynth.mapping.native import GATE_LIBRARY, MAKER_KIND, SPLITTER_KIND
 from turingsynth.targets.context import TargetContext, stable_permanent_id
 
@@ -23,11 +24,16 @@ class _Net:
 
 class _Mapper:
     def __init__(
-        self, config: ProjectConfig, logical: LogicNetlist, target: TargetContext
+        self,
+        config: ProjectConfig,
+        logical: LogicNetlist,
+        target: TargetContext,
+        custom_modules: dict[str, CustomModule] | None = None,
     ) -> None:
         self.config = config
         self.logical = logical
         self.target = target
+        self.custom_modules = custom_modules or {}
         self.components = {component.key: component for component in target.components}
         self.nets: dict[str, _Net] = {}
         self.bit_source: dict[Bit, str] = {}
@@ -51,6 +57,8 @@ class _Mapper:
         logic_depth: int,
         gate_cost: int = 0,
         gate_delay: int = 0,
+        custom_id: int = 0,
+        custom_word_sizes: tuple[tuple[int, int], ...] = (),
     ) -> str:
         if key in self.components:
             raise ValueError(f"duplicate physical component key {key!r}")
@@ -64,6 +72,8 @@ class _Mapper:
             gate_cost=gate_cost,
             gate_delay=gate_delay,
             permanent_id=stable_permanent_id(self.config.logical_key, key),
+            custom_id=custom_id,
+            custom_word_sizes=custom_word_sizes,
         )
         return key
 
@@ -189,7 +199,7 @@ class _Mapper:
                     affinity=sum(self.bit_affinity[bit] for bit in bits) / len(bits),
                 )
 
-    def _topology(self) -> tuple[list[Cell], dict[int, int]]:
+    def _topology(self) -> tuple[list[Cell | CustomCell], dict[int, int]]:
         available = {
             bit: 0
             for port in self.logical.input_ports
@@ -197,26 +207,59 @@ class _Mapper:
             if isinstance(bit, int)
         }
         available.update({"0": 0, "1": 0})
-        pending = list(self.logical.cells)
-        ordered: list[Cell] = []
+        pending: list[Cell | CustomCell] = [
+            *self.logical.cells,
+            *self.logical.custom_cells,
+        ]
+        ordered: list[Cell | CustomCell] = []
         depth: dict[int, int] = {}
         while pending:
             ready = [
                 cell
                 for cell in pending
-                if all(bit in available for bit in cell.inputs)
+                if all(
+                    bit in available
+                    for bit in (
+                        cell.inputs if isinstance(cell, Cell) else cell.input_bits
+                    )
+                )
             ]
             if not ready:
                 raise ValueError("logic netlist has no topological mapping order")
             ready.sort(key=lambda cell: cell.name)
             for cell in ready:
-                spec = GATE_LIBRARY[cell.op]
-                value = max(available[bit] for bit in cell.inputs) + spec.delay
-                depth[cell.output] = value
-                available[cell.output] = value
-                self.bit_affinity[cell.output] = max(
-                    self.bit_affinity.get(bit, 0.0) for bit in cell.inputs
+                inputs = cell.inputs if isinstance(cell, Cell) else cell.input_bits
+                if isinstance(cell, Cell):
+                    outputs = (cell.output,)
+                    delay = GATE_LIBRARY[cell.op].delay
+                else:
+                    try:
+                        module = self.custom_modules[cell.module]
+                    except KeyError as exc:
+                        raise ValueError(
+                            f"custom cell {cell.name!r} references unknown module "
+                            f"{cell.module!r}"
+                        ) from exc
+                    outputs = cell.output_bits
+                    delay = module.circuit.delay
+                value = max((available[bit] for bit in inputs), default=0) + delay
+                affinity = max(
+                    (self.bit_affinity.get(bit, 0.0) for bit in inputs),
+                    default=0.0,
                 )
+                if isinstance(cell, CustomCell):
+                    output_lanes = {
+                        output: lane
+                        for port in cell.ports
+                        if port.direction == "output"
+                        for lane, output in enumerate(port.bits)
+                    }
+                else:
+                    output_lanes = {}
+                for output in outputs:
+                    depth[output] = value
+                    available[output] = value
+                    self.bit_affinity[output] = affinity + output_lanes.get(output, 0)
                 ordered.append(cell)
                 pending.remove(cell)
         return ordered, depth
@@ -273,54 +316,156 @@ class _Mapper:
         result.extend([[cell] for cell in cells[offset:]])
         return result
 
+    def _map_native_group(
+        self,
+        depth: int,
+        op: str,
+        group: list[Cell],
+    ) -> None:
+        spec = GATE_LIBRARY[op]
+        width = len(group)
+        outputs = tuple(cell.output for cell in group)
+        affinity = sum(self.bit_affinity[bit] for bit in outputs) / width
+        key = self._key(f"gate:{depth}:{op.lower()}:w{width}")
+        self._add_component(
+            key,
+            kind=spec.scalar_kind if width == 1 else spec.word_kind,
+            word_size=width,
+            role="gate",
+            affinity=affinity,
+            logic_depth=depth,
+            gate_cost=spec.cost_per_bit * width,
+            gate_delay=spec.delay,
+        )
+        for operand in range(spec.arity):
+            operand_bits = tuple(cell.inputs[operand] for cell in group)
+            source = self._operand(
+                operand_bits,
+                owner=key,
+                operand=operand,
+                depth=depth - spec.delay,
+                affinity=affinity,
+            )
+            pin = "in" if spec.arity == 1 else f"in{operand}"
+            self._connect(source, PinRef(key, pin))
+        output_net = self._add_net(
+            f"net:{key}:out", width, PinRef(key, "out"), outputs
+        )
+        self.bus_source[outputs] = output_net
+        if width == 1:
+            self.bit_source[outputs[0]] = output_net
+        else:
+            self._split_word(
+                output_net,
+                outputs,
+                owner=key,
+                depth=depth,
+                affinity=affinity,
+            )
+
+    def _map_custom_cell(
+        self,
+        cell: CustomCell,
+        depth_by_bit: dict[int, int],
+    ) -> None:
+        module = self.custom_modules[cell.module]
+        child_ports = module.port_components()
+        inputs = cell.input_bits
+        affinity = max(
+            (self.bit_affinity.get(bit, 0.0) for bit in inputs),
+            default=0.0,
+        )
+        output_depth = max(
+            (depth_by_bit[bit] for bit in cell.output_bits),
+            default=module.circuit.delay,
+        )
+        key = f"custom:{cell.name}"
+        custom_word_sizes = tuple(
+            (child_ports[port.name].permanent_id, len(port.bits))
+            for port in cell.ports
+        )
+        self._add_component(
+            key,
+            kind=78,
+            word_size=1,
+            role="custom",
+            affinity=affinity,
+            logic_depth=output_depth,
+            gate_cost=module.circuit.gate,
+            gate_delay=module.circuit.delay,
+            custom_id=module.circuit.custom_id,
+            custom_word_sizes=custom_word_sizes,
+        )
+        for port in cell.ports:
+            bits = tuple(port.bits)
+            if port.direction == "input":
+                input_depth = max(
+                    (
+                        depth_by_bit.get(bit, 0)
+                        if isinstance(bit, int)
+                        else 0
+                        for bit in bits
+                    ),
+                    default=0,
+                )
+                source = self._output_bus(
+                    bits,
+                    owner=f"{key}:input:{port.name}",
+                    depth=input_depth,
+                    affinity=affinity,
+                )
+                self._connect(source, PinRef(key, port.name))
+                continue
+            output_bits = tuple(bits)
+            output_net = self._add_net(
+                f"net:{key}:output:{port.name}",
+                len(output_bits),
+                PinRef(key, port.name),
+                output_bits,
+            )
+            self.bus_source[output_bits] = output_net
+            if len(output_bits) == 1:
+                self.bit_source[output_bits[0]] = output_net
+            else:
+                self._split_word(
+                    output_net,
+                    output_bits,
+                    owner=f"{key}:output:{port.name}",
+                    depth=output_depth,
+                    affinity=affinity,
+                )
+
     def _map_cells(self) -> dict[int, int]:
         ordered, depth_by_bit = self._topology()
         by_depth_op: dict[tuple[int, str], list[Cell]] = defaultdict(list)
+        custom_by_depth: dict[int, list[CustomCell]] = defaultdict(list)
         for cell in ordered:
-            by_depth_op[(depth_by_bit[cell.output], cell.op)].append(cell)
-        for (depth, op), cells in sorted(by_depth_op.items()):
-            cells.sort(key=lambda cell: (self.bit_affinity[cell.output], cell.name))
-            for group in self._chunks(cells, self.config.pack_widths):
-                spec = GATE_LIBRARY[op]
-                width = len(group)
-                outputs = tuple(cell.output for cell in group)
-                affinity = sum(self.bit_affinity[bit] for bit in outputs) / width
-                key = self._key(f"gate:{depth}:{op.lower()}:w{width}")
-                self._add_component(
-                    key,
-                    kind=spec.scalar_kind if width == 1 else spec.word_kind,
-                    word_size=width,
-                    role="gate",
-                    affinity=affinity,
-                    logic_depth=depth,
-                    gate_cost=spec.cost_per_bit * width,
-                    gate_delay=spec.delay,
+            if isinstance(cell, Cell):
+                by_depth_op[(depth_by_bit[cell.output], cell.op)].append(cell)
+            else:
+                depth = max(
+                    (depth_by_bit[bit] for bit in cell.output_bits),
+                    default=self.custom_modules[cell.module].circuit.delay,
                 )
-                for operand in range(spec.arity):
-                    operand_bits = tuple(cell.inputs[operand] for cell in group)
-                    source = self._operand(
-                        operand_bits,
-                        owner=key,
-                        operand=operand,
-                        depth=depth - spec.delay,
-                        affinity=affinity,
-                    )
-                    pin = "in" if spec.arity == 1 else f"in{operand}"
-                    self._connect(source, PinRef(key, pin))
-                output_net = self._add_net(
-                    f"net:{key}:out", width, PinRef(key, "out"), outputs
-                )
-                self.bus_source[outputs] = output_net
-                if width == 1:
-                    self.bit_source[outputs[0]] = output_net
-                else:
-                    self._split_word(
-                        output_net,
-                        outputs,
-                        owner=key,
-                        depth=depth,
-                        affinity=affinity,
-                    )
+                custom_by_depth[depth].append(cell)
+        depths = sorted(
+            {depth for depth, _op in by_depth_op} | set(custom_by_depth)
+        )
+        order_index = {cell.name: index for index, cell in enumerate(ordered)}
+        for depth in depths:
+            operations = sorted(
+                op for candidate_depth, op in by_depth_op if candidate_depth == depth
+            )
+            for op in operations:
+                cells = by_depth_op[(depth, op)]
+                cells.sort(key=lambda cell: (self.bit_affinity[cell.output], cell.name))
+                for group in self._chunks(cells, self.config.pack_widths):
+                    self._map_native_group(depth, op, group)
+            for cell in sorted(
+                custom_by_depth.get(depth, ()),
+                key=lambda item: order_index[item.name],
+            ):
+                self._map_custom_cell(cell, depth_by_bit)
         return depth_by_bit
 
     def _output_bus(
@@ -445,8 +590,12 @@ class _Mapper:
 
 
 def map_to_native(
-    config: ProjectConfig, logical: LogicNetlist, target: TargetContext
+    config: ProjectConfig,
+    logical: LogicNetlist,
+    target: TargetContext,
+    *,
+    custom_modules: dict[str, CustomModule] | None = None,
 ) -> PhysicalDesign:
     """Map a normalized scalar netlist without changing cost or arrival."""
 
-    return _Mapper(config, logical, target).build()
+    return _Mapper(config, logical, target, custom_modules).build()

@@ -8,7 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from turingsynth.formats.model import Component, Point
+from turingsynth.formats.design import DESIGN_ORIGIN, design_position, occupied_design_offsets
+from turingsynth.formats.model import Circuit, Component, Point
 
 
 INPUT = "input"
@@ -22,6 +23,7 @@ class PinSpec:
     direction: str
     offset: Point
     width: int | None = None
+    permanent_id: int | None = None
 
 
 @dataclass(frozen=True)
@@ -89,6 +91,80 @@ COMPONENTS: dict[int, ComponentSpec] = {
 }
 
 
+CUSTOM_COMPONENTS: dict[int, ComponentSpec] = {}
+
+
+def configure_custom_components(circuits: tuple[Circuit, ...]) -> None:
+    """Install deterministic kind-78 geometry for the current compiler build."""
+
+    CUSTOM_COMPONENTS.clear()
+    for circuit in circuits:
+        if circuit.custom_id <= 0 or circuit.custom_id in CUSTOM_COMPONENTS:
+            raise ValueError(f"invalid or duplicate Custom identity {circuit.custom_id}")
+        pins = []
+        input_index = 0
+        output_index = 0
+        for port in circuit.components:
+            if port.kind not in {79, 81}:
+                continue
+            grid_x, grid_y = design_position(port.position)
+            offset = (
+                grid_x - DESIGN_ORIGIN[0],
+                grid_y - DESIGN_ORIGIN[1],
+            )
+            if port.kind == 79:
+                fallback = f"in{input_index}"
+                input_index += 1
+                direction = INPUT
+            else:
+                fallback = f"out{output_index}"
+                output_index += 1
+                direction = OUTPUT
+            pins.append(
+                PinSpec(
+                    port.user_label or fallback,
+                    direction,
+                    offset,
+                    port.word_size,
+                    port.permanent_id,
+                )
+            )
+        if not pins:
+            raise ValueError(f"Custom circuit {circuit.custom_id} has no interface ports")
+        if len({pin.name for pin in pins}) != len(pins):
+            raise ValueError(f"Custom circuit {circuit.custom_id} has duplicate port labels")
+        occupied = occupied_design_offsets(circuit)
+        xs = [point[0] for point in occupied]
+        ys = [point[1] for point in occupied]
+        bounds = min(xs), max(xs), min(ys), max(ys)
+        if any(
+            not (bounds[0] <= pin.offset[0] <= bounds[1])
+            or not (bounds[2] <= pin.offset[1] <= bounds[3])
+            for pin in pins
+        ):
+            raise ValueError(f"Custom circuit {circuit.custom_id} has a port outside its design")
+        CUSTOM_COMPONENTS[circuit.custom_id] = ComponentSpec(
+            78,
+            f"custom_{circuit.custom_id}",
+            tuple(pins),
+            bounds,
+        )
+
+
+def component_spec(component: Component) -> ComponentSpec:
+    if component.kind == 78:
+        try:
+            return CUSTOM_COMPONENTS[component.custom_id]
+        except KeyError as exc:
+            raise ValueError(
+                f"Custom component {component.custom_id} has no registered geometry"
+            ) from exc
+    try:
+        return COMPONENTS[component.kind]
+    except KeyError as exc:
+        raise ValueError(f"unsupported component kind {component.kind}") from exc
+
+
 GATE_LIBRARY: dict[str, GateSpec] = {
     "NOT": GateSpec("NOT", 3, 18, 1, 1, 1),
     "AND": GateSpec("AND", 4, 20, 1, 1, 2),
@@ -115,10 +191,8 @@ def rotate_offset(offset: Point, rotation: int) -> Point:
 def positioned_pins(
     component: Component, component_index: int = 0
 ) -> tuple[PositionedPin, ...]:
-    try:
-        spec = COMPONENTS[component.kind]
-    except KeyError as exc:
-        raise ValueError(f"unsupported component kind {component.kind}") from exc
+    spec = component_spec(component)
+    word_overrides = dict(component.custom_word_sizes)
     result = []
     for pin in spec.pins:
         dx, dy = rotate_offset(pin.offset, component.rotation)
@@ -128,7 +202,11 @@ def positioned_pins(
                 component_kind=component.kind,
                 name=pin.name,
                 direction=pin.direction,
-                width=component.word_size if pin.width is None else pin.width,
+                width=(
+                    word_overrides.get(pin.permanent_id, pin.width)
+                    if pin.permanent_id is not None
+                    else (component.word_size if pin.width is None else pin.width)
+                ),
                 position=(component.position[0] + dx, component.position[1] + dy),
             )
         )
@@ -136,10 +214,7 @@ def positioned_pins(
 
 
 def component_bounds(component: Component) -> tuple[int, int, int, int]:
-    try:
-        left, right, top, bottom = COMPONENTS[component.kind].bounds
-    except KeyError as exc:
-        raise ValueError(f"unsupported component kind {component.kind}") from exc
+    left, right, top, bottom = component_spec(component).bounds
     corners = tuple(
         rotate_offset(point, component.rotation)
         for point in ((left, top), (left, bottom), (right, top), (right, bottom))
